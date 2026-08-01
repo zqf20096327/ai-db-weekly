@@ -67,7 +67,7 @@ EMERGING_STARS_MIN = 2       # 副轨最低 star
 EMERGING_CREATED_DAYS = 14   # 副轨新建窗口（近 N 天创建）
 MAIN_MAX_PAGES = 10          # 主轨分页数（每页100，10页=最多1000，GitHub上限）
 DELTA_DAYS = 7               # 周增量计算的天数
-PUBLISH_WEEKDAY = 5          # 周几发布周报：0=周一 1=周二 ... 6=周日 [临时=5周六,测完改回0]
+PUBLISH_WEEKDAY = 0          # 周几发布周报：0=周一 1=周二 ... 6=周日
 
 # --- 榜单条数（改这里调整「展示多少」）---
 HOT_TOP_N = 10
@@ -579,13 +579,17 @@ def render_entry(idx, v):
 
 
 def count_issues():
-    """期数 = output/ 根目录下已发布的周报 .md 数 + 1。
-    只数根目录（正式周报），不数 draft/ 子目录（每日草稿）。"""
+    """本期期数 = output/ 根目录下「除今天这份外」的已发布周报 .md 数 + 1。
+    只数根目录（正式周报），不数 draft/ 子目录（每日草稿）。
+    关键：排除「今天这份」，否则今天这份被 render_markdown 写入后再调用本函数
+    会让期数虚高 1（把正在生成的本期也数进去了）。"""
     if not os.path.isdir(OUTPUT_DIR):
         return 1
-    # 只数直接位于 OUTPUT_DIR 下的 .md（跳过子目录如 draft/）
+    today_file = f"{TODAY}.md"
     files = [f for f in os.listdir(OUTPUT_DIR)
-             if f.endswith(".md") and os.path.isfile(os.path.join(OUTPUT_DIR, f))]
+             if f.endswith(".md")
+             and f != today_file
+             and os.path.isfile(os.path.join(OUTPUT_DIR, f))]
     return len(files) + 1
 
 
@@ -629,7 +633,8 @@ def _latest_summary(md_text, md_relpath, issue_no, date_str):
 
 def _insert_archive_row(content, md_relpath, issue_no, date_str):
     """往「往期周报」表格插入一行（最新期在最上，即表头分隔线之后）。
-    做法：把 ARCHIVE 区块里的表格行抽出来，重建为 干净的表格。"""
+    做法：把 ARCHIVE 区块里的表格行抽出来，重建为 干净的表格。
+    去重：若同一条目（按期数+日期+链接）已存在，则替换为新行，避免重复。"""
     start_tag, end_tag = "<!-- ARCHIVE:START -->", "<!-- ARCHIVE:END -->"
     i, j = content.find(start_tag), content.find(end_tag)
     if i == -1 or j == -1:
@@ -640,6 +645,9 @@ def _insert_archive_row(content, md_relpath, issue_no, date_str):
     existing = [ln for ln in block.splitlines()
                 if re.match(r"^\|\s*第\s*\d+\s*期", ln)]
     new_row = f"| 第 {issue_no} 期 | {date_str} | [{md_relpath}]({md_relpath}) |"
+    # 去重：去掉与新行期数相同的旧行（同一天重跑会覆盖而非新增）
+    existing = [ln for ln in existing
+                if not re.match(rf"^\|\s*第\s*{issue_no}\s*期", ln)]
     rows = [new_row] + existing  # 新期数置顶
 
     # 重建表格：表头 + 分隔线 + 数据行

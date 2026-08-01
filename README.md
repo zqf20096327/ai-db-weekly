@@ -9,39 +9,78 @@
 
 ---
 
-## 📋 本期周报 · 第 1 期（2026-08-01）
-
 **📌 今日聚焦**
 
 🔥 最受关注：**Chat2DB**（⭐27.6k）
-🎯 重点解读：**OtterMind/Chat2DB**
+🎯 重点解读：**Chat2DB**
 
-### 🔥 本周热门 Top10
+---
 
-| # | 项目 | ⭐ | 语言 | 简介 |
-|---|------|-----|------|------|
-| 1 | [OtterMind/Chat2DB](https://github.com/OtterMind/Chat2DB) | 27.6k | Java | 免费跨平台 AI 数据库客户端，连接 30+ 数据库，集成 AI 助手生成/解释/优化 SQL |
-| 2 | [googleapis/mcp-toolbox](https://github.com/googleapis/mcp-toolbox) | 16.1k | Go | 开源 MCP 服务器，将 AI 代理连接到企业数据库，支持 NL2SQL 等工具 |
-| 3 | [t8y2/dbx](https://github.com/t8y2/dbx) | 12.9k | Rust | 20MB 桌面客户端，支持 70+ 数据库，内置 AI 助手与 MCP Server |
-| 4 | [prest/prest](https://github.com/prest/prest) | 4.6k | Go | 在 PostgreSQL 上即时生成 REST 和 MCP API，无需手写后端 |
-| 5 | [bytebase/dbhub](https://github.com/bytebase/dbhub) | 3.3k | TypeScript | 零依赖 MCP 服务器，统一连接 PG/MySQL/SQLServer/SQLite |
-| 6 | [mayneyao/eidos](https://github.com/mayneyao/eidos) | 3.2k | TypeScript | SQLite 个人数据框架，离线 Notion 风格 + LLM 集成 |
-| 7 | [dosco/graphjin](https://github.com/dosco/graphjin) | 3.1k | Go | GraphQL + MCP 数据访问层，为 AI 代理提供治理与审计 |
-| 8 | [matrixorigin/matrixone](https://github.com/matrixorigin/matrixone) | 1.9k | Go | MySQL 兼容的 AI 原生云数据库，引入 Git 式版本控制 |
-| 9 | [julien040/anyquery](https://github.com/julien040/anyquery) | 1.7k | Go | SQLite 上的 SQL 引擎，查询文件/App/数据库，支持 LLM |
-| 10 | [designcomputer/mysql_mcp_server](https://github.com/designcomputer/mysql_mcp_server) | 1.3k | Python | MySQL 的 MCP 服务组件，安全交互与 SQL 执行 |
+## 🔥 本周热门 Top10
+> 💡 数据积累中：需连续运行 7 天后展示真实「周 star 增量」。本期暂按 star 绝对值排序。
 
-> 💡 数据积累中：需连续运行 7 天后展示真实「周 star 增量」，本期暂按 star 绝对值排序。
+**1. OtterMind/Chat2DB**
+🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.
+🔗 https://github.com/OtterMind/Chat2DB
+⭐ 27.6k ｜ Java ｜ 更新 0天前
 
-### 🎯 本周重点解读 · OtterMind/Chat2DB
+**2. googleapis/mcp-toolbox**
+MCP Toolbox for Databases is an open source MCP server for databases.
+🔗 https://github.com/googleapis/mcp-toolbox
+⭐ 16.1k ｜ Go ｜ 更新 0天前
 
-**① 解决什么问题**：为开发者、DBA、分析师提供跨平台 AI 数据库客户端，将 SQL 工作台与 AI 助手结合，支持 30+ 数据库类型，解决多数据库管理及 SQL 编写优化效率问题。
+**3. t8y2/dbx**
+20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。
+🔗 https://github.com/t8y2/dbx
+⭐ 12.9k ｜ Rust ｜ 更新 0天前
 
-**② 核心亮点**：完全本地运行（Windows/macOS/Linux）；完整 SQL 编辑、补全、格式化及执行历史；可接入自有 AI 模型生成/解释/优化 SQL；支持数据导入导出、仪表盘图表、ER 图；附带支持 MCP 的开源 CLI。
+**4. prest/prest**
+PostgreSQL ➕ REST, low-code, simplify and accelerate development, ⚡ instant, realtime, high-performance on any Postgres application, existing or new, MCP server
+🔗 https://github.com/prest/prest
+⭐ 4.6k ｜ Go ｜ 更新 0天前
 
-**③ 适用场景/注意事项**：适合需统一管理多数据库的团队或个人。桌面版从 GitHub Releases 下载；Docker 部署需 2 核 CPU + 4GB 内存，首次需配置加密密钥。
+**5. bytebase/dbhub**
+Token efficient, zero-dependency database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.
+🔗 https://github.com/bytebase/dbhub
+⭐ 3.3k ｜ TypeScript ｜ 更新 1天前
 
-📖 **完整本期内容**：[output/2026-08-01.md](output/2026-08-01.md)
+**6. mayneyao/eidos**
+An extensible framework for Personal Data Management.
+🔗 https://github.com/mayneyao/eidos
+⭐ 3.2k ｜ TypeScript ｜ 更新 2天前
+
+**7. dosco/graphjin**
+One governed graph for AI agents — GraphQL + MCP over your databases, files, APIs, and code
+🔗 https://github.com/dosco/graphjin
+⭐ 3.1k ｜ Go ｜ 更新 0天前
+
+**8. matrixorigin/matrixone**
+AI-native HTAP database with Git-for-Data and built-in vector search, serving as the data and memory backbone for intelligent agents and applications.
+🔗 https://github.com/matrixorigin/matrixone
+⭐ 1.9k ｜ Go ｜ 更新 0天前
+
+**9. julien040/anyquery**
+One SQL interface for 60+ tools (e.g., GitHub, Notion, Airtable). Plug into any LLM through MCP.
+🔗 https://github.com/julien040/anyquery
+⭐ 1.7k ｜ Go ｜ 更新 21天前
+
+**10. designcomputer/mysql_mcp_server**
+A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases
+🔗 https://github.com/designcomputer/mysql_mcp_server
+⭐ 1.3k ｜ Python ｜ 更新 2天前
+
+**🎯 本周重点解读**
+
+**OtterMind/Chat2DB**
+
+🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.
+
+⭐ 27.6k ｜ Java ｜ 更新 0天前
+
+---
+💬 互动：本周你最关注哪个项目？欢迎留言。
+
+<sub>由 ai_db_weekly 自动采集于 2026-08-01，候选池 18 个项目。介绍基于各项目 README 由 AI 生成。</sub>
 <!-- LATEST:END -->
 
 ---
