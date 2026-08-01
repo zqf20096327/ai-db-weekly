@@ -3,17 +3,17 @@
     {
       "full": "OtterMind/Chat2DB",
       "name": "Chat2DB",
-      "stars": 27591,
+      "stars": 27593,
       "lang": "Java",
       "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
       "url": "https://github.com/OtterMind/Chat2DB",
-      "pushed": "2026-08-01T05:51:04Z",
+      "pushed": "2026-08-01T11:39:13Z",
       "delta": null,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Chat2DB 是一个免费、跨平台的 AI 驱动数据库客户端和 SQL 工作台，支持 Windows、macOS 和 Linux，可连接 30 多种数据库（如 MySQL、PostgreSQL、Oracle 等）。它提供完整的 SQL 编辑、补全、格式化、执行及历史记录功能，并集成 AI 助手，用户可接入自己的模型来生成、解释和优化 SQL。同时支持数据库元数据浏览、表对象管理（DDL/DML）、数据就地编辑、导入导出、仪表盘图表及 ER 图，解决开发者在多数据库操作和 SQL 编写中的效率问题。"
+      "zh_desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more."
     },
     {
       "full": "googleapis/mcp-toolbox",
@@ -28,22 +28,22 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MCP Toolbox for Databases 是一个开源的模型上下文协议（MCP）服务器，用 Go 编写，可将 AI 代理、IDE 和应用程序直接连接到企业数据库。它提供两种用途：一是作为即用型 MCP 服务器，通过预构建的通用工具连接 Gemini CLI、Claude Code 等客户端，实现数据查询、模式探索和代码生成；二是作为自定义工具框架，支持安全地构建结构化查询、语义搜索和 NL2SQL 等生产级 AI 工具。"
+      "zh_desc": "MCP Toolbox for Databases is an open source MCP server for databases."
     },
     {
       "full": "t8y2/dbx",
       "name": "dbx",
-      "stars": 12875,
+      "stars": 12891,
       "lang": "Rust",
       "desc": "20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
       "url": "https://github.com/t8y2/dbx",
-      "pushed": "2026-08-01T07:15:19Z",
+      "pushed": "2026-08-01T11:56:45Z",
       "delta": null,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "dbx 是一个用 Rust 编写的数据库桌面客户端，体积约 20 MB，支持 70 多种数据库，提供桌面应用、Docker、CLI、内置 AI 助手及 MCP Server 等多种使用方式，旨在解决多数据库统一连接与管理的问题。"
+      "zh_desc": "20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。"
     },
     {
       "full": "prest/prest",
@@ -58,7 +58,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "pREST（prest/prest）是一个基于Go语言的生产级API工具，能在现有或新建的PostgreSQL数据库上即时生成REST和Model Context Protocol（MCP）API，提供CRUD操作、自定义SQL路由、认证、访问控制列表（ACL）及只读MCP端点，无需手动编写后端代码，解决快速构建数据库API的问题。"
+      "zh_desc": "PostgreSQL ➕ REST, low-code, simplify and accelerate development, ⚡ instant, realtime, high-performance on any Postgres application, existing or new, MCP server"
     },
     {
       "full": "bytebase/dbhub",
@@ -73,7 +73,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "DBHub 是一个零依赖、token 高效的 MCP 服务器，实现 Model Context Protocol 接口，让 Claude Desktop、Cursor 等 MCP 客户端通过统一接口连接并探索 PostgreSQL、MySQL、SQL Server、SQLite 等数据库。它提供多数据库和多连接支持，具备只读模式、行数限制和查询超时等安全防护，以及 SSH 隧道和 SSL/TLS 加密，核心功能包括执行 SQL 查询和搜索数据库对象，旨在以最小工具集最大化上下文窗口，解决 AI 工具访问数据库时的资源消耗和安全管控问题。"
+      "zh_desc": "Token efficient, zero-dependency database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite."
     },
     {
       "full": "mayneyao/eidos",
@@ -88,7 +88,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Eidos 是一个可扩展的个人数据管理框架，将 SQLite 转化为人人可用的个人口袋数据库。它提供 Notion 风格的文档和数据库功能，支持完全离线运行、本地存储，并深度集成 LLM 实现翻译、摘要等 AI 能力，同时通过扩展系统支持自定义 UI 组件和 TypeScript/JavaScript/Python 脚本处理逻辑。"
+      "zh_desc": "An extensible framework for Personal Data Management."
     },
     {
       "full": "dosco/graphjin",
@@ -103,7 +103,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "GraphJin是一个用Go编写的编译器和运行时，通过GraphQL和MCP为AI代理提供统一治理的数据访问层，支持PostgreSQL、MySQL、MongoDB等数据库及文件、代码索引等系统。其核心功能包括智能发现、查询验证、操作审计和执行账本，解决代理直接使用原始凭证访问多系统时缺乏治理和可审计性的问题。"
+      "zh_desc": "One governed graph for AI agents — GraphQL + MCP over your databases, files, APIs, and code"
     },
     {
       "full": "matrixorigin/matrixone",
@@ -112,13 +112,13 @@
       "lang": "Go",
       "desc": "AI-native HTAP database with Git-for-Data and built-in vector search, serving as the data and memory backbone for intelligent agents and applications.",
       "url": "https://github.com/matrixorigin/matrixone",
-      "pushed": "2026-08-01T07:47:54Z",
+      "pushed": "2026-08-01T11:30:29Z",
       "delta": null,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MatrixOne 是一款采用 Go 语言开发、具备 MySQL 兼容性、AI 原生及云原生特性的超融合数据库，其核心创新在于将 Git 风格的版本控制引入数据管理领域，旨在解决数据协作与版本管理难题。"
+      "zh_desc": "AI-native HTAP database with Git-for-Data and built-in vector search, serving as the data and memory backbone for intelligent agents and applications."
     },
     {
       "full": "julien040/anyquery",
@@ -133,7 +133,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Anyquery 是一个基于 SQLite 构建的 SQL 查询引擎，允许用户通过 SQL 查询文件、数据库和各类应用（如 Apple Notes、Notion、Chrome、Todoist 等）中的数据，并支持连接 LLM 以访问数据，同时可作为 MySQL 服务器使用，通过插件机制扩展功能。"
+      "zh_desc": "One SQL interface for 60+ tools (e.g., GitHub, Notion, Airtable). Plug into any LLM through MCP."
     },
     {
       "full": "designcomputer/mysql_mcp_server",
@@ -148,25 +148,25 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MySQL MCP Server 是一个基于 Model Context Protocol 的 Python 服务组件，通过受控接口实现 AI 应用与 MySQL 数据库的安全交互，支持列出表资源、读取表内容、执行 SQL 查询及获取 schema 信息，并提供多数据库模式、SSE/HTTP 传输、SSH 隧道和表数据采样功能，通过环境变量配置实现安全访问。"
+      "zh_desc": "A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases"
     }
   ],
   "emerging": [],
   "spotlight": {
     "full": "OtterMind/Chat2DB",
     "name": "Chat2DB",
-    "stars": 27591,
+    "stars": 27593,
     "lang": "Java",
     "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
     "url": "https://github.com/OtterMind/Chat2DB",
-    "pushed": "2026-08-01T05:51:04Z",
+    "pushed": "2026-08-01T11:39:13Z",
     "delta": null,
     "tags": [
       "主轨"
     ],
     "track": "主轨",
-    "zh_desc": "Chat2DB 是一个免费、跨平台的 AI 驱动数据库客户端和 SQL 工作台，支持 Windows、macOS 和 Linux，可连接 30 多种数据库（如 MySQL、PostgreSQL、Oracle 等）。它提供完整的 SQL 编辑、补全、格式化、执行及历史记录功能，并集成 AI 助手，用户可接入自己的模型来生成、解释和优化 SQL。同时支持数据库元数据浏览、表对象管理（DDL/DML）、数据就地编辑、导入导出、仪表盘图表及 ER 图，解决开发者在多数据库操作和 SQL 编写中的效率问题。"
+    "zh_desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more."
   },
-  "spotlight_text": "① **解决什么问题**：为开发者、DBA、分析师提供跨平台AI数据库客户端，将SQL工作台与AI助手结合，支持30+数据库类型，解决多数据库管理及SQL编写优化效率问题。\n\n② **核心亮点**：完全本地运行，支持Windows/macOS/Linux；自带完整SQL编辑、补全、格式化及执行历史功能；可接入自有AI模型实现自然语言生成/解释/优化SQL；提供数据导入导出、仪表盘图表及ER图可视化；附带支持MCP的开源CLI。\n\n③ **适用场景/注意事项**：适合需要统一管理多种数据库的团队或个人。桌面版需从GitHub Releases下载安装；Docker部署要求2核CPU+4GB内存，首次需配置加密密钥。",
+  "spotlight_text": null,
   "hot_is_delta": false
 }
