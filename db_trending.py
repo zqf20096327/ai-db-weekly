@@ -29,6 +29,7 @@ from datetime import datetime, timedelta, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 CACHE_DIR = os.path.join(HERE, "cache")
 OUTPUT_DIR = os.path.join(HERE, "output")
+DRAFT_DIR = os.path.join(OUTPUT_DIR, "draft")   # 非发布日的草稿目录
 
 # --- 采集范围（改这里调整「抓什么」）---
 # 搜索方式：两轨都用 topic:database，只是 star/时间不同
@@ -66,6 +67,7 @@ EMERGING_STARS_MIN = 2       # 副轨最低 star
 EMERGING_CREATED_DAYS = 14   # 副轨新建窗口（近 N 天创建）
 MAIN_MAX_PAGES = 10          # 主轨分页数（每页100，10页=最多1000，GitHub上限）
 DELTA_DAYS = 7               # 周增量计算的天数
+PUBLISH_WEEKDAY = 0          # 周几发布周报：0=周一 1=周二 ... 6=周日
 
 # --- 榜单条数（改这里调整「展示多少」）---
 HOT_TOP_N = 10
@@ -577,9 +579,105 @@ def render_entry(idx, v):
 
 
 def count_issues():
+    """期数 = output/ 根目录下已发布的周报 .md 数 + 1。
+    只数根目录（正式周报），不数 draft/ 子目录（每日草稿）。"""
     if not os.path.isdir(OUTPUT_DIR):
         return 1
-    return len([f for f in os.listdir(OUTPUT_DIR) if f.endswith(".md")]) + 1
+    # 只数直接位于 OUTPUT_DIR 下的 .md（跳过子目录如 draft/）
+    files = [f for f in os.listdir(OUTPUT_DIR)
+             if f.endswith(".md") and os.path.isfile(os.path.join(OUTPUT_DIR, f))]
+    return len(files) + 1
+
+
+def is_publish_day():
+    """今天是否为发布日（默认周一）。发布日才更新 README、把周报放 output/ 根目录。"""
+    return TODAY_DT.weekday() == PUBLISH_WEEKDAY
+
+
+def _readme_path():
+    return os.path.join(HERE, "README.md")
+
+
+def _extract_latest_block(md_text):
+    """从周报 .md 提取要展示在 README「本期周报」区块的内容。
+    策略：去掉第一行的 H1 标题（README 有自己的标题），其余作为本期正文。"""
+    lines = md_text.splitlines()
+    # 跳过开头的 # 标题行和紧跟的空行
+    out = []
+    skipped_title = False
+    for ln in lines:
+        if not skipped_title and ln.startswith("# "):
+            skipped_title = True
+            continue
+        out.append(ln)
+    # 去掉首尾空行
+    return "\n".join(out).strip()
+
+
+def _latest_summary(md_text, md_relpath, issue_no, date_str):
+    """组装 README 顶部的「本期周报」区块 HTML。"""
+    body = _extract_latest_block(md_text)
+    header = (
+        f"<!-- LATEST:START --> 本期周报区块由脚本 update_readme() 自动维护，请勿手动编辑此段 -->\n"
+        f"> 📖 **本期周报**：[第 {issue_no} 期 · {date_str}]({md_relpath})\n"
+        f"> 📚 **历史周报**：见文末[「往期周报」](#往期周报)\n"
+        f"\n---\n\n"
+    )
+    footer = f"\n<!-- LATEST:END -->"
+    return header + body + footer
+
+
+def _insert_archive_row(content, md_relpath, issue_no, date_str):
+    """往「往期周报」表格插入一行（最新期在最上，即表头分隔线之后）。
+    做法：把 ARCHIVE 区块里的表格行抽出来，重建为 干净的表格。"""
+    start_tag, end_tag = "<!-- ARCHIVE:START -->", "<!-- ARCHIVE:END -->"
+    i, j = content.find(start_tag), content.find(end_tag)
+    if i == -1 or j == -1:
+        return content
+    block = content[i + len(start_tag):j]
+
+    # 收集现有表格数据行（形如 | 第 N 期 | ... |，跳过表头和分隔线）
+    existing = [ln for ln in block.splitlines()
+                if re.match(r"^\|\s*第\s*\d+\s*期", ln)]
+    new_row = f"| 第 {issue_no} 期 | {date_str} | [{md_relpath}]({md_relpath}) |"
+    rows = [new_row] + existing  # 新期数置顶
+
+    # 重建表格：表头 + 分隔线 + 数据行
+    table = ["", "| 期数 | 日期 | 链接 |", "|------|------|------|"] + rows + [""]
+    new_block = "\n".join(table)
+    return content[:i + len(start_tag)] + new_block + content[j:]
+
+
+def update_readme(md_text, md_path):
+    """发布日调用：用最新周报更新 README 的「本期周报」+「往期周报」。
+    md_path 为周报文件绝对路径，用于换算 README 里的相对链接。"""
+    readme_p = _readme_path()
+    if not os.path.exists(readme_p):
+        print("    [update_readme] 未找到 README.md，跳过")
+        return
+    with open(readme_p, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    # 期数 & 相对路径 & 日期（日期从文件名提取，比 TODAY 更稳健）
+    issue_no = count_issues()
+    md_relpath = os.path.relpath(md_path, HERE).replace("\\", "/")
+    date_str = os.path.splitext(os.path.basename(md_path))[0]  # output/2026-08-08.md → 2026-08-08
+
+    # 1. 替换「本期周报」区块
+    start_tag, end_tag = "<!-- LATEST:START -->", "<!-- LATEST:END -->"
+    i, j = content.find(start_tag), content.find(end_tag)
+    if i != -1 and j != -1:
+        new_latest = _latest_summary(md_text, md_relpath, issue_no, date_str)
+        content = content[:i] + new_latest + content[j + len(end_tag):]
+    else:
+        print("    [update_readme] 未找到 LATEST 标记，跳过本期区块")
+
+    # 2. 往「往期周报」插入一行
+    content = _insert_archive_row(content, md_relpath, issue_no, date_str)
+
+    with open(readme_p, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"    [update_readme] 已更新 README：第 {issue_no} 期 · {date_str}")
 
 
 def render_markdown(views, hot_items, hot_is_delta, emerging, spotlight, spotlight_text):
@@ -684,13 +782,20 @@ def main():
     _save_ai_cache(ai_cache)
 
     # 渲染输出
+    # 发布日（周一）→ 正式周报放 output/ 根目录；其余日子 → 草稿放 output/draft/
+    publish = is_publish_day()
+    out_dir = OUTPUT_DIR if publish else DRAFT_DIR
+    os.makedirs(out_dir, exist_ok=True)
+    role = "发布(正式周报)" if publish else f"非发布日(草稿, PUBLISH_WEEKDAY={PUBLISH_WEEKDAY})"
+    print(f"\n[输出] 今天 {TODAY} → {role}")
+
     md = render_markdown(views, hot_items, hot_is_delta, emerging, spotlight, spotlight_text)
-    md_path = os.path.join(OUTPUT_DIR, f"{TODAY}.md")
+    md_path = os.path.join(out_dir, f"{TODAY}.md")
     with open(md_path, "w", encoding="utf-8") as f:
         f.write(md)
-    print(f"\n[OK] 已生成: {md_path}")
+    print(f"[OK] 已生成: {md_path}")
 
-    json_path = os.path.join(OUTPUT_DIR, f"{TODAY}.json")
+    json_path = os.path.join(out_dir, f"{TODAY}.json")
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump({"hot": hot_items, "emerging": emerging,
                    "spotlight": spotlight, "spotlight_text": spotlight_text,
@@ -698,6 +803,11 @@ def main():
                   f, ensure_ascii=False, indent=2,
                   default=lambda o: sorted(o) if isinstance(o, set) else str(o))
     print(f"[OK] 原始数据: {json_path}")
+
+    # 发布日：更新 README（本期周报 + 往期目录）
+    if publish:
+        print("\n[README] 发布日，更新首页...")
+        update_readme(md, md_path)
 
     print("\n" + "=" * 50 + "\n预览:\n" + "=" * 50)
     print(md)
