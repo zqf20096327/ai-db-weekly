@@ -1,0 +1,18 @@
+# === 密钥文件，绝对不能传到 GitHub ===
+.env
+
+# === 历史输出（可选保留，看你要不要版本历史）===
+# output/
+
+# === 无关文件：Oracle 运维脚本和打包产物，不属于周报项目 ===
+cluster_start.sh
+cluster_stop.sh
+shutdown_oracle.sh
+startup_oracle_v2.sh
+orasqldiag_skill.tar.gz
+
+# === 其他 ===
+__pycache__/
+*.pyc
+.DS_Store
+.zcode/
