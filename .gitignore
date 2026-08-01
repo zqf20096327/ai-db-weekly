@@ -1,8 +1,9 @@
 # === 密钥文件，绝对不能传到 GitHub ===
 .env
 
-# === 历史输出（可选保留，看你要不要版本历史）===
-# output/
+# === 运行产物：不入库 ===
+cache/
+output/*.json
 
 # === 无关文件：Oracle 运维脚本和打包产物，不属于周报项目 ===
 cluster_start.sh
