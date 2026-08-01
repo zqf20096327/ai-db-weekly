@@ -75,10 +75,14 @@ python db_trending.py              # 1分钟：采集+生成
 
 ## 配置项
 
-- **榜单条数**：搜 `section_hot_by_delta`（Top10）、`section_emerging`（Top5）
-- **采集范围**：编辑 `build_queries()` 增删方向
-- **star 门槛**：查询里的 `stars:>N`
-- **质量过滤**：`DESC_BLACKLIST`（关键词）和 `KNOWN_OFFTOPIC`（精确项目）
+所有可调参数集中在 `db_trending.py` 顶部的 **CONFIG 区**（约第 25–101 行），改这里就够了：
+
+- **采集范围**：`SEARCH_KEYWORD` / `SEARCH_MODE`（搜索关键词和方式）
+- **star 门槛**：`MAIN_STARS_MIN`（主轨）、`EMERGING_STARS_MIN`（副轨）
+- **榜单条数**：`HOT_TOP_N`（热门榜，默认 10）、`EMERGING_TOP_N`（新锐榜，默认 5）
+- **关键词词表**：`DB_KEYWORDS`（数据库名信号词）、`AI_KEYWORDS`（AI 信号词）
+- **README 精筛门槛**：`README_AI_MIN_HITS`（默认 ≥3 次命中）
+- **质量过滤**：`DESC_BLACKLIST`（关键词黑名单）、`KNOWN_OFFTOPIC`（精确项目黑名单）
 
 ## 文件结构
 
@@ -94,6 +98,45 @@ python db_trending.py              # 1分钟：采集+生成
     YYYY-MM-DD.md             # 每日成品 → 贴公众号
     YYYY-MM-DD.json           # 原始数据备份
 ```
+
+## GitHub Actions 自动化（推荐）
+
+配好后每天北京时间 08:00 自动采集，快照和成品自动提交回仓库，**无需本地运行**。
+
+### 1. 创建私有仓库并推送
+
+```bash
+# 在 GitHub 网页创建一个 Private 仓库（不要勾选初始化 README）
+# 然后本地：
+git remote add origin git@github.com:<你的用户名>/<仓库名>.git
+git push -u origin main
+```
+
+### 2. 配置 Secrets
+
+仓库页面 → **Settings → Secrets and variables → Actions → New repository secret**：
+
+| Secret 名 | 必填 | 值 | 说明 |
+|-----------|------|-----|------|
+| `AI_API_KEY` | 选填 | 你的智谱 key | 用于生成中文介绍。不配则用英文描述 |
+| `AI_BASE_URL` | 选填 | `https://open.bigmodel.cn/api/paas/v4` | AI 服务地址 |
+| `AI_MODEL` | 选填 | `glm-4-flash` | 模型名 |
+| `FEISHU_WEBHOOK` | 选填 | 飞书机器人 webhook | 配后自动推送周报到飞书群 |
+
+> `GITHUB_TOKEN` **不需要手动配**——Actions 自动注入，且已在 workflow 里声明了 `contents: write` 权限用于提交快照。
+
+### 3. 手动验证一次
+
+仓库 → **Actions → AI×DB 周报采集 → Run workflow**，等 5 分钟看是否绿勾。
+绿勾 = 采集成功 + 快照已自动提交回仓库（会看到一个 `auto: YYYY-MM-DD 采集` 的 commit）。
+
+### 自动化行为说明
+
+- **定时**：每天 UTC 00:00（北京 08:00）跑一次
+- **快照持久化**：`cache/snapshot_YYYY-MM-DD.json` 每天自动 commit 回仓库，**这就是周增量的数据来源**，连续跑满 7 天后才会有真实增量
+- **失败排查**：Actions 报红时点进去看日志，常见原因——AI key 过期（429 限流）、GitHub 搜索 API 限流（每小时 30 次，正常够用）
+
+---
 
 ## 公众号发布
 
