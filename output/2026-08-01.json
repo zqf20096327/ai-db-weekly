@@ -33,11 +33,11 @@
     {
       "full": "t8y2/dbx",
       "name": "dbx",
-      "stars": 12891,
+      "stars": 12893,
       "lang": "Rust",
       "desc": "20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
       "url": "https://github.com/t8y2/dbx",
-      "pushed": "2026-08-01T11:56:45Z",
+      "pushed": "2026-08-01T12:28:55Z",
       "delta": null,
       "tags": [
         "主轨"
