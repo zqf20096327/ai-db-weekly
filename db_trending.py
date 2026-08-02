@@ -32,11 +32,11 @@ OUTPUT_DIR = os.path.join(HERE, "output")
 DRAFT_DIR = os.path.join(OUTPUT_DIR, "draft")   # 非发布日的草稿目录
 
 # --- 采集范围（改这里调整「抓什么」）---
-# 搜索方式：两轨都用 topic:database，只是 star/时间不同
-# 主轨: topic:database stars:>50 pushed:>180天
-# 副轨: topic:database stars:>2  created:>14天
-SEARCH_KEYWORD = "database"
-SEARCH_MODE = "topic"          # topic:database
+# 搜索方式：两轨都搜索下面这些 topic（OR 组合），只是 star/时间不同
+# 主轨: (topic 列表) stars:>50 pushed:>180天
+# 副轨: (topic 列表) stars:>2  created:>14天
+# 想加新 topic 只需往列表加一个字符串，比如再加 "nl2sql"
+SEARCH_TOPICS = ["database", "oracle-database"]
 
 # 数据库名称信号词：验证阶段用，项目描述/topics 里命中任一即视为关系型数据库相关
 # 想加新库（如 GaussDB）只需往列表加一个字符串
@@ -354,42 +354,48 @@ def is_ai_by_readme(readme_text):
 # ============================================================
 # 双轨搜索（两轨搜索方式+验证规则完全相同，只是 star/时间不同）
 # ============================================================
-def _build_query(stars_min, time_filter):
-    """构建统一的搜索查询：topic:database + star + 时间条件。"""
-    return f"topic:{SEARCH_KEYWORD} stars:>{stars_min} {time_filter}"
+def _build_query(topic, stars_min, time_filter):
+    """构建单 topic 搜索查询：topic:X + star + 时间条件。
+    GitHub Search API 对多 topic 的 OR 组合支持不稳定（常返回0或报错），
+    所以策略是「每个 topic 单独查，代码层合并去重」，见 _fetch_track。"""
+    return f"topic:{topic} stars:>{stars_min} {time_filter}"
 
 
 def _fetch_track(track_name, stars_min, time_filter, max_pages, per_page=100, raw_pool=None):
-    """通用采集函数：执行搜索 + 黑名单 + 双重验证。
+    """通用采集函数：遍历每个 SEARCH_TOPICS 各搜一次 + 黑名单 + 双重验证 + 合并去重。
 
-    主轨和副轨共用此函数，只是参数不同。
+    为什么逐个 topic 搜而不是 OR 组合：GitHub Search API 对
+    (topic:A OR topic:B) 这类带括号的多 topic 查询支持不稳定
+    （与其他限定符组合时常返回 0 或报错），所以改为代码层合并。
+
     raw_pool: 传入一个 dict，所有搜索到的原始项目都会存进去（用于全量快照）。
     """
-    query = _build_query(stars_min, time_filter)
     merged = {}
-    for page in range(1, max_pages + 1):
-        items = search_repos(query, per_page=per_page, page=page)
-        if not items:
-            break
-        kept = 0
-        for it in items:
-            full = it.get("full_name", "")
-            if not full:
-                continue
-            # 全量记录到 raw_pool（不管是否通过筛选，都存 star 供增量对比）
-            if raw_pool is not None and full not in raw_pool:
-                raw_pool[full] = it
-            # 初筛：黑名单 + 双重关键词
-            if full in merged or is_blacklisted(it) or not is_ai_db(it):
-                continue
-            it["_track"] = track_name
-            it["_tags"] = {track_name}
-            merged[full] = it
-            kept += 1
-        print(f"  · {track_name}第{page}页: 抓{len(items)} 留{kept}")
-        time.sleep(1)
-        if len(items) < per_page:
-            break
+    for topic in SEARCH_TOPICS:
+        query = _build_query(topic, stars_min, time_filter)
+        for page in range(1, max_pages + 1):
+            items = search_repos(query, per_page=per_page, page=page)
+            if not items:
+                break
+            kept = 0
+            for it in items:
+                full = it.get("full_name", "")
+                if not full:
+                    continue
+                # 全量记录到 raw_pool（不管是否通过筛选，都存 star 供增量对比）
+                if raw_pool is not None and full not in raw_pool:
+                    raw_pool[full] = it
+                # 初筛：黑名单 + 双重关键词；已在结果里的跳过（跨 topic 去重）
+                if full in merged or is_blacklisted(it) or not is_ai_db(it):
+                    continue
+                it["_track"] = track_name
+                it["_tags"] = {track_name}
+                merged[full] = it
+                kept += 1
+            print(f"  · {track_name}[topic:{topic}]第{page}页: 抓{len(items)} 留{kept}")
+            time.sleep(1)
+            if len(items) < per_page:
+                break
     return merged
 
 
