@@ -1,0 +1,172 @@
+{
+  "hot": [
+    {
+      "full": "OtterMind/Chat2DB",
+      "name": "Chat2DB",
+      "stars": 27594,
+      "lang": "Java",
+      "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
+      "url": "https://github.com/OtterMind/Chat2DB",
+      "pushed": "2026-08-01T11:39:13Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more."
+    },
+    {
+      "full": "googleapis/mcp-toolbox",
+      "name": "mcp-toolbox",
+      "stars": 16095,
+      "lang": "Go",
+      "desc": "MCP Toolbox for Databases is an open source MCP server for databases.",
+      "url": "https://github.com/googleapis/mcp-toolbox",
+      "pushed": "2026-08-01T05:42:53Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "MCP Toolbox for Databases is an open source MCP server for databases."
+    },
+    {
+      "full": "t8y2/dbx",
+      "name": "dbx",
+      "stars": 12912,
+      "lang": "Rust",
+      "desc": "20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
+      "url": "https://github.com/t8y2/dbx",
+      "pushed": "2026-08-02T00:12:22Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。"
+    },
+    {
+      "full": "prest/prest",
+      "name": "prest",
+      "stars": 4606,
+      "lang": "Go",
+      "desc": "PostgreSQL ➕ REST, low-code, simplify and accelerate development, ⚡ instant, realtime, high-performance on any Postgres application, existing or new, MCP server",
+      "url": "https://github.com/prest/prest",
+      "pushed": "2026-08-01T22:06:20Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "PostgreSQL ➕ REST, low-code, simplify and accelerate development, ⚡ instant, realtime, high-performance on any Postgres application, existing or new, MCP server"
+    },
+    {
+      "full": "bytebase/dbhub",
+      "name": "dbhub",
+      "stars": 3266,
+      "lang": "TypeScript",
+      "desc": "Token efficient, zero-dependency database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.",
+      "url": "https://github.com/bytebase/dbhub",
+      "pushed": "2026-07-31T18:28:09Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Token efficient, zero-dependency database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite."
+    },
+    {
+      "full": "mayneyao/eidos",
+      "name": "eidos",
+      "stars": 3160,
+      "lang": "TypeScript",
+      "desc": "An extensible framework for Personal Data Management.",
+      "url": "https://github.com/mayneyao/eidos",
+      "pushed": "2026-07-30T19:40:39Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "An extensible framework for Personal Data Management."
+    },
+    {
+      "full": "dosco/graphjin",
+      "name": "graphjin",
+      "stars": 3130,
+      "lang": "Go",
+      "desc": "One governed graph for AI agents — GraphQL + MCP over your databases, files, APIs, and code",
+      "url": "https://github.com/dosco/graphjin",
+      "pushed": "2026-08-01T19:56:09Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "One governed graph for AI agents — GraphQL + MCP over your databases, files, APIs, and code"
+    },
+    {
+      "full": "matrixorigin/matrixone",
+      "name": "matrixone",
+      "stars": 1873,
+      "lang": "Go",
+      "desc": "AI-native HTAP database with Git-for-Data and built-in vector search, serving as the data and memory backbone for intelligent agents and applications.",
+      "url": "https://github.com/matrixorigin/matrixone",
+      "pushed": "2026-08-01T19:10:51Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "AI-native HTAP database with Git-for-Data and built-in vector search, serving as the data and memory backbone for intelligent agents and applications."
+    },
+    {
+      "full": "julien040/anyquery",
+      "name": "anyquery",
+      "stars": 1739,
+      "lang": "Go",
+      "desc": "One SQL interface for 60+ tools (e.g., GitHub, Notion, Airtable). Plug into any LLM through MCP.",
+      "url": "https://github.com/julien040/anyquery",
+      "pushed": "2026-07-11T11:20:19Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "One SQL interface for 60+ tools (e.g., GitHub, Notion, Airtable). Plug into any LLM through MCP."
+    },
+    {
+      "full": "designcomputer/mysql_mcp_server",
+      "name": "mysql_mcp_server",
+      "stars": 1348,
+      "lang": "Python",
+      "desc": "A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases",
+      "url": "https://github.com/designcomputer/mysql_mcp_server",
+      "pushed": "2026-07-30T12:28:20Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases"
+    }
+  ],
+  "emerging": [],
+  "spotlight": {
+    "full": "OtterMind/Chat2DB",
+    "name": "Chat2DB",
+    "stars": 27594,
+    "lang": "Java",
+    "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
+    "url": "https://github.com/OtterMind/Chat2DB",
+    "pushed": "2026-08-01T11:39:13Z",
+    "delta": null,
+    "tags": [
+      "主轨"
+    ],
+    "track": "主轨",
+    "zh_desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more."
+  },
+  "spotlight_text": null,
+  "hot_is_delta": false
+}
