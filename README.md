@@ -4,7 +4,7 @@
 按**周 star 增量**排序，输出一份 Markdown，直接复制贴公众号。
 
 <!-- LATEST:START --> 本期周报区块由脚本 update_readme() 自动维护，请勿手动编辑此段 -->
-> 📖 **本期周报**：[第 1 期 · 2026-08-01](output/2026-08-01.md)
+> 📖 **本期周报**：[第 2 期 · 2026-08-02](output/2026-08-02.md)
 > 📚 **历史周报**：见文末[「往期周报」](#往期周报)
 
 ---
@@ -19,68 +19,102 @@
 ## 🔥 本周热门 Top10
 > 💡 数据积累中：需连续运行 7 天后展示真实「周 star 增量」。本期暂按 star 绝对值排序。
 
-**1. OtterMind/Chat2DB**
-🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.
+
+---
+
+**1. OtterMind/Chat2DB**  ⭐27.6k · Java · 更新 1天前
+> Chat2DB是一款支持30+数据库的AI驱动数据库客户端，核心功能是内置SQL工作台和可接入自有模型的AI助手。
+
 🔗 https://github.com/OtterMind/Chat2DB
-⭐ 27.6k ｜ Java ｜ 更新 0天前
 
-**2. googleapis/mcp-toolbox**
-MCP Toolbox for Databases is an open source MCP server for databases.
+
+---
+
+**2. googleapis/mcp-toolbox**  ⭐16.1k · Go · 更新 1天前
+> MCP Toolbox for Databases 是一个开源 MCP 服务器，用于将 AI 代理、IDE 和应用直接连接到企业数据库，并提供预构建通用工具。
+
 🔗 https://github.com/googleapis/mcp-toolbox
-⭐ 16.1k ｜ Go ｜ 更新 0天前
 
-**3. t8y2/dbx**
-20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。
+
+---
+
+**3. t8y2/dbx**  ⭐13.0k · Rust · 更新 0天前
+> 一个用Rust编写的数据库客户端，支持70多种数据库，提供桌面、Docker、CLI及内置AI助手和MCP服务器。
+
 🔗 https://github.com/t8y2/dbx
-⭐ 12.9k ｜ Rust ｜ 更新 0天前
 
-**4. prest/prest**
-PostgreSQL ➕ REST, low-code, simplify and accelerate development, ⚡ instant, realtime, high-performance on any Postgres application, existing or new, MCP server
+
+---
+
+**4. prest/prest**  ⭐4.6k · Go · 更新 1天前
+> pREST是一个基于Go的PostgreSQL REST API工具，可即时提供CRUD、自定义SQL路由、认证和只读MCP端点功能。
+
 🔗 https://github.com/prest/prest
-⭐ 4.6k ｜ Go ｜ 更新 0天前
 
-**5. bytebase/dbhub**
-Token efficient, zero-dependency database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.
+
+---
+
+**5. oracle-devrel/oracle-ai-developer-hub**  ⭐4.3k · Jupyter Notebook · 更新 1天前
+> 该仓库提供使用Oracle AI数据库和OCI服务构建AI应用、代理及系统的技术资源与参考实现。
+
+🔗 https://github.com/oracle-devrel/oracle-ai-developer-hub
+
+
+---
+
+**6. bytebase/dbhub**  ⭐3.3k · TypeScript · 更新 2天前
+> DBHub 是一个零依赖、token 高效的 MCP 服务器，让 MCP 客户端通过统一接口连接并探索 PostgreSQL、MySQL 等五种数据库。
+
 🔗 https://github.com/bytebase/dbhub
-⭐ 3.3k ｜ TypeScript ｜ 更新 1天前
 
-**6. mayneyao/eidos**
-An extensible framework for Personal Data Management.
+
+---
+
+**7. mayneyao/eidos**  ⭐3.2k · TypeScript · 更新 3天前
+> Eidos是一个将SQLite转化为个人数据库的可扩展个人数据管理框架，支持离线使用和AI功能。
+
 🔗 https://github.com/mayneyao/eidos
-⭐ 3.2k ｜ TypeScript ｜ 更新 2天前
 
-**7. dosco/graphjin**
-One governed graph for AI agents — GraphQL + MCP over your databases, files, APIs, and code
+
+---
+
+**8. dosco/graphjin**  ⭐3.1k · Go · 更新 0天前
+> GraphJin 是一个将数据库、仓库、文件等系统统一为受治理 GraphQL 接口的编译器与运行时，供 AI 代理安全查询和操作。
+
 🔗 https://github.com/dosco/graphjin
-⭐ 3.1k ｜ Go ｜ 更新 0天前
 
-**8. matrixorigin/matrixone**
-AI-native HTAP database with Git-for-Data and built-in vector search, serving as the data and memory backbone for intelligent agents and applications.
+
+---
+
+**9. matrixorigin/matrixone**  ⭐1.9k · Go · 更新 0天前
+> MatrixOne是一款兼容MySQL的云原生数据库，核心卖点是业界首个将Git式版本控制引入数据管理的AI原生数据库。
+
 🔗 https://github.com/matrixorigin/matrixone
-⭐ 1.9k ｜ Go ｜ 更新 0天前
 
-**9. julien040/anyquery**
-One SQL interface for 60+ tools (e.g., GitHub, Notion, Airtable). Plug into any LLM through MCP.
+
+---
+
+**10. julien040/anyquery**  ⭐1.7k · Go · 更新 22天前
+> Anyquery是一个基于SQLite的SQL查询引擎，可通过插件查询文件、数据库和各类应用数据。
+
 🔗 https://github.com/julien040/anyquery
-⭐ 1.7k ｜ Go ｜ 更新 21天前
-
-**10. designcomputer/mysql_mcp_server**
-A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases
-🔗 https://github.com/designcomputer/mysql_mcp_server
-⭐ 1.3k ｜ Python ｜ 更新 2天前
 
 **🎯 本周重点解读**
 
 **OtterMind/Chat2DB**
 
-🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.
+① **解决什么问题**：为开发者、DBA、分析师提供跨平台数据库客户端，将SQL工作台与AI助手结合，支持30+数据库连接，解决多数据库管理及SQL编写效率问题。
 
-⭐ 27.6k ｜ Java ｜ 更新 0天前
+② **核心亮点**：完全本地运行，支持Windows/macOS/Linux；AI助手可接入自有模型，实现自然语言生成、解释、优化SQL；内置数据导入导出、仪表盘图表及ER图功能；提供开源CLI并支持MCP协议。
+
+③ **适用场景/注意事项**：适合需要统一管理多种数据库的团队。桌面版免配置直接安装；Docker部署需2核CPU+4GiB内存，且首次需生成加密密钥。AI功能需自备模型API。
+
+⭐ 27.6k ｜ Java ｜ 更新 1天前
 
 ---
 💬 互动：本周你最关注哪个项目？欢迎留言。
 
-<sub>由 ai_db_weekly 自动采集于 2026-08-01，候选池 18 个项目。介绍基于各项目 README 由 AI 生成。</sub>
+<sub>由 ai_db_weekly 自动采集于 2026-08-02，候选池 20 个项目。介绍基于各项目 README 由 AI 生成。</sub>
 <!-- LATEST:END -->
 
 ---
@@ -90,5 +124,6 @@ A Model Context Protocol (MCP) server that enables secure interaction with MySQL
 <!-- ARCHIVE:START -->
 | 期数 | 日期 | 链接 |
 |------|------|------|
+| 第 2 期 | 2026-08-02 | [output/2026-08-02.md](output/2026-08-02.md) |
 | 第 1 期 | 2026-08-01 | [output/2026-08-01.md](output/2026-08-01.md) |
 <!-- ARCHIVE:END -->
