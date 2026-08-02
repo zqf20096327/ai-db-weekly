@@ -253,10 +253,10 @@ def gen_zh_desc(full_name, en_desc, lang, cache):
     context = f"项目README（节选）：\n{readme}" if readme else f"英文描述：{en_desc or '（无）'}"
     prompt = (
         f"你是数据库技术编辑。基于以下项目的真实信息，用一句话介绍它，要求：\n"
-        f"1. 中文，100字左右\n"
-        f"2. 说清它是做什么的、核心功能、解决什么问题\n"
+        f"1. 中文，严格控制在 60 字以内（一个短句）\n"
+        f"2. 只说它是做什么的 + 一个最核心的功能或卖点\n"
         f"3. 只陈述 README 里的事实，不要臆测或夸大\n"
-        f"4. 不要寒暄，直接输出介绍内容\n\n"
+        f"4. 不要寒暄、不要分点、不要换行，直接输出一句话\n\n"
         f"项目名：{full_name}\n主要语言：{lang}\n{context}"
     )
     text = _call_ai_chat([{"role": "user", "content": prompt}])
@@ -574,14 +574,18 @@ def days_ago_label(iso_str):
 
 
 def render_entry(idx, v):
+    """卡片型排版：标题行(含元信息) + 一句话介绍 + 链接，用分割线分隔项目。"""
     tag_str = fmt_tags(v["tags"])
-    title = f"**{idx}. {v['full']}**" + (f" {tag_str}" if tag_str else "")
-    desc = v.get("zh_desc") or v["desc"]
-    meta = [f"⭐ {fmt_stars(v['stars'])}", v["lang"]]
+    # 元信息：⭐ 语言 [📈 增量] [更新X天前]，拼到标题行右侧
+    meta = [f"⭐{fmt_stars(v['stars'])}", v["lang"]]
     if has_delta(v):
-        meta.append(f"📈 {fmt_delta(v['delta'])}/周")
+        meta.append(f"📈{fmt_delta(v['delta'])}/周")
     meta.append(f"更新 {days_ago_label(v['pushed'])}")
-    return "\n".join([title, desc, f"🔗 {v['url']}", " ｜ ".join(meta), ""])
+    meta_str = " · ".join(meta)
+    title = f"**{idx}. {v['full']}**" + (f" {tag_str}" if tag_str else "") + f"  {meta_str}"
+    desc = v.get("zh_desc") or v["desc"]
+    # 卡片：分割线 + 标题行 + 引用式介绍 + 链接
+    return "\n".join(["", "---", "", title, f"> {desc}", "", f"🔗 {v['url']}", ""])
 
 
 def count_issues():
