@@ -67,7 +67,7 @@ EMERGING_STARS_MIN = 2       # 副轨最低 star
 EMERGING_CREATED_DAYS = 14   # 副轨新建窗口（近 N 天创建）
 MAIN_MAX_PAGES = 10          # 主轨分页数（每页100，10页=最多1000，GitHub上限）
 DELTA_DAYS = 7               # 周增量计算的天数
-PUBLISH_WEEKDAY = 0          # 周几发布周报：0=周一 1=周二 ... 6=周日
+PUBLISH_WEEKDAY = 6          # 周几发布周报：0=周一 ... 6=周日 [临时=6周日,验证卡片排版后改回0]
 
 # --- 榜单条数（改这里调整「展示多少」）---
 HOT_TOP_N = 10
