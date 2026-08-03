@@ -8,9 +8,9 @@ name: AI×DB 周报采集
 #       不会重复发期或污染往期目录。
 on:
   schedule:
-    - cron: '15 9 * * *'    # 北京 09:15
-    - cron: '15 13 * * *'    # 北京 13:15
-    - cron: '15 16 * * *'   # 北京 16:15
+    - cron: '15 1 * * *'    # 北京 09:15
+    - cron: '15 5 * * *'    # 北京 13:15
+    - cron: '15 8 * * *'   # 北京 16:15
   workflow_dispatch: {}    # 允许手动触发
 
 # 关键：默认 GITHUB_TOKEN 是 read-only，必须显式给写权限才能 push 回仓库
