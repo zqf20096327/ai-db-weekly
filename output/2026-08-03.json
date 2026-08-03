@@ -7,22 +7,22 @@
       "lang": "Java",
       "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
       "url": "https://github.com/OtterMind/Chat2DB",
-      "pushed": "2026-08-03T08:36:22Z",
+      "pushed": "2026-08-03T11:19:45Z",
       "delta": null,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Chat2DB是一款支持30多种数据库的AI驱动数据库客户端，核心功能是让用户自带AI模型生成、解释和优化SQL。"
+      "zh_desc": "Chat2DB是一款AI驱动的跨平台数据库客户端，支持30多种数据库，并提供SQL工作区和AI辅助生成、优化SQL的功能。"
     },
     {
       "full": "googleapis/mcp-toolbox",
       "name": "mcp-toolbox",
-      "stars": 16108,
+      "stars": 16110,
       "lang": "Go",
       "desc": "MCP Toolbox for Databases is an open source MCP server for databases.",
       "url": "https://github.com/googleapis/mcp-toolbox",
-      "pushed": "2026-08-03T06:52:37Z",
+      "pushed": "2026-08-03T09:59:31Z",
       "delta": null,
       "tags": [
         "主轨"
@@ -33,11 +33,11 @@
     {
       "full": "t8y2/dbx",
       "name": "dbx",
-      "stars": 13047,
+      "stars": 13070,
       "lang": "Rust",
       "desc": "20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
       "url": "https://github.com/t8y2/dbx",
-      "pushed": "2026-08-03T08:38:13Z",
+      "pushed": "2026-08-03T11:18:53Z",
       "delta": null,
       "tags": [
         "主轨"
@@ -48,7 +48,7 @@
     {
       "full": "prest/prest",
       "name": "prest",
-      "stars": 4607,
+      "stars": 4608,
       "lang": "Go",
       "desc": "PostgreSQL ➕ REST, low-code, simplify and accelerate development, ⚡ instant, realtime, high-performance on any Postgres application, existing or new, MCP server",
       "url": "https://github.com/prest/prest",
@@ -58,7 +58,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "pREST是一个基于PostgreSQL的即用型REST和MCP API服务，支持CRUD、自定义SQL路由、认证和ACL，无需手写后端。"
+      "zh_desc": "pREST是一个基于Go的PostgreSQL REST API工具，可直接对现有或新建数据库提供即时CRUD、自定义SQL路由及MCP端点，无需编写后端代码。"
     },
     {
       "full": "oracle-devrel/oracle-ai-developer-hub",
@@ -73,12 +73,12 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "提供基于Oracle AI数据库和OCI服务的AI应用、代理及系统构建技术资源与参考实现。"
+      "zh_desc": "提供Oracle AI数据库与OCI服务的AI应用、代理及系统构建技术资源与参考实现。"
     },
     {
       "full": "bytebase/dbhub",
       "name": "dbhub",
-      "stars": 3272,
+      "stars": 3273,
       "lang": "TypeScript",
       "desc": "Minimal database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.",
       "url": "https://github.com/bytebase/dbhub",
@@ -88,12 +88,12 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "DBHub是一个极简MCP服务器，零依赖、默认仅加载两个工具，让MCP客户端通过单一接口连接PostgreSQL、MySQL等五种数据库。"
+      "zh_desc": "DBHub 是一个极简 MCP 服务器，让 MCP 客户端通过统一接口连接探索多种数据库，默认仅加载 2 个工具，令牌消耗低至 1.4k。"
     },
     {
       "full": "mayneyao/eidos",
       "name": "eidos",
-      "stars": 3164,
+      "stars": 3165,
       "lang": "TypeScript",
       "desc": "An extensible framework for Personal Data Management.",
       "url": "https://github.com/mayneyao/eidos",
@@ -118,7 +118,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "GraphJin 是一个将数据库、仓库、文件等系统统一为受治理 GraphQL 接口的编译器与运行时，供 AI 代理安全查询和操作。"
+      "zh_desc": "GraphJin 是一个将数据库、仓库、文件等系统统一为受治理 Graph 的编译器与运行时，通过 GraphQL 和 MCP 为 AI 代理提供可审计的查询与执行能力。"
     },
     {
       "full": "matrixorigin/matrixone",
@@ -127,13 +127,13 @@
       "lang": "Go",
       "desc": "AI-native HTAP database with Git-for-Data and built-in vector search, serving as the data and memory backbone for intelligent agents and applications.",
       "url": "https://github.com/matrixorigin/matrixone",
-      "pushed": "2026-08-03T08:08:34Z",
+      "pushed": "2026-08-03T11:19:45Z",
       "delta": null,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MatrixOne是一款兼容MySQL的云原生AI数据库，核心卖点是业界首创将Git式版本控制引入数据管理。"
+      "zh_desc": "MatrixOne是一款兼容MySQL的云原生数据库，核心卖点是首个将Git式版本控制引入数据管理的AI原生数据库。"
     },
     {
       "full": "julien040/anyquery",
@@ -148,7 +148,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Anyquery是一个基于SQLite的SQL查询引擎，可通过插件查询文件、数据库和应用，并支持连接LLM访问数据。"
+      "zh_desc": "Anyquery是一个基于SQLite的SQL查询引擎，支持通过插件查询文件、数据库和应用，并可作为MySQL服务器使用。"
     }
   ],
   "emerging": [],
@@ -159,14 +159,14 @@
     "lang": "Java",
     "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
     "url": "https://github.com/OtterMind/Chat2DB",
-    "pushed": "2026-08-03T08:36:22Z",
+    "pushed": "2026-08-03T11:19:45Z",
     "delta": null,
     "tags": [
       "主轨"
     ],
     "track": "主轨",
-    "zh_desc": "Chat2DB是一款支持30多种数据库的AI驱动数据库客户端，核心功能是让用户自带AI模型生成、解释和优化SQL。"
+    "zh_desc": "Chat2DB是一款AI驱动的跨平台数据库客户端，支持30多种数据库，并提供SQL工作区和AI辅助生成、优化SQL的功能。"
   },
-  "spotlight_text": "## 本周重点解读：Chat2DB\n\n**① 解决什么问题**  \n为开发者、DBA 和分析师提供跨平台（Windows/macOS/Linux）的 AI 数据库客户端，整合 SQL 工作台与自带模型接入的 AI 助手，解决多数据库管理、SQL 编写优化及数据可视化需求。\n\n**② 核心亮点**  \n支持 30+ 数据库（含 MySQL、PostgreSQL、MongoDB 等及插件扩展）；内置 SQL 编辑、补全、格式化与执行历史；AI 助手可生成/解释/优化 SQL；提供数据导入导出、仪表盘图表及 ER 图；开源 CLI 支持 MCP。\n\n**③ 适用场景/注意事项**  \n适用于个人及团队日常数据库操作与数据分析。桌面端即装即用；Docker 部署需 2+ CPU、4+ GiB RAM，且需先配置加密密钥。AI 功能需自备模型 API。",
+  "spotlight_text": "## 本周重点解读：Chat2DB\n\n**① 解决什么问题**  \n为开发者、DBA、分析师提供跨平台（Windows/macOS/Linux）的AI数据库客户端，整合SQL工作台与AI助手，支持30+数据库（MySQL、PostgreSQL、Oracle等），解决多数据库管理、SQL编写优化及数据可视化需求。\n\n**② 核心亮点**  \n- 完全本地运行，支持自带AI模型（BYOK）进行自然语言SQL生成、解释与优化  \n- 内置SQL编辑、补全、格式化、执行历史及数据原地编辑功能  \n- 提供Docker部署选项（需2核CPU/4GiB内存），并附带开源CLI（支持MCP协议）\n\n**③ 适用场景/注意事项**  \n适用于需要统一管理多种数据库且注重数据隐私的团队。桌面版需从GitHub Releases下载安装；Docker部署需先配置加密密钥（详见README说明），且要求Docker 19.03+及Compose V2。",
   "hot_is_delta": false
 }
