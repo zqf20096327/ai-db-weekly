@@ -23,7 +23,7 @@
 ---
 
 **1. OtterMind/Chat2DB**  ⭐27.6k · Java · 更新 2天前
-> Chat2DB是一款支持30多种数据库的AI驱动数据库客户端，提供SQL工作区和自带AI模型助手功能。
+> Chat2DB是一款支持30多种数据库的AI驱动数据库客户端，核心功能是内置SQL工作台并允许接入自有AI模型生成和优化SQL。
 
 🔗 https://github.com/OtterMind/Chat2DB
 
@@ -31,7 +31,7 @@
 ---
 
 **2. googleapis/mcp-toolbox**  ⭐16.1k · Go · 更新 1天前
-> MCP Toolbox for Databases 是一个开源 MCP 服务器，用于将 AI 代理、IDE 和应用直接连接到企业数据库，并提供预构建的通用工具。
+> MCP Toolbox for Databases 是一个开源 MCP 服务器，用于将 AI 代理、IDE 和应用直接连接到企业数据库，并提供预构建通用工具。
 
 🔗 https://github.com/googleapis/mcp-toolbox
 
@@ -47,7 +47,7 @@
 ---
 
 **4. prest/prest**  ⭐4.6k · Go · 更新 2天前
-> pRESTd是一个基于Go的PostgreSQL REST API工具，能在现有或新建Postgres数据库上即时提供CRUD、自定义SQL路由、认证和MCP端点。
+> pREST是一个基于Go的PostgreSQL REST API工具，可为现有或新建Postgres数据库提供即时REST和MCP API，无需手写后端。
 
 🔗 https://github.com/prest/prest
 
@@ -55,7 +55,7 @@
 ---
 
 **5. oracle-devrel/oracle-ai-developer-hub**  ⭐4.3k · Jupyter Notebook · 更新 2天前
-> 该仓库提供使用Oracle AI数据库和OCI服务构建AI应用、代理及系统的技术资源与参考实现。
+> 该仓库提供基于Oracle AI数据库和OCI服务构建AI应用、代理及系统的技术资源，含完整参考实现。
 
 🔗 https://github.com/oracle-devrel/oracle-ai-developer-hub
 
@@ -63,14 +63,14 @@
 ---
 
 **6. bytebase/dbhub**  ⭐3.3k · TypeScript · 更新 3天前
-> DBHub是一个零依赖、token高效的MCP服务器，让Claude等MCP客户端通过统一接口连接PostgreSQL、MySQL等五种数据库。
+> DBHub 是一个零依赖、token 高效的 MCP 服务器，让 MCP 客户端通过统一接口连接并探索 PostgreSQL、MySQL、SQLite 等多种数据库。
 
 🔗 https://github.com/bytebase/dbhub
 
 
 ---
 
-**7. mayneyao/eidos**  ⭐3.2k · TypeScript · 更新 4天前
+**7. mayneyao/eidos**  ⭐3.2k · TypeScript · 更新 0天前
 > Eidos是一个将SQLite转化为个人数据库的可扩展个人数据管理框架，支持离线使用和AI功能。
 
 🔗 https://github.com/mayneyao/eidos
@@ -79,7 +79,7 @@
 ---
 
 **8. dosco/graphjin**  ⭐3.1k · Go · 更新 1天前
-> GraphJin 是一个将数据库、仓库、文件等系统统一为受治理的 GraphQL 图，供 AI 代理安全查询和操作的服务。
+> GraphJin 是一个将数据库、仓库、文件等系统统一为受治理 Graph 的编译器与运行时，核心卖点是让 AI 代理通过 GraphQL 和 MCP 安全、可审计地访问数据。
 
 🔗 https://github.com/dosco/graphjin
 
@@ -95,7 +95,7 @@
 ---
 
 **10. julien040/anyquery**  ⭐1.7k · Go · 更新 23天前
-> Anyquery是一个基于SQLite的SQL查询引擎，可通过插件查询文件、数据库及应用，并支持连接LLM访问数据。
+> Anyquery是一个基于SQLite的SQL查询引擎，可通过插件查询文件、数据库和各类应用，并支持连接LLM访问数据。
 
 🔗 https://github.com/julien040/anyquery
 
@@ -103,19 +103,11 @@
 
 **OtterMind/Chat2DB**
 
-**Chat2DB 本周重点解读**
+① **解决什么问题**：为开发者、DBA、分析师提供跨平台数据库客户端，将SQL工作台与AI助手结合，支持30+数据库连接，解决多数据库管理及SQL编写效率问题。
 
-**① 解决什么问题**  
-为开发者、DBA 及数据团队提供跨平台（Windows/macOS/Linux）的 AI 数据库客户端，整合 SQL 工作台与自带模型接入的 AI 助手，解决多数据库管理、SQL 编写优化及数据可视化需求。
+② **核心亮点**：完全本地运行，支持Windows/macOS/Linux；自带SQL编辑、补全、格式化及执行历史功能；AI助手可接入自有模型，实现自然语言生成、解释和优化SQL；提供数据导入导出、仪表盘图表及ER图可视化。
 
-**② 核心亮点**  
-- 支持 30+ 数据库（MySQL、PostgreSQL、Oracle 等）及插件扩展  
-- 内置 SQL 编辑、补全、格式化、执行历史与保存功能  
-- AI 助手可接入自有模型，实现自然语言生成/解释/优化 SQL  
-- 提供数据导入导出、仪表盘图表及 ER 图，并开源支持 MCP 的 CLI 工具  
-
-**③ 适用场景/注意事项**  
-适用于本地数据库日常管理与分析场景，可通过桌面安装包或 Docker（需 2+ CPU、4+ GiB RAM）部署。首次使用需按文档配置加密密钥，AI 功能依赖用户自备模型。
+③ **适用场景/注意事项**：适合需要统一管理多种数据库的团队；Docker部署需2核CPU+4GiB RAM以上；首次使用需配置加密密钥；AI功能需自行准备模型API。
 
 ⭐ 27.6k ｜ Java ｜ 更新 2天前
 
