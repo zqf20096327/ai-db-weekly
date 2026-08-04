@@ -7,13 +7,13 @@
       "lang": "Java",
       "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
       "url": "https://github.com/OtterMind/Chat2DB",
-      "pushed": "2026-08-04T03:51:27Z",
+      "pushed": "2026-08-04T04:28:25Z",
       "delta": null,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Chat2DB是一款支持30多种数据库的AI驱动数据库客户端，提供SQL工作台和自带模型的AI助手功能。"
+      "zh_desc": "Chat2DB是一款支持30+数据库的AI驱动数据库客户端，提供SQL工作台并允许接入自有AI模型生成和优化SQL。"
     },
     {
       "full": "googleapis/mcp-toolbox",
@@ -28,22 +28,22 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MCP Toolbox for Databases is an open source MCP server for databases."
+      "zh_desc": "MCP Toolbox for Databases 是一个开源 MCP 服务器，可将 AI 代理、IDE 和应用直接连接到企业数据库，并提供预构建通用工具。"
     },
     {
       "full": "t8y2/dbx",
       "name": "dbx",
-      "stars": 13119,
+      "stars": 13120,
       "lang": "Rust",
       "desc": "20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
       "url": "https://github.com/t8y2/dbx",
-      "pushed": "2026-08-04T02:14:43Z",
+      "pushed": "2026-08-04T04:17:19Z",
       "delta": null,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "一个用Rust编写的数据库客户端，支持70多种数据库，提供桌面、Docker、CLI及内置AI助手和MCP服务器。"
+      "zh_desc": "一个用Rust编写的数据库客户端，支持70多种数据库，提供桌面、Docker、CLI及内置AI助手和MCP服务器功能。"
     },
     {
       "full": "prest/prest",
@@ -58,7 +58,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "pREST 是一个基于 Go 的 PostgreSQL REST API 工具，可为现有或新建 Postgres 数据库提供即时 CRUD、自定义 SQL 路由及 MCP 端点，无需手写后端。"
+      "zh_desc": "pREST是一个基于PostgreSQL的即用型REST和MCP API工具，支持CRUD、自定义SQL路由、认证和ACL，无需手写后端。"
     },
     {
       "full": "oracle-devrel/oracle-ai-developer-hub",
@@ -73,7 +73,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "该仓库提供构建AI应用、智能体及系统的技术资源，核心是展示Oracle AI数据库与OCI服务的端到端参考实现。"
+      "zh_desc": "该仓库提供基于Oracle AI数据库和OCI服务构建AI应用、代理及系统的技术资源与参考实现。"
     },
     {
       "full": "bytebase/dbhub",
@@ -88,7 +88,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Minimal database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite."
+      "zh_desc": "DBHub是一个极简MCP服务器，零依赖、默认仅两个工具，让MCP客户端通过单一接口连接并探索PostgreSQL、MySQL、SQLite等多种数据库。"
     },
     {
       "full": "mayneyao/eidos",
@@ -103,7 +103,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Eidos是一个将SQLite转化为个人数据库的可扩展个人数据管理框架，支持离线使用和AI功能。"
+      "zh_desc": "Eidos是一个将SQLite转化为个人口袋数据库的可扩展个人数据管理框架，支持离线使用和AI功能。"
     },
     {
       "full": "dosco/graphjin",
@@ -133,7 +133,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MatrixOne是一款兼容MySQL的云原生数据库，核心卖点是业界首个为数据提供Git式版本控制的数据库。"
+      "zh_desc": "MatrixOne是一款兼容MySQL的云原生数据库，核心卖点是业界首个将Git式版本控制引入数据管理的AI原生数据库。"
     },
     {
       "full": "julien040/anyquery",
@@ -159,14 +159,14 @@
     "lang": "Java",
     "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
     "url": "https://github.com/OtterMind/Chat2DB",
-    "pushed": "2026-08-04T03:51:27Z",
+    "pushed": "2026-08-04T04:28:25Z",
     "delta": null,
     "tags": [
       "主轨"
     ],
     "track": "主轨",
-    "zh_desc": "Chat2DB是一款支持30多种数据库的AI驱动数据库客户端，提供SQL工作台和自带模型的AI助手功能。"
+    "zh_desc": "Chat2DB是一款支持30+数据库的AI驱动数据库客户端，提供SQL工作台并允许接入自有AI模型生成和优化SQL。"
   },
-  "spotlight_text": null,
+  "spotlight_text": "① **解决什么问题**：为开发者、DBA、分析师提供跨平台数据库客户端，将SQL工作台与AI助手结合，支持自然语言生成、解释和优化SQL，解决多数据库管理及SQL编写效率问题。\n\n② **核心亮点**：支持30+数据库（含MySQL、PostgreSQL、MongoDB等），提供SQL编辑/补全/格式化、数据可视化、ER图、导入导出功能；AI助手可接入自有模型；提供桌面端、Docker及开源CLI（支持MCP）三种部署方式。\n\n③ **适用场景/注意事项**：适合需要统一管理多种数据库的团队，或希望用AI辅助SQL开发的个人。桌面端免配置，Docker部署需2核CPU+4GB内存，使用前需配置加密密钥。",
   "hot_is_delta": false
 }
