@@ -3,47 +3,47 @@
     {
       "full": "t8y2/dbx",
       "name": "dbx",
-      "stars": 13289,
+      "stars": 13308,
       "lang": "Rust",
       "desc": "20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
       "url": "https://github.com/t8y2/dbx",
-      "pushed": "2026-08-05T09:29:35Z",
-      "delta": 396,
+      "pushed": "2026-08-05T15:58:32Z",
+      "delta": 415,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "一个用Rust编写的数据库客户端，支持70多种数据库，提供桌面、Docker、CLI及内置AI助手和MCP服务器。"
+      "zh_desc": "一个用Rust编写的数据库客户端，支持70多种数据库，提供桌面、Docker、CLI及内置AI助手和MCP服务器功能。"
     },
     {
       "full": "OtterMind/Chat2DB",
       "name": "Chat2DB",
-      "stars": 27644,
+      "stars": 27649,
       "lang": "Java",
       "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
       "url": "https://github.com/OtterMind/Chat2DB",
-      "pushed": "2026-08-05T10:21:34Z",
-      "delta": 51,
+      "pushed": "2026-08-05T13:33:11Z",
+      "delta": 56,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Chat2DB是一款支持30多种数据库的AI驱动数据库客户端，核心功能是内置SQL工作台并允许接入自有AI模型生成和优化SQL。"
+      "zh_desc": "Chat2DB是一款支持30+数据库的AI驱动数据库客户端和SQL工作台，核心卖点是可接入自有AI模型生成、解释和优化SQL。"
     },
     {
       "full": "googleapis/mcp-toolbox",
       "name": "mcp-toolbox",
-      "stars": 16124,
+      "stars": 16126,
       "lang": "Go",
       "desc": "MCP Toolbox for Databases is an open source MCP server for databases.",
       "url": "https://github.com/googleapis/mcp-toolbox",
-      "pushed": "2026-08-05T08:55:12Z",
-      "delta": 32,
+      "pushed": "2026-08-05T11:04:26Z",
+      "delta": 34,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MCP Toolbox for Databases 是一个开源 MCP 服务器，用于将 AI 代理和 IDE 直接连接到企业数据库，并提供预构建的通用工具。"
+      "zh_desc": "MCP Toolbox for Databases 是一个开源 MCP 服务器，用于将 AI 代理、IDE 和应用直接连接到企业数据库，并提供预构建通用工具。"
     },
     {
       "full": "bytebase/dbhub",
@@ -58,7 +58,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "DBHub 是一个极简 MCP 服务器，让 MCP 客户端通过单一接口连接并探索多种数据库，默认仅加载两个工具，令牌消耗低至 1.4k。"
+      "zh_desc": "DBHub是一个极简MCP服务器，零依赖，默认仅加载2个工具，让MCP客户端通过单一接口连接PostgreSQL、MySQL等数据库。"
     },
     {
       "full": "designcomputer/mysql_mcp_server",
@@ -73,7 +73,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "这是一个基于模型上下文协议（MCP）的MySQL数据库安全交互服务器，支持SQL查询、多数据库模式及SSE/HTTP传输。"
+      "zh_desc": "这是一个基于模型上下文协议（MCP）的MySQL数据库安全交互服务器，支持SQL查询、表资源列表及SSH隧道连接。"
     },
     {
       "full": "NodeDB-Lab/nodedb",
@@ -82,13 +82,13 @@
       "lang": "Rust",
       "desc": "The memory & storage engine for AI agents. Multi-model, edge-to-cloud, PostgreSQL-compatible.",
       "url": "https://github.com/NodeDB-Lab/nodedb",
-      "pushed": "2026-08-05T09:37:06Z",
+      "pushed": "2026-08-05T14:51:43Z",
       "delta": 4,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "NodeDB是为AI代理设计的嵌入式内存与存储引擎，支持语义、关系、情景和时间序列数据，并具备离线同步能力。"
+      "zh_desc": "NodeDB是一个为AI代理设计的持久化、可查询、带访问控制的记忆与存储引擎，支持语义、关系、情节和时间序列数据一体化管理。"
     },
     {
       "full": "prest/prest",
@@ -103,7 +103,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "pREST是一个基于PostgreSQL的即开即用REST和MCP API工具，支持CRUD、自定义SQL路由、认证和ACL，无需手写后端。"
+      "zh_desc": "pREST是一个基于Go的PostgreSQL REST API工具，为现有或新建Postgres数据库提供即时REST和MCP API，支持CRUD、自定义SQL路由、认证和ACL。"
     },
     {
       "full": "dosco/graphjin",
@@ -118,7 +118,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "GraphJin 是一个将数据库、仓库、文件等系统统一为受治理图，并通过 GraphQL 和 MCP 为 AI 代理提供安全查询与执行的服务。"
+      "zh_desc": "GraphJin 是一个将数据库、仓库、文件等系统统一为受治理 Graph 的编译器与运行时，通过 GraphQL 和 MCP 为 AI 代理提供可审计的安全数据访问。"
     },
     {
       "full": "matrixorigin/matrixone",
@@ -127,13 +127,13 @@
       "lang": "Go",
       "desc": "AI-native HTAP database with Git-for-Data and built-in vector search, serving as the data and memory backbone for intelligent agents and applications.",
       "url": "https://github.com/matrixorigin/matrixone",
-      "pushed": "2026-08-05T10:37:16Z",
+      "pushed": "2026-08-05T15:57:51Z",
       "delta": 1,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MatrixOne是一款兼容MySQL的云原生AI数据库，核心卖点是业界首个将Git式版本控制引入数据管理的数据库。"
+      "zh_desc": "MatrixOne是一款兼容MySQL的云原生数据库，核心卖点是业界首个将Git式版本控制引入数据管理的AI原生数据库。"
     },
     {
       "full": "TencentCloudBase/CloudBase-AI-Toolkit",
@@ -142,31 +142,31 @@
       "lang": "TypeScript",
       "desc": "Backend for AI coding agents on CloudBase — database, auth, functions via Plugin, Skills & MCP.",
       "url": "https://github.com/TencentCloudBase/CloudBase-AI-Toolkit",
-      "pushed": "2026-08-05T10:23:27Z",
+      "pushed": "2026-08-05T14:21:30Z",
       "delta": 1,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "为AI编程工具提供CloudBase后端集成层，通过MCP操作数据库、函数、存储并支持从聊天中部署。"
+      "zh_desc": "CloudBase AI Toolkit 是腾讯云为 AI 编程工具提供的后端集成层，通过 MCP 协议让 AI 直接操作数据库、函数、存储并完成部署。"
     }
   ],
   "emerging": [],
   "spotlight": {
     "full": "t8y2/dbx",
     "name": "dbx",
-    "stars": 13289,
+    "stars": 13308,
     "lang": "Rust",
     "desc": "20 MB lightweight cross-platform database client for 70+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 70+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP Server。",
     "url": "https://github.com/t8y2/dbx",
-    "pushed": "2026-08-05T09:29:35Z",
-    "delta": 396,
+    "pushed": "2026-08-05T15:58:32Z",
+    "delta": 415,
     "tags": [
       "主轨"
     ],
     "track": "主轨",
-    "zh_desc": "一个用Rust编写的数据库客户端，支持70多种数据库，提供桌面、Docker、CLI及内置AI助手和MCP服务器。"
+    "zh_desc": "一个用Rust编写的数据库客户端，支持70多种数据库，提供桌面、Docker、CLI及内置AI助手和MCP服务器功能。"
   },
-  "spotlight_text": "**本周重点解读：t8y2/dbx**\n\n**① 解决什么问题**  \n解决开发者在多数据库环境下需要安装多个客户端、切换不同工具的问题，将 70+ 数据库的访问统一到一个 20MB 的单一工具中。\n\n**② 核心亮点**  \n- 单一二进制支持 70+ 数据库，体积仅 20MB  \n- 提供桌面端、Docker、CLI 三种使用形态  \n- 内置 AI 助手及 MCP Server 能力，可接入 AI 工具链  \n- 支持通过 MCP Toplist 验证的 MCP 协议集成\n\n**③ 适用场景/注意事项**  \n适用于需要频繁切换多种数据库的开发、运维场景，或希望将数据库操作接入 AI 工作流的用户。注意：AI 助手与 MCP 功能的具体能力边界需查阅完整文档确认，README 未提供详细配置说明。",
+  "spotlight_text": "**本周重点解读：t8y2/dbx**\n\n**① 解决什么问题**  \n将 70+ 种数据库统一封装为约 20MB 的单体工具，提供桌面端、Docker、CLI 三种使用形态，并内置 AI 助手与 MCP Server，解决多数据库环境下的连接与管理碎片化问题。\n\n**② 核心亮点**  \n- 单一二进制覆盖 70+ 数据库，体积仅 20MB  \n- 同时提供桌面 GUI、容器化部署、命令行三种交互方式  \n- 内置 AI 辅助能力，并可作为 MCP Server 接入外部工具链\n\n**③ 适用场景/注意事项**  \n适合需要频繁切换多种数据库的开发与运维场景。注意：AI 助手与 MCP 功能的具体能力边界需查阅完整文档；Docker 部署时镜像体积与资源占用需自行验证。",
   "hot_is_delta": true
 }
