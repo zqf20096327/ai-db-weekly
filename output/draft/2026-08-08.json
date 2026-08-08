@@ -13,7 +13,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Chat2DB是一款支持40多种数据库的AI驱动数据库客户端，提供SQL工作台和自带模型的AI助手功能。"
+      "zh_desc": "Chat2DB是一款AI驱动的跨平台数据库客户端，支持40多种数据库，提供SQL工作台和自带模型的AI助手功能。"
     },
     {
       "full": "googleapis/mcp-toolbox",
@@ -28,22 +28,22 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MCP Toolbox for Databases 是一个开源 MCP 服务器，可将 AI 代理、IDE 和应用直接连接到企业数据库，并提供预构建通用工具。"
+      "zh_desc": "MCP Toolbox for Databases 是一个开源 MCP 服务器，用于将 AI 代理和 IDE 直接连接到企业数据库，并提供预构建的通用工具。"
     },
     {
       "full": "bytebase/dbhub",
       "name": "dbhub",
-      "stars": 3304,
+      "stars": 3305,
       "lang": "TypeScript",
       "desc": "Minimal database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.",
       "url": "https://github.com/bytebase/dbhub",
       "pushed": "2026-08-06T02:44:10Z",
-      "delta": 39,
+      "delta": 40,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "DBHub 是一个极简 MCP 服务器，让 MCP 客户端通过统一接口连接并探索多种数据库，默认仅加载两个工具，消耗约 1.4k tokens。"
+      "zh_desc": "DBHub 是一个极简 MCP 服务器，让 MCP 客户端通过统一接口连接并探索 PostgreSQL、MySQL 等数据库，默认仅加载 2 个工具，令牌消耗低至 1.4k。"
     },
     {
       "full": "prest/prest",
@@ -58,7 +58,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "pREST是一个基于Go的PostgreSQL REST API工具，能在现有或新数据库上即时提供CRUD、自定义SQL路由和MCP端点。"
+      "zh_desc": "pREST是一个基于Go的PostgreSQL REST API工具，能在现有或新建Postgres数据库上即时提供CRUD、自定义SQL路由和MCP端点，无需手写后端。"
     },
     {
       "full": "designcomputer/mysql_mcp_server",
@@ -73,7 +73,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "这是一个基于模型上下文协议（MCP）的MySQL数据库安全交互服务器，支持SQL查询、表资源列表及SSH隧道连接。"
+      "zh_desc": "这是一个基于模型上下文协议（MCP）的MySQL数据库安全交互服务器，支持SQL查询、多数据库模式及SSE/HTTP传输。"
     },
     {
       "full": "NodeDB-Lab/nodedb",
@@ -88,7 +88,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "NodeDB是为AI代理设计的嵌入式内存与存储引擎，支持语义、关系、情景和时间序列记忆，可在设备端离线运行并同步至云端。"
+      "zh_desc": "NodeDB是一个为AI代理设计的统一内存与存储引擎，支持语义、关系、情景和时间序列数据，可嵌入式运行并支持离线同步。"
     },
     {
       "full": "dosco/graphjin",
@@ -103,7 +103,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "GraphJin 是一个将数据库、仓库、文件等系统统一为受治理图，并通过 GraphQL 和 MCP 为 AI 代理提供安全查询与执行审计的编译器与运行时。"
+      "zh_desc": "GraphJin 是一个将数据库、仓库、文件等系统统一为受治理 Graph 的编译器与运行时，核心卖点是让 AI 代理通过 GraphQL 和 MCP 安全地发现、验证并执行查询。"
     },
     {
       "full": "call518/MCP-PostgreSQL-Ops",
@@ -118,7 +118,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "这是一个用于PostgreSQL运维监控的MCP服务器，支持通过自然语言查询慢查询、表膨胀等性能分析。"
+      "zh_desc": "这是一个基于自然语言查询的PostgreSQL运维监控MCP服务器，支持12-18版本，提供只读安全操作和智能维护建议。"
     },
     {
       "full": "julien040/anyquery",
@@ -165,8 +165,8 @@
       "主轨"
     ],
     "track": "主轨",
-    "zh_desc": "Chat2DB是一款支持40多种数据库的AI驱动数据库客户端，提供SQL工作台和自带模型的AI助手功能。"
+    "zh_desc": "Chat2DB是一款AI驱动的跨平台数据库客户端，支持40多种数据库，提供SQL工作台和自带模型的AI助手功能。"
   },
-  "spotlight_text": "**本周重点解读：Chat2DB**\n\n**① 解决什么问题**  \n为开发者、DBA 及数据团队提供跨平台（Windows/macOS/Linux）的 AI 数据库客户端，整合 SQL 工作台与自带模型的 AI 助手，解决多数据库管理及 SQL 编写优化效率问题。\n\n**② 核心亮点**  \n- 支持 40+ 数据库（MySQL、PostgreSQL、ClickHouse 等），可通过配置扩展新 JDBC 数据库，无需改代码。  \n- 内置 SQL 编辑、补全、格式化、执行历史，及数据导入导出、仪表盘图表、ER 图功能。  \n- AI 助手支持自然语言生成/解释/优化 SQL，模型由用户自带。  \n- 提供开源 CLI 并支持 MCP 协议。\n\n**③ 适用场景/注意事项**  \n适用于本地数据库日常管理、SQL 开发及数据分析场景。桌面版安装即用，Docker 部署需 Docker 19.03.0+。AI 功能依赖用户自行配置模型，数据完全本地运行。",
+  "spotlight_text": "**本周重点解读：Chat2DB**\n\n**① 解决什么问题**  \n为开发者、DBA 和分析师提供跨平台（Windows/macOS/Linux）的 AI 数据库客户端，整合 SQL 工作台与自带模型的 AI 助手，解决多数据库管理、SQL 编写优化及数据可视化需求。\n\n**② 核心亮点**  \n- 支持 40+ 数据库（MySQL、PostgreSQL、ClickHouse 等），可通过配置扩展新 JDBC 数据库，无需改代码。  \n- 内置 SQL 编辑、补全、格式化及执行历史，并支持 AI 生成/解释/优化 SQL（需自带模型）。  \n- 提供数据导入导出、仪表盘图表、ER 图及开源 CLI（含 MCP 支持）。\n\n**③ 适用场景/注意事项**  \n适用于日常数据库管理、复杂查询优化及团队协作。桌面版需下载安装，Docker 部署要求 Docker 19.03.0+ 与 Compose V2；AI 功能依赖用户自行配置模型，数据本地运行。",
   "hot_is_delta": true
 }
