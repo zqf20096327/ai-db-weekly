@@ -2,43 +2,43 @@
   "date": "2026-08-08",
   "repos": {
     "supabase/supabase": {
-      "stars": 107680,
-      "pushed_at": "2026-08-08T03:49:28Z"
+      "stars": 107686,
+      "pushed_at": "2026-08-08T07:20:13Z"
     },
     "netdata/netdata": {
       "stars": 80077,
-      "pushed_at": "2026-08-08T00:16:07Z"
+      "pushed_at": "2026-08-08T07:57:02Z"
     },
     "redis/redis": {
-      "stars": 75928,
+      "stars": 75929,
       "pushed_at": "2026-08-07T09:55:44Z"
     },
     "Asabeneh/30-Days-Of-Python": {
-      "stars": 70378,
+      "stars": 70383,
       "pushed_at": "2026-07-06T06:59:29Z"
     },
     "meilisearch/meilisearch": {
-      "stars": 58905,
+      "stars": 58908,
       "pushed_at": "2026-08-06T15:47:46Z"
     },
     "etcd-io/etcd": {
-      "stars": 52091,
+      "stars": 52092,
       "pushed_at": "2026-08-06T20:33:46Z"
     },
     "dbeaver/dbeaver": {
-      "stars": 51344,
+      "stars": 51347,
       "pushed_at": "2026-08-07T15:38:52Z"
     },
     "ClickHouse/ClickHouse": {
-      "stars": 49118,
-      "pushed_at": "2026-08-08T05:53:51Z"
+      "stars": 49119,
+      "pushed_at": "2026-08-08T08:57:20Z"
     },
     "metabase/metabase": {
-      "stars": 48598,
+      "stars": 48605,
       "pushed_at": "2026-08-08T02:40:27Z"
     },
     "prisma/prisma": {
-      "stars": 47547,
+      "stars": 47546,
       "pushed_at": "2026-08-08T05:29:28Z"
     },
     "LeCoupa/awesome-cheatsheets": {
@@ -47,18 +47,18 @@
     },
     "pingcap/tidb": {
       "stars": 40406,
-      "pushed_at": "2026-08-08T04:05:01Z"
+      "pushed_at": "2026-08-08T08:42:27Z"
     },
     "duckdb/duckdb": {
-      "stars": 40079,
+      "stars": 40082,
       "pushed_at": "2026-08-07T15:14:50Z"
     },
     "sqlmapproject/sqlmap": {
       "stars": 38132,
-      "pushed_at": "2026-08-08T00:14:40Z"
+      "pushed_at": "2026-08-08T06:27:05Z"
     },
     "directus/directus": {
-      "stars": 37240,
+      "stars": 37245,
       "pushed_at": "2026-08-07T20:35:14Z"
     },
     "typeorm/typeorm": {
@@ -66,7 +66,7 @@
       "pushed_at": "2026-08-07T01:16:53Z"
     },
     "surrealdb/surrealdb": {
-      "stars": 32821,
+      "stars": 32834,
       "pushed_at": "2026-07-06T15:57:27Z"
     },
     "cockroachdb/cockroach": {
@@ -83,47 +83,47 @@
     },
     "dragonflydb/dragonfly": {
       "stars": 30976,
-      "pushed_at": "2026-08-07T16:43:18Z"
+      "pushed_at": "2026-08-08T08:53:18Z"
     },
     "chroma-core/chroma": {
-      "stars": 28978,
+      "stars": 28979,
       "pushed_at": "2026-08-07T21:22:23Z"
     },
     "mongodb/mongo": {
-      "stars": 28478,
+      "stars": 28481,
       "pushed_at": "2026-08-07T23:37:53Z"
     },
     "OtterMind/Chat2DB": {
-      "stars": 27843,
+      "stars": 27848,
       "pushed_at": "2026-08-07T13:25:09Z"
     },
     "PostgREST/postgrest": {
-      "stars": 27501,
+      "stars": 27502,
       "pushed_at": "2026-08-08T00:24:46Z"
     },
     "valkey-io/valkey": {
-      "stars": 26791,
-      "pushed_at": "2026-08-08T02:43:40Z"
+      "stars": 26799,
+      "pushed_at": "2026-08-08T08:04:02Z"
     },
     "taosdata/TDengine": {
       "stars": 25035,
-      "pushed_at": "2026-08-08T02:12:37Z"
+      "pushed_at": "2026-08-08T08:41:42Z"
     },
     "clockworklabs/SpacetimeDB": {
       "stars": 24988,
       "pushed_at": "2026-08-08T02:17:47Z"
     },
     "sqlitebrowser/sqlitebrowser": {
-      "stars": 24411,
+      "stars": 24414,
       "pushed_at": "2026-08-05T00:43:20Z"
     },
     "dolthub/dolt": {
-      "stars": 24108,
+      "stars": 24110,
       "pushed_at": "2026-08-08T01:56:34Z"
     },
     "tursodatabase/turso": {
-      "stars": 23750,
-      "pushed_at": "2026-08-08T03:34:10Z"
+      "stars": 23752,
+      "pushed_at": "2026-08-08T08:23:45Z"
     },
     "beekeeper-studio/beekeeper-studio": {
       "stars": 23331,
@@ -142,7 +142,7 @@
       "pushed_at": "2026-08-06T17:35:21Z"
     },
     "neondatabase/neon": {
-      "stars": 22799,
+      "stars": 22803,
       "pushed_at": "2026-05-25T13:07:37Z"
     },
     "chartdb/chartdb": {
@@ -150,19 +150,19 @@
       "pushed_at": "2026-08-08T00:55:33Z"
     },
     "typicode/lowdb": {
-      "stars": 22569,
+      "stars": 22570,
       "pushed_at": "2026-03-27T22:36:45Z"
     },
     "dgraph-io/dgraph": {
-      "stars": 21772,
+      "stars": 21773,
       "pushed_at": "2026-08-06T16:45:54Z"
     },
     "teableio/teable": {
-      "stars": 21635,
-      "pushed_at": "2026-08-08T05:23:24Z"
+      "stars": 21636,
+      "pushed_at": "2026-08-08T08:40:22Z"
     },
     "valeriansaliou/sonic": {
-      "stars": 21299,
+      "stars": 21300,
       "pushed_at": "2026-08-05T14:04:16Z"
     },
     "apache/shardingsphere": {
@@ -170,8 +170,8 @@
       "pushed_at": "2026-08-08T05:30:03Z"
     },
     "eosphoros-ai/DB-GPT": {
-      "stars": 19665,
-      "pushed_at": "2026-08-07T11:10:00Z"
+      "stars": 19667,
+      "pushed_at": "2026-08-08T08:21:50Z"
     },
     "amark/gun": {
       "stars": 19104,
@@ -190,19 +190,19 @@
       "pushed_at": "2026-07-27T09:39:22Z"
     },
     "VictoriaMetrics/VictoriaMetrics": {
-      "stars": 17488,
-      "pushed_at": "2026-08-07T19:49:52Z"
+      "stars": 17492,
+      "pushed_at": "2026-08-08T06:53:09Z"
     },
     "questdb/questdb": {
       "stars": 17237,
-      "pushed_at": "2026-08-08T00:10:15Z"
+      "pushed_at": "2026-08-08T08:46:23Z"
     },
     "tursodatabase/libsql": {
       "stars": 17109,
       "pushed_at": "2026-07-24T18:02:23Z"
     },
     "neo4j/neo4j": {
-      "stars": 17028,
+      "stars": 17030,
       "pushed_at": "2026-08-07T16:25:48Z"
     },
     "realm/realm-swift": {
@@ -211,15 +211,15 @@
     },
     "googleapis/mcp-toolbox": {
       "stars": 16136,
-      "pushed_at": "2026-08-07T20:02:31Z"
+      "pushed_at": "2026-08-08T07:03:58Z"
+    },
+    "apache/doris": {
+      "stars": 15745,
+      "pushed_at": "2026-08-07T17:46:40Z"
     },
     "dgraph-io/badger": {
       "stars": 15745,
       "pushed_at": "2026-08-07T22:13:07Z"
-    },
-    "apache/doris": {
-      "stars": 15744,
-      "pushed_at": "2026-08-07T17:46:40Z"
     },
     "electric-sql/pglite": {
       "stars": 15726,
@@ -234,7 +234,7 @@
       "pushed_at": "2026-08-07T05:38:47Z"
     },
     "dotnet/efcore": {
-      "stars": 14764,
+      "stars": 14766,
       "pushed_at": "2026-08-07T23:45:18Z"
     },
     "oxnr/awesome-bigdata": {
@@ -251,11 +251,11 @@
     },
     "kysely-org/kysely": {
       "stars": 14106,
-      "pushed_at": "2026-08-07T19:40:56Z"
+      "pushed_at": "2026-08-08T08:21:05Z"
     },
     "t8y2/dbx": {
-      "stars": 13674,
-      "pushed_at": "2026-08-08T04:00:51Z"
+      "stars": 13690,
+      "pushed_at": "2026-08-08T08:39:17Z"
     },
     "sql-js/sql.js": {
       "stars": 13657,
@@ -266,20 +266,20 @@
       "pushed_at": "2026-08-03T15:06:13Z"
     },
     "trinodb/trino": {
-      "stars": 13117,
+      "stars": 13118,
       "pushed_at": "2026-08-07T23:51:43Z"
     },
     "debezium/debezium": {
-      "stars": 12989,
+      "stars": 12990,
       "pushed_at": "2026-08-07T09:11:07Z"
     },
     "apache/zookeeper": {
-      "stars": 12785,
+      "stars": 12784,
       "pushed_at": "2026-07-17T18:55:25Z"
     },
     "citusdata/citus": {
       "stars": 12673,
-      "pushed_at": "2026-08-07T14:58:12Z"
+      "pushed_at": "2026-08-08T08:52:22Z"
     },
     "vesoft-inc/nebula": {
       "stars": 12334,
@@ -318,11 +318,11 @@
       "pushed_at": "2026-04-10T11:50:30Z"
     },
     "gristlabs/grist-core": {
-      "stars": 11431,
-      "pushed_at": "2026-08-07T22:37:58Z"
+      "stars": 11432,
+      "pushed_at": "2026-08-08T07:08:00Z"
     },
     "pressly/goose": {
-      "stars": 11307,
+      "stars": 11306,
       "pushed_at": "2026-08-08T00:22:57Z"
     },
     "FerretDB/FerretDB": {
@@ -335,7 +335,7 @@
     },
     "yugabyte/yugabyte-db": {
       "stars": 10455,
-      "pushed_at": "2026-08-08T04:03:38Z"
+      "pushed_at": "2026-08-08T07:29:02Z"
     },
     "oceanbase/oceanbase": {
       "stars": 10233,
@@ -358,7 +358,7 @@
       "pushed_at": "2026-08-06T12:28:41Z"
     },
     "SeaQL/sea-orm": {
-      "stars": 9850,
+      "stars": 9851,
       "pushed_at": "2026-08-02T20:18:57Z"
     },
     "tidwall/tile38": {
@@ -379,7 +379,7 @@
     },
     "databendlabs/databend": {
       "stars": 9410,
-      "pushed_at": "2026-08-08T01:23:27Z"
+      "pushed_at": "2026-08-08T08:38:16Z"
     },
     "nhost/nhost": {
       "stars": 9271,
@@ -391,11 +391,11 @@
     },
     "mikro-orm/mikro-orm": {
       "stars": 9156,
-      "pushed_at": "2026-08-07T10:48:33Z"
+      "pushed_at": "2026-08-08T08:57:26Z"
     },
     "paradedb/paradedb": {
       "stars": 9135,
-      "pushed_at": "2026-08-08T04:22:28Z"
+      "pushed_at": "2026-08-08T07:58:14Z"
     },
     "cloudnative-pg/cloudnative-pg": {
       "stars": 9108,
@@ -419,14 +419,14 @@
     },
     "groue/GRDB.swift": {
       "stars": 8591,
-      "pushed_at": "2026-06-18T12:13:40Z"
+      "pushed_at": "2026-08-08T08:57:22Z"
     },
     "digoal/blog": {
       "stars": 8541,
       "pushed_at": "2026-08-08T03:37:04Z"
     },
     "mongodb/mongo-go-driver": {
-      "stars": 8535,
+      "stars": 8536,
       "pushed_at": "2026-08-06T14:01:47Z"
     },
     "appbaseio/dejavu": {
@@ -446,20 +446,20 @@
       "pushed_at": "2026-07-29T11:01:30Z"
     },
     "MariaDB/server": {
-      "stars": 8057,
+      "stars": 8058,
       "pushed_at": "2026-08-07T22:36:58Z"
     },
     "databasus/databasus": {
-      "stars": 7868,
+      "stars": 7870,
       "pushed_at": "2026-07-26T19:02:43Z"
+    },
+    "vrana/adminer": {
+      "stars": 7551,
+      "pushed_at": "2026-08-07T14:46:21Z"
     },
     "msiemens/tinydb": {
       "stars": 7549,
       "pushed_at": "2026-08-06T21:24:19Z"
-    },
-    "vrana/adminer": {
-      "stars": 7545,
-      "pushed_at": "2026-08-07T14:46:21Z"
     },
     "WiseLibs/better-sqlite3": {
       "stars": 7418,
@@ -486,7 +486,7 @@
       "pushed_at": "2026-06-25T01:00:42Z"
     },
     "authzed/spicedb": {
-      "stars": 6947,
+      "stars": 6948,
       "pushed_at": "2026-08-08T00:30:42Z"
     },
     "apache/couchdb": {
@@ -498,7 +498,7 @@
       "pushed_at": "2026-08-04T13:26:42Z"
     },
     "pawelsalawa/letos": {
-      "stars": 6694,
+      "stars": 6693,
       "pushed_at": "2026-08-07T13:15:54Z"
     },
     "apache/zeppelin": {
@@ -527,7 +527,7 @@
     },
     "hibernate/hibernate-orm": {
       "stars": 6468,
-      "pushed_at": "2026-08-07T13:12:59Z"
+      "pushed_at": "2026-08-08T08:04:07Z"
     },
     "apache/iotdb": {
       "stars": 6375,
@@ -535,14 +535,14 @@
     },
     "MaterializeInc/materialize": {
       "stars": 6348,
-      "pushed_at": "2026-08-08T01:44:01Z"
+      "pushed_at": "2026-08-08T06:18:04Z"
     },
     "spatie/laravel-backup": {
-      "stars": 6017,
+      "stars": 6018,
       "pushed_at": "2026-08-07T11:21:13Z"
     },
     "apache/hive": {
-      "stars": 6006,
+      "stars": 6005,
       "pushed_at": "2026-08-06T13:34:15Z"
     },
     "alibaba/AliSQL": {
@@ -550,7 +550,7 @@
       "pushed_at": "2026-07-18T05:33:44Z"
     },
     "kurrent-io/KurrentDB": {
-      "stars": 5829,
+      "stars": 5830,
       "pushed_at": "2026-08-07T17:07:09Z"
     },
     "go-pg/pg": {
@@ -558,8 +558,8 @@
       "pushed_at": "2026-07-10T14:43:19Z"
     },
     "HelixDB/helix-db": {
-      "stars": 5710,
-      "pushed_at": "2026-08-07T11:03:05Z"
+      "stars": 5712,
+      "pushed_at": "2026-08-08T08:44:42Z"
     },
     "liquibase/liquibase": {
       "stars": 5579,
@@ -571,19 +571,19 @@
     },
     "baserow/baserow": {
       "stars": 5533,
-      "pushed_at": "2026-08-07T19:45:06Z"
+      "pushed_at": "2026-08-08T07:45:15Z"
     },
     "trailbaseio/trailbase": {
-      "stars": 5500,
+      "stars": 5505,
       "pushed_at": "2026-08-07T13:53:54Z"
     },
     "FalkorDB/FalkorDB": {
-      "stars": 5422,
-      "pushed_at": "2026-08-07T20:56:31Z"
+      "stars": 5426,
+      "pushed_at": "2026-08-08T08:40:41Z"
     },
     "TableProApp/TablePro": {
       "stars": 5418,
-      "pushed_at": "2026-08-06T16:41:21Z"
+      "pushed_at": "2026-08-08T08:40:13Z"
     },
     "mgramin/awesome-db-tools": {
       "stars": 5260,
@@ -591,18 +591,18 @@
     },
     "apache/ignite": {
       "stars": 5073,
-      "pushed_at": "2026-08-08T04:07:03Z"
+      "pushed_at": "2026-08-08T06:31:59Z"
     },
     "dbeaver/cloudbeaver": {
       "stars": 5073,
       "pushed_at": "2026-08-07T17:09:13Z"
     },
     "cmu-db/bustub": {
-      "stars": 5056,
+      "stars": 5057,
       "pushed_at": "2026-04-01T22:46:00Z"
     },
     "kwsch/PKHeX": {
-      "stars": 5020,
+      "stars": 5021,
       "pushed_at": "2026-08-07T17:11:29Z"
     },
     "orientechnologies/orientdb": {
@@ -635,7 +635,7 @@
     },
     "ydb-platform/ydb": {
       "stars": 4763,
-      "pushed_at": "2026-08-08T05:08:33Z"
+      "pushed_at": "2026-08-08T08:52:43Z"
     },
     "sqlectron/sqlectron": {
       "stars": 4759,
@@ -658,7 +658,7 @@
       "pushed_at": "2026-08-07T09:28:46Z"
     },
     "supabase/supabase-js": {
-      "stars": 4527,
+      "stars": 4528,
       "pushed_at": "2026-08-07T08:55:14Z"
     },
     "ruc-datalab/DeepAnalyze": {
@@ -674,7 +674,7 @@
       "pushed_at": "2026-08-07T13:49:58Z"
     },
     "typedb/typedb": {
-      "stars": 4406,
+      "stars": 4407,
       "pushed_at": "2026-08-07T16:06:19Z"
     },
     "oceanbase/miniob": {
@@ -691,7 +691,7 @@
     },
     "brocoders/nestjs-boilerplate": {
       "stars": 4367,
-      "pushed_at": "2026-08-07T22:29:39Z"
+      "pushed_at": "2026-08-08T08:55:10Z"
     },
     "canonical/dqlite": {
       "stars": 4364,
@@ -706,11 +706,11 @@
       "pushed_at": "2026-08-08T05:27:33Z"
     },
     "unum-cloud/USearch": {
-      "stars": 4255,
+      "stars": 4256,
       "pushed_at": "2026-07-10T18:39:13Z"
     },
     "malisper/pgrust": {
-      "stars": 4160,
+      "stars": 4175,
       "pushed_at": "2026-08-05T16:53:55Z"
     },
     "orioledb/orioledb": {
@@ -723,7 +723,7 @@
     },
     "skyzh/mini-lsm": {
       "stars": 4078,
-      "pushed_at": "2026-08-08T05:44:49Z"
+      "pushed_at": "2026-08-08T07:38:02Z"
     },
     "ravendb/ravendb": {
       "stars": 3981,
@@ -818,7 +818,7 @@
       "pushed_at": "2026-08-07T09:17:49Z"
     },
     "bytebase/dbhub": {
-      "stars": 3305,
+      "stars": 3307,
       "pushed_at": "2026-08-06T02:44:10Z"
     },
     "xerial/sqlite-jdbc": {
@@ -862,7 +862,7 @@
       "pushed_at": "2026-08-07T15:07:38Z"
     },
     "dosco/graphjin": {
-      "stars": 3133,
+      "stars": 3134,
       "pushed_at": "2026-08-08T02:42:19Z"
     },
     "gluesql/gluesql": {
@@ -894,12 +894,12 @@
       "pushed_at": "2026-07-24T08:25:56Z"
     },
     "chdb-io/chdb": {
-      "stars": 2857,
+      "stars": 2858,
       "pushed_at": "2026-08-03T08:04:34Z"
     },
     "dataplat/dbatools": {
       "stars": 2822,
-      "pushed_at": "2026-08-07T21:23:45Z"
+      "pushed_at": "2026-08-08T08:07:41Z"
     },
     "armink/FlashDB": {
       "stars": 2813,
@@ -931,7 +931,7 @@
     },
     "Donkie/Spoolman": {
       "stars": 2687,
-      "pushed_at": "2026-08-07T15:06:47Z"
+      "pushed_at": "2026-08-08T08:17:22Z"
     },
     "slick/slick": {
       "stars": 2664,
@@ -982,7 +982,7 @@
       "pushed_at": "2026-07-23T05:26:47Z"
     },
     "postgres-ai/database-lab-engine": {
-      "stars": 2514,
+      "stars": 2522,
       "pushed_at": "2026-08-07T18:29:39Z"
     },
     "multigres/multigres": {
@@ -999,7 +999,7 @@
     },
     "man-group/ArcticDB": {
       "stars": 2454,
-      "pushed_at": "2026-08-07T20:11:02Z"
+      "pushed_at": "2026-08-08T08:31:39Z"
     },
     "issus/altium-library": {
       "stars": 2427,
@@ -1015,7 +1015,7 @@
     },
     "supabase/cli": {
       "stars": 2383,
-      "pushed_at": "2026-08-08T00:26:50Z"
+      "pushed_at": "2026-08-08T08:09:15Z"
     },
     "oracle/node-oracledb": {
       "stars": 2363,
@@ -1086,12 +1086,12 @@
       "pushed_at": "2026-08-03T16:59:21Z"
     },
     "kristijanhusak/vim-dadbod-ui": {
-      "stars": 2032,
+      "stars": 2033,
       "pushed_at": "2026-06-19T08:33:10Z"
     },
     "feldera/feldera": {
       "stars": 2032,
-      "pushed_at": "2026-08-08T01:34:41Z"
+      "pushed_at": "2026-08-08T08:51:36Z"
     },
     "data-engineering-community/data-engineering-wiki": {
       "stars": 2014,
@@ -1126,7 +1126,7 @@
       "pushed_at": "2026-08-03T18:05:59Z"
     },
     "matrixorigin/matrixone": {
-      "stars": 1874,
+      "stars": 1875,
       "pushed_at": "2026-08-07T14:34:26Z"
     },
     "replikativ/datahike": {
@@ -1211,7 +1211,7 @@
     },
     "pi-hole/FTL": {
       "stars": 1682,
-      "pushed_at": "2026-08-08T05:40:50Z"
+      "pushed_at": "2026-08-08T08:03:27Z"
     },
     "couchbase/couchbase-lite-ios": {
       "stars": 1664,
@@ -1249,13 +1249,13 @@
       "stars": 1597,
       "pushed_at": "2026-07-18T07:05:57Z"
     },
+    "iptv-org/database": {
+      "stars": 1594,
+      "pushed_at": "2026-08-08T01:54:36Z"
+    },
     "plentz/lol_dba": {
       "stars": 1594,
       "pushed_at": "2026-03-23T18:59:18Z"
-    },
-    "iptv-org/database": {
-      "stars": 1593,
-      "pushed_at": "2026-08-08T01:54:36Z"
     },
     "ontola/atomic-server": {
       "stars": 1585,
@@ -1323,7 +1323,7 @@
     },
     "FirebirdSQL/firebird": {
       "stars": 1443,
-      "pushed_at": "2026-08-08T01:52:30Z"
+      "pushed_at": "2026-08-08T06:25:45Z"
     },
     "oracle-samples/oracle-db-examples": {
       "stars": 1438,
@@ -1407,7 +1407,7 @@
     },
     "apache/cassandra-nodejs-driver": {
       "stars": 1269,
-      "pushed_at": "2026-07-31T20:33:58Z"
+      "pushed_at": "2026-08-08T06:56:53Z"
     },
     "zerodha/dungbeetle": {
       "stars": 1262,
@@ -1457,13 +1457,13 @@
       "stars": 1202,
       "pushed_at": "2026-07-08T12:08:30Z"
     },
+    "google/binexport": {
+      "stars": 1200,
+      "pushed_at": "2026-08-05T08:29:37Z"
+    },
     "planetscale/database-js": {
       "stars": 1199,
       "pushed_at": "2026-08-07T16:01:04Z"
-    },
-    "google/binexport": {
-      "stars": 1199,
-      "pushed_at": "2026-08-05T08:29:37Z"
     },
     "elixirs/faker": {
       "stars": 1197,
@@ -1527,7 +1527,7 @@
     },
     "apache/ofbiz-framework": {
       "stars": 1104,
-      "pushed_at": "2026-08-07T17:50:49Z"
+      "pushed_at": "2026-08-08T05:59:30Z"
     },
     "rapidloop/pgmetrics": {
       "stars": 1103,
@@ -1539,7 +1539,7 @@
     },
     "openfoodfacts/openfoodfacts-server": {
       "stars": 1096,
-      "pushed_at": "2026-08-07T11:18:52Z"
+      "pushed_at": "2026-08-08T08:55:13Z"
     },
     "pgjdbc/r2dbc-postgresql": {
       "stars": 1094,
@@ -1547,7 +1547,7 @@
     },
     "percona/pmm": {
       "stars": 1081,
-      "pushed_at": "2026-08-07T23:33:37Z"
+      "pushed_at": "2026-08-08T08:32:34Z"
     },
     "patx/pickledb": {
       "stars": 1073,
@@ -1559,7 +1559,7 @@
     },
     "ArcadeData/arcadedb": {
       "stars": 1065,
-      "pushed_at": "2026-08-08T05:47:40Z"
+      "pushed_at": "2026-08-08T08:54:35Z"
     },
     "apache/phoenix": {
       "stars": 1059,
@@ -1567,7 +1567,7 @@
     },
     "EhTagTranslation/Database": {
       "stars": 1057,
-      "pushed_at": "2026-08-08T04:45:24Z"
+      "pushed_at": "2026-08-08T07:41:27Z"
     },
     "ietf-tools/datatracker": {
       "stars": 1055,
@@ -1607,15 +1607,15 @@
     },
     "topling/toplingdb": {
       "stars": 1017,
-      "pushed_at": "2026-08-08T03:43:33Z"
-    },
-    "opencypher/openCypher": {
-      "stars": 1017,
-      "pushed_at": "2026-03-20T10:24:14Z"
+      "pushed_at": "2026-08-08T07:56:35Z"
     },
     "Meteor-Community-Packages/meteor-collection2": {
       "stars": 1017,
       "pushed_at": "2026-08-05T18:13:38Z"
+    },
+    "opencypher/openCypher": {
+      "stars": 1017,
+      "pushed_at": "2026-03-20T10:24:14Z"
     },
     "alfateam/orange-orm": {
       "stars": 1011,
@@ -1814,7 +1814,7 @@
       "pushed_at": "2026-08-08T02:57:30Z"
     },
     "valkey-io/valkey-glide": {
-      "stars": 773,
+      "stars": 774,
       "pushed_at": "2026-08-08T05:27:18Z"
     },
     "omniscale/imposm3": {
@@ -2002,7 +2002,7 @@
       "pushed_at": "2026-07-29T19:29:54Z"
     },
     "PostHog/HouseWatch": {
-      "stars": 626,
+      "stars": 627,
       "pushed_at": "2026-08-05T17:45:29Z"
     },
     "kviklet/kviklet": {
@@ -2015,11 +2015,11 @@
     },
     "apache/arrow-adbc": {
       "stars": 619,
-      "pushed_at": "2026-08-07T00:09:01Z"
+      "pushed_at": "2026-08-08T06:50:56Z"
     },
     "thorsten/phpMyFAQ": {
       "stars": 618,
-      "pushed_at": "2026-08-08T03:35:35Z"
+      "pushed_at": "2026-08-08T08:41:28Z"
     },
     "zhongyu09/openchatbi": {
       "stars": 617,
@@ -2090,11 +2090,11 @@
       "pushed_at": "2026-08-08T03:56:43Z"
     },
     "royalbhati/sqltoerdiagram": {
-      "stars": 581,
+      "stars": 580,
       "pushed_at": "2026-07-17T16:17:09Z"
     },
     "s2-streamstore/s2": {
-      "stars": 577,
+      "stars": 578,
       "pushed_at": "2026-08-07T13:36:38Z"
     },
     "hhblaze/DBreeze": {
@@ -2162,7 +2162,7 @@
       "pushed_at": "2026-08-06T22:32:54Z"
     },
     "matrixorigin/Memoria": {
-      "stars": 550,
+      "stars": 551,
       "pushed_at": "2026-08-03T06:55:10Z"
     },
     "mwarkentin/django-watchman": {
@@ -2231,7 +2231,7 @@
     },
     "dxos/dxos": {
       "stars": 510,
-      "pushed_at": "2026-08-08T05:45:48Z"
+      "pushed_at": "2026-08-08T08:27:03Z"
     },
     "JiayuXu0/FastAPI-Template": {
       "stars": 502,
@@ -2321,6 +2321,10 @@
       "stars": 458,
       "pushed_at": "2026-08-05T13:18:07Z"
     },
+    "stackrender/stackrender": {
+      "stars": 458,
+      "pushed_at": "2026-08-05T22:43:01Z"
+    },
     "BOTCAHX/RTXZY-MD": {
       "stars": 458,
       "pushed_at": "2026-08-06T17:21:35Z"
@@ -2332,10 +2336,6 @@
     "lqs/sqlingo": {
       "stars": 455,
       "pushed_at": "2026-04-01T03:26:04Z"
-    },
-    "stackrender/stackrender": {
-      "stars": 455,
-      "pushed_at": "2026-08-05T22:43:01Z"
     },
     "PuneethReddyHC/online-shopping-system-advanced": {
       "stars": 450,
@@ -2353,13 +2353,13 @@
       "stars": 449,
       "pushed_at": "2026-08-01T08:18:35Z"
     },
+    "dylanljones/pyrekordbox": {
+      "stars": 449,
+      "pushed_at": "2026-08-03T19:46:56Z"
+    },
     "danhuss/awesome-sql": {
       "stars": 448,
       "pushed_at": "2026-04-25T14:15:25Z"
-    },
-    "dylanljones/pyrekordbox": {
-      "stars": 448,
-      "pushed_at": "2026-08-03T19:46:56Z"
     },
     "oracle/python-oracledb": {
       "stars": 445,
@@ -2735,7 +2735,7 @@
     },
     "Loki-Astari/ThorsAnvil": {
       "stars": 319,
-      "pushed_at": "2026-07-25T20:00:46Z"
+      "pushed_at": "2026-08-08T06:23:44Z"
     },
     "sirupsen/airrecord": {
       "stars": 319,
@@ -2863,7 +2863,7 @@
     },
     "gatewayd-io/gatewayd": {
       "stars": 287,
-      "pushed_at": "2026-08-06T23:43:52Z"
+      "pushed_at": "2026-08-08T08:00:23Z"
     },
     "pgplex/pgtui": {
       "stars": 285,
@@ -2913,6 +2913,10 @@
       "stars": 275,
       "pushed_at": "2026-08-06T20:14:35Z"
     },
+    "powa-team/pg_stat_kcache": {
+      "stars": 273,
+      "pushed_at": "2026-06-20T01:03:35Z"
+    },
     "asyncer-io/r2dbc-mysql": {
       "stars": 273,
       "pushed_at": "2026-07-21T21:47:50Z"
@@ -2921,13 +2925,9 @@
       "stars": 272,
       "pushed_at": "2026-03-03T19:25:41Z"
     },
-    "powa-team/pg_stat_kcache": {
-      "stars": 272,
-      "pushed_at": "2026-06-20T01:03:35Z"
-    },
     "berlindb/core": {
       "stars": 270,
-      "pushed_at": "2026-08-06T04:41:40Z"
+      "pushed_at": "2026-08-08T08:00:59Z"
     },
     "Skyfay/DBackup": {
       "stars": 270,
@@ -3001,6 +3001,10 @@
       "stars": 264,
       "pushed_at": "2026-07-06T16:34:05Z"
     },
+    "jobinau/pg_gather": {
+      "stars": 262,
+      "pushed_at": "2026-08-06T18:10:58Z"
+    },
     "columnar-tech/databow": {
       "stars": 262,
       "pushed_at": "2026-08-06T16:56:36Z"
@@ -3008,10 +3012,6 @@
     "nycdb/nycdb": {
       "stars": 262,
       "pushed_at": "2026-06-30T12:26:49Z"
-    },
-    "jobinau/pg_gather": {
-      "stars": 261,
-      "pushed_at": "2026-08-06T18:10:58Z"
     },
     "HarshShah1997/Shopping-Cart": {
       "stars": 261,
@@ -3039,7 +3039,7 @@
     },
     "pine-vm/pine": {
       "stars": 257,
-      "pushed_at": "2026-08-08T05:15:05Z"
+      "pushed_at": "2026-08-08T08:07:53Z"
     },
     "lucyparsons/OpenOversight": {
       "stars": 257,
@@ -3087,7 +3087,7 @@
     },
     "ruc-deke/rucbase-lab": {
       "stars": 249,
-      "pushed_at": "2026-08-08T05:12:57Z"
+      "pushed_at": "2026-08-08T06:17:12Z"
     },
     "apache/hbase-connectors": {
       "stars": 246,
@@ -3095,7 +3095,7 @@
     },
     "Log2n-io/Typhon": {
       "stars": 245,
-      "pushed_at": "2026-08-07T04:24:42Z"
+      "pushed_at": "2026-08-08T08:35:37Z"
     },
     "fuma-nama/fumadb": {
       "stars": 244,
@@ -3199,7 +3199,7 @@
     },
     "duckdb/duckdb-r": {
       "stars": 222,
-      "pushed_at": "2026-08-08T05:55:36Z"
+      "pushed_at": "2026-08-08T08:14:41Z"
     },
     "thingsapi/things.py": {
       "stars": 222,
@@ -3279,7 +3279,7 @@
     },
     "Dicklesworthstone/frankensqlite": {
       "stars": 212,
-      "pushed_at": "2026-08-08T04:29:13Z"
+      "pushed_at": "2026-08-08T06:00:56Z"
     },
     "oraclebase/vagrant": {
       "stars": 211,
@@ -3341,13 +3341,13 @@
       "stars": 200,
       "pushed_at": "2026-08-07T16:56:09Z"
     },
-    "JuliaRobotics/Caesar.jl": {
-      "stars": 199,
-      "pushed_at": "2026-08-06T13:58:27Z"
-    },
     "machbase/neo-server": {
       "stars": 199,
       "pushed_at": "2026-08-07T05:14:27Z"
+    },
+    "JuliaRobotics/Caesar.jl": {
+      "stars": 199,
+      "pushed_at": "2026-08-06T13:58:27Z"
     },
     "jayvynl/django-clickhouse-backend": {
       "stars": 198,
@@ -3453,13 +3453,13 @@
       "stars": 182,
       "pushed_at": "2026-07-27T19:48:14Z"
     },
-    "MatthewTheCoder1218/princejs": {
-      "stars": 181,
-      "pushed_at": "2026-04-17T23:10:16Z"
-    },
     "robinp7720/Oblecto": {
       "stars": 181,
       "pushed_at": "2026-07-24T13:39:54Z"
+    },
+    "MatthewTheCoder1218/princejs": {
+      "stars": 181,
+      "pushed_at": "2026-04-17T23:10:16Z"
     },
     "ystemsrx/sql_to_ER": {
       "stars": 181,
@@ -3499,7 +3499,7 @@
     },
     "apache/ofbiz-plugins": {
       "stars": 175,
-      "pushed_at": "2026-08-07T03:53:39Z"
+      "pushed_at": "2026-08-08T08:52:14Z"
     },
     "turing-db/turingdb": {
       "stars": 175,
@@ -3511,7 +3511,7 @@
     },
     "aces/Loris": {
       "stars": 173,
-      "pushed_at": "2026-08-08T04:53:11Z"
+      "pushed_at": "2026-08-08T07:36:12Z"
     },
     "polypheny/Polypheny-DB": {
       "stars": 173,
@@ -3583,7 +3583,7 @@
     },
     "villagesql/villagesql-server": {
       "stars": 165,
-      "pushed_at": "2026-08-08T02:11:41Z"
+      "pushed_at": "2026-08-08T06:03:17Z"
     },
     "PumpkinSeed/sqlfuzz": {
       "stars": 163,
@@ -3775,7 +3775,11 @@
     },
     "Automattic/HyperDB": {
       "stars": 147,
-      "pushed_at": "2026-07-28T13:52:37Z"
+      "pushed_at": "2026-08-08T08:49:11Z"
+    },
+    "garden-co/jazz": {
+      "stars": 147,
+      "pushed_at": "2026-08-08T06:42:37Z"
     },
     "victor-wiki/DatabaseManager": {
       "stars": 146,
@@ -3784,10 +3788,6 @@
     "IHTSDO/snomed-database-loader": {
       "stars": 146,
       "pushed_at": "2026-07-08T14:06:49Z"
-    },
-    "garden-co/jazz": {
-      "stars": 146,
-      "pushed_at": "2026-08-08T05:51:10Z"
     },
     "Mararsh/MyBox": {
       "stars": 145,
@@ -3891,7 +3891,7 @@
     },
     "fiyo/DBCheck": {
       "stars": 137,
-      "pushed_at": "2026-08-08T05:04:34Z"
+      "pushed_at": "2026-08-08T08:19:46Z"
     },
     "mganss/SyncChanges": {
       "stars": 135,
@@ -3933,13 +3933,13 @@
       "stars": 132,
       "pushed_at": "2026-07-16T09:05:26Z"
     },
+    "apache/doris-website": {
+      "stars": 132,
+      "pushed_at": "2026-08-08T08:42:43Z"
+    },
     "sclorg/mysql-container": {
       "stars": 132,
       "pushed_at": "2026-08-03T03:32:38Z"
-    },
-    "apache/doris-website": {
-      "stars": 132,
-      "pushed_at": "2026-08-08T04:53:00Z"
     },
     "sbt/flyway-sbt": {
       "stars": 132,
@@ -4002,7 +4002,7 @@
       "pushed_at": "2026-07-30T10:48:44Z"
     },
     "drawdb-io/drawdb": {
-      "stars": 38461,
+      "stars": 38484,
       "pushed_at": "2026-08-05T13:44:20Z"
     },
     "oracle/docker-images": {
@@ -4010,7 +4010,7 @@
       "pushed_at": "2026-08-06T13:41:18Z"
     },
     "oracle-devrel/oracle-ai-developer-hub": {
-      "stars": 4319,
+      "stars": 4322,
       "pushed_at": "2026-08-07T07:23:37Z"
     },
     "Syngnat/GoNavi": {
@@ -4126,7 +4126,7 @@
       "pushed_at": "2026-08-04T18:47:57Z"
     },
     "ridi-oss/proxy-monster": {
-      "stars": 13,
+      "stars": 14,
       "pushed_at": "2026-08-07T23:51:41Z"
     },
     "waynesutton/Codex-Sites-Convex-Backend-Skill": {
