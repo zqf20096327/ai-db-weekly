@@ -3,47 +3,47 @@
     {
       "full": "OtterMind/Chat2DB",
       "name": "Chat2DB",
-      "stars": 27911,
+      "stars": 27919,
       "lang": "Java",
       "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
       "url": "https://github.com/OtterMind/Chat2DB",
-      "pushed": "2026-08-10T06:15:41Z",
-      "delta": 294,
+      "pushed": "2026-08-10T09:08:06Z",
+      "delta": 302,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Chat2DB是一款AI驱动的跨平台数据库客户端，支持40多种数据库，提供SQL工作台和自带AI模型生成优化SQL的功能。"
+      "zh_desc": "Chat2DB是一款支持40+数据库的AI驱动数据库客户端，提供SQL工作台和自带AI模型的自然语言SQL生成功能。"
     },
     {
       "full": "bytebase/dbhub",
       "name": "dbhub",
-      "stars": 3317,
+      "stars": 3319,
       "lang": "TypeScript",
       "desc": "Minimal database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.",
       "url": "https://github.com/bytebase/dbhub",
       "pushed": "2026-08-08T12:35:40Z",
-      "delta": 44,
+      "delta": 46,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "DBHub 是一个极简 MCP 服务器，让 MCP 客户端通过单一接口连接并探索 PostgreSQL、MySQL 等数据库，默认仅加载 2 个工具，节省 13-14 倍 token。"
+      "zh_desc": "DBHub是一个极简MCP服务器，通过单一接口连接PostgreSQL、MySQL等数据库，默认仅加载2个工具，消耗1.4k tokens。"
     },
     {
       "full": "googleapis/mcp-toolbox",
       "name": "mcp-toolbox",
-      "stars": 16142,
+      "stars": 16141,
       "lang": "Go",
       "desc": "MCP Toolbox for Databases is an open source MCP server for databases.",
       "url": "https://github.com/googleapis/mcp-toolbox",
-      "pushed": "2026-08-09T14:27:16Z",
-      "delta": 32,
+      "pushed": "2026-08-10T07:11:22Z",
+      "delta": 31,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MCP Toolbox for Databases 是一个开源 MCP 服务器，可将 AI 代理和 IDE 直接连接到企业数据库，并提供预构建工具和自定义工具框架。"
+      "zh_desc": "MCP Toolbox for Databases 是一个开源 MCP 服务器，用于将 AI 代理、IDE 和应用直接连接到企业数据库，并提供预构建的通用工具。"
     },
     {
       "full": "dosco/graphjin",
@@ -52,13 +52,13 @@
       "lang": "Go",
       "desc": "One governed graph for AI agents — GraphQL + MCP over your databases, files, APIs, and code",
       "url": "https://github.com/dosco/graphjin",
-      "pushed": "2026-08-10T05:46:45Z",
+      "pushed": "2026-08-10T08:28:43Z",
       "delta": 7,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "GraphJin 是一个将数据库、仓库、文件等系统统一为受治理图，并通过 GraphQL 与 MCP 为 AI 代理提供安全查询与执行审计的编译器与运行时。"
+      "zh_desc": "GraphJin 是一个将数据库、仓库、文件等系统统一为受治理图，并通过 GraphQL 和 MCP 为 AI 代理提供安全查询与执行审计的编译器与运行时。"
     },
     {
       "full": "oracle-devrel/oracle-ai-developer-hub",
@@ -67,13 +67,13 @@
       "lang": "Jupyter Notebook",
       "desc": "Technical resources for AI developers to build applications, agents, and systems using Oracle AI Database and OCI services",
       "url": "https://github.com/oracle-devrel/oracle-ai-developer-hub",
-      "pushed": "2026-08-09T11:10:51Z",
+      "pushed": "2026-08-10T08:49:45Z",
       "delta": 6,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "该仓库提供构建AI应用、智能体及系统的技术资源，核心卖点是基于Oracle AI数据库与OCI服务的端到端参考实现。"
+      "zh_desc": "该仓库提供构建AI应用、代理和系统的技术资源，核心卖点是集成Oracle AI数据库与OCI服务。"
     },
     {
       "full": "NodeDB-Lab/nodedb",
@@ -82,13 +82,13 @@
       "lang": "Rust",
       "desc": "The memory & storage engine for AI agents. Multi-model, edge-to-cloud, PostgreSQL-compatible.",
       "url": "https://github.com/NodeDB-Lab/nodedb",
-      "pushed": "2026-08-09T22:42:45Z",
+      "pushed": "2026-08-10T06:50:11Z",
       "delta": 5,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "NodeDB是一个用Rust编写的AI代理内存与存储引擎，支持语义、关系、情景和时间序列数据，可嵌入设备并同步到分布式服务器。"
+      "zh_desc": "NodeDB是为AI代理设计的统一内存与存储引擎，支持语义、关系、情节和时间序列数据，可嵌入式运行并同步至分布式服务器。"
     },
     {
       "full": "julien040/anyquery",
@@ -118,7 +118,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "CloudBase AI Toolkit 是腾讯云 AI 后端集成层，通过 MCP 让 AI 编程工具在对话中操作数据库、函数和存储。"
+      "zh_desc": "CloudBase AI Toolkit 是腾讯云为 AI 编程工具提供的集成层，通过 MCP 协议让 AI 在对话中直接操作数据库、函数和存储。"
     },
     {
       "full": "call518/MCP-PostgreSQL-Ops",
@@ -133,22 +133,22 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "这是一个基于自然语言查询的 PostgreSQL 运维监控 MCP 服务器，支持 PostgreSQL 12-18 的只读性能分析与维护建议。"
+      "zh_desc": "这是一个用于PostgreSQL运维监控的MCP服务器，支持通过自然语言查询慢查询、表膨胀分析及维护建议。"
     },
     {
       "full": "prest/prest",
       "name": "prest",
-      "stars": 4610,
+      "stars": 4609,
       "lang": "Go",
       "desc": "PostgreSQL ➕ REST, low-code, simplify and accelerate development, ⚡ instant, realtime, high-performance on any Postgres application, existing or new, MCP server",
       "url": "https://github.com/prest/prest",
       "pushed": "2026-08-09T20:18:27Z",
-      "delta": 2,
+      "delta": 1,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "pREST是一个基于Go的PostgreSQL REST API工具，可为现有或新建Postgres数据库即时提供CRUD、自定义SQL路由及MCP端点，无需手写后端。"
+      "zh_desc": "pREST是一个基于Go的PostgreSQL REST API工具，能在现有或新数据库上即时提供CRUD、自定义SQL路由和MCP端点，无需手写后端。"
     }
   ],
   "emerging": [
@@ -165,24 +165,24 @@
         "新锐"
       ],
       "track": "新锐",
-      "zh_desc": "Mekka 是一个基于 Bun 原生 SQLite 的一体化后端基础设施，提供数据、认证、存储、实时、Studio 及受限 Agent 访问，一条命令即可启动完整本地后端。"
+      "zh_desc": "Mekka 是一个基于 Bun 和 SQLite 的一键启动本地后端基础设施，提供数据、认证、存储、实时、Studio 及受限 Agent 访问。"
     }
   ],
   "spotlight": {
     "full": "OtterMind/Chat2DB",
     "name": "Chat2DB",
-    "stars": 27911,
+    "stars": 27919,
     "lang": "Java",
     "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
     "url": "https://github.com/OtterMind/Chat2DB",
-    "pushed": "2026-08-10T06:15:41Z",
-    "delta": 294,
+    "pushed": "2026-08-10T09:08:06Z",
+    "delta": 302,
     "tags": [
       "主轨"
     ],
     "track": "主轨",
-    "zh_desc": "Chat2DB是一款AI驱动的跨平台数据库客户端，支持40多种数据库，提供SQL工作台和自带AI模型生成优化SQL的功能。"
+    "zh_desc": "Chat2DB是一款支持40+数据库的AI驱动数据库客户端，提供SQL工作台和自带AI模型的自然语言SQL生成功能。"
   },
-  "spotlight_text": "**本周重点解读：Chat2DB**\n\n**① 解决什么问题**  \n为开发者、DBA 及数据团队提供跨平台（Windows/macOS/Linux）的 AI 数据库客户端，整合 SQL 工作台与自带模型（BYOM）的 AI 助手，解决多数据库管理、SQL 编写优化及数据可视化需求。\n\n**② 核心亮点**  \n- 支持 40+ 数据库（MySQL、PostgreSQL、MongoDB 等），可通过配置扩展新 JDBC 数据源，无需改代码。  \n- 内置 AI 助手，支持自然语言生成、解释、优化 SQL；提供 SQL 编辑、补全、格式化及执行历史。  \n- 开源 CLI 支持 MCP，并具备数据导入导出、仪表盘图表及 ER 图功能。\n\n**③ 适用场景/注意事项**  \n适用于本地化数据库管理与 AI 辅助开发场景。桌面版需从 GitHub Releases 下载安装；Docker 部署要求 Docker 19.03.0+ 及 Compose V2。AI 功能需自备模型 API，数据完全本地运行。",
+  "spotlight_text": "**本周重点解读：Chat2DB**\n\n**① 解决什么问题**  \n为开发者、DBA 和分析师提供跨平台（Windows/macOS/Linux）的 AI 数据库客户端，整合 SQL 工作区与自带模型（BYOM）的 AI 助手，解决多数据库管理、SQL 编写优化及数据可视化需求。\n\n**② 核心亮点**  \n- 支持 40+ 数据库（MySQL、PostgreSQL、Oracle、ClickHouse 等），可通过配置扩展新 JDBC 数据源，无需改代码。  \n- 内置 SQL 编辑、补全、格式化、执行历史，以及数据导入导出、仪表盘和 ER 图。  \n- 提供开源 CLI 并支持 MCP 协议，适配自动化工作流。\n\n**③ 适用场景/注意事项**  \n适合个人或团队日常数据库操作与查询分析。桌面端需从 GitHub Releases 下载安装；Docker 部署要求 Docker 19.03.0+ 及 Compose V2。AI 功能需自备模型密钥，数据完全本地运行。",
   "hot_is_delta": true
 }
