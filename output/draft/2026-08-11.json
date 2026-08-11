@@ -3,32 +3,32 @@
     {
       "full": "OtterMind/Chat2DB",
       "name": "Chat2DB",
-      "stars": 27920,
+      "stars": 27921,
       "lang": "Java",
       "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
       "url": "https://github.com/OtterMind/Chat2DB",
       "pushed": "2026-08-10T15:40:24Z",
-      "delta": 284,
+      "delta": 285,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Chat2DB是一款支持40+数据库的AI驱动数据库客户端，核心功能是提供SQL工作台并接入自选AI模型生成、解释和优化SQL。"
+      "zh_desc": "Chat2DB是一款支持40+数据库的AI驱动数据库客户端，核心卖点是内置SQL工作台和可接入自有模型的AI助手。"
     },
     {
       "full": "bytebase/dbhub",
       "name": "dbhub",
-      "stars": 3323,
+      "stars": 3325,
       "lang": "TypeScript",
       "desc": "Minimal database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.",
       "url": "https://github.com/bytebase/dbhub",
       "pushed": "2026-08-08T12:35:40Z",
-      "delta": 41,
+      "delta": 43,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "DBHub 是一个极简 MCP 服务器，让 MCP 客户端通过统一接口连接并探索 PostgreSQL、MySQL 等数据库，默认仅加载 2 个工具，消耗 1.4k tokens。"
+      "zh_desc": "DBHub 是一个极简 MCP 服务器，通过单一接口连接多种数据库，默认仅加载 2 个工具，令牌消耗比同类方案少 13-14 倍。"
     },
     {
       "full": "googleapis/mcp-toolbox",
@@ -43,7 +43,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "MCP Toolbox for Databases 是一个开源 MCP 服务器，用于将 AI 代理、IDE 和应用直接连接到企业数据库，并提供预构建的通用工具。"
+      "zh_desc": "MCP Toolbox for Databases 是一个开源 MCP 服务器，用于将 AI 代理和 IDE 直接连接到企业数据库，并提供预构建通用工具。"
     },
     {
       "full": "dosco/graphjin",
@@ -58,7 +58,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "GraphJin 是一个将数据库、仓库、文件等系统统一为受治理的 GraphQL 图，并通过 GraphQL 和 MCP 为 AI 代理提供安全查询与执行能力的编译器与运行时。"
+      "zh_desc": "GraphJin是一个将数据库、仓库、文件等系统统一为受治理图并通过GraphQL和MCP提供给AI代理的编译器与运行时。"
     },
     {
       "full": "oracle-devrel/oracle-ai-developer-hub",
@@ -73,7 +73,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "该项目提供基于Oracle AI数据库和OCI服务的AI应用与智能体开发技术资源及参考实现。"
+      "zh_desc": "该仓库提供构建AI应用、代理和系统的技术资源，核心卖点是基于Oracle AI数据库和OCI服务的端到端参考实现。"
     },
     {
       "full": "julien040/anyquery",
@@ -88,7 +88,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "Anyquery是一个基于SQLite的SQL查询引擎，可通过插件查询文件、数据库和应用，并支持连接LLM访问数据。"
+      "zh_desc": "Anyquery是一个基于SQLite的SQL查询引擎，可通过插件查询文件、数据库和各类应用，并支持连接LLM访问数据。"
     },
     {
       "full": "NodeDB-Lab/nodedb",
@@ -103,7 +103,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "NodeDB是一款用Rust编写的AI代理内存与存储引擎，支持语义、关系、情景和时间序列数据，可在设备端嵌入并离线同步。"
+      "zh_desc": "NodeDB是为AI代理设计的统一内存与存储引擎，支持语义、关系、情景和时间序列数据，可在设备端嵌入并离线同步。"
     },
     {
       "full": "TencentCloudBase/CloudBase-AI-Toolkit",
@@ -112,13 +112,13 @@
       "lang": "TypeScript",
       "desc": "Backend for AI coding agents on CloudBase — database, auth, functions via Plugin, Skills & MCP.",
       "url": "https://github.com/TencentCloudBase/CloudBase-AI-Toolkit",
-      "pushed": "2026-08-10T13:20:31Z",
+      "pushed": "2026-08-11T03:56:01Z",
       "delta": 3,
       "tags": [
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "CloudBase AI Toolkit 是腾讯云为 AI 编程工具提供的后端集成层，通过 MCP 协议让 AI 在对话中直接操作数据库、函数和存储。"
+      "zh_desc": "CloudBase AI Toolkit 是腾讯云 AI 原生后端与 AI 编程工具之间的集成层，通过 MCP 让 AI 在对话中操作数据库、函数、存储并部署。"
     },
     {
       "full": "call518/MCP-PostgreSQL-Ops",
@@ -133,7 +133,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "这是一个基于自然语言查询的PostgreSQL运维监控MCP服务器，支持12-18版本，提供只读安全操作和智能维护建议。"
+      "zh_desc": "这是一个用于PostgreSQL运维监控的MCP服务器，支持通过自然语言查询慢查询、表膨胀分析和维护建议。"
     },
     {
       "full": "designcomputer/mysql_mcp_server",
@@ -148,7 +148,7 @@
         "主轨"
       ],
       "track": "主轨",
-      "zh_desc": "这是一个基于模型上下文协议（MCP）的MySQL数据库安全交互服务器，支持SQL查询执行和SSH隧道连接。"
+      "zh_desc": "这是一个基于模型上下文协议（MCP）的MySQL数据库安全交互服务器，支持SQL查询、多数据库模式及SSE/HTTP传输。"
     }
   ],
   "emerging": [
@@ -165,24 +165,24 @@
         "新锐"
       ],
       "track": "新锐",
-      "zh_desc": "Mekka 是一个基于 Bun 和 SQLite 的一键启动本地后端基础设施，提供数据、认证、存储、实时、Studio 及受限 Agent 访问。"
+      "zh_desc": "Mekka 是一个基于 Bun 原生 SQLite 的一键启动本地后端基础设施，提供数据、认证、存储、实时和内置 Studio 功能。"
     }
   ],
   "spotlight": {
     "full": "OtterMind/Chat2DB",
     "name": "Chat2DB",
-    "stars": 27920,
+    "stars": 27921,
     "lang": "Java",
     "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
     "url": "https://github.com/OtterMind/Chat2DB",
     "pushed": "2026-08-10T15:40:24Z",
-    "delta": 284,
+    "delta": 285,
     "tags": [
       "主轨"
     ],
     "track": "主轨",
-    "zh_desc": "Chat2DB是一款支持40+数据库的AI驱动数据库客户端，核心功能是提供SQL工作台并接入自选AI模型生成、解释和优化SQL。"
+    "zh_desc": "Chat2DB是一款支持40+数据库的AI驱动数据库客户端，核心卖点是内置SQL工作台和可接入自有模型的AI助手。"
   },
-  "spotlight_text": "**本周重点解读：Chat2DB**\n\n**① 解决什么问题**  \n为开发者、DBA 和分析师提供跨平台（Windows/macOS/Linux）的 AI 数据库客户端，整合 SQL 工作台与自带模型的 AI 助手，解决多数据库管理、SQL 编写优化及数据可视化需求。\n\n**② 核心亮点**  \n- 支持 40+ 数据库（MySQL、PostgreSQL、ClickHouse 等），可通过配置扩展新 JDBC 数据库，无需改代码。  \n- 内置 SQL 编辑、补全、格式化及执行历史，并提供 AI 生成/解释/优化 SQL 能力。  \n- 附带数据导入导出、仪表盘图表、ER 图及开源 CLI（支持 MCP）。\n\n**③ 适用场景/注意事项**  \n适用于日常数据库管理、复杂查询优化及团队协作。桌面端需从 GitHub Releases 安装；Docker 部署要求 Docker 19.03.0+ 及 Compose V2。AI 功能需自行接入模型，数据本地运行。",
+  "spotlight_text": "**本周重点解读：Chat2DB**\n\n**① 解决什么问题**  \n为开发者、DBA 和分析师提供跨平台（Windows/macOS/Linux）的 AI 数据库客户端，整合 SQL 工作台与自带模型（BYOM）的 AI 助手，解决多数据库管理、SQL 编写优化及数据可视化需求。\n\n**② 核心亮点**  \n- 支持 40+ 数据库（MySQL、PostgreSQL、ClickHouse 等），新 JDBC 库可仅通过配置接入，无需改代码。  \n- 内置 SQL 编辑、补全、格式化、执行历史及数据导入导出、仪表盘图表、ER 图。  \n- 提供开源 CLI 并支持 MCP 协议，可扩展自动化工作流。\n\n**③ 适用场景/注意事项**  \n适用于日常数据库管理、SQL 开发及轻量级 BI 场景。桌面端需从 GitHub Releases 下载安装；Docker 部署要求 Docker 19.03.0+ 及 Compose V2。AI 功能需自备模型密钥，数据本地处理。",
   "hot_is_delta": true
 }
