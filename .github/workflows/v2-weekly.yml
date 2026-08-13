@@ -1,6 +1,6 @@
 name: v2 周报生成
 
-# 每周一跑 v2 版周报（run_weekly.py），生成主周报 + 工具合辑，提交到 v2/reports/。
+# 每周一跑 v2 版周报（run_weekly.py），生成三板块周报（report.md），提交到 v2/reports/。
 #   - 北京 周一 12:00 (UTC 04:00)，当日 09:00 的采集已跑完并写入缓存。
 # 依赖 actions/cache 里的历史快照做 7 天 diff（storage.find_prev_snapshot_date 自动定位）。
 # 若当日 daily 被跳过，可直接 workflow_dispatch 手动重跑本流程。
@@ -64,9 +64,6 @@ jobs:
           echo "最新快照目录：$SNAP"
           if [ -f "$SNAP/weekly/report.md" ]; then
             cp "$SNAP/weekly/report.md" "reports/report_$(basename "$SNAP").md"
-          fi
-          if [ -f "$SNAP/weekly/toolkit.md" ]; then
-            cp "$SNAP/weekly/toolkit.md" "reports/toolkit_$(basename "$SNAP").md"
           fi
           ls -la reports/ || true
 

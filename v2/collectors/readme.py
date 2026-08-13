@@ -1,10 +1,12 @@
-"""README 采集（精选解读候选，每周 2-3 个）。
+"""README 采集（新 SOP 三板块周报的全部候选，每周 ~9-15 个）。
 
-用途：主周报精选解读栏 —— AI 基于 README 全文生成中文点评。
+用途：周报 AI 解读（活跃榜+新锐每条 100 字解读、本周解读四维分析）—— AI 基于
+      README 生成中文点评。
 方式：GET /repos/{owner}/{repo}/readme（Core API，Accept: raw 直拿原文）
-范围：只采传入的精选候选 repo 列表（不采全量候选池）
+范围：只采传入的候选 repo 列表（三板块活跃榜+新锐+本周解读去重后，不采全量候选池）。
+      契合 SOP 两阶段思想：阶段一先定候选清单，阶段二只对这些项目拉 README，省 API。
 断点续采：读 weekly/meta/readmes.json 跳过已采 repo
-依据：精选解读信息来源补全（description 一句话不够，需 README 全文）
+依据：AI 解读信息来源补全（description 一句话不够，需 README 全文）
 """
 
 from __future__ import annotations
@@ -43,7 +45,7 @@ def collect_readmes(
 ) -> dict[str, str]:
     """对指定 repo 列表采集 README，落盘到 weekly/meta/readmes.json。
 
-    只采传入的 repos（精选候选，通常 2-3 个），不采全量候选池。
+    只采传入的 repos（三板块周报候选，去重后约 9-15 个），不采全量候选池。
     断点续采：读已落盘结果，已采的 repo 跳过。
     返回 {full_name: readme_text} 映射（readme 为 None 的也记 key，表示已尝试）。
     """

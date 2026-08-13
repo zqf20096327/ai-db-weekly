@@ -358,3 +358,108 @@ AI_MODEL_DEFAULT = "deepseek-chat"
 AI_TIMEOUT_SEC = 60          # DeepSeek 调用超时
 AI_MAX_TOKENS = 800          # 单次解读返回上限
 AI_TEMPERATURE = 0.3         # 低温度=偏保守/客观
+
+
+# ============================================================
+# 新 SOP 三板块周报参数（板块归属 / 8 分类 / 适用数据库 / 排除 / 选取）
+# 依据：deepseek SOP 文本 §3.1（板块归属）/ §3.3（排除）/ §3.4（分类）/ §3.5（适用数据库）
+#       §3.6（活跃榜）/ §3.7（新锐发现）
+# 与上方"周报生产参数""周报新架构参数"并列；旧 report/toolkit 渲染逻辑已停用
+# ============================================================
+
+# ----- §3.1 三板块归属关键词（命中顺序：国产 > AI > 国外，命中即停）-----
+# 国产：国产数据库产品名（ distinctive，token 匹配）。不含 "dm"（太短，命中 admin/odm）
+SECTION_KEYWORDS = {
+    "国产数据库": [
+        "doris", "tidb", "oceanbase", "opengauss", "starrocks",
+        "polardb", "gaussdb", "tdsql", "yashandb", "goldendb", "gbase",
+    ],
+    # 国外：DB 通用词 + 主流国外 DB 产品名（宽口径，作为非国产/AI 的残留桶；
+    #       噪音由 is_display_relevant 上游过滤兜住）
+    "国外数据库": [
+        "database", "postgres", "postgresql", "mysql", "mariadb", "sqlite",
+        "oracle", "clickhouse", "mongodb", "redis", "mssql", "sql server",
+        "sql", "db", "query", "backup", "migration", "monitoring",
+        "high-availability", "high availability",
+        "connection-pool", "connection pool", "proxy",
+    ],
+}
+
+# ----- AI 板块判定专用（§3.1 AI 支 + 防子串污染分层设计）-----
+# 裸 "ai"/"rag" 子串会爆炸："ai" 命中 available/detail/main；
+# "rag" 命中 storage（DB 工具最高频词）/coverage/fragile。
+# 故分三层：topics 精确集合 → AI_KW_STRONG 子串 → AI_KW_TOKEN 词边界。
+AI_TOPICS = {
+    # topics 天然是 token，最可靠。不含裸 "ai"——实测被滥用（dbeaver/clickhouse/
+    # meilisearch 都打 ai topic 做 SEO），靠下方具体范式词精确识别
+    "artificial-intelligence", "llm", "large-language-models", "nlp",
+    "text-to-sql", "text2sql", "nl2sql", "chat2db",
+    "mcp", "model-context-protocol", "agent", "agents", "rag", "copilot",
+    "gpt", "chatgpt", "openai", "langchain", "llama", "qwen", "deepseek",
+}
+# 强信号词：够独特，子串匹配也安全（含连字符/空格的短语走子串）
+AI_KW_STRONG = [
+    "llm", "mcp", "text2sql", "nl2sql", "langchain",
+    "chatgpt", "openai", "deepseek", "copilot", "chat2db",
+    "model-context-protocol", "ai-dba", "text-to-sql",
+    "natural-language", "natural language",
+]
+# 弱信号词：纯单词，tokenize 后匹配独立词（防子串污染：rag→storage/coverage，
+#   agent→pgagent/sqlagent 调度器，glm→统计学广义线性模型）。
+#   不含裸 "ai"（"AI-powered" 等 AI washing 词会 tokenize 出 ai，误收面太大）
+AI_KW_TOKEN = {
+    "rag", "glm", "gpt", "agent", "llama", "qwen",
+}
+
+# ----- §3.4 八分类枚举（固定值，不可新增；多命中取最先；无命中→其他）-----
+CATEGORY_KEYWORDS = {
+    "高可用": ["ha", "high availability", "high-availability", "failover",
+                "cluster", "replication", "patroni", "repmgr"],
+    "监控": ["monitor", "alert", "slow query", "metrics", "grafana",
+              "prometheus", "observability"],
+    "备份": ["backup", "restore", "pitr", "wal", "pgbackrest", "xtrabackup"],
+    "管理": ["manage", "governance", "sql review", "audit", "compliance",
+              "access control", "bytebase"],
+    "迁移": ["migrate", "sync", "cdc", "etl", "debezium", "replicate",
+              "schema change"],
+    "连接/代理": ["pool", "proxy", "load balance", "pgbouncer", "connection",
+                  "gateway"],
+    "平台": ["platform", "dbaas", "cloud", "managed", "supabase",
+              "dashboard", "console"],
+    # "其他" 不在此表 —— 由 infer_category 兜底返回
+}
+
+# ----- §3.5 适用数据库推断（从 topics/description 提取产品名）-----
+# 注：子串匹配。"pg" 不收（命中 upgrade/padding）；用 postgresql/postgres。
+APPLICABLE_DB_KEYWORDS = {
+    "PostgreSQL": ["postgresql", "postgres"],
+    "MySQL": ["mysql"],
+    "ClickHouse": ["clickhouse"],
+    "Oracle": ["oracle"],
+    "SQLite": ["sqlite"],
+    "SQL Server": ["mssql", "sql server", "sqlserver"],
+    "MariaDB": ["mariadb"],
+    "MongoDB": ["mongodb", "mongo"],
+    "Redis": ["redis"],
+}
+DATABASE_MULTI_HINTS = ["40+", "multiple databases", "multi-database", "various databases"]
+
+# ----- §3.3 排除规则（叠加在 filters.is_display_relevant 之上）-----
+# 不放裸 "platform"/"deploy"/"cloud"（会误杀 DB 平台/监控类工具）；
+# 只收无歧义的强信号：ORM 产品名、通用 PaaS 产品名、纯应用业务、教程模板。
+SOP_EXCLUDE_KEYWORDS = {
+    "orm_framework": ["prisma", "sequelize", "typeorm", "gorm"],
+    "paas_deploy": ["vercel", "heroku", "netlify", "coolify", "paas",
+                     "self-hostable", "deployment platform"],
+    "app_layer": ["cms", "blog", "e-commerce", "ecommerce", "admin panel",
+                   "admin-panel", "shopping cart"],
+    "tutorial": ["tutorial", "boilerplate", "starter", "template",
+                  "example", "examples", "demo", "learn",
+                  "awesome list", "course"],
+}
+
+# ----- §3.6 / §3.7 选取条数 -----
+SECTION_TOP_N = 3          # 各板块活跃榜 TopN（按 weekly_growth 降序）
+NEWSTAR_DAYS = 7           # 新锐发现：created_at 或 pushed_at 在 N 天内
+NEWSTAR_TOP_N = 3          # 新锐发现 TopN
+TOPBOARD_TOP = 5           # 附录·总榜 TopN（历史 star 总数）

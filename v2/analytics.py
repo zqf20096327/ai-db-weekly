@@ -388,3 +388,81 @@ def _created_recent(item: dict[str, Any], days: int) -> bool:
         return ct >= datetime.now(timezone.utc) - timedelta(days=days)
     except (ValueError, TypeError):
         return False
+
+
+# ============================================================
+# 新 SOP 三板块选取（§3.6 活跃榜 / §3.7 新锐发现 / 本周解读 / 附录总榜）
+# 输入的 items / pool 应已由调用方做好 kernel 排除 + §3.3 排除 + 板块归属
+# ============================================================
+def section_active_top(
+    items: list[dict[str, Any]],
+    star_deltas: dict[str, int],
+    *,
+    n: int | None = None,
+) -> list[dict[str, Any]]:
+    """§3.6 活跃榜：该板块按 weekly_growth 降序取 TopN（剔除负增长/无 delta）。
+
+    首期（star_deltas 为空）→ 返回空列表（由 render 标注「首期无基准」）。
+    """
+    if not star_deltas:
+        return []
+    limit = n if n is not None else config.SECTION_TOP_N
+    rows: list[tuple[int, dict[str, Any]]] = []
+    for it in items:
+        delta = star_deltas.get(_full(it))
+        if delta is None or delta <= 0:
+            continue
+        rows.append((delta, it))
+    rows.sort(key=lambda x: x[0], reverse=True)
+    return [it for _, it in rows[:limit]]
+
+
+def section_newcomers(
+    items: list[dict[str, Any]],
+    star_deltas: dict[str, int],
+    *,
+    exclude: set[str] | None = None,
+    n: int | None = None,
+    days: int | None = None,
+) -> list[dict[str, Any]]:
+    """§3.7 新锐发现：created_at 在 N 天内的「真正新建」项目。
+
+    按 weekly_growth 降序取 TopN；与活跃榜去重（exclude = 活跃榜 full_name 集合）。
+    刻意不采用 SOP 字面的「pushed_at 在 7 天内」——该条件几乎所有活跃项目都命中，
+    会让 grafana/dbeaver 这类成熟工具冒充新锐。新锐语义=真正新建项目，故只用
+    created_at。某板块无新建项目 → 返回空（render 标「无」，SOP §3.7 允许）。
+    """
+    limit = n if n is not None else config.NEWSTAR_TOP_N
+    window = days if days is not None else config.NEWSTAR_DAYS
+    exclude = exclude or set()
+
+    rows = [
+        it for it in items
+        if _full(it) not in exclude and _created_recent(it, window)
+    ]
+    rows.sort(key=lambda it: star_deltas.get(_full(it), 0), reverse=True)
+    return rows[:limit]
+
+
+def pick_section_focus(
+    active_top: list[dict[str, Any]],
+    interpreted: set[str],
+) -> dict[str, Any] | None:
+    """本周解读项目：该板块活跃榜 weekly_growth 最高、且未被其他板块解读者。
+
+    已被其他板块解读则顺延下一名；活跃榜为空 → None（该板块本期无解读）。
+    """
+    for it in active_top:
+        if _full(it) not in interpreted:
+            return it
+    return None
+
+
+def global_topboard(
+    pool: list[dict[str, Any]],
+    *,
+    n: int | None = None,
+) -> list[dict[str, Any]]:
+    """附录·总榜 TopN：按历史 star 总数降序（pool 应已剔除内核）。"""
+    limit = n if n is not None else config.TOPBOARD_TOP
+    return sorted(pool, key=lambda it: _star(it), reverse=True)[:limit]

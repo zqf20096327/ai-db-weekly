@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 from typing import Any
 
 import config
@@ -181,6 +182,131 @@ class AIClient:
         else:
             why = ""
         return what, why
+
+    # ============================================================
+    # 新 SOP：每项目 100 字 AI 解读（§4.3）+ 本周解读四维分析（§4.5）
+    # ============================================================
+    def brief_review(
+        self,
+        item: dict[str, Any],
+        category: str,
+        databases: str,
+        readme: str | None = None,
+    ) -> str:
+        """§4.3 每项目 AI 解读：≤100 字，含行动指引前缀（今日可试/本周可做/收藏观察）。
+
+        enabled=True 调 DeepSeek；失败/未配置回退占位。README 缺失时退化为 description。
+        """
+        full = item.get("full_name", "")
+        desc = item.get("description") or ""
+        topics = ", ".join(item.get("topics") or []) or "无"
+        readme_brief = (readme or "")[:2000] or "无"
+
+        if self.enabled:
+            text = self._ai_brief(full, desc, topics, category, databases, readme_brief)
+            if text:
+                return text
+            log.warning("AI 解读返回空，回退占位: %s", full)
+        return self._placeholder_brief(desc)
+
+    def _ai_brief(
+        self, full: str, desc: str, topics: str,
+        category: str, databases: str, readme_brief: str,
+    ) -> str:
+        """调 DeepSeek 生成 ≤100 字受控解读。"""
+        import templates as T  # noqa: PLC0415
+
+        prompt = (
+            "你是一位资深DBA，请根据以下项目信息，为数据库管理员生成一段简洁的AI解读。\n\n"
+            f"项目名称：{full}\n项目描述：{desc}\nTopics：{topics}\n"
+            f"README关键内容：{readme_brief}\n分类：{category}\n适用数据库：{databases}\n\n"
+            "要求：\n"
+            "1. 用一句话说清楚这个项目对DBA有什么用\n"
+            "2. 必须包含具体行动建议，并以下列之一开头：\n"
+            '   - 可立即体验：以"今日可试："开头\n'
+            '   - 需配置部署：以"本周可做："开头\n'
+            '   - 实验性项目：以"收藏观察："开头\n'
+            "3. 控制在100字以内\n"
+            "4. 语气专业、直接，不要废话\n"
+            "只输出这段解读本身，不要额外解释或加引号。"
+        )
+        raw = self._chat(prompt)
+        if not raw:
+            return ""
+        return _strip_banned(_md_truncate(raw, 160), T.BANNED_WORDS)
+
+    def _placeholder_brief(self, desc: str) -> str:
+        """占位：无 AI 时用 description 兜底（标记为观察项）。"""
+        if desc:
+            return f"收藏观察：{_md_truncate(desc, 80)}"
+        return "收藏观察：（无描述，待补充）"
+
+    def four_dimension_analysis(
+        self,
+        item: dict[str, Any],
+        category: str,
+        databases: str,
+        readme: str | None = None,
+    ) -> dict[str, str]:
+        """§4.5 本周解读四维分析。
+
+        返回 {what, highlights, scenarios, action}。enabled=True 调 DeepSeek；失败回退占位。
+        """
+        full = item.get("full_name", "")
+        desc = item.get("description") or "（无 description）"
+        readme_full = (readme or "")[:5000] or "无"
+
+        if self.enabled:
+            d = self._ai_four(full, desc, category, databases, readme_full)
+            if d:
+                return d
+            log.warning("AI 四维分析返回空，回退占位: %s", full)
+        return self._placeholder_four(full, desc)
+
+    def _ai_four(
+        self, full: str, desc: str, category: str,
+        databases: str, readme_full: str,
+    ) -> dict[str, str]:
+        """调 DeepSeek 生成四维解读，解析成 dict。"""
+        import templates as T  # noqa: PLC0415
+
+        prompt = (
+            "你是一位资深DBA，请根据以下项目信息，生成一份完整的项目解读。\n\n"
+            f"项目名称：{full}\n项目描述：{desc}\nREADME内容：{readme_full}\n"
+            f"分类：{category}\n适用数据库：{databases}\n\n"
+            "请严格按以下格式输出四段，段与段之间用独占一行的 === 分隔：\n"
+            "第一段【解决了什么】：用1-2句话说清楚解决的核心问题\n"
+            "第二段【核心亮点】：列出3-5个关键技术或功能亮点（顿号或短句）\n"
+            "第三段【适用场景】：说明适合哪些场景使用\n"
+            "第四段【DBA行动指南】：给出具体可执行建议，含具体命令或操作步骤\n"
+            "只输出这四段，不要额外说明。"
+        )
+        raw = self._chat(prompt)
+        if not raw:
+            return {}
+
+        parts = [p.strip() for p in raw.split("===")]
+        # 兜底：未按 === 拆但有多空行段
+        if len(parts) < 4 and "\n\n" in raw:
+            parts = [p.strip() for p in raw.split("\n\n")]
+
+        keys = ["what", "highlights", "scenarios", "action"]
+        d: dict[str, str] = {}
+        for i, k in enumerate(keys):
+            v = parts[i] if i < len(parts) else ""
+            # 去掉前缀 【标签】 及随后的冒号/空白
+            v = re.sub(r"^[\s]*【[^】]*】[\s:：]*", "", v).strip()
+            d[k] = _strip_banned(v, T.BANNED_WORDS) if v else ""
+        return d
+
+    def _placeholder_four(self, full: str, desc: str) -> dict[str, str]:
+        """占位：无 AI 时四维留半空。"""
+        return {
+            "what": f"**{full}**：{_md_truncate(desc, 160)}",
+            "highlights": "_（待基于 README 补充）_",
+            "scenarios": "_（待补充）_",
+            "action": "_（待补充）_",
+        }
 
     # ============================================================
     # 其他方法（保留接口，供其他栏目用）
