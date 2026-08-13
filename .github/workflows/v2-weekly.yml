@@ -30,7 +30,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      # 3. 恢复历史快照缓存（含当日 daily 产物 + 近一周历史，供 7 天 diff）
+      # 3. 安装依赖（v2 仅依赖 requests）
+      - name: 安装依赖
+        working-directory: v2
+        run: pip install -r requirements.txt
+
+      # 4. 恢复历史快照缓存（含当日 daily 产物 + 近一周历史，供 7 天 diff）
       - name: 恢复 data 缓存
         uses: actions/cache@v4
         with:
@@ -39,7 +44,7 @@ jobs:
           restore-keys: |
             v2-data-
 
-      # 4. 生成周报（自动定位 7 天前快照；v2 脚本在子目录，必须 working-directory: v2）
+      # 5. 生成周报（自动定位 7 天前快照；v2 脚本在子目录，必须 working-directory: v2）
       - name: 生成周报
         working-directory: v2
         timeout-minutes: 60
@@ -50,7 +55,7 @@ jobs:
           AI_MODEL: ${{ secrets.AI_MODEL }}
         run: python run_weekly.py
 
-      # 5. 把渲染出的 Markdown 暂存到可提交的 v2/reports/（data/ 被 gitignore）
+      # 6. 把渲染出的 Markdown 暂存到可提交的 v2/reports/（data/ 被 gitignore）
       - name: 暂存周报到 v2/reports/
         working-directory: v2
         run: |
@@ -65,7 +70,7 @@ jobs:
           fi
           ls -la reports/ || true
 
-      # 6. 提交周报到仓库（v2/reports/ 未被 gitignore，可在 GitHub 直接浏览）
+      # 7. 提交周报到仓库（v2/reports/ 未被 gitignore，可在 GitHub 直接浏览）
       - name: 提交周报
         run: |
           git config user.name "ai-db-weekly-bot"

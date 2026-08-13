@@ -31,7 +31,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      # 3. 恢复历史快照缓存（供后续周报做 7 天 diff；首日为空也无妨）
+      # 3. 安装依赖（v2 仅依赖 requests）
+      - name: 安装依赖
+        working-directory: v2
+        run: pip install -r requirements.txt
+
+      # 4. 恢复历史快照缓存（供后续周报做 7 天 diff；首日为空也无妨）
       - name: 恢复 data 缓存
         uses: actions/cache@v4
         with:
@@ -40,7 +45,7 @@ jobs:
           restore-keys: |
             v2-data-
 
-      # 4. 运行采集（v2 脚本在子目录，必须 working-directory: v2，否则 import config 失败）
+      # 5. 运行采集（v2 脚本在子目录，必须 working-directory: v2，否则 import config 失败）
       - name: 运行采集
         working-directory: v2
         timeout-minutes: 90
