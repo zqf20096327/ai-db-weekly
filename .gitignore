@@ -19,8 +19,16 @@ orasqldiag_skill.tar.gz
 .DS_Store
 .zcode/
 
-# === v2 采集产物（可重新生成，不入库）===
-v2/data/
+# === v2 采集产物（仅最近 8 天快照入库，供周报 7 天 diff；其余可重新生成，不入库）===
+v2/data/*
+!v2/data/snapshot_20260819/
+!v2/data/snapshot_20260820/
+!v2/data/snapshot_20260821/
+!v2/data/snapshot_20260822/
+!v2/data/snapshot_20260823/
+!v2/data/snapshot_20260824/
+!v2/data/snapshot_20260825/
+!v2/data/snapshot_20260826/
 # === v2 打包/日志/会话产物 ===
 v2.zip
 *.log

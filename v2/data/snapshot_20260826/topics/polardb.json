@@ -1,0 +1,156 @@
+[
+  {
+    "full_name": "aliyun/alibabacloud-dms-mcp-server",
+    "description": "A universal multi-cloud data MCP Server supporting over 40 types of data source connections, providing secure, unified data access in a single platform. Supports full range of Alibaba Cloud services and Mainstream databases/data warehouses.",
+    "html_url": "https://github.com/aliyun/alibabacloud-dms-mcp-server",
+    "stargazers_count": 52,
+    "forks_count": 16,
+    "open_issues_count": 16,
+    "watchers_count": 52,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-05-06T02:28:15Z",
+    "pushed_at": "2026-07-29T04:22:13Z",
+    "updated_at": "2026-08-12T10:06:52Z",
+    "default_branch": "main",
+    "topics": [
+      "ai",
+      "analyticsdb",
+      "claude",
+      "clickhouse",
+      "cursor",
+      "db2",
+      "dify",
+      "dify-plugins",
+      "mariadb",
+      "mcp-server",
+      "mongodb",
+      "mysql",
+      "oceanbase",
+      "oracle",
+      "polardb",
+      "polardb-x",
+      "postgresql",
+      "redis",
+      "sqlserver",
+      "starrocks"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": "polardb",
+    "source": "topic",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-Stack-Operator",
+    "description": "PolarDB Stack is a DBaaS implementation for PolarDB-for-Postgres, as an operator creates and manages PolarDB/PostgreSQL clusters running in Kubernetes. It provides re-construct, failover swtich-over, scale up/out, high-available capabilities for each clusters.",
+    "html_url": "https://github.com/ApsaraDB/PolarDB-Stack-Operator",
+    "stargazers_count": 25,
+    "forks_count": 19,
+    "open_issues_count": 4,
+    "watchers_count": 25,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-15T08:50:48Z",
+    "pushed_at": "2022-05-09T08:35:21Z",
+    "updated_at": "2025-08-10T02:07:19Z",
+    "default_branch": "master",
+    "topics": [
+      "dbaas",
+      "high-availability",
+      "k8s",
+      "k8s-operator",
+      "kubernetes",
+      "operator",
+      "polardb",
+      "postgresql",
+      "postgresql-database"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": "polardb",
+    "source": "topic",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-NodeAgent",
+    "description": "PolarDB-NodeAgent is a light-weight and flexible agent for data collection, which supports performance data collection from hosts and instances. It is a plug-in process running on physical machines or virtual machines, collecting performance data every second and real-time logs of all the instances (both containerized instances and non-containerized instances) on the machine.",
+    "html_url": "https://github.com/ApsaraDB/PolarDB-NodeAgent",
+    "stargazers_count": 15,
+    "forks_count": 10,
+    "open_issues_count": 0,
+    "watchers_count": 15,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-09-01T10:34:19Z",
+    "pushed_at": "2022-06-15T03:35:32Z",
+    "updated_at": "2024-08-13T01:28:43Z",
+    "default_branch": "main",
+    "topics": [
+      "monitoring-tool",
+      "polardb",
+      "postgresql-polardb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": "polardb",
+    "source": "topic",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-Stack-Daemon",
+    "description": "PolarStack-Daemon is a daemon process in DBaaS PolarStack. It runs on all hosts and is responsible for port status collection, db log clear, db engine images availability collection, host network status collection.  It provides the basic host information and status for db cluster creating/migrating/state recognition and running.",
+    "html_url": "https://github.com/ApsaraDB/PolarDB-Stack-Daemon",
+    "stargazers_count": 11,
+    "forks_count": 5,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-15T08:44:16Z",
+    "pushed_at": "2022-03-21T07:31:19Z",
+    "updated_at": "2025-06-21T03:44:00Z",
+    "default_branch": "master",
+    "topics": [
+      "dbaas",
+      "k8s-kubernetes",
+      "polardb",
+      "postgresql-polardb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": "polardb",
+    "source": "topic",
+    "category": [
+      "tool"
+    ]
+  }
+]

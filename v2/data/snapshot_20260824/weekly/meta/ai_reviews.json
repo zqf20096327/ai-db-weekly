@@ -1,0 +1,36 @@
+{
+  "snapshot_date": "2026-08-24",
+  "brief": {
+    "nfrastack/db-backup": "db-backup 支持多种数据库的定时备份，可配置压缩、加密、存储及通知，并提供恢复工具，适用于需自动化备份的数据库运维场景。",
+    "janbjorge/pgqueuer": "PgQueuer是Python库，将PostgreSQL用作后台任务队列。支持事务性入队、并发安全、定时调度与监控，无需额外消息服务。",
+    "pgrundev/pgbot": "pgbot是PostgreSQL的只读诊断工具，以静态二进制连接数据库，读取统计视图并输出健康报告及变更对比，支持CI集成与MCP调用。",
+    "imehdiha/cardpay": "CardPay 是自托管支付网关，基于 PHP 和 MySQL/MariaDB，通过 HMAC API 与短信匹配确认交易，提供波斯语界面。对数据库使用者",
+    "moriyoshi/pglite-go": "pglite-go将PostgreSQL 18编译为WebAssembly，嵌入Go进程运行，无需外部服务。通过标准database/sql接口提供事务",
+    "dataglotai/dataglot": "Rust联邦SQL查询引擎，以PostgreSQL协议为入口，支持跨Oracle、MySQL、PostgreSQL联合查询，查询计划阶段实施列掩码与行过滤治理。",
+    "bytebase/bytebase": "Bytebase 是开源数据库治理平台，为人工与AI代理提供统一控制面，管理变更、访问与合规。支持多种数据库，提供GUI工作流",
+    "ClouGence/open-cdm": "开源数据库管理工具，面向团队协作，提供访问控制、数据脱敏、SQL审计、CI/CD及跨地域部署，支持Oracle、MySQL、PostgreSQL、TiDB",
+    "polardb/langchain-polardb-pg": "langchain-polardb-pg是阿里云PolarDB for PostgreSQL的LangChain集成包，支持库内嵌入、向量存储与模型管理",
+    "t8y2/dbx": "20MB客户端支持90余种数据库，覆盖MySQL、PostgreSQL、SQL Server、DM等，提供桌面、Docker、CLI界面",
+    "TabularisDB/tabularis": "Tabularis是开源桌面SQL工作台，支持Oracle、SQL Server、DB2、MySQL、PostgreSQL、MariaDB",
+    "Canner/WrenAI": "WrenAI是开源生成式BI引擎，经语义层将自然语言转SQL，支持20余种数据源，供AI代理生成受治理的仪表盘与图表。",
+    "fj1981/dqex": "dqex为跨平台数据库工作台，单文件分发，支持离线。提供MySQL、PostgreSQL、Oracle的导出、导入、迁移、比对及AI辅助SQL编写",
+    "lilee-LI/database-langchain-gaussdb-sync": "该工具为LangChain提供GaussDB向量存储与聊天历史集成，支持集中式部署的稠密、BM25及混合检索，分布式部署支持稠密检索。"
+  },
+  "three": {
+    "bytebase/bytebase": {
+      "what": "数据库变更与访问管控分散在多个工具中，导致流程割裂、权限失控且难以审计。Bytebase将变更管理、访问控制与合规记录统一到一个平台，为数据库操作提供单一控制面。",
+      "highlights": "支持Oracle、SQL Server、MySQL、PostgreSQL、TiDB、OceanBase等十余种数据库；提供GUI变更工作流与GitOps集成；具备细粒度RBAC、临时授权与动态脱敏",
+      "scenarios": "适用于需要规范化数据库变更流程的开发团队，需集中管理多环境数据库的DBA，以及要求列级权限控制与审计追踪的安全合规场景。"
+    },
+    "nfrastack/db-backup": {
+      "what": "解决多类型数据库定时备份与集中管理问题，支持自定义调度、压缩、加密及多存储目标，降低备份运维复杂度。",
+      "highlights": "支持MySQL、PostgreSQL、MariaDB、SQL Server及多种非关系型数据库定时备份。提供cron、间隔调度，支持S3与Azure存储，具备GPG加密、压缩及失败通知功能。",
+      "scenarios": "适用于需要统一管理多种数据库备份策略的运维团队，或对备份调度、存储位置、加密及监控有定制化需求的生产环境。"
+    },
+    "t8y2/dbx": {
+      "what": "20MB安装包支持90余种数据库连接，涵盖MySQL、PostgreSQL、文件库、内存库、文档库、分析库、SQL Server、达梦等，提供桌面端、Docker、CLI三种形态",
+      "highlights": "内置AI助手辅助生成与解释查询语句；集成MCP Server供外部AI调用；单文件分发，支持桌面端、Docker、命令行；覆盖Oracle、SQL Server、DB2、MySQL",
+      "scenarios": "适用于需同时管理多种数据库的开发运维人员，可在资源受限容器或远程服务器中通过Docker或CLI操作，支持将查询能力经MCP Server接入AI工作流，也适合桌面端日常多库巡检与数据浏览。"
+    }
+  }
+}

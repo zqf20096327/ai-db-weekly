@@ -1,0 +1,37 @@
+{
+  "snapshot_date": "2026-08-20",
+  "brief": {
+    "PostgREST/postgrest": "PostgREST将PostgreSQL转为RESTful API，支持标准HTTP操作。用户可通过URL查询、过滤、排序数据，无需编写后端代码",
+    "timescale/timescaledb": "TimescaleDB是PostgreSQL扩展，集成时序数据存储与分析，支持SQL处理时间序列及事件数据，适用于物联网、金融分析等实时分析场景。",
+    "neondatabase/neon": "Neon将PostgreSQL存储与计算分离，支持自动扩缩容、分支复制与按需启停。可作为Serverless数据库按需付费，用分支简化开发测试流程。",
+    "oxpull/django-ox": "django-ox为Django 6.0任务框架提供数据库后端，任务存于MySQL或PostgreSQL，支持事务入队、重试与调度，无需额外消息队列。",
+    "AlexAli29/orm": "该项目为Go语言PostgreSQL数据访问工具，通过对比Go结构体与数据库Schema，生成类型安全查询元数据，支持迁移与校验。",
+    "10play/tendb": "tendb是自托管PostgreSQL分支工具，基于写时复制技术，可在自有基础设施上快速创建数据库分支，支持本地Docker及主流云平台。",
+    "DotNetNext/SqlSugar": "SqlSugar是.NET开源ORM框架，支持Oracle、SQL Server、DB2、MySQL、PostgreSQL、MariaDB",
+    "bytebase/bytebase": "Bytebase是开源数据库治理平台，统一管理变更与访问，支持Oracle、SQL Server、MySQL、PostgreSQL、MariaDB",
+    "ClouGence/open-cdm": "开源数据库管理工具，面向团队协作，提供访问控制、数据脱敏、SQL审计及CI/CD能力，支持跨地域部署，兼容多种主流及国产数据库。",
+    "oceanbase/ob-sanity": "ob-sanity是OceanBase的运行时内存安全方案，基于clang插件与运行时库，辅助检测内存错误，增强使用者对内存操作的监控能力。",
+    "t8y2/dbx": "20MB客户端支持90余种数据库，含MySQL、PostgreSQL、文件、内存、文档、嵌入式分析、SQL Server及达梦。提供桌面端、Docker",
+    "prest/prest": "pREST为PostgreSQL提供即时REST与MCP接口，支持CRUD、自定义SQL、认证及访问控制，无需手写后端，适用于新建或现有数据库。",
+    "xyproto/algernon": "Go编写的自包含Web服务器，支持HTTP/2/3、Lua、Markdown及多种数据库后端，提供用户权限、限流等特性。",
+    "nduckmink/NomaData": "NomaData为AI原生BI客户端，经语义层连接LLM与数据库，将自然语言转为实时分析，支持PostgreSQL、MySQL、SQL Server",
+    "lilee-LI/database-langchain-gaussdb-sync": "该工具为LangChain提供GaussDB向量存储与聊天历史集成，支持集中式部署的稠密、BM25及混合检索，分布式部署支持稠密检索。"
+  },
+  "three": {
+    "PostgREST/postgrest": {
+      "what": "PostgREST 将任意 PostgreSQL 数据库直接转换为 RESTful API，省去手写服务端代码，解决前后端分离时接口开发与数据库对接的重复劳动问题。",
+      "highlights": "基于Haskell与Warp服务器，具备高并发低延迟特性。将JSON序列化、数据校验、授权等操作下沉至数据库执行，支持JWT认证与数据库角色授权，并通过OpenAPI标准自动生成接口文档。",
+      "scenarios": "适用于已有 PostgreSQL 数据库、需快速暴露 API 给前端或第三方调用的场景，也适合微服务架构中数据服务层的快速搭建，以及需要严格基于数据库权限控制访问的后台系统。"
+    },
+    "t8y2/dbx": {
+      "what": "20MB安装包集成90余种数据库访问能力，覆盖MySQL、PostgreSQL、文件库、内存库、文档库、Oracle、SQL Server、DB2、达梦等，解决多数据库客户端碎片化与安装体积问题。",
+      "highlights": "内置AI助手辅助生成查询与运维操作，提供MCP Server接口，支持桌面端、Docker容器及CLI三种运行形态。单一二进制文件跨平台分发，适配Windows、macOS与Linux。",
+      "scenarios": "适用于需要同时管理多种类型数据库的开发与运维人员。适合在资源受限的云主机或容器环境中部署。适合将数据库操作集成到自动化脚本或 AI 工作流中的场景。"
+    },
+    "DotNetNext/SqlSugar": {
+      "what": "解决.NET应用在不同数据库间切换时需重写数据访问层的核心问题，通过统一API屏蔽底层差异，降低多数据库适配成本。",
+      "highlights": "支持.NET Framework至.NET 10跨版本运行，覆盖十余种数据库（含Oracle、SQL Server、MySQL等），提供实体与非实体CRUD、联表查询、分页及大数据批量写入能力。",
+      "scenarios": "适用于需要同时对接多种关系型或国产数据库的企业级应用，如SaaS平台的多租户数据隔离、跨库查询场景，以及需要低代码快速建模或处理亿级数据量的业务系统。"
+    }
+  }
+}

@@ -1,0 +1,421 @@
+[
+  {
+    "full_name": "mysql/mysql-community",
+    "description": "To be used by the community team to host wiki pages",
+    "html_url": "https://github.com/mysql/mysql-community",
+    "stargazers_count": 30,
+    "forks_count": 4,
+    "open_issues_count": 57,
+    "watchers_count": 30,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-23T00:17:35Z",
+    "pushed_at": "2026-08-20T17:45:10Z",
+    "updated_at": "2026-08-26T03:18:20Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-configurator",
+    "description": "MySQL Configurator",
+    "html_url": "https://github.com/mysql/mysql-configurator",
+    "stargazers_count": 12,
+    "forks_count": 6,
+    "open_issues_count": 2,
+    "watchers_count": 12,
+    "language": "C#",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-27T10:41:49Z",
+    "pushed_at": "2026-04-21T09:00:09Z",
+    "updated_at": "2026-08-07T13:13:52Z",
+    "default_branch": "series/9.x",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-shell-plugins",
+    "description": "Plugins for the MySQL Shell",
+    "html_url": "https://github.com/mysql/mysql-shell-plugins",
+    "stargazers_count": 94,
+    "forks_count": 21,
+    "open_issues_count": 47,
+    "watchers_count": 94,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-01T09:53:35Z",
+    "pushed_at": "2026-06-01T08:16:07Z",
+    "updated_at": "2026-08-08T23:11:20Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-ndb-operator",
+    "description": "Kubernetes Operator for MySQL NDB Cluster.",
+    "html_url": "https://github.com/mysql/mysql-ndb-operator",
+    "stargazers_count": 44,
+    "forks_count": 18,
+    "open_issues_count": 0,
+    "watchers_count": 44,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-30T09:10:15Z",
+    "pushed_at": "2026-08-03T08:32:40Z",
+    "updated_at": "2026-06-19T06:24:37Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-operator",
+    "description": "MySQL Operator for Kubernetes",
+    "html_url": "https://github.com/mysql/mysql-operator",
+    "stargazers_count": 946,
+    "forks_count": 167,
+    "open_issues_count": 8,
+    "watchers_count": 946,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-26T12:03:32Z",
+    "pushed_at": "2026-07-31T05:42:39Z",
+    "updated_at": "2026-08-26T06:28:12Z",
+    "default_branch": "trunk",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-connector-nodejs",
+    "description": "MySQL Connector Node.JS is a MySQL Connector using the X Protocol, which was introduced with MySQL 5.7.12.",
+    "html_url": "https://github.com/mysql/mysql-connector-nodejs",
+    "stargazers_count": 160,
+    "forks_count": 34,
+    "open_issues_count": 0,
+    "watchers_count": 160,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-04-12T12:33:51Z",
+    "pushed_at": "2024-10-22T07:41:17Z",
+    "updated_at": "2026-07-03T05:25:24Z",
+    "default_branch": "trunk",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-shell",
+    "description": "MySQL Shell is a command line scriptable shell for MySQL, with support for logical backups, InnoDB Cluster management and more. It supports SQL, JavaScript and Python.",
+    "html_url": "https://github.com/mysql/mysql-shell",
+    "stargazers_count": 222,
+    "forks_count": 80,
+    "open_issues_count": 0,
+    "watchers_count": 222,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-04-12T06:24:37Z",
+    "pushed_at": "2026-08-18T19:22:06Z",
+    "updated_at": "2026-08-18T19:25:52Z",
+    "default_branch": "master",
+    "topics": [
+      "backup",
+      "high-availability",
+      "mysql",
+      "shell"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-connector-odbc",
+    "description": "This is the source for MySQL Connector/ODBC (myodbc), an ODBC (3.51)  driver for connecting an ODBC-aware application to the MySQL Server.",
+    "html_url": "https://github.com/mysql/mysql-connector-odbc",
+    "stargazers_count": 96,
+    "forks_count": 57,
+    "open_issues_count": 1,
+    "watchers_count": 96,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-03-31T09:11:58Z",
+    "pushed_at": "2026-08-19T11:22:44Z",
+    "updated_at": "2026-08-19T11:23:49Z",
+    "default_branch": "trunk",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-connector-cpp",
+    "description": "MySQL Connector/C++ is a MySQL database connector for C++. It lets you develop C++ and C applications that connect to MySQL Server.",
+    "html_url": "https://github.com/mysql/mysql-connector-cpp",
+    "stargazers_count": 708,
+    "forks_count": 254,
+    "open_issues_count": 0,
+    "watchers_count": 708,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-01-22T09:59:10Z",
+    "pushed_at": "2026-07-29T08:22:59Z",
+    "updated_at": "2026-08-26T05:28:43Z",
+    "default_branch": "trunk",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-connector-net",
+    "description": "Connector/NET is a fully-managed ADO.NET driver for MySQL.",
+    "html_url": "https://github.com/mysql/mysql-connector-net",
+    "stargazers_count": 333,
+    "forks_count": 213,
+    "open_issues_count": 3,
+    "watchers_count": 333,
+    "language": "C#",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-11-13T10:53:17Z",
+    "pushed_at": "2026-06-26T19:23:59Z",
+    "updated_at": "2026-08-19T12:03:30Z",
+    "default_branch": "9.x",
+    "topics": [],
+    "homepage": "https://dev.mysql.com/downloads/connector/net/",
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-workbench",
+    "description": "MySQL Workbench is a unified visual tool for database architects, developers, and DBAs. MySQL Workbench provides data modeling, SQL development, and comprehensive administration tools for server configuration, user administration, backup, and much more.",
+    "html_url": "https://github.com/mysql/mysql-workbench",
+    "stargazers_count": 995,
+    "forks_count": 356,
+    "open_issues_count": 2,
+    "watchers_count": 995,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-10-22T13:43:06Z",
+    "pushed_at": "2026-04-23T09:01:56Z",
+    "updated_at": "2026-08-12T08:56:58Z",
+    "default_branch": "8.0",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-connector-j",
+    "description": "MySQL Connector/J",
+    "html_url": "https://github.com/mysql/mysql-connector-j",
+    "stargazers_count": 1014,
+    "forks_count": 631,
+    "open_issues_count": 1,
+    "watchers_count": 1014,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-03-23T15:45:23Z",
+    "pushed_at": "2026-07-29T06:12:25Z",
+    "updated_at": "2026-08-17T10:22:08Z",
+    "default_branch": "trunk",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-server",
+    "description": "MySQL Server, the world's most popular open source database, and MySQL Cluster, a real-time, open source transactional database.",
+    "html_url": "https://github.com/mysql/mysql-server",
+    "stargazers_count": 12407,
+    "forks_count": 4335,
+    "open_issues_count": 44,
+    "watchers_count": 12407,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-09-26T09:31:03Z",
+    "pushed_at": "2026-08-25T22:54:46Z",
+    "updated_at": "2026-08-26T09:18:28Z",
+    "default_branch": "trunk",
+    "topics": [],
+    "homepage": "http://www.mysql.com/",
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-connector-python",
+    "description": "MySQL Connector/Python is implementing the MySQL Client/Server protocol completely in Python. No MySQL libraries are needed, and no compilation is necessary to run this Python DB API v2.0 compliant driver. Documentation & Download: http://dev.mysql.com/doc/connector-python/en",
+    "html_url": "https://github.com/mysql/mysql-connector-python",
+    "stargazers_count": 957,
+    "forks_count": 300,
+    "open_issues_count": 1,
+    "watchers_count": 957,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-08-01T09:11:26Z",
+    "pushed_at": "2026-07-29T10:38:05Z",
+    "updated_at": "2026-08-21T13:17:57Z",
+    "default_branch": "trunk",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "mysql/mysql-js",
+    "description": "NoSQL node.js connector for MySQL Cluster",
+    "html_url": "https://github.com/mysql/mysql-js",
+    "stargazers_count": 171,
+    "forks_count": 47,
+    "open_issues_count": 28,
+    "watchers_count": 171,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2012-09-29T15:09:28Z",
+    "pushed_at": "2025-07-09T12:53:50Z",
+    "updated_at": "2025-11-19T05:56:17Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-26",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  }
+]
