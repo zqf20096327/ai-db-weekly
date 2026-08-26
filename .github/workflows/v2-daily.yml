@@ -2,17 +2,18 @@ name: v2 每日采集
 
 # 每日跑 v2 版全数据源采集（run_daily.py）。
 #   - 北京 09:00 (UTC 01:00)
-# 采集产物 v2/data/ 被 gitignore，靠 actions/cache 在运行间持久化，
-# 每日 snapshot 累积，供周报的 7 天 diff 使用。
-# 本 workflow 不向仓库 push（无写权限需求）。
+# 采集产物 v2/data/ 双轨持久化：
+#   1. actions/cache —— 全量历史快照（含 30 天 new_projects 窗口所需），运行间累积；
+#   2. 仓库 v2/data/ —— 滚动 8 天窗口（新快照入库 + 窗口外移出索引），
+#      供周报 7 天 diff 与人工核查；白名单由下方同步步骤每日重写 .gitignore。
 "on":
   schedule:
     - cron: '0 1 * * *'    # UTC 01:00 = 北京 09:00
   workflow_dispatch: {}    # 允许手动触发
 
-# 只读 + cache（cache 无需 contents:write）
+# 需 push 每日快照，必须显式给写权限
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   collect:
@@ -55,5 +56,59 @@ jobs:
           AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
         run: python run_daily.py
+
+      # 6. 提交今日快照到仓库（滚动 8 天窗口）
+      #    只动 git 索引不删磁盘文件：cache 仍保留全量历史（30 天 new_projects 窗口要用）
+      - name: 提交快照（滚动 8 天窗口）
+        run: |
+          set -euo pipefail
+          TODAY="$(date -u +%Y%m%d)"
+          SNAP="v2/data/snapshot_${TODAY}"
+          if [ ! -d "$SNAP" ]; then
+            echo "::warning::今日快照 $SNAP 不存在，跳过提交"
+            exit 0
+          fi
+
+          # 最近 8 天窗口（含今天），用 epoch 秒做日期回退，避免 date 解析歧义
+          BASE="$(date -u -d "${TODAY:0:4}-${TODAY:4:2}-${TODAY:6:2}" +%s)"
+          W=()
+          for i in 0 1 2 3 4 5 6 7; do
+            W+=( "$(date -u -d "@$(( BASE - i * 86400 ))" +%Y%m%d)" )
+          done
+          echo "窗口：${W[*]}"
+
+          # 重写 .gitignore 白名单（BEGIN/END 标记之间，勿手工编辑）
+          python3 -c '
+          import sys
+          from pathlib import Path
+          days = sys.argv[1:]
+          p = Path(".gitignore")
+          t = p.read_text(encoding="utf-8")
+          b = "# BEGIN snapshot whitelist (auto-generated)"
+          e = "# END snapshot whitelist"
+          pre, rest = t.split(b, 1)
+          _, post = rest.split(e, 1)
+          block = "".join(f"!v2/data/snapshot_{d}/\n" for d in days)
+          p.write_text(pre + b + "\n" + block + e + post, encoding="utf-8")
+          ' "${W[@]}"
+
+          # 窗口外的已跟踪快照移出索引（--cached：磁盘文件保留，cache 照常全量保存）
+          for d in $(git ls-files "v2/data/snapshot_*" | cut -d/ -f3 | sort -u); do
+            case " ${W[*]} " in
+              *" ${d#snapshot_} "*) ;;
+              *) echo "移出窗口：$d"; git rm -r -q --cached "v2/data/$d" ;;
+            esac
+          done
+
+          git config user.name "ai-db-weekly-bot"
+          git config user.email "bot@ai-db-weekly.local"
+          git add .gitignore "$SNAP"
+          if git diff --staged --quiet; then
+            echo "no changes to commit"
+            exit 0
+          fi
+          git commit -m "auto: ${TODAY} 采集快照入库（滚动 8 天窗口）"
+          git pull --rebase origin "${GITHUB_REF_NAME:-main}"
+          git push origin "${GITHUB_REF_NAME:-main}"
 
       # cache 在 job 结束时由 actions/cache 的 post-action 自动保存
