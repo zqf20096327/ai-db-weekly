@@ -1,0 +1,59 @@
+name: v2 每日采集
+
+# 每日跑 v2 版全数据源采集（run_daily.py）。
+#   - 北京 09:00 (UTC 01:00)
+# 采集产物 v2/data/ 被 gitignore，靠 actions/cache 在运行间持久化，
+# 每日 snapshot 累积，供周报的 7 天 diff 使用。
+# 本 workflow 不向仓库 push（无写权限需求）。
+"on":
+  schedule:
+    - cron: '0 1 * * *'    # UTC 01:00 = 北京 09:00
+  workflow_dispatch: {}    # 允许手动触发
+
+# 只读 + cache（cache 无需 contents:write）
+permissions:
+  contents: read
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      # 1. 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. 安装 Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 3. 安装依赖（v2 仅依赖 requests）
+      - name: 安装依赖
+        working-directory: v2
+        run: pip install -r requirements.txt
+
+      # 4. 恢复历史快照缓存（供后续周报做 7 天 diff；首日为空也无妨）
+      - name: 恢复 data 缓存
+        uses: actions/cache@v4
+        with:
+          path: v2/data
+          key: v2-data-${{ github.run_id }}     # 唯一 key → 每次必存新缓存
+          restore-keys: |
+            v2-data-
+
+      # 5. 运行采集（v2 脚本在子目录，必须 working-directory: v2，否则 import config 失败）
+      - name: 运行采集
+        working-directory: v2
+        timeout-minutes: 90
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+        run: python run_daily.py
+
+      # cache 在 job 结束时由 actions/cache 的 post-action 自动保存

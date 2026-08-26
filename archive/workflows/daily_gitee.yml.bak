@@ -1,0 +1,62 @@
+name: AI×DB 周报采集 (Gitee)
+
+# 每天多个时间点自动采集（北京时间），与 GitHub 源的 daily.yml 错开 1 小时，
+# 避免两个 job 同时运行产生 rebase 冲突：
+#   - 北京 09:00 (UTC 01:00)  早晨首采
+#   - 北京 15:00 (UTC 07:00)  午间补采
+#   - 北京 21:00 (UTC 13:00)  晚间兜底
+# 注意：同一天多次运行，快照/草稿会被覆盖（同名文件），发布日(周一)有去重保护。
+on:
+  schedule:
+    - cron: '0 1 * * *'    # 北京 09:00
+    - cron: '0 7 * * *'    # 北京 15:00
+    - cron: '0 13 * * *'   # 北京 21:00
+  workflow_dispatch: {}    # 允许手动触发
+
+# 关键：默认 GITHUB_TOKEN 是 read-only，必须显式给写权限才能 push 回仓库
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 拉取代码（fetch-depth:0 拉完整历史，rebase/提交回主分支需要）
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. 安装 Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 3. 运行 Gitee 采集脚本
+      - name: Run collector
+        env:
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+        run: python gitee_trending.py
+
+      # 4. 提交快照和成品到仓库（Gitee 专属目录，与 GitHub 源产物隔离）
+      - name: Commit results
+        run: |
+          git config user.name "ai-db-weekly-bot"
+          git config user.email "bot@ai-db-weekly.local"
+          git add cache_gitee/ output_gitee/ README_gitee.md || true
+          # 没有变更就跳过提交（避免空 commit 失败）
+          if git diff --staged --quiet; then
+            echo "no changes to commit"
+            exit 0
+          fi
+          git commit -m "auto: $(date -u +%Y-%m-%d) Gitee 采集"
+          # 推送：同一天多次运行会覆盖同名快照/草稿文件，普通 pull --rebase 会冲突
+          # 卡死 runner。这里用 rebase + theirs 策略：冲突时一律用本地(本次采集)版本，
+          # 因为采集数据是权威的，远端的旧版本应被覆盖。fetch-depth 需拉完整历史。
+          git pull --rebase --strategy-option=theirs origin ${{ github.ref_name }}
+          git push

@@ -1,0 +1,481 @@
+{
+  "ai_hot": [
+    {
+      "full": "OtterMind/Chat2DB",
+      "name": "Chat2DB",
+      "stars": 27943,
+      "lang": "Java",
+      "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
+      "url": "https://github.com/OtterMind/Chat2DB",
+      "pushed": "2026-08-12T03:51:27Z",
+      "delta": 294,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Chat2DB是一款AI驱动的跨平台数据库客户端，支持40+种数据库，提供SQL工作台和自带AI模型生成优化SQL的核心功能。"
+    },
+    {
+      "full": "directus/directus",
+      "name": "directus",
+      "stars": 37313,
+      "lang": "TypeScript",
+      "desc": "The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more.",
+      "url": "https://github.com/directus/directus",
+      "pushed": "2026-08-12T15:52:54Z",
+      "delta": 101,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Directus 是一个开源后端平台，可将任何 SQL 数据库即时包装为 REST 和 GraphQL API，并提供可视化数据管理界面。"
+    },
+    {
+      "full": "bytebase/dbhub",
+      "name": "dbhub",
+      "stars": 3345,
+      "lang": "TypeScript",
+      "desc": "Token conscious database MCP server for Postgres, MySQL, SQL Server, MariaDB, SQLite.",
+      "url": "https://github.com/bytebase/dbhub",
+      "pushed": "2026-08-08T12:35:40Z",
+      "delta": 57,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "DBHub 是一个极简 MCP 服务器，让 MCP 客户端通过统一接口连接并探索 PostgreSQL、MySQL 等数据库，默认仅加载两个工具，节省约 13 倍 token。"
+    },
+    {
+      "full": "prisma/prisma",
+      "name": "prisma",
+      "stars": 47562,
+      "lang": "TypeScript",
+      "desc": "Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB",
+      "url": "https://github.com/prisma/prisma",
+      "pushed": "2026-08-12T15:29:25Z",
+      "delta": 27,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Prisma Next是Prisma ORM的TypeScript重写版，核心卖点是默认支持可扩展、可组合且对AI代理友好。"
+    },
+    {
+      "full": "oracle-devrel/oracle-ai-developer-hub",
+      "name": "oracle-ai-developer-hub",
+      "stars": 4327,
+      "lang": "Jupyter Notebook",
+      "desc": "Technical resources for AI developers to build applications, agents, and systems using Oracle AI Database and OCI services",
+      "url": "https://github.com/oracle-devrel/oracle-ai-developer-hub",
+      "pushed": "2026-08-11T23:34:34Z",
+      "delta": 10,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "该仓库提供构建AI应用、代理和系统的技术资源，核心是结合Oracle AI数据库与OCI服务的端到端参考实现。"
+    }
+  ],
+  "ai_emerging": [
+    {
+      "full": "yiaany/Mekka",
+      "name": "Mekka",
+      "stars": 4,
+      "lang": "TypeScript",
+      "desc": "The agent-native Supabase killer: SQLite speed today, distributed cloud next, without the PostgreSQL tax.",
+      "url": "https://github.com/yiaany/Mekka",
+      "pushed": "2026-08-11T14:33:41Z",
+      "delta": null,
+      "tags": [
+        "新锐"
+      ],
+      "track": "新锐",
+      "zh_desc": "Mekka是一个基于Bun和SQLite的一体化后端开发平台，集数据库、认证、存储、实时功能和Studio于一体，无需外部数据库或容器即可运行。"
+    },
+    {
+      "full": "JayachandraV16/enterprise-knowledge-assistant",
+      "name": "enterprise-knowledge-assistant",
+      "stars": 3,
+      "lang": "—",
+      "desc": "AI Powered Enterprise Knowledge Assistant (RAG Chatbot) built with React, Spring Boot, FastAPI, ChromaDB and Ollama.",
+      "url": "https://github.com/JayachandraV16/enterprise-knowledge-assistant",
+      "pushed": "2026-08-06T18:48:53Z",
+      "delta": null,
+      "tags": [
+        "新锐"
+      ],
+      "track": "新锐",
+      "zh_desc": "基于RAG的企业知识助手，支持上传PDF、DOCX、CSV文档并通过本地LLM进行语义检索问答，所有回答均附来源引用。"
+    },
+    {
+      "full": "FrancisTCE/gresui-web",
+      "name": "gresui-web",
+      "stars": 3,
+      "lang": "TypeScript",
+      "desc": "simple postgres ui + mcp service layer. NPM: https://www.npmjs.com/package/gresui-web",
+      "url": "https://github.com/FrancisTCE/gresui-web",
+      "pushed": "2026-08-11T18:55:08Z",
+      "delta": null,
+      "tags": [
+        "新锐"
+      ],
+      "track": "新锐",
+      "zh_desc": "gresui-web 是一个基于 Bun 和 React 构建的 PostgreSQL 浏览器客户端，支持通过 MCP 服务器将数据库暴露给 AI 客户端使用。"
+    },
+    {
+      "full": "LuminariMUD/sage",
+      "name": "sage",
+      "stars": 3,
+      "lang": "Python",
+      "desc": "GraphRAG Lore & World-Building System",
+      "url": "https://github.com/LuminariMUD/sage",
+      "pushed": "2026-08-10T20:29:32Z",
+      "delta": null,
+      "tags": [
+        "新锐"
+      ],
+      "track": "新锐",
+      "zh_desc": "为LuminariMUD游戏世界打造的智能知识管理系统，通过混合RAG搜索提供自然语言问答与剧情生成。"
+    }
+  ],
+  "ai_total": [
+    {
+      "full": "prisma/prisma",
+      "name": "prisma",
+      "stars": 47562,
+      "lang": "TypeScript",
+      "desc": "Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB",
+      "url": "https://github.com/prisma/prisma",
+      "pushed": "2026-08-12T15:29:25Z",
+      "delta": 27,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Prisma Next是Prisma ORM的TypeScript重写版，核心卖点是默认支持可扩展、可组合且对AI代理友好。"
+    },
+    {
+      "full": "directus/directus",
+      "name": "directus",
+      "stars": 37313,
+      "lang": "TypeScript",
+      "desc": "The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more.",
+      "url": "https://github.com/directus/directus",
+      "pushed": "2026-08-12T15:52:54Z",
+      "delta": 101,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Directus 是一个开源后端平台，可将任何 SQL 数据库即时包装为 REST 和 GraphQL API，并提供可视化数据管理界面。"
+    },
+    {
+      "full": "OtterMind/Chat2DB",
+      "name": "Chat2DB",
+      "stars": 27943,
+      "lang": "Java",
+      "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
+      "url": "https://github.com/OtterMind/Chat2DB",
+      "pushed": "2026-08-12T03:51:27Z",
+      "delta": 294,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Chat2DB是一款AI驱动的跨平台数据库客户端，支持40+种数据库，提供SQL工作台和自带AI模型生成优化SQL的核心功能。"
+    },
+    {
+      "full": "bytebase/bytebase",
+      "name": "bytebase",
+      "stars": 14373,
+      "lang": "Go",
+      "desc": "Database governance built for humans and agents — controlling changes and access across every major database.",
+      "url": "https://github.com/bytebase/bytebase",
+      "pushed": "2026-08-12T15:49:36Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Bytebase是开源数据库治理平台，统一管理变更、访问控制和合规审计，核心卖点是提供GUI工作流与GitOps集成。"
+    },
+    {
+      "full": "Sequel-Ace/Sequel-Ace",
+      "name": "Sequel-Ace",
+      "stars": 7501,
+      "lang": "Objective-C",
+      "desc": "MySQL/MariaDB database management for macOS",
+      "url": "https://github.com/Sequel-Ace/Sequel-Ace",
+      "pushed": "2026-08-12T15:05:25Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Sequel Ace 是一款面向 macOS 的数据库管理应用，用于操作 MySQL 与 MariaDB 数据库。"
+    }
+  ],
+  "ai_spotlight": {
+    "full": "OtterMind/Chat2DB",
+    "name": "Chat2DB",
+    "stars": 27943,
+    "lang": "Java",
+    "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
+    "url": "https://github.com/OtterMind/Chat2DB",
+    "pushed": "2026-08-12T03:51:27Z",
+    "delta": 294,
+    "tags": [
+      "主轨"
+    ],
+    "track": "主轨",
+    "zh_desc": "Chat2DB是一款AI驱动的跨平台数据库客户端，支持40+种数据库，提供SQL工作台和自带AI模型生成优化SQL的核心功能。"
+  },
+  "ai_spotlight_text": "**本周重点解读：Chat2DB**\n\n**① 解决什么问题**  \n为开发者、DBA 及数据团队提供跨平台（Windows/macOS/Linux）的 AI 数据库客户端，整合 SQL 工作台与自带模型（BYOM）的 AI 助手，解决多数据库管理、SQL 编写优化及数据可视化需求。\n\n**② 核心亮点**  \n- 支持 40+ 数据库（MySQL、PostgreSQL、ClickHouse 等），可通过配置扩展新 JDBC 数据库，无需改代码。  \n- 内置 SQL 编辑、补全、格式化及执行历史，并支持数据导入导出、仪表盘与 ER 图。  \n- 开源 CLI 支持 MCP，可灵活集成到现有工具链。\n\n**③ 适用场景/注意事项**  \n适合需要统一管理多种数据库、追求本地化 AI 辅助的团队。桌面端免配置即用，Docker 部署需 Docker 19.03.0+ 及 Compose V2。AI 功能需自备模型 API，数据完全本地运行。",
+  "db_hot": [
+    {
+      "full": "malisper/pgrust",
+      "name": "pgrust",
+      "stars": 4349,
+      "lang": "Rust",
+      "desc": "Postgres rewritten in Rust, now faster than Postgres and Clickhouse",
+      "url": "https://github.com/malisper/pgrust",
+      "pushed": "2026-08-05T16:53:55Z",
+      "delta": 346,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "pgrust是用Rust重写的Postgres，兼容其线协议和SQL方言，并通过全部46066项回归测试，核心卖点是比Postgres和ClickHouse更快。"
+    },
+    {
+      "full": "supabase/supabase",
+      "name": "supabase",
+      "stars": 107882,
+      "lang": "TypeScript",
+      "desc": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+      "url": "https://github.com/supabase/supabase",
+      "pushed": "2026-08-12T16:00:09Z",
+      "delta": 300,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Supabase 是一个基于 PostgreSQL 的开发平台，提供托管数据库、认证、自动生成 API 和实时订阅等核心功能。"
+    },
+    {
+      "full": "OtterMind/Chat2DB",
+      "name": "Chat2DB",
+      "stars": 27943,
+      "lang": "Java",
+      "desc": "🔥🔥🔥 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
+      "url": "https://github.com/OtterMind/Chat2DB",
+      "pushed": "2026-08-12T03:51:27Z",
+      "delta": 294,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨"
+    },
+    {
+      "full": "vrana/adminer",
+      "name": "adminer",
+      "stars": 7737,
+      "lang": "PHP",
+      "desc": "Database management in a single PHP file",
+      "url": "https://github.com/vrana/adminer",
+      "pushed": "2026-08-12T12:01:53Z",
+      "delta": 253,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Adminer是一个用PHP编写的单文件数据库管理工具，支持MySQL、PostgreSQL、SQLite等多种数据库。"
+    },
+    {
+      "full": "tursodatabase/turso",
+      "name": "turso",
+      "stars": 23840,
+      "lang": "Rust",
+      "desc": "A SQL database in Rust: SQLite-compatible, now also speaking Postgres (experimental). The LLVM of databases.",
+      "url": "https://github.com/tursodatabase/turso",
+      "pushed": "2026-08-12T15:42:54Z",
+      "delta": 154,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Turso是一个用Rust编写的进程内SQL数据库，兼容SQLite，并支持Postgres前端。"
+    }
+  ],
+  "db_emerging": [
+    {
+      "full": "moeinrezai/python-backend-qna-fa",
+      "name": "python-backend-qna-fa",
+      "stars": 20,
+      "lang": "—",
+      "desc": "مجموعه‌ای از پرسش‌ها و پاسخ‌های فارسی درباره مسائل واقعی Python Backend Development با تمرکز بر  Django، DRF و FastAPI.",
+      "url": "https://github.com/moeinrezai/python-backend-qna-fa",
+      "pushed": "2026-08-08T10:23:09Z",
+      "delta": null,
+      "tags": [
+        "新锐"
+      ],
+      "track": "新锐",
+      "zh_desc": "这是一个收录Python后端开发常见问题与解决方案的中文问答库，涵盖Django、DRF及数据库等主题。"
+    },
+    {
+      "full": "ahmetrende/database-queryhub",
+      "name": "database-queryhub",
+      "stars": 20,
+      "lang": "Python",
+      "desc": "Admin-approved, audited SQL gateway — Slack + web IDE, tier-matched creds (RO/RW/DDL), PII masking, full audit. PostgreSQL & SQL Server.",
+      "url": "https://github.com/ahmetrende/database-queryhub",
+      "pushed": "2026-08-10T12:01:09Z",
+      "delta": null,
+      "tags": [
+        "新锐"
+      ],
+      "track": "新锐",
+      "zh_desc": "QueryHub为生产数据库提供逐条查询审批，开发人员提交语句由DBA批准后按只读、读写或DDL角色执行并审计。"
+    },
+    {
+      "full": "taovietducofficial/Minise-Leave-Approval",
+      "name": "Minise-Leave-Approval",
+      "stars": 12,
+      "lang": "Java",
+      "desc": "Hệ thống duyệt nghỉ phép nội bộ - mini SE project. Spring Boot 3.5 + React 19, JWT phân quyền 3 vai trò, Docker, CI. Mỗi quyết định kỹ thuật đều kèm lý do.",
+      "url": "https://github.com/taovietducofficial/Minise-Leave-Approval",
+      "pushed": "2026-08-03T10:09:13Z",
+      "delta": null,
+      "tags": [
+        "新锐"
+      ],
+      "track": "新锐",
+      "zh_desc": "一个基于Spring Boot和React的请假审批系统，支持员工提交申请、经理审批及HR查看全公司申请，并附带4个教学视频。"
+    },
+    {
+      "full": "GatorConverter/oracle-sql-developer",
+      "name": "oracle-sql-developer",
+      "stars": 10,
+      "lang": "—",
+      "desc": "Oracle SQL Developer — Oracle SQL Developer Windows setup — software landing repository with install notes, workflow checklists, and session logs. Unofficial Windows setup notes and session logs.",
+      "url": "https://github.com/GatorConverter/oracle-sql-developer",
+      "pushed": "2026-08-03T02:13:35Z",
+      "delta": null,
+      "tags": [
+        "新锐"
+      ],
+      "track": "新锐",
+      "zh_desc": "提供 Oracle SQL Developer 在 Windows 10/11 上的安装配置指南，核心卖点是管理员权限安装及许可证密钥激活。"
+    },
+    {
+      "full": "Juudini/saas_core_engine",
+      "name": "saas_core_engine",
+      "stars": 10,
+      "lang": "C#",
+      "desc": "Database-per-Tenant multi-tenancy engine for .NET 10 — dynamic per-tenant connection resolution, JWT auth with   tenant-claim cross-checking, plan-based feature flags/quotas, per-tenant resilience (circuit breaker + bulkhead), and   a zero-downtime migration tool.",
+      "url": "https://github.com/Juudini/saas_core_engine",
+      "pushed": "2026-08-01T21:06:40Z",
+      "delta": null,
+      "tags": [
+        "新锐"
+      ],
+      "track": "新锐",
+      "zh_desc": "为.NET 10提供Database-per-Tenant多租户隔离引擎，支持动态租户连接解析、JWT租户校验及计划级功能配额。"
+    }
+  ],
+  "db_total": [
+    {
+      "full": "supabase/supabase",
+      "name": "supabase",
+      "stars": 107882,
+      "lang": "TypeScript",
+      "desc": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+      "url": "https://github.com/supabase/supabase",
+      "pushed": "2026-08-12T16:00:09Z",
+      "delta": 300,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Supabase 是一个基于 PostgreSQL 的开发平台，提供托管数据库、认证、自动生成 API 和实时订阅等核心功能。"
+    },
+    {
+      "full": "strapi/strapi",
+      "name": "strapi",
+      "stars": 72851,
+      "lang": "TypeScript",
+      "desc": "🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first.",
+      "url": "https://github.com/strapi/strapi",
+      "pushed": "2026-08-12T15:46:17Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "开源无头CMS，通过可视化内容类型构建器自动生成REST与GraphQL API。"
+    },
+    {
+      "full": "gogs/gogs",
+      "name": "gogs",
+      "stars": 47732,
+      "lang": "Go",
+      "desc": "The painless way to host your own Git service",
+      "url": "https://github.com/gogs/gogs",
+      "pushed": "2026-08-06T12:32:28Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "Gogs是一个用Go语言编写的自托管Git服务，支持跨平台独立二进制分发，核心卖点是简单、稳定且可扩展。"
+    },
+    {
+      "full": "prisma/prisma",
+      "name": "prisma",
+      "stars": 47562,
+      "lang": "TypeScript",
+      "desc": "Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB",
+      "url": "https://github.com/prisma/prisma",
+      "pushed": "2026-08-12T15:29:25Z",
+      "delta": 27,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨"
+    },
+    {
+      "full": "fastapi/full-stack-fastapi-template",
+      "name": "full-stack-fastapi-template",
+      "stars": 44785,
+      "lang": "TypeScript",
+      "desc": "Full-stack web application template with FastAPI, React, SQLModel, PostgreSQL, Vite, Tailwind CSS, shadcn/ui, FastAPI Cloud, and Docker Compose.",
+      "url": "https://github.com/fastapi/full-stack-fastapi-template",
+      "pushed": "2026-08-12T09:25:44Z",
+      "delta": null,
+      "tags": [
+        "主轨"
+      ],
+      "track": "主轨",
+      "zh_desc": "这是一个基于FastAPI和React的全栈项目模板，提供Docker Compose部署和JWT认证功能。"
+    }
+  ],
+  "db_spotlight": {
+    "full": "malisper/pgrust",
+    "name": "pgrust",
+    "stars": 4349,
+    "lang": "Rust",
+    "desc": "Postgres rewritten in Rust, now faster than Postgres and Clickhouse",
+    "url": "https://github.com/malisper/pgrust",
+    "pushed": "2026-08-05T16:53:55Z",
+    "delta": 346,
+    "tags": [
+      "主轨"
+    ],
+    "track": "主轨",
+    "zh_desc": "pgrust是用Rust重写的Postgres，兼容其线协议和SQL方言，并通过全部46066项回归测试，核心卖点是比Postgres和ClickHouse更快。"
+  },
+  "db_spotlight_text": "**本周重点解读：pgrust**\n\n**① 解决什么问题**  \n用 Rust 重写 PostgreSQL，目标是在保持线协议和 SQL 方言兼容的前提下，通过新架构解决原生 PG 在并发调度和内存管理上的短板，并提升分析查询性能。\n\n**② 核心亮点**  \n- 通过 PG 18.3 全部 46,066 项回归测试，宣称性能优于 PG 和 ClickHouse。  \n- 引入向量化 JIT 执行器、线程并发模型、查询调度器和内置 OOM killer。  \n- 完全 Rust 实现，针对 Graviton4 优化。\n\n**③ 适用场景/注意事项**  \n- 当前非生产就绪，官方明确警告勿存重要数据。  \n- 不支持现有 PG 扩展，PL/Python 等语言绑定缺失。  \n- 适合关注 PG 底层重构技术验证的开发者，生产环境仍应使用原生 PG。",
+  "ai_hot_is_delta": true,
+  "db_hot_is_delta": true
+}

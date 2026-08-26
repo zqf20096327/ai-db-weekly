@@ -1,0 +1,27 @@
+# === 密钥文件，绝对不能传到 GitHub ===
+.env
+
+# === 可重新生成的中间产物（不入库）===
+# AI 生成的中文介绍缓存（GitHub 源 + Gitee 源各一份，可重新生成）
+cache/ai_desc_*.json
+cache_gitee/ai_desc_*.json
+__pycache__/
+*.pyc
+
+# === 无关文件：Oracle 运维脚本和打包产物，不属于周报项目 ===
+cluster_start.sh
+cluster_stop.sh
+shutdown_oracle.sh
+startup_oracle_v2.sh
+orasqldiag_skill.tar.gz
+
+# === 编辑器/系统 ===
+.DS_Store
+.zcode/
+
+# === v2 采集产物（可重新生成，不入库）===
+v2/data/
+# === v2 打包/日志/会话产物 ===
+v2.zip
+*.log
+v2/plan-sess_*.md

@@ -1,0 +1,84 @@
+name: v2 周报生成
+
+# 每周一跑 v2 版周报（run_weekly.py），生成三板块周报（report.md），提交到 v2/reports/。
+#   - 北京 周一 12:00 (UTC 04:00)，当日 09:00 的采集已跑完并写入缓存。
+# 依赖 actions/cache 里的历史快照做 7 天 diff（storage.find_prev_snapshot_date 自动定位）。
+# 若当日 daily 被跳过，可直接 workflow_dispatch 手动重跑本流程。
+"on":
+  schedule:
+    - cron: '0 4 * * 1'    # UTC 04:00 = 北京 周一 12:00
+  workflow_dispatch: {}    # 允许手动触发
+
+# 需 push 周报 Markdown，必须显式给写权限
+permissions:
+  contents: write
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      # 1. 拉取代码（fetch-depth:0 拉完整历史，rebase/提交回主分支需要）
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. 安装 Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 3. 安装依赖（v2 仅依赖 requests）
+      - name: 安装依赖
+        working-directory: v2
+        run: pip install -r requirements.txt
+
+      # 4. 恢复历史快照缓存（含当日 daily 产物 + 近一周历史，供 7 天 diff）
+      - name: 恢复 data 缓存
+        uses: actions/cache@v4
+        with:
+          path: v2/data
+          key: v2-data-${{ github.run_id }}
+          restore-keys: |
+            v2-data-
+
+      # 5. 生成周报（自动定位 7 天前快照；v2 脚本在子目录，必须 working-directory: v2）
+      - name: 生成周报
+        working-directory: v2
+        timeout-minutes: 60
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+        run: python run_weekly.py
+
+      # 6. 把渲染出的 Markdown 暂存到可提交的 v2/reports/（data/ 被 gitignore）
+      - name: 暂存周报到 v2/reports/
+        working-directory: v2
+        run: |
+          mkdir -p reports
+          SNAP=$(ls -1d data/snapshot_* | sort | tail -1)
+          echo "最新快照目录：$SNAP"
+          if [ -f "$SNAP/weekly/report.md" ]; then
+            cp "$SNAP/weekly/report.md" "reports/report_$(basename "$SNAP").md"
+          fi
+          ls -la reports/ || true
+
+      # 7. 提交周报到仓库（v2/reports/ 未被 gitignore，可在 GitHub 直接浏览）
+      - name: 提交周报
+        run: |
+          git config user.name "ai-db-weekly-bot"
+          git config user.email "bot@ai-db-weekly.local"
+          git add v2/reports/ || true
+          # 没有变更就跳过提交（避免空 commit 失败）
+          if git diff --staged --quiet; then
+            echo "no changes to commit"
+            exit 0
+          fi
+          git commit -m "weekly: $(date -u +%Y-%m-%d) v2 周报"
+          # rebase + theirs：冲突时一律用本地（本次生成）版本，周报是权威产出
+          git pull --rebase --strategy-option=theirs origin ${{ github.ref_name }}
+          git push
