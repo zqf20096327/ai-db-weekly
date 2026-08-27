@@ -108,6 +108,9 @@ jobs:
             exit 0
           fi
           git commit -m "auto: ${TODAY} 采集快照入库（滚动 8 天窗口）"
+          # 缓存恢复会把已跟踪的旧快照覆盖成 CI 版本，与 HEAD 产生未暂存漂移；
+          # 漂移不入库，rebase 前丢弃，否则 pull 因工作区不干净直接失败（exit 128）
+          git restore .
           git pull --rebase origin "${GITHUB_REF_NAME:-main}"
           git push origin "${GITHUB_REF_NAME:-main}"
 

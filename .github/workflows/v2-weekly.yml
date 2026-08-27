@@ -79,6 +79,8 @@ jobs:
             exit 0
           fi
           git commit -m "weekly: $(date -u +%Y-%m-%d) v2 周报"
+          # 丢弃缓存恢复覆盖旧快照产生的未暂存漂移（同 v2-daily.yml，否则 rebase 失败）
+          git restore .
           # rebase + theirs：冲突时一律用本地（本次生成）版本，周报是权威产出
           git pull --rebase --strategy-option=theirs origin ${{ github.ref_name }}
           git push
