@@ -1,0 +1,1134 @@
+[
+  {
+    "full_name": "tikv/tracing-active-tree",
+    "description": null,
+    "html_url": "https://github.com/tikv/tracing-active-tree",
+    "stargazers_count": 5,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 5,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-11-03T07:55:03Z",
+    "pushed_at": "2025-04-08T02:08:15Z",
+    "updated_at": "2025-08-26T05:07:11Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/match-template",
+    "description": "match-template is a procedural macro that generates repeated match arms by pattern.",
+    "html_url": "https://github.com/tikv/match-template",
+    "stargazers_count": 6,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 6,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-07-19T08:23:36Z",
+    "pushed_at": "2022-07-19T08:49:34Z",
+    "updated_at": "2024-09-24T23:13:22Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/migration",
+    "description": "Migration tools for TiKV, e.g. online bulk load.",
+    "html_url": "https://github.com/tikv/migration",
+    "stargazers_count": 38,
+    "forks_count": 27,
+    "open_issues_count": 37,
+    "watchers_count": 38,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-19T05:23:03Z",
+    "pushed_at": "2026-03-09T01:44:43Z",
+    "updated_at": "2026-03-09T01:44:47Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/client-node",
+    "description": null,
+    "html_url": "https://github.com/tikv/client-node",
+    "stargazers_count": 12,
+    "forks_count": 6,
+    "open_issues_count": 1,
+    "watchers_count": 12,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-19T11:27:07Z",
+    "pushed_at": "2021-09-28T16:40:49Z",
+    "updated_at": "2025-02-20T23:41:37Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/jepsen-test",
+    "description": null,
+    "html_url": "https://github.com/tikv/jepsen-test",
+    "stargazers_count": 6,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 6,
+    "language": "Clojure",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-19T11:25:53Z",
+    "pushed_at": "2021-08-05T05:44:08Z",
+    "updated_at": "2024-08-10T16:32:11Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/mur3",
+    "description": "Rust implementation of MurmurHash3.",
+    "html_url": "https://github.com/tikv/mur3",
+    "stargazers_count": 13,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 13,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-04-02T05:18:36Z",
+    "pushed_at": "2021-12-20T10:11:16Z",
+    "updated_at": "2025-08-24T06:52:39Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/client-cpp",
+    "description": "TiKV Client for C++",
+    "html_url": "https://github.com/tikv/client-cpp",
+    "stargazers_count": 15,
+    "forks_count": 14,
+    "open_issues_count": 7,
+    "watchers_count": 15,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-04T09:08:13Z",
+    "pushed_at": "2023-11-27T06:40:34Z",
+    "updated_at": "2026-04-09T08:34:04Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/client-py",
+    "description": null,
+    "html_url": "https://github.com/tikv/client-py",
+    "stargazers_count": 30,
+    "forks_count": 11,
+    "open_issues_count": 4,
+    "watchers_count": 30,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-10T14:24:10Z",
+    "pushed_at": "2024-01-03T13:47:22Z",
+    "updated_at": "2025-12-24T17:12:49Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/tikv.github.io",
+    "description": null,
+    "html_url": "https://github.com/tikv/tikv.github.io",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-07-30T11:06:29Z",
+    "pushed_at": "2021-05-31T07:39:25Z",
+    "updated_at": "2021-08-10T04:48:08Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://tikv.github.io",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/minstant",
+    "description": "Performant time measuring in Rust",
+    "html_url": "https://github.com/tikv/minstant",
+    "stargazers_count": 201,
+    "forks_count": 20,
+    "open_issues_count": 3,
+    "watchers_count": 201,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-07-08T13:35:35Z",
+    "pushed_at": "2024-03-18T22:04:36Z",
+    "updated_at": "2026-08-21T06:23:08Z",
+    "default_branch": "master",
+    "topics": [
+      "high-performance",
+      "high-performance-computing",
+      "timing",
+      "tsc"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/minitrace-go",
+    "description": "A high-performance timeline tracing library for Golang, used by TiDB",
+    "html_url": "https://github.com/tikv/minitrace-go",
+    "stargazers_count": 47,
+    "forks_count": 7,
+    "open_issues_count": 17,
+    "watchers_count": 47,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-18T12:19:46Z",
+    "pushed_at": "2026-06-26T02:57:23Z",
+    "updated_at": "2025-08-27T15:46:15Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/tlaplus-specs",
+    "description": "TiKV TLA+ specifications",
+    "html_url": "https://github.com/tikv/tlaplus-specs",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "TLA",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-17T12:17:27Z",
+    "pushed_at": "2020-08-11T10:22:55Z",
+    "updated_at": "2022-03-04T15:32:43Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/sig-transaction",
+    "description": "Resources for the transaction SIG",
+    "html_url": "https://github.com/tikv/sig-transaction",
+    "stargazers_count": 60,
+    "forks_count": 12,
+    "open_issues_count": 20,
+    "watchers_count": 60,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-04T03:20:00Z",
+    "pushed_at": "2022-09-29T09:21:35Z",
+    "updated_at": "2026-03-11T08:21:54Z",
+    "default_branch": "master",
+    "topics": [
+      "distributed-transactions",
+      "tidb",
+      "tikv"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/raft-engine",
+    "description": "A persistent storage engine for Multi-Raft log",
+    "html_url": "https://github.com/tikv/raft-engine",
+    "stargazers_count": 638,
+    "forks_count": 110,
+    "open_issues_count": 36,
+    "watchers_count": 638,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-03T11:46:22Z",
+    "pushed_at": "2026-08-24T03:39:47Z",
+    "updated_at": "2026-08-24T03:39:56Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/minitrace-rust",
+    "description": "Extremely fast tracing library for Rust",
+    "html_url": "https://github.com/tikv/minitrace-rust",
+    "stargazers_count": 750,
+    "forks_count": 46,
+    "open_issues_count": 10,
+    "watchers_count": 750,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-05-28T03:17:25Z",
+    "pushed_at": "2024-07-23T07:01:14Z",
+    "updated_at": "2026-08-20T21:05:19Z",
+    "default_branch": "master",
+    "topics": [
+      "datadog",
+      "jaeger",
+      "opentelemetry",
+      "opentracing",
+      "rust",
+      "tracing"
+    ],
+    "homepage": "https://github.com/fast/fastrace",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/async-speed-limit",
+    "description": "Asynchronously speed-limiting multiple byte streams",
+    "html_url": "https://github.com/tikv/async-speed-limit",
+    "stargazers_count": 69,
+    "forks_count": 19,
+    "open_issues_count": 1,
+    "watchers_count": 69,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-30T23:24:47Z",
+    "pushed_at": "2024-10-05T15:32:35Z",
+    "updated_at": "2026-07-26T02:50:33Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/yatp",
+    "description": "Yet another thread pool in rust for both callbacks or futures.",
+    "html_url": "https://github.com/tikv/yatp",
+    "stargazers_count": 140,
+    "forks_count": 39,
+    "open_issues_count": 18,
+    "watchers_count": 140,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-11-20T08:24:55Z",
+    "pushed_at": "2026-08-25T08:18:45Z",
+    "updated_at": "2026-08-25T08:21:58Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/crc64fast",
+    "description": "SIMD accelerated CRC-64-ECMA computation",
+    "html_url": "https://github.com/tikv/crc64fast",
+    "stargazers_count": 56,
+    "forks_count": 17,
+    "open_issues_count": 3,
+    "watchers_count": 56,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-11-19T07:38:13Z",
+    "pushed_at": "2024-01-18T14:57:12Z",
+    "updated_at": "2026-04-08T18:06:54Z",
+    "default_branch": "master",
+    "topics": [
+      "crc64",
+      "crc64-ecma182",
+      "simd"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/pprof-rs",
+    "description": "A Rust CPU profiler implemented with the help of backtrace-rs",
+    "html_url": "https://github.com/tikv/pprof-rs",
+    "stargazers_count": 1649,
+    "forks_count": 143,
+    "open_issues_count": 71,
+    "watchers_count": 1649,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-21T06:36:07Z",
+    "pushed_at": "2026-04-23T00:10:09Z",
+    "updated_at": "2026-08-25T15:42:53Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/copr-test",
+    "description": null,
+    "html_url": "https://github.com/tikv/copr-test",
+    "stargazers_count": 9,
+    "forks_count": 41,
+    "open_issues_count": 29,
+    "watchers_count": 9,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-15T07:09:54Z",
+    "pushed_at": "2026-02-05T05:43:52Z",
+    "updated_at": "2025-04-14T03:46:17Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/community",
+    "description": "TiKV community content",
+    "html_url": "https://github.com/tikv/community",
+    "stargazers_count": 43,
+    "forks_count": 57,
+    "open_issues_count": 8,
+    "watchers_count": 43,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-09T01:36:34Z",
+    "pushed_at": "2026-06-26T02:55:11Z",
+    "updated_at": "2026-06-26T02:55:15Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/terraform-tikv-bench",
+    "description": "An Orcestrated TiKV benchmark. Not for production deployment.",
+    "html_url": "https://github.com/tikv/terraform-tikv-bench",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 3,
+    "language": "HCL",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-07-15T21:31:21Z",
+    "pushed_at": "2019-07-17T02:37:43Z",
+    "updated_at": "2025-02-13T19:43:07Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/importer",
+    "description": "tikv-importer is a front-end to help ingesting large number of KV pairs into a TiKV cluster",
+    "html_url": "https://github.com/tikv/importer",
+    "stargazers_count": 20,
+    "forks_count": 13,
+    "open_issues_count": 8,
+    "watchers_count": 20,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-05-19T10:37:05Z",
+    "pushed_at": "2023-03-20T14:46:58Z",
+    "updated_at": "2023-08-21T16:04:04Z",
+    "default_branch": "release-5.0",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/titan",
+    "description": "A RocksDB plugin for key-value separation, inspired by WiscKey.",
+    "html_url": "https://github.com/tikv/titan",
+    "stargazers_count": 514,
+    "forks_count": 177,
+    "open_issues_count": 32,
+    "watchers_count": 514,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-05-02T18:59:17Z",
+    "pushed_at": "2026-04-29T04:14:17Z",
+    "updated_at": "2026-08-10T16:33:15Z",
+    "default_branch": "master",
+    "topics": [
+      "database",
+      "rocksdb"
+    ],
+    "homepage": "https://pingcap.com/blog/titan-storage-engine-design-and-implementation/",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/agatedb",
+    "description": "A persistent key-value storage in rust.",
+    "html_url": "https://github.com/tikv/agatedb",
+    "stargazers_count": 894,
+    "forks_count": 77,
+    "open_issues_count": 38,
+    "watchers_count": 894,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-30T08:54:17Z",
+    "pushed_at": "2024-04-16T03:20:14Z",
+    "updated_at": "2026-08-25T14:58:15Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/protobuf-build",
+    "description": null,
+    "html_url": "https://github.com/tikv/protobuf-build",
+    "stargazers_count": 18,
+    "forks_count": 37,
+    "open_issues_count": 11,
+    "watchers_count": 18,
+    "language": "Rust",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-02-24T23:07:08Z",
+    "pushed_at": "2024-05-16T10:04:39Z",
+    "updated_at": "2026-02-12T16:07:44Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/mock-tikv",
+    "description": "A mocked TiKV server for testing clients that written in different languages.",
+    "html_url": "https://github.com/tikv/mock-tikv",
+    "stargazers_count": 7,
+    "forks_count": 5,
+    "open_issues_count": 3,
+    "watchers_count": 7,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-10T07:28:53Z",
+    "pushed_at": "2024-01-15T06:02:56Z",
+    "updated_at": "2024-10-28T01:34:04Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/slog-global",
+    "description": "Global loggers for slog-rs. Similar to slog-scope but more simple.",
+    "html_url": "https://github.com/tikv/slog-global",
+    "stargazers_count": 5,
+    "forks_count": 8,
+    "open_issues_count": 2,
+    "watchers_count": 5,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-04T05:01:47Z",
+    "pushed_at": "2020-11-09T00:39:07Z",
+    "updated_at": "2022-07-17T13:42:26Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/client-go",
+    "description": "Go client for TiKV",
+    "html_url": "https://github.com/tikv/client-go",
+    "stargazers_count": 362,
+    "forks_count": 271,
+    "open_issues_count": 231,
+    "watchers_count": 362,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-01T04:03:34Z",
+    "pushed_at": "2026-08-27T01:28:57Z",
+    "updated_at": "2026-08-23T09:26:53Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/client-java",
+    "description": "TiKV Java Client",
+    "html_url": "https://github.com/tikv/client-java",
+    "stargazers_count": 115,
+    "forks_count": 117,
+    "open_issues_count": 87,
+    "watchers_count": 115,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-15T08:52:53Z",
+    "pushed_at": "2025-04-18T03:53:37Z",
+    "updated_at": "2026-05-16T08:14:39Z",
+    "default_branch": "master",
+    "topics": [
+      "client",
+      "cncf",
+      "grpc",
+      "java",
+      "tikv"
+    ],
+    "homepage": "https://tikv.github.io/client-java/",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/client-rust",
+    "description": "Rust Client for TiKV.",
+    "html_url": "https://github.com/tikv/client-rust",
+    "stargazers_count": 425,
+    "forks_count": 162,
+    "open_issues_count": 85,
+    "watchers_count": 425,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-30T01:23:10Z",
+    "pushed_at": "2026-08-27T03:22:20Z",
+    "updated_at": "2026-08-27T03:22:32Z",
+    "default_branch": "master",
+    "topics": [
+      "client",
+      "cncf",
+      "key-value-store",
+      "rust"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/rfcs",
+    "description": "RFCs for changes to TiKV and its ecosystem",
+    "html_url": "https://github.com/tikv/rfcs",
+    "stargazers_count": 79,
+    "forks_count": 68,
+    "open_issues_count": 38,
+    "watchers_count": 79,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-17T18:55:29Z",
+    "pushed_at": "2026-01-27T20:47:53Z",
+    "updated_at": "2026-05-20T01:10:46Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/client-c",
+    "description": "The C++ TiKV client used by TiFlash.",
+    "html_url": "https://github.com/tikv/client-c",
+    "stargazers_count": 41,
+    "forks_count": 56,
+    "open_issues_count": 20,
+    "watchers_count": 41,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-02-22T10:03:36Z",
+    "pushed_at": "2026-08-05T05:32:44Z",
+    "updated_at": "2026-08-05T05:32:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/raft-rs",
+    "description": "Raft distributed consensus algorithm implemented in Rust.",
+    "html_url": "https://github.com/tikv/raft-rs",
+    "stargazers_count": 3381,
+    "forks_count": 466,
+    "open_issues_count": 78,
+    "watchers_count": 3381,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-12-19T07:56:10Z",
+    "pushed_at": "2026-05-13T09:23:35Z",
+    "updated_at": "2026-08-27T09:05:22Z",
+    "default_branch": "master",
+    "topics": [
+      "distributed-consensus-algorithms",
+      "distributed-systems",
+      "raft",
+      "rust"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/fail-rs",
+    "description": "Fail points for rust",
+    "html_url": "https://github.com/tikv/fail-rs",
+    "stargazers_count": 376,
+    "forks_count": 48,
+    "open_issues_count": 22,
+    "watchers_count": 376,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-09-12T13:41:13Z",
+    "pushed_at": "2026-07-20T17:11:25Z",
+    "updated_at": "2026-08-24T21:17:21Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/grpc-rs",
+    "description": "The gRPC library for Rust built on C Core library and futures",
+    "html_url": "https://github.com/tikv/grpc-rs",
+    "stargazers_count": 1852,
+    "forks_count": 260,
+    "open_issues_count": 107,
+    "watchers_count": 1852,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-04-21T07:41:57Z",
+    "pushed_at": "2026-07-04T06:36:33Z",
+    "updated_at": "2026-07-23T01:05:24Z",
+    "default_branch": "master",
+    "topics": [
+      "grpc",
+      "rust"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/rust-prometheus",
+    "description": "Prometheus instrumentation library for Rust applications",
+    "html_url": "https://github.com/tikv/rust-prometheus",
+    "stargazers_count": 1180,
+    "forks_count": 208,
+    "open_issues_count": 96,
+    "watchers_count": 1180,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-08-11T02:06:25Z",
+    "pushed_at": "2025-12-31T07:01:42Z",
+    "updated_at": "2026-08-03T04:24:12Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/pd",
+    "description": "Placement driver for TiKV",
+    "html_url": "https://github.com/tikv/pd",
+    "stargazers_count": 1155,
+    "forks_count": 778,
+    "open_issues_count": 973,
+    "watchers_count": 1155,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-03-07T09:13:06Z",
+    "pushed_at": "2026-08-27T09:06:33Z",
+    "updated_at": "2026-08-24T01:50:13Z",
+    "default_branch": "master",
+    "topics": [
+      "hacktoberfest"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/tikv",
+    "description": "Distributed transactional key-value database, originally created to complement TiDB",
+    "html_url": "https://github.com/tikv/tikv",
+    "stargazers_count": 16812,
+    "forks_count": 2328,
+    "open_issues_count": 1797,
+    "watchers_count": 16812,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-12-31T04:51:32Z",
+    "pushed_at": "2026-08-27T09:09:03Z",
+    "updated_at": "2026-08-27T04:04:10Z",
+    "default_branch": "master",
+    "topics": [
+      "cncf",
+      "consensus",
+      "distributed-transactions",
+      "hacktoberfest",
+      "key-value",
+      "raft",
+      "rocksdb",
+      "rust",
+      "tidb",
+      "tikv"
+    ],
+    "homepage": "https://tikv.org",
+    "snapshot_date": "2026-08-27",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  }
+]
