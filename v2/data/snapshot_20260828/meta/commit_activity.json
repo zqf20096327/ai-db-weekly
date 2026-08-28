@@ -2,7 +2,7 @@
   "snapshot_date": "2026-08-28",
   "candidate_count": 4000,
   "capped": true,
-  "fetched_this_run": 4000,
+  "fetched_this_run": 0,
   "total_tracked": 4000,
   "active_count": 347,
   "threshold": 10,

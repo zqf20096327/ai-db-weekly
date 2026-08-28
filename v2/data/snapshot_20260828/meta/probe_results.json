@@ -4,7 +4,7 @@
   "results": [
     {
       "topic": "database",
-      "total_count": 50667,
+      "total_count": 50668,
       "tier": "big",
       "query": "topic:database"
     },
@@ -16,19 +16,19 @@
     },
     {
       "topic": "mysql",
-      "total_count": 104712,
+      "total_count": 104717,
       "tier": "big",
       "query": "topic:mysql"
     },
     {
       "topic": "postgresql",
-      "total_count": 113208,
+      "total_count": 113216,
       "tier": "big",
       "query": "topic:postgresql"
     },
     {
       "topic": "mariadb",
-      "total_count": 5640,
+      "total_count": 5639,
       "tier": "big",
       "query": "topic:mariadb"
     },
@@ -114,7 +114,7 @@
   "by_topic": {
     "database": {
       "topic": "database",
-      "total_count": 50667,
+      "total_count": 50668,
       "tier": "big",
       "query": "topic:database"
     },
@@ -126,19 +126,19 @@
     },
     "mysql": {
       "topic": "mysql",
-      "total_count": 104712,
+      "total_count": 104717,
       "tier": "big",
       "query": "topic:mysql"
     },
     "postgresql": {
       "topic": "postgresql",
-      "total_count": 113208,
+      "total_count": 113216,
       "tier": "big",
       "query": "topic:postgresql"
     },
     "mariadb": {
       "topic": "mariadb",
-      "total_count": 5640,
+      "total_count": 5639,
       "tier": "big",
       "query": "topic:mariadb"
     },

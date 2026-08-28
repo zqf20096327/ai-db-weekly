@@ -1,11 +1,11 @@
 {
   "snapshot_date": "2026-08-28",
-  "elapsed_minutes": 30.2,
+  "elapsed_minutes": 1.2,
   "api_calls": {
-    "search_calls": 359,
-    "core_calls": 4023,
-    "total_calls": 4382,
-    "rate_wait_minutes": 0.0,
+    "search_calls": 28,
+    "core_calls": 0,
+    "total_calls": 28,
+    "rate_wait_minutes": 0.1,
     "errors": {}
   },
   "stage": "full",
