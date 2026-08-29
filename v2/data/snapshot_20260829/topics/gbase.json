@@ -1,0 +1,123 @@
+[
+  {
+    "full_name": "dotnetcore/FreeSql",
+    "description": ".NET aot orm, VB.NET/C# orm, Mysql/PostgreSQL/SqlServer/Oracle orm, Sqlite/Firebird/Clickhouse/DuckDB orm, 达梦/金仓/虚谷/翰高/高斯 orm, 神通 orm, 南大通用 orm, 国产 orm, TDengine orm, QuestDB orm, MsAccess orm.",
+    "html_url": "https://github.com/dotnetcore/FreeSql",
+    "stargazers_count": 4405,
+    "forks_count": 907,
+    "open_issues_count": 172,
+    "watchers_count": 4405,
+    "language": "C#",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-18T03:02:51Z",
+    "pushed_at": "2026-07-31T17:52:16Z",
+    "updated_at": "2026-08-27T09:23:31Z",
+    "default_branch": "master",
+    "topics": [
+      "access",
+      "clickhouse",
+      "codefirst",
+      "dameng",
+      "duckdb",
+      "firebird",
+      "gbase",
+      "hacktoberfest",
+      "highgo",
+      "kingbase",
+      "mysql",
+      "odbc",
+      "oracle",
+      "orm",
+      "postgresql",
+      "questdb",
+      "shentongdata",
+      "sqlite",
+      "sqlserver",
+      "xugu"
+    ],
+    "homepage": "https://freesql.net",
+    "snapshot_date": "2026-08-29",
+    "source_topic": "gbase",
+    "source": "topic",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "springrain/zorm",
+    "description": "Go轻量ORM,支持达梦(dm),金仓(kingbase),神通(shentong),南大通用(gbase),TDengine,mysql,postgresql,oracle,mssql,sqlite,db2,clickhouse...",
+    "html_url": "https://github.com/springrain/zorm",
+    "stargazers_count": 83,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 83,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-03-03T10:30:09Z",
+    "pushed_at": "2026-07-30T08:36:45Z",
+    "updated_at": "2026-08-19T07:16:44Z",
+    "default_branch": "master",
+    "topics": [
+      "clickhouse",
+      "database",
+      "dm",
+      "gbase",
+      "go",
+      "go-orm",
+      "golang",
+      "golang-orm",
+      "kingbase",
+      "mysql",
+      "orm",
+      "shentong",
+      "sql",
+      "sqlx",
+      "tdengine"
+    ],
+    "homepage": "https://zorm.cn",
+    "snapshot_date": "2026-08-29",
+    "source_topic": "gbase",
+    "source": "topic",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "liaosnet/udr4gbase8s",
+    "description": "UDR for GBase 8s Database Server",
+    "html_url": "https://github.com/liaosnet/udr4gbase8s",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-02T06:10:28Z",
+    "pushed_at": "2025-12-24T08:58:18Z",
+    "updated_at": "2025-12-24T08:58:22Z",
+    "default_branch": "master",
+    "topics": [
+      "gbase",
+      "udr"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-29",
+    "source_topic": "gbase",
+    "source": "topic",
+    "category": [
+      "core"
+    ]
+  }
+]
