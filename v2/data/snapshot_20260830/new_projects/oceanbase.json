@@ -1,0 +1,45 @@
+[
+  {
+    "full_name": "jarredhj0214/linesql",
+    "description": "JVM-native ANTLR4 SQL lineage parser for Spark, Hive, Flink, StarRocks, MySQL, Oracle, SQL Server, PostgreSQL, and OceanBase.",
+    "html_url": "https://github.com/jarredhj0214/linesql",
+    "stargazers_count": 4,
+    "forks_count": 1,
+    "open_issues_count": 4,
+    "watchers_count": 4,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-13T02:53:21Z",
+    "pushed_at": "2026-08-21T10:00:46Z",
+    "updated_at": "2026-08-26T06:53:32Z",
+    "default_branch": "main",
+    "topics": [
+      "antlr4",
+      "data-lineage",
+      "flink-sql",
+      "hive-sql",
+      "java",
+      "jvm",
+      "mysql",
+      "oceanbase",
+      "oracle",
+      "postgresql",
+      "spark-sql",
+      "sql",
+      "sql-lineage",
+      "sql-parser",
+      "sqlserver",
+      "starrocks"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-08-30",
+    "source_topic": "oceanbase",
+    "source": "new",
+    "new_tier": "rising"
+  }
+]
