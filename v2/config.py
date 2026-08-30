@@ -248,6 +248,15 @@ ORG_SCAN_LIST = [
     "opengauss-mirror", # openGauss 系（topics 为空，靠 org）
     "pingcap",          # TiDB 生态
     "tikv",             # TiKV 生态
+    # 2026-08-30 新增：oracle org 319 仓库，其中 27 个 star>=10 且 topics 为空
+    # （skills/mcp/agent-spec/odpi 等），topic 采集不可见，只能靠 org 补采
+    "oracle",           # Oracle 生态（graal/oci 等无关仓库由下游过滤层剔除）
+    # 2026-08-30 新增：板块一/板块二范围内其余有官方 org 的厂商
+    "ClickHouse",       # ClickHouse 生态（368 仓库，板块一）
+    "MariaDB",          # MariaDB 周边（37 仓库）
+    "postgres",         # PostgreSQL 官方（6 仓库，兜底）
+    "huaweicloud",      # GaussDB 主阵地（161 仓库，云产品噪音靠下游过滤）
+    "tencentcloud",     # TDSQL 相关（202 仓库）
 ]
 
 
