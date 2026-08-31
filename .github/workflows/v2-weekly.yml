@@ -67,12 +67,75 @@ jobs:
           fi
           ls -la reports/ || true
 
-      # 7. 提交周报到仓库（v2/reports/ 未被 gitignore，可在 GitHub 直接浏览）
+      # 7. 更新 README 首页（v2 接管；原 v1 update_readme() 已退役）
+      #    重写 LATEST 区块为本期 v2 周报链接，并把 v2 各期追加进「往期周报」表
+      - name: 更新 README 首页
+        run: |
+          python3 - <<'EOF'
+          import re
+          from pathlib import Path
+
+          import datetime
+
+          BASE = datetime.date(2026, 8, 5)  # 与 v2/config.py FIRST_ISSUE_DATE 保持一致
+
+          reports = sorted(Path("v2/reports").glob("report_snapshot_*.md"))
+          assert reports, "v2/reports/ 下没有周报文件"
+
+          def issue_no(p):
+              m = re.search(r"第\s*(\d+)\s*期", p.read_text(encoding="utf-8"))
+              if m:
+                  return m.group(1)
+              # 早期周报标题是「第 N 期」占位符：按日期推算（与 run_weekly._issue_no 同式）
+              d = p.stem.removeprefix("report_snapshot_")
+              dt = datetime.date(int(d[:4]), int(d[4:6]), int(d[6:]))
+              return str(max(0, (dt - BASE).days // 7 + 1))
+
+          def snap_date(p):
+              d = p.stem.removeprefix("report_snapshot_")
+              return f"{d[:4]}-{d[4:6]}-{d[6:]}"
+
+          latest = reports[-1]
+          latest_block = (
+              "<!-- LATEST:START -->\n"
+              "<!-- 本区块由 v2-weekly.yml 自动维护（v1 update_readme 已退役），请勿手动编辑 -->\n"
+              f"> 📖 **本期周报**：[第 {issue_no(latest)} 期 · {snap_date(latest)}]({latest.as_posix()})\n"
+              "> 📚 **历史周报**：见文末[「往期周报」](#往期周报)\n"
+              "<!-- LATEST:END -->"
+          )
+
+          rows = [
+              f"| 第 {issue_no(p)} 期 | {snap_date(p)} | [{p.name}]({p.as_posix()}) |"
+              for p in reversed(reports)
+          ]
+          archive_block = (
+              "<!-- ARCHIVE:START -->\n"
+              "| 期数 | 日期 | 链接 |\n"
+              "|------|------|------|\n"
+              + "\n".join(rows) + "\n"
+              "<!-- ARCHIVE:END -->"
+          )
+
+          readme = Path("README.md")
+          t = readme.read_text(encoding="utf-8")
+
+          def replace_between(text, start_marker, end_marker, block):
+              pre, rest = text.split(start_marker, 1)
+              _, post = rest.split(end_marker, 1)
+              return pre + block + post
+
+          t = replace_between(t, "<!-- LATEST:START -->", "<!-- LATEST:END -->", latest_block)
+          t = replace_between(t, "<!-- ARCHIVE:START -->", "<!-- ARCHIVE:END -->", archive_block)
+          readme.write_text(t, encoding="utf-8")
+          print(f"README 已更新：本期 = 第 {issue_no(latest)} 期 · {snap_date(latest)}")
+          EOF
+
+      # 8. 提交周报到仓库（v2/reports/ 未被 gitignore，可在 GitHub 直接浏览）
       - name: 提交周报
         run: |
           git config user.name "ai-db-weekly-bot"
           git config user.email "bot@ai-db-weekly.local"
-          git add v2/reports/ || true
+          git add v2/reports/ README.md || true
           # 没有变更就跳过提交（避免空 commit 失败）
           if git diff --staged --quiet; then
             echo "no changes to commit"
