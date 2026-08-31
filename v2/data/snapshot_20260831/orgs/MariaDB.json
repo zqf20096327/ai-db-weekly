@@ -1,0 +1,808 @@
+[
+  {
+    "full_name": "MariaDB/governance",
+    "description": "MariaDB project governance and related documents",
+    "html_url": "https://github.com/MariaDB/governance",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-01T13:12:57Z",
+    "pushed_at": "2026-08-28T09:10:33Z",
+    "updated_at": "2026-08-28T09:11:16Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/duckdb-engine",
+    "description": " DuckDB engine for MariaDB ",
+    "html_url": "https://github.com/MariaDB/duckdb-engine",
+    "stargazers_count": 14,
+    "forks_count": 2,
+    "open_issues_count": 1,
+    "watchers_count": 14,
+    "language": "C++",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-30T16:10:48Z",
+    "pushed_at": "2026-06-08T10:21:53Z",
+    "updated_at": "2026-08-27T10:43:32Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/skills",
+    "description": "MariaDB skills for Claude Code and AI agents - because it is not MySQL",
+    "html_url": "https://github.com/MariaDB/skills",
+    "stargazers_count": 12,
+    "forks_count": 5,
+    "open_issues_count": 17,
+    "watchers_count": 12,
+    "language": null,
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-16T09:06:42Z",
+    "pushed_at": "2026-06-24T10:49:32Z",
+    "updated_at": "2026-08-27T10:43:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "MariaDB/AutoMerge",
+    "description": "Reusable GitHub Actions workflows for forward-merge chain health checks",
+    "html_url": "https://github.com/MariaDB/AutoMerge",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-13T11:15:08Z",
+    "pushed_at": "2026-06-15T07:03:36Z",
+    "updated_at": "2026-08-27T10:43:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "MariaDB/TAF",
+    "description": "Test Automation Framework (TAF)",
+    "html_url": "https://github.com/MariaDB/TAF",
+    "stargazers_count": 12,
+    "forks_count": 5,
+    "open_issues_count": 3,
+    "watchers_count": 12,
+    "language": "Perl",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-01-26T10:52:59Z",
+    "pushed_at": "2026-08-16T21:40:32Z",
+    "updated_at": "2026-08-27T10:43:46Z",
+    "default_branch": "main",
+    "topics": [
+      "automation-framework",
+      "benchmarking",
+      "database-benchmarking",
+      "database-performance",
+      "database-performance-analysis",
+      "database-performance-optimization",
+      "hammerdb",
+      "mariadb",
+      "mariadb-performance",
+      "mysql",
+      "mysql-performance",
+      "performance-engineering",
+      "performance-metrics",
+      "performance-monitoring",
+      "performance-testing",
+      "perl-framework",
+      "sysbench",
+      "test-automation",
+      "tpc-c",
+      "tpc-h"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "MariaDB/failman",
+    "description": "Buildbot failed builds reporter",
+    "html_url": "https://github.com/MariaDB/failman",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Python",
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-10-07T08:27:44Z",
+    "pushed_at": "2025-10-07T09:39:42Z",
+    "updated_at": "2026-08-27T10:43:33Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/mtr-log-collector",
+    "description": "Drop-in replacement service for the deprecated Buildbot MTRLogObserver",
+    "html_url": "https://github.com/MariaDB/mtr-log-collector",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Python",
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-08-05T12:08:24Z",
+    "pushed_at": "2026-01-27T15:20:28Z",
+    "updated_at": "2026-08-27T10:43:42Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/mcp",
+    "description": "MariaDB MCP (Model Context Protocol) server implementation",
+    "html_url": "https://github.com/MariaDB/mcp",
+    "stargazers_count": 199,
+    "forks_count": 80,
+    "open_issues_count": 28,
+    "watchers_count": 199,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-05-09T15:42:00Z",
+    "pushed_at": "2026-08-10T13:12:59Z",
+    "updated_at": "2026-08-28T18:25:59Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "MariaDB/.github",
+    "description": "Public organization profile",
+    "html_url": "https://github.com/MariaDB/.github",
+    "stargazers_count": 1,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-01-14T10:02:02Z",
+    "pushed_at": "2026-06-17T10:51:37Z",
+    "updated_at": "2026-08-27T10:43:26Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/cross-reference",
+    "description": "Cross reference checking tool",
+    "html_url": "https://github.com/MariaDB/cross-reference",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-12-03T10:53:19Z",
+    "pushed_at": "2026-05-07T12:08:49Z",
+    "updated_at": "2026-08-27T10:43:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/demos",
+    "description": "A collection of MariaDB demos.",
+    "html_url": "https://github.com/MariaDB/demos",
+    "stargazers_count": 1,
+    "forks_count": 3,
+    "open_issues_count": 2,
+    "watchers_count": 1,
+    "language": "Python",
+    "license": {
+      "spdx_id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-11-27T12:49:01Z",
+    "pushed_at": "2025-05-19T12:35:15Z",
+    "updated_at": "2026-08-27T10:43:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/maria-catalogs",
+    "description": "This is a development repository used for catalogs. Note that this is constantly rebased until close to completation",
+    "html_url": "https://github.com/MariaDB/maria-catalogs",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "C++",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-04-09T10:35:36Z",
+    "pushed_at": "2025-06-03T13:23:28Z",
+    "updated_at": "2026-08-27T10:43:36Z",
+    "default_branch": "maria-cat",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "MariaDB/catalogs-wordpress",
+    "description": "WordPress site administration scripts for catalogs. Part of CloudFest Hackathon 2024",
+    "html_url": "https://github.com/MariaDB/catalogs-wordpress",
+    "stargazers_count": 4,
+    "forks_count": 0,
+    "open_issues_count": 4,
+    "watchers_count": 4,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-03-18T08:14:42Z",
+    "pushed_at": "2024-03-19T11:57:09Z",
+    "updated_at": "2026-08-27T10:43:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "MariaDB/catalogs-laravel",
+    "description": "A PHP project to setup catalogs in Laravel. Part of the CloudFest 2024 Hackathon",
+    "html_url": "https://github.com/MariaDB/catalogs-laravel",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-03-17T16:19:30Z",
+    "pushed_at": "2024-03-18T10:29:31Z",
+    "updated_at": "2026-08-27T10:43:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "MariaDB/wp-cli-commands",
+    "description": "MariaDB Sepecific WP-CLI commands. Created as part of CloudFest Hackathon 2024",
+    "html_url": "https://github.com/MariaDB/wp-cli-commands",
+    "stargazers_count": 5,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-03-17T14:53:42Z",
+    "pushed_at": "2024-03-18T10:18:24Z",
+    "updated_at": "2026-08-27T10:43:48Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "MariaDB/catalogs-php",
+    "description": "A PHP framework to talk to Catalogs. Part of the CloudFest 2024 Hackathon.",
+    "html_url": "https://github.com/MariaDB/catalogs-php",
+    "stargazers_count": 3,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-03-16T11:09:07Z",
+    "pushed_at": "2024-03-18T09:42:20Z",
+    "updated_at": "2026-08-27T10:43:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "MariaDB/SCARY",
+    "description": "SQL Comparator Analysis, Reassure Yourself (SCARY)",
+    "html_url": "https://github.com/MariaDB/SCARY",
+    "stargazers_count": 9,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 9,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-20T08:03:50Z",
+    "pushed_at": "2023-09-11T21:02:11Z",
+    "updated_at": "2026-08-27T10:43:44Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/mariadb-documentation",
+    "description": null,
+    "html_url": "https://github.com/MariaDB/mariadb-documentation",
+    "stargazers_count": 7,
+    "forks_count": 6,
+    "open_issues_count": 3,
+    "watchers_count": 7,
+    "language": "HTML",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-18T21:41:10Z",
+    "pushed_at": "2025-10-07T16:17:49Z",
+    "updated_at": "2026-08-27T10:43:38Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/wordpress-mariadb-health-checks",
+    "description": "MariaDB health checks plugin for WordPress",
+    "html_url": "https://github.com/MariaDB/wordpress-mariadb-health-checks",
+    "stargazers_count": 40,
+    "forks_count": 8,
+    "open_issues_count": 5,
+    "watchers_count": 40,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-28T12:29:45Z",
+    "pushed_at": "2023-06-15T12:31:53Z",
+    "updated_at": "2026-08-27T10:43:47Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/metrics",
+    "description": "Scripts to generate metrics around MariaDB",
+    "html_url": "https://github.com/MariaDB/metrics",
+    "stargazers_count": 8,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 8,
+    "language": "Python",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-08-30T09:30:02Z",
+    "pushed_at": "2026-08-26T11:03:40Z",
+    "updated_at": "2026-08-27T10:43:42Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/feedback-plugin-backend",
+    "description": "Back End for the MariaDB Server Feedback Plugin",
+    "html_url": "https://github.com/MariaDB/feedback-plugin-backend",
+    "stargazers_count": 4,
+    "forks_count": 6,
+    "open_issues_count": 7,
+    "watchers_count": 4,
+    "language": "Python",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-05-12T08:19:12Z",
+    "pushed_at": "2026-07-24T12:04:54Z",
+    "updated_at": "2026-08-27T10:43:33Z",
+    "default_branch": "main",
+    "topics": [
+      "feedback-plugin",
+      "mariadb"
+    ],
+    "homepage": "https://mariadb.org/feedback_plugin",
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/buildbot",
+    "description": "buildbot.mariadb.org",
+    "html_url": "https://github.com/MariaDB/buildbot",
+    "stargazers_count": 9,
+    "forks_count": 27,
+    "open_issues_count": 29,
+    "watchers_count": 9,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-09T07:21:36Z",
+    "pushed_at": "2026-08-13T15:59:15Z",
+    "updated_at": "2026-08-27T10:43:28Z",
+    "default_branch": "dev",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/mariadb_kernel",
+    "description": "A MariaDB Jupyter kernel",
+    "html_url": "https://github.com/MariaDB/mariadb_kernel",
+    "stargazers_count": 35,
+    "forks_count": 25,
+    "open_issues_count": 18,
+    "watchers_count": 35,
+    "language": "Jupyter Notebook",
+    "license": {
+      "spdx_id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-07-14T15:57:16Z",
+    "pushed_at": "2024-10-25T04:19:25Z",
+    "updated_at": "2026-08-27T10:43:40Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/randgen",
+    "description": "Random Query Generator (with MariaDB patches)",
+    "html_url": "https://github.com/MariaDB/randgen",
+    "stargazers_count": 45,
+    "forks_count": 24,
+    "open_issues_count": 0,
+    "watchers_count": 45,
+    "language": "Yacc",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-16T22:00:17Z",
+    "pushed_at": "2026-08-29T11:19:46Z",
+    "updated_at": "2026-08-27T10:43:44Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/mariadb.org-tools",
+    "description": "This project collects together various small scripts or projects that are used for MariaDB development, but for one reason or another do not make sense to keep inside the main MariaDB source tree.",
+    "html_url": "https://github.com/MariaDB/mariadb.org-tools",
+    "stargazers_count": 57,
+    "forks_count": 54,
+    "open_issues_count": 9,
+    "watchers_count": 57,
+    "language": "Jupyter Notebook",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-04-13T22:57:00Z",
+    "pushed_at": "2026-08-13T00:00:06Z",
+    "updated_at": "2026-08-27T10:43:39Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "MariaDB/mergetrees",
+    "description": "Helper repository for packages that we merge at release points without preserving the history",
+    "html_url": "https://github.com/MariaDB/mergetrees",
+    "stargazers_count": 12,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 12,
+    "language": "C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-04-28T11:58:12Z",
+    "pushed_at": "2026-04-24T14:32:21Z",
+    "updated_at": "2026-08-27T10:43:41Z",
+    "default_branch": "merge-xtradb-5.5",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "MariaDB/mariadb-docker",
+    "description": "Docker Official Image packaging for MariaDB",
+    "html_url": "https://github.com/MariaDB/mariadb-docker",
+    "stargazers_count": 926,
+    "forks_count": 446,
+    "open_issues_count": 34,
+    "watchers_count": 926,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-11-22T00:01:01Z",
+    "pushed_at": "2026-08-30T23:57:18Z",
+    "updated_at": "2026-08-30T23:57:37Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://mariadb.org",
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "MariaDB/server",
+    "description": "MariaDB server is a community developed fork of MySQL server. Started by core members of the original MySQL team, MariaDB actively works with outside developers to deliver the most featureful, stable, and sanely licensed open SQL server in the industry.",
+    "html_url": "https://github.com/MariaDB/server",
+    "stargazers_count": 8160,
+    "forks_count": 2089,
+    "open_issues_count": 475,
+    "watchers_count": 8160,
+    "language": "C++",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-05-15T10:58:50Z",
+    "pushed_at": "2026-08-31T06:52:39Z",
+    "updated_at": "2026-08-31T02:01:41Z",
+    "default_branch": "main",
+    "topics": [
+      "amazon-web-services",
+      "database",
+      "fulltext-search",
+      "galera",
+      "geographical-information-system",
+      "innodb",
+      "json",
+      "mariadb",
+      "mysql",
+      "nearest-neighbor-search",
+      "rdbms",
+      "relational-databases",
+      "sql",
+      "storage-engine",
+      "vector-database"
+    ],
+    "homepage": "https://mariadb.org",
+    "snapshot_date": "2026-08-31",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  }
+]
