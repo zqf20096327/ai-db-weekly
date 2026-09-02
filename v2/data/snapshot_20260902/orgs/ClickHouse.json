@@ -1,0 +1,5168 @@
+[
+  {
+    "full_name": "ClickHouse/clickhouse-sql-console",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/clickhouse-sql-console",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-31T17:27:49Z",
+    "pushed_at": "2026-09-01T14:22:15Z",
+    "updated_at": "2026-09-01T14:59:43Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-sql-ui",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/clickhouse-sql-ui",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-31T17:19:14Z",
+    "pushed_at": "2026-08-31T17:19:15Z",
+    "updated_at": "2026-08-31T17:19:15Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-c-rs",
+    "description": "rust bindings for https://github.com/ClickHouse/clickhouse-c",
+    "html_url": "https://github.com/ClickHouse/clickhouse-c-rs",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-27T23:38:46Z",
+    "pushed_at": "2026-09-01T16:01:20Z",
+    "updated_at": "2026-09-01T16:30:48Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/data-agent-mnist",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/data-agent-mnist",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 2,
+    "watchers_count": 2,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-24T11:27:36Z",
+    "pushed_at": "2026-09-01T22:08:51Z",
+    "updated_at": "2026-09-02T05:01:15Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-lexer",
+    "description": "ClickHouse SQL lexer compiled to WebAssembly, published to npm as @clickhouse/lexer",
+    "html_url": "https://github.com/ClickHouse/clickhouse-lexer",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-19T19:32:11Z",
+    "pushed_at": "2026-08-23T03:48:16Z",
+    "updated_at": "2026-08-19T19:36:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/gharchive",
+    "description": "GH Archive: record the public GitHub timeline, archive it, and make it easily accessible for further analysis. Detached copy of igrigorik/gharchive.org (MIT), imported with full history, to fix the event capture regression (upstream issues #310 and #320).",
+    "html_url": "https://github.com/ClickHouse/gharchive",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-16T22:58:56Z",
+    "pushed_at": "2026-08-17T00:04:50Z",
+    "updated_at": "2026-08-17T10:00:49Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://clickhouse.github.io/gharchive/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clicklisp",
+    "description": "A Common Lisp UDF runtime and query compiler for ClickHouse, shipped as a single binary.",
+    "html_url": "https://github.com/ClickHouse/clicklisp",
+    "stargazers_count": 8,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "watchers_count": 8,
+    "language": "Common Lisp",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-08T21:49:16Z",
+    "pushed_at": "2026-08-29T15:34:40Z",
+    "updated_at": "2026-08-24T19:21:42Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "common-lisp",
+      "ecl",
+      "lisp",
+      "s-expression",
+      "s-expressions",
+      "sql",
+      "udf"
+    ],
+    "homepage": "https://cl.clickhouse.com/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/pg-clickhouse-c",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/pg-clickhouse-c",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-29T17:50:41Z",
+    "pushed_at": "2026-09-01T21:14:23Z",
+    "updated_at": "2026-09-01T21:14:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-grok-plugin",
+    "description": "ClickHouse Grok plugin: skills (ClickHouse best practices), rules and MCP.",
+    "html_url": "https://github.com/ClickHouse/clickhouse-grok-plugin",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-29T09:35:51Z",
+    "pushed_at": "2026-07-29T10:33:29Z",
+    "updated_at": "2026-08-12T17:26:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/postgres-wal-shadow-demo",
+    "description": "Demonstration of lightning fast replication from postgres to clickhouse",
+    "html_url": "https://github.com/ClickHouse/postgres-wal-shadow-demo",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-20T17:50:03Z",
+    "pushed_at": "2026-07-20T17:50:04Z",
+    "updated_at": "2026-07-20T17:50:05Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/embeddings",
+    "description": "Interactive real-time viewer and search engine across 100 million images, built on ClickHouse.",
+    "html_url": "https://github.com/ClickHouse/embeddings",
+    "stargazers_count": 3,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-15T20:30:03Z",
+    "pushed_at": "2026-07-30T20:16:21Z",
+    "updated_at": "2026-08-26T19:27:12Z",
+    "default_branch": "main",
+    "topics": [
+      "ann",
+      "clickhouse",
+      "clip",
+      "embeddings",
+      "knn",
+      "nearest-neighbor-search",
+      "nomic",
+      "playground",
+      "quantization",
+      "siglip2",
+      "tsne",
+      "umap",
+      "vector-database",
+      "vector-search"
+    ],
+    "homepage": "https://embeddings.info/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/WeAreDevelopersDemo",
+    "description": "Rate-limiting using eBPF and Istio: How to protect your SaaS customers from themselves",
+    "html_url": "https://github.com/ClickHouse/WeAreDevelopersDemo",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-07T13:29:08Z",
+    "pushed_at": "2026-07-07T13:30:52Z",
+    "updated_at": "2026-07-10T08:50:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/tokenomics-viewer",
+    "description": "View token usage, costs, and rate-limit metrics from Codex and Claude Code sessions",
+    "html_url": "https://github.com/ClickHouse/tokenomics-viewer",
+    "stargazers_count": 13,
+    "forks_count": 2,
+    "open_issues_count": 3,
+    "watchers_count": 13,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "ISC",
+      "name": "ISC License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-06T12:33:21Z",
+    "pushed_at": "2026-08-11T11:02:16Z",
+    "updated_at": "2026-08-17T07:36:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/homebrew-tap",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/homebrew-tap",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Ruby",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-04T20:17:08Z",
+    "pushed_at": "2026-07-04T20:43:48Z",
+    "updated_at": "2026-07-07T01:15:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/pg_chdb",
+    "description": "Execute chDB queries in Postgres",
+    "html_url": "https://github.com/ClickHouse/pg_chdb",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 5,
+    "watchers_count": 2,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-30T23:00:11Z",
+    "pushed_at": "2026-09-01T21:54:44Z",
+    "updated_at": "2026-08-30T06:38:50Z",
+    "default_branch": "main",
+    "topics": [
+      "chdb",
+      "clickhouse",
+      "database",
+      "postgresql"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/RayTracer",
+    "description": "Ray tracer in SQL",
+    "html_url": "https://github.com/ClickHouse/RayTracer",
+    "stargazers_count": 110,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 110,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-27T18:20:10Z",
+    "pushed_at": "2026-06-29T16:37:44Z",
+    "updated_at": "2026-08-21T07:46:06Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/langfuse-workshop-partner",
+    "description": "LangFuse workshop for partner training",
+    "html_url": "https://github.com/ClickHouse/langfuse-workshop-partner",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-19T07:20:24Z",
+    "pushed_at": "2026-06-19T10:08:33Z",
+    "updated_at": "2026-07-18T01:46:35Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/MigrationRoom",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/MigrationRoom",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 2,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-11T03:34:35Z",
+    "pushed_at": "2026-08-11T07:03:07Z",
+    "updated_at": "2026-08-11T03:31:46Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ch-core-rs",
+    "description": "Experimental shared Rust core for decoding ClickHouse Native format into columnar buffers",
+    "html_url": "https://github.com/ClickHouse/ch-core-rs",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-02T23:11:03Z",
+    "pushed_at": "2026-09-01T17:06:45Z",
+    "updated_at": "2026-09-01T17:21:11Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/dotnet-otel-clickstack-demo",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/dotnet-otel-clickstack-demo",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-02T16:02:28Z",
+    "pushed_at": "2026-06-02T16:11:10Z",
+    "updated_at": "2026-07-06T07:05:49Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/walshadow",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/walshadow",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 8,
+    "watchers_count": 2,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "AGPL-3.0",
+      "name": "GNU Affero General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-01T14:23:21Z",
+    "pushed_at": "2026-09-01T22:03:12Z",
+    "updated_at": "2026-09-01T20:20:38Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/wal-rus",
+    "description": "rust port derived from wal-g",
+    "html_url": "https://github.com/ClickHouse/wal-rus",
+    "stargazers_count": 136,
+    "forks_count": 6,
+    "open_issues_count": 1,
+    "watchers_count": 136,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-01T14:22:59Z",
+    "pushed_at": "2026-08-17T20:20:28Z",
+    "updated_at": "2026-09-02T05:37:04Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickpipes-terraform-modules",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/clickpipes-terraform-modules",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": "HCL",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-28T08:19:12Z",
+    "pushed_at": "2026-07-17T11:24:01Z",
+    "updated_at": "2026-07-15T13:33:38Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/aspire-clickhouse-gateway-analytics-demo",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/aspire-clickhouse-gateway-analytics-demo",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": "C#",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-26T08:52:33Z",
+    "pushed_at": "2026-05-26T09:03:02Z",
+    "updated_at": "2026-06-03T01:20:59Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/CostBench",
+    "description": "Open benchmark for comparing cloud data warehouse performance per dollar",
+    "html_url": "https://github.com/ClickHouse/CostBench",
+    "stargazers_count": 17,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 17,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-25T09:33:15Z",
+    "pushed_at": "2026-08-18T13:08:25Z",
+    "updated_at": "2026-08-18T13:11:47Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/hn-news-analyzer",
+    "description": "This is a simple application that allows to analyze Hackernews trends",
+    "html_url": "https://github.com/ClickHouse/hn-news-analyzer",
+    "stargazers_count": 0,
+    "forks_count": 2,
+    "open_issues_count": 5,
+    "watchers_count": 0,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-22T10:56:15Z",
+    "pushed_at": "2026-08-28T11:14:50Z",
+    "updated_at": "2026-08-27T18:10:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-c",
+    "description": "minimalist header-only library for embedded contexts",
+    "html_url": "https://github.com/ClickHouse/clickhouse-c",
+    "stargazers_count": 9,
+    "forks_count": 2,
+    "open_issues_count": 2,
+    "watchers_count": 9,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-21T21:59:57Z",
+    "pushed_at": "2026-09-02T03:04:11Z",
+    "updated_at": "2026-09-01T02:06:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://clickhouse.com/docs/integrations/c",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/stock-anomaly-udf",
+    "description": "ClickHouse Cloud stock trade anomaly detection UDF",
+    "html_url": "https://github.com/ClickHouse/stock-anomaly-udf",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 4,
+    "watchers_count": 0,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-14T18:38:09Z",
+    "pushed_at": "2026-07-17T23:42:56Z",
+    "updated_at": "2026-05-30T02:46:56Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/tpc-h-openhouse",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/tpc-h-openhouse",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-06T15:35:35Z",
+    "pushed_at": "2026-06-02T14:37:22Z",
+    "updated_at": "2026-06-10T17:10:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/silk",
+    "description": "Fast stackful fibers with a NUMA-aware work-stealing scheduler",
+    "html_url": "https://github.com/ClickHouse/silk",
+    "stargazers_count": 324,
+    "forks_count": 13,
+    "open_issues_count": 4,
+    "watchers_count": 324,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-05T11:03:38Z",
+    "pushed_at": "2026-09-01T14:19:57Z",
+    "updated_at": "2026-09-01T10:48:26Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-agent-memory",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/clickhouse-agent-memory",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-27T03:42:36Z",
+    "pushed_at": "2026-04-29T06:19:50Z",
+    "updated_at": "2026-04-29T06:19:54Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickHouse.SemanticKernel",
+    "description": "Official .NET Vector Store Connector for Microsoft Semantic Kernel",
+    "html_url": "https://github.com/ClickHouse/ClickHouse.SemanticKernel",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 3,
+    "language": "C#",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-22T11:46:23Z",
+    "pushed_at": "2026-08-19T06:26:20Z",
+    "updated_at": "2026-07-07T15:25:33Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/integrations-shared-workflows",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/integrations-shared-workflows",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-20T13:22:15Z",
+    "pushed_at": "2026-08-31T11:12:14Z",
+    "updated_at": "2026-08-19T15:31:54Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/pgmigrator",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/pgmigrator",
+    "stargazers_count": 0,
+    "forks_count": 2,
+    "open_issues_count": 3,
+    "watchers_count": 0,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-10T00:13:21Z",
+    "pushed_at": "2026-08-19T06:01:34Z",
+    "updated_at": "2026-05-05T20:17:09Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/pg_re2",
+    "description": "re2 extension for postgres, compatible with ClickHouse regex",
+    "html_url": "https://github.com/ClickHouse/pg_re2",
+    "stargazers_count": 19,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 19,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-09T17:36:51Z",
+    "pushed_at": "2026-08-05T20:29:05Z",
+    "updated_at": "2026-08-21T09:12:41Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/multiagent-terminal",
+    "description": "Parallel Claude Code agents in git worktrees, with live status and per-agent stats.",
+    "html_url": "https://github.com/ClickHouse/multiagent-terminal",
+    "stargazers_count": 13,
+    "forks_count": 2,
+    "open_issues_count": 11,
+    "watchers_count": 13,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-09T08:15:04Z",
+    "pushed_at": "2026-08-05T14:14:47Z",
+    "updated_at": "2026-08-13T21:18:01Z",
+    "default_branch": "main",
+    "topics": [
+      "ai-agents",
+      "claude-code",
+      "desktop-app",
+      "developer-tools",
+      "productivity"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ch-migrator-example",
+    "description": "ClickHouse schema migrator example",
+    "html_url": "https://github.com/ClickHouse/ch-migrator-example",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-02T12:51:08Z",
+    "pushed_at": "2026-08-20T09:27:25Z",
+    "updated_at": "2026-08-20T09:28:42Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/TextBench",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/TextBench",
+    "stargazers_count": 6,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 6,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-16T16:19:12Z",
+    "pushed_at": "2026-04-23T07:15:16Z",
+    "updated_at": "2026-07-11T06:15:51Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-kiro-power",
+    "description": "Official ClickHouse power for Kiro to help with ClickHouse DB development",
+    "html_url": "https://github.com/ClickHouse/clickhouse-kiro-power",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-16T05:17:58Z",
+    "pushed_at": "2026-08-10T06:31:33Z",
+    "updated_at": "2026-08-10T06:31:47Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/nerve",
+    "description": "Self-hosted AI agent runtime — personal assistants, autonomous workers, and everything in between. Built on the Claude Agent SDK.",
+    "html_url": "https://github.com/ClickHouse/nerve",
+    "stargazers_count": 78,
+    "forks_count": 28,
+    "open_issues_count": 29,
+    "watchers_count": 78,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-11T20:39:49Z",
+    "pushed_at": "2026-09-01T19:14:08Z",
+    "updated_at": "2026-09-01T19:29:35Z",
+    "default_branch": "main",
+    "topics": [
+      "ai-agents",
+      "autonomous-agents",
+      "claude",
+      "self-hosted"
+    ],
+    "homepage": "https://github.com/ClickHouse/nerve",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-js-parser",
+    "description": "A TypeScript parser for ClickHouse SQL",
+    "html_url": "https://github.com/ClickHouse/clickhouse-js-parser",
+    "stargazers_count": 4,
+    "forks_count": 1,
+    "open_issues_count": 5,
+    "watchers_count": 4,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-11T14:50:20Z",
+    "pushed_at": "2026-08-11T20:08:48Z",
+    "updated_at": "2026-08-11T20:10:14Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-go-linter",
+    "description": "A linter for the clickhouse-go client",
+    "html_url": "https://github.com/ClickHouse/clickhouse-go-linter",
+    "stargazers_count": 12,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 12,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-09T08:47:12Z",
+    "pushed_at": "2026-05-22T09:34:04Z",
+    "updated_at": "2026-08-27T21:33:02Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/tachikoma",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/tachikoma",
+    "stargazers_count": 9,
+    "forks_count": 3,
+    "open_issues_count": 9,
+    "watchers_count": 9,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-07T03:59:04Z",
+    "pushed_at": "2026-07-18T01:42:31Z",
+    "updated_at": "2026-06-08T15:36:53Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/houseofagents",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/houseofagents",
+    "stargazers_count": 11,
+    "forks_count": 4,
+    "open_issues_count": 4,
+    "watchers_count": 11,
+    "language": "Rust",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-05T12:23:11Z",
+    "pushed_at": "2026-05-28T18:32:23Z",
+    "updated_at": "2026-05-26T11:05:24Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-wasm-udf-rs",
+    "description": "Rust SDK for writing ClickHouse WASM UDFs",
+    "html_url": "https://github.com/ClickHouse/clickhouse-wasm-udf-rs",
+    "stargazers_count": 7,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 7,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-03T10:00:48Z",
+    "pushed_at": "2026-05-18T12:23:15Z",
+    "updated_at": "2026-08-05T05:41:36Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-claude-code-plugin",
+    "description": "ClickHouse Claude Code plugin: skills (ClickHouse best practices), rules and MCP.",
+    "html_url": "https://github.com/ClickHouse/clickhouse-claude-code-plugin",
+    "stargazers_count": 6,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 6,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-25T19:26:18Z",
+    "pushed_at": "2026-08-10T06:30:51Z",
+    "updated_at": "2026-08-28T06:06:26Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/gitTrends",
+    "description": "Search through all Github events using ClickHouse. ",
+    "html_url": "https://github.com/ClickHouse/gitTrends",
+    "stargazers_count": 6,
+    "forks_count": 1,
+    "open_issues_count": 4,
+    "watchers_count": 6,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-25T14:29:02Z",
+    "pushed_at": "2026-05-28T19:43:54Z",
+    "updated_at": "2026-08-02T12:09:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://gitsearch-pink.vercel.app",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickHouse.EntityFrameworkCore",
+    "description": "Official Entity Framework Core provider for ClickHouse",
+    "html_url": "https://github.com/ClickHouse/ClickHouse.EntityFrameworkCore",
+    "stargazers_count": 23,
+    "forks_count": 7,
+    "open_issues_count": 25,
+    "watchers_count": 23,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-25T14:05:59Z",
+    "pushed_at": "2026-08-20T11:23:57Z",
+    "updated_at": "2026-08-26T14:19:35Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickHouse.Aspire",
+    "description": "Official Aspire integrations for ClickHouse",
+    "html_url": "https://github.com/ClickHouse/ClickHouse.Aspire",
+    "stargazers_count": 6,
+    "forks_count": 2,
+    "open_issues_count": 2,
+    "watchers_count": 6,
+    "language": "C#",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-23T12:36:14Z",
+    "pushed_at": "2026-08-19T05:26:11Z",
+    "updated_at": "2026-07-08T11:19:02Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/agentic-data-stack",
+    "description": "Official ClickHouse Agentic Data Stack - self-host with ClickHouse, LibreChat, Langfuse, and ClickHouse MCP.",
+    "html_url": "https://github.com/ClickHouse/agentic-data-stack",
+    "stargazers_count": 98,
+    "forks_count": 19,
+    "open_issues_count": 1,
+    "watchers_count": 98,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-20T16:04:56Z",
+    "pushed_at": "2026-07-04T18:17:02Z",
+    "updated_at": "2026-08-26T02:21:01Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-cursor-plugin",
+    "description": "Official ClickHouse plugin for Cursor to help with ClickHouse DB development",
+    "html_url": "https://github.com/ClickHouse/clickhouse-cursor-plugin",
+    "stargazers_count": 4,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-19T17:09:39Z",
+    "pushed_at": "2026-08-10T06:35:12Z",
+    "updated_at": "2026-08-10T06:35:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-serilog-demo",
+    "description": "Serilog and ClickStack Logging Demo",
+    "html_url": "https://github.com/ClickHouse/clickhouse-serilog-demo",
+    "stargazers_count": 0,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-17T08:48:05Z",
+    "pushed_at": "2026-03-22T18:58:18Z",
+    "updated_at": "2026-05-30T21:13:42Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/alexeyprompts",
+    "description": "A viewer for Claude Code history with ClickHouse backend",
+    "html_url": "https://github.com/ClickHouse/alexeyprompts",
+    "stargazers_count": 31,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 31,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-16T21:08:02Z",
+    "pushed_at": "2026-07-19T04:08:58Z",
+    "updated_at": "2026-07-19T03:25:37Z",
+    "default_branch": "master",
+    "topics": [
+      "ai"
+    ],
+    "homepage": "https://clickhouse.com/blog/agentic-coding",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/PostgresBench",
+    "description": "PostgresBench: a Benchmark For Postgres-compatible DBMS using pgbench.",
+    "html_url": "https://github.com/ClickHouse/PostgresBench",
+    "stargazers_count": 41,
+    "forks_count": 8,
+    "open_issues_count": 1,
+    "watchers_count": 41,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-16T17:42:49Z",
+    "pushed_at": "2026-08-05T14:51:34Z",
+    "updated_at": "2026-08-22T16:20:09Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://postgresbench.clickhouse.com/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-clickstack",
+    "description": "Static build of ClickStack UI for bundling into ClickHouse",
+    "html_url": "https://github.com/ClickHouse/clickhouse-clickstack",
+    "stargazers_count": 1,
+    "forks_count": 3,
+    "open_issues_count": 9,
+    "watchers_count": 1,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-10T20:59:11Z",
+    "pushed_at": "2026-08-28T22:35:47Z",
+    "updated_at": "2026-07-10T15:59:06Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhousectl",
+    "description": "The CLI for ClickHouse: local and cloud.",
+    "html_url": "https://github.com/ClickHouse/clickhousectl",
+    "stargazers_count": 74,
+    "forks_count": 5,
+    "open_issues_count": 101,
+    "watchers_count": 74,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-05T18:05:16Z",
+    "pushed_at": "2026-09-01T22:08:57Z",
+    "updated_at": "2026-08-28T20:04:10Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse"
+    ],
+    "homepage": "https://clickhouse.com/cli",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/reproducible_benchmark_chc_vs_choss",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/reproducible_benchmark_chc_vs_choss",
+    "stargazers_count": 0,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "HCL",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-01-29T15:50:12Z",
+    "pushed_at": "2026-01-29T15:55:33Z",
+    "updated_at": "2026-01-29T15:55:37Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/azurite-rs",
+    "description": "Rewrite in Rust of Azurite (Blob storage only)",
+    "html_url": "https://github.com/ClickHouse/azurite-rs",
+    "stargazers_count": 3,
+    "forks_count": 2,
+    "open_issues_count": 2,
+    "watchers_count": 3,
+    "language": "Rust",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-01-27T21:06:50Z",
+    "pushed_at": "2026-05-28T17:38:30Z",
+    "updated_at": "2026-08-10T16:34:11Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/pg_stat_ch",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/pg_stat_ch",
+    "stargazers_count": 123,
+    "forks_count": 5,
+    "open_issues_count": 6,
+    "watchers_count": 123,
+    "language": "Perl",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-01-25T16:45:13Z",
+    "pushed_at": "2026-08-30T05:32:23Z",
+    "updated_at": "2026-08-30T05:32:58Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "metrics",
+      "monitoring",
+      "postgresql",
+      "postgresql-extension"
+    ],
+    "homepage": "https://pg-stat-ch.clickhouse.com/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickHouseFormatExplorer",
+    "description": "Dev tool for visualizing ClickHouse RowBinary and Native format data. ",
+    "html_url": "https://github.com/ClickHouse/ClickHouseFormatExplorer",
+    "stargazers_count": 7,
+    "forks_count": 1,
+    "open_issues_count": 2,
+    "watchers_count": 7,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-01-22T13:17:38Z",
+    "pushed_at": "2026-08-28T08:56:43Z",
+    "updated_at": "2026-08-28T08:57:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickstack-session-replay-demo",
+    "description": "Interactive demo for ClickStack session replay capabilities",
+    "html_url": "https://github.com/ClickHouse/clickstack-session-replay-demo",
+    "stargazers_count": 2,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-01-20T15:08:29Z",
+    "pushed_at": "2026-01-26T15:36:07Z",
+    "updated_at": "2026-02-20T11:04:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/agent-skills",
+    "description": "The official Agent Skills for ClickHouse and ClickHouse Cloud",
+    "html_url": "https://github.com/ClickHouse/agent-skills",
+    "stargazers_count": 523,
+    "forks_count": 36,
+    "open_issues_count": 5,
+    "watchers_count": 523,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-01-15T16:36:20Z",
+    "pushed_at": "2026-08-06T14:07:59Z",
+    "updated_at": "2026-09-01T11:54:36Z",
+    "default_branch": "main",
+    "topics": [
+      "agents",
+      "clickhouse"
+    ],
+    "homepage": "https://clickhouse.ai",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/TreeHouse",
+    "description": "Advent of Code 2025 in ClickHouse SQL",
+    "html_url": "https://github.com/ClickHouse/TreeHouse",
+    "stargazers_count": 5,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-12-30T19:00:09Z",
+    "pushed_at": "2025-12-31T21:01:10Z",
+    "updated_at": "2026-01-09T10:15:37Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickHouse_Demos",
+    "description": "This repository contains demo assets that the ClickHouse team uses in their webinars and workshops",
+    "html_url": "https://github.com/ClickHouse/ClickHouse_Demos",
+    "stargazers_count": 9,
+    "forks_count": 3,
+    "open_issues_count": 2,
+    "watchers_count": 9,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-12-18T08:06:14Z",
+    "pushed_at": "2026-08-21T07:52:53Z",
+    "updated_at": "2026-08-24T02:54:18Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/byoc-tools",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/byoc-tools",
+    "stargazers_count": 0,
+    "forks_count": 2,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-12-16T03:49:23Z",
+    "pushed_at": "2026-07-22T08:42:53Z",
+    "updated_at": "2026-07-22T08:42:58Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickstack-demo-subscription-app",
+    "description": "ClickStack demo application for training and more",
+    "html_url": "https://github.com/ClickHouse/clickstack-demo-subscription-app",
+    "stargazers_count": 2,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-12-10T17:17:02Z",
+    "pushed_at": "2026-08-28T18:56:25Z",
+    "updated_at": "2026-07-31T16:54:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/adbc_clickhouse",
+    "description": "(Work-in-progress) Official ClickHouse driver for Arrow Database Connectivity (ADBC)",
+    "html_url": "https://github.com/ClickHouse/adbc_clickhouse",
+    "stargazers_count": 25,
+    "forks_count": 7,
+    "open_issues_count": 26,
+    "watchers_count": 25,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-11-20T04:01:18Z",
+    "pushed_at": "2026-09-01T00:26:42Z",
+    "updated_at": "2026-08-31T19:44:02Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickStack",
+    "description": "ClickStack - the open-source observability stack for OpenTelemetry at scale",
+    "html_url": "https://github.com/ClickHouse/ClickStack",
+    "stargazers_count": 159,
+    "forks_count": 17,
+    "open_issues_count": 3,
+    "watchers_count": 159,
+    "language": "Shell",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-11-12T23:11:46Z",
+    "pushed_at": "2026-02-26T17:46:50Z",
+    "updated_at": "2026-09-01T16:57:26Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://clickhouse.com/o11y",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickCannon",
+    "description": "A program for replaying ClickHouse data and simulating user queries",
+    "html_url": "https://github.com/ClickHouse/ClickCannon",
+    "stargazers_count": 18,
+    "forks_count": 6,
+    "open_issues_count": 8,
+    "watchers_count": 18,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-11-10T06:32:32Z",
+    "pushed_at": "2026-07-29T20:29:02Z",
+    "updated_at": "2026-08-25T17:07:37Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/postgres-clickhouse-stack",
+    "description": "Postgres + Clickhouse = The default data stack.  ",
+    "html_url": "https://github.com/ClickHouse/postgres-clickhouse-stack",
+    "stargazers_count": 47,
+    "forks_count": 7,
+    "open_issues_count": 2,
+    "watchers_count": 47,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-11-07T14:33:36Z",
+    "pushed_at": "2026-04-13T19:24:13Z",
+    "updated_at": "2026-08-21T03:10:05Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/sql-mandelbrot-benchmark",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/sql-mandelbrot-benchmark",
+    "stargazers_count": 33,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 33,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-11-04T03:32:27Z",
+    "pushed_at": "2026-07-06T17:38:19Z",
+    "updated_at": "2026-08-21T07:47:28Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/Serilog.Sinks.ClickHouse",
+    "description": "Official Serilog sink for writing logs to ClickHouse",
+    "html_url": "https://github.com/ClickHouse/Serilog.Sinks.ClickHouse",
+    "stargazers_count": 3,
+    "forks_count": 3,
+    "open_issues_count": 9,
+    "watchers_count": 3,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-10-31T12:04:41Z",
+    "pushed_at": "2026-08-19T05:26:08Z",
+    "updated_at": "2026-07-07T15:40:15Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/velocity",
+    "description": "Velocity: report and compare team activity across GitHub repositories",
+    "html_url": "https://github.com/ClickHouse/velocity",
+    "stargazers_count": 21,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 21,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-10-29T14:56:41Z",
+    "pushed_at": "2025-11-15T11:38:13Z",
+    "updated_at": "2026-05-22T21:26:18Z",
+    "default_branch": "master",
+    "topics": [
+      "clickhouse",
+      "code-review",
+      "developer-productivity",
+      "github",
+      "review"
+    ],
+    "homepage": "https://velocity.clickhouse.com/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/stockhouse",
+    "description": "Stock and Crypto real-time market data visualization demo",
+    "html_url": "https://github.com/ClickHouse/stockhouse",
+    "stargazers_count": 51,
+    "forks_count": 8,
+    "open_issues_count": 7,
+    "watchers_count": 51,
+    "language": "Vue",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-10-13T14:47:10Z",
+    "pushed_at": "2026-04-07T15:10:49Z",
+    "updated_at": "2026-08-16T21:14:41Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://stockhouse.clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/pg_clickhouse",
+    "description": "Interfaces to query ClickHouse databases from PostgreSQL",
+    "html_url": "https://github.com/ClickHouse/pg_clickhouse",
+    "stargazers_count": 280,
+    "forks_count": 20,
+    "open_issues_count": 39,
+    "watchers_count": 280,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-09-23T22:50:39Z",
+    "pushed_at": "2026-09-01T21:26:21Z",
+    "updated_at": "2026-08-31T16:37:15Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "fdw",
+      "postgresql",
+      "sql"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/terraform-byoc-onboarding",
+    "description": "A terrform module for customer BYOC onboarding",
+    "html_url": "https://github.com/ClickHouse/terraform-byoc-onboarding",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 2,
+    "watchers_count": 0,
+    "language": "HCL",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-07-18T02:36:36Z",
+    "pushed_at": "2026-09-01T14:40:24Z",
+    "updated_at": "2026-09-01T15:27:35Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/deltalake-cdc",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/deltalake-cdc",
+    "stargazers_count": 6,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 6,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-07-08T20:04:34Z",
+    "pushed_at": "2025-08-17T19:24:42Z",
+    "updated_at": "2026-06-11T18:45:40Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-cs",
+    "description": "Official .NET client for ClickHouse DB",
+    "html_url": "https://github.com/ClickHouse/clickhouse-cs",
+    "stargazers_count": 93,
+    "forks_count": 22,
+    "open_issues_count": 79,
+    "watchers_count": 93,
+    "language": "C#",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-27T18:40:19Z",
+    "pushed_at": "2026-09-01T20:21:39Z",
+    "updated_at": "2026-09-01T15:01:02Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ai-sdk-cpp",
+    "description": "The AI Toolkit for Modern C++. From the engineers at ClickHouse, ai-sdk-cpp is a free, open‑source library for building AI‑powered applications and agents.",
+    "html_url": "https://github.com/ClickHouse/ai-sdk-cpp",
+    "stargazers_count": 183,
+    "forks_count": 30,
+    "open_issues_count": 4,
+    "watchers_count": 183,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-21T18:50:48Z",
+    "pushed_at": "2026-08-19T21:08:42Z",
+    "updated_at": "2026-08-26T07:21:59Z",
+    "default_branch": "main",
+    "topics": [
+      "anthropic",
+      "artificial-intelligence",
+      "cpp",
+      "gemini",
+      "generative-ai",
+      "llm",
+      "openai"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickBOM",
+    "description": "Downloads SBOMs from GitHub, Mend, and Wiz. Uploads to S3 and ClickHouse.",
+    "html_url": "https://github.com/ClickHouse/ClickBOM",
+    "stargazers_count": 9,
+    "forks_count": 2,
+    "open_issues_count": 12,
+    "watchers_count": 9,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-16T12:39:08Z",
+    "pushed_at": "2026-08-10T11:16:15Z",
+    "updated_at": "2026-05-20T18:59:12Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "cyclonedx",
+      "github-sbom",
+      "mend",
+      "s3",
+      "sbom",
+      "spdx",
+      "wiz"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-diagnostics",
+    "description": "Clickhouse diagnostics tooling",
+    "html_url": "https://github.com/ClickHouse/clickhouse-diagnostics",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 4,
+    "watchers_count": 0,
+    "language": "Go",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-11T12:21:29Z",
+    "pushed_at": "2026-08-31T19:57:53Z",
+    "updated_at": "2026-08-31T18:54:48Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/coffeeshop-benchmark",
+    "description": "Coffee Shop benchmark for ClickHouse",
+    "html_url": "https://github.com/ClickHouse/coffeeshop-benchmark",
+    "stargazers_count": 11,
+    "forks_count": 3,
+    "open_issues_count": 2,
+    "watchers_count": 11,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-11T12:11:27Z",
+    "pushed_at": "2025-06-25T09:11:34Z",
+    "updated_at": "2026-01-14T02:25:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickLoad",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/ClickLoad",
+    "stargazers_count": 4,
+    "forks_count": 2,
+    "open_issues_count": 3,
+    "watchers_count": 4,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-02T10:00:03Z",
+    "pushed_at": "2026-01-08T01:53:02Z",
+    "updated_at": "2025-11-05T15:33:34Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/keeper-bench-suite",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/keeper-bench-suite",
+    "stargazers_count": 0,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Jinja",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-05-29T04:11:54Z",
+    "pushed_at": "2025-05-29T04:17:37Z",
+    "updated_at": "2025-05-29T10:12:50Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-analyzer",
+    "description": "SQL analyzer for ClickHouse SQL",
+    "html_url": "https://github.com/ClickHouse/clickhouse-analyzer",
+    "stargazers_count": 21,
+    "forks_count": 10,
+    "open_issues_count": 7,
+    "watchers_count": 21,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-04-22T17:55:51Z",
+    "pushed_at": "2026-04-24T17:02:17Z",
+    "updated_at": "2026-09-01T12:24:26Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-operator",
+    "description": "Official Kubernetes Operator for ClickHouse®",
+    "html_url": "https://github.com/ClickHouse/clickhouse-operator",
+    "stargazers_count": 284,
+    "forks_count": 40,
+    "open_issues_count": 14,
+    "watchers_count": 284,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-04-17T18:00:07Z",
+    "pushed_at": "2026-09-01T14:34:45Z",
+    "updated_at": "2026-09-01T15:04:07Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "database",
+      "go",
+      "helm-chart",
+      "kubernetes",
+      "kubernetes-operator"
+    ],
+    "homepage": "https://clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/dotnet-demo-app",
+    "description": "A C# demo app for using ClickHouse.Client in .NET",
+    "html_url": "https://github.com/ClickHouse/dotnet-demo-app",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C#",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-04-05T02:01:53Z",
+    "pushed_at": "2026-02-23T13:39:26Z",
+    "updated_at": "2026-02-23T13:39:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/terraform-provider-clickhousedbops",
+    "description": "This is the official Terraform provider for ClickHouse database operations.",
+    "html_url": "https://github.com/ClickHouse/terraform-provider-clickhousedbops",
+    "stargazers_count": 32,
+    "forks_count": 22,
+    "open_issues_count": 18,
+    "watchers_count": 32,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-03-28T09:22:40Z",
+    "pushed_at": "2026-08-25T13:35:24Z",
+    "updated_at": "2026-08-28T23:37:18Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "database-management"
+    ],
+    "homepage": "https://www.clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/postgresql_cdc_demo",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/postgresql_cdc_demo",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "HCL",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-03-17T14:06:11Z",
+    "pushed_at": "2025-03-21T06:44:01Z",
+    "updated_at": "2025-03-21T06:44:05Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/aws_vpc_logs_demo",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/aws_vpc_logs_demo",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "HCL",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-02-24T16:26:01Z",
+    "pushed_at": "2026-05-14T01:07:18Z",
+    "updated_at": "2026-07-23T11:30:43Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/FastFormats",
+    "description": "A benchmark for data formats",
+    "html_url": "https://github.com/ClickHouse/FastFormats",
+    "stargazers_count": 16,
+    "forks_count": 3,
+    "open_issues_count": 3,
+    "watchers_count": 16,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-02-17T17:01:05Z",
+    "pushed_at": "2025-02-27T17:47:24Z",
+    "updated_at": "2026-04-05T08:56:01Z",
+    "default_branch": "main",
+    "topics": [
+      "analytics",
+      "arrow",
+      "avro",
+      "benchmark",
+      "bson",
+      "capnproto",
+      "clickhouse",
+      "cpp",
+      "csv",
+      "database",
+      "json",
+      "msgpack",
+      "parquet",
+      "protobuf",
+      "tsv"
+    ],
+    "homepage": "https://fastformats.clickhouse.com/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/odbc-bridge",
+    "description": "ClickHouse ODBC Bridge",
+    "html_url": "https://github.com/ClickHouse/odbc-bridge",
+    "stargazers_count": 4,
+    "forks_count": 4,
+    "open_issues_count": 10,
+    "watchers_count": 4,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-02-16T01:59:31Z",
+    "pushed_at": "2025-02-16T02:07:08Z",
+    "updated_at": "2026-04-24T15:45:05Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/JSONBench",
+    "description": "JSONBench: a Benchmark For Data Analytics On JSON",
+    "html_url": "https://github.com/ClickHouse/JSONBench",
+    "stargazers_count": 183,
+    "forks_count": 33,
+    "open_issues_count": 10,
+    "watchers_count": 183,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-01-25T19:14:43Z",
+    "pushed_at": "2026-03-08T10:52:03Z",
+    "updated_at": "2026-08-13T03:19:52Z",
+    "default_branch": "main",
+    "topics": [
+      "analytics",
+      "benchmark",
+      "clickhouse",
+      "database",
+      "duckdb",
+      "elasticsearch",
+      "json",
+      "mongodb",
+      "postgresql",
+      "sql"
+    ],
+    "homepage": "https://jsonbench.com/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickStack-helm-charts",
+    "description": "Helm Charts for ClickStack",
+    "html_url": "https://github.com/ClickHouse/ClickStack-helm-charts",
+    "stargazers_count": 74,
+    "forks_count": 54,
+    "open_issues_count": 30,
+    "watchers_count": 74,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-01-18T01:17:02Z",
+    "pushed_at": "2026-08-31T20:47:41Z",
+    "updated_at": "2026-08-25T18:26:00Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://clickhouse.com/docs/use-cases/observability/clickstack/deployment/helm",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/mcp-clickhouse",
+    "description": "Connect ClickHouse to your AI assistants.",
+    "html_url": "https://github.com/ClickHouse/mcp-clickhouse",
+    "stargazers_count": 862,
+    "forks_count": 201,
+    "open_issues_count": 27,
+    "watchers_count": 862,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-12-25T14:15:46Z",
+    "pushed_at": "2026-09-01T20:12:35Z",
+    "updated_at": "2026-09-01T20:07:25Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ch-image-search-demo",
+    "description": "This repository contains an example React NextJS application that leverage Clickhouse vector Search capability to implement image similarity search. ",
+    "html_url": "https://github.com/ClickHouse/ch-image-search-demo",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 4,
+    "watchers_count": 1,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-11-19T16:09:39Z",
+    "pushed_at": "2025-01-04T02:42:11Z",
+    "updated_at": "2025-08-13T22:04:41Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/Antithesis",
+    "description": "Docker images and configurations for Antithesis platform",
+    "html_url": "https://github.com/ClickHouse/Antithesis",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 8,
+    "watchers_count": 2,
+    "language": "Shell",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-11-07T18:08:46Z",
+    "pushed_at": "2024-12-24T00:13:31Z",
+    "updated_at": "2025-04-24T16:02:22Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/docker-library",
+    "description": "A repository with sources for https://github.com/docker-library/official-images",
+    "html_url": "https://github.com/ClickHouse/docker-library",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-11-07T12:10:42Z",
+    "pushed_at": "2026-08-28T17:34:08Z",
+    "updated_at": "2026-08-28T17:37:11Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/kubenetmon",
+    "description": "kubenetmon is an open source Kubernetes network metering solution built at ClickHouse.",
+    "html_url": "https://github.com/ClickHouse/kubenetmon",
+    "stargazers_count": 186,
+    "forks_count": 10,
+    "open_issues_count": 11,
+    "watchers_count": 186,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-10-09T06:11:05Z",
+    "pushed_at": "2026-04-16T08:34:38Z",
+    "updated_at": "2026-08-28T04:47:54Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://kubenetmon.clickhouse.tech/index.yaml",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/perspective-forex",
+    "description": "Perspective with ClickHouse example using Apache Arrow",
+    "html_url": "https://github.com/ClickHouse/perspective-forex",
+    "stargazers_count": 8,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 8,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-10-02T13:45:05Z",
+    "pushed_at": "2024-10-02T14:23:09Z",
+    "updated_at": "2026-03-11T18:42:09Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://perspective-clickhouse.vercel.app/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/sql.clickhouse.com",
+    "description": "Configuration for sql.clickhouse.com",
+    "html_url": "https://github.com/ClickHouse/sql.clickhouse.com",
+    "stargazers_count": 21,
+    "forks_count": 7,
+    "open_issues_count": 17,
+    "watchers_count": 21,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-10-02T11:16:32Z",
+    "pushed_at": "2026-01-05T16:25:28Z",
+    "updated_at": "2026-04-22T18:27:37Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-beam-connector",
+    "description": "Examples & Testing for Apache Bema ClickHouse Sink",
+    "html_url": "https://github.com/ClickHouse/clickhouse-beam-connector",
+    "stargazers_count": 4,
+    "forks_count": 1,
+    "open_issues_count": 4,
+    "watchers_count": 4,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-08-26T06:28:31Z",
+    "pushed_at": "2025-07-12T01:31:59Z",
+    "updated_at": "2026-01-14T19:48:19Z",
+    "default_branch": "main",
+    "topics": [
+      "beam",
+      "clickhouseio",
+      "sink"
+    ],
+    "homepage": "https://clickhouse.com/docs/en/integrations/apache-beam",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-mixin",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/clickhouse-mixin",
+    "stargazers_count": 2,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-08-19T20:34:59Z",
+    "pushed_at": "2026-06-24T10:03:33Z",
+    "updated_at": "2026-06-24T10:03:38Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/musl",
+    "description": "Fork of https://git.musl-libc.org/cgit/musl",
+    "html_url": "https://github.com/ClickHouse/musl",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-08-13T23:28:38Z",
+    "pushed_at": "2026-09-01T02:03:36Z",
+    "updated_at": "2025-03-18T21:49:02Z",
+    "default_branch": "clickhouse/v1.2.5",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/praktika",
+    "description": "CI Infrastructure Framework",
+    "html_url": "https://github.com/ClickHouse/praktika",
+    "stargazers_count": 3,
+    "forks_count": 3,
+    "open_issues_count": 5,
+    "watchers_count": 3,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-08-03T20:15:19Z",
+    "pushed_at": "2026-08-28T07:15:32Z",
+    "updated_at": "2026-08-28T07:12:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/CryptoHouse",
+    "description": "Artifacts including queries and materialized views used for CryptoHouse",
+    "html_url": "https://github.com/ClickHouse/CryptoHouse",
+    "stargazers_count": 68,
+    "forks_count": 9,
+    "open_issues_count": 18,
+    "watchers_count": 68,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-07-31T15:39:43Z",
+    "pushed_at": "2026-06-13T14:59:51Z",
+    "updated_at": "2026-07-24T12:08:32Z",
+    "default_branch": "main",
+    "topics": [
+      "blockchain",
+      "clickhouse",
+      "cryptocurrency"
+    ],
+    "homepage": "https://crypto.clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/gitstats_demo",
+    "description": "Simple Github Stats Demo using ClickHouse Cloud Endpoints",
+    "html_url": "https://github.com/ClickHouse/gitstats_demo",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 3,
+    "watchers_count": 0,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-06-11T10:18:16Z",
+    "pushed_at": "2025-01-04T03:55:16Z",
+    "updated_at": "2025-04-24T16:02:22Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/rust_vendor",
+    "description": "Vendor files from rust dependencies",
+    "html_url": "https://github.com/ClickHouse/rust_vendor",
+    "stargazers_count": 5,
+    "forks_count": 6,
+    "open_issues_count": 4,
+    "watchers_count": 5,
+    "language": "Rust",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-04-04T17:15:31Z",
+    "pushed_at": "2026-08-22T21:09:02Z",
+    "updated_at": "2026-08-22T21:09:20Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-typescript-schema",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/clickhouse-typescript-schema",
+    "stargazers_count": 4,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-03-29T14:37:54Z",
+    "pushed_at": "2024-03-31T01:35:06Z",
+    "updated_at": "2025-08-01T13:31:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/copier",
+    "description": "clickhouse-copier (obsolete)",
+    "html_url": "https://github.com/ClickHouse/copier",
+    "stargazers_count": 15,
+    "forks_count": 6,
+    "open_issues_count": 2,
+    "watchers_count": 15,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-03-11T00:11:10Z",
+    "pushed_at": "2024-03-17T10:32:11Z",
+    "updated_at": "2026-04-28T05:52:53Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-academy",
+    "description": "ClickHouse Academy training and certification",
+    "html_url": "https://github.com/ClickHouse/clickhouse-academy",
+    "stargazers_count": 154,
+    "forks_count": 31,
+    "open_issues_count": 9,
+    "watchers_count": 154,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-03-04T16:02:42Z",
+    "pushed_at": "2026-08-31T22:51:05Z",
+    "updated_at": "2026-08-23T12:51:39Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/1trc",
+    "description": "1 trillion rows",
+    "html_url": "https://github.com/ClickHouse/1trc",
+    "stargazers_count": 8,
+    "forks_count": 4,
+    "open_issues_count": 8,
+    "watchers_count": 8,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-02-27T13:47:39Z",
+    "pushed_at": "2024-07-06T01:37:38Z",
+    "updated_at": "2025-02-14T15:43:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-fivetran-destination",
+    "description": "ClickHouse Cloud Fivetran Destination",
+    "html_url": "https://github.com/ClickHouse/clickhouse-fivetran-destination",
+    "stargazers_count": 7,
+    "forks_count": 4,
+    "open_issues_count": 13,
+    "watchers_count": 7,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-01-22T22:04:23Z",
+    "pushed_at": "2026-08-24T09:09:27Z",
+    "updated_at": "2026-08-24T09:13:20Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/adsb.exposed",
+    "description": "Interactive visualization and analytics on ADS-B data with ClickHouse",
+    "html_url": "https://github.com/ClickHouse/adsb.exposed",
+    "stargazers_count": 458,
+    "forks_count": 18,
+    "open_issues_count": 4,
+    "watchers_count": 458,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-12-26T21:55:18Z",
+    "pushed_at": "2026-08-10T19:18:28Z",
+    "updated_at": "2026-08-22T22:58:41Z",
+    "default_branch": "main",
+    "topics": [
+      "ads-b",
+      "clickhouse",
+      "flightradar",
+      "geospatial"
+    ],
+    "homepage": "https://adsb.exposed/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-recipes",
+    "description": "Sample code for solving common problems with ClickHouse",
+    "html_url": "https://github.com/ClickHouse/clickhouse-recipes",
+    "stargazers_count": 6,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 6,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-12-20T09:23:25Z",
+    "pushed_at": "2025-04-12T03:42:30Z",
+    "updated_at": "2025-09-11T07:29:07Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/bedrock_rag",
+    "description": "A simple RAG pipeline for Google Analytics with ClickHouse and Bedrock",
+    "html_url": "https://github.com/ClickHouse/bedrock_rag",
+    "stargazers_count": 11,
+    "forks_count": 2,
+    "open_issues_count": 2,
+    "watchers_count": 11,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-11-21T15:20:38Z",
+    "pushed_at": "2024-07-05T23:35:55Z",
+    "updated_at": "2026-04-14T06:00:38Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/simple-logging-benchmark",
+    "description": "A simple ClickHouse benchmark for the logging usecase",
+    "html_url": "https://github.com/ClickHouse/simple-logging-benchmark",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-11-09T18:07:50Z",
+    "pushed_at": "2023-11-14T10:01:50Z",
+    "updated_at": "2025-04-07T18:53:51Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ch-async-inserts-demo",
+    "description": "Demo on how to create a Node API that sends data to CH via Async inserts",
+    "html_url": "https://github.com/ClickHouse/ch-async-inserts-demo",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "TypeScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-10-27T16:16:01Z",
+    "pushed_at": "2023-10-27T16:16:18Z",
+    "updated_at": "2024-04-24T15:31:25Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-kafka-transforms",
+    "description": "This is meant to hold Clickhouse created kafka transforms.",
+    "html_url": "https://github.com/ClickHouse/clickhouse-kafka-transforms",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-10-19T21:46:25Z",
+    "pushed_at": "2026-07-24T00:17:58Z",
+    "updated_at": "2024-04-24T15:31:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/reversedns.space",
+    "description": "https://reversedns.space/",
+    "html_url": "https://github.com/ClickHouse/reversedns.space",
+    "stargazers_count": 56,
+    "forks_count": 1,
+    "open_issues_count": 4,
+    "watchers_count": 56,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-10-10T20:27:41Z",
+    "pushed_at": "2024-02-11T01:07:28Z",
+    "updated_at": "2026-07-20T21:57:32Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/libssh",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/libssh",
+    "stargazers_count": 0,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-28T13:15:10Z",
+    "pushed_at": "2026-08-23T01:56:34Z",
+    "updated_at": "2023-08-28T13:25:25Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://git.libssh.org/projects/libssh.git/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/power-bi-clickhouse",
+    "description": "This connector allows you to retrieve data from ClickHouse directly into Power BI for analysis and visualization",
+    "html_url": "https://github.com/ClickHouse/power-bi-clickhouse",
+    "stargazers_count": 52,
+    "forks_count": 3,
+    "open_issues_count": 26,
+    "watchers_count": 52,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-16T12:30:05Z",
+    "pushed_at": "2026-07-29T17:50:50Z",
+    "updated_at": "2026-05-17T22:13:08Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickpy",
+    "description": "PyPI analytics powered by ClickHouse",
+    "html_url": "https://github.com/ClickHouse/clickpy",
+    "stargazers_count": 155,
+    "forks_count": 17,
+    "open_issues_count": 31,
+    "watchers_count": 155,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-14T15:28:59Z",
+    "pushed_at": "2026-08-11T23:32:59Z",
+    "updated_at": "2026-08-27T07:39:28Z",
+    "default_branch": "main",
+    "topics": [
+      "analytics",
+      "clickhouse",
+      "pypi",
+      "pypi-packages",
+      "python",
+      "real-time"
+    ],
+    "homepage": "https://clickpy.clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/flink-connector-clickhouse",
+    "description": "Official Apache Flink connector for ClickHouse ",
+    "html_url": "https://github.com/ClickHouse/flink-connector-clickhouse",
+    "stargazers_count": 29,
+    "forks_count": 12,
+    "open_issues_count": 49,
+    "watchers_count": 29,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-05T13:01:32Z",
+    "pushed_at": "2026-09-01T15:00:16Z",
+    "updated_at": "2026-08-31T07:46:10Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "flink",
+      "flink-streaming",
+      "java"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse_vs_snowflake",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/clickhouse_vs_snowflake",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 3,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-27T14:33:00Z",
+    "pushed_at": "2023-10-24T12:54:13Z",
+    "updated_at": "2025-09-10T00:49:37Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/laion",
+    "description": "Supporting code for inserting and searching laion in ClickHouse",
+    "html_url": "https://github.com/ClickHouse/laion",
+    "stargazers_count": 6,
+    "forks_count": 2,
+    "open_issues_count": 3,
+    "watchers_count": 6,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-15T08:30:18Z",
+    "pushed_at": "2023-11-09T22:33:39Z",
+    "updated_at": "2025-01-20T11:00:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/terraform-provider-clickhouse",
+    "description": "Terraform Provider for ClickHouse Cloud",
+    "html_url": "https://github.com/ClickHouse/terraform-provider-clickhouse",
+    "stargazers_count": 53,
+    "forks_count": 33,
+    "open_issues_count": 22,
+    "watchers_count": 53,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-12T16:39:32Z",
+    "pushed_at": "2026-09-02T01:22:52Z",
+    "updated_at": "2026-09-01T11:34:39Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://registry.terraform.io/providers/ClickHouse/clickhouse",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/HouseClick",
+    "description": "House prices app",
+    "html_url": "https://github.com/ClickHouse/HouseClick",
+    "stargazers_count": 27,
+    "forks_count": 5,
+    "open_issues_count": 27,
+    "watchers_count": 27,
+    "language": "TypeScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-18T11:35:17Z",
+    "pushed_at": "2026-05-17T14:26:56Z",
+    "updated_at": "2026-05-17T14:27:01Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://house-click.vercel.app",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/NoiSQL",
+    "description": "NoiSQL — Generating Music With SQL Queries",
+    "html_url": "https://github.com/ClickHouse/NoiSQL",
+    "stargazers_count": 293,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 293,
+    "language": "SQL",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-01T12:39:59Z",
+    "pushed_at": "2024-01-01T15:12:06Z",
+    "updated_at": "2026-08-22T14:56:33Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhub",
+    "description": "Github analytics powered by the world's fastest real-time analytics database",
+    "html_url": "https://github.com/ClickHouse/clickhub",
+    "stargazers_count": 15,
+    "forks_count": 2,
+    "open_issues_count": 2,
+    "watchers_count": 15,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-31T13:25:22Z",
+    "pushed_at": "2024-01-10T16:59:29Z",
+    "updated_at": "2026-07-17T16:15:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/doc-pr-preview-test",
+    "description": "Testing workflow to build Docusaurus previews for pull requests.",
+    "html_url": "https://github.com/ClickHouse/doc-pr-preview-test",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 9,
+    "watchers_count": 0,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-29T15:12:19Z",
+    "pushed_at": "2023-10-18T19:14:08Z",
+    "updated_at": "2024-04-24T07:35:51Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/click-ui",
+    "description": "The home of the ClickHouse design system and component library.",
+    "html_url": "https://github.com/ClickHouse/click-ui",
+    "stargazers_count": 134,
+    "forks_count": 30,
+    "open_issues_count": 98,
+    "watchers_count": 134,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-17T18:47:19Z",
+    "pushed_at": "2026-09-01T18:35:50Z",
+    "updated_at": "2026-09-01T21:50:25Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://clickhouse.design/click-ui",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/fuzz-corpus",
+    "description": "Corpuses for libFuzzer-type fuzzers",
+    "html_url": "https://github.com/ClickHouse/fuzz-corpus",
+    "stargazers_count": 5,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 5,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-13T04:22:59Z",
+    "pushed_at": "2024-03-21T00:00:34Z",
+    "updated_at": "2026-02-03T21:15:35Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/web-tables-demo",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/web-tables-demo",
+    "stargazers_count": 24,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 24,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-02-25T04:39:40Z",
+    "pushed_at": "2025-02-27T07:20:47Z",
+    "updated_at": "2025-11-16T13:37:23Z",
+    "default_branch": "table_disk",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/examples",
+    "description": "A collection of examples for working and building with ClickHouse",
+    "html_url": "https://github.com/ClickHouse/examples",
+    "stargazers_count": 229,
+    "forks_count": 55,
+    "open_issues_count": 31,
+    "watchers_count": 229,
+    "language": "Jupyter Notebook",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-01-02T10:45:43Z",
+    "pushed_at": "2026-09-01T22:10:53Z",
+    "updated_at": "2026-09-02T05:03:25Z",
+    "default_branch": "main",
+    "topics": [
+      "cdc",
+      "clickhouse",
+      "crypto",
+      "docker",
+      "ethereum",
+      "observability"
+    ],
+    "homepage": "https://clickhouse.com/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/aretestsgreenyet",
+    "description": "A single-page website to display the status of the open-source ClickHouse CI system.",
+    "html_url": "https://github.com/ClickHouse/aretestsgreenyet",
+    "stargazers_count": 6,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 6,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-12-28T21:55:14Z",
+    "pushed_at": "2026-07-12T01:35:19Z",
+    "updated_at": "2026-07-12T01:35:23Z",
+    "default_branch": "main",
+    "topics": [
+      "ci",
+      "clickhouse",
+      "testing"
+    ],
+    "homepage": "https://aretestsgreenyet.com/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/checkout",
+    "description": "Wrapper around actions/checkout for flexible tuning",
+    "html_url": "https://github.com/ClickHouse/checkout",
+    "stargazers_count": 4,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-12-19T18:24:59Z",
+    "pushed_at": "2024-07-05T10:41:40Z",
+    "updated_at": "2025-03-18T21:49:02Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-js",
+    "description": "Official JS client for ClickHouse DB",
+    "html_url": "https://github.com/ClickHouse/clickhouse-js",
+    "stargazers_count": 330,
+    "forks_count": 73,
+    "open_issues_count": 61,
+    "watchers_count": 330,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-07-25T12:20:45Z",
+    "pushed_at": "2026-08-31T14:15:07Z",
+    "updated_at": "2026-08-26T15:27:35Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "http",
+      "https",
+      "javascript",
+      "nodejs",
+      "streaming",
+      "typescript"
+    ],
+    "homepage": "https://clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickBench",
+    "description": "ClickBench: a Benchmark For Analytical Databases",
+    "html_url": "https://github.com/ClickHouse/ClickBench",
+    "stargazers_count": 1095,
+    "forks_count": 313,
+    "open_issues_count": 42,
+    "watchers_count": 1095,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-07-11T20:36:51Z",
+    "pushed_at": "2026-09-02T04:37:15Z",
+    "updated_at": "2026-09-02T04:37:29Z",
+    "default_branch": "main",
+    "topics": [
+      "analytics",
+      "aws",
+      "benchmark",
+      "big-data",
+      "bigquery",
+      "chdb",
+      "clickhouse",
+      "databases",
+      "datafusion",
+      "datalake",
+      "doris",
+      "duckdb",
+      "iceberg",
+      "lakehouse",
+      "olap",
+      "parquet",
+      "rust",
+      "snowflake",
+      "sql"
+    ],
+    "homepage": "https://benchmark.clickhouse.com/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/FARSH",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/FARSH",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": "C",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-22T03:27:37Z",
+    "pushed_at": "2022-09-10T23:31:21Z",
+    "updated_at": "2022-06-22T03:28:04Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-kafka-connect",
+    "description": "ClickHouse Kafka Connector",
+    "html_url": "https://github.com/ClickHouse/clickhouse-kafka-connect",
+    "stargazers_count": 210,
+    "forks_count": 72,
+    "open_issues_count": 102,
+    "watchers_count": 210,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-21T07:55:37Z",
+    "pushed_at": "2026-09-01T21:50:50Z",
+    "updated_at": "2026-09-01T17:28:43Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "kafka",
+      "kafka-connect",
+      "sink"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/case-draft",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/case-draft",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-05-10T16:37:23Z",
+    "pushed_at": "2022-05-10T16:37:25Z",
+    "updated_at": "2022-05-10T16:37:23Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/pastila",
+    "description": "Paste toy-service on top of ClickHouse",
+    "html_url": "https://github.com/ClickHouse/pastila",
+    "stargazers_count": 85,
+    "forks_count": 5,
+    "open_issues_count": 7,
+    "watchers_count": 85,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-31T14:04:06Z",
+    "pushed_at": "2026-08-06T06:51:31Z",
+    "updated_at": "2026-08-06T06:52:41Z",
+    "default_branch": "master",
+    "topics": [
+      "clickhouse"
+    ],
+    "homepage": "https://pastila.nl/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/kafka-samples",
+    "description": "Sample datasets for Kafka",
+    "html_url": "https://github.com/ClickHouse/kafka-samples",
+    "stargazers_count": 5,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 5,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-24T14:13:59Z",
+    "pushed_at": "2023-10-18T02:56:56Z",
+    "updated_at": "2026-04-28T20:59:37Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-connect",
+    "description": "Python driver/sqlalchemy/superset connectors",
+    "html_url": "https://github.com/ClickHouse/clickhouse-connect",
+    "stargazers_count": 518,
+    "forks_count": 156,
+    "open_issues_count": 37,
+    "watchers_count": 518,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-02-24T20:15:16Z",
+    "pushed_at": "2026-09-01T23:25:21Z",
+    "updated_at": "2026-08-31T16:55:58Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "python"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-fiddle",
+    "description": "On-demand ClickHouse playground",
+    "html_url": "https://github.com/ClickHouse/clickhouse-fiddle",
+    "stargazers_count": 74,
+    "forks_count": 12,
+    "open_issues_count": 9,
+    "watchers_count": 74,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-27T09:09:51Z",
+    "pushed_at": "2026-09-01T16:01:50Z",
+    "updated_at": "2026-08-21T09:30:49Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "playground",
+      "sql-playground"
+    ],
+    "homepage": "https://fiddle.clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ch-bench",
+    "description": "Benchmarks for ch",
+    "html_url": "https://github.com/ClickHouse/ch-bench",
+    "stargazers_count": 36,
+    "forks_count": 10,
+    "open_issues_count": 5,
+    "watchers_count": 36,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-13T19:35:43Z",
+    "pushed_at": "2024-03-04T21:42:56Z",
+    "updated_at": "2026-08-07T03:52:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/homebrew-clickhouse",
+    "description": "ClickHouse Homebrew tap (old repository, unused)",
+    "html_url": "https://github.com/ClickHouse/homebrew-clickhouse",
+    "stargazers_count": 57,
+    "forks_count": 8,
+    "open_issues_count": 0,
+    "watchers_count": 57,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-15T11:11:46Z",
+    "pushed_at": "2024-05-10T00:42:36Z",
+    "updated_at": "2026-08-31T12:44:51Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "clickhouse-client",
+      "clickhouse-cpp",
+      "clickhouse-odbc",
+      "clickhouse-server",
+      "dbms",
+      "homebrew",
+      "homebrew-tap",
+      "linux",
+      "macos"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ch-go",
+    "description": "Low-level Go Client for ClickHouse",
+    "html_url": "https://github.com/ClickHouse/ch-go",
+    "stargazers_count": 426,
+    "forks_count": 83,
+    "open_issues_count": 39,
+    "watchers_count": 426,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-14T21:37:40Z",
+    "pushed_at": "2026-08-21T19:22:30Z",
+    "updated_at": "2026-08-21T10:27:58Z",
+    "default_branch": "main",
+    "topics": [
+      "binary",
+      "clickhouse",
+      "driver",
+      "go",
+      "golang",
+      "protocol"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/hive-metastore",
+    "description": "For files generated with https://github.com/apache/thrift",
+    "html_url": "https://github.com/ClickHouse/hive-metastore",
+    "stargazers_count": 1,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Thrift",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-11T08:01:41Z",
+    "pushed_at": "2021-11-15T15:45:48Z",
+    "updated_at": "2022-03-12T00:55:17Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/sysroot",
+    "description": "Files for cross-compilation",
+    "html_url": "https://github.com/ClickHouse/sysroot",
+    "stargazers_count": 41,
+    "forks_count": 25,
+    "open_issues_count": 4,
+    "watchers_count": 41,
+    "language": "C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-11T01:24:01Z",
+    "pushed_at": "2026-07-13T21:23:59Z",
+    "updated_at": "2026-07-30T11:38:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/bzip2",
+    "description": "Forked from https://gitlab.com/federicomenaquintero/bzip2",
+    "html_url": "https://github.com/ClickHouse/bzip2",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-07T13:43:47Z",
+    "pushed_at": "2021-08-07T13:45:52Z",
+    "updated_at": "2022-03-12T01:08:10Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-tableau-connector-jdbc",
+    "description": "Tableau connector to ClickHouse using JDBC driver",
+    "html_url": "https://github.com/ClickHouse/clickhouse-tableau-connector-jdbc",
+    "stargazers_count": 55,
+    "forks_count": 13,
+    "open_issues_count": 24,
+    "watchers_count": 55,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-16T16:51:18Z",
+    "pushed_at": "2026-07-27T08:35:12Z",
+    "updated_at": "2026-07-16T11:53:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ch2rs",
+    "description": "Generate Rust structs from ClickHouse rows",
+    "html_url": "https://github.com/ClickHouse/ch2rs",
+    "stargazers_count": 56,
+    "forks_count": 11,
+    "open_issues_count": 9,
+    "watchers_count": 56,
+    "language": "Rust",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-28T16:23:03Z",
+    "pushed_at": "2026-02-05T15:53:08Z",
+    "updated_at": "2026-07-17T18:25:51Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/spark-clickhouse-connector",
+    "description": "Spark ClickHouse Connector build on DataSourceV2 API",
+    "html_url": "https://github.com/ClickHouse/spark-clickhouse-connector",
+    "stargazers_count": 217,
+    "forks_count": 87,
+    "open_issues_count": 62,
+    "watchers_count": 217,
+    "language": "Scala",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-22T05:26:16Z",
+    "pushed_at": "2026-09-01T16:28:20Z",
+    "updated_at": "2026-08-31T10:54:40Z",
+    "default_branch": "main",
+    "topics": [
+      "arrow",
+      "clickhouse",
+      "datasourcev2",
+      "grpc",
+      "http",
+      "spark"
+    ],
+    "homepage": "https://clickhouse.com/docs/en/integrations/apache-spark",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/libc-blobs",
+    "description": "glibc shared libraries from multiple platforms",
+    "html_url": "https://github.com/ClickHouse/libc-blobs",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-04-03T21:52:10Z",
+    "pushed_at": "2021-04-04T02:30:29Z",
+    "updated_at": "2025-05-02T05:31:54Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/dbt-clickhouse",
+    "description": "The Clickhouse plugin for dbt (data build tool)",
+    "html_url": "https://github.com/ClickHouse/dbt-clickhouse",
+    "stargazers_count": 361,
+    "forks_count": 176,
+    "open_issues_count": 136,
+    "watchers_count": 361,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-29T14:10:43Z",
+    "pushed_at": "2026-08-28T15:33:46Z",
+    "updated_at": "2026-08-31T22:51:01Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "database",
+      "dbt"
+    ],
+    "homepage": "https://clickhouse.com/docs/integrations/dbt",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/libpq",
+    "description": "Copy of https://github.com/postgres/postgres/tree/master/src/interfaces/libpq with some files from root",
+    "html_url": "https://github.com/ClickHouse/libpq",
+    "stargazers_count": 3,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-10T13:48:20Z",
+    "pushed_at": "2024-07-24T14:57:23Z",
+    "updated_at": "2025-05-13T02:20:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/github-explorer",
+    "description": "Everything You Always Wanted To Know About GitHub (But Were Afraid To Ask)",
+    "html_url": "https://github.com/ClickHouse/github-explorer",
+    "stargazers_count": 179,
+    "forks_count": 19,
+    "open_issues_count": 5,
+    "watchers_count": 179,
+    "language": "HTML",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-20T04:00:18Z",
+    "pushed_at": "2026-08-16T22:07:44Z",
+    "updated_at": "2026-08-30T12:46:10Z",
+    "default_branch": "main",
+    "topics": [
+      "analytics",
+      "clickhouse",
+      "github",
+      "github-api",
+      "olap",
+      "sql"
+    ],
+    "homepage": "https://ghe.clickhouse.tech/",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-rs",
+    "description": "Official pure Rust typed client for ClickHouse DB",
+    "html_url": "https://github.com/ClickHouse/clickhouse-rs",
+    "stargazers_count": 553,
+    "forks_count": 171,
+    "open_issues_count": 72,
+    "watchers_count": 553,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-10-14T07:47:25Z",
+    "pushed_at": "2026-08-28T20:21:42Z",
+    "updated_at": "2026-08-30T15:00:40Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "http",
+      "rust",
+      "streaming",
+      "tokio"
+    ],
+    "homepage": "https://clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/readthedocs-stub",
+    "description": null,
+    "html_url": "https://github.com/ClickHouse/readthedocs-stub",
+    "stargazers_count": 0,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-24T18:50:31Z",
+    "pushed_at": "2020-06-24T19:10:57Z",
+    "updated_at": "2023-07-25T14:36:52Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/antlr4-runtime",
+    "description": "Subtree of antlr4 original repo",
+    "html_url": "https://github.com/ClickHouse/antlr4-runtime",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "C++",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-04T14:09:14Z",
+    "pushed_at": "2021-04-09T07:39:53Z",
+    "updated_at": "2024-01-29T20:26:30Z",
+    "default_branch": "cpp-runtime-4.8",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/grpc",
+    "description": "Stripped version of grpc",
+    "html_url": "https://github.com/ClickHouse/grpc",
+    "stargazers_count": 3,
+    "forks_count": 11,
+    "open_issues_count": 2,
+    "watchers_count": 3,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-17T17:08:51Z",
+    "pushed_at": "2026-07-30T14:43:45Z",
+    "updated_at": "2026-07-10T17:57:57Z",
+    "default_branch": "v1.33.2",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/libc-headers",
+    "description": "Linux system headers",
+    "html_url": "https://github.com/ClickHouse/libc-headers",
+    "stargazers_count": 1,
+    "forks_count": 5,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-20T01:27:23Z",
+    "pushed_at": "2021-10-11T13:42:27Z",
+    "updated_at": "2025-09-19T20:40:04Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/icudata",
+    "description": "Pregenerated data for ICU library",
+    "html_url": "https://github.com/ClickHouse/icudata",
+    "stargazers_count": 12,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 12,
+    "language": "Assembly",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-15T02:27:06Z",
+    "pushed_at": "2025-11-14T16:47:27Z",
+    "updated_at": "2025-11-14T16:47:47Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-cpp",
+    "description": "C++ client library for ClickHouse",
+    "html_url": "https://github.com/ClickHouse/clickhouse-cpp",
+    "stargazers_count": 381,
+    "forks_count": 208,
+    "open_issues_count": 46,
+    "watchers_count": 381,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-09-12T12:35:34Z",
+    "pushed_at": "2026-08-31T12:16:00Z",
+    "updated_at": "2026-08-31T12:22:18Z",
+    "default_branch": "master",
+    "topics": [
+      "clickhouse",
+      "cpp"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/libgsasl",
+    "description": "https://www.gnu.org/software/gsasl/",
+    "html_url": "https://github.com/ClickHouse/libgsasl",
+    "stargazers_count": 1,
+    "forks_count": 16,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C",
+    "license": {
+      "spdx_id": "LGPL-2.1",
+      "name": "GNU Lesser General Public License v2.1"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-06T14:55:28Z",
+    "pushed_at": "2025-01-09T20:47:18Z",
+    "updated_at": "2026-05-30T15:43:33Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/boost-extra",
+    "description": "extra boost libs for libhdfs3",
+    "html_url": "https://github.com/ClickHouse/boost-extra",
+    "stargazers_count": 1,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C++",
+    "license": {
+      "spdx_id": "BSL-1.0",
+      "name": "Boost Software License 1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-21T02:16:32Z",
+    "pushed_at": "2020-08-27T14:51:53Z",
+    "updated_at": "2024-08-02T09:00:29Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/protobuf",
+    "description": "add protobuf  for libhdfs3",
+    "html_url": "https://github.com/ClickHouse/protobuf",
+    "stargazers_count": 1,
+    "forks_count": 8,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-21T02:08:59Z",
+    "pushed_at": "2023-10-24T09:20:24Z",
+    "updated_at": "2024-04-24T15:31:19Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/libhdfs3",
+    "description": "HDFS file read access for ClickHouse",
+    "html_url": "https://github.com/ClickHouse/libhdfs3",
+    "stargazers_count": 43,
+    "forks_count": 62,
+    "open_issues_count": 11,
+    "watchers_count": 43,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-21T02:06:50Z",
+    "pushed_at": "2025-09-04T03:53:12Z",
+    "updated_at": "2026-04-30T06:14:28Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/UnixODBC",
+    "description": "Mirror of http://www.unixodbc.org/",
+    "html_url": "https://github.com/ClickHouse/UnixODBC",
+    "stargazers_count": 1,
+    "forks_count": 7,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "C",
+    "license": {
+      "spdx_id": "LGPL-2.1",
+      "name": "GNU Lesser General Public License v2.1"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-02T08:00:25Z",
+    "pushed_at": "2025-09-12T16:05:16Z",
+    "updated_at": "2025-04-24T16:02:22Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/boost",
+    "description": "Minimized boost lib",
+    "html_url": "https://github.com/ClickHouse/boost",
+    "stargazers_count": 1,
+    "forks_count": 25,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C++",
+    "license": {
+      "spdx_id": "BSL-1.0",
+      "name": "Boost Software License 1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-03-02T14:40:36Z",
+    "pushed_at": "2026-07-23T17:31:11Z",
+    "updated_at": "2026-01-05T18:12:35Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-presentations",
+    "description": "Presentations, meetups and talks about ClickHouse",
+    "html_url": "https://github.com/ClickHouse/clickhouse-presentations",
+    "stargazers_count": 1081,
+    "forks_count": 191,
+    "open_issues_count": 0,
+    "watchers_count": 1081,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-04-07T14:26:06Z",
+    "pushed_at": "2026-09-01T22:50:01Z",
+    "updated_at": "2026-09-01T22:50:04Z",
+    "default_branch": "master",
+    "topics": [
+      "clickhouse",
+      "presentations",
+      "slides"
+    ],
+    "homepage": "https://www.youtube.com/c/ClickHouseDB",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-odbc",
+    "description": "ODBC driver for ClickHouse",
+    "html_url": "https://github.com/ClickHouse/clickhouse-odbc",
+    "stargazers_count": 286,
+    "forks_count": 105,
+    "open_issues_count": 52,
+    "watchers_count": 286,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-03-17T14:29:49Z",
+    "pushed_at": "2026-08-18T15:43:22Z",
+    "updated_at": "2026-08-18T15:50:18Z",
+    "default_branch": "master",
+    "topics": [
+      "clickhouse",
+      "odbc",
+      "odbc-driver"
+    ],
+    "homepage": "https://clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/graphouse",
+    "description": "Graphouse allows you to use ClickHouse as a Graphite storage.",
+    "html_url": "https://github.com/ClickHouse/graphouse",
+    "stargazers_count": 261,
+    "forks_count": 54,
+    "open_issues_count": 15,
+    "watchers_count": 261,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-02-21T16:48:28Z",
+    "pushed_at": "2024-06-14T09:56:36Z",
+    "updated_at": "2026-08-19T11:52:29Z",
+    "default_branch": "master",
+    "topics": [
+      "clickhouse",
+      "graphite",
+      "graphite-backends"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-go",
+    "description": "Golang driver for ClickHouse",
+    "html_url": "https://github.com/ClickHouse/clickhouse-go",
+    "stargazers_count": 3336,
+    "forks_count": 674,
+    "open_issues_count": 174,
+    "watchers_count": 3336,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-01-11T20:53:23Z",
+    "pushed_at": "2026-09-01T08:37:26Z",
+    "updated_at": "2026-09-01T08:45:56Z",
+    "default_branch": "main",
+    "topics": [
+      "analytics-database",
+      "clickhouse",
+      "database",
+      "golang",
+      "golang-driver",
+      "sql"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse_exporter",
+    "description": "This is a simple server that periodically scrapes ClickHouse stats and exports them via HTTP for Prometheus(https://prometheus.io/) consumption.",
+    "html_url": "https://github.com/ClickHouse/clickhouse_exporter",
+    "stargazers_count": 404,
+    "forks_count": 178,
+    "open_issues_count": 1,
+    "watchers_count": 404,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-10-09T19:55:40Z",
+    "pushed_at": "2025-11-20T11:11:38Z",
+    "updated_at": "2026-08-31T22:51:01Z",
+    "default_branch": "master",
+    "topics": [
+      "clickhouse",
+      "exporter",
+      "prometheus",
+      "stats"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/clickhouse-java",
+    "description": "ClickHouse Java Clients & JDBC Driver",
+    "html_url": "https://github.com/ClickHouse/clickhouse-java",
+    "stargazers_count": 1618,
+    "forks_count": 633,
+    "open_issues_count": 172,
+    "watchers_count": 1618,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-07-15T12:48:27Z",
+    "pushed_at": "2026-09-01T23:17:03Z",
+    "updated_at": "2026-09-01T20:24:58Z",
+    "default_branch": "main",
+    "topics": [
+      "clickhouse",
+      "java-client",
+      "jdbc",
+      "jdbc-driver"
+    ],
+    "homepage": "https://clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ClickHouse/ClickHouse",
+    "description": "ClickHouse® is a real-time analytics database management system",
+    "html_url": "https://github.com/ClickHouse/ClickHouse",
+    "stargazers_count": 49601,
+    "forks_count": 8887,
+    "open_issues_count": 7367,
+    "watchers_count": 49601,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-06-02T08:28:18Z",
+    "pushed_at": "2026-09-02T05:43:34Z",
+    "updated_at": "2026-09-02T03:54:59Z",
+    "default_branch": "master",
+    "topics": [
+      "ai",
+      "analytics",
+      "big-data",
+      "clickhouse",
+      "cloud-native",
+      "cpp",
+      "database",
+      "dbms",
+      "distributed",
+      "embedded",
+      "hacktoberfest",
+      "lakehouse",
+      "mpp",
+      "olap",
+      "rust",
+      "self-hosted",
+      "sql"
+    ],
+    "homepage": "https://clickhouse.com",
+    "snapshot_date": "2026-09-02",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  }
+]
