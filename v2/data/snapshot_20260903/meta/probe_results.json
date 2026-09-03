@@ -1,0 +1,224 @@
+{
+  "snapshot_date": "2026-09-03",
+  "count": 18,
+  "results": [
+    {
+      "topic": "database",
+      "total_count": 50915,
+      "tier": "big",
+      "query": "topic:database"
+    },
+    {
+      "topic": "oracle",
+      "total_count": 5875,
+      "tier": "big",
+      "query": "topic:oracle"
+    },
+    {
+      "topic": "mysql",
+      "total_count": 105354,
+      "tier": "big",
+      "query": "topic:mysql"
+    },
+    {
+      "topic": "postgresql",
+      "total_count": 115180,
+      "tier": "big",
+      "query": "topic:postgresql"
+    },
+    {
+      "topic": "mariadb",
+      "total_count": 5697,
+      "tier": "big",
+      "query": "topic:mariadb"
+    },
+    {
+      "topic": "sqlserver",
+      "total_count": 4820,
+      "tier": "big",
+      "query": "topic:sqlserver"
+    },
+    {
+      "topic": "opengauss",
+      "total_count": 24,
+      "tier": "micro",
+      "query": "topic:opengauss"
+    },
+    {
+      "topic": "tidb",
+      "total_count": 260,
+      "tier": "small",
+      "query": "topic:tidb"
+    },
+    {
+      "topic": "oceanbase",
+      "total_count": 58,
+      "tier": "micro",
+      "query": "topic:oceanbase"
+    },
+    {
+      "topic": "tdsql",
+      "total_count": 3,
+      "tier": "micro",
+      "query": "topic:tdsql"
+    },
+    {
+      "topic": "polardb",
+      "total_count": 4,
+      "tier": "micro",
+      "query": "topic:polardb"
+    },
+    {
+      "topic": "polardb-x",
+      "total_count": 6,
+      "tier": "micro",
+      "query": "topic:polardb-x"
+    },
+    {
+      "topic": "yashandb",
+      "total_count": 0,
+      "tier": "empty",
+      "query": "topic:yashandb"
+    },
+    {
+      "topic": "goldendb",
+      "total_count": 0,
+      "tier": "empty",
+      "query": "topic:goldendb"
+    },
+    {
+      "topic": "gbase",
+      "total_count": 3,
+      "tier": "micro",
+      "query": "topic:gbase"
+    },
+    {
+      "topic": "dm",
+      "total_count": 217,
+      "tier": "small",
+      "query": "topic:dm"
+    },
+    {
+      "topic": "clickhouse",
+      "total_count": 1915,
+      "tier": "big",
+      "query": "topic:clickhouse"
+    },
+    {
+      "topic": "gaussdb",
+      "total_count": 30,
+      "tier": "micro",
+      "query": "topic:gaussdb"
+    }
+  ],
+  "by_topic": {
+    "database": {
+      "topic": "database",
+      "total_count": 50915,
+      "tier": "big",
+      "query": "topic:database"
+    },
+    "oracle": {
+      "topic": "oracle",
+      "total_count": 5875,
+      "tier": "big",
+      "query": "topic:oracle"
+    },
+    "mysql": {
+      "topic": "mysql",
+      "total_count": 105354,
+      "tier": "big",
+      "query": "topic:mysql"
+    },
+    "postgresql": {
+      "topic": "postgresql",
+      "total_count": 115180,
+      "tier": "big",
+      "query": "topic:postgresql"
+    },
+    "mariadb": {
+      "topic": "mariadb",
+      "total_count": 5697,
+      "tier": "big",
+      "query": "topic:mariadb"
+    },
+    "sqlserver": {
+      "topic": "sqlserver",
+      "total_count": 4820,
+      "tier": "big",
+      "query": "topic:sqlserver"
+    },
+    "opengauss": {
+      "topic": "opengauss",
+      "total_count": 24,
+      "tier": "micro",
+      "query": "topic:opengauss"
+    },
+    "tidb": {
+      "topic": "tidb",
+      "total_count": 260,
+      "tier": "small",
+      "query": "topic:tidb"
+    },
+    "oceanbase": {
+      "topic": "oceanbase",
+      "total_count": 58,
+      "tier": "micro",
+      "query": "topic:oceanbase"
+    },
+    "tdsql": {
+      "topic": "tdsql",
+      "total_count": 3,
+      "tier": "micro",
+      "query": "topic:tdsql"
+    },
+    "polardb": {
+      "topic": "polardb",
+      "total_count": 4,
+      "tier": "micro",
+      "query": "topic:polardb"
+    },
+    "polardb-x": {
+      "topic": "polardb-x",
+      "total_count": 6,
+      "tier": "micro",
+      "query": "topic:polardb-x"
+    },
+    "yashandb": {
+      "topic": "yashandb",
+      "total_count": 0,
+      "tier": "empty",
+      "query": "topic:yashandb"
+    },
+    "goldendb": {
+      "topic": "goldendb",
+      "total_count": 0,
+      "tier": "empty",
+      "query": "topic:goldendb"
+    },
+    "gbase": {
+      "topic": "gbase",
+      "total_count": 3,
+      "tier": "micro",
+      "query": "topic:gbase"
+    },
+    "dm": {
+      "topic": "dm",
+      "total_count": 217,
+      "tier": "small",
+      "query": "topic:dm"
+    },
+    "clickhouse": {
+      "topic": "clickhouse",
+      "total_count": 1915,
+      "tier": "big",
+      "query": "topic:clickhouse"
+    },
+    "gaussdb": {
+      "topic": "gaussdb",
+      "total_count": 30,
+      "tier": "micro",
+      "query": "topic:gaussdb"
+    }
+  }
+}

@@ -23,6 +23,7 @@ orasqldiag_skill.tar.gz
 # 快照白名单由 CI 每日自动重写（见 .github/workflows/v2-daily.yml），勿手工编辑
 v2/data/*
 # BEGIN snapshot whitelist (auto-generated)
+!v2/data/snapshot_20260903/
 !v2/data/snapshot_20260902/
 !v2/data/snapshot_20260901/
 !v2/data/snapshot_20260831/
@@ -30,7 +31,6 @@ v2/data/*
 !v2/data/snapshot_20260829/
 !v2/data/snapshot_20260828/
 !v2/data/snapshot_20260827/
-!v2/data/snapshot_20260826/
 # END snapshot whitelist
 # === v2 打包/日志/会话产物 ===
 v2.zip
