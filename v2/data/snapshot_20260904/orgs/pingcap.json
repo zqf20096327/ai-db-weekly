@@ -1,0 +1,2502 @@
+[
+  {
+    "full_name": "pingcap/metering_sdk",
+    "description": null,
+    "html_url": "https://github.com/pingcap/metering_sdk",
+    "stargazers_count": 0,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-08-22T04:02:29Z",
+    "pushed_at": "2026-08-14T06:27:08Z",
+    "updated_at": "2026-08-14T06:27:26Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/pytidb",
+    "description": "TiDB AI SDK: Unified Multi-Modal Data Platform for AI Apps & Agents",
+    "html_url": "https://github.com/pingcap/pytidb",
+    "stargazers_count": 33,
+    "forks_count": 18,
+    "open_issues_count": 35,
+    "watchers_count": 33,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-03-19T06:02:18Z",
+    "pushed_at": "2026-03-06T07:28:19Z",
+    "updated_at": "2026-07-04T09:02:01Z",
+    "default_branch": "main",
+    "topics": [
+      "ai",
+      "embeddings",
+      "fulltext-search",
+      "hnsw",
+      "hybrid-search",
+      "multi-modal",
+      "rag",
+      "semantic-search",
+      "similarity-search",
+      "sql",
+      "tidb",
+      "vector-search"
+    ],
+    "homepage": "https://docs.pingcap.com/ai",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/ticdc",
+    "description": "TiCDC pulls change logs out of TiDB and pushes to kinds of systems.",
+    "html_url": "https://github.com/pingcap/ticdc",
+    "stargazers_count": 55,
+    "forks_count": 63,
+    "open_issues_count": 362,
+    "watchers_count": 55,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-05-21T08:42:32Z",
+    "pushed_at": "2026-09-03T11:54:18Z",
+    "updated_at": "2026-09-03T11:10:34Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/autoflow",
+    "description": "pingcap/autoflow is a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage. Demo: https://tidb.ai",
+    "html_url": "https://github.com/pingcap/autoflow",
+    "stargazers_count": 2969,
+    "forks_count": 194,
+    "open_issues_count": 74,
+    "watchers_count": 2969,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-02-05T06:53:14Z",
+    "pushed_at": "2026-04-27T13:55:14Z",
+    "updated_at": "2026-09-03T15:54:49Z",
+    "default_branch": "main",
+    "topics": [
+      "chatbot",
+      "cot",
+      "graphrag",
+      "knowledge-graph",
+      "mysql",
+      "rag",
+      "serverless",
+      "vector-database"
+    ],
+    "homepage": "https://tidb.ai",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/LinguFlow",
+    "description": "LinguFlow, a low-code tool designed for LLM application development, simplifies the building, debugging, and deployment process for developers.",
+    "html_url": "https://github.com/pingcap/LinguFlow",
+    "stargazers_count": 30,
+    "forks_count": 3,
+    "open_issues_count": 26,
+    "watchers_count": 30,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-01-18T02:45:00Z",
+    "pushed_at": "2026-02-10T20:22:06Z",
+    "updated_at": "2026-06-15T09:21:57Z",
+    "default_branch": "main",
+    "topics": [
+      "chatgpt",
+      "gpt",
+      "llm-framework",
+      "llm-inference",
+      "openai"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-vector-python",
+    "description": "TiDB Vector SDK for Python, including code examples. Join our Discord: https://discord.gg/XzSW23Jg9p",
+    "html_url": "https://github.com/pingcap/tidb-vector-python",
+    "stargazers_count": 60,
+    "forks_count": 16,
+    "open_issues_count": 4,
+    "watchers_count": 60,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-01-12T05:54:21Z",
+    "pushed_at": "2025-07-15T09:19:13Z",
+    "updated_at": "2026-07-08T12:32:50Z",
+    "default_branch": "main",
+    "topics": [
+      "python",
+      "tidb-vector",
+      "tidbcloud"
+    ],
+    "homepage": "https://www.pingcap.com/ai",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/wordpress-tidb-plugin",
+    "description": null,
+    "html_url": "https://github.com/pingcap/wordpress-tidb-plugin",
+    "stargazers_count": 19,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 19,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-11-07T15:53:00Z",
+    "pushed_at": "2025-08-11T07:13:39Z",
+    "updated_at": "2026-02-27T15:33:51Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb_workload_analysis",
+    "description": null,
+    "html_url": "https://github.com/pingcap/tidb_workload_analysis",
+    "stargazers_count": 18,
+    "forks_count": 5,
+    "open_issues_count": 1,
+    "watchers_count": 18,
+    "language": "Go",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-10-09T02:42:27Z",
+    "pushed_at": "2024-07-09T07:11:41Z",
+    "updated_at": "2025-06-16T01:34:18Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/ossinsight-next",
+    "description": null,
+    "html_url": "https://github.com/pingcap/ossinsight-next",
+    "stargazers_count": 3,
+    "forks_count": 6,
+    "open_issues_count": 5,
+    "watchers_count": 3,
+    "language": "TypeScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-19T03:38:26Z",
+    "pushed_at": "2026-02-26T07:16:11Z",
+    "updated_at": "2025-04-04T04:34:20Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://next.ossinsight.io",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/wordpress-tidb-docker",
+    "description": "WordPress x TiDB Serverless Tier Cluster",
+    "html_url": "https://github.com/pingcap/wordpress-tidb-docker",
+    "stargazers_count": 8,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 8,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-30T06:23:52Z",
+    "pushed_at": "2023-10-31T15:08:06Z",
+    "updated_at": "2025-03-05T13:22:55Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/full-stack-app-builder-ai-agent",
+    "description": null,
+    "html_url": "https://github.com/pingcap/full-stack-app-builder-ai-agent",
+    "stargazers_count": 25,
+    "forks_count": 12,
+    "open_issues_count": 1,
+    "watchers_count": 25,
+    "language": "TypeScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-26T09:13:12Z",
+    "pushed_at": "2025-12-18T08:01:17Z",
+    "updated_at": "2026-07-16T09:17:37Z",
+    "default_branch": "main",
+    "topics": [
+      "codegen",
+      "database",
+      "database-branching",
+      "full-stack-ai-agent"
+    ],
+    "homepage": "https://code.tidb.ai",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "pingcap/pingcap.github.io",
+    "description": "TiDB AI SDK Documentations - https://pingcap.github.io/ai/",
+    "html_url": "https://github.com/pingcap/pingcap.github.io",
+    "stargazers_count": 391,
+    "forks_count": 115,
+    "open_issues_count": 3,
+    "watchers_count": 391,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-25T06:29:35Z",
+    "pushed_at": "2025-12-29T03:04:11Z",
+    "updated_at": "2026-07-31T14:45:23Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://pingcap.github.io/ai/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/steam-insight-template",
+    "description": "Steam Insight vercel template based on TiDB Cloud Data API: https://steam-insight.vercel.app/",
+    "html_url": "https://github.com/pingcap/steam-insight-template",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-29T08:29:25Z",
+    "pushed_at": "2023-03-29T08:45:49Z",
+    "updated_at": "2023-03-29T08:43:56Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://steam-insight.vercel.app/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/sp500-insight-template",
+    "description": "SP500 Insight vercel template based on TiDB Cloud Data API: https://sp500-insight.vercel.app",
+    "html_url": "https://github.com/pingcap/sp500-insight-template",
+    "stargazers_count": 7,
+    "forks_count": 11,
+    "open_issues_count": 0,
+    "watchers_count": 7,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-02T03:15:27Z",
+    "pushed_at": "2023-10-10T06:34:13Z",
+    "updated_at": "2025-07-17T02:41:34Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://sp500-insight.vercel.app",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/agent-rules",
+    "description": "Agentic Store Skills",
+    "html_url": "https://github.com/pingcap/agent-rules",
+    "stargazers_count": 25,
+    "forks_count": 15,
+    "open_issues_count": 4,
+    "watchers_count": 25,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-02-23T06:03:44Z",
+    "pushed_at": "2026-08-18T09:33:17Z",
+    "updated_at": "2026-08-22T04:14:35Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "pingcap/TiDB-Lambda-integration",
+    "description": null,
+    "html_url": "https://github.com/pingcap/TiDB-Lambda-integration",
+    "stargazers_count": 2,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-01-12T10:23:43Z",
+    "pushed_at": "2023-04-25T02:18:53Z",
+    "updated_at": "2024-07-06T07:31:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/diagnosis-ui",
+    "description": null,
+    "html_url": "https://github.com/pingcap/diagnosis-ui",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "TypeScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-09-12T11:46:32Z",
+    "pushed_at": "2023-02-02T07:24:17Z",
+    "updated_at": "2022-12-15T00:40:33Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-prisma-vercel-demo",
+    "description": "Virtual online bookstore application demo which you can find books of various categories and rate the books.",
+    "html_url": "https://github.com/pingcap/tidb-prisma-vercel-demo",
+    "stargazers_count": 67,
+    "forks_count": 41,
+    "open_issues_count": 3,
+    "watchers_count": 67,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-09-02T02:50:57Z",
+    "pushed_at": "2024-12-11T13:20:23Z",
+    "updated_at": "2025-11-27T10:59:55Z",
+    "default_branch": "main",
+    "topics": [
+      "bookstore",
+      "ecommerce",
+      "nextjs",
+      "prisma",
+      "tidb",
+      "tidbcloud",
+      "vercel"
+    ],
+    "homepage": "https://tidb-prisma-vercel-demo.vercel.app/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/dr-testing",
+    "description": "Share snippets and programs and findings about DR testing",
+    "html_url": "https://github.com/pingcap/dr-testing",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": "Shell",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-09-01T18:41:14Z",
+    "pushed_at": "2022-09-16T07:42:02Z",
+    "updated_at": "2022-09-01T20:41:13Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-loadbalance",
+    "description": null,
+    "html_url": "https://github.com/pingcap/tidb-loadbalance",
+    "stargazers_count": 14,
+    "forks_count": 5,
+    "open_issues_count": 2,
+    "watchers_count": 14,
+    "language": "Java",
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-08-10T01:45:32Z",
+    "pushed_at": "2026-01-31T08:48:49Z",
+    "updated_at": "2026-01-31T09:22:00Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tiflow-operator",
+    "description": "TiFlow-Operator creates and manages TiFlow clusters running in Kubernetes.",
+    "html_url": "https://github.com/pingcap/tiflow-operator",
+    "stargazers_count": 1,
+    "forks_count": 7,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-07-21T14:07:28Z",
+    "pushed_at": "2025-03-31T08:37:32Z",
+    "updated_at": "2023-06-28T10:55:46Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/tiproxy",
+    "description": null,
+    "html_url": "https://github.com/pingcap/tiproxy",
+    "stargazers_count": 73,
+    "forks_count": 41,
+    "open_issues_count": 53,
+    "watchers_count": 73,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-07-08T03:11:47Z",
+    "pushed_at": "2026-09-03T10:42:13Z",
+    "updated_at": "2026-09-03T10:43:16Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/book.tidb.net",
+    "description": null,
+    "html_url": "https://github.com/pingcap/book.tidb.net",
+    "stargazers_count": 23,
+    "forks_count": 39,
+    "open_issues_count": 1,
+    "watchers_count": 23,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-19T07:52:36Z",
+    "pushed_at": "2024-05-07T10:14:52Z",
+    "updated_at": "2025-06-30T05:19:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://tidb.net/book",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/dbt-tidb",
+    "description": "A dbt adapter for TiDB",
+    "html_url": "https://github.com/pingcap/dbt-tidb",
+    "stargazers_count": 15,
+    "forks_count": 9,
+    "open_issues_count": 10,
+    "watchers_count": 15,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-01T03:51:20Z",
+    "pushed_at": "2023-12-14T05:45:23Z",
+    "updated_at": "2026-02-21T19:23:36Z",
+    "default_branch": "main",
+    "topics": [
+      "dataanalysis",
+      "database",
+      "dbt",
+      "mysql",
+      "python",
+      "sql",
+      "tidb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/ossinsight",
+    "description": "Analysis, Comparison, Trends, Rankings of Open Source Software, you can also get insight from more than 10 billion with natural language (powered by LLM). Follow us on Twitter: https://twitter.com/ossinsight",
+    "html_url": "https://github.com/pingcap/ossinsight",
+    "stargazers_count": 2503,
+    "forks_count": 442,
+    "open_issues_count": 25,
+    "watchers_count": 2503,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-01-19T10:41:15Z",
+    "pushed_at": "2026-09-01T21:34:28Z",
+    "updated_at": "2026-09-02T08:25:45Z",
+    "default_branch": "main",
+    "topics": [
+      "aisql",
+      "analytics",
+      "chat2query",
+      "demo",
+      "github",
+      "htap",
+      "insight",
+      "openai",
+      "oss",
+      "realtime",
+      "text2sql"
+    ],
+    "homepage": "https://ossinsight.io/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/ng-monitoring",
+    "description": null,
+    "html_url": "https://github.com/pingcap/ng-monitoring",
+    "stargazers_count": 33,
+    "forks_count": 27,
+    "open_issues_count": 34,
+    "watchers_count": 33,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-29T05:47:41Z",
+    "pushed_at": "2026-08-27T09:11:49Z",
+    "updated_at": "2026-08-24T09:05:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-examples",
+    "description": null,
+    "html_url": "https://github.com/pingcap/tidb-examples",
+    "stargazers_count": 2,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "PHP",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-09T09:47:49Z",
+    "pushed_at": "2021-10-19T11:54:45Z",
+    "updated_at": "2025-02-06T06:30:43Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/activerecord-tidb-adapter",
+    "description": "TiDB adapter for ActiveRecord, allows the use of TiDB as a backend for ActiveRecord and Rails apps.",
+    "html_url": "https://github.com/pingcap/activerecord-tidb-adapter",
+    "stargazers_count": 23,
+    "forks_count": 4,
+    "open_issues_count": 3,
+    "watchers_count": 23,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-04T06:16:26Z",
+    "pushed_at": "2025-11-21T11:04:01Z",
+    "updated_at": "2025-12-01T14:29:17Z",
+    "default_branch": "main",
+    "topics": [
+      "activerecord",
+      "mysql",
+      "rails",
+      "tidb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/django-tidb",
+    "description": "TiDB dialect for Django",
+    "html_url": "https://github.com/pingcap/django-tidb",
+    "stargazers_count": 37,
+    "forks_count": 19,
+    "open_issues_count": 2,
+    "watchers_count": 37,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-29T09:37:31Z",
+    "pushed_at": "2026-08-05T07:02:57Z",
+    "updated_at": "2026-08-05T01:22:36Z",
+    "default_branch": "main",
+    "topics": [
+      "django",
+      "python",
+      "tidb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/hibernate-tidb",
+    "description": null,
+    "html_url": "https://github.com/pingcap/hibernate-tidb",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-29T09:36:38Z",
+    "pushed_at": "2021-08-05T12:22:57Z",
+    "updated_at": "2021-08-05T12:22:59Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tiunimanager-ui",
+    "description": "A web UI for TiUniManager",
+    "html_url": "https://github.com/pingcap/tiunimanager-ui",
+    "stargazers_count": 10,
+    "forks_count": 8,
+    "open_issues_count": 40,
+    "watchers_count": 10,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-20T02:56:23Z",
+    "pushed_at": "2026-08-20T07:11:27Z",
+    "updated_at": "2026-05-30T02:35:41Z",
+    "default_branch": "main",
+    "topics": [
+      "tidb",
+      "tiunimanager",
+      "ui"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/education",
+    "description": null,
+    "html_url": "https://github.com/pingcap/education",
+    "stargazers_count": 2,
+    "forks_count": 4,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-06-10T05:47:12Z",
+    "pushed_at": "2022-08-04T02:26:58Z",
+    "updated_at": "2022-12-21T22:30:14Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/discourse-topic-enhancement",
+    "description": null,
+    "html_url": "https://github.com/pingcap/discourse-topic-enhancement",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-06-09T09:31:18Z",
+    "pushed_at": "2021-06-29T05:54:43Z",
+    "updated_at": "2021-08-05T06:35:17Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tiunimanager",
+    "description": "TiUniManager",
+    "html_url": "https://github.com/pingcap/tiunimanager",
+    "stargazers_count": 34,
+    "forks_count": 21,
+    "open_issues_count": 41,
+    "watchers_count": 34,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-04-28T16:02:31Z",
+    "pushed_at": "2026-08-20T07:11:22Z",
+    "updated_at": "2026-05-30T02:35:43Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/gdocwiki",
+    "description": "A wiki based on Google Doc / Drive",
+    "html_url": "https://github.com/pingcap/gdocwiki",
+    "stargazers_count": 110,
+    "forks_count": 17,
+    "open_issues_count": 26,
+    "watchers_count": 110,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-30T09:21:06Z",
+    "pushed_at": "2023-03-09T12:43:50Z",
+    "updated_at": "2026-01-08T16:05:57Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/dead-mans-switch",
+    "description": "A bypass monitoring prober",
+    "html_url": "https://github.com/pingcap/dead-mans-switch",
+    "stargazers_count": 36,
+    "forks_count": 17,
+    "open_issues_count": 2,
+    "watchers_count": 36,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-07-13T13:48:06Z",
+    "pushed_at": "2021-09-28T01:03:41Z",
+    "updated_at": "2026-09-02T17:16:30Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/TiBigData",
+    "description": "TiDB connectors for Flink/Hive/Presto",
+    "html_url": "https://github.com/pingcap/TiBigData",
+    "stargazers_count": 219,
+    "forks_count": 56,
+    "open_issues_count": 29,
+    "watchers_count": 219,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-08T08:51:05Z",
+    "pushed_at": "2024-04-12T07:13:32Z",
+    "updated_at": "2026-07-13T20:17:20Z",
+    "default_branch": "master",
+    "topics": [
+      "bigdata",
+      "cdc",
+      "flink",
+      "hive",
+      "presto",
+      "tidb",
+      "tikv"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/os-ubuntu-tikv",
+    "description": null,
+    "html_url": "https://github.com/pingcap/os-ubuntu-tikv",
+    "stargazers_count": 0,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-01T02:32:01Z",
+    "pushed_at": "2020-06-04T01:14:31Z",
+    "updated_at": "2020-06-04T01:13:47Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/discourse-theme-asktug",
+    "description": "A discourse theme used in AskTUG.",
+    "html_url": "https://github.com/pingcap/discourse-theme-asktug",
+    "stargazers_count": 2,
+    "forks_count": 6,
+    "open_issues_count": 1,
+    "watchers_count": 2,
+    "language": "HTML",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-04-15T03:44:26Z",
+    "pushed_at": "2026-03-03T14:06:01Z",
+    "updated_at": "2026-03-03T14:06:05Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://asktug.com",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/gardener-extension-os-ubuntu-tidb",
+    "description": null,
+    "html_url": "https://github.com/pingcap/gardener-extension-os-ubuntu-tidb",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-04-09T06:47:53Z",
+    "pushed_at": "2020-04-09T23:57:11Z",
+    "updated_at": "2020-04-13T15:44:47Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/mysql-tester",
+    "description": "A Golang implementation of MySQL Test Framework",
+    "html_url": "https://github.com/pingcap/mysql-tester",
+    "stargazers_count": 74,
+    "forks_count": 65,
+    "open_issues_count": 33,
+    "watchers_count": 74,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-03-22T13:23:09Z",
+    "pushed_at": "2026-01-21T03:43:50Z",
+    "updated_at": "2026-06-14T06:01:35Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tiup",
+    "description": "A component manager for TiDB",
+    "html_url": "https://github.com/pingcap/tiup",
+    "stargazers_count": 466,
+    "forks_count": 337,
+    "open_issues_count": 351,
+    "watchers_count": 466,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-20T14:21:21Z",
+    "pushed_at": "2026-09-03T09:06:18Z",
+    "updated_at": "2026-09-03T09:09:25Z",
+    "default_branch": "master",
+    "topics": [
+      "cluster",
+      "playground",
+      "tidb",
+      "tidb-components",
+      "tiup"
+    ],
+    "homepage": "https://tiup.io",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/cloud-assets-utils",
+    "description": "Cloud assets utils by PingCAP FE.",
+    "html_url": "https://github.com/pingcap/cloud-assets-utils",
+    "stargazers_count": 3,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "OCaml",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-12T07:41:01Z",
+    "pushed_at": "2021-03-18T12:51:44Z",
+    "updated_at": "2025-02-08T13:58:46Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-map",
+    "description": "A series of maps to help users and contributors",
+    "html_url": "https://github.com/pingcap/tidb-map",
+    "stargazers_count": 97,
+    "forks_count": 46,
+    "open_issues_count": 0,
+    "watchers_count": 97,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-01-09T01:01:26Z",
+    "pushed_at": "2021-09-17T01:52:17Z",
+    "updated_at": "2026-02-20T04:06:17Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-dashboard",
+    "description": "A Web UI for monitoring, diagnosing and managing the TiDB cluster.",
+    "html_url": "https://github.com/pingcap/tidb-dashboard",
+    "stargazers_count": 204,
+    "forks_count": 156,
+    "open_issues_count": 164,
+    "watchers_count": 204,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-30T04:24:19Z",
+    "pushed_at": "2026-09-02T04:35:50Z",
+    "updated_at": "2026-08-27T10:37:10Z",
+    "default_branch": "master",
+    "topics": [
+      "dashboard",
+      "tidb",
+      "troubleshooting",
+      "ui"
+    ],
+    "homepage": "https://docs.pingcap.com/tidb/stable/dashboard-intro",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/sysutil",
+    "description": "sysutil is a library which implementats the gRPC service Diagnostics and shares the diagnostics functions between TiDB and PD.",
+    "html_url": "https://github.com/pingcap/sysutil",
+    "stargazers_count": 7,
+    "forks_count": 14,
+    "open_issues_count": 4,
+    "watchers_count": 7,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-11-26T03:44:07Z",
+    "pushed_at": "2026-03-18T23:18:28Z",
+    "updated_at": "2025-04-04T08:52:53Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/go-tpc",
+    "description": "A toolbox to benchmark TPC workloads in Go ",
+    "html_url": "https://github.com/pingcap/go-tpc",
+    "stargazers_count": 208,
+    "forks_count": 120,
+    "open_issues_count": 26,
+    "watchers_count": 208,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-11-05T13:00:41Z",
+    "pushed_at": "2026-01-13T04:56:59Z",
+    "updated_at": "2026-08-05T00:36:43Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/advanced-statefulset",
+    "description": null,
+    "html_url": "https://github.com/pingcap/advanced-statefulset",
+    "stargazers_count": 60,
+    "forks_count": 20,
+    "open_issues_count": 9,
+    "watchers_count": 60,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-09-29T06:01:20Z",
+    "pushed_at": "2026-08-10T12:02:23Z",
+    "updated_at": "2026-07-06T17:52:21Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/k8s-fluent-bit-stackdriver",
+    "description": null,
+    "html_url": "https://github.com/pingcap/k8s-fluent-bit-stackdriver",
+    "stargazers_count": 11,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Shell",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-08-30T18:33:39Z",
+    "pushed_at": "2019-08-30T22:08:01Z",
+    "updated_at": "2024-04-18T15:42:38Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/go-randgen",
+    "description": "a QA tool to random generate sql by bnf pattern",
+    "html_url": "https://github.com/pingcap/go-randgen",
+    "stargazers_count": 78,
+    "forks_count": 42,
+    "open_issues_count": 12,
+    "watchers_count": 78,
+    "language": "Go",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-08-29T17:51:53Z",
+    "pushed_at": "2023-03-07T03:26:12Z",
+    "updated_at": "2026-08-09T21:00:31Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tiflow",
+    "description": "This repo maintains DM (a data migration platform) and TiCDC (change data capture for TiDB)",
+    "html_url": "https://github.com/pingcap/tiflow",
+    "stargazers_count": 464,
+    "forks_count": 312,
+    "open_issues_count": 974,
+    "watchers_count": 464,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-08-09T11:34:44Z",
+    "pushed_at": "2026-08-28T13:42:44Z",
+    "updated_at": "2026-08-28T13:46:07Z",
+    "default_branch": "master",
+    "topics": [
+      "cdc",
+      "dm",
+      "kafka",
+      "mysql",
+      "ticdc",
+      "tidb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/presentations",
+    "description": null,
+    "html_url": "https://github.com/pingcap/presentations",
+    "stargazers_count": 363,
+    "forks_count": 72,
+    "open_issues_count": 4,
+    "watchers_count": 363,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-07-31T07:29:41Z",
+    "pushed_at": "2022-09-27T08:35:46Z",
+    "updated_at": "2026-04-22T07:48:27Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/monitoring",
+    "description": null,
+    "html_url": "https://github.com/pingcap/monitoring",
+    "stargazers_count": 29,
+    "forks_count": 46,
+    "open_issues_count": 38,
+    "watchers_count": 29,
+    "language": "Shell",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-07-17T16:38:13Z",
+    "pushed_at": "2026-09-04T00:04:07Z",
+    "updated_at": "2026-08-24T09:09:12Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/diag",
+    "description": "A tool to collect diagnostic data from TiDB Clusters",
+    "html_url": "https://github.com/pingcap/diag",
+    "stargazers_count": 26,
+    "forks_count": 16,
+    "open_issues_count": 21,
+    "watchers_count": 26,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-07-02T09:12:58Z",
+    "pushed_at": "2026-03-26T16:14:42Z",
+    "updated_at": "2026-03-26T16:16:27Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://docs.pingcap.com/tidb/stable/clinic-introduction",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/fn",
+    "description": null,
+    "html_url": "https://github.com/pingcap/fn",
+    "stargazers_count": 35,
+    "forks_count": 11,
+    "open_issues_count": 4,
+    "watchers_count": 35,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-06-18T02:27:31Z",
+    "pushed_at": "2023-08-30T14:25:25Z",
+    "updated_at": "2024-05-23T08:29:38Z",
+    "default_branch": "master",
+    "topics": [
+      "http-api",
+      "json-api"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidiff",
+    "description": "A toolset to improve efficiency ",
+    "html_url": "https://github.com/pingcap/tidiff",
+    "stargazers_count": 40,
+    "forks_count": 9,
+    "open_issues_count": 1,
+    "watchers_count": 40,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-26T09:29:29Z",
+    "pushed_at": "2023-05-30T14:58:58Z",
+    "updated_at": "2026-08-13T07:27:30Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/homebrew-brew",
+    "description": "Homebrew taps for TiDB",
+    "html_url": "https://github.com/pingcap/homebrew-brew",
+    "stargazers_count": 5,
+    "forks_count": 5,
+    "open_issues_count": 2,
+    "watchers_count": 5,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-17T02:24:38Z",
+    "pushed_at": "2022-11-28T03:50:32Z",
+    "updated_at": "2022-02-24T08:51:49Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-datanucleus-adapter",
+    "description": "datanucleus, hive",
+    "html_url": "https://github.com/pingcap/tidb-datanucleus-adapter",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-15T09:09:54Z",
+    "pushed_at": "2019-04-15T16:40:13Z",
+    "updated_at": "2020-04-13T15:48:03Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/failpoint",
+    "description": "An implementation of failpoints for Golang.",
+    "html_url": "https://github.com/pingcap/failpoint",
+    "stargazers_count": 894,
+    "forks_count": 67,
+    "open_issues_count": 9,
+    "watchers_count": 894,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-02T07:48:18Z",
+    "pushed_at": "2026-08-11T23:26:34Z",
+    "updated_at": "2026-08-14T16:43:57Z",
+    "default_branch": "master",
+    "topics": [
+      "failpoint",
+      "failure-injection",
+      "fault-injection",
+      "golang"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/kdt",
+    "description": "Kernel Debug Toolkit",
+    "html_url": "https://github.com/pingcap/kdt",
+    "stargazers_count": 20,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 20,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-17T12:19:19Z",
+    "pushed_at": "2019-03-21T04:24:44Z",
+    "updated_at": "2021-12-27T08:09:08Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tiflash",
+    "description": "The analytical engine for TiDB and TiDB Cloud. Try free: https://tidbcloud.com/free-trial",
+    "html_url": "https://github.com/pingcap/tiflash",
+    "stargazers_count": 1025,
+    "forks_count": 422,
+    "open_issues_count": 684,
+    "watchers_count": 1025,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-25T06:48:07Z",
+    "pushed_at": "2026-09-03T03:29:59Z",
+    "updated_at": "2026-09-02T07:49:33Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://docs.pingcap.com/tidb/stable/tiflash-overview",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/log",
+    "description": null,
+    "html_url": "https://github.com/pingcap/log",
+    "stargazers_count": 18,
+    "forks_count": 32,
+    "open_issues_count": 3,
+    "watchers_count": 18,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-24T06:43:20Z",
+    "pushed_at": "2026-06-04T21:19:28Z",
+    "updated_at": "2026-02-27T08:23:38Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/talent-plan",
+    "description": "open source training courses about distributed database and distributed systems",
+    "html_url": "https://github.com/pingcap/talent-plan",
+    "stargazers_count": 10992,
+    "forks_count": 1388,
+    "open_issues_count": 125,
+    "watchers_count": 10992,
+    "language": "Rust",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-22T01:29:49Z",
+    "pushed_at": "2023-09-18T11:33:20Z",
+    "updated_at": "2026-09-02T18:09:24Z",
+    "default_branch": "master",
+    "topics": [
+      "distributed-database",
+      "distributed-systems",
+      "golang",
+      "open-source",
+      "pingcap",
+      "rust",
+      "talent-plan"
+    ],
+    "homepage": "https://tidb.io/talent-plan",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/benchmarksql",
+    "description": "Unofficial mirror of benchmarksql on github",
+    "html_url": "https://github.com/pingcap/benchmarksql",
+    "stargazers_count": 92,
+    "forks_count": 79,
+    "open_issues_count": 11,
+    "watchers_count": 92,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-13T02:53:56Z",
+    "pushed_at": "2026-06-05T13:58:33Z",
+    "updated_at": "2026-08-20T10:42:16Z",
+    "default_branch": "5.0-mysql-support-opt-2.1",
+    "topics": [],
+    "homepage": "https://sourceforge.net/projects/benchmarksql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/parser",
+    "description": "A MySQL Compatible SQL Parser",
+    "html_url": "https://github.com/pingcap/parser",
+    "stargazers_count": 1440,
+    "forks_count": 489,
+    "open_issues_count": 61,
+    "watchers_count": 1440,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-10-20T07:55:25Z",
+    "pushed_at": "2023-12-07T12:16:34Z",
+    "updated_at": "2026-08-29T20:08:52Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-academy-labs",
+    "description": null,
+    "html_url": "https://github.com/pingcap/tidb-academy-labs",
+    "stargazers_count": 6,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 6,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-10-16T01:14:10Z",
+    "pushed_at": "2020-03-15T18:15:19Z",
+    "updated_at": "2021-10-05T01:19:19Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/errcode",
+    "description": null,
+    "html_url": "https://github.com/pingcap/errcode",
+    "stargazers_count": 16,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 16,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-09-21T01:13:57Z",
+    "pushed_at": "2023-11-02T07:39:06Z",
+    "updated_at": "2025-01-22T16:30:58Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-operator",
+    "description": "TiDB operator creates and manages TiDB clusters running in Kubernetes.",
+    "html_url": "https://github.com/pingcap/tidb-operator",
+    "stargazers_count": 1336,
+    "forks_count": 536,
+    "open_issues_count": 400,
+    "watchers_count": 1336,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-07T12:04:33Z",
+    "pushed_at": "2026-09-03T11:12:11Z",
+    "updated_at": "2026-09-03T11:17:15Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud-native",
+      "golang",
+      "hacktoberfest",
+      "kubernetes",
+      "operator",
+      "tidb"
+    ],
+    "homepage": "https://docs.pingcap.com/tidb-in-kubernetes/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-insight",
+    "description": null,
+    "html_url": "https://github.com/pingcap/tidb-insight",
+    "stargazers_count": 12,
+    "forks_count": 8,
+    "open_issues_count": 1,
+    "watchers_count": 12,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-24T06:33:09Z",
+    "pushed_at": "2022-09-02T03:46:38Z",
+    "updated_at": "2025-06-28T08:44:05Z",
+    "default_branch": "tiup",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/oasis",
+    "description": null,
+    "html_url": "https://github.com/pingcap/oasis",
+    "stargazers_count": 5,
+    "forks_count": 1,
+    "open_issues_count": 3,
+    "watchers_count": 5,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-02T06:54:14Z",
+    "pushed_at": "2018-05-31T08:05:03Z",
+    "updated_at": "2023-04-30T15:47:29Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/go-ycsb",
+    "description": "A Go port of Yahoo! Cloud Serving Benchmark (YCSB) ",
+    "html_url": "https://github.com/pingcap/go-ycsb",
+    "stargazers_count": 641,
+    "forks_count": 286,
+    "open_issues_count": 73,
+    "watchers_count": 641,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-01-26T09:40:24Z",
+    "pushed_at": "2025-12-31T05:50:23Z",
+    "updated_at": "2026-09-03T09:52:11Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tla-plus",
+    "description": null,
+    "html_url": "https://github.com/pingcap/tla-plus",
+    "stargazers_count": 311,
+    "forks_count": 38,
+    "open_issues_count": 11,
+    "watchers_count": 311,
+    "language": "TLA",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-12-19T11:12:24Z",
+    "pushed_at": "2024-06-09T11:07:38Z",
+    "updated_at": "2026-09-01T23:09:30Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-vision",
+    "description": "TiDB data visualization",
+    "html_url": "https://github.com/pingcap/tidb-vision",
+    "stargazers_count": 29,
+    "forks_count": 10,
+    "open_issues_count": 12,
+    "watchers_count": 29,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-12-07T03:27:33Z",
+    "pushed_at": "2022-12-07T10:19:31Z",
+    "updated_at": "2025-06-04T06:59:39Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-inspect-tools",
+    "description": null,
+    "html_url": "https://github.com/pingcap/tidb-inspect-tools",
+    "stargazers_count": 27,
+    "forks_count": 17,
+    "open_issues_count": 4,
+    "watchers_count": 27,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-11-29T08:19:05Z",
+    "pushed_at": "2020-09-15T12:48:04Z",
+    "updated_at": "2024-08-14T07:49:49Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/community",
+    "description": "TiDB community content",
+    "html_url": "https://github.com/pingcap/community",
+    "stargazers_count": 268,
+    "forks_count": 155,
+    "open_issues_count": 21,
+    "watchers_count": 268,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-11-15T02:22:40Z",
+    "pushed_at": "2026-08-20T07:10:29Z",
+    "updated_at": "2026-08-20T07:12:09Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/meetup",
+    "description": null,
+    "html_url": "https://github.com/pingcap/meetup",
+    "stargazers_count": 38,
+    "forks_count": 9,
+    "open_issues_count": 0,
+    "watchers_count": 38,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-09-26T10:34:43Z",
+    "pushed_at": "2020-08-10T05:43:08Z",
+    "updated_at": "2025-04-28T08:25:54Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/chaos",
+    "description": "A test framework for linearizability check with Go",
+    "html_url": "https://github.com/pingcap/chaos",
+    "stargazers_count": 209,
+    "forks_count": 25,
+    "open_issues_count": 2,
+    "watchers_count": 209,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-09-02T06:45:11Z",
+    "pushed_at": "2019-07-10T11:21:59Z",
+    "updated_at": "2026-07-28T13:18:39Z",
+    "default_branch": "master",
+    "topics": [
+      "linearizability"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-tools",
+    "description": "tidb-tools are some useful tool collections for TiDB.",
+    "html_url": "https://github.com/pingcap/tidb-tools",
+    "stargazers_count": 320,
+    "forks_count": 205,
+    "open_issues_count": 108,
+    "watchers_count": 320,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-06-06T12:53:46Z",
+    "pushed_at": "2026-08-20T07:12:41Z",
+    "updated_at": "2026-08-13T07:24:54Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/octopus",
+    "description": "A toolkit including many powerful distributed test tools",
+    "html_url": "https://github.com/pingcap/octopus",
+    "stargazers_count": 15,
+    "forks_count": 4,
+    "open_issues_count": 9,
+    "watchers_count": 15,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-05-08T07:49:48Z",
+    "pushed_at": "2019-06-27T08:13:48Z",
+    "updated_at": "2023-12-11T06:17:44Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tispark",
+    "description": "TiSpark is built for running Apache Spark on top of TiDB/TiKV",
+    "html_url": "https://github.com/pingcap/tispark",
+    "stargazers_count": 889,
+    "forks_count": 251,
+    "open_issues_count": 122,
+    "watchers_count": 889,
+    "language": "Scala",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-05-02T17:48:30Z",
+    "pushed_at": "2026-08-20T07:13:21Z",
+    "updated_at": "2026-08-04T10:14:41Z",
+    "default_branch": "master",
+    "topics": [
+      "bigdata",
+      "spark",
+      "tidb",
+      "tikv"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-binlog",
+    "description": "A tool used to collect and merge tidb's binlog for real-time data backup and synchronization.",
+    "html_url": "https://github.com/pingcap/tidb-binlog",
+    "stargazers_count": 291,
+    "forks_count": 130,
+    "open_issues_count": 88,
+    "watchers_count": 291,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-09-05T03:44:12Z",
+    "pushed_at": "2026-08-20T07:17:58Z",
+    "updated_at": "2026-08-20T07:19:08Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/kvproto",
+    "description": "Protocol buffer files for TiKV",
+    "html_url": "https://github.com/pingcap/kvproto",
+    "stargazers_count": 171,
+    "forks_count": 242,
+    "open_issues_count": 64,
+    "watchers_count": 171,
+    "language": "CMake",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-03-11T00:50:02Z",
+    "pushed_at": "2026-09-03T10:34:56Z",
+    "updated_at": "2026-09-03T10:35:42Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tipb",
+    "description": "TiDB protobuf",
+    "html_url": "https://github.com/pingcap/tipb",
+    "stargazers_count": 98,
+    "forks_count": 158,
+    "open_issues_count": 18,
+    "watchers_count": 98,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-03-07T03:18:24Z",
+    "pushed_at": "2026-09-03T08:44:44Z",
+    "updated_at": "2026-09-03T08:46:10Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb-bench",
+    "description": "A Simple Benchmark For TiDB",
+    "html_url": "https://github.com/pingcap/tidb-bench",
+    "stargazers_count": 115,
+    "forks_count": 78,
+    "open_issues_count": 7,
+    "watchers_count": 115,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-10-25T01:26:33Z",
+    "pushed_at": "2022-07-22T02:49:31Z",
+    "updated_at": "2025-11-15T10:33:08Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/tidb",
+    "description": "TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling.",
+    "html_url": "https://github.com/pingcap/tidb",
+    "stargazers_count": 40487,
+    "forks_count": 6234,
+    "open_issues_count": 6910,
+    "watchers_count": 40487,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-09-06T04:01:52Z",
+    "pushed_at": "2026-09-04T05:38:16Z",
+    "updated_at": "2026-09-03T21:06:21Z",
+    "default_branch": "master",
+    "topics": [
+      "agent",
+      "agent-context",
+      "agent-memory",
+      "agentic",
+      "ai",
+      "cloud-native",
+      "database",
+      "distributed-database",
+      "distributed-transactions",
+      "go",
+      "hacktoberfest",
+      "htap",
+      "memory",
+      "mysql",
+      "mysql-compatibility",
+      "scale",
+      "serverless",
+      "sql",
+      "tidb"
+    ],
+    "homepage": "https://www.tidb.io/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/tpcc-mysql",
+    "description": "forked from https://code.launchpad.net/~percona-dev/perconatools/tpcc-mysql",
+    "html_url": "https://github.com/pingcap/tpcc-mysql",
+    "stargazers_count": 11,
+    "forks_count": 7,
+    "open_issues_count": 1,
+    "watchers_count": 11,
+    "language": "C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-07-04T05:37:51Z",
+    "pushed_at": "2018-12-03T02:29:41Z",
+    "updated_at": "2025-12-10T10:16:33Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  }
+]

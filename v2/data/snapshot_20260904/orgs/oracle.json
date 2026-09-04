@@ -1,0 +1,6047 @@
+[
+  {
+    "full_name": "oracle/oson",
+    "description": "Reference implementation for OSON, Oracle's compact binary format for JSON",
+    "html_url": "https://github.com/oracle/oson",
+    "stargazers_count": 19,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 19,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-07T17:03:12Z",
+    "pushed_at": "2026-08-12T14:22:51Z",
+    "updated_at": "2026-08-26T15:29:12Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://osonspec.org/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/rust-oracledb",
+    "description": "Oracle Database driver for Rust maintained by Oracle Corporation. Connect your Rust applications instantly to Oracle Database.",
+    "html_url": "https://github.com/oracle/rust-oracledb",
+    "stargazers_count": 20,
+    "forks_count": 3,
+    "open_issues_count": 8,
+    "watchers_count": 20,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-20T19:28:34Z",
+    "pushed_at": "2026-09-04T03:24:25Z",
+    "updated_at": "2026-09-04T03:24:50Z",
+    "default_branch": "main",
+    "topics": [
+      "api",
+      "database",
+      "development",
+      "driver",
+      "interface",
+      "module",
+      "oracle-database",
+      "oracle-database-driver",
+      "rust",
+      "rust-crate",
+      "rust-lang",
+      "rust-library",
+      "rust-oracledb"
+    ],
+    "homepage": "https://oracle.github.io/rust-oracledb/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/fusion-ai-studio",
+    "description": null,
+    "html_url": "https://github.com/oracle/fusion-ai-studio",
+    "stargazers_count": 671,
+    "forks_count": 33,
+    "open_issues_count": 5,
+    "watchers_count": 671,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-26T18:53:10Z",
+    "pushed_at": "2026-08-22T04:40:46Z",
+    "updated_at": "2026-09-03T07:36:25Z",
+    "default_branch": "release-26C",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oracle-sparc",
+    "description": "Sparc is a publicly available dataset that was built to test whether an AI model can handle multi-turn database questions. ",
+    "html_url": "https://github.com/oracle/oracle-sparc",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-14T12:35:17Z",
+    "pushed_at": "2026-06-01T19:42:23Z",
+    "updated_at": "2026-08-28T19:35:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/oracle-archer",
+    "description": "Archer is a text-to-SQL dataset designed to test whether AI systems can translate natural-language questions into SQL when the question requires extra reasoning, not just matching table/column names. ",
+    "html_url": "https://github.com/oracle/oracle-archer",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-14T12:34:01Z",
+    "pushed_at": "2026-06-01T20:01:05Z",
+    "updated_at": "2026-06-02T12:37:05Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oracle-bird",
+    "description": "BIRD is a large scale text-to-sql dataset that is in Sqlite. ",
+    "html_url": "https://github.com/oracle/oracle-bird",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-14T12:31:03Z",
+    "pushed_at": "2026-06-01T20:36:42Z",
+    "updated_at": "2026-06-02T12:35:06Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/fusabase-js-sdk",
+    "description": "Fusabase JavaScript SDK provides a unified, developer-friendly interface to interact with backend services provided by Oracle directly from web application.",
+    "html_url": "https://github.com/oracle/fusabase-js-sdk",
+    "stargazers_count": 9,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 9,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-14T09:01:00Z",
+    "pushed_at": "2026-08-03T15:15:40Z",
+    "updated_at": "2026-08-06T14:37:21Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/fusabase-js-namespace-sdk",
+    "description": "Fusabase JavaScript Namespace SDK provides a unified, developer-friendly interface to interact with backend services provided by Oracle directly from web application.",
+    "html_url": "https://github.com/oracle/fusabase-js-namespace-sdk",
+    "stargazers_count": 6,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 6,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-14T08:59:58Z",
+    "pushed_at": "2026-08-06T09:18:25Z",
+    "updated_at": "2026-08-06T14:37:25Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/fusabase-ios-sdk",
+    "description": "Fusabase IOS SDK provides a unified, developer-friendly interface to interact with backend services provided by Oracle directly from mobile application.",
+    "html_url": "https://github.com/oracle/fusabase-ios-sdk",
+    "stargazers_count": 6,
+    "forks_count": 1,
+    "open_issues_count": 2,
+    "watchers_count": 6,
+    "language": "Swift",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-14T08:58:49Z",
+    "pushed_at": "2026-08-06T09:14:07Z",
+    "updated_at": "2026-08-06T14:37:24Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/fusabase-flutter-sdk",
+    "description": "Fusabase Flutter SDK provides a unified, developer-friendly interface to interact with backend services provided by Oracle directly from hybrid application.",
+    "html_url": "https://github.com/oracle/fusabase-flutter-sdk",
+    "stargazers_count": 7,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 7,
+    "language": "Dart",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-14T08:57:54Z",
+    "pushed_at": "2026-08-06T09:12:41Z",
+    "updated_at": "2026-08-06T14:37:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/fusabase-android-sdk",
+    "description": "Fusabase Android SDK provides a unified, developer-friendly interface to interact with backend services provided by Oracle directly from Mobile application.",
+    "html_url": "https://github.com/oracle/fusabase-android-sdk",
+    "stargazers_count": 8,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 8,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-14T08:54:12Z",
+    "pushed_at": "2026-08-06T09:08:02Z",
+    "updated_at": "2026-08-06T14:37:23Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/go-oracledb",
+    "description": "The goal of the pure Go driver is to deliver an official, robust and stable driver for Oracle Database.",
+    "html_url": "https://github.com/oracle/go-oracledb",
+    "stargazers_count": 17,
+    "forks_count": 17,
+    "open_issues_count": 25,
+    "watchers_count": 17,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-15T11:42:39Z",
+    "pushed_at": "2026-09-03T15:39:50Z",
+    "updated_at": "2026-09-03T15:42:24Z",
+    "default_branch": "main",
+    "topics": [
+      "database",
+      "driver",
+      "golang",
+      "oracle"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/database-navigator",
+    "description": "Database Navigator is a privately developed open-source database tool and it became an Oracle product early 2025. ",
+    "html_url": "https://github.com/oracle/database-navigator",
+    "stargazers_count": 4,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-10T09:27:11Z",
+    "pushed_at": "2026-09-03T21:54:41Z",
+    "updated_at": "2026-08-17T08:09:51Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/vecdb-python-sdk",
+    "description": "Python SDK for vector search, semantic search, RAG, embeddings, and AI agents on Oracle AI Database",
+    "html_url": "https://github.com/oracle/vecdb-python-sdk",
+    "stargazers_count": 70,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 70,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-27T15:24:42Z",
+    "pushed_at": "2026-08-19T19:49:45Z",
+    "updated_at": "2026-09-02T16:33:42Z",
+    "default_branch": "main",
+    "topics": [
+      "ai-agents",
+      "embeddings",
+      "generative-ai",
+      "hnsw",
+      "oracle",
+      "oracle-ai-database",
+      "oracle-database",
+      "python",
+      "python-sdk",
+      "rag",
+      "retrieval-augmented-generation",
+      "semantic-search",
+      "similarity-search",
+      "vector-database",
+      "vector-search",
+      "vector-store",
+      "vectors"
+    ],
+    "homepage": "https://docs.oracle.com/en/cloud/paas/autonomous-vector-database/vcapi/quickstart.html",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "oracle/skills",
+    "description": "Oracle Skills is a curated, open-source collection of practical, installable skills for working with Oracle technologies. It provides developers, administrators, and AI agents with high-quality, source-backed guidance across the entire Oracle ecosystem.",
+    "html_url": "https://github.com/oracle/skills",
+    "stargazers_count": 833,
+    "forks_count": 230,
+    "open_issues_count": 54,
+    "watchers_count": 833,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-07T01:43:10Z",
+    "pushed_at": "2026-08-31T13:29:19Z",
+    "updated_at": "2026-09-04T00:40:55Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "oracle/karpenter-provider-oci",
+    "description": "Karpenter Provider for Oracle Cloud Infrastructure",
+    "html_url": "https://github.com/oracle/karpenter-provider-oci",
+    "stargazers_count": 30,
+    "forks_count": 20,
+    "open_issues_count": 13,
+    "watchers_count": 30,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-26T08:06:35Z",
+    "pushed_at": "2026-09-03T10:02:34Z",
+    "updated_at": "2026-09-03T10:04:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/conteng-kpo.htm",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/fusabase-cli",
+    "description": "Fusabase CLI",
+    "html_url": "https://github.com/oracle/fusabase-cli",
+    "stargazers_count": 5,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 5,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-13T10:03:55Z",
+    "pushed_at": "2026-08-06T09:15:48Z",
+    "updated_at": "2026-08-06T14:37:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-openai-java",
+    "description": "OCI OpenAI Client for Java simplifies integration between OpenAI’s Java SDK and Oracle Cloud Infrastructure (OCI) GenAI service by providing robust authentication and authorization utilities. ",
+    "html_url": "https://github.com/oracle/oci-openai-java",
+    "stargazers_count": 4,
+    "forks_count": 3,
+    "open_issues_count": 3,
+    "watchers_count": 4,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-11T08:03:01Z",
+    "pushed_at": "2026-04-13T16:10:35Z",
+    "updated_at": "2026-04-13T16:08:14Z",
+    "default_branch": "main",
+    "topics": [
+      "java",
+      "oci-openai",
+      "openai-responses-api",
+      "sdk"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/wayflow",
+    "description": "WayFlow is a powerful, intuitive Python library for building sophisticated AI-powered assistants. It is a reference runtime for Agent Spec, with native support for all Agent Spec Agents and Flows.",
+    "html_url": "https://github.com/oracle/wayflow",
+    "stargazers_count": 189,
+    "forks_count": 22,
+    "open_issues_count": 47,
+    "watchers_count": 189,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-10-02T11:42:40Z",
+    "pushed_at": "2026-09-03T14:30:12Z",
+    "updated_at": "2026-09-03T13:45:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://oracle.github.io/wayflow/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "oracle/agent-spec",
+    "description": "Open Agent Spec (Agent Spec) is a framework-agnostic declarative language for defining agentic systems. It defines building blocks for standalone agents and structured agentic workflows as well as common ways of composing them into multi-agent systems.",
+    "html_url": "https://github.com/oracle/agent-spec",
+    "stargazers_count": 411,
+    "forks_count": 59,
+    "open_issues_count": 53,
+    "watchers_count": 411,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-10-02T11:40:15Z",
+    "pushed_at": "2026-09-03T14:31:20Z",
+    "updated_at": "2026-09-03T16:02:42Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://oracle.github.io/agent-spec/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "oracle/python-select-ai",
+    "description": "Select AI for Python",
+    "html_url": "https://github.com/oracle/python-select-ai",
+    "stargazers_count": 17,
+    "forks_count": 8,
+    "open_issues_count": 0,
+    "watchers_count": 17,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-08-04T08:34:38Z",
+    "pushed_at": "2026-09-03T18:58:36Z",
+    "updated_at": "2026-09-03T18:58:52Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://oracle.github.io/python-select-ai/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/mcp",
+    "description": "Repository containing MCP (Model Context Protocol) servers that provides a suite of tools for managing and interacting with Oracle products.",
+    "html_url": "https://github.com/oracle/mcp",
+    "stargazers_count": 432,
+    "forks_count": 141,
+    "open_issues_count": 41,
+    "watchers_count": 432,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-07-27T08:02:34Z",
+    "pushed_at": "2026-09-03T14:02:20Z",
+    "updated_at": "2026-09-03T14:02:02Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/macaron-utilities",
+    "description": "Macaron Untilities is a collection of companion tools and plugins for the Macaron supply chain security framework.",
+    "html_url": "https://github.com/oracle/macaron-utilities",
+    "stargazers_count": 10,
+    "forks_count": 1,
+    "open_issues_count": 6,
+    "watchers_count": 10,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-07-25T06:59:41Z",
+    "pushed_at": "2026-02-02T07:37:35Z",
+    "updated_at": "2025-11-14T05:29:16Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/langchain-oracle",
+    "description": "The Oracle LangChain integration provides official LangChain support for Oracle’s Generative AI and AI Platform services, enabling developers to build intelligent, secure, and scalable applications powered by Oracle’s cloud technologies.",
+    "html_url": "https://github.com/oracle/langchain-oracle",
+    "stargazers_count": 60,
+    "forks_count": 33,
+    "open_issues_count": 24,
+    "watchers_count": 60,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-07-01T06:30:40Z",
+    "pushed_at": "2026-08-21T00:18:33Z",
+    "updated_at": "2026-08-20T23:03:40Z",
+    "default_branch": "main",
+    "topics": [
+      "agents",
+      "generative-ai",
+      "langchain",
+      "langgraph",
+      "llm",
+      "oci",
+      "oracle",
+      "oracle-database",
+      "python",
+      "rag",
+      "typescript",
+      "vector-database"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/adb-extproc",
+    "description": null,
+    "html_url": "https://github.com/oracle/adb-extproc",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": null,
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-11T16:08:18Z",
+    "pushed_at": "2025-08-06T18:08:30Z",
+    "updated_at": "2025-11-14T05:29:18Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/sql-developer-vscode",
+    "description": "A repository for all things related to Oracle SQL Developer Extension for VSCode",
+    "html_url": "https://github.com/oracle/sql-developer-vscode",
+    "stargazers_count": 13,
+    "forks_count": 2,
+    "open_issues_count": 28,
+    "watchers_count": 13,
+    "language": null,
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-05T15:42:50Z",
+    "pushed_at": "2025-09-03T11:53:49Z",
+    "updated_at": "2026-08-21T20:53:23Z",
+    "default_branch": "main",
+    "topics": [
+      "database",
+      "oracle-sql",
+      "oracle-sql-developer"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/graalpy-extensions",
+    "description": null,
+    "html_url": "https://github.com/oracle/graalpy-extensions",
+    "stargazers_count": 9,
+    "forks_count": 11,
+    "open_issues_count": 10,
+    "watchers_count": 9,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-05-19T16:59:21Z",
+    "pushed_at": "2026-08-25T17:17:12Z",
+    "updated_at": "2026-08-19T10:27:55Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql",
+    "description": "Oracle NoSQL Database.   Designed for today’s most demanding applications that require low latency responses, flexible data models, and elastic scaling for dynamic workloads. It supports JSON, Table and Key-Value datatypes running on-premise, or as a cloud service.",
+    "html_url": "https://github.com/oracle/nosql",
+    "stargazers_count": 58,
+    "forks_count": 3,
+    "open_issues_count": 3,
+    "watchers_count": 58,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-05-05T08:59:23Z",
+    "pushed_at": "2026-03-02T01:44:48Z",
+    "updated_at": "2026-08-03T16:55:52Z",
+    "default_branch": "main",
+    "topics": [
+      "database",
+      "database-management",
+      "nosql-database",
+      "oci",
+      "oracle",
+      "oracle-cloud",
+      "oracle-nosql",
+      "oracle-nosql-database"
+    ],
+    "homepage": "https://www.oracle.com/database/nosql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/optic",
+    "description": "OPTIC (OpenSearch Tools for Indices and Clusters) is a suite of Python tools designed to help OpenSearch Engineers troubleshoot, analyze, and manage OpenSearch clusters and indices. OPTIC provides both an intuitive command-line interface and a library that can be integrated into custom code.",
+    "html_url": "https://github.com/oracle/optic",
+    "stargazers_count": 9,
+    "forks_count": 1,
+    "open_issues_count": 14,
+    "watchers_count": 9,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-03-11T14:03:48Z",
+    "pushed_at": "2026-04-28T21:01:30Z",
+    "updated_at": "2026-07-14T21:37:49Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://github.com/oracle/optic",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-ai-speech-realtime-web-sdk",
+    "description": null,
+    "html_url": "https://github.com/oracle/oci-ai-speech-realtime-web-sdk",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 14,
+    "watchers_count": 3,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-12-13T10:55:53Z",
+    "pushed_at": "2026-02-14T06:21:37Z",
+    "updated_at": "2025-12-01T13:38:32Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-ai-speech-realtime-typescript-sdk",
+    "description": "This repository contains the source code for the TypeScript SDK to connect to the realtime speech service.",
+    "html_url": "https://github.com/oracle/oci-ai-speech-realtime-typescript-sdk",
+    "stargazers_count": 4,
+    "forks_count": 1,
+    "open_issues_count": 5,
+    "watchers_count": 4,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-12-06T08:14:38Z",
+    "pushed_at": "2026-01-23T13:19:59Z",
+    "updated_at": "2025-11-14T05:29:22Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql-intellij-plugin",
+    "description": null,
+    "html_url": "https://github.com/oracle/nosql-intellij-plugin",
+    "stargazers_count": 7,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 7,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-12-04T16:18:39Z",
+    "pushed_at": "2026-09-01T18:34:29Z",
+    "updated_at": "2026-09-01T18:37:40Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql-rust-sdk",
+    "description": "SDK for Rust for the Oracle NoSQL Database",
+    "html_url": "https://github.com/oracle/nosql-rust-sdk",
+    "stargazers_count": 9,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 9,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-12-04T09:30:04Z",
+    "pushed_at": "2026-09-03T22:45:50Z",
+    "updated_at": "2026-09-03T22:45:47Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud",
+      "nosql",
+      "nosql-database",
+      "rust"
+    ],
+    "homepage": "https://www.oracle.com/database/nosql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-ai-speech-realtime-python-sdk",
+    "description": "This repository contains the source code for the Python SDK to connect to the Realtime Speech Service. There is also an example client to help with connecting to the service. This SDK is based on the popular websockets python library.",
+    "html_url": "https://github.com/oracle/oci-ai-speech-realtime-python-sdk",
+    "stargazers_count": 7,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 7,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-12-03T10:13:41Z",
+    "pushed_at": "2025-08-26T21:07:47Z",
+    "updated_at": "2025-11-14T05:29:24Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/rewrite-recipes",
+    "description": "OpenRewrite recipes for Oracle solutions, like upgrades of java and Weblogic.",
+    "html_url": "https://github.com/oracle/rewrite-recipes",
+    "stargazers_count": 18,
+    "forks_count": 9,
+    "open_issues_count": 0,
+    "watchers_count": 18,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-10-17T16:54:58Z",
+    "pushed_at": "2026-09-03T14:01:28Z",
+    "updated_at": "2026-08-05T14:53:39Z",
+    "default_branch": "main",
+    "topics": [
+      "coherence",
+      "jakartaee",
+      "java",
+      "openrewrite",
+      "openrewrite-recipes",
+      "spring-framework-6",
+      "weblogic"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/ai-optimizer",
+    "description": "GenAI/RAG Optimizer and Toolkit for experimentation using Oracle Database AI Vector Search and NL2SQL",
+    "html_url": "https://github.com/oracle/ai-optimizer",
+    "stargazers_count": 101,
+    "forks_count": 46,
+    "open_issues_count": 29,
+    "watchers_count": 101,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-09-06T15:45:33Z",
+    "pushed_at": "2026-09-03T13:49:58Z",
+    "updated_at": "2026-09-03T10:46:18Z",
+    "default_branch": "main",
+    "topics": [
+      "embedding-models",
+      "generative-ai",
+      "large-language-models",
+      "nl2sql",
+      "oracle-database",
+      "retrieval-augmented-generation",
+      "vector-database"
+    ],
+    "homepage": "https://www.oracle.com/database/ai-optimizer-toolkit/?source=:ex:tb:::::Githubrepo&SC=:ex:tb:::::Githubrepo&pcode=",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "oracle/sandwood",
+    "description": "Sandwood - A JVM based Java like Probabilistic Programming Language",
+    "html_url": "https://github.com/oracle/sandwood",
+    "stargazers_count": 36,
+    "forks_count": 8,
+    "open_issues_count": 2,
+    "watchers_count": 36,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-08-06T17:22:26Z",
+    "pushed_at": "2026-09-04T04:22:06Z",
+    "updated_at": "2026-07-17T14:30:13Z",
+    "default_branch": "main",
+    "topics": [
+      "compiler",
+      "java",
+      "machine-learning",
+      "ml",
+      "probabilistic-models",
+      "probabilistic-programming",
+      "runtime"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/create-database-app",
+    "description": "An NPM package to create Oracle Database Applications from a selection of templates",
+    "html_url": "https://github.com/oracle/create-database-app",
+    "stargazers_count": 37,
+    "forks_count": 16,
+    "open_issues_count": 65,
+    "watchers_count": 37,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-07-04T06:00:55Z",
+    "pushed_at": "2026-06-01T20:56:59Z",
+    "updated_at": "2026-06-01T04:45:41Z",
+    "default_branch": "main",
+    "topics": [
+      "create-database-app",
+      "npm-package",
+      "oracle",
+      "oracle-database",
+      "scaffolding"
+    ],
+    "homepage": "https://www.npmjs.com/package/@oracle/create-database-app",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/kconfigs",
+    "description": "Tool for extracting Linux kernel configurations from many distributions & displaying a web UI",
+    "html_url": "https://github.com/oracle/kconfigs",
+    "stargazers_count": 39,
+    "forks_count": 7,
+    "open_issues_count": 1,
+    "watchers_count": 39,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-03-26T15:58:07Z",
+    "pushed_at": "2026-09-03T17:37:50Z",
+    "updated_at": "2026-08-28T00:19:06Z",
+    "default_branch": "main",
+    "topics": [
+      "linux",
+      "linux-kernel"
+    ],
+    "homepage": "https://oracle.github.io/kconfigs/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/gdk-intellij-tooling",
+    "description": "The plugin provides Graal Development Kit for Micronaut (GDK) project wizard which generates GDK applications.",
+    "html_url": "https://github.com/oracle/gdk-intellij-tooling",
+    "stargazers_count": 8,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 8,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-02-29T11:04:40Z",
+    "pushed_at": "2026-02-24T09:49:32Z",
+    "updated_at": "2025-12-16T13:05:08Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud",
+      "framework",
+      "tools",
+      "web"
+    ],
+    "homepage": "https://plugins.jetbrains.com/plugin/24843-graal-dev-kit-for-micronaut/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/sd4j",
+    "description": "Stable diffusion pipeline in Java using ONNX Runtime",
+    "html_url": "https://github.com/oracle/sd4j",
+    "stargazers_count": 179,
+    "forks_count": 23,
+    "open_issues_count": 1,
+    "watchers_count": 179,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-12-12T13:43:36Z",
+    "pushed_at": "2026-05-06T18:02:14Z",
+    "updated_at": "2026-07-16T12:00:05Z",
+    "default_branch": "main",
+    "topics": [
+      "java",
+      "onnxruntime",
+      "stable-diffusion"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/quicksql",
+    "description": "A library for generating DDL SQL and entity-relationship-diagrams from Quick SQL code",
+    "html_url": "https://github.com/oracle/quicksql",
+    "stargazers_count": 66,
+    "forks_count": 15,
+    "open_issues_count": 20,
+    "watchers_count": 66,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-10-25T16:48:51Z",
+    "pushed_at": "2025-09-25T14:59:02Z",
+    "updated_at": "2026-05-27T13:36:44Z",
+    "default_branch": "main",
+    "topics": [
+      "ddl",
+      "erd",
+      "quicksql",
+      "sql"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/javavscode",
+    "description": "Java platform support for Visual Studio Code for full featured Java development (edit-compile-debug & test cycle)",
+    "html_url": "https://github.com/oracle/javavscode",
+    "stargazers_count": 317,
+    "forks_count": 78,
+    "open_issues_count": 57,
+    "watchers_count": 317,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-10-18T08:18:40Z",
+    "pushed_at": "2026-09-03T01:47:08Z",
+    "updated_at": "2026-08-25T20:42:40Z",
+    "default_branch": "main",
+    "topics": [
+      "java",
+      "language-server-protocol",
+      "oracle",
+      "vscode-extension"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/adb-free",
+    "description": null,
+    "html_url": "https://github.com/oracle/adb-free",
+    "stargazers_count": 67,
+    "forks_count": 10,
+    "open_issues_count": 17,
+    "watchers_count": 67,
+    "language": null,
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-09-15T13:16:37Z",
+    "pushed_at": "2026-07-24T17:42:56Z",
+    "updated_at": "2026-08-11T22:25:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/gdk-vscode-extensions",
+    "description": "Graal Development Kit for Micronaut VSCode developer support",
+    "html_url": "https://github.com/oracle/gdk-vscode-extensions",
+    "stargazers_count": 16,
+    "forks_count": 7,
+    "open_issues_count": 7,
+    "watchers_count": 16,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-09-04T08:45:50Z",
+    "pushed_at": "2026-09-03T13:05:55Z",
+    "updated_at": "2026-04-01T11:54:19Z",
+    "default_branch": "main",
+    "topics": [
+      "devops",
+      "gcn",
+      "graalvm",
+      "oci",
+      "vscode-extension"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/ojdbc-extensions",
+    "description": "The Oracle JDBC Driver Extensions include providers for centralized configuration or token providers for authentication with the DB.",
+    "html_url": "https://github.com/oracle/ojdbc-extensions",
+    "stargazers_count": 33,
+    "forks_count": 10,
+    "open_issues_count": 27,
+    "watchers_count": 33,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-17T07:44:57Z",
+    "pushed_at": "2026-09-02T12:38:54Z",
+    "updated_at": "2026-09-02T12:41:15Z",
+    "default_branch": "main",
+    "topics": [
+      "jdbc",
+      "oauth2",
+      "ojdbc8",
+      "oracle",
+      "spi"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/spring-cloud-oracle",
+    "description": "Spring Cloud Oracle, eases the integration with Oracle Database and OCI services, and offers a convenient way to interact with Oracle Database and OCI-provided services using well-known Spring idioms and APIs.",
+    "html_url": "https://github.com/oracle/spring-cloud-oracle",
+    "stargazers_count": 56,
+    "forks_count": 21,
+    "open_issues_count": 15,
+    "watchers_count": 56,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-28T08:05:57Z",
+    "pushed_at": "2026-09-03T21:16:08Z",
+    "updated_at": "2026-09-03T21:16:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://oracle.github.io/spring-cloud-oracle/site/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/bpftune",
+    "description": "bpftune uses BPF to auto-tune Linux systems",
+    "html_url": "https://github.com/oracle/bpftune",
+    "stargazers_count": 1880,
+    "forks_count": 113,
+    "open_issues_count": 26,
+    "watchers_count": 1880,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-09T14:56:10Z",
+    "pushed_at": "2026-08-04T22:35:47Z",
+    "updated_at": "2026-08-29T18:03:11Z",
+    "default_branch": "main",
+    "topics": [
+      "auto-tuning",
+      "bpf",
+      "ebpf",
+      "linux"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-native-ingress-controller",
+    "description": "OCI Native Ingress Controller",
+    "html_url": "https://github.com/oracle/oci-native-ingress-controller",
+    "stargazers_count": 33,
+    "forks_count": 34,
+    "open_issues_count": 43,
+    "watchers_count": 33,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-09T06:14:42Z",
+    "pushed_at": "2026-08-17T09:05:24Z",
+    "updated_at": "2026-08-17T07:34:22Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://blogs.oracle.com/cloud-infrastructure/post/oracle-cloud-native-ingress-controller-kubernetes",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/yo",
+    "description": "A fast and simple command line OCI client",
+    "html_url": "https://github.com/oracle/yo",
+    "stargazers_count": 75,
+    "forks_count": 13,
+    "open_issues_count": 4,
+    "watchers_count": 75,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-17T08:15:07Z",
+    "pushed_at": "2026-08-06T17:05:46Z",
+    "updated_at": "2026-09-01T19:21:30Z",
+    "default_branch": "main",
+    "topics": [
+      "linux",
+      "oci",
+      "oracle-cloud-infrastructure"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-go-client",
+    "description": "The Coherence Go Client allows native Go applications to act as cache clients to a Coherence cluster using gRPC for the network transport.",
+    "html_url": "https://github.com/oracle/coherence-go-client",
+    "stargazers_count": 15,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 15,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-22T15:52:53Z",
+    "pushed_at": "2026-04-27T16:11:02Z",
+    "updated_at": "2026-07-06T09:25:30Z",
+    "default_branch": "main",
+    "topics": [
+      "caching",
+      "coherence",
+      "coherence-ce",
+      "data-grid",
+      "distributed",
+      "go-client",
+      "golang",
+      "grpc",
+      "grpc-client",
+      "in-memory-caching",
+      "kv-store",
+      "microservices",
+      "scalability"
+    ],
+    "homepage": "https://pkg.go.dev/github.com/oracle/coherence-go-client/v2/coherence",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/graal-dev-kit",
+    "description": "Graal Development Kit for Micronaut (GDK) is a curated set of open source Micronaut® framework modules designed from the ground up to be compiled ahead-of-time with GraalVM Native Image resulting in native executables ideal for microservices.",
+    "html_url": "https://github.com/oracle/graal-dev-kit",
+    "stargazers_count": 40,
+    "forks_count": 13,
+    "open_issues_count": 1,
+    "watchers_count": 40,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-21T15:34:14Z",
+    "pushed_at": "2026-09-03T15:34:04Z",
+    "updated_at": "2026-09-03T15:29:45Z",
+    "default_branch": "5.1.x",
+    "topics": [],
+    "homepage": "https://www.graal.cloud/gdk/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-py-client",
+    "description": "The Coherence Python Client allows Python applications to act as cache clients to an Oracle Coherence cluster using gRPC as the network transport.",
+    "html_url": "https://github.com/oracle/coherence-py-client",
+    "stargazers_count": 12,
+    "forks_count": 6,
+    "open_issues_count": 16,
+    "watchers_count": 12,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-18T05:55:37Z",
+    "pushed_at": "2026-04-27T16:45:00Z",
+    "updated_at": "2026-04-27T16:45:05Z",
+    "default_branch": "main",
+    "topics": [
+      "caching",
+      "coherence",
+      "distributed",
+      "in-memory",
+      "kv-store",
+      "microservices",
+      "python"
+    ],
+    "homepage": "https://oracle.github.io/coherence-py-client/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/free",
+    "description": "Free Oracle technologies for Developers",
+    "html_url": "https://github.com/oracle/free",
+    "stargazers_count": 72,
+    "forks_count": 14,
+    "open_issues_count": 1,
+    "watchers_count": 72,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-02-20T17:27:24Z",
+    "pushed_at": "2026-08-17T23:39:57Z",
+    "updated_at": "2026-08-17T23:40:02Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://oracle.github.io/free/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-secrets-store-csi-driver-provider",
+    "description": null,
+    "html_url": "https://github.com/oracle/oci-secrets-store-csi-driver-provider",
+    "stargazers_count": 26,
+    "forks_count": 21,
+    "open_issues_count": 17,
+    "watchers_count": 26,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-01-23T08:11:39Z",
+    "pushed_at": "2026-08-04T10:27:47Z",
+    "updated_at": "2026-08-20T06:29:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/crossplane-provider-oci",
+    "description": "Crossplane provider for Oracle Cloud Infrastructure(OCI)",
+    "html_url": "https://github.com/oracle/crossplane-provider-oci",
+    "stargazers_count": 61,
+    "forks_count": 26,
+    "open_issues_count": 9,
+    "watchers_count": 61,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-12-21T13:35:31Z",
+    "pushed_at": "2026-09-02T07:58:32Z",
+    "updated_at": "2026-08-26T18:03:05Z",
+    "default_branch": "main",
+    "topics": [
+      "crossplane",
+      "crossplane-provider"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/macaron",
+    "description": "Macaron is an extensible supply-chain security analysis framework from Oracle Labs that supports a wide range of build systems and CI/CD services. It can be used to prevent supply chain attacks, detect malicious Python packages, or check conformance to frameworks, such as SLSA. Documentation:",
+    "html_url": "https://github.com/oracle/macaron",
+    "stargazers_count": 210,
+    "forks_count": 35,
+    "open_issues_count": 149,
+    "watchers_count": 210,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-12-05T07:16:28Z",
+    "pushed_at": "2026-08-28T11:36:29Z",
+    "updated_at": "2026-08-12T21:57:32Z",
+    "default_branch": "main",
+    "topics": [
+      "build-system",
+      "cicd",
+      "docker",
+      "gradle",
+      "integrity-protection",
+      "malware-analysis",
+      "malware-detection",
+      "maven",
+      "npm",
+      "python",
+      "sbom",
+      "slsa",
+      "supply-chain-security"
+    ],
+    "homepage": "https://oracle.github.io/macaron/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/graalvm-reachability-metadata",
+    "description": "Repository which contains community-driven collection of GraalVM reachability metadata for open-source libraries.",
+    "html_url": "https://github.com/oracle/graalvm-reachability-metadata",
+    "stargazers_count": 480,
+    "forks_count": 134,
+    "open_issues_count": 717,
+    "watchers_count": 480,
+    "language": "Java",
+    "license": {
+      "spdx_id": "CC0-1.0",
+      "name": "Creative Commons Zero v1.0 Universal"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-30T13:29:16Z",
+    "pushed_at": "2026-09-04T05:43:47Z",
+    "updated_at": "2026-09-04T05:43:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/python-oracledb",
+    "description": "Python driver for Oracle Database conforming to the Python DB API 2.0 specification with many advanced features. Fast, small, portable. Enterprise ready.",
+    "html_url": "https://github.com/oracle/python-oracledb",
+    "stargazers_count": 450,
+    "forks_count": 118,
+    "open_issues_count": 24,
+    "watchers_count": 450,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-27T14:38:21Z",
+    "pushed_at": "2026-08-31T21:22:46Z",
+    "updated_at": "2026-08-31T21:22:50Z",
+    "default_branch": "main",
+    "topics": [
+      "api",
+      "database",
+      "development",
+      "driver",
+      "interface",
+      "module",
+      "oracle",
+      "oracle-database",
+      "oracle-database-driver",
+      "python",
+      "python-oracledb"
+    ],
+    "homepage": "https://oracle.github.io/python-oracledb",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/dbt-oracle",
+    "description": "dbt (data build tool) adapter for Oracle Autonomous AI Database",
+    "html_url": "https://github.com/oracle/dbt-oracle",
+    "stargazers_count": 66,
+    "forks_count": 24,
+    "open_issues_count": 10,
+    "watchers_count": 66,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-11T07:06:04Z",
+    "pushed_at": "2026-08-07T18:31:16Z",
+    "updated_at": "2026-08-04T21:37:50Z",
+    "default_branch": "main",
+    "topics": [
+      "autonomous-database",
+      "data-build-tool",
+      "dbt",
+      "oracle"
+    ],
+    "homepage": "https://docs.getdbt.com/docs/core/connect-data-platform/oracle-setup",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/ktls-utils",
+    "description": "TLS handshake utilities for in-kernel TLS consumers",
+    "html_url": "https://github.com/oracle/ktls-utils",
+    "stargazers_count": 49,
+    "forks_count": 34,
+    "open_issues_count": 23,
+    "watchers_count": 49,
+    "language": "C",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-22T17:40:35Z",
+    "pushed_at": "2026-09-01T18:53:46Z",
+    "updated_at": "2026-08-25T05:32:59Z",
+    "default_branch": "main",
+    "topics": [
+      "ktls",
+      "linux",
+      "tls"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/hiq",
+    "description": "HiQ - Observability And Optimization In Modern AI Era",
+    "html_url": "https://github.com/oracle/hiq",
+    "stargazers_count": 74,
+    "forks_count": 11,
+    "open_issues_count": 4,
+    "watchers_count": 74,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-04T08:59:02Z",
+    "pushed_at": "2026-02-20T23:27:19Z",
+    "updated_at": "2026-09-04T02:51:06Z",
+    "default_branch": "main",
+    "topics": [
+      "logging",
+      "monitoring",
+      "observability",
+      "python",
+      "tracing"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/cluster-api-provider-oci",
+    "description": "Kubernetes Cluster API Provider for Oracle Cloud Infrastructure",
+    "html_url": "https://github.com/oracle/cluster-api-provider-oci",
+    "stargazers_count": 56,
+    "forks_count": 49,
+    "open_issues_count": 56,
+    "watchers_count": 56,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-02-28T22:52:30Z",
+    "pushed_at": "2026-07-10T16:54:27Z",
+    "updated_at": "2026-08-03T14:28:23Z",
+    "default_branch": "main",
+    "topics": [
+      "cluster-api",
+      "cluster-api-provider-oci",
+      "k8s-provider-oci",
+      "k8s-sig-api-machinery",
+      "k8s-sig-cluster-api",
+      "kubernetes-cluster"
+    ],
+    "homepage": "https://oracle.github.io/cluster-api-provider-oci/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/accelerated-data-science",
+    "description": "ADS is the Oracle Data Science Cloud Service's python SDK supporting, model ops (train/eval/deploy), along with running workloads on Jobs and Pipeline resources.",
+    "html_url": "https://github.com/oracle/accelerated-data-science",
+    "stargazers_count": 124,
+    "forks_count": 67,
+    "open_issues_count": 17,
+    "watchers_count": 124,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-02-07T22:30:21Z",
+    "pushed_at": "2026-09-03T03:24:39Z",
+    "updated_at": "2026-09-02T17:51:25Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud",
+      "machine-learning",
+      "oci",
+      "oracle",
+      "python3"
+    ],
+    "homepage": "https://accelerated-data-science.readthedocs.io/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/magento-extension-cx-apps",
+    "description": "Magento extension project for Oracle CX Apps integration with Magento Platform.",
+    "html_url": "https://github.com/oracle/magento-extension-cx-apps",
+    "stargazers_count": 2,
+    "forks_count": 6,
+    "open_issues_count": 1,
+    "watchers_count": 2,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-02-03T19:40:16Z",
+    "pushed_at": "2025-04-25T11:18:10Z",
+    "updated_at": "2025-04-25T11:18:14Z",
+    "default_branch": "main",
+    "topics": [
+      "eloqua",
+      "magento2",
+      "magento2-extension",
+      "oracle",
+      "oracle-cloud",
+      "responsys"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/ocifs",
+    "description": "ocifs provides a POSIX-compatible API wrapping Oracle Cloud Infrastructure's (OCI) Object Storage. ocifs is a python library that relies on the fsspec framework.",
+    "html_url": "https://github.com/oracle/ocifs",
+    "stargazers_count": 23,
+    "forks_count": 11,
+    "open_issues_count": 9,
+    "watchers_count": 23,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-01-30T19:12:41Z",
+    "pushed_at": "2025-11-06T17:12:54Z",
+    "updated_at": "2026-07-18T01:26:34Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud",
+      "filesystem",
+      "fsspec",
+      "object-storage",
+      "oci",
+      "oracle",
+      "python3"
+    ],
+    "homepage": "https://ocifs.readthedocs.io/en/latest/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/ocne-deploy-tool",
+    "description": "Easy and quick deployment of Oracle Cloud Native Environment on VMs managed by Oracle Linux Virtualization Manager",
+    "html_url": "https://github.com/oracle/ocne-deploy-tool",
+    "stargazers_count": 8,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 8,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-01-12T20:50:27Z",
+    "pushed_at": "2023-08-29T13:11:06Z",
+    "updated_at": "2025-11-24T09:25:44Z",
+    "default_branch": "main",
+    "topics": [
+      "ansible",
+      "cloudnative",
+      "cri-o",
+      "grafana",
+      "istio",
+      "kubernetes",
+      "kvm",
+      "ocne",
+      "olvm",
+      "operator-lifecycle-manager",
+      "prometheus",
+      "virtualization"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/spark-oracle",
+    "description": "On the fly, translation of Spark programs to run natively on your Oracle DB. Your Spark programs require no changes.",
+    "html_url": "https://github.com/oracle/spark-oracle",
+    "stargazers_count": 36,
+    "forks_count": 13,
+    "open_issues_count": 1,
+    "watchers_count": 36,
+    "language": "Scala",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-01-05T18:12:13Z",
+    "pushed_at": "2025-04-15T17:03:54Z",
+    "updated_at": "2026-07-07T02:12:01Z",
+    "default_branch": "main",
+    "topics": [
+      "oracle",
+      "spark",
+      "sql"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-cli",
+    "description": "The Coherence command line interface (CLI) is a lightweight tool, in the tradition of tools such as kubectl, which can be scripted or used interactively to manage and monitor Coherence clusters.",
+    "html_url": "https://github.com/oracle/coherence-cli",
+    "stargazers_count": 20,
+    "forks_count": 9,
+    "open_issues_count": 2,
+    "watchers_count": 20,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-20T19:06:27Z",
+    "pushed_at": "2026-09-03T05:34:08Z",
+    "updated_at": "2026-07-24T12:41:38Z",
+    "default_branch": "main",
+    "topics": [
+      "cli",
+      "cli-tool",
+      "coherence",
+      "coherence-ce",
+      "management",
+      "monitoring",
+      "oracle"
+    ],
+    "homepage": "https://docs.coherence.community/coherence-cli/docs/latest/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/wind",
+    "description": "WIND - This tool allows end user to automate Oracle Cloud Marketplace Publisher API CRUD operations.",
+    "html_url": "https://github.com/oracle/wind",
+    "stargazers_count": 2,
+    "forks_count": 2,
+    "open_issues_count": 3,
+    "watchers_count": 2,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-11T01:37:23Z",
+    "pushed_at": "2024-02-21T19:52:19Z",
+    "updated_at": "2023-07-19T00:32:42Z",
+    "default_branch": "main",
+    "topics": [
+      "api",
+      "marketplace",
+      "partner-portal",
+      "python3",
+      "robotframework"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-php-sdk",
+    "description": null,
+    "html_url": "https://github.com/oracle/oci-php-sdk",
+    "stargazers_count": 15,
+    "forks_count": 14,
+    "open_issues_count": 6,
+    "watchers_count": 15,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-02T19:43:14Z",
+    "pushed_at": "2024-04-25T21:24:11Z",
+    "updated_at": "2025-11-24T09:24:02Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oracle-db-appdev-monitoring",
+    "description": "Oracle Database Metrics Exporter supporting de-facto standard Prometheus/OpenTelemetry metrics",
+    "html_url": "https://github.com/oracle/oracle-db-appdev-monitoring",
+    "stargazers_count": 261,
+    "forks_count": 96,
+    "open_issues_count": 32,
+    "watchers_count": 261,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-26T19:09:44Z",
+    "pushed_at": "2026-09-03T15:49:33Z",
+    "updated_at": "2026-09-03T15:50:04Z",
+    "default_branch": "main",
+    "topics": [
+      "appdev",
+      "grafana-dashboard",
+      "microservices",
+      "opentelemetry",
+      "oracle-database",
+      "prometheus"
+    ],
+    "homepage": "https://oracle.github.io/oracle-db-appdev-monitoring/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oracle-database-operator",
+    "description": "The Oracle Database Operator for Kubernetes (a.k.a. OraOperator) helps developers, DBAs, DevOps and GitOps teams reduce the time and complexity of deploying and managing Oracle Databases. It eliminates the dependency on a human operator or administrator for the majority of database operations.",
+    "html_url": "https://github.com/oracle/oracle-database-operator",
+    "stargazers_count": 191,
+    "forks_count": 69,
+    "open_issues_count": 51,
+    "watchers_count": 191,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-20T23:19:08Z",
+    "pushed_at": "2026-09-02T10:34:11Z",
+    "updated_at": "2026-08-24T01:56:40Z",
+    "default_branch": "main",
+    "topics": [
+      "autonomous-database",
+      "kubernetes",
+      "kubernetes-operator",
+      "openshift",
+      "operator",
+      "oracle-cloud-infrastucture",
+      "oracle-database"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/tax-reporting-framework-cli",
+    "description": "Tax Reporting Framework CLI is a tool for generating boilerplate codes to quickly setup and deploy your reports using Tax Reporting Framework SuiteApp in NetSuite.",
+    "html_url": "https://github.com/oracle/tax-reporting-framework-cli",
+    "stargazers_count": 8,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 8,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-18T02:23:25Z",
+    "pushed_at": "2023-08-29T13:13:15Z",
+    "updated_at": "2026-04-14T20:38:55Z",
+    "default_branch": "master",
+    "topics": [
+      "cli",
+      "netsuite",
+      "reports",
+      "tax",
+      "tax-reporting-framework",
+      "trf"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/weblogic-toolkit-ui",
+    "description": "WebLogic Kubernetes Toolkit UI",
+    "html_url": "https://github.com/oracle/weblogic-toolkit-ui",
+    "stargazers_count": 29,
+    "forks_count": 16,
+    "open_issues_count": 20,
+    "watchers_count": 29,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-11T20:32:50Z",
+    "pushed_at": "2026-09-04T03:29:36Z",
+    "updated_at": "2026-06-05T16:45:23Z",
+    "default_branch": "main",
+    "topics": [
+      "devops",
+      "kubernetes",
+      "provisioning",
+      "weblogic"
+    ],
+    "homepage": "https://oracle.github.io/weblogic-toolkit-ui",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql-dotnet-sdk",
+    "description": "A .NET SDK for Oracle NoSQL Database",
+    "html_url": "https://github.com/oracle/nosql-dotnet-sdk",
+    "stargazers_count": 8,
+    "forks_count": 6,
+    "open_issues_count": 5,
+    "watchers_count": 8,
+    "language": "C#",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-08T18:33:20Z",
+    "pushed_at": "2026-08-11T22:51:55Z",
+    "updated_at": "2026-08-11T22:51:54Z",
+    "default_branch": "main",
+    "topics": [
+      "dotnet",
+      "nosql",
+      "nosql-database",
+      "oracle"
+    ],
+    "homepage": "https://www.oracle.com/database/nosql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-service-operator",
+    "description": "The OCI Service Operator for Kubernetes (OSOK) makes it easy to connect and manage OCI services from a cloud native application running in a Kubernetes environment.",
+    "html_url": "https://github.com/oracle/oci-service-operator",
+    "stargazers_count": 48,
+    "forks_count": 24,
+    "open_issues_count": 18,
+    "watchers_count": 48,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-11T12:41:16Z",
+    "pushed_at": "2026-07-31T15:40:57Z",
+    "updated_at": "2026-08-27T20:29:09Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud",
+      "kubernetes",
+      "kubernetes-operator",
+      "oci-service-operator",
+      "operator-sdk",
+      "oracle-cloud",
+      "oracle-cloud-infrastructure"
+    ],
+    "homepage": "https://oracle.github.io/oci-service-operator/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/heatwave",
+    "description": "SQL scripts, instructions for MySQL HeatWave benchmarking",
+    "html_url": "https://github.com/oracle/heatwave",
+    "stargazers_count": 13,
+    "forks_count": 2,
+    "open_issues_count": 1,
+    "watchers_count": 13,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-10T01:58:41Z",
+    "pushed_at": "2024-03-17T20:36:52Z",
+    "updated_at": "2026-06-21T01:35:03Z",
+    "default_branch": "main",
+    "topics": [
+      "analytics",
+      "benchmarking",
+      "chbench",
+      "cloud",
+      "heatwave",
+      "mysql",
+      "oracle"
+    ],
+    "homepage": "https://github.com/oracle/heatwave",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oled-tools",
+    "description": null,
+    "html_url": "https://github.com/oracle/oled-tools",
+    "stargazers_count": 50,
+    "forks_count": 6,
+    "open_issues_count": 3,
+    "watchers_count": 50,
+    "language": "Python",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-08T23:33:03Z",
+    "pushed_at": "2026-01-08T19:11:30Z",
+    "updated_at": "2026-07-08T12:30:46Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/fluent-plugin-oci-logging",
+    "description": "This is the official fluentD output plugin for the Oracle Cloud Infrastructure (OCI) Logging service.",
+    "html_url": "https://github.com/oracle/fluent-plugin-oci-logging",
+    "stargazers_count": 13,
+    "forks_count": 7,
+    "open_issues_count": 7,
+    "watchers_count": 13,
+    "language": "Ruby",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-06-22T01:34:22Z",
+    "pushed_at": "2025-04-22T11:58:44Z",
+    "updated_at": "2025-11-01T16:05:44Z",
+    "default_branch": "main",
+    "topics": [
+      "fluentd",
+      "fluentd-output-plugin",
+      "oci"
+    ],
+    "homepage": "https://docs.cloud.oracle.com/en-us/iaas/Content/Logging/Concepts/loggingoverview.htm",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/weblogic-azure",
+    "description": "This project offers support for running Oracle WebLogic Server in the Azure Virtual Machines and Azure Kubernetes Service (AKS)",
+    "html_url": "https://github.com/oracle/weblogic-azure",
+    "stargazers_count": 13,
+    "forks_count": 17,
+    "open_issues_count": 33,
+    "watchers_count": 13,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-06-17T21:28:38Z",
+    "pushed_at": "2026-09-04T02:25:15Z",
+    "updated_at": "2026-02-21T23:16:53Z",
+    "default_branch": "main",
+    "topics": [
+      "aks",
+      "azure",
+      "kubernetes",
+      "vms",
+      "weblogic"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-react-samples",
+    "description": "A series of simple Cloud Native app using React JS frontend, various backends (Java, Python, DotNet) and the Autonomous database. ",
+    "html_url": "https://github.com/oracle/oci-react-samples",
+    "stargazers_count": 19,
+    "forks_count": 79,
+    "open_issues_count": 1,
+    "watchers_count": 19,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-04-22T16:27:25Z",
+    "pushed_at": "2025-01-10T09:51:05Z",
+    "updated_at": "2026-04-28T15:53:13Z",
+    "default_branch": "main",
+    "topics": [
+      "autonomous",
+      "cloud-native",
+      "docker",
+      "helidon-microservice",
+      "java",
+      "javascript",
+      "kubernetes",
+      "livelabs",
+      "oci",
+      "oracle-database",
+      "react",
+      "reactjs",
+      "spring",
+      "springboot",
+      "workshop"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/apex",
+    "description": "Official Oracle APEX repo for sample code, starter apps, plug-ins, and more! #orclapex",
+    "html_url": "https://github.com/oracle/apex",
+    "stargazers_count": 656,
+    "forks_count": 288,
+    "open_issues_count": 46,
+    "watchers_count": 656,
+    "language": null,
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-03-29T20:35:59Z",
+    "pushed_at": "2026-09-03T04:44:04Z",
+    "updated_at": "2026-09-03T15:16:13Z",
+    "default_branch": "main",
+    "topics": [
+      "app-development",
+      "low-code",
+      "oracle-database"
+    ],
+    "homepage": "https://apex.oracle.com",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/.github",
+    "description": "Default community health files for the Oracle GitHub Organisation (OGHO)",
+    "html_url": "https://github.com/oracle/.github",
+    "stargazers_count": 9,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 9,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-03-22T21:34:35Z",
+    "pushed_at": "2025-12-19T14:44:05Z",
+    "updated_at": "2026-04-03T15:01:45Z",
+    "default_branch": "main",
+    "topics": [
+      "community-health-files",
+      "github"
+    ],
+    "homepage": "https://opensource.oracle.com",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/microservices-backend",
+    "description": "Sample code of application examples to build microservices with converged Oracle database and multi-cloud / hybrid cloud services",
+    "html_url": "https://github.com/oracle/microservices-backend",
+    "stargazers_count": 92,
+    "forks_count": 93,
+    "open_issues_count": 8,
+    "watchers_count": 92,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-03-12T03:46:56Z",
+    "pushed_at": "2026-09-03T21:52:28Z",
+    "updated_at": "2026-09-03T21:40:40Z",
+    "default_branch": "main",
+    "topics": [
+      "autonomous",
+      "cloud-native",
+      "converged-database",
+      "data-driven",
+      "databases",
+      "helidon",
+      "hybrid-cloud",
+      "livelabs",
+      "messaging",
+      "microservices",
+      "multi-cloud",
+      "oracle-converged-database",
+      "simplify-microservices-architecture",
+      "workshops"
+    ],
+    "homepage": "http://oracle.com/database",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oracle-r2dbc",
+    "description": "R2DBC Driver for Oracle Database",
+    "html_url": "https://github.com/oracle/oracle-r2dbc",
+    "stargazers_count": 215,
+    "forks_count": 43,
+    "open_issues_count": 12,
+    "watchers_count": 215,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-03-04T22:00:08Z",
+    "pushed_at": "2024-12-09T13:48:32Z",
+    "updated_at": "2026-08-04T20:59:23Z",
+    "default_branch": "main",
+    "topics": [
+      "oracle-database",
+      "oracle-jdbc",
+      "oracle-r2dbc",
+      "r2dbc-driver",
+      "r2dbc-spi",
+      "reactive-streams"
+    ],
+    "homepage": "https://oracle.com",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/weblogic-remote-console",
+    "description": "A WebLogic Console that connects remotely using the WebLogic Management REST API",
+    "html_url": "https://github.com/oracle/weblogic-remote-console",
+    "stargazers_count": 66,
+    "forks_count": 19,
+    "open_issues_count": 22,
+    "watchers_count": 66,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-03-01T17:57:34Z",
+    "pushed_at": "2026-07-21T19:02:45Z",
+    "updated_at": "2026-07-21T18:41:58Z",
+    "default_branch": "main",
+    "topics": [
+      "configuration",
+      "management",
+      "monitoring",
+      "rest",
+      "weblogic"
+    ],
+    "homepage": "https://oracle.github.io/weblogic-remote-console/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql-spring-sdk",
+    "description": "SDK for Spring Data for Oracle NoSQL Database",
+    "html_url": "https://github.com/oracle/nosql-spring-sdk",
+    "stargazers_count": 10,
+    "forks_count": 9,
+    "open_issues_count": 3,
+    "watchers_count": 10,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-02-07T17:21:10Z",
+    "pushed_at": "2026-07-31T19:02:55Z",
+    "updated_at": "2026-08-25T06:43:28Z",
+    "default_branch": "main",
+    "topics": [
+      "java",
+      "nosql",
+      "nosql-database",
+      "oracle",
+      "spring",
+      "spring-boot"
+    ],
+    "homepage": "https://www.oracle.com/database/nosql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-grafana-logs",
+    "description": "Grafana datasource plugin for OCI logs",
+    "html_url": "https://github.com/oracle/oci-grafana-logs",
+    "stargazers_count": 21,
+    "forks_count": 14,
+    "open_issues_count": 6,
+    "watchers_count": 21,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-20T20:03:34Z",
+    "pushed_at": "2026-09-02T08:32:10Z",
+    "updated_at": "2026-08-19T16:30:56Z",
+    "default_branch": "main",
+    "topics": [
+      "grafana",
+      "logs",
+      "oci",
+      "oracle"
+    ],
+    "homepage": "https://grafana.com/grafana/plugins/oci-logs-datasource",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/template-repo",
+    "description": "This is a template repository. It contains information about the guidelines for Oracle’s GitHub repositories.",
+    "html_url": "https://github.com/oracle/template-repo",
+    "stargazers_count": 37,
+    "forks_count": 21,
+    "open_issues_count": 0,
+    "watchers_count": 37,
+    "language": null,
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-14T20:35:04Z",
+    "pushed_at": "2026-08-18T17:56:14Z",
+    "updated_at": "2026-08-29T20:24:12Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-idea-plugin",
+    "description": "This plugin adds features to IntelliJ to assist in development of applications using Oracle Coherence.",
+    "html_url": "https://github.com/oracle/coherence-idea-plugin",
+    "stargazers_count": 4,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-13T19:30:55Z",
+    "pushed_at": "2025-03-05T16:20:00Z",
+    "updated_at": "2026-01-01T23:51:31Z",
+    "default_branch": "main",
+    "topics": [
+      "coherence",
+      "coherence-ce",
+      "idea-plugin",
+      "plugin"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-eclipse-plugin",
+    "description": "The Coherence Eclipse Plugin provides various features to help developer productivity when working with Coherence.",
+    "html_url": "https://github.com/oracle/coherence-eclipse-plugin",
+    "stargazers_count": 4,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-13T19:28:55Z",
+    "pushed_at": "2026-04-28T12:02:11Z",
+    "updated_at": "2026-04-28T12:02:16Z",
+    "default_branch": "main",
+    "topics": [
+      "coherence",
+      "coherence-ce",
+      "eclipse-plugin",
+      "plugin"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/pushiomanager-react-native",
+    "description": "React Native Module for Responsys SDK",
+    "html_url": "https://github.com/oracle/pushiomanager-react-native",
+    "stargazers_count": 19,
+    "forks_count": 19,
+    "open_issues_count": 28,
+    "watchers_count": 19,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-08T04:16:08Z",
+    "pushed_at": "2026-07-06T07:31:15Z",
+    "updated_at": "2026-07-06T07:31:14Z",
+    "default_branch": "master",
+    "topics": [
+      "android",
+      "ios",
+      "oracle",
+      "react-native",
+      "responsys"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/rwloadsim",
+    "description": "RWP*Load Simulator - your tool for scripting, simulation and much more. Like having a bit of bash and SQL, a nip of C or Java, a dash of awk, a grain of sed plus drops of secret sauce in one single tool.  See https://blogs.oracle.com/database/rwpload-simulator-a-new-way-to-measure-your-oracle-database-performance for the announcement.",
+    "html_url": "https://github.com/oracle/rwloadsim",
+    "stargazers_count": 59,
+    "forks_count": 20,
+    "open_issues_count": 0,
+    "watchers_count": 59,
+    "language": "C",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-19T18:29:59Z",
+    "pushed_at": "2026-07-06T14:53:11Z",
+    "updated_at": "2026-05-24T00:23:25Z",
+    "default_branch": "master",
+    "topics": [
+      "bash-script",
+      "benchmark-framework",
+      "database",
+      "gnuplot-graphs",
+      "performance",
+      "performance-testing",
+      "plsql",
+      "simulation",
+      "sql",
+      "workload"
+    ],
+    "homepage": "https://oracle.github.io/rwloadsim/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/migrate-to-ol",
+    "description": "Script and documentation to switch to Oracle Linux",
+    "html_url": "https://github.com/oracle/migrate-to-ol",
+    "stargazers_count": 367,
+    "forks_count": 92,
+    "open_issues_count": 0,
+    "watchers_count": 367,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-10T21:15:46Z",
+    "pushed_at": "2026-05-06T22:50:10Z",
+    "updated_at": "2026-08-31T09:58:35Z",
+    "default_branch": "main",
+    "topics": [
+      "centos",
+      "hacktoberfest",
+      "linux",
+      "oracle",
+      "oracle-linux",
+      "switch"
+    ],
+    "homepage": "https://github.com/oracle/migrate-to-ol",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/bft-consensus-agda",
+    "description": null,
+    "html_url": "https://github.com/oracle/bft-consensus-agda",
+    "stargazers_count": 12,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 12,
+    "language": "Agda",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-10T00:13:42Z",
+    "pushed_at": "2025-10-09T19:52:22Z",
+    "updated_at": "2025-10-09T19:52:23Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/heatwave-tpch",
+    "description": "SQL scripts for HeatWave benchmarking",
+    "html_url": "https://github.com/oracle/heatwave-tpch",
+    "stargazers_count": 48,
+    "forks_count": 14,
+    "open_issues_count": 0,
+    "watchers_count": 48,
+    "language": null,
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-02T03:29:29Z",
+    "pushed_at": "2023-07-11T04:38:32Z",
+    "updated_at": "2026-03-30T08:25:36Z",
+    "default_branch": "main",
+    "topics": [
+      "analytics",
+      "benchmark",
+      "cloud",
+      "heatwave",
+      "mysql",
+      "oracle"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/mod_owa",
+    "description": null,
+    "html_url": "https://github.com/oracle/mod_owa",
+    "stargazers_count": 9,
+    "forks_count": 8,
+    "open_issues_count": 1,
+    "watchers_count": 9,
+    "language": "C",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-01T16:39:16Z",
+    "pushed_at": "2024-04-29T10:37:33Z",
+    "updated_at": "2025-09-18T20:49:58Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-toolkit-intellij",
+    "description": "Oracle Cloud Infrastructure Toolkit for IntelliJ",
+    "html_url": "https://github.com/oracle/oci-toolkit-intellij",
+    "stargazers_count": 12,
+    "forks_count": 12,
+    "open_issues_count": 5,
+    "watchers_count": 12,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-30T20:54:55Z",
+    "pushed_at": "2025-07-04T08:03:40Z",
+    "updated_at": "2026-01-29T18:29:32Z",
+    "default_branch": "main",
+    "topics": [
+      "autonomous",
+      "cloud",
+      "database",
+      "intellij-plugin",
+      "java",
+      "oracle"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/helm-charts",
+    "description": "Helm charts for Oracle commercial products",
+    "html_url": "https://github.com/oracle/helm-charts",
+    "stargazers_count": 10,
+    "forks_count": 11,
+    "open_issues_count": 1,
+    "watchers_count": 10,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-30T19:28:07Z",
+    "pushed_at": "2025-02-17T22:03:40Z",
+    "updated_at": "2025-04-04T04:32:22Z",
+    "default_branch": "main",
+    "topics": [
+      "helm-charts",
+      "oracle"
+    ],
+    "homepage": "https://oracle.github.io/helm-charts",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-visualvm",
+    "description": "The Coherence-VisualVM Plugin provides management and monitoring of a single Coherence cluster using the VisualVM management utility.",
+    "html_url": "https://github.com/oracle/coherence-visualvm",
+    "stargazers_count": 14,
+    "forks_count": 9,
+    "open_issues_count": 1,
+    "watchers_count": 14,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-24T01:08:02Z",
+    "pushed_at": "2026-04-17T15:49:51Z",
+    "updated_at": "2026-04-17T15:49:56Z",
+    "default_branch": "main",
+    "topics": [
+      "coherence",
+      "management",
+      "visualvm",
+      "visualvm-plugin"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/pushiomanager-cordova-plugin",
+    "description": "Cordova Plugin for Oracle Responsys Mobile SDK",
+    "html_url": "https://github.com/oracle/pushiomanager-cordova-plugin",
+    "stargazers_count": 1,
+    "forks_count": 8,
+    "open_issues_count": 2,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-09T18:31:24Z",
+    "pushed_at": "2025-04-07T10:42:01Z",
+    "updated_at": "2025-04-07T10:40:04Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/nb-javac",
+    "description": "nb-javac is the Java compiler plugin used by the Apache NetBeans Java Editor",
+    "html_url": "https://github.com/oracle/nb-javac",
+    "stargazers_count": 25,
+    "forks_count": 22,
+    "open_issues_count": 9,
+    "watchers_count": 25,
+    "language": "Java",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-10-29T03:57:03Z",
+    "pushed_at": "2023-06-12T15:22:35Z",
+    "updated_at": "2026-05-18T11:33:31Z",
+    "default_branch": "master",
+    "topics": [
+      "nb-javac-netbeans-javac"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/adaptivemm",
+    "description": "adaptivemm - A userspace daemon for proactive free memory management",
+    "html_url": "https://github.com/oracle/adaptivemm",
+    "stargazers_count": 71,
+    "forks_count": 18,
+    "open_issues_count": 3,
+    "watchers_count": 71,
+    "language": "C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-10-26T21:48:20Z",
+    "pushed_at": "2026-04-23T19:48:41Z",
+    "updated_at": "2026-06-06T06:52:14Z",
+    "default_branch": "master",
+    "topics": [
+      "memory",
+      "performance"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql-java-sdk",
+    "description": "SDK for Java for the Oracle NoSQL Database",
+    "html_url": "https://github.com/oracle/nosql-java-sdk",
+    "stargazers_count": 34,
+    "forks_count": 27,
+    "open_issues_count": 11,
+    "watchers_count": 34,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-09-27T00:05:54Z",
+    "pushed_at": "2026-09-03T17:43:48Z",
+    "updated_at": "2026-08-24T17:47:11Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud",
+      "database",
+      "java",
+      "nosql",
+      "nosql-database",
+      "oracle",
+      "oracle-cloud"
+    ],
+    "homepage": "https://www.oracle.com/database/nosql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oraclesolaris-contrib",
+    "description": "oraclesolaris-contrib is a repository focussed on the Oracle Solaris 11.4 StatsStore, using methodologies like REST to connect to Oracle Solaris 11.4 and the new features being introduced in Oracle Solaris 11.4 OS.",
+    "html_url": "https://github.com/oracle/oraclesolaris-contrib",
+    "stargazers_count": 50,
+    "forks_count": 18,
+    "open_issues_count": 11,
+    "watchers_count": 50,
+    "language": "Jupyter Notebook",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-08-21T00:10:27Z",
+    "pushed_at": "2025-02-18T16:44:23Z",
+    "updated_at": "2026-08-08T03:42:03Z",
+    "default_branch": "master",
+    "topics": [
+      "jupyter-notebook",
+      "postman",
+      "python",
+      "rest-api",
+      "solaris",
+      "webui"
+    ],
+    "homepage": "https://www.oracle.com/solaris/solaris11/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-powershell-modules",
+    "description": "Oracle Cloud Infrastructure Modules for PowerShell",
+    "html_url": "https://github.com/oracle/oci-powershell-modules",
+    "stargazers_count": 40,
+    "forks_count": 14,
+    "open_issues_count": 5,
+    "watchers_count": 40,
+    "language": "C#",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-07-29T22:09:56Z",
+    "pushed_at": "2026-09-01T19:21:15Z",
+    "updated_at": "2026-09-01T19:23:03Z",
+    "default_branch": "master",
+    "topics": [
+      "cloud",
+      "csharp",
+      "dotnet",
+      "oci",
+      "oracle",
+      "oracle-cloud",
+      "oracle-cloud-infrastructure",
+      "powershell",
+      "powershell-modules"
+    ],
+    "homepage": "https://cloud.oracle.com/cloud-infrastructure",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-dotnet-sdk",
+    "description": "Oracle Cloud Infrastructure SDK for .NET",
+    "html_url": "https://github.com/oracle/oci-dotnet-sdk",
+    "stargazers_count": 65,
+    "forks_count": 26,
+    "open_issues_count": 31,
+    "watchers_count": 65,
+    "language": "C#",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-29T13:50:05Z",
+    "pushed_at": "2026-09-01T15:58:34Z",
+    "updated_at": "2026-09-01T16:53:39Z",
+    "default_branch": "master",
+    "topics": [
+      "cloud",
+      "csharp",
+      "dotnet",
+      "oracle",
+      "oracle-cloud",
+      "oracle-cloud-infrastructure",
+      "sdk"
+    ],
+    "homepage": "https://cloud.oracle.com/cloud-infrastructure",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-js-client",
+    "description": "The Coherence JavaScript Client",
+    "html_url": "https://github.com/oracle/coherence-js-client",
+    "stargazers_count": 10,
+    "forks_count": 8,
+    "open_issues_count": 12,
+    "watchers_count": 10,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-04T19:12:14Z",
+    "pushed_at": "2026-09-03T01:19:58Z",
+    "updated_at": "2026-07-15T01:54:51Z",
+    "default_branch": "main",
+    "topics": [
+      "caching",
+      "clustering",
+      "coherence",
+      "data-grid",
+      "distributed",
+      "grpc",
+      "grpc-client",
+      "grpc-node",
+      "in-memory",
+      "kv-store",
+      "microservices",
+      "polyglot",
+      "scalability"
+    ],
+    "homepage": "https://oracle.github.io/coherence-js-client/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-typescript-sdk",
+    "description": "Oracle Cloud Infrastructure SDK for TypeScript and JavaScript",
+    "html_url": "https://github.com/oracle/oci-typescript-sdk",
+    "stargazers_count": 100,
+    "forks_count": 64,
+    "open_issues_count": 70,
+    "watchers_count": 100,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-05-18T19:04:31Z",
+    "pushed_at": "2026-09-01T18:33:13Z",
+    "updated_at": "2026-09-02T08:57:02Z",
+    "default_branch": "master",
+    "topics": [
+      "cloud",
+      "javascript",
+      "nodejs",
+      "oracle-cloud",
+      "sdk",
+      "typescript"
+    ],
+    "homepage": "https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/typescriptsdk.htm",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-designer-toolkit",
+    "description": "OCI designer toolKIT (OKIT) is a set of tools for enabling design, deploy and visualise OCI environments through a graphical web based interface.",
+    "html_url": "https://github.com/oracle/oci-designer-toolkit",
+    "stargazers_count": 42,
+    "forks_count": 10,
+    "open_issues_count": 39,
+    "watchers_count": 42,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-05-12T14:24:53Z",
+    "pushed_at": "2026-05-04T14:36:33Z",
+    "updated_at": "2026-08-18T20:11:02Z",
+    "default_branch": "master",
+    "topics": [
+      "oci",
+      "oci-ansible",
+      "oci-cli",
+      "oci-designer",
+      "oci-terraform-modules",
+      "oci-toolkit",
+      "okit",
+      "visualise-oci-environments"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/okafka",
+    "description": "Kafka Java Client for Oracle Transactional Event Queues",
+    "html_url": "https://github.com/oracle/okafka",
+    "stargazers_count": 41,
+    "forks_count": 20,
+    "open_issues_count": 6,
+    "watchers_count": 41,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-04-24T21:12:09Z",
+    "pushed_at": "2026-07-28T16:11:36Z",
+    "updated_at": "2026-07-31T09:32:50Z",
+    "default_branch": "master",
+    "topics": [
+      "aq",
+      "converged-database",
+      "event-queues",
+      "java",
+      "kafka",
+      "microservices"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-ansible-collection",
+    "description": "Oracle Cloud Infrastructure Ansible Collection provides an easy way to provision and manage resources in Oracle Cloud using Ansible.",
+    "html_url": "https://github.com/oracle/oci-ansible-collection",
+    "stargazers_count": 196,
+    "forks_count": 101,
+    "open_issues_count": 41,
+    "watchers_count": 196,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-04-23T16:48:27Z",
+    "pushed_at": "2026-06-24T09:19:36Z",
+    "updated_at": "2026-08-06T20:10:55Z",
+    "default_branch": "master",
+    "topics": [
+      "ansible",
+      "cloud",
+      "oracle",
+      "oracle-cloud-infrastructure"
+    ],
+    "homepage": "https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/ansible.htm",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/fmw-kubernetes",
+    "description": "Kubernetes Deployment Scripts for Oracle Fusion Middleware products",
+    "html_url": "https://github.com/oracle/fmw-kubernetes",
+    "stargazers_count": 33,
+    "forks_count": 32,
+    "open_issues_count": 13,
+    "watchers_count": 33,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-03-17T20:01:42Z",
+    "pushed_at": "2026-08-04T10:20:25Z",
+    "updated_at": "2026-07-31T18:23:52Z",
+    "default_branch": "master",
+    "topics": [
+      "kubernetes",
+      "operator",
+      "oracle-webcenter"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-dotnet-extend-client",
+    "description": "Coherence .NET client library",
+    "html_url": "https://github.com/oracle/coherence-dotnet-extend-client",
+    "stargazers_count": 15,
+    "forks_count": 12,
+    "open_issues_count": 2,
+    "watchers_count": 15,
+    "language": "C#",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-27T17:05:23Z",
+    "pushed_at": "2026-01-03T06:13:13Z",
+    "updated_at": "2026-01-03T05:09:07Z",
+    "default_branch": "main",
+    "topics": [
+      "caching",
+      "cloud",
+      "clustering",
+      "coherence",
+      "data-grid",
+      "distributed",
+      "dotnet",
+      "hpc",
+      "imdg",
+      "in-memory",
+      "kv-store",
+      "microservices",
+      "polyglot",
+      "scalability"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-cpp-extend-client",
+    "description": "Coherence C++ client library",
+    "html_url": "https://github.com/oracle/coherence-cpp-extend-client",
+    "stargazers_count": 13,
+    "forks_count": 11,
+    "open_issues_count": 0,
+    "watchers_count": 13,
+    "language": "C++",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-27T17:04:15Z",
+    "pushed_at": "2026-06-05T15:27:11Z",
+    "updated_at": "2026-06-05T14:51:11Z",
+    "default_branch": "main",
+    "topics": [
+      "caching",
+      "cloud",
+      "clustering",
+      "coherence",
+      "cpp",
+      "data-grid",
+      "distributed",
+      "hpc",
+      "imdg",
+      "in-memory",
+      "kv-store",
+      "microservices",
+      "polyglot",
+      "sanka",
+      "scalability"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence",
+    "description": "Oracle Coherence Community Edition",
+    "html_url": "https://github.com/oracle/coherence",
+    "stargazers_count": 470,
+    "forks_count": 80,
+    "open_issues_count": 12,
+    "watchers_count": 470,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-24T15:51:04Z",
+    "pushed_at": "2026-09-03T15:28:08Z",
+    "updated_at": "2026-09-02T21:41:57Z",
+    "default_branch": "main",
+    "topics": [
+      "caching",
+      "cloud",
+      "clustering",
+      "coherence",
+      "data-grid",
+      "distributed",
+      "hpc",
+      "imdg",
+      "in-memory",
+      "java",
+      "kv-store",
+      "microservices",
+      "polyglot",
+      "scalability"
+    ],
+    "homepage": "https://coherence.community",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql-node-sdk",
+    "description": "Node.js SDK for Oracle NoSQL Database",
+    "html_url": "https://github.com/oracle/nosql-node-sdk",
+    "stargazers_count": 14,
+    "forks_count": 6,
+    "open_issues_count": 1,
+    "watchers_count": 14,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-05T19:46:09Z",
+    "pushed_at": "2026-09-03T00:37:38Z",
+    "updated_at": "2026-09-03T00:39:46Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud",
+      "database",
+      "nodejs",
+      "nosql",
+      "nosql-database",
+      "oracle",
+      "oracle-cloud"
+    ],
+    "homepage": "https://www.oracle.com/database/nosql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/netsuite-suitecloud-sdk",
+    "description": "SuiteCloud Software Development Kit (SuiteCloud SDK) are the set of tools that allow you to customize accounts and create SuiteApps through SuiteCloud Development Framework (SDF).",
+    "html_url": "https://github.com/oracle/netsuite-suitecloud-sdk",
+    "stargazers_count": 336,
+    "forks_count": 105,
+    "open_issues_count": 45,
+    "watchers_count": 336,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-11-19T09:54:42Z",
+    "pushed_at": "2026-09-03T14:20:58Z",
+    "updated_at": "2026-09-03T16:33:30Z",
+    "default_branch": "master",
+    "topics": [
+      "cli",
+      "development-kit",
+      "javascript",
+      "netsuite",
+      "nodejs",
+      "sdf",
+      "sdk",
+      "suiteapp",
+      "suitecloud",
+      "suitecloud-cli",
+      "suitecloud-sdk"
+    ],
+    "homepage": "https://www.netsuite.com/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/fdr",
+    "description": "Flight Data Recorder to enable \"always on\" diagnosability & observability",
+    "html_url": "https://github.com/oracle/fdr",
+    "stargazers_count": 14,
+    "forks_count": 5,
+    "open_issues_count": 10,
+    "watchers_count": 14,
+    "language": "C",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-11-06T15:41:23Z",
+    "pushed_at": "2023-11-01T18:04:48Z",
+    "updated_at": "2024-11-02T03:22:25Z",
+    "default_branch": "master",
+    "topics": [
+      "debugfs",
+      "diagnostics",
+      "ftrace",
+      "observability",
+      "static-probes",
+      "trace-cmd"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/cloudtestdrive",
+    "description": null,
+    "html_url": "https://github.com/oracle/cloudtestdrive",
+    "stargazers_count": 95,
+    "forks_count": 149,
+    "open_issues_count": 2,
+    "watchers_count": 95,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-06-18T21:10:49Z",
+    "pushed_at": "2024-03-07T13:32:35Z",
+    "updated_at": "2025-09-26T17:22:06Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql-go-sdk",
+    "description": "SDK for Go for Oracle NoSQL Database",
+    "html_url": "https://github.com/oracle/nosql-go-sdk",
+    "stargazers_count": 34,
+    "forks_count": 16,
+    "open_issues_count": 2,
+    "watchers_count": 34,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-06-17T21:03:35Z",
+    "pushed_at": "2026-08-13T05:09:27Z",
+    "updated_at": "2026-08-21T07:40:12Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud",
+      "nosql-database",
+      "oracle"
+    ],
+    "homepage": "https://www.oracle.com/database/nosql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/weblogic-image-tool",
+    "description": "WebLogic Image Tool",
+    "html_url": "https://github.com/oracle/weblogic-image-tool",
+    "stargazers_count": 65,
+    "forks_count": 25,
+    "open_issues_count": 12,
+    "watchers_count": 65,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-05-06T14:55:54Z",
+    "pushed_at": "2026-08-31T03:28:35Z",
+    "updated_at": "2026-08-08T03:23:53Z",
+    "default_branch": "main",
+    "topics": [
+      "docker",
+      "docker-image",
+      "image-builder",
+      "kubernetes",
+      "oracle-weblogic-image",
+      "weblogic",
+      "weblogic-server"
+    ],
+    "homepage": "https://oracle.github.io/weblogic-image-tool/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/binutils-gdb",
+    "description": "Unofficial mirror of http://sourceware.org/git/binutils-gdb.git",
+    "html_url": "https://github.com/oracle/binutils-gdb",
+    "stargazers_count": 17,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 17,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-26T16:18:01Z",
+    "pushed_at": "2026-07-09T14:51:25Z",
+    "updated_at": "2026-06-07T03:42:22Z",
+    "default_branch": "readme-only-branch",
+    "topics": [
+      "binutils",
+      "gdb",
+      "oracle"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/elfutils",
+    "description": "Unofficial mirror of http://sourceware.org/git/elfutils.git",
+    "html_url": "https://github.com/oracle/elfutils",
+    "stargazers_count": 3,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-26T16:16:21Z",
+    "pushed_at": "2019-05-02T22:19:42Z",
+    "updated_at": "2023-08-19T09:08:14Z",
+    "default_branch": "readme-only-branch",
+    "topics": [
+      "elfutils",
+      "oracle"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/glibc",
+    "description": "Unofficial mirror of http://sourceware.org/git/glibc.git",
+    "html_url": "https://github.com/oracle/glibc",
+    "stargazers_count": 8,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 8,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-26T16:15:39Z",
+    "pushed_at": "2026-07-10T14:09:26Z",
+    "updated_at": "2026-08-19T18:52:02Z",
+    "default_branch": "readme-only-branch",
+    "topics": [
+      "glibc",
+      "oracle"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/gcc",
+    "description": "Unofficial mirror of https://gcc.gnu.org/git/gcc.git",
+    "html_url": "https://github.com/oracle/gcc",
+    "stargazers_count": 9,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 9,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-26T16:14:57Z",
+    "pushed_at": "2026-07-08T16:36:37Z",
+    "updated_at": "2025-12-05T13:41:16Z",
+    "default_branch": "readme-only-branch",
+    "topics": [
+      "gcc",
+      "oracle"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/dtrace-linux-kernel",
+    "description": "Additional kernel tracing features merged with recent Linux kernel releases. DTrace makes use of these additional features.",
+    "html_url": "https://github.com/oracle/dtrace-linux-kernel",
+    "stargazers_count": 32,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 32,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-11T20:58:49Z",
+    "pushed_at": "2024-09-04T16:02:26Z",
+    "updated_at": "2025-05-05T18:26:33Z",
+    "default_branch": "master",
+    "topics": [
+      "dtrace",
+      "linux",
+      "linux-kernel"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-utils",
+    "description": "  Oracle Cloud Infrastructure utilities",
+    "html_url": "https://github.com/oracle/oci-utils",
+    "stargazers_count": 55,
+    "forks_count": 24,
+    "open_issues_count": 11,
+    "watchers_count": 55,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-20T20:34:01Z",
+    "pushed_at": "2024-10-02T17:55:37Z",
+    "updated_at": "2026-08-13T13:02:20Z",
+    "default_branch": "master",
+    "topics": [
+      "oracle",
+      "oracle-cloud",
+      "oracle-cloud-infrastructure"
+    ],
+    "homepage": "https://cloud.oracle.com/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/coherence-operator",
+    "description": "Oracle Coherence Operator",
+    "html_url": "https://github.com/oracle/coherence-operator",
+    "stargazers_count": 103,
+    "forks_count": 27,
+    "open_issues_count": 7,
+    "watchers_count": 103,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-18T21:02:51Z",
+    "pushed_at": "2026-09-03T05:38:17Z",
+    "updated_at": "2026-08-07T17:04:55Z",
+    "default_branch": "main",
+    "topics": [
+      "coherence",
+      "kubernetes",
+      "kubernetes-operator",
+      "operator",
+      "oracle"
+    ],
+    "homepage": "https://docs.coherence.community/coherence-operator/docs/latest",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/qemu",
+    "description": "QEMU git Oracle repository",
+    "html_url": "https://github.com/oracle/qemu",
+    "stargazers_count": 24,
+    "forks_count": 19,
+    "open_issues_count": 12,
+    "watchers_count": 24,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-07T20:38:04Z",
+    "pushed_at": "2026-03-03T23:17:52Z",
+    "updated_at": "2026-03-10T18:14:28Z",
+    "default_branch": "master",
+    "topics": [
+      "qemu",
+      "virtualization"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-toolkit-eclipse",
+    "description": "Oracle Cloud Infrastructure Toolkit for Eclipse",
+    "html_url": "https://github.com/oracle/oci-toolkit-eclipse",
+    "stargazers_count": 13,
+    "forks_count": 9,
+    "open_issues_count": 1,
+    "watchers_count": 13,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-07T18:04:28Z",
+    "pushed_at": "2024-01-11T07:04:36Z",
+    "updated_at": "2025-08-26T02:52:12Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/eclipsetoolkit.htm",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql-python-sdk",
+    "description": "Python SDK for Oracle NoSQL Database",
+    "html_url": "https://github.com/oracle/nosql-python-sdk",
+    "stargazers_count": 26,
+    "forks_count": 13,
+    "open_issues_count": 1,
+    "watchers_count": 26,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-02-27T15:03:01Z",
+    "pushed_at": "2026-09-03T20:19:45Z",
+    "updated_at": "2026-08-11T22:50:32Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud",
+      "database",
+      "nosql",
+      "nosql-database",
+      "oracle",
+      "oracle-cloud",
+      "python"
+    ],
+    "homepage": "https://www.oracle.com/database/nosql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-grafana-metrics",
+    "description": "Grafana datasource plugin for OCI metrics",
+    "html_url": "https://github.com/oracle/oci-grafana-metrics",
+    "stargazers_count": 93,
+    "forks_count": 49,
+    "open_issues_count": 26,
+    "watchers_count": 93,
+    "language": "Go",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-29T17:05:59Z",
+    "pushed_at": "2026-09-03T12:33:18Z",
+    "updated_at": "2026-07-09T17:40:30Z",
+    "default_branch": "master",
+    "topics": [
+      "grafana",
+      "oci",
+      "oracle-cloud-infrastructure",
+      "plugin"
+    ],
+    "homepage": "https://grafana.com/grafana/plugins/oci-metrics-datasource",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oracle-linux",
+    "description": "Scripts, examples, and tutorials to get started with Oracle Linux",
+    "html_url": "https://github.com/oracle/oracle-linux",
+    "stargazers_count": 178,
+    "forks_count": 51,
+    "open_issues_count": 11,
+    "watchers_count": 178,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-08T21:11:11Z",
+    "pushed_at": "2026-03-31T11:52:49Z",
+    "updated_at": "2026-07-10T19:32:41Z",
+    "default_branch": "main",
+    "topics": [
+      "bash",
+      "kernel",
+      "linux",
+      "oci-cli",
+      "oci-sdk",
+      "oracle-linux",
+      "packer",
+      "python"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/bots-node-sdk",
+    "description": "Oracle Bots Node.js SDK",
+    "html_url": "https://github.com/oracle/bots-node-sdk",
+    "stargazers_count": 54,
+    "forks_count": 57,
+    "open_issues_count": 16,
+    "watchers_count": 54,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-08T07:09:40Z",
+    "pushed_at": "2024-06-13T07:55:06Z",
+    "updated_at": "2026-02-28T16:26:05Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://oracle.github.io/bots-node-sdk/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/font-apex",
+    "description": "Font APEX is an open source icon library from the Oracle APEX team.",
+    "html_url": "https://github.com/oracle/font-apex",
+    "stargazers_count": 111,
+    "forks_count": 23,
+    "open_issues_count": 6,
+    "watchers_count": 111,
+    "language": "CSS",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-06-21T08:22:46Z",
+    "pushed_at": "2024-06-13T12:13:53Z",
+    "updated_at": "2026-08-26T18:23:20Z",
+    "default_branch": "master",
+    "topics": [
+      "font-icons",
+      "icon-library",
+      "icons",
+      "iconset",
+      "oracle-apex"
+    ],
+    "homepage": "https://oracle.github.io/font-apex/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/graaljs",
+    "description": "GraalJS – A high-performance, ECMAScript compliant, and embeddable JavaScript runtime for Java",
+    "html_url": "https://github.com/oracle/graaljs",
+    "stargazers_count": 2026,
+    "forks_count": 213,
+    "open_issues_count": 154,
+    "watchers_count": 2026,
+    "language": "C++",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-17T09:55:23Z",
+    "pushed_at": "2026-09-02T15:56:36Z",
+    "updated_at": "2026-09-03T10:23:47Z",
+    "default_branch": "master",
+    "topics": [
+      "graalvm",
+      "java",
+      "javascript",
+      "nodejs"
+    ],
+    "homepage": "https://www.graalvm.org/javascript/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/graalpython",
+    "description": "GraalPy – A high-performance embeddable Python 3 runtime for Java",
+    "html_url": "https://github.com/oracle/graalpython",
+    "stargazers_count": 1638,
+    "forks_count": 155,
+    "open_issues_count": 65,
+    "watchers_count": 1638,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-17T09:54:59Z",
+    "pushed_at": "2026-09-03T16:38:13Z",
+    "updated_at": "2026-09-03T16:36:47Z",
+    "default_branch": "master",
+    "topics": [
+      "embeddable",
+      "graalvm",
+      "java",
+      "python",
+      "python3"
+    ],
+    "homepage": "https://www.graalvm.org/python/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/container-images",
+    "description": "Oracle Linux container images",
+    "html_url": "https://github.com/oracle/container-images",
+    "stargazers_count": 216,
+    "forks_count": 65,
+    "open_issues_count": 0,
+    "watchers_count": 216,
+    "language": null,
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-03-19T19:51:21Z",
+    "pushed_at": "2026-09-01T19:05:13Z",
+    "updated_at": "2026-08-18T16:39:04Z",
+    "default_branch": "main",
+    "topics": [
+      "aarch64",
+      "amd64",
+      "docker",
+      "docker-image",
+      "oracle",
+      "oracle-linux",
+      "oracle-support"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/solaris-openssl-fips",
+    "description": "Solaris OpenSSL FIPS ",
+    "html_url": "https://github.com/oracle/solaris-openssl-fips",
+    "stargazers_count": 5,
+    "forks_count": 5,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-03-12T11:31:02Z",
+    "pushed_at": "2022-03-30T20:31:32Z",
+    "updated_at": "2025-08-19T21:58:33Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/libdtrace-ctf",
+    "description": "libdtrace-ctf is the Compact Type Format library used by DTrace on Linux",
+    "html_url": "https://github.com/oracle/libdtrace-ctf",
+    "stargazers_count": 49,
+    "forks_count": 8,
+    "open_issues_count": 0,
+    "watchers_count": 49,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-03-07T05:57:32Z",
+    "pushed_at": "2023-03-31T22:36:19Z",
+    "updated_at": "2026-07-17T14:53:48Z",
+    "default_branch": "master",
+    "topics": [
+      "dtrace",
+      "linux"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/dtrace",
+    "description": "DTrace-utils contains the DTrace port to Linux",
+    "html_url": "https://github.com/oracle/dtrace",
+    "stargazers_count": 190,
+    "forks_count": 23,
+    "open_issues_count": 35,
+    "watchers_count": 190,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-03-07T05:45:16Z",
+    "pushed_at": "2026-08-29T06:06:09Z",
+    "updated_at": "2026-08-28T17:52:35Z",
+    "default_branch": "devel",
+    "topics": [
+      "dtrace",
+      "kernel",
+      "linux",
+      "linux-kernel",
+      "tracing"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/weblogic-deploy-tooling",
+    "description": "WebLogic Deploy Tooling",
+    "html_url": "https://github.com/oracle/weblogic-deploy-tooling",
+    "stargazers_count": 166,
+    "forks_count": 89,
+    "open_issues_count": 20,
+    "watchers_count": 166,
+    "language": "Python",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-02-07T18:08:30Z",
+    "pushed_at": "2026-09-04T03:26:33Z",
+    "updated_at": "2026-08-19T02:15:13Z",
+    "default_branch": "main",
+    "topics": [
+      "automation",
+      "continuous-testing",
+      "python",
+      "wdt",
+      "weblogic"
+    ],
+    "homepage": "https://oracle.github.io/weblogic-deploy-tooling/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/linux-uek",
+    "description": "Oracle Linux UEK: Unbreakable Enterprise Kernel",
+    "html_url": "https://github.com/oracle/linux-uek",
+    "stargazers_count": 357,
+    "forks_count": 91,
+    "open_issues_count": 5,
+    "watchers_count": 357,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-01-13T05:00:58Z",
+    "pushed_at": "2026-09-04T00:15:49Z",
+    "updated_at": "2026-08-28T16:13:14Z",
+    "default_branch": "main",
+    "topics": [
+      "kernel",
+      "linux",
+      "linux-kernel",
+      "oracle",
+      "uek"
+    ],
+    "homepage": "https://blogs.oracle.com/linuxkernel",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/vagrant-projects",
+    "description": "Vagrant projects for Oracle products and other examples",
+    "html_url": "https://github.com/oracle/vagrant-projects",
+    "stargazers_count": 1010,
+    "forks_count": 486,
+    "open_issues_count": 8,
+    "watchers_count": 1010,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-12-20T01:49:01Z",
+    "pushed_at": "2026-08-31T22:40:46Z",
+    "updated_at": "2026-08-31T22:40:54Z",
+    "default_branch": "main",
+    "topics": [
+      "oracle",
+      "vagrant",
+      "vagrant-boxes",
+      "vagrant-virtual-machine",
+      "vagrantfiles",
+      "virtualbox",
+      "virtualbox-vm"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/db-sharding",
+    "description": "Oracle Sharded database deployment automation and tools for use in client applications.",
+    "html_url": "https://github.com/oracle/db-sharding",
+    "stargazers_count": 38,
+    "forks_count": 19,
+    "open_issues_count": 32,
+    "watchers_count": 38,
+    "language": "HCL",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-12-12T19:57:33Z",
+    "pushed_at": "2026-05-27T20:59:43Z",
+    "updated_at": "2026-05-27T20:59:49Z",
+    "default_branch": "master",
+    "topics": [
+      "chunk",
+      "cross-shard-queries",
+      "fault-isolation",
+      "geodistributedsystems",
+      "globaldatabase",
+      "mid-tier-routing",
+      "middleware",
+      "oci",
+      "oci-terraform-modules",
+      "oracle-database",
+      "oracle-database-sharding",
+      "oracle-sharding",
+      "scale-out",
+      "sdb",
+      "sdb-terraform",
+      "sharding",
+      "sharding-on-oci-marketplace",
+      "shards",
+      "terraform-modules",
+      "terraform-scripts"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/offline-persistence-toolkit",
+    "description": "Offline Persistence Toolkit for Javascript Applications",
+    "html_url": "https://github.com/oracle/offline-persistence-toolkit",
+    "stargazers_count": 47,
+    "forks_count": 8,
+    "open_issues_count": 3,
+    "watchers_count": 47,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-12-05T20:00:23Z",
+    "pushed_at": "2024-08-14T14:18:59Z",
+    "updated_at": "2025-04-04T04:32:29Z",
+    "default_branch": "master",
+    "topics": [
+      "javascript",
+      "oraclejet"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/weblogic-kubernetes-operator",
+    "description": "WebLogic Kubernetes Operator",
+    "html_url": "https://github.com/oracle/weblogic-kubernetes-operator",
+    "stargazers_count": 267,
+    "forks_count": 219,
+    "open_issues_count": 23,
+    "watchers_count": 267,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-12-05T19:11:06Z",
+    "pushed_at": "2026-09-04T03:28:43Z",
+    "updated_at": "2026-08-31T21:14:26Z",
+    "default_branch": "main",
+    "topics": [
+      "kubernetes",
+      "operator",
+      "weblogic",
+      "weblogic-server"
+    ],
+    "homepage": "https://oracle.github.io/weblogic-kubernetes-operator/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-go-sdk",
+    "description": "Go SDK for Oracle Cloud Infrastructure ",
+    "html_url": "https://github.com/oracle/oci-go-sdk",
+    "stargazers_count": 213,
+    "forks_count": 102,
+    "open_issues_count": 52,
+    "watchers_count": 213,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-11-20T21:30:35Z",
+    "pushed_at": "2026-09-01T15:57:01Z",
+    "updated_at": "2026-09-01T16:27:42Z",
+    "default_branch": "master",
+    "topics": [
+      "cloud",
+      "go",
+      "oracle-cloud",
+      "oracle-cloud-infrastructure",
+      "sdk"
+    ],
+    "homepage": "https://cloud.oracle.com/cloud-infrastructure",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-compute-jenkins-plugin",
+    "description": "Jenkins Plugin for Oracle Cloud Infrastructure (Compute)",
+    "html_url": "https://github.com/oracle/oci-compute-jenkins-plugin",
+    "stargazers_count": 15,
+    "forks_count": 12,
+    "open_issues_count": 14,
+    "watchers_count": 15,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-11-16T20:01:00Z",
+    "pushed_at": "2026-04-18T01:08:45Z",
+    "updated_at": "2026-07-12T07:35:20Z",
+    "default_branch": "master",
+    "topics": [
+      "cloud",
+      "jenkins",
+      "oci",
+      "oracle-cloud",
+      "oracle-cloud-infrastructure"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/weblogic-monitoring-exporter",
+    "description": "WebLogic Monitoring Exporter exposes metrics and monitoring data through REST APIs for consumption by other tools (e.g. Prometheus)",
+    "html_url": "https://github.com/oracle/weblogic-monitoring-exporter",
+    "stargazers_count": 112,
+    "forks_count": 84,
+    "open_issues_count": 25,
+    "watchers_count": 112,
+    "language": "Java",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-11-09T15:00:13Z",
+    "pushed_at": "2026-08-28T18:02:27Z",
+    "updated_at": "2026-08-28T18:12:16Z",
+    "default_branch": "main",
+    "topics": [
+      "monitoring",
+      "prometheus",
+      "weblogic"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/rds-tools",
+    "description": "Reliable Datagram Sockets Tools -  rds-ping, rds-info, rds-stress",
+    "html_url": "https://github.com/oracle/rds-tools",
+    "stargazers_count": 10,
+    "forks_count": 9,
+    "open_issues_count": 0,
+    "watchers_count": 10,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-10-11T23:04:51Z",
+    "pushed_at": "2024-08-12T23:56:45Z",
+    "updated_at": "2025-04-04T04:32:32Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-cloud-controller-manager",
+    "description": "Kubernetes Cloud Controller Manager implementation for Oracle Cloud Infrastructure",
+    "html_url": "https://github.com/oracle/oci-cloud-controller-manager",
+    "stargazers_count": 158,
+    "forks_count": 107,
+    "open_issues_count": 76,
+    "watchers_count": 158,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-09-06T00:40:07Z",
+    "pushed_at": "2026-07-10T05:25:58Z",
+    "updated_at": "2026-07-29T08:32:21Z",
+    "default_branch": "master",
+    "topics": [
+      "kubernetes",
+      "kubernetes-cluster",
+      "oracle-cloud",
+      "oracle-cloud-infrastructure"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/solaris-ips",
+    "description": "Solaris IPS: Image Packaging System",
+    "html_url": "https://github.com/oracle/solaris-ips",
+    "stargazers_count": 76,
+    "forks_count": 21,
+    "open_issues_count": 0,
+    "watchers_count": 76,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-04-04T02:38:10Z",
+    "pushed_at": "2026-08-20T23:17:30Z",
+    "updated_at": "2026-08-20T23:17:39Z",
+    "default_branch": "master",
+    "topics": [
+      "solaris"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/cordova-plugin-oracle-idm-auth",
+    "description": "Cordova Plugin for Oracle IDM Auth",
+    "html_url": "https://github.com/oracle/cordova-plugin-oracle-idm-auth",
+    "stargazers_count": 12,
+    "forks_count": 5,
+    "open_issues_count": 4,
+    "watchers_count": 12,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-03-30T20:27:47Z",
+    "pushed_at": "2024-07-29T14:32:43Z",
+    "updated_at": "2025-04-04T04:32:19Z",
+    "default_branch": "master",
+    "topics": [
+      "cordova",
+      "cordova-plugin",
+      "oraclejet"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/cordova-plugin-wkwebview-file-xhr",
+    "description": "Cordova Plugin for WebView File XHR",
+    "html_url": "https://github.com/oracle/cordova-plugin-wkwebview-file-xhr",
+    "stargazers_count": 139,
+    "forks_count": 114,
+    "open_issues_count": 12,
+    "watchers_count": 139,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-03-30T20:27:03Z",
+    "pushed_at": "2024-03-13T11:14:56Z",
+    "updated_at": "2026-07-13T08:07:45Z",
+    "default_branch": "master",
+    "topics": [
+      "cordova",
+      "cordova-plugin",
+      "oraclejet"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/solaris-userland",
+    "description": "Open Source software in Solaris using gmake based build system to drive building various software components.",
+    "html_url": "https://github.com/oracle/solaris-userland",
+    "stargazers_count": 183,
+    "forks_count": 69,
+    "open_issues_count": 7,
+    "watchers_count": 183,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-03-14T22:21:25Z",
+    "pushed_at": "2026-09-03T08:42:32Z",
+    "updated_at": "2026-09-03T08:45:15Z",
+    "default_branch": "master",
+    "topics": [
+      "solaris"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/olcut",
+    "description": "A Java configuration, shell, and general utility toolkit",
+    "html_url": "https://github.com/oracle/olcut",
+    "stargazers_count": 36,
+    "forks_count": 9,
+    "open_issues_count": 3,
+    "watchers_count": 36,
+    "language": "Java",
+    "license": {
+      "spdx_id": "BSD-2-Clause",
+      "name": "BSD 2-Clause \"Simplified\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-03-14T15:54:55Z",
+    "pushed_at": "2026-07-24T12:52:01Z",
+    "updated_at": "2026-07-07T01:34:26Z",
+    "default_branch": "main",
+    "topics": [
+      "command-line-arguments",
+      "command-shell",
+      "configuration",
+      "dependency-injection-framework",
+      "java",
+      "options-parsing",
+      "provenance"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/python-cx_Oracle",
+    "description": "Obsolete Python interface to Oracle Database, now superseded by python-oracledb",
+    "html_url": "https://github.com/oracle/python-cx_Oracle",
+    "stargazers_count": 887,
+    "forks_count": 363,
+    "open_issues_count": 19,
+    "watchers_count": 887,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-03-07T04:03:36Z",
+    "pushed_at": "2025-05-26T23:53:29Z",
+    "updated_at": "2026-08-18T11:24:42Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://oracle.github.io/python-oracledb/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/ojet-cli",
+    "description": "Oracle JET Command Line Interface",
+    "html_url": "https://github.com/oracle/ojet-cli",
+    "stargazers_count": 24,
+    "forks_count": 13,
+    "open_issues_count": 1,
+    "watchers_count": 24,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-03-03T22:20:51Z",
+    "pushed_at": "2026-08-17T17:27:54Z",
+    "updated_at": "2026-08-17T17:28:17Z",
+    "default_branch": "master",
+    "topics": [
+      "oraclejet"
+    ],
+    "homepage": "https://oracle.com/jet",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/odpi",
+    "description": "ODPI-C: Oracle Database Programming Interface for Drivers and Applications",
+    "html_url": "https://github.com/oracle/odpi",
+    "stargazers_count": 291,
+    "forks_count": 96,
+    "open_issues_count": 22,
+    "watchers_count": 291,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-01-11T23:58:53Z",
+    "pushed_at": "2026-08-27T17:02:54Z",
+    "updated_at": "2026-09-02T09:45:57Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://oracle.github.io/odpi/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-java-sdk",
+    "description": "Oracle Cloud Infrastructure SDK for Java",
+    "html_url": "https://github.com/oracle/oci-java-sdk",
+    "stargazers_count": 242,
+    "forks_count": 171,
+    "open_issues_count": 72,
+    "watchers_count": 242,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-12-06T04:05:39Z",
+    "pushed_at": "2026-09-01T18:08:22Z",
+    "updated_at": "2026-09-01T18:19:49Z",
+    "default_branch": "master",
+    "topics": [
+      "oracle-cloud",
+      "sdk"
+    ],
+    "homepage": "https://cloud.oracle.com/cloud-infrastructure",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/terraform-provider-oci",
+    "description": "Terraform Oracle Cloud Infrastructure provider",
+    "html_url": "https://github.com/oracle/terraform-provider-oci",
+    "stargazers_count": 869,
+    "forks_count": 753,
+    "open_issues_count": 509,
+    "watchers_count": 869,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-11-04T04:50:57Z",
+    "pushed_at": "2026-09-02T07:40:46Z",
+    "updated_at": "2026-09-02T07:18:19Z",
+    "default_branch": "master",
+    "topics": [
+      "bare-metal",
+      "iaas",
+      "oci",
+      "oracle",
+      "oracle-cloud",
+      "oracle-cloud-infrastructure",
+      "orchestration",
+      "terraform",
+      "terraform-provider"
+    ],
+    "homepage": "https://www.terraform.io/docs/providers/oci/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-hdfs-connector",
+    "description": "HDFS Connector for Oracle Cloud Infrastructure",
+    "html_url": "https://github.com/oracle/oci-hdfs-connector",
+    "stargazers_count": 36,
+    "forks_count": 27,
+    "open_issues_count": 10,
+    "watchers_count": 36,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-11-04T04:50:39Z",
+    "pushed_at": "2026-06-24T14:39:58Z",
+    "updated_at": "2026-07-30T20:14:53Z",
+    "default_branch": "master",
+    "topics": [
+      "cloud",
+      "hdfs",
+      "oracle-cloud"
+    ],
+    "homepage": "https://cloud.oracle.com/cloud-infrastructure",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-python-sdk",
+    "description": "Oracle Cloud Infrastructure SDK for Python",
+    "html_url": "https://github.com/oracle/oci-python-sdk",
+    "stargazers_count": 475,
+    "forks_count": 321,
+    "open_issues_count": 93,
+    "watchers_count": 475,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-11-04T04:50:20Z",
+    "pushed_at": "2026-09-01T05:14:19Z",
+    "updated_at": "2026-09-01T05:15:29Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://cloud.oracle.com/cloud-infrastructure",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-ruby-sdk",
+    "description": "Ruby SDK for Oracle Cloud Infrastructure",
+    "html_url": "https://github.com/oracle/oci-ruby-sdk",
+    "stargazers_count": 30,
+    "forks_count": 19,
+    "open_issues_count": 7,
+    "watchers_count": 30,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-11-04T04:49:57Z",
+    "pushed_at": "2026-07-28T08:34:20Z",
+    "updated_at": "2026-07-30T20:14:55Z",
+    "default_branch": "master",
+    "topics": [
+      "cloud",
+      "oracle-cloud",
+      "oracle-cloud-infrastructure",
+      "ruby",
+      "sdk"
+    ],
+    "homepage": "https://cloud.oracle.com/cloud-infrastructure",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oci-cli",
+    "description": "Command Line Interface for Oracle Cloud Infrastructure",
+    "html_url": "https://github.com/oracle/oci-cli",
+    "stargazers_count": 663,
+    "forks_count": 235,
+    "open_issues_count": 194,
+    "watchers_count": 663,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-11-04T04:49:14Z",
+    "pushed_at": "2026-09-01T05:50:25Z",
+    "updated_at": "2026-09-01T19:20:18Z",
+    "default_branch": "master",
+    "topics": [
+      "bare-metal",
+      "cli",
+      "cloud",
+      "infrastructure"
+    ],
+    "homepage": "https://cloud.oracle.com/cloud-infrastructure",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/visualvm",
+    "description": "VisualVM is an All-in-One Java Troubleshooting Tool",
+    "html_url": "https://github.com/oracle/visualvm",
+    "stargazers_count": 3262,
+    "forks_count": 335,
+    "open_issues_count": 98,
+    "watchers_count": 3262,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-09-12T14:44:30Z",
+    "pushed_at": "2026-08-16T08:34:37Z",
+    "updated_at": "2026-09-03T22:27:50Z",
+    "default_branch": "master",
+    "topics": [
+      "java",
+      "monitoring-tool",
+      "performance",
+      "profiler",
+      "visualvm"
+    ],
+    "homepage": "https://visualvm.github.io/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/oraclejet-tooling",
+    "description": null,
+    "html_url": "https://github.com/oracle/oraclejet-tooling",
+    "stargazers_count": 13,
+    "forks_count": 8,
+    "open_issues_count": 1,
+    "watchers_count": 13,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-08-17T19:52:12Z",
+    "pushed_at": "2026-08-17T17:30:41Z",
+    "updated_at": "2026-08-17T17:31:30Z",
+    "default_branch": "master",
+    "topics": [
+      "oracle-jet",
+      "oraclejet"
+    ],
+    "homepage": "https://oracle.com/jet",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/puppet-solaris_providers",
+    "description": "Oracle Solaris Puppet Module",
+    "html_url": "https://github.com/oracle/puppet-solaris_providers",
+    "stargazers_count": 11,
+    "forks_count": 20,
+    "open_issues_count": 5,
+    "watchers_count": 11,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-08-16T15:09:59Z",
+    "pushed_at": "2026-07-13T08:43:04Z",
+    "updated_at": "2026-07-13T08:43:44Z",
+    "default_branch": "master",
+    "topics": [
+      "puppet",
+      "solaris"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/pgql-lang",
+    "description": "PGQL is an SQL-based query language for property graphs",
+    "html_url": "https://github.com/oracle/pgql-lang",
+    "stargazers_count": 205,
+    "forks_count": 38,
+    "open_issues_count": 2,
+    "watchers_count": 205,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-06-21T19:45:40Z",
+    "pushed_at": "2025-06-16T19:15:14Z",
+    "updated_at": "2026-06-30T14:57:20Z",
+    "default_branch": "main",
+    "topics": [
+      "graph-database",
+      "graph-queries",
+      "graphql",
+      "oracle",
+      "pgql",
+      "query-language"
+    ],
+    "homepage": "https://pgql-lang.org/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/oraclejet",
+    "description": "Oracle JET is a modular JavaScript Extension Toolkit for developers working on client-side applications.",
+    "html_url": "https://github.com/oracle/oraclejet",
+    "stargazers_count": 538,
+    "forks_count": 116,
+    "open_issues_count": 53,
+    "watchers_count": 538,
+    "language": null,
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-01-19T00:35:28Z",
+    "pushed_at": "2026-08-17T17:23:06Z",
+    "updated_at": "2026-08-22T11:03:50Z",
+    "default_branch": "master",
+    "topics": [
+      "oraclejet"
+    ],
+    "homepage": "https://oracle.com/jet",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/graal",
+    "description": "GraalVM compiles applications into native executables that start instantly, scale fast, and use fewer compute resources 🚀",
+    "html_url": "https://github.com/oracle/graal",
+    "stargazers_count": 21684,
+    "forks_count": 1815,
+    "open_issues_count": 849,
+    "watchers_count": 21684,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-01-14T17:11:35Z",
+    "pushed_at": "2026-09-04T00:27:49Z",
+    "updated_at": "2026-09-04T00:17:59Z",
+    "default_branch": "master",
+    "topics": [
+      "aot",
+      "compiler",
+      "graalvm",
+      "java"
+    ],
+    "homepage": "https://www.graalvm.org",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/soda-for-java",
+    "description": "SODA (Simple Oracle Document Access) for Java is an Oracle library for writing Java apps that work with JSON (and not only JSON!) in the Oracle Database. SODA allows your Java app to use the Oracle Database as a NoSQL document store.",
+    "html_url": "https://github.com/oracle/soda-for-java",
+    "stargazers_count": 74,
+    "forks_count": 23,
+    "open_issues_count": 14,
+    "watchers_count": 74,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-10-06T15:27:19Z",
+    "pushed_at": "2025-05-02T20:40:44Z",
+    "updated_at": "2026-08-31T03:52:07Z",
+    "default_branch": "master",
+    "topics": [
+      "crud",
+      "fulltext-search",
+      "java",
+      "jdbc",
+      "json",
+      "json-data",
+      "no-sql",
+      "nosql",
+      "nosql-database",
+      "oracle-database",
+      "persistence",
+      "rest",
+      "soda",
+      "sql",
+      "text-search"
+    ],
+    "homepage": "http://www.oracle.com/technetwork/database/application-development/oracle-document-store/index.html",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/fastr",
+    "description": "A high-performance implementation of the R programming language, built on GraalVM.",
+    "html_url": "https://github.com/oracle/fastr",
+    "stargazers_count": 648,
+    "forks_count": 65,
+    "open_issues_count": 81,
+    "watchers_count": 648,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-09-24T13:20:14Z",
+    "pushed_at": "2026-07-30T13:46:18Z",
+    "updated_at": "2026-08-19T00:35:56Z",
+    "default_branch": "master",
+    "topics": [
+      "graalvm",
+      "r",
+      "r-language"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/oracle-db-tools",
+    "description": "This project is a repository of sample code that will demonstrate various concepts to assist developers in building applications around Oracle Database technologies. SDKs and scripts will be available to integrate with SQL Developer, Data Modeler, Oracle REST Data Services and DBaaS.  ",
+    "html_url": "https://github.com/oracle/oracle-db-tools",
+    "stargazers_count": 310,
+    "forks_count": 110,
+    "open_issues_count": 24,
+    "watchers_count": 310,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-09-07T18:42:08Z",
+    "pushed_at": "2025-11-06T17:17:28Z",
+    "updated_at": "2026-07-25T02:39:19Z",
+    "default_branch": "master",
+    "topics": [
+      "oracle-database"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/node-oracledb",
+    "description": "Oracle Database driver for Node.js maintained by Oracle Corporation. Connect your JavaScript and TypeScript applications instantly to Oracle Database.",
+    "html_url": "https://github.com/oracle/node-oracledb",
+    "stargazers_count": 2367,
+    "forks_count": 1073,
+    "open_issues_count": 29,
+    "watchers_count": 2367,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-12-30T00:53:54Z",
+    "pushed_at": "2026-08-12T12:15:59Z",
+    "updated_at": "2026-09-01T19:27:09Z",
+    "default_branch": "main",
+    "topics": [
+      "api",
+      "database",
+      "development",
+      "driver",
+      "interface",
+      "javascript",
+      "module",
+      "node",
+      "node-oracledb",
+      "nodejs",
+      "oracle",
+      "oracle-database-driver",
+      "typescript"
+    ],
+    "homepage": "http://oracle.github.io/node-oracledb/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/docker-images",
+    "description": "Official source of container configurations, images, and examples for Oracle products and projects",
+    "html_url": "https://github.com/oracle/docker-images",
+    "stargazers_count": 6998,
+    "forks_count": 5439,
+    "open_issues_count": 186,
+    "watchers_count": 6998,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-12-19T18:53:18Z",
+    "pushed_at": "2026-09-02T22:53:10Z",
+    "updated_at": "2026-09-02T22:53:18Z",
+    "default_branch": "main",
+    "topics": [
+      "coherence-ce",
+      "docker",
+      "docker-images",
+      "dockerfile",
+      "dockerfiles",
+      "graalvm",
+      "nosql",
+      "oci",
+      "oracle",
+      "oracle-commercial",
+      "oracle-database",
+      "oracle-instantclient",
+      "oracle-linux",
+      "oracle-products",
+      "oraclelinux"
+    ],
+    "homepage": "https://developer.oracle.com/use-cases/#containers",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/dotnet-db-samples",
+    "description": ".NET code samples for Oracle database developers #OracleDotNet",
+    "html_url": "https://github.com/oracle/dotnet-db-samples",
+    "stargazers_count": 435,
+    "forks_count": 191,
+    "open_issues_count": 22,
+    "watchers_count": 435,
+    "language": "C#",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-07-31T17:26:32Z",
+    "pushed_at": "2026-04-14T14:29:11Z",
+    "updated_at": "2026-09-01T18:10:23Z",
+    "default_branch": "master",
+    "topics": [
+      "asp-net",
+      "autonomous-database",
+      "c-sharp",
+      "dotnet",
+      "odp",
+      "opdnet",
+      "oracle",
+      "oracle-database",
+      "oracle-db",
+      "oracle-developer",
+      "oracle-providers",
+      "oracle-xe",
+      "tutorial",
+      "visual-studio"
+    ],
+    "homepage": "http://otn.oracle.com/dotnet",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/json-in-db",
+    "description": "Oracle Database JSON Examples",
+    "html_url": "https://github.com/oracle/json-in-db",
+    "stargazers_count": 102,
+    "forks_count": 54,
+    "open_issues_count": 4,
+    "watchers_count": 102,
+    "language": "Java",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-06-10T01:37:36Z",
+    "pushed_at": "2026-05-04T20:34:13Z",
+    "updated_at": "2026-05-26T08:40:14Z",
+    "default_branch": "master",
+    "topics": [
+      "json",
+      "oracle-database"
+    ],
+    "homepage": "https://docs.oracle.com/en/database/oracle/oracle-database/19/adjsn/index.html",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oracle/nosql-examples",
+    "description": "This is a top level repository for code examples related to the use of Oracle NoSQL Database.",
+    "html_url": "https://github.com/oracle/nosql-examples",
+    "stargazers_count": 62,
+    "forks_count": 51,
+    "open_issues_count": 1,
+    "watchers_count": 62,
+    "language": "Jupyter Notebook",
+    "license": {
+      "spdx_id": "UPL-1.0",
+      "name": "Universal Permissive License v1.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-06-10T01:31:38Z",
+    "pushed_at": "2026-08-13T19:51:05Z",
+    "updated_at": "2026-07-30T05:53:36Z",
+    "default_branch": "master",
+    "topics": [
+      "api",
+      "awesome",
+      "cloud",
+      "database",
+      "examples",
+      "functions",
+      "java",
+      "node-js",
+      "nosql",
+      "nosql-database",
+      "oci",
+      "on-premise",
+      "oracle",
+      "oracle-cloud",
+      "oracle-nosql-database",
+      "python",
+      "spring",
+      "spring-data",
+      "stream",
+      "terraform"
+    ],
+    "homepage": "https://www.oracle.com/database/nosql/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oracle/opengrok",
+    "description": "OpenGrok is a fast and usable source code search and cross reference engine, written in Java",
+    "html_url": "https://github.com/oracle/opengrok",
+    "stargazers_count": 4932,
+    "forks_count": 835,
+    "open_issues_count": 547,
+    "watchers_count": 4932,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2013-01-07T11:49:18Z",
+    "pushed_at": "2026-09-02T20:03:47Z",
+    "updated_at": "2026-09-04T02:58:11Z",
+    "default_branch": "master",
+    "topics": [
+      "code",
+      "engine",
+      "java",
+      "maven",
+      "opengrok",
+      "search",
+      "source"
+    ],
+    "homepage": "http://oracle.github.io/opengrok/",
+    "snapshot_date": "2026-09-04",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  }
+]
