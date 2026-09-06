@@ -1,0 +1,3810 @@
+[
+  {
+    "full_name": "huaweicloud/devspace-devbox",
+    "description": "开发者环境沙箱端侧项目，包含SDK、CLI",
+    "html_url": "https://github.com/huaweicloud/devspace-devbox",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 3,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-09-01T05:42:43Z",
+    "pushed_at": "2026-09-04T07:16:51Z",
+    "updated_at": "2026-09-04T07:15:38Z",
+    "default_branch": "main",
+    "topics": [
+      "cli",
+      "js",
+      "python",
+      "sdk"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/community-board-pages",
+    "description": "huaweicloud board page (generated)",
+    "html_url": "https://github.com/huaweicloud/community-board-pages",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-06T07:18:56Z",
+    "pushed_at": "2026-09-06T05:42:32Z",
+    "updated_at": "2026-09-06T05:42:37Z",
+    "default_branch": "gh-pages",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/devspace-aicli-plugins",
+    "description": "hwcloud 的 wasm 插件，定制化功能",
+    "html_url": "https://github.com/huaweicloud/devspace-aicli-plugins",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 2,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-05T06:40:28Z",
+    "pushed_at": "2026-08-05T06:41:20Z",
+    "updated_at": "2026-08-05T06:41:05Z",
+    "default_branch": "main",
+    "topics": [
+      "aicli",
+      "hwcloud",
+      "wasm"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/repository-requests",
+    "description": "huaweicloud 组织建仓机器人：提交建仓申请 Issue → 校验 → 审批 → 自动创建仓库",
+    "html_url": "https://github.com/huaweicloud/repository-requests",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-05T03:09:27Z",
+    "pushed_at": "2026-09-01T07:57:51Z",
+    "updated_at": "2026-09-01T07:59:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/.github",
+    "description": "huaweicloud 组织治理配置中心（Issue/PR 模板、工作流、脚本、规则）",
+    "html_url": "https://github.com/huaweicloud/.github",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 5,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-05T03:09:22Z",
+    "pushed_at": "2026-09-03T09:02:28Z",
+    "updated_at": "2026-09-03T09:05:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-devkit",
+    "description": " Official Huawei Cloud plugin for AI agents — skills, MCP tools, safety guardrails, and cloud sandbox to help AI agents build, deploy, and operate on Huawei Cloud securely.",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-devkit",
+    "stargazers_count": 44,
+    "forks_count": 10,
+    "open_issues_count": 31,
+    "watchers_count": 44,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-28T03:39:51Z",
+    "pushed_at": "2026-09-05T11:33:57Z",
+    "updated_at": "2026-09-04T06:35:09Z",
+    "default_branch": "main",
+    "topics": [
+      "ai-coding",
+      "api",
+      "cli",
+      "cloud",
+      "codex",
+      "deepseek-harness",
+      "dsh",
+      "dsh-plugin",
+      "huaweicloud",
+      "koocli",
+      "mcp",
+      "opencode",
+      "plugins",
+      "sdk",
+      "terraform"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/devspace-devbridge",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/devspace-devbridge",
+    "stargazers_count": 5,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "watchers_count": 5,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-23T03:46:05Z",
+    "pushed_at": "2026-09-05T05:32:39Z",
+    "updated_at": "2026-09-01T02:09:10Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/devspace-aishell",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/devspace-aishell",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-15T08:01:00Z",
+    "pushed_at": "2026-07-15T08:01:02Z",
+    "updated_at": "2026-07-17T11:27:35Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-skills",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-skills",
+    "stargazers_count": 45,
+    "forks_count": 10,
+    "open_issues_count": 2,
+    "watchers_count": 45,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-05-15T09:14:18Z",
+    "pushed_at": "2026-09-03T12:15:01Z",
+    "updated_at": "2026-09-04T11:24:03Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/agentarts-sdk-python",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/agentarts-sdk-python",
+    "stargazers_count": 15,
+    "forks_count": 10,
+    "open_issues_count": 10,
+    "watchers_count": 15,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-15T03:14:35Z",
+    "pushed_at": "2026-08-28T09:27:01Z",
+    "updated_at": "2026-08-28T09:29:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/oasis",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/oasis",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-16T06:42:10Z",
+    "pushed_at": "2025-06-16T18:50:43Z",
+    "updated_at": "2025-06-16T18:50:47Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/cloud-custodian",
+    "description": "Rules engine for cloud security, cost optimization, and governance, DSL in yaml for policies to query, filter, and take actions on resources",
+    "html_url": "https://github.com/huaweicloud/cloud-custodian",
+    "stargazers_count": 20,
+    "forks_count": 68,
+    "open_issues_count": 18,
+    "watchers_count": 20,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-02-06T01:22:26Z",
+    "pushed_at": "2026-08-18T08:14:16Z",
+    "updated_at": "2026-08-18T08:15:24Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://cloudcustodian.io",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-lts-sdk-dotnet",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-lts-sdk-dotnet",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-07-16T06:13:04Z",
+    "pushed_at": "2024-07-16T06:13:04Z",
+    "updated_at": "2024-07-16T06:13:04Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-lts-sdk-cpp",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-lts-sdk-cpp",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-07-16T06:12:05Z",
+    "pushed_at": "2024-07-16T06:12:05Z",
+    "updated_at": "2024-07-16T06:12:05Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-lts-sdk-php",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-lts-sdk-php",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-07-16T06:10:24Z",
+    "pushed_at": "2024-07-16T06:10:24Z",
+    "updated_at": "2024-07-16T06:10:24Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/provider-huaweicloud",
+    "description": "Crossplane provider for Huawei Cloud",
+    "html_url": "https://github.com/huaweicloud/provider-huaweicloud",
+    "stargazers_count": 4,
+    "forks_count": 5,
+    "open_issues_count": 1,
+    "watchers_count": 4,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-05-22T02:39:17Z",
+    "pushed_at": "2025-11-24T11:41:12Z",
+    "updated_at": "2025-11-12T08:32:43Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-device-sdk-arkts",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-device-sdk-arkts",
+    "stargazers_count": 7,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 7,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-03-20T09:17:31Z",
+    "pushed_at": "2025-01-13T12:26:58Z",
+    "updated_at": "2025-07-22T08:55:08Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-device-sdk-ts",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-device-sdk-ts",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-02-27T02:38:47Z",
+    "pushed_at": "2024-03-13T06:02:07Z",
+    "updated_at": "2024-09-30T08:05:22Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-elb-uoa",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-elb-uoa",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "C",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-09-26T11:06:16Z",
+    "pushed_at": "2023-09-28T12:29:18Z",
+    "updated_at": "2024-10-22T02:47:01Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/HUAWEICloudPublicDataset",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/HUAWEICloudPublicDataset",
+    "stargazers_count": 35,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 35,
+    "language": null,
+    "license": {
+      "spdx_id": "CC-BY-4.0",
+      "name": "Creative Commons Attribution 4.0 International"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-17T06:07:09Z",
+    "pushed_at": "2023-08-17T13:27:44Z",
+    "updated_at": "2025-03-27T15:01:50Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud-computing",
+      "dataset"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/terraform-provider-hcs",
+    "description": "Huawei Cloud Stack Terraform provider",
+    "html_url": "https://github.com/huaweicloud/terraform-provider-hcs",
+    "stargazers_count": 40,
+    "forks_count": 15,
+    "open_issues_count": 9,
+    "watchers_count": 40,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-06T02:27:57Z",
+    "pushed_at": "2026-09-04T02:28:47Z",
+    "updated_at": "2026-09-04T02:26:41Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://registry.terraform.io/providers/huaweicloud/hcs/latest/docs",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-device-sdk-go",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-device-sdk-go",
+    "stargazers_count": 4,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "Go",
+    "license": {
+      "spdx_id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-04T02:43:41Z",
+    "pushed_at": "2025-08-01T03:09:47Z",
+    "updated_at": "2025-10-12T21:02:48Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/deploy-functiongraph-workflow-sample",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/deploy-functiongraph-workflow-sample",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-23T07:40:31Z",
+    "pushed_at": "2023-05-23T07:40:32Z",
+    "updated_at": "2023-05-23T07:40:32Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/scp-remote-action",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/scp-remote-action",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-23T07:39:44Z",
+    "pushed_at": "2023-05-23T07:39:45Z",
+    "updated_at": "2023-05-23T07:39:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/ssh-remote-action",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/ssh-remote-action",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-23T07:38:56Z",
+    "pushed_at": "2023-05-23T07:38:56Z",
+    "updated_at": "2023-05-23T07:38:56Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/deploy-ecs-workflow-sample",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/deploy-ecs-workflow-sample",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-23T07:38:10Z",
+    "pushed_at": "2023-05-23T07:38:10Z",
+    "updated_at": "2023-05-23T07:38:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/Maven-cloudartifact-action",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/Maven-cloudartifact-action",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-23T07:37:00Z",
+    "pushed_at": "2023-05-23T07:37:00Z",
+    "updated_at": "2023-05-23T07:37:00Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/Maven-cloudartifact-workflow-samples",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/Maven-cloudartifact-workflow-samples",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-23T07:35:18Z",
+    "pushed_at": "2023-07-03T02:22:41Z",
+    "updated_at": "2023-07-03T02:22:47Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/deploy-cce-workflow-sample",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/deploy-cce-workflow-sample",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-23T07:32:08Z",
+    "pushed_at": "2023-05-23T07:32:10Z",
+    "updated_at": "2023-05-23T07:32:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/cce-cluster-credentials",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/cce-cluster-credentials",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-23T07:30:30Z",
+    "pushed_at": "2023-05-23T07:30:30Z",
+    "updated_at": "2023-05-23T07:30:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/obs-helper-workflow-sample",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/obs-helper-workflow-sample",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-23T07:29:25Z",
+    "pushed_at": "2023-05-29T07:08:53Z",
+    "updated_at": "2023-05-26T02:44:37Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-edge-sdk-csharp",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-edge-sdk-csharp",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-26T07:18:10Z",
+    "pushed_at": "2025-03-04T09:08:31Z",
+    "updated_at": "2025-03-06T02:00:09Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-edge-sdk-go",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-edge-sdk-go",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-26T07:17:19Z",
+    "pushed_at": "2025-03-04T10:43:25Z",
+    "updated_at": "2025-03-04T10:43:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-edge-sdk-java",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-edge-sdk-java",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-26T07:16:09Z",
+    "pushed_at": "2025-03-04T11:03:24Z",
+    "updated_at": "2025-03-04T11:03:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-edge-sdk-c",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-edge-sdk-c",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "CMake",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-26T07:15:16Z",
+    "pushed_at": "2025-03-04T10:03:52Z",
+    "updated_at": "2025-03-04T10:03:56Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-device-sdk-c-tiny",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-device-sdk-c-tiny",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-26T07:11:51Z",
+    "pushed_at": "2023-04-26T07:11:52Z",
+    "updated_at": "2023-04-26T07:11:52Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/deploy-functiongraph-action",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/deploy-functiongraph-action",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-07T07:44:01Z",
+    "pushed_at": "2023-04-07T07:44:02Z",
+    "updated_at": "2023-04-07T07:44:23Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-lts-sdk-python",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-lts-sdk-python",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-02T11:57:48Z",
+    "pushed_at": "2023-03-02T11:57:48Z",
+    "updated_at": "2023-03-02T11:57:48Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-lts-sdk-go",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-lts-sdk-go",
+    "stargazers_count": 4,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-02T11:57:00Z",
+    "pushed_at": "2025-05-27T07:17:34Z",
+    "updated_at": "2025-05-27T07:17:38Z",
+    "default_branch": "out.github",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-lts-sdk-java",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-lts-sdk-java",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-02T11:55:39Z",
+    "pushed_at": "2023-03-06T11:46:10Z",
+    "updated_at": "2023-03-02T11:55:39Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/c2far_forecasting",
+    "description": "This repository contains code for the paper: S Bergsma, T Zeyl, JR Anaraki, L Guo, C2FAR: Coarse-to-Fine Autoregressive Networks for Precise Probabilistic Forecasting, In NeurIPS'22",
+    "html_url": "https://github.com/huaweicloud/c2far_forecasting",
+    "stargazers_count": 13,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 13,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-10-08T03:26:05Z",
+    "pushed_at": "2023-12-07T19:35:14Z",
+    "updated_at": "2025-05-23T22:34:17Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/auth-action",
+    "description": "华为云统一鉴权Action， 此GitHub操作建立对Huawei Cloud的身份验证。它通过Huawei Cloud帐户访问密钥AK,SK进行身份验证。",
+    "html_url": "https://github.com/huaweicloud/auth-action",
+    "stargazers_count": 6,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 6,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-07-15T09:06:46Z",
+    "pushed_at": "2022-08-10T06:56:32Z",
+    "updated_at": "2025-08-06T15:12:26Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/Gradle-cloudartifact-workflow-samples",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/Gradle-cloudartifact-workflow-samples",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-01T08:56:30Z",
+    "pushed_at": "2022-06-01T08:56:48Z",
+    "updated_at": "2022-06-01T08:56:30Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/npm-cloudartifact-workflow-samples",
+    "description": "github workflow samples, 华为云cloudartifact npm私仓推送拉取npm package样例",
+    "html_url": "https://github.com/huaweicloud/npm-cloudartifact-workflow-samples",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-01T08:55:02Z",
+    "pushed_at": "2022-08-11T07:00:48Z",
+    "updated_at": "2022-06-07T02:57:21Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/PyPI-cloudartifact-workflow-samples",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/PyPI-cloudartifact-workflow-samples",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-01T08:43:39Z",
+    "pushed_at": "2022-08-11T03:01:33Z",
+    "updated_at": "2022-06-17T09:52:08Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/PyPI-cloudartifact-action",
+    "description": "github action,支持推送PyPI组件到 CloudArtifact PyPI私仓 和 拉取CloudArtifact npm 私仓的PyPI组件",
+    "html_url": "https://github.com/huaweicloud/PyPI-cloudartifact-action",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-01T08:42:19Z",
+    "pushed_at": "2022-08-11T02:55:57Z",
+    "updated_at": "2022-06-20T01:53:40Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/npm-cloudartifact-action",
+    "description": "github action,支持推送npm组件到 CloudArtifact npm 私仓 和 拉取CloudArtifact npm 私仓的npm组件",
+    "html_url": "https://github.com/huaweicloud/npm-cloudartifact-action",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-01T08:39:39Z",
+    "pushed_at": "2022-08-11T06:48:35Z",
+    "updated_at": "2023-05-06T20:24:14Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huawei-qingtian",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huawei-qingtian",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-05-25T01:49:02Z",
+    "pushed_at": "2022-05-25T01:49:02Z",
+    "updated_at": "2022-05-30T07:00:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/swr-multiplatform-build-workflow-samples",
+    "description": "github workflow样例,制作跨平台docker镜像并推送到SWR",
+    "html_url": "https://github.com/huaweicloud/swr-multiplatform-build-workflow-samples",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "CSS",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-05-18T11:51:30Z",
+    "pushed_at": "2022-08-10T09:21:25Z",
+    "updated_at": "2023-02-23T06:36:21Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/swr-multiplatform-build-action",
+    "description": "github action,制作跨平台docker镜像并推送到SWR",
+    "html_url": "https://github.com/huaweicloud/swr-multiplatform-build-action",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-05-18T11:50:29Z",
+    "pushed_at": "2022-08-25T09:03:50Z",
+    "updated_at": "2025-08-19T01:43:51Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/deploy-cci-workflow-sample",
+    "description": "github workflow样例，开发者可以参考该样例将自己的业务部署到华为云CCI服务",
+    "html_url": "https://github.com/huaweicloud/deploy-cci-workflow-sample",
+    "stargazers_count": 4,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "CSS",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-05-07T06:47:08Z",
+    "pushed_at": "2022-08-15T03:19:26Z",
+    "updated_at": "2024-06-12T19:34:43Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/deploy-cci-action",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/deploy-cci-action",
+    "stargazers_count": 5,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-30T06:25:31Z",
+    "pushed_at": "2024-07-10T10:34:19Z",
+    "updated_at": "2023-05-24T10:06:05Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-device-sdk-python",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-device-sdk-python",
+    "stargazers_count": 14,
+    "forks_count": 5,
+    "open_issues_count": 2,
+    "watchers_count": 14,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-29T13:38:19Z",
+    "pushed_at": "2024-08-15T03:16:27Z",
+    "updated_at": "2026-02-25T02:12:16Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/VM-placement-dataset",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/VM-placement-dataset",
+    "stargazers_count": 16,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 16,
+    "language": "Jupyter Notebook",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-13T02:48:52Z",
+    "pushed_at": "2022-01-18T07:12:43Z",
+    "updated_at": "2026-07-29T08:43:47Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sparkrtc-demo",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sparkrtc-demo",
+    "stargazers_count": 3,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-22T07:22:18Z",
+    "pushed_at": "2024-01-16T06:44:21Z",
+    "updated_at": "2025-03-20T08:27:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/devcloud-go",
+    "description": "Devcloud-go provides a sql-driver for mysql and a redis client, and a high performance high reliable kafka message component，see details in README.md",
+    "html_url": "https://github.com/huaweicloud/devcloud-go",
+    "stargazers_count": 12,
+    "forks_count": 10,
+    "open_issues_count": 0,
+    "watchers_count": 12,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-17T07:32:21Z",
+    "pushed_at": "2024-12-25T03:13:38Z",
+    "updated_at": "2026-05-05T08:25:09Z",
+    "default_branch": "main",
+    "topics": [
+      "kafka",
+      "mysql",
+      "redis"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/cloudeye-grafana",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/cloudeye-grafana",
+    "stargazers_count": 20,
+    "forks_count": 11,
+    "open_issues_count": 5,
+    "watchers_count": 20,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-17T07:29:45Z",
+    "pushed_at": "2024-09-24T14:39:23Z",
+    "updated_at": "2026-05-07T09:28:33Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/spring-boot-huawei",
+    "description": "SpringBoot Starters and Dependency Management for SpringBoot Applications and HuaweiCloud Services.",
+    "html_url": "https://github.com/huaweicloud/spring-boot-huawei",
+    "stargazers_count": 19,
+    "forks_count": 14,
+    "open_issues_count": 0,
+    "watchers_count": 19,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-17T07:18:01Z",
+    "pushed_at": "2022-11-10T09:42:47Z",
+    "updated_at": "2025-04-21T09:41:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/dws_ai_native",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/dws_ai_native",
+    "stargazers_count": 5,
+    "forks_count": 4,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MulanPSL-2.0",
+      "name": "Mulan Permissive Software License, Version 2"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-19T02:04:05Z",
+    "pushed_at": "2026-06-25T03:14:32Z",
+    "updated_at": "2026-07-08T08:07:47Z",
+    "default_branch": "dws_autopilot_mcp_server",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/baseline-combine-engine",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/baseline-combine-engine",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-09-18T03:23:37Z",
+    "pushed_at": "2021-09-18T03:23:38Z",
+    "updated_at": "2022-03-03T08:12:38Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/trace_generation_rnn",
+    "description": "This repository contains code for the paper: Bergsma S., Zeyl T., Senderovich A., and Beck J. C., \"Generating Complex, Realistic Cloud Workloads using Recurrent Neural Networks\", SOSP 2021",
+    "html_url": "https://github.com/huaweicloud/trace_generation_rnn",
+    "stargazers_count": 41,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 41,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-09-16T02:20:00Z",
+    "pushed_at": "2021-11-11T21:18:05Z",
+    "updated_at": "2026-07-18T14:00:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/swr-login",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/swr-login",
+    "stargazers_count": 3,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-04-08T03:18:14Z",
+    "pushed_at": "2022-08-10T07:18:26Z",
+    "updated_at": "2024-09-13T02:07:43Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/cloudide-nls",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/cloudide-nls",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-13T06:17:17Z",
+    "pushed_at": "2022-09-24T03:20:58Z",
+    "updated_at": "2024-07-03T11:31:56Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-ruby-v3",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-ruby-v3",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-26T01:20:04Z",
+    "pushed_at": "2021-04-15T08:38:48Z",
+    "updated_at": "2021-04-15T08:38:51Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-cpp-v3",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-cpp-v3",
+    "stargazers_count": 64,
+    "forks_count": 44,
+    "open_issues_count": 13,
+    "watchers_count": 64,
+    "language": "C++",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-25T09:11:43Z",
+    "pushed_at": "2026-09-03T08:42:41Z",
+    "updated_at": "2026-09-03T08:44:13Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sample-rms-sync-resources-golang",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sample-rms-sync-resources-golang",
+    "stargazers_count": 9,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 9,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-15T06:11:40Z",
+    "pushed_at": "2020-12-21T07:26:42Z",
+    "updated_at": "2026-06-30T06:38:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-php-v3",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-php-v3",
+    "stargazers_count": 18,
+    "forks_count": 13,
+    "open_issues_count": 13,
+    "watchers_count": 18,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-20T01:45:11Z",
+    "pushed_at": "2026-09-03T08:44:05Z",
+    "updated_at": "2026-09-03T08:45:30Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-device-sdk-android",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-device-sdk-android",
+    "stargazers_count": 23,
+    "forks_count": 5,
+    "open_issues_count": 3,
+    "watchers_count": 23,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-10-19T02:25:56Z",
+    "pushed_at": "2025-06-18T08:37:57Z",
+    "updated_at": "2025-06-18T08:38:00Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/dubbo-servicecomb",
+    "description": "Dubbo-Serivcecomb provide extensions for Apache Dubbo to using Cloud Service Engine, so that Dubbo users can use service center, config center and governance features.",
+    "html_url": "https://github.com/huaweicloud/dubbo-servicecomb",
+    "stargazers_count": 25,
+    "forks_count": 15,
+    "open_issues_count": 13,
+    "watchers_count": 25,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-08-24T02:26:42Z",
+    "pushed_at": "2026-08-20T07:33:57Z",
+    "updated_at": "2026-08-20T07:36:13Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-device-sdk-csharp",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-device-sdk-csharp",
+    "stargazers_count": 17,
+    "forks_count": 9,
+    "open_issues_count": 0,
+    "watchers_count": 17,
+    "language": "C#",
+    "license": {
+      "spdx_id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-08-21T01:18:17Z",
+    "pushed_at": "2025-07-31T12:49:50Z",
+    "updated_at": "2025-10-06T09:07:51Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-nodejs-v3",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-nodejs-v3",
+    "stargazers_count": 25,
+    "forks_count": 10,
+    "open_issues_count": 6,
+    "watchers_count": 25,
+    "language": "TypeScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-08-11T01:19:30Z",
+    "pushed_at": "2026-09-03T08:42:39Z",
+    "updated_at": "2026-09-03T08:45:34Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/cloudide-plugin-packager",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/cloudide-plugin-packager",
+    "stargazers_count": 5,
+    "forks_count": 4,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-29T06:52:10Z",
+    "pushed_at": "2026-08-31T08:55:53Z",
+    "updated_at": "2024-11-04T08:25:00Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/generator-cloudide-plugin",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/generator-cloudide-plugin",
+    "stargazers_count": 25,
+    "forks_count": 11,
+    "open_issues_count": 4,
+    "watchers_count": 25,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-29T06:51:33Z",
+    "pushed_at": "2026-09-03T01:19:09Z",
+    "updated_at": "2026-08-04T12:34:33Z",
+    "default_branch": "codearts",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/cloudide-plugin-core",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/cloudide-plugin-core",
+    "stargazers_count": 5,
+    "forks_count": 7,
+    "open_issues_count": 3,
+    "watchers_count": 5,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-29T06:50:58Z",
+    "pushed_at": "2026-09-03T01:20:38Z",
+    "updated_at": "2025-01-26T07:22:26Z",
+    "default_branch": "codearts",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/cloudide-messaging",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/cloudide-messaging",
+    "stargazers_count": 5,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 5,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-29T06:50:18Z",
+    "pushed_at": "2026-09-03T19:40:25Z",
+    "updated_at": "2025-09-05T08:31:23Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/cloudide-plugin-api",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/cloudide-plugin-api",
+    "stargazers_count": 7,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 7,
+    "language": null,
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-29T06:49:11Z",
+    "pushed_at": "2026-09-03T01:19:08Z",
+    "updated_at": "2024-11-04T08:24:19Z",
+    "default_branch": "codearts",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-csi-driver",
+    "description": "Huawei Cloud Container Storage Interface(CSI) Driver",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-csi-driver",
+    "stargazers_count": 50,
+    "forks_count": 34,
+    "open_issues_count": 10,
+    "watchers_count": 50,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-12T06:29:03Z",
+    "pushed_at": "2026-01-22T07:54:49Z",
+    "updated_at": "2026-08-21T04:00:29Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/spring-cloud-huawei-samples",
+    "description": "This project provide samples for Spring Cloud Huawei. Read each sub-project for details about each sample.",
+    "html_url": "https://github.com/huaweicloud/spring-cloud-huawei-samples",
+    "stargazers_count": 49,
+    "forks_count": 99,
+    "open_issues_count": 10,
+    "watchers_count": 49,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-05-21T01:45:10Z",
+    "pushed_at": "2026-08-31T08:55:27Z",
+    "updated_at": "2026-08-20T02:14:19Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-go-v3",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-go-v3",
+    "stargazers_count": 128,
+    "forks_count": 52,
+    "open_issues_count": 13,
+    "watchers_count": 128,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-05-08T02:29:19Z",
+    "pushed_at": "2026-09-03T08:43:45Z",
+    "updated_at": "2026-09-03T08:48:26Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-python-v3",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-python-v3",
+    "stargazers_count": 162,
+    "forks_count": 58,
+    "open_issues_count": 5,
+    "watchers_count": 162,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-05-08T02:28:43Z",
+    "pushed_at": "2026-09-03T08:43:08Z",
+    "updated_at": "2026-09-03T08:44:10Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-java-v3",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-java-v3",
+    "stargazers_count": 139,
+    "forks_count": 75,
+    "open_issues_count": 13,
+    "watchers_count": 139,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-05-08T02:27:00Z",
+    "pushed_at": "2026-09-03T08:43:09Z",
+    "updated_at": "2026-09-03T08:45:58Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/GES-Console",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/GES-Console",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-03-10T12:11:13Z",
+    "pushed_at": "2020-03-11T13:50:06Z",
+    "updated_at": "2023-04-13T01:27:32Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-net-v3",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-net-v3",
+    "stargazers_count": 40,
+    "forks_count": 15,
+    "open_issues_count": 3,
+    "watchers_count": 40,
+    "language": "C#",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-03-03T03:09:25Z",
+    "pushed_at": "2026-09-03T08:42:39Z",
+    "updated_at": "2026-09-03T08:44:01Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/octopus-agent",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/octopus-agent",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-27T08:25:45Z",
+    "pushed_at": "2020-02-27T08:25:47Z",
+    "updated_at": "2020-02-27T08:25:49Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-device-sdk-c",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-device-sdk-c",
+    "stargazers_count": 85,
+    "forks_count": 36,
+    "open_issues_count": 1,
+    "watchers_count": 85,
+    "language": "C",
+    "license": {
+      "spdx_id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-13T07:39:07Z",
+    "pushed_at": "2025-08-04T03:35:36Z",
+    "updated_at": "2026-05-26T12:51:08Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/packer-plugin-huaweicloud",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/packer-plugin-huaweicloud",
+    "stargazers_count": 19,
+    "forks_count": 17,
+    "open_issues_count": 9,
+    "watchers_count": 19,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-11-08T08:53:34Z",
+    "pushed_at": "2025-09-02T04:31:02Z",
+    "updated_at": "2026-09-04T10:25:45Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/obsa-hdfs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/obsa-hdfs",
+    "stargazers_count": 34,
+    "forks_count": 36,
+    "open_issues_count": 14,
+    "watchers_count": 34,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-10T07:09:06Z",
+    "pushed_at": "2026-08-31T08:54:43Z",
+    "updated_at": "2026-07-23T15:41:34Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-iot-device-sdk-java",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-iot-device-sdk-java",
+    "stargazers_count": 63,
+    "forks_count": 45,
+    "open_issues_count": 2,
+    "watchers_count": 63,
+    "language": "Java",
+    "license": {
+      "spdx_id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-09-05T08:40:14Z",
+    "pushed_at": "2026-08-31T08:54:36Z",
+    "updated_at": "2026-05-25T08:31:57Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/cloudeye-exporter",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/cloudeye-exporter",
+    "stargazers_count": 108,
+    "forks_count": 60,
+    "open_issues_count": 31,
+    "watchers_count": 108,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-09-04T02:10:37Z",
+    "pushed_at": "2026-08-31T08:54:26Z",
+    "updated_at": "2026-06-24T12:24:55Z",
+    "default_branch": "br_release_sdk_v3",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-java-iot-generic-protocol",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-java-iot-generic-protocol",
+    "stargazers_count": 3,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "Java",
+    "license": {
+      "spdx_id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-09-02T06:58:44Z",
+    "pushed_at": "2022-09-08T02:37:10Z",
+    "updated_at": "2023-05-24T05:38:27Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-obs-obsutil",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-obs-obsutil",
+    "stargazers_count": 12,
+    "forks_count": 7,
+    "open_issues_count": 4,
+    "watchers_count": 12,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-08-06T06:34:10Z",
+    "pushed_at": "2021-04-02T07:20:50Z",
+    "updated_at": "2026-03-01T13:59:43Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-ios-obs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-ios-obs",
+    "stargazers_count": 2,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 2,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-08-06T06:32:25Z",
+    "pushed_at": "2026-05-16T09:36:13Z",
+    "updated_at": "2026-05-16T09:36:17Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/flink-dis-plugin",
+    "description": "HuaweiCloud DIS Flink Connector",
+    "html_url": "https://github.com/huaweicloud/flink-dis-plugin",
+    "stargazers_count": 4,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-07-30T08:11:02Z",
+    "pushed_at": "2023-11-13T09:15:42Z",
+    "updated_at": "2024-07-03T11:36:55Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://www.huaweicloud.com/en-us/product/dis.html",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/spring-cloud-huawei",
+    "description": "Spring Cloud Huawei is a framework that makes it easier and productive to develop microservices with Spring Cloud.",
+    "html_url": "https://github.com/huaweicloud/spring-cloud-huawei",
+    "stargazers_count": 579,
+    "forks_count": 230,
+    "open_issues_count": 53,
+    "watchers_count": 579,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-07-22T08:33:46Z",
+    "pushed_at": "2026-09-04T09:25:54Z",
+    "updated_at": "2026-09-04T04:09:41Z",
+    "default_branch": "master",
+    "topics": [
+      "nacos",
+      "servicecomb",
+      "spring-cloud"
+    ],
+    "homepage": "https://github.com/huaweicloud/spring-cloud-huawei/wiki",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-moderation",
+    "description": "Moderation service SDK and code samples, include ak/sk access method and token method.",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-moderation",
+    "stargazers_count": 8,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 8,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-05-24T07:01:31Z",
+    "pushed_at": "2026-08-31T08:54:01Z",
+    "updated_at": "2022-01-29T13:16:53Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://www.huaweicloud.com/product/moderation.html",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-image",
+    "description": "Image service SDK and code samples, include ak/sk access method and token method.",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-image",
+    "stargazers_count": 11,
+    "forks_count": 13,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-05-24T07:00:58Z",
+    "pushed_at": "2021-07-27T10:22:21Z",
+    "updated_at": "2025-08-28T07:07:42Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "http://www.huaweicloud.com/product/image.html",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-python-is",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-python-is",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-10T07:33:13Z",
+    "pushed_at": "2019-04-10T07:33:15Z",
+    "updated_at": "2023-04-13T01:19:01Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-java-is",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-java-is",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-10T07:32:26Z",
+    "pushed_at": "2026-08-31T08:53:42Z",
+    "updated_at": "2023-04-13T01:15:16Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/mongodb-dis-plugin",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/mongodb-dis-plugin",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T02:23:03Z",
+    "pushed_at": "2023-04-17T08:34:39Z",
+    "updated_at": "2023-04-17T08:34:45Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/maxwell-dis-plugin",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/maxwell-dis-plugin",
+    "stargazers_count": 2,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T01:57:29Z",
+    "pushed_at": "2026-08-31T08:53:34Z",
+    "updated_at": "2023-04-14T02:37:26Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/structured-streaming-dis-plugin",
+    "description": "DIS SDK for StructuredStreaming",
+    "html_url": "https://github.com/huaweicloud/structured-streaming-dis-plugin",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Scala",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T01:56:59Z",
+    "pushed_at": "2019-06-28T09:31:11Z",
+    "updated_at": "2023-04-13T01:18:23Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://www.huaweicloud.com/en-us/product/dis.html",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/spark-streaming-dis-plugin",
+    "description": "DIS SDK for SparkStreaming",
+    "html_url": "https://github.com/huaweicloud/spark-streaming-dis-plugin",
+    "stargazers_count": 2,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Scala",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T01:56:15Z",
+    "pushed_at": "2019-08-27T14:28:35Z",
+    "updated_at": "2023-04-13T01:18:11Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/flume-dis-plugin",
+    "description": "Huawei Cloud DIS Plugins for Flume",
+    "html_url": "https://github.com/huaweicloud/flume-dis-plugin",
+    "stargazers_count": 1,
+    "forks_count": 4,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T01:55:40Z",
+    "pushed_at": "2026-08-31T08:53:24Z",
+    "updated_at": "2023-04-19T06:53:27Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-dis-agent",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-dis-agent",
+    "stargazers_count": 2,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T01:49:11Z",
+    "pushed_at": "2026-08-31T08:53:14Z",
+    "updated_at": "2023-04-13T01:15:22Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/logstash-dis-plugin",
+    "description": "Huawei Cloud DIS Plugins for Logstash",
+    "html_url": "https://github.com/huaweicloud/logstash-dis-plugin",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T01:47:54Z",
+    "pushed_at": "2020-03-21T02:46:39Z",
+    "updated_at": "2023-04-13T01:39:25Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-net-dis",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-net-dis",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T01:42:46Z",
+    "pushed_at": "2026-08-31T08:53:06Z",
+    "updated_at": "2023-04-13T01:15:02Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-go-dis",
+    "description": "GO SDK of DIS(Data Ingestion Service) for HUAWEI CLOUD",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-go-dis",
+    "stargazers_count": 2,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T01:19:40Z",
+    "pushed_at": "2020-04-26T06:51:17Z",
+    "updated_at": "2023-04-13T01:27:52Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://www.huaweicloud.com/en-us/product/dis.html",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-c-dis",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-c-dis",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-15T01:18:08Z",
+    "pushed_at": "2019-03-15T01:18:09Z",
+    "updated_at": "2023-04-13T01:19:10Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-mrs-example",
+    "description": "Examples for HUAWEI CLOUD MRS.",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-mrs-example",
+    "stargazers_count": 241,
+    "forks_count": 218,
+    "open_issues_count": 9,
+    "watchers_count": 241,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-05T07:22:35Z",
+    "pushed_at": "2026-08-27T03:44:20Z",
+    "updated_at": "2026-08-01T01:49:19Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-csharp-frs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-csharp-frs",
+    "stargazers_count": 5,
+    "forks_count": 2,
+    "open_issues_count": 2,
+    "watchers_count": 5,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-27T07:59:53Z",
+    "pushed_at": "2020-07-07T04:50:31Z",
+    "updated_at": "2020-07-07T04:50:33Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-c-obs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-c-obs",
+    "stargazers_count": 58,
+    "forks_count": 31,
+    "open_issues_count": 48,
+    "watchers_count": 58,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-27T01:15:05Z",
+    "pushed_at": "2026-09-03T11:51:27Z",
+    "updated_at": "2026-09-03T11:56:02Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-browserjs-obs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-browserjs-obs",
+    "stargazers_count": 32,
+    "forks_count": 22,
+    "open_issues_count": 27,
+    "watchers_count": 32,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-27T01:12:08Z",
+    "pushed_at": "2025-06-21T09:37:34Z",
+    "updated_at": "2025-06-21T09:37:37Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-nodejs-obs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-nodejs-obs",
+    "stargazers_count": 30,
+    "forks_count": 17,
+    "open_issues_count": 19,
+    "watchers_count": 30,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-27T01:11:25Z",
+    "pushed_at": "2026-08-27T02:10:29Z",
+    "updated_at": "2026-08-27T02:09:15Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-php-obs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-php-obs",
+    "stargazers_count": 57,
+    "forks_count": 106,
+    "open_issues_count": 25,
+    "watchers_count": 57,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-27T01:10:29Z",
+    "pushed_at": "2024-10-09T10:39:19Z",
+    "updated_at": "2026-07-20T16:15:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-go-obs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-go-obs",
+    "stargazers_count": 56,
+    "forks_count": 31,
+    "open_issues_count": 22,
+    "watchers_count": 56,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-27T01:07:24Z",
+    "pushed_at": "2026-07-21T07:51:55Z",
+    "updated_at": "2026-08-26T09:04:20Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/ims-qemu-img",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/ims-qemu-img",
+    "stargazers_count": 13,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 13,
+    "language": "C",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-11T07:10:12Z",
+    "pushed_at": "2018-12-11T08:19:06Z",
+    "updated_at": "2026-06-05T07:58:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-obs-obsfs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-obs-obsfs",
+    "stargazers_count": 32,
+    "forks_count": 13,
+    "open_issues_count": 7,
+    "watchers_count": 32,
+    "language": "C++",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-27T11:20:46Z",
+    "pushed_at": "2026-06-18T09:41:48Z",
+    "updated_at": "2026-08-27T08:25:55Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-dotnet-obs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-dotnet-obs",
+    "stargazers_count": 35,
+    "forks_count": 25,
+    "open_issues_count": 28,
+    "watchers_count": 35,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-22T02:35:37Z",
+    "pushed_at": "2026-08-31T08:52:21Z",
+    "updated_at": "2026-09-01T03:21:29Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-python-obs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-python-obs",
+    "stargazers_count": 86,
+    "forks_count": 41,
+    "open_issues_count": 26,
+    "watchers_count": 86,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-22T02:31:35Z",
+    "pushed_at": "2026-07-10T03:34:07Z",
+    "updated_at": "2026-08-19T07:40:37Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-java-obs",
+    "description": "The OBS SDK for Java, which is used for accessing Object Storage Service",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-java-obs",
+    "stargazers_count": 152,
+    "forks_count": 121,
+    "open_issues_count": 70,
+    "watchers_count": 152,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-22T02:30:33Z",
+    "pushed_at": "2026-08-31T08:52:17Z",
+    "updated_at": "2026-07-22T05:24:35Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-obs-wordpress",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-obs-wordpress",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-22T02:29:23Z",
+    "pushed_at": "2018-11-22T02:29:24Z",
+    "updated_at": "2018-11-22T02:29:26Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-obs-hdfs-adapter",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-obs-hdfs-adapter",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-22T02:27:44Z",
+    "pushed_at": "2018-11-22T02:27:46Z",
+    "updated_at": "2018-11-22T02:27:47Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-dis-kafka-adapter",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-dis-kafka-adapter",
+    "stargazers_count": 5,
+    "forks_count": 12,
+    "open_issues_count": 2,
+    "watchers_count": 5,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-19T02:35:46Z",
+    "pushed_at": "2026-08-31T08:51:54Z",
+    "updated_at": "2026-06-13T03:30:57Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-go-frs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-go-frs",
+    "stargazers_count": 3,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-14T03:44:36Z",
+    "pushed_at": "2020-11-04T04:42:30Z",
+    "updated_at": "2023-04-13T01:28:04Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-python-frs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-python-frs",
+    "stargazers_count": 6,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 6,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-14T03:43:33Z",
+    "pushed_at": "2021-04-22T08:52:41Z",
+    "updated_at": "2023-04-13T01:28:34Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-java-frs",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-java-frs",
+    "stargazers_count": 11,
+    "forks_count": 18,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-14T03:41:33Z",
+    "pushed_at": "2026-08-31T08:51:43Z",
+    "updated_at": "2023-04-13T01:15:09Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-obs-cmd",
+    "description": "obscmd",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-obs-cmd",
+    "stargazers_count": 5,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-12T13:07:57Z",
+    "pushed_at": "2026-08-31T08:51:28Z",
+    "updated_at": "2020-02-19T06:28:40Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://www.huaweicloud.com/product/obs.html",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-cs-sdk",
+    "description": "Huawei CloudStream Service SDK and example for Java and Scala. ",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-cs-sdk",
+    "stargazers_count": 20,
+    "forks_count": 17,
+    "open_issues_count": 0,
+    "watchers_count": 20,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-01T07:04:41Z",
+    "pushed_at": "2026-08-31T08:51:37Z",
+    "updated_at": "2025-08-18T08:53:47Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "http://www.huaweicloud.com/product/cs.html",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/bms-network-config",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/bms-network-config",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-22T01:35:50Z",
+    "pushed_at": "2018-08-27T05:06:56Z",
+    "updated_at": "2018-08-27T05:06:58Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/ims-byol-webservice",
+    "description": "BYOLWebService is for Bring Your Own Licenses(BYOL) or Buy Licenses From Platform selections.",
+    "html_url": "https://github.com/huaweicloud/ims-byol-webservice",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "PowerShell",
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-09T09:29:40Z",
+    "pushed_at": "2019-02-23T03:01:57Z",
+    "updated_at": "2019-02-23T03:01:58Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/elb-toa",
+    "description": "TCP Option Address (TOA) module for Elastic Load Balance.",
+    "html_url": "https://github.com/huaweicloud/elb-toa",
+    "stargazers_count": 33,
+    "forks_count": 19,
+    "open_issues_count": 3,
+    "watchers_count": 33,
+    "language": "C",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-07-11T03:39:25Z",
+    "pushed_at": "2022-09-08T06:40:37Z",
+    "updated_at": "2026-08-07T03:57:21Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/terraform-provider-huaweicloud",
+    "description": "Terraform HuaweiCloud provider",
+    "html_url": "https://github.com/huaweicloud/terraform-provider-huaweicloud",
+    "stargazers_count": 272,
+    "forks_count": 212,
+    "open_issues_count": 31,
+    "watchers_count": 272,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-07-10T17:26:26Z",
+    "pushed_at": "2026-09-02T09:45:12Z",
+    "updated_at": "2026-09-02T09:45:19Z",
+    "default_branch": "master",
+    "topics": [
+      "huawei-cloud",
+      "terraform",
+      "terraform-provider"
+    ],
+    "homepage": "https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/telescope",
+    "description": "Agent for clouds resources detailed monitoring",
+    "html_url": "https://github.com/huaweicloud/telescope",
+    "stargazers_count": 8,
+    "forks_count": 3,
+    "open_issues_count": 2,
+    "watchers_count": 8,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-07-10T01:06:43Z",
+    "pushed_at": "2020-05-21T01:38:38Z",
+    "updated_at": "2025-03-04T07:49:28Z",
+    "default_branch": "master",
+    "topics": [
+      "agent",
+      "apache2-license",
+      "cloudeye",
+      "go"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-python-dis",
+    "description": "Python SDK of DIS (Data Ingestion Service) for HUAWEI CLOUD",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-python-dis",
+    "stargazers_count": 4,
+    "forks_count": 8,
+    "open_issues_count": 1,
+    "watchers_count": 4,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-07-06T02:22:19Z",
+    "pushed_at": "2026-06-08T12:05:49Z",
+    "updated_at": "2026-06-08T07:19:02Z",
+    "default_branch": "master",
+    "topics": [
+      "dis",
+      "python",
+      "sdk"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-fpga",
+    "description": "The official repository of the HUAWEI CLOUD FPGA Development Kit based on HUAWEI CLOUD FPGA Accelerated Cloud Server.",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-fpga",
+    "stargazers_count": 57,
+    "forks_count": 27,
+    "open_issues_count": 0,
+    "watchers_count": 57,
+    "language": "Verilog",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-07-05T06:14:37Z",
+    "pushed_at": "2018-11-29T14:05:18Z",
+    "updated_at": "2026-06-24T07:04:22Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-sdk-java-dis",
+    "description": "Java SDK of DIS (Data Ingestion Service) for HUAWEI CLOUD",
+    "html_url": "https://github.com/huaweicloud/huaweicloud-sdk-java-dis",
+    "stargazers_count": 9,
+    "forks_count": 32,
+    "open_issues_count": 5,
+    "watchers_count": 9,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-05-04T12:08:23Z",
+    "pushed_at": "2026-08-31T08:51:03Z",
+    "updated_at": "2026-06-10T06:48:39Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "huaweicloud/huaweicloud-tool-aad-toa",
+    "description": null,
+    "html_url": "https://github.com/huaweicloud/huaweicloud-tool-aad-toa",
+    "stargazers_count": 12,
+    "forks_count": 8,
+    "open_issues_count": 3,
+    "watchers_count": 12,
+    "language": "C",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-03-15T08:30:14Z",
+    "pushed_at": "2024-01-15T03:58:36Z",
+    "updated_at": "2025-10-15T06:30:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  }
+]

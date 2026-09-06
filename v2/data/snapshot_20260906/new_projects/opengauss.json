@@ -1,0 +1,38 @@
+[
+  {
+    "full_name": "suoten/dbbridge",
+    "description": "Description: 开源、免费、零依赖的数据库迁移与SQL转换工具。支持 MySQL/PostgreSQL/SQLite/OceanBase/TiDB/达梦/金仓 等 10 种数据库互转。单文件 < 30MB，双击即用。",
+    "html_url": "https://github.com/suoten/dbbridge",
+    "stargazers_count": 13,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 13,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-30T11:05:52Z",
+    "pushed_at": "2026-09-06T01:36:47Z",
+    "updated_at": "2026-09-06T03:34:01Z",
+    "default_branch": "master",
+    "topics": [
+      "data-migration",
+      "database-migrations",
+      "mysql",
+      "oceanbase",
+      "opengauss",
+      "postgresql",
+      "sql-converter",
+      "sqlite",
+      "tidb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": "opengauss",
+    "source": "new",
+    "new_tier": "rising"
+  }
+]

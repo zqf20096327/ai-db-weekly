@@ -1,0 +1,5654 @@
+[
+  {
+    "full_name": "TencentCloud/steampipe-plugin-tencentcloud",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/steampipe-plugin-tencentcloud",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-09-03T07:13:45Z",
+    "pushed_at": "2026-09-04T03:17:16Z",
+    "updated_at": "2026-09-04T03:17:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cloudq-for-dsh",
+    "description": "CloudQ integration for DeepSeek Harness, providing multi-cloud architecture governance, AIOps, risk inspection, usage, artifacts, and architecture views.",
+    "html_url": "https://github.com/TencentCloud/cloudq-for-dsh",
+    "stargazers_count": 4,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-28T06:33:47Z",
+    "pushed_at": "2026-09-03T03:03:33Z",
+    "updated_at": "2026-09-03T08:54:50Z",
+    "default_branch": "main",
+    "topics": [
+      "dsh-plugin"
+    ],
+    "homepage": "https://www.npmjs.com/package/dsh-cloudq",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-agentobs-sdk-dsh",
+    "description": "tencentcloud-agentobs-sdk-dsh 是一个 DeepSeek Harness (DSH) 可观测插件，直接将 GenAI trace 数据上报到腾讯云日志服务 (CLS)。  它观察 DSH 原生的 session、agent loop、LLM stream 和 tool 生命周期，将其转换为 腾讯云AI Agent可观测规范的 5 层 span 层级模型（entry → agent → step → chat → tool），并通过 tencentcloud-cls-sdk-js 直接上报到 CLS，无需额外部署 OTLP 收集器或 sidecar。",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-agentobs-sdk-dsh",
+    "stargazers_count": 12,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 12,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-18T06:11:34Z",
+    "pushed_at": "2026-08-26T06:22:29Z",
+    "updated_at": "2026-08-28T20:25:31Z",
+    "default_branch": "main",
+    "topics": [
+      "agent-observability",
+      "ai-coding",
+      "deepseek-harness",
+      "dsh",
+      "dsh-plugin",
+      "genai",
+      "observability"
+    ],
+    "homepage": "https://github.com/TencentCloud/tencentcloud-agentobs-sdk-dsh/blob/main/README.md",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/Octop",
+    "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+    "html_url": "https://github.com/TencentCloud/Octop",
+    "stargazers_count": 1497,
+    "forks_count": 159,
+    "open_issues_count": 149,
+    "watchers_count": 1497,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-08T12:54:20Z",
+    "pushed_at": "2026-09-06T04:35:33Z",
+    "updated_at": "2026-09-06T05:45:23Z",
+    "default_branch": "main",
+    "topics": [
+      "agent",
+      "agentic-ai",
+      "ai",
+      "ai-agent",
+      "ai-agents",
+      "local-first",
+      "long-term-memory"
+    ],
+    "homepage": "https://octop.cloud",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-langchain",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-langchain",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-08T11:41:59Z",
+    "pushed_at": "2026-07-08T11:42:00Z",
+    "updated_at": "2026-07-08T11:42:00Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-openai",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-openai",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-08T11:41:45Z",
+    "pushed_at": "2026-07-08T11:41:46Z",
+    "updated_at": "2026-07-08T11:41:46Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-vllm",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-vllm",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-08T11:41:29Z",
+    "pushed_at": "2026-07-08T11:41:29Z",
+    "updated_at": "2026-07-08T11:41:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-hermes",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-hermes",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-08T11:41:05Z",
+    "pushed_at": "2026-07-08T11:41:06Z",
+    "updated_at": "2026-07-08T11:41:06Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cos-vectors-embed-cli",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/cos-vectors-embed-cli",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-10T06:30:32Z",
+    "pushed_at": "2026-05-06T11:48:35Z",
+    "updated_at": "2026-06-30T16:58:24Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/CubeSandbox",
+    "description": "Instant, Concurrent, Secure & Lightweight Sandbox for AI Agents.",
+    "html_url": "https://github.com/TencentCloud/CubeSandbox",
+    "stargazers_count": 11808,
+    "forks_count": 1099,
+    "open_issues_count": 122,
+    "watchers_count": 11808,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-10T03:00:31Z",
+    "pushed_at": "2026-09-06T01:55:53Z",
+    "updated_at": "2026-09-06T05:46:49Z",
+    "default_branch": "master",
+    "topics": [
+      "agents",
+      "container",
+      "sandbox"
+    ],
+    "homepage": "https://cubesandbox.com",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentmeeting-cli",
+    "description": "腾讯会议命令行工具（CLI），基于腾讯会议开放平台 OAuth2 授权，支持会议管理、录制管理、参会报告等功能。",
+    "html_url": "https://github.com/TencentCloud/tencentmeeting-cli",
+    "stargazers_count": 234,
+    "forks_count": 18,
+    "open_issues_count": 5,
+    "watchers_count": 234,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-07T10:08:59Z",
+    "pushed_at": "2026-09-02T12:28:42Z",
+    "updated_at": "2026-09-03T22:16:56Z",
+    "default_branch": "main",
+    "topics": [
+      "codebuddy",
+      "codebuddy-skill",
+      "dsh-plugin",
+      "workbuddy",
+      "workbuddy-skill"
+    ],
+    "homepage": "https://meeting.tencent.com/ai-skill-cli.html",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/TencentDB-Agent-Memory",
+    "description": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
+    "html_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+    "stargazers_count": 25981,
+    "forks_count": 2424,
+    "open_issues_count": 784,
+    "watchers_count": 25981,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-04-07T06:34:26Z",
+    "pushed_at": "2026-09-03T02:31:45Z",
+    "updated_at": "2026-09-06T04:53:09Z",
+    "default_branch": "feat/server_team",
+    "topics": [
+      "agent",
+      "ai-agent",
+      "embedding",
+      "llm",
+      "local-first",
+      "long-term-memory",
+      "memory",
+      "openclaw-plugin",
+      "vector-search"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/ssm-rotation-sdk-java",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/ssm-rotation-sdk-java",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-30T08:08:36Z",
+    "pushed_at": "2026-07-15T06:39:01Z",
+    "updated_at": "2026-07-15T06:39:12Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-aigcdetection-skills",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-aigcdetection-skills",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-12T07:27:00Z",
+    "pushed_at": "2026-03-12T12:56:08Z",
+    "updated_at": "2026-03-12T12:56:12Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-faceid-skills",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-faceid-skills",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-12T07:23:23Z",
+    "pushed_at": "2026-03-19T09:56:20Z",
+    "updated_at": "2026-03-19T09:56:23Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-speech-skills",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-speech-skills",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-12T07:21:30Z",
+    "pushed_at": "2026-03-12T11:55:24Z",
+    "updated_at": "2026-03-12T11:55:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-ocr-skills",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-ocr-skills",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-12T07:08:04Z",
+    "pushed_at": "2026-03-12T13:40:39Z",
+    "updated_at": "2026-03-12T13:40:43Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-vita-skills",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-vita-skills",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-12T06:47:34Z",
+    "pushed_at": "2026-03-12T12:39:50Z",
+    "updated_at": "2026-03-13T03:59:52Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-aigccreative-skills",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-aigccreative-skills",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-12T06:44:00Z",
+    "pushed_at": "2026-03-18T07:06:03Z",
+    "updated_at": "2026-03-18T07:06:07Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/dbauth-sdk-dotnet",
+    "description": "dbauth-sdk-dotnet腾讯云数据库CAM验证SDK",
+    "html_url": "https://github.com/TencentCloud/dbauth-sdk-dotnet",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-26T03:21:38Z",
+    "pushed_at": "2026-03-30T09:55:22Z",
+    "updated_at": "2026-03-30T09:55:25Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/dbauth-sdk-php-nts",
+    "description": "dbauth-sdk-php-nts 腾讯云数据库CAM验证SDK",
+    "html_url": "https://github.com/TencentCloud/dbauth-sdk-php-nts",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-26T03:21:05Z",
+    "pushed_at": "2026-03-02T06:47:30Z",
+    "updated_at": "2026-03-02T06:47:34Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/dbauth-sdk-php-zts",
+    "description": "dbauth-sdk-php-zts腾讯云数据库CAM验证SDK",
+    "html_url": "https://github.com/TencentCloud/dbauth-sdk-php-zts",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-26T03:20:26Z",
+    "pushed_at": "2026-03-02T07:03:03Z",
+    "updated_at": "2026-03-02T07:03:06Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/terraform-provider-tencentcloudenterprise",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/terraform-provider-tencentcloudenterprise",
+    "stargazers_count": 46,
+    "forks_count": 2,
+    "open_issues_count": 2,
+    "watchers_count": 46,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-09-09T07:50:30Z",
+    "pushed_at": "2026-09-03T06:51:16Z",
+    "updated_at": "2026-06-10T02:37:08Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/karpenter-provider-tke",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/karpenter-provider-tke",
+    "stargazers_count": 12,
+    "forks_count": 5,
+    "open_issues_count": 0,
+    "watchers_count": 12,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-04-25T09:01:52Z",
+    "pushed_at": "2026-07-31T08:23:30Z",
+    "updated_at": "2026-07-31T08:23:50Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cos-mcp",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/cos-mcp",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-04-22T14:37:33Z",
+    "pushed_at": "2025-04-22T14:37:33Z",
+    "updated_at": "2026-07-18T12:53:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/wemeet-openapi-sdk-php",
+    "description": "欢迎使用腾讯会议开发者工具套件（SDK），为方便 PHP 开发者调试和接入腾讯云会议 API，这里向您介绍适用于 PHP 的腾讯会议开发工具包，并提供首次使用开发工具包的简单示例。让您快速获取腾讯会议 PHP SDK 并开始调用。",
+    "html_url": "https://github.com/TencentCloud/wemeet-openapi-sdk-php",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-02-26T03:23:42Z",
+    "pushed_at": "2025-07-15T04:31:37Z",
+    "updated_at": "2026-03-23T06:20:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/dbauth-sdk-go",
+    "description": "数据库账号统一认证SDK",
+    "html_url": "https://github.com/TencentCloud/dbauth-sdk-go",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-11-29T09:53:04Z",
+    "pushed_at": "2024-11-29T12:18:58Z",
+    "updated_at": "2024-11-29T12:16:48Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/simple-auth-sign-go",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/simple-auth-sign-go",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-09-30T09:27:50Z",
+    "pushed_at": "2024-10-12T07:51:15Z",
+    "updated_at": "2026-07-18T12:53:11Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/dbauth-sdk-python",
+    "description": "数据库账号统一认证SDK",
+    "html_url": "https://github.com/TencentCloud/dbauth-sdk-python",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-09-29T02:49:37Z",
+    "pushed_at": "2024-10-09T12:33:08Z",
+    "updated_at": "2025-12-16T13:50:17Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tcmpp-flutter",
+    "description": "https://www.tencentcloud.com/zh/products/tcmpp",
+    "html_url": "https://github.com/TencentCloud/tcmpp-flutter",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-09-03T12:49:44Z",
+    "pushed_at": "2024-09-03T12:49:45Z",
+    "updated_at": "2024-09-03T12:49:48Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/TCMPPDemo-Swift",
+    "description": "https://www.tencentcloud.com/zh/products/tcmpp",
+    "html_url": "https://github.com/TencentCloud/TCMPPDemo-Swift",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-09-03T12:48:17Z",
+    "pushed_at": "2024-09-03T12:48:18Z",
+    "updated_at": "2024-09-03T12:48:20Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/virtualman-render-mini-programs",
+    "description": "小程序webView嵌入H5项目demo，包括云渲染以及端渲染示例代码",
+    "html_url": "https://github.com/TencentCloud/virtualman-render-mini-programs",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-08-26T02:58:16Z",
+    "pushed_at": "2024-08-26T06:22:19Z",
+    "updated_at": "2024-08-26T06:22:22Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/virtualman-android-client-demo",
+    "description": "腾讯云数智人端渲染Android Demo示例",
+    "html_url": "https://github.com/TencentCloud/virtualman-android-client-demo",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Kotlin",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-08-22T04:00:06Z",
+    "pushed_at": "2024-11-27T03:12:19Z",
+    "updated_at": "2024-12-08T02:50:18Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-onelogin-cli",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-onelogin-cli",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-07-16T14:03:59Z",
+    "pushed_at": "2024-07-17T08:21:42Z",
+    "updated_at": "2024-07-17T08:21:45Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/virtualman-android-stream-demo",
+    "description": "腾讯云数智人云端推流Android Demo示例",
+    "html_url": "https://github.com/TencentCloud/virtualman-android-stream-demo",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Kotlin",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-07-04T06:30:10Z",
+    "pushed_at": "2026-03-10T08:04:52Z",
+    "updated_at": "2026-03-10T08:04:56Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cos-sdk-harmony",
+    "description": "对象存储COS鸿蒙系统SDK",
+    "html_url": "https://github.com/TencentCloud/cos-sdk-harmony",
+    "stargazers_count": 3,
+    "forks_count": 2,
+    "open_issues_count": 3,
+    "watchers_count": 3,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-06-21T12:31:58Z",
+    "pushed_at": "2026-08-25T06:45:07Z",
+    "updated_at": "2026-08-25T06:43:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/dbauth-sdk-java",
+    "description": "数据库账号统一认证SDK",
+    "html_url": "https://github.com/TencentCloud/dbauth-sdk-java",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-06-13T02:14:59Z",
+    "pushed_at": "2024-10-12T06:48:14Z",
+    "updated_at": "2025-11-12T09:40:16Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-rust",
+    "description": "腾讯云日志服务rust sdk",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-rust",
+    "stargazers_count": 3,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-06-12T06:38:39Z",
+    "pushed_at": "2025-02-28T07:52:33Z",
+    "updated_at": "2025-09-09T04:21:22Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tione-tilearn-angel",
+    "description": "腾讯云TI平台tilearn-angel训练推理加速最佳实践案例集",
+    "html_url": "https://github.com/TencentCloud/tione-tilearn-angel",
+    "stargazers_count": 5,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-05-09T08:28:18Z",
+    "pushed_at": "2025-02-19T06:12:06Z",
+    "updated_at": "2024-06-21T03:24:23Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/wemeet-openapi-sdk-python",
+    "description": "腾讯会议openapi python版sdk",
+    "html_url": "https://github.com/TencentCloud/wemeet-openapi-sdk-python",
+    "stargazers_count": 4,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 4,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-04-11T12:00:15Z",
+    "pushed_at": "2025-07-15T03:39:49Z",
+    "updated_at": "2026-03-30T09:02:23Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/wemeet-openapi-sdk-java",
+    "description": "腾讯会议openapi java版sdk",
+    "html_url": "https://github.com/TencentCloud/wemeet-openapi-sdk-java",
+    "stargazers_count": 4,
+    "forks_count": 5,
+    "open_issues_count": 4,
+    "watchers_count": 4,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-04-11T11:59:34Z",
+    "pushed_at": "2026-08-05T08:34:49Z",
+    "updated_at": "2026-08-05T08:37:15Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/wemeet-openapi-sdk-go",
+    "description": "腾讯会议openapi go版sdk",
+    "html_url": "https://github.com/TencentCloud/wemeet-openapi-sdk-go",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-04-11T11:58:41Z",
+    "pushed_at": "2025-07-14T13:11:04Z",
+    "updated_at": "2026-03-20T02:36:20Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/virtualman-render-demo",
+    "description": "云小微数智人移动端渲染demo，包括云渲染以及端渲染示例代码",
+    "html_url": "https://github.com/TencentCloud/virtualman-render-demo",
+    "stargazers_count": 23,
+    "forks_count": 9,
+    "open_issues_count": 1,
+    "watchers_count": 23,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-04-10T07:24:31Z",
+    "pushed_at": "2025-12-10T11:59:32Z",
+    "updated_at": "2026-05-16T19:23:38Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tcmpp-demo-miniprogram",
+    "description": "腾讯云小程序示例demo",
+    "html_url": "https://github.com/TencentCloud/tcmpp-demo-miniprogram",
+    "stargazers_count": 9,
+    "forks_count": 8,
+    "open_issues_count": 1,
+    "watchers_count": 9,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-02-23T11:47:53Z",
+    "pushed_at": "2024-10-08T02:03:53Z",
+    "updated_at": "2026-01-14T04:24:52Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tccc-uikit-ios",
+    "description": "TCCCCallKit 是腾讯云推出的一款VIOP通话的包含UI组件，通过集成该组件，你只需要编写几行代码就可以为你的App添加外呼手机、电话等音频通话等功能。目前 TCCCCallKit 支持 Android 、iOS 等多个开发平台。",
+    "html_url": "https://github.com/TencentCloud/tccc-uikit-ios",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-01-23T07:51:05Z",
+    "pushed_at": "2025-04-24T06:44:26Z",
+    "updated_at": "2025-04-24T06:44:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tccc-uikit-android",
+    "description": "TCCCCallKit 是腾讯云推出的一款VIOP通话的包含UI组件，通过集成该组件，你只需要编写几行代码就可以为你的App添加外呼手机、电话等音频通话等功能。目前 TCCCCallKit 支持 Android 、iOS 等多个开发平台。",
+    "html_url": "https://github.com/TencentCloud/tccc-uikit-android",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-01-23T07:40:41Z",
+    "pushed_at": "2025-04-24T04:05:53Z",
+    "updated_at": "2025-11-26T09:51:53Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-opentelemetry-demo-php",
+    "description": "腾讯云APM团队 PHP通过OpenTelemetry协议上报demo",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-opentelemetry-demo-php",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-11-14T08:57:54Z",
+    "pushed_at": "2024-02-22T08:47:53Z",
+    "updated_at": "2023-11-14T12:23:32Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-opentelemetry-demo-go",
+    "description": "腾讯云APM团队 Go通过OpenTelemetry协议上报demo",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-opentelemetry-demo-go",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-11-14T08:56:51Z",
+    "pushed_at": "2025-05-22T09:04:40Z",
+    "updated_at": "2025-05-22T09:04:43Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-opentelemetry-demo-python",
+    "description": "腾讯云APM团队 Python通过OpenTelemetry协议上报demo",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-opentelemetry-demo-python",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-11-14T08:55:38Z",
+    "pushed_at": "2023-11-17T06:53:18Z",
+    "updated_at": "2023-11-14T12:36:44Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-opentelemetry-demo-nodejs",
+    "description": "腾讯云APM团队 Node.js通过OpenTelemetry协议上报demo",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-opentelemetry-demo-nodejs",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-11-14T08:53:12Z",
+    "pushed_at": "2025-07-04T03:10:02Z",
+    "updated_at": "2025-07-04T03:10:07Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-edgeone-migration-nodejs",
+    "description": "CDN配置迁移EO工具包",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-edgeone-migration-nodejs",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-10-13T10:40:03Z",
+    "pushed_at": "2025-06-30T07:23:09Z",
+    "updated_at": "2025-06-30T07:23:13Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/ivc-sdk-cpp",
+    "description": "腾讯云 智能视图计算平台 私有协议sdk发布仓库",
+    "html_url": "https://github.com/TencentCloud/ivc-sdk-cpp",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-30T06:45:21Z",
+    "pushed_at": "2023-09-04T08:46:17Z",
+    "updated_at": "2023-09-04T08:42:07Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/faceid-api-crypto-nodejs",
+    "description": "人脸核身API敏感信息加解密SDK",
+    "html_url": "https://github.com/TencentCloud/faceid-api-crypto-nodejs",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-10T03:50:01Z",
+    "pushed_at": "2023-08-10T06:21:24Z",
+    "updated_at": "2023-08-10T06:21:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cls-datasight-demo",
+    "description": "腾讯云日志服务 CLS DataSight 演示示例",
+    "html_url": "https://github.com/TencentCloud/cls-datasight-demo",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-08T11:37:36Z",
+    "pushed_at": "2026-06-11T10:04:12Z",
+    "updated_at": "2026-06-11T10:04:16Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencent-chat-i18n-tool",
+    "description": "An easy-to-use and versatile Flutter internationalization tool tailored for application using Tencent Cloud Chat, streamlining multi-language support for developers.",
+    "html_url": "https://github.com/TencentCloud/tencent-chat-i18n-tool",
+    "stargazers_count": 5,
+    "forks_count": 28,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "Dart",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-14T03:43:13Z",
+    "pushed_at": "2024-03-08T04:22:57Z",
+    "updated_at": "2026-01-20T05:18:06Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/faceid-api-crypto-java",
+    "description": "人脸核身API敏感信息加解密SDK",
+    "html_url": "https://github.com/TencentCloud/faceid-api-crypto-java",
+    "stargazers_count": 1,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-04T07:36:28Z",
+    "pushed_at": "2026-07-30T08:07:10Z",
+    "updated_at": "2026-07-30T06:07:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/faceid-api-crypto-golang",
+    "description": "人脸核身API敏感信息加解密SDK",
+    "html_url": "https://github.com/TencentCloud/faceid-api-crypto-golang",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-04T07:35:09Z",
+    "pushed_at": "2024-12-09T10:24:27Z",
+    "updated_at": "2025-11-07T05:48:40Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tccc-user-ios-example",
+    "description": "腾讯云联络中心用户端音频客服ios example",
+    "html_url": "https://github.com/TencentCloud/tccc-user-ios-example",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-04T07:32:13Z",
+    "pushed_at": "2024-01-23T09:42:37Z",
+    "updated_at": "2023-11-23T03:52:41Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/fluent-bit-go-cls",
+    "description": "腾讯云日志服务 fluent-bit插件",
+    "html_url": "https://github.com/TencentCloud/fluent-bit-go-cls",
+    "stargazers_count": 2,
+    "forks_count": 3,
+    "open_issues_count": 2,
+    "watchers_count": 2,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-28T08:44:12Z",
+    "pushed_at": "2026-03-18T14:00:10Z",
+    "updated_at": "2026-03-18T14:00:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/ssm-whitebox-node",
+    "description": "白盒解密能力",
+    "html_url": "https://github.com/TencentCloud/ssm-whitebox-node",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-28T08:22:54Z",
+    "pushed_at": "2023-06-28T08:22:55Z",
+    "updated_at": "2023-06-28T08:22:55Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/rabbitmq-demo",
+    "description": "腾讯云 RabbitMQ 当前有较多的用户尝试接入，但是很多用户在第一次接入的时候会有较多的问题，该仓库的目的在于给用户提供 Java 接入的代码 Demo。根据不同的功能以及使用场景，提供规范的接入 Demo 代码，降低用户接入的成本而且可以避免用户由于错误使用导致的故障等问题。",
+    "html_url": "https://github.com/TencentCloud/rabbitmq-demo",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-28T02:43:21Z",
+    "pushed_at": "2023-06-28T06:09:24Z",
+    "updated_at": "2025-05-27T15:37:26Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/ssm-sdk-nodejs",
+    "description": "ssm获取aksk nodejs sdk",
+    "html_url": "https://github.com/TencentCloud/ssm-sdk-nodejs",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-27T03:09:29Z",
+    "pushed_at": "2023-06-27T03:09:29Z",
+    "updated_at": "2023-06-27T03:09:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-speech-sdk-dotnet",
+    "description": "语音识别SDK",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-speech-sdk-dotnet",
+    "stargazers_count": 5,
+    "forks_count": 1,
+    "open_issues_count": 2,
+    "watchers_count": 5,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-29T08:01:47Z",
+    "pushed_at": "2024-01-08T09:36:02Z",
+    "updated_at": "2025-08-12T09:26:50Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tccc-user-android-example",
+    "description": "腾讯云联络中心用户端音频客服android example",
+    "html_url": "https://github.com/TencentCloud/tccc-user-android-example",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-29T03:29:43Z",
+    "pushed_at": "2023-11-29T03:24:10Z",
+    "updated_at": "2025-02-28T03:54:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tcmpp-demo-android",
+    "description": "TCMPP Android Demo",
+    "html_url": "https://github.com/TencentCloud/tcmpp-demo-android",
+    "stargazers_count": 7,
+    "forks_count": 5,
+    "open_issues_count": 3,
+    "watchers_count": 7,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-10T12:15:13Z",
+    "pushed_at": "2025-11-06T09:12:04Z",
+    "updated_at": "2026-03-11T09:08:09Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tcmpp-demo-ios",
+    "description": "TCMPP Demo iOS",
+    "html_url": "https://github.com/TencentCloud/tcmpp-demo-ios",
+    "stargazers_count": 1,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "Objective-C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-10T12:14:08Z",
+    "pushed_at": "2026-08-05T08:17:02Z",
+    "updated_at": "2026-08-05T08:19:27Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-demo-apicloud",
+    "description": "IM在apicloud平台上的 SDK 的demo",
+    "html_url": "https://github.com/TencentCloud/chat-demo-apicloud",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-09T07:58:02Z",
+    "pushed_at": "2023-08-21T02:58:36Z",
+    "updated_at": "2023-05-30T03:58:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cmq-sdk-go",
+    "description": "tencentcloud-cmq-sdk-go 为腾讯云 cmq 产品 go sdk。",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cmq-sdk-go",
+    "stargazers_count": 3,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-09T06:20:59Z",
+    "pushed_at": "2025-01-14T08:01:11Z",
+    "updated_at": "2026-06-29T05:01:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/edgeone-examples",
+    "description": "EdgeOne 是腾讯云推出的一款可以同时提供加速与安全能力的全新一代边缘平台，基于腾讯海量边缘节点, 提供域名解析、动静态智能加速、TCP/UDP 四层加速、DDoS/CC/Web/Bot 防护、边缘函数计算等边缘一体化服务，可帮助客户更快速、更安全、更灵活地响应用户请求。",
+    "html_url": "https://github.com/TencentCloud/edgeone-examples",
+    "stargazers_count": 5,
+    "forks_count": 2,
+    "open_issues_count": 1,
+    "watchers_count": 5,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-19T11:45:51Z",
+    "pushed_at": "2023-04-19T11:49:15Z",
+    "updated_at": "2025-10-27T18:43:31Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/huiyan-faceid-demo",
+    "description": "慧眼产品的对外使用示例代码的Example",
+    "html_url": "https://github.com/TencentCloud/huiyan-faceid-demo",
+    "stargazers_count": 4,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-18T06:15:32Z",
+    "pushed_at": "2025-07-02T08:43:21Z",
+    "updated_at": "2025-07-02T08:43:25Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-demo-react-native",
+    "description": "Free Chat UIKit for React Native — 1,000 MAU/month free forever with push notifications & no concurrency limits. Build cross-platform chat UI in minutes with pre-built React Native components: conversation list, large community & group management.",
+    "html_url": "https://github.com/TencentCloud/chat-demo-react-native",
+    "stargazers_count": 39,
+    "forks_count": 12,
+    "open_issues_count": 2,
+    "watchers_count": 39,
+    "language": "TypeScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-04-07T09:14:28Z",
+    "pushed_at": "2026-08-21T03:16:17Z",
+    "updated_at": "2026-08-21T03:16:39Z",
+    "default_branch": "main",
+    "topics": [
+      "chat-api",
+      "chat-sdk",
+      "in-app-chat",
+      "instant-messaging",
+      "push-notifications",
+      "react-native",
+      "send-message",
+      "tencent-cloud",
+      "trtc",
+      "uikit"
+    ],
+    "homepage": "https://trtc.io/products/chat",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-rs",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-rs",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-30T07:26:48Z",
+    "pushed_at": "2023-03-30T07:26:49Z",
+    "updated_at": "2023-03-30T07:26:49Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tccc-agent-ios-example",
+    "description": "腾讯云联络中心坐席ios example",
+    "html_url": "https://github.com/TencentCloud/tccc-agent-ios-example",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-28T12:00:47Z",
+    "pushed_at": "2025-05-12T02:59:20Z",
+    "updated_at": "2025-05-12T02:59:24Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tccc-agent-uniapp-example",
+    "description": "腾讯云联络中心坐席uniapp example",
+    "html_url": "https://github.com/TencentCloud/tccc-agent-uniapp-example",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Vue",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-08T02:35:15Z",
+    "pushed_at": "2023-12-13T07:28:35Z",
+    "updated_at": "2024-01-08T03:51:35Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-python",
+    "description": "腾讯云日志服务python sdk",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-python",
+    "stargazers_count": 5,
+    "forks_count": 10,
+    "open_issues_count": 4,
+    "watchers_count": 5,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-01T00:41:41Z",
+    "pushed_at": "2026-09-01T11:05:05Z",
+    "updated_at": "2026-09-01T11:08:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-uikit-unity",
+    "description": "腾讯云即时通信 Unity 版本 UIKit",
+    "html_url": "https://github.com/TencentCloud/chat-uikit-unity",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-02-24T02:18:03Z",
+    "pushed_at": "2023-02-26T03:21:01Z",
+    "updated_at": "2025-12-11T06:29:47Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cos-sdk-react-native-plugin",
+    "description": "对象存储COS React Native语言SDK（桥接plugin实现）",
+    "html_url": "https://github.com/TencentCloud/cos-sdk-react-native-plugin",
+    "stargazers_count": 7,
+    "forks_count": 6,
+    "open_issues_count": 2,
+    "watchers_count": 7,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-02-16T04:15:25Z",
+    "pushed_at": "2026-09-03T09:50:06Z",
+    "updated_at": "2026-09-03T09:54:16Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cos-sdk-flutter-plugin",
+    "description": "对象存储COS Flutter语言SDK（桥接plugin实现）",
+    "html_url": "https://github.com/TencentCloud/cos-sdk-flutter-plugin",
+    "stargazers_count": 11,
+    "forks_count": 14,
+    "open_issues_count": 5,
+    "watchers_count": 11,
+    "language": "Dart",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-02-02T11:43:33Z",
+    "pushed_at": "2026-08-25T08:07:55Z",
+    "updated_at": "2026-08-25T08:10:46Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/rocketmq-demo",
+    "description": "腾讯云 RocketMQ 当前有较多的用户尝试接入，但是很多用户在第一次接入的时候会有较多的问题，该仓库的目的在于给用户提供多种语言 SDK 接入的代码 Demo。根据不同的功能以及使用场景，提供规范的接入 Demo 代码，用户开箱即用，降低用户接入的成本而且可以避免用户由于错误使用导致的故障等问题。",
+    "html_url": "https://github.com/TencentCloud/rocketmq-demo",
+    "stargazers_count": 10,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 10,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-01-13T09:16:09Z",
+    "pushed_at": "2026-07-30T03:24:38Z",
+    "updated_at": "2026-07-30T03:24:42Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-uikit-android",
+    "description": " Tencent Cloud Chat UI Components For Android",
+    "html_url": "https://github.com/TencentCloud/chat-uikit-android",
+    "stargazers_count": 47,
+    "forks_count": 14,
+    "open_issues_count": 3,
+    "watchers_count": 47,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-12-01T12:25:25Z",
+    "pushed_at": "2026-06-15T06:59:51Z",
+    "updated_at": "2026-08-31T11:21:44Z",
+    "default_branch": "main",
+    "topics": [
+      "api-messageing-service",
+      "chat",
+      "chat-api",
+      "chat-uikit",
+      "im",
+      "im-chatapi",
+      "instant-messageing",
+      "message",
+      "message-uikit"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-uikit-ios",
+    "description": "Tencent Cloud Chat UI Components For iOS",
+    "html_url": "https://github.com/TencentCloud/chat-uikit-ios",
+    "stargazers_count": 33,
+    "forks_count": 8,
+    "open_issues_count": 5,
+    "watchers_count": 33,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-12-01T12:24:14Z",
+    "pushed_at": "2026-04-14T07:06:47Z",
+    "updated_at": "2026-06-15T17:10:46Z",
+    "default_branch": "main",
+    "topics": [
+      "api-messageing-service",
+      "chat",
+      "chat-api",
+      "chat-uikit",
+      "im",
+      "im-chatapi",
+      "instant-messageing",
+      "message",
+      "message-uikit"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-scenes-demo",
+    "description": "腾讯云即时通信IM 场景化Demo",
+    "html_url": "https://github.com/TencentCloud/chat-scenes-demo",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-17T04:21:15Z",
+    "pushed_at": "2022-11-17T04:21:16Z",
+    "updated_at": "2023-11-26T14:51:59Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-plugin-ue5",
+    "description": "Tencent Cloud Chat for IM Unreal Engine 5",
+    "html_url": "https://github.com/TencentCloud/chat-plugin-ue5",
+    "stargazers_count": 7,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 7,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-17T04:20:55Z",
+    "pushed_at": "2024-06-11T07:16:17Z",
+    "updated_at": "2026-07-18T12:52:09Z",
+    "default_branch": "main",
+    "topics": [
+      "chat",
+      "im-unreal-engine-5",
+      "tencnet"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-demo-unity",
+    "description": "腾讯云即时通信IM Unity Demo",
+    "html_url": "https://github.com/TencentCloud/chat-demo-unity",
+    "stargazers_count": 4,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-17T04:18:28Z",
+    "pushed_at": "2024-02-20T02:12:07Z",
+    "updated_at": "2026-05-14T03:05:11Z",
+    "default_branch": "main",
+    "topics": [
+      "chat",
+      "im",
+      "tencentcloud",
+      "unity"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-sdk-unity",
+    "description": "腾讯云即时通信IM Unity SDK",
+    "html_url": "https://github.com/TencentCloud/chat-sdk-unity",
+    "stargazers_count": 3,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-17T04:17:50Z",
+    "pushed_at": "2025-10-23T03:05:07Z",
+    "updated_at": "2025-10-23T03:05:14Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-demo-flutter",
+    "description": "The sample app showcasing Tencent Cloud Chat integration with Flutter across iOS, Android, Web, macOS, and Windows platforms.",
+    "html_url": "https://github.com/TencentCloud/chat-demo-flutter",
+    "stargazers_count": 139,
+    "forks_count": 55,
+    "open_issues_count": 11,
+    "watchers_count": 139,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-17T04:16:35Z",
+    "pushed_at": "2026-08-10T09:28:17Z",
+    "updated_at": "2026-08-10T09:27:47Z",
+    "default_branch": "main",
+    "topics": [
+      "chat",
+      "flutter"
+    ],
+    "homepage": "https://trtc.io/products/chat?utm_source=gfs&utm_medium=link&utm_campaign=%E6%B8%A0%E9%81%93&_channel_track_key=k6WgfCKn",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-uikit-flutter",
+    "description": "A powerful Flutter chat UI component library and business logic for Tencent Cloud Chat, creating seamless in-app chat modules for delightful user experiences.",
+    "html_url": "https://github.com/TencentCloud/chat-uikit-flutter",
+    "stargazers_count": 199,
+    "forks_count": 151,
+    "open_issues_count": 29,
+    "watchers_count": 199,
+    "language": "Dart",
+    "license": {
+      "spdx_id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-17T04:15:44Z",
+    "pushed_at": "2026-08-10T09:29:01Z",
+    "updated_at": "2026-08-10T09:30:10Z",
+    "default_branch": "main",
+    "topics": [
+      "chat",
+      "flutter"
+    ],
+    "homepage": "https://trtc.io/products/chat?utm_source=gfs&utm_medium=link&utm_campaign=%E6%B8%A0%E9%81%93&_channel_track_key=k6WgfCKn",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-sdk-flutter",
+    "description": "腾讯云即时通信IM Flutter 无UI SDK",
+    "html_url": "https://github.com/TencentCloud/chat-sdk-flutter",
+    "stargazers_count": 16,
+    "forks_count": 16,
+    "open_issues_count": 9,
+    "watchers_count": 16,
+    "language": "Dart",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-17T04:14:37Z",
+    "pushed_at": "2022-12-28T02:35:31Z",
+    "updated_at": "2026-04-10T14:29:57Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-uikit-react",
+    "description": "Free Chat UIKit for React — 1,000 MAU/month free forever with push notifications & no concurrency limits. Build in-app chat UI in minutes with pre-built React components: conversation list, large community, contact, group management.",
+    "html_url": "https://github.com/TencentCloud/chat-uikit-react",
+    "stargazers_count": 84,
+    "forks_count": 20,
+    "open_issues_count": 6,
+    "watchers_count": 84,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-14T03:20:30Z",
+    "pushed_at": "2025-10-21T03:49:43Z",
+    "updated_at": "2026-08-01T02:11:55Z",
+    "default_branch": "main",
+    "topics": [
+      "chat-api",
+      "chat-sdk",
+      "chat-uikit",
+      "free-chat-sdk",
+      "in-app-chat-sdk",
+      "instant-messaging",
+      "messaging",
+      "push-notifications",
+      "react",
+      "react-components",
+      "tencent-cloud",
+      "uikit",
+      "web"
+    ],
+    "homepage": "https://trtc.io/products/chat",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-uikit-uniapp",
+    "description": "腾讯云 IM 的 uniapp UI 组件库，支持 vue2/vue3，在几分钟内即可构建应用内聊天、音视频通话和直播功能。",
+    "html_url": "https://github.com/TencentCloud/chat-uikit-uniapp",
+    "stargazers_count": 174,
+    "forks_count": 32,
+    "open_issues_count": 4,
+    "watchers_count": 174,
+    "language": "Vue",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-14T03:16:58Z",
+    "pushed_at": "2025-11-27T04:01:49Z",
+    "updated_at": "2026-08-04T02:55:05Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-uikit-wechat",
+    "description": "腾讯云即时通信 IM，基于微信小程序原生的开源 UI 组件",
+    "html_url": "https://github.com/TencentCloud/chat-uikit-wechat",
+    "stargazers_count": 81,
+    "forks_count": 19,
+    "open_issues_count": 6,
+    "watchers_count": 81,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-09T02:23:24Z",
+    "pushed_at": "2024-12-25T09:37:13Z",
+    "updated_at": "2026-07-05T13:56:54Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-uikit-vue",
+    "description": "Free Chat UIKit for React — 1,000 MAU/month free forever with push notifications & no concurrency limits. Build in-app chat UI in minutes with pre-built Vue components: conversation list, large community, contact, group management.",
+    "html_url": "https://github.com/TencentCloud/chat-uikit-vue",
+    "stargazers_count": 215,
+    "forks_count": 71,
+    "open_issues_count": 5,
+    "watchers_count": 215,
+    "language": "Vue",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-09T02:20:27Z",
+    "pushed_at": "2025-10-16T09:56:40Z",
+    "updated_at": "2026-08-29T03:47:15Z",
+    "default_branch": "main",
+    "topics": [
+      "chat-api",
+      "chat-sdk",
+      "free-chat-sdk",
+      "in-app-chat",
+      "instant-messaging",
+      "messaging",
+      "push-notifications",
+      "send-message",
+      "tencent-cloud",
+      "vue",
+      "vue-components"
+    ],
+    "homepage": "https://trtc.io/products/chat",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/chat-demo-flutter-hybrid",
+    "description": "Tencent Cloud Chat: Samples of integratation Flutter SDK to an existing app.",
+    "html_url": "https://github.com/TencentCloud/chat-demo-flutter-hybrid",
+    "stargazers_count": 11,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Dart",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-07T03:35:06Z",
+    "pushed_at": "2024-10-14T12:12:05Z",
+    "updated_at": "2026-04-08T04:35:01Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencenteffect-sdk-flutter",
+    "description": "腾讯特效flutter 版本SDK和demo",
+    "html_url": "https://github.com/TencentCloud/tencenteffect-sdk-flutter",
+    "stargazers_count": 0,
+    "forks_count": 6,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-08-31T11:46:35Z",
+    "pushed_at": "2024-11-14T13:12:47Z",
+    "updated_at": "2024-11-14T13:12:51Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tdmq-examples",
+    "description": "TDMQ 当前有较多的用户尝试接入，但是对于一款新的消息队列，很多用户在第一次接入的时候会有较多的问题，该仓库的目的在于给用户提供多种语言 SDK 接入的代码 Demo。根据不同的功能以及使用场景，提供规范的接入 Demo 代码，用户开箱即用，降低用户接入的成本而且可以避免用户由于错误使用导致的故障等问题。",
+    "html_url": "https://github.com/TencentCloud/tdmq-examples",
+    "stargazers_count": 1,
+    "forks_count": 4,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-08-31T11:41:17Z",
+    "pushed_at": "2023-05-14T01:31:32Z",
+    "updated_at": "2023-05-06T09:47:40Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tavmedia-sdk-ios",
+    "description": "全平台视频剪辑方案",
+    "html_url": "https://github.com/TencentCloud/tavmedia-sdk-ios",
+    "stargazers_count": 5,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-08-30T08:47:30Z",
+    "pushed_at": "2023-04-18T12:02:15Z",
+    "updated_at": "2025-08-07T03:53:04Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tavmedia-sdk-android",
+    "description": "全平台视频剪辑方案",
+    "html_url": "https://github.com/TencentCloud/tavmedia-sdk-android",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-08-30T08:45:25Z",
+    "pushed_at": "2024-04-10T06:47:35Z",
+    "updated_at": "2025-02-24T15:00:07Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/ERDN",
+    "description": "基于同感受野可变形卷积网络的视频去模糊",
+    "html_url": "https://github.com/TencentCloud/ERDN",
+    "stargazers_count": 13,
+    "forks_count": 0,
+    "open_issues_count": 5,
+    "watchers_count": 13,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-07-19T12:17:32Z",
+    "pushed_at": "2025-07-07T12:31:38Z",
+    "updated_at": "2026-09-04T04:39:19Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tccc-agent-java-example",
+    "description": "腾讯云联络中心example，包括坐席端示例代码，用户端示例代码",
+    "html_url": "https://github.com/TencentCloud/tccc-agent-java-example",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-17T03:07:37Z",
+    "pushed_at": "2026-04-20T09:20:46Z",
+    "updated_at": "2026-04-20T09:20:51Z",
+    "default_branch": "main",
+    "topics": [
+      "demo"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-ios",
+    "description": "腾讯云 CLS IOS SDK",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-ios",
+    "stargazers_count": 9,
+    "forks_count": 6,
+    "open_issues_count": 5,
+    "watchers_count": 9,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-13T02:25:33Z",
+    "pushed_at": "2026-02-11T08:27:50Z",
+    "updated_at": "2026-04-09T04:55:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-c",
+    "description": "腾讯cls C SDK",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-c",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-06-13T02:23:52Z",
+    "pushed_at": "2026-03-26T12:22:47Z",
+    "updated_at": "2026-03-26T12:21:08Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-speech-sdk-nodejs",
+    "description": "腾讯云语音SDK的Nodejs语言版本",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-speech-sdk-nodejs",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-29T08:09:37Z",
+    "pushed_at": "2023-11-02T02:38:31Z",
+    "updated_at": "2024-06-24T08:27:13Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-opentelemetry-java",
+    "description": "腾讯云APM团队基于opentelemetry-java-instrumentation开源项目进行二次开发",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-opentelemetry-java",
+    "stargazers_count": 7,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 7,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-29T08:07:54Z",
+    "pushed_at": "2024-03-05T08:19:34Z",
+    "updated_at": "2025-12-10T05:55:28Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-php",
+    "description": "腾讯云CLS PHP SDK",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-php",
+    "stargazers_count": 4,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-21T14:44:48Z",
+    "pushed_at": "2026-05-25T11:50:40Z",
+    "updated_at": "2026-05-25T11:49:22Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-cpp",
+    "description": "腾讯云CLS CPP SDK",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-cpp",
+    "stargazers_count": 6,
+    "forks_count": 3,
+    "open_issues_count": 3,
+    "watchers_count": 6,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-21T14:42:19Z",
+    "pushed_at": "2025-07-31T02:09:16Z",
+    "updated_at": "2025-07-09T03:22:09Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-demo",
+    "description": "腾讯云CLS SDK 使用案例合集",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-demo",
+    "stargazers_count": 1,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-21T14:40:20Z",
+    "pushed_at": "2022-06-28T13:39:03Z",
+    "updated_at": "2022-09-27T11:46:15Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tccc-example-android",
+    "description": "腾讯云联络中心支持安卓设备音视频通话，用户通过安卓设备发起通话，客服可在电脑端工作台接待",
+    "html_url": "https://github.com/TencentCloud/tccc-example-android",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-20T06:56:12Z",
+    "pushed_at": "2023-09-13T06:39:22Z",
+    "updated_at": "2025-11-12T09:40:20Z",
+    "default_branch": "main",
+    "topics": [
+      "android",
+      "video"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tione-examples",
+    "description": "tione公有云为用户提供tikit使用指引案例集",
+    "html_url": "https://github.com/TencentCloud/tione-examples",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Jupyter Notebook",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-23T02:27:50Z",
+    "pushed_at": "2024-09-09T13:34:13Z",
+    "updated_at": "2025-07-04T05:15:11Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cls-console-sdk",
+    "description": "You can embed Tencent Cloud CLS into other systems to access logs without login, which can help you use CLS (including search and analysis, dashboard, and other features) more efficiently.                    将腾讯云日志服务以内嵌方式集成到其他系统中，免登录实现一站式日志访问，方便快捷使用CLS日志服务（包含检索分析，仪表盘）",
+    "html_url": "https://github.com/TencentCloud/cls-console-sdk",
+    "stargazers_count": 10,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "watchers_count": 10,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-21T12:08:26Z",
+    "pushed_at": "2026-09-02T08:01:29Z",
+    "updated_at": "2026-09-02T08:01:51Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/trtc-education-electron",
+    "description": "教育场景化解决方案App，包含基础的实时音视频通信和即时通信功能，支持丰富的课堂互动（举手、点名/签到等）和教育白板。 技术栈：Electron、React、Material-ui react、Webpack、sass等。",
+    "html_url": "https://github.com/TencentCloud/trtc-education-electron",
+    "stargazers_count": 74,
+    "forks_count": 16,
+    "open_issues_count": 0,
+    "watchers_count": 74,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-01-19T07:23:12Z",
+    "pushed_at": "2024-09-20T03:41:58Z",
+    "updated_at": "2026-06-23T06:14:08Z",
+    "default_branch": "main",
+    "topics": [
+      "electron",
+      "react",
+      "tencent-cloud",
+      "trtc"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/QAPM-iOS-CocoaPods",
+    "description": "腾讯QAPM性能监控软件iOS SDK pod仓库",
+    "html_url": "https://github.com/TencentCloud/QAPM-iOS-CocoaPods",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-01-11T08:30:54Z",
+    "pushed_at": "2026-07-21T02:46:10Z",
+    "updated_at": "2026-07-21T02:46:15Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/rum",
+    "description": "主要用来更新qapm性能监控组件",
+    "html_url": "https://github.com/TencentCloud/rum",
+    "stargazers_count": 4,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "Swift",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-29T08:40:57Z",
+    "pushed_at": "2026-07-21T02:45:00Z",
+    "updated_at": "2026-07-21T02:44:45Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/joox-sdk-ios",
+    "description": "JOOXiOSSDK及其Demo项目",
+    "html_url": "https://github.com/TencentCloud/joox-sdk-ios",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "C",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-27T03:39:44Z",
+    "pushed_at": "2021-12-27T07:11:45Z",
+    "updated_at": "2025-09-10T09:35:21Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/libtquic-sdk",
+    "description": "腾讯TQUIC-跨平台通用QUIC网络库",
+    "html_url": "https://github.com/TencentCloud/libtquic-sdk",
+    "stargazers_count": 74,
+    "forks_count": 11,
+    "open_issues_count": 4,
+    "watchers_count": 74,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "BSD-2-Clause",
+      "name": "BSD 2-Clause \"Simplified\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-17T13:41:33Z",
+    "pushed_at": "2023-12-15T03:05:57Z",
+    "updated_at": "2026-01-12T03:10:39Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-log4j2-appender",
+    "description": "tencentcloud cls log4j2 appender",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-log4j2-appender",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-09T08:54:08Z",
+    "pushed_at": "2024-07-05T04:06:32Z",
+    "updated_at": "2024-07-05T04:06:36Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-logback-appender",
+    "description": "tencentcloud cls logback appender",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-logback-appender",
+    "stargazers_count": 6,
+    "forks_count": 2,
+    "open_issues_count": 1,
+    "watchers_count": 6,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-09T08:42:58Z",
+    "pushed_at": "2025-05-08T08:26:34Z",
+    "updated_at": "2026-04-24T09:40:24Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-log4j-appender",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-log4j-appender",
+    "stargazers_count": 3,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-02T06:52:00Z",
+    "pushed_at": "2025-01-13T07:03:44Z",
+    "updated_at": "2026-07-18T12:51:35Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-js",
+    "description": "cls log js sdk",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-js",
+    "stargazers_count": 10,
+    "forks_count": 4,
+    "open_issues_count": 4,
+    "watchers_count": 10,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-01T11:53:06Z",
+    "pushed_at": "2026-08-26T06:23:33Z",
+    "updated_at": "2026-04-20T08:53:38Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-go",
+    "description": "cls log go sdk",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-go",
+    "stargazers_count": 23,
+    "forks_count": 12,
+    "open_issues_count": 1,
+    "watchers_count": 23,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-01T11:49:25Z",
+    "pushed_at": "2026-09-01T11:53:49Z",
+    "updated_at": "2026-09-01T11:51:18Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-java",
+    "description": "cls日志sdk",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-java",
+    "stargazers_count": 7,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 7,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-01T11:48:11Z",
+    "pushed_at": "2025-12-18T02:17:00Z",
+    "updated_at": "2025-12-25T06:39:19Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cls-sdk-android",
+    "description": "腾讯云CLS Android SDK",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cls-sdk-android",
+    "stargazers_count": 13,
+    "forks_count": 5,
+    "open_issues_count": 6,
+    "watchers_count": 13,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-18T02:28:29Z",
+    "pushed_at": "2026-04-28T06:11:54Z",
+    "updated_at": "2026-07-15T02:47:36Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/signature-process-demo",
+    "description": "Demonstrate Cloud API Signature Process.",
+    "html_url": "https://github.com/TencentCloud/signature-process-demo",
+    "stargazers_count": 20,
+    "forks_count": 16,
+    "open_issues_count": 0,
+    "watchers_count": 20,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-20T09:07:51Z",
+    "pushed_at": "2024-09-10T11:19:33Z",
+    "updated_at": "2026-07-04T15:49:02Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/ssm-rotation-sdk-python",
+    "description": "ssm(凭据管理服务）凭据轮转功能的客户端 lib 和 使用demo。",
+    "html_url": "https://github.com/TencentCloud/ssm-rotation-sdk-python",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-19T10:43:52Z",
+    "pushed_at": "2026-03-30T08:58:14Z",
+    "updated_at": "2026-03-30T08:57:53Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/ssm-rotation-sdk-golang",
+    "description": "ssm(凭据管理服务）凭据轮转功能的客户端 lib 和 使用demo。",
+    "html_url": "https://github.com/TencentCloud/ssm-rotation-sdk-golang",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-19T10:42:48Z",
+    "pushed_at": "2026-03-30T07:45:24Z",
+    "updated_at": "2026-03-30T07:39:37Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/PSTN-demo",
+    "description": "腾讯云语音通信对外开放demo",
+    "html_url": "https://github.com/TencentCloud/PSTN-demo",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-18T15:24:05Z",
+    "pushed_at": "2021-07-23T10:05:06Z",
+    "updated_at": "2022-01-20T08:10:20Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/joox-sdk-android",
+    "description": "JOOX SDK/demo 仓库",
+    "html_url": "https://github.com/TencentCloud/joox-sdk-android",
+    "stargazers_count": 10,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 10,
+    "language": "Kotlin",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-16T16:50:56Z",
+    "pushed_at": "2026-04-14T06:58:53Z",
+    "updated_at": "2026-04-14T06:58:59Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/TPNS-macOS-CocoaPods",
+    "description": "腾讯移动推送macOS SDK pod仓库",
+    "html_url": "https://github.com/TencentCloud/TPNS-macOS-CocoaPods",
+    "stargazers_count": 1,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-05T08:18:54Z",
+    "pushed_at": "2021-07-05T09:03:03Z",
+    "updated_at": "2024-02-21T02:53:35Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/TPNS-iOS-CocoaPods",
+    "description": "腾讯移动推送iOS SDK pod仓库",
+    "html_url": "https://github.com/TencentCloud/TPNS-iOS-CocoaPods",
+    "stargazers_count": 4,
+    "forks_count": 5,
+    "open_issues_count": 1,
+    "watchers_count": 4,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-05T08:14:38Z",
+    "pushed_at": "2026-04-13T03:37:11Z",
+    "updated_at": "2025-04-28T12:38:01Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/OpenSource",
+    "description": "Tencent Cloud Open Source (TCOS)",
+    "html_url": "https://github.com/TencentCloud/OpenSource",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-06-02T03:14:20Z",
+    "pushed_at": "2021-06-05T05:48:35Z",
+    "updated_at": "2021-06-05T05:48:38Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tsf-native-demo",
+    "description": "TSF 原生应用 demo",
+    "html_url": "https://github.com/TencentCloud/tsf-native-demo",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-31T03:29:27Z",
+    "pushed_at": "2021-05-31T03:29:27Z",
+    "updated_at": "2021-05-31T03:29:30Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/smh-sdk-android",
+    "description": "腾讯云智能媒资托管服务(https://cloud.tencent.com/product/smh) Android SDK，实现手机端媒体文件的上传、下载与云端管理功能。",
+    "html_url": "https://github.com/TencentCloud/smh-sdk-android",
+    "stargazers_count": 4,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "Kotlin",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-04-30T10:20:44Z",
+    "pushed_at": "2025-04-10T13:27:55Z",
+    "updated_at": "2025-04-10T13:27:59Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/ckafka-sdk-demo",
+    "description": "腾讯云CKafka各语言demo",
+    "html_url": "https://github.com/TencentCloud/ckafka-sdk-demo",
+    "stargazers_count": 5,
+    "forks_count": 26,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-04-07T08:19:15Z",
+    "pushed_at": "2022-06-17T06:32:41Z",
+    "updated_at": "2025-07-07T12:52:10Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/homebrew-tccli",
+    "description": "Tencent Cloud API 3.0 Command Line Interface for homebrew",
+    "html_url": "https://github.com/TencentCloud/homebrew-tccli",
+    "stargazers_count": 1,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-07T07:54:32Z",
+    "pushed_at": "2026-09-04T03:43:46Z",
+    "updated_at": "2026-09-04T03:44:08Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-speech-sdk-js",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-speech-sdk-js",
+    "stargazers_count": 98,
+    "forks_count": 28,
+    "open_issues_count": 14,
+    "watchers_count": 98,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-05T13:11:03Z",
+    "pushed_at": "2026-07-27T08:16:34Z",
+    "updated_at": "2026-08-26T02:32:15Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cls-grafana-datasource",
+    "description": "TencentCloud Log Service datasource plugin for Grafana",
+    "html_url": "https://github.com/TencentCloud/cls-grafana-datasource",
+    "stargazers_count": 6,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 6,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-05T08:28:31Z",
+    "pushed_at": "2026-08-03T11:01:55Z",
+    "updated_at": "2026-08-03T11:04:03Z",
+    "default_branch": "main",
+    "topics": [
+      "cls-datasource",
+      "grafana-plugins"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/distribution-cos-driver",
+    "description": "COS Driver For Distribution",
+    "html_url": "https://github.com/TencentCloud/distribution-cos-driver",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-18T03:40:25Z",
+    "pushed_at": "2020-12-18T03:40:26Z",
+    "updated_at": "2020-12-18T03:40:25Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-ruby",
+    "description": "Tencent Cloud API 3.0 SDK for Ruby",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-ruby",
+    "stargazers_count": 33,
+    "forks_count": 14,
+    "open_issues_count": 3,
+    "watchers_count": 33,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-10T09:25:14Z",
+    "pushed_at": "2026-09-03T19:16:18Z",
+    "updated_at": "2026-09-03T19:24:55Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-speech-sdk-cpp",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-speech-sdk-cpp",
+    "stargazers_count": 7,
+    "forks_count": 2,
+    "open_issues_count": 5,
+    "watchers_count": 7,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-02T07:50:45Z",
+    "pushed_at": "2025-05-12T06:24:51Z",
+    "updated_at": "2025-05-12T06:25:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-speech-sdk-python",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-speech-sdk-python",
+    "stargazers_count": 72,
+    "forks_count": 24,
+    "open_issues_count": 6,
+    "watchers_count": 72,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-02T07:50:19Z",
+    "pushed_at": "2026-09-01T07:55:04Z",
+    "updated_at": "2026-09-01T07:56:47Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cls-iframe-demo",
+    "description": "CLS iframe demo. https://cloud.tencent.com/document/product/614/45742",
+    "html_url": "https://github.com/TencentCloud/cls-iframe-demo",
+    "stargazers_count": 9,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 9,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-12-01T07:27:39Z",
+    "pushed_at": "2026-03-31T08:52:32Z",
+    "updated_at": "2026-07-18T12:51:01Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-speech-sdk-java-example",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-speech-sdk-java-example",
+    "stargazers_count": 9,
+    "forks_count": 14,
+    "open_issues_count": 1,
+    "watchers_count": 9,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-16T06:37:41Z",
+    "pushed_at": "2026-09-01T11:07:34Z",
+    "updated_at": "2026-09-01T11:08:46Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/homebrew-tpnsServiceExtension",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/homebrew-tpnsServiceExtension",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": "Ruby",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-11T09:18:24Z",
+    "pushed_at": "2020-11-11T11:00:35Z",
+    "updated_at": "2020-11-11T11:00:37Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tpns-service-extension",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tpns-service-extension",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Objective-C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-11T09:17:29Z",
+    "pushed_at": "2020-11-11T11:01:31Z",
+    "updated_at": "2023-11-30T07:13:26Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/TPNS-Flutter-Plugin",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/TPNS-Flutter-Plugin",
+    "stargazers_count": 61,
+    "forks_count": 42,
+    "open_issues_count": 5,
+    "watchers_count": 61,
+    "language": "Dart",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-09T08:32:13Z",
+    "pushed_at": "2025-12-18T06:56:09Z",
+    "updated_at": "2025-12-15T13:17:41Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/media-hosting-miniprogram-sdk",
+    "description": "腾讯云智能媒资托管微信小程序SDK",
+    "html_url": "https://github.com/TencentCloud/media-hosting-miniprogram-sdk",
+    "stargazers_count": 2,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-09T07:35:13Z",
+    "pushed_at": "2020-12-15T14:00:52Z",
+    "updated_at": "2023-12-11T10:29:52Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/O266player",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/O266player",
+    "stargazers_count": 437,
+    "forks_count": 88,
+    "open_issues_count": 7,
+    "watchers_count": 437,
+    "language": "C",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-10-22T08:52:55Z",
+    "pushed_at": "2023-07-30T08:14:11Z",
+    "updated_at": "2026-08-10T18:07:02Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-speech-sdk-go",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-speech-sdk-go",
+    "stargazers_count": 22,
+    "forks_count": 8,
+    "open_issues_count": 3,
+    "watchers_count": 22,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-10-13T08:55:21Z",
+    "pushed_at": "2026-07-13T09:33:39Z",
+    "updated_at": "2026-08-02T09:48:42Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tcb-manager-sdk-php",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tcb-manager-sdk-php",
+    "stargazers_count": 3,
+    "forks_count": 5,
+    "open_issues_count": 0,
+    "watchers_count": 3,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-09-25T12:45:54Z",
+    "pushed_at": "2022-02-17T07:23:26Z",
+    "updated_at": "2023-11-08T06:25:49Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://packagist.org/packages/tencentcloudbase/tcb-manager-php",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-speech-sdk-java",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tencentcloud-speech-sdk-java",
+    "stargazers_count": 15,
+    "forks_count": 9,
+    "open_issues_count": 2,
+    "watchers_count": 15,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-09-08T14:29:00Z",
+    "pushed_at": "2026-09-01T09:21:38Z",
+    "updated_at": "2026-09-01T09:28:50Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tc-ocr-sdk",
+    "description": "通用文字识别客户端SDK",
+    "html_url": "https://github.com/TencentCloud/tc-ocr-sdk",
+    "stargazers_count": 30,
+    "forks_count": 38,
+    "open_issues_count": 1,
+    "watchers_count": 30,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-08-07T11:02:33Z",
+    "pushed_at": "2024-09-10T01:44:30Z",
+    "updated_at": "2026-04-15T01:50:20Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://cloud.tencent.com/product/generalocr",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tdmq-java-client",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tdmq-java-client",
+    "stargazers_count": 5,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 5,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-07-13T04:04:21Z",
+    "pushed_at": "2021-10-27T11:57:51Z",
+    "updated_at": "2024-12-05T11:12:36Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-cpp-intl-en",
+    "description": "Tencent Cloud API 3.0 SDK for C++",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-cpp-intl-en",
+    "stargazers_count": 2,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-07-07T09:08:14Z",
+    "pushed_at": "2026-09-03T19:26:05Z",
+    "updated_at": "2026-09-03T19:26:20Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/uniapp-tencent-cloud-plugin",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/uniapp-tencent-cloud-plugin",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-24T07:35:15Z",
+    "pushed_at": "2020-06-24T07:35:16Z",
+    "updated_at": "2020-06-24T07:35:15Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/dzq-tencent-cloud-plugin",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/dzq-tencent-cloud-plugin",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-24T07:34:51Z",
+    "pushed_at": "2020-06-24T07:34:52Z",
+    "updated_at": "2020-06-24T07:34:51Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tdmq-go-client",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tdmq-go-client",
+    "stargazers_count": 5,
+    "forks_count": 7,
+    "open_issues_count": 11,
+    "watchers_count": 5,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-17T07:00:33Z",
+    "pushed_at": "2024-12-10T07:27:38Z",
+    "updated_at": "2024-12-10T07:27:42Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/dzq",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/dzq",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-01T11:58:15Z",
+    "pushed_at": "2020-06-01T11:58:16Z",
+    "updated_at": "2020-06-01T11:58:15Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/dzx-tencent-cloud-plugin",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/dzx-tencent-cloud-plugin",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-05-19T12:23:40Z",
+    "pushed_at": "2020-05-19T12:23:41Z",
+    "updated_at": "2020-05-19T12:23:40Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/wp-tencent-cloud-plugin",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/wp-tencent-cloud-plugin",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-05-19T12:22:58Z",
+    "pushed_at": "2020-05-19T12:22:59Z",
+    "updated_at": "2020-05-19T12:23:23Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/apigateway-demo",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/apigateway-demo",
+    "stargazers_count": 3,
+    "forks_count": 6,
+    "open_issues_count": 2,
+    "watchers_count": 3,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-04-26T09:16:51Z",
+    "pushed_at": "2024-10-26T00:23:12Z",
+    "updated_at": "2024-10-12T06:48:38Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tke-cluster-credential-action",
+    "description": "Retrieve TKE cluster credential and set it to $HOME/.kube/config.",
+    "html_url": "https://github.com/TencentCloud/tke-cluster-credential-action",
+    "stargazers_count": 5,
+    "forks_count": 6,
+    "open_issues_count": 6,
+    "watchers_count": 5,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-26T11:10:09Z",
+    "pushed_at": "2024-11-20T14:29:35Z",
+    "updated_at": "2024-12-01T13:04:08Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cos-action",
+    "description": "Github Action to upload to Tencent Cloud COS",
+    "html_url": "https://github.com/TencentCloud/cos-action",
+    "stargazers_count": 32,
+    "forks_count": 17,
+    "open_issues_count": 9,
+    "watchers_count": 32,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-24T06:59:15Z",
+    "pushed_at": "2024-11-20T14:25:15Z",
+    "updated_at": "2025-12-23T02:27:41Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cli-action",
+    "description": "GitHub Action for Tencent Cloud API 3.0 Command Line Interface",
+    "html_url": "https://github.com/TencentCloud/cli-action",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Shell",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-02-24T06:58:18Z",
+    "pushed_at": "2020-02-27T03:40:44Z",
+    "updated_at": "2024-01-21T15:09:54Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-go-intl-en",
+    "description": "Tencent Cloud API 3.0 SDK for Golang",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-go-intl-en",
+    "stargazers_count": 9,
+    "forks_count": 8,
+    "open_issues_count": 7,
+    "watchers_count": 9,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-01-15T06:47:42Z",
+    "pushed_at": "2026-09-03T19:24:08Z",
+    "updated_at": "2026-09-03T19:27:12Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tc-iot-sdk-embedded-for-esp8266",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tc-iot-sdk-embedded-for-esp8266",
+    "stargazers_count": 83,
+    "forks_count": 45,
+    "open_issues_count": 5,
+    "watchers_count": 83,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-01-15T03:23:01Z",
+    "pushed_at": "2025-07-08T11:49:00Z",
+    "updated_at": "2025-07-08T11:49:03Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-dotnet-intl-en",
+    "description": "Tencent Cloud API 3.0 SDK for .NET",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-dotnet-intl-en",
+    "stargazers_count": 4,
+    "forks_count": 5,
+    "open_issues_count": 0,
+    "watchers_count": 4,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-29T09:07:53Z",
+    "pushed_at": "2026-09-03T19:31:43Z",
+    "updated_at": "2026-09-03T19:32:08Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-nodejs-intl-en",
+    "description": "Tencent Cloud API 3.0 SDK for Node.js",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-nodejs-intl-en",
+    "stargazers_count": 5,
+    "forks_count": 6,
+    "open_issues_count": 4,
+    "watchers_count": 5,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-28T11:30:22Z",
+    "pushed_at": "2026-09-03T19:20:45Z",
+    "updated_at": "2026-09-03T19:20:55Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-java-intl-en",
+    "description": "Tencent Cloud API 3.0 SDK for Java",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-java-intl-en",
+    "stargazers_count": 12,
+    "forks_count": 6,
+    "open_issues_count": 4,
+    "watchers_count": 12,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-28T06:13:51Z",
+    "pushed_at": "2026-09-03T19:34:23Z",
+    "updated_at": "2026-09-03T19:34:33Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cli-intl-en",
+    "description": "Tencent Cloud API 3.0 Command Line Interface",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cli-intl-en",
+    "stargazers_count": 3,
+    "forks_count": 9,
+    "open_issues_count": 3,
+    "watchers_count": 3,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-22T13:10:59Z",
+    "pushed_at": "2026-09-03T19:22:13Z",
+    "updated_at": "2026-09-03T19:27:29Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-php-intl-en",
+    "description": "Tencent Cloud API 3.0 SDK for PHP",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-php-intl-en",
+    "stargazers_count": 3,
+    "forks_count": 10,
+    "open_issues_count": 3,
+    "watchers_count": 3,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-13T13:27:54Z",
+    "pushed_at": "2026-09-03T19:22:01Z",
+    "updated_at": "2026-09-03T19:23:47Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-python-intl-en",
+    "description": "Tencent Cloud API 3.0 SDK for Python",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-python-intl-en",
+    "stargazers_count": 15,
+    "forks_count": 6,
+    "open_issues_count": 1,
+    "watchers_count": 15,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-12-13T12:23:52Z",
+    "pushed_at": "2026-09-02T03:59:18Z",
+    "updated_at": "2026-09-02T04:02:45Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/Serverless-demos",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/Serverless-demos",
+    "stargazers_count": 7,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 7,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-11-01T11:40:16Z",
+    "pushed_at": "2020-03-02T10:00:42Z",
+    "updated_at": "2024-01-30T15:30:22Z",
+    "default_branch": "master",
+    "topics": [
+      "serverless"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/Serverless-java-lib",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/Serverless-java-lib",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "watchers_count": 0,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-17T11:18:52Z",
+    "pushed_at": "2019-10-17T11:59:55Z",
+    "updated_at": "2020-12-17T15:02:24Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/Serverless-go-lib",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/Serverless-go-lib",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 1,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-17T11:15:57Z",
+    "pushed_at": "2019-10-17T11:58:07Z",
+    "updated_at": "2020-09-27T11:29:43Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/serverless",
+    "description": "TencentCloud Serverless",
+    "html_url": "https://github.com/TencentCloud/serverless",
+    "stargazers_count": 234,
+    "forks_count": 27,
+    "open_issues_count": 4,
+    "watchers_count": 234,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-09T05:25:26Z",
+    "pushed_at": "2020-10-14T07:33:25Z",
+    "updated_at": "2026-08-03T00:09:35Z",
+    "default_branch": "master",
+    "topics": [
+      "serverless"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tcb-common-sdk-java",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/tcb-common-sdk-java",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "watchers_count": 1,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-09T02:45:10Z",
+    "pushed_at": "2024-09-23T07:19:35Z",
+    "updated_at": "2024-09-23T07:19:31Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/hostpathperpod",
+    "description": "A simple flex volume plugin like hostPath, but create a host directory with pod meta.",
+    "html_url": "https://github.com/TencentCloud/hostpathperpod",
+    "stargazers_count": 8,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 8,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-09-17T10:25:15Z",
+    "pushed_at": "2019-09-17T10:43:19Z",
+    "updated_at": "2022-03-29T07:18:48Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-cpp",
+    "description": "Tencent Cloud API 3.0 SDK for C++",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-cpp",
+    "stargazers_count": 65,
+    "forks_count": 40,
+    "open_issues_count": 4,
+    "watchers_count": 65,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-05-28T08:56:08Z",
+    "pushed_at": "2026-09-03T18:59:01Z",
+    "updated_at": "2026-09-03T19:00:04Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tcb-sdk-php",
+    "description": "tencent cloud base sdk for php",
+    "html_url": "https://github.com/TencentCloud/tcb-sdk-php",
+    "stargazers_count": 13,
+    "forks_count": 10,
+    "open_issues_count": 5,
+    "watchers_count": 13,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-05-23T09:31:40Z",
+    "pushed_at": "2024-09-23T07:13:56Z",
+    "updated_at": "2024-09-23T07:13:59Z",
+    "default_branch": "master",
+    "topics": [
+      "sdk-php",
+      "tcb"
+    ],
+    "homepage": "https://packagist.org/packages/tencentcloudbase/tcb-php-sdk",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-monitor-grafana-app",
+    "description": "Tencent Cloud Monitor App Plugin for Grafana",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-monitor-grafana-app",
+    "stargazers_count": 161,
+    "forks_count": 43,
+    "open_issues_count": 42,
+    "watchers_count": 161,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-05-14T08:22:03Z",
+    "pushed_at": "2025-03-17T08:11:09Z",
+    "updated_at": "2026-08-10T14:47:03Z",
+    "default_branch": "master",
+    "topics": [
+      "grafana",
+      "monitor",
+      "plugin",
+      "tencentcloud"
+    ],
+    "homepage": "https://grafana.com/grafana/plugins/tencentcloud-monitor-app/",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-serverless-nodejs",
+    "description": "腾讯云云函数SDK，集成云函数业务流接口",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-serverless-nodejs",
+    "stargazers_count": 8,
+    "forks_count": 3,
+    "open_issues_count": 4,
+    "watchers_count": 8,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-04-29T09:32:58Z",
+    "pushed_at": "2020-07-13T22:15:59Z",
+    "updated_at": "2022-06-22T02:36:59Z",
+    "default_branch": "master",
+    "topics": [
+      "sdk",
+      "tencentcloud-serverless-nodejs"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-demo-mp-soe",
+    "description": "soe wechat miniprogram demo",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-demo-mp-soe",
+    "stargazers_count": 11,
+    "forks_count": 11,
+    "open_issues_count": 3,
+    "watchers_count": 11,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-02-27T09:45:48Z",
+    "pushed_at": "2025-07-23T09:49:05Z",
+    "updated_at": "2025-07-23T09:49:09Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-android-soe",
+    "description": "soe android sdk",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-android-soe",
+    "stargazers_count": 16,
+    "forks_count": 3,
+    "open_issues_count": 9,
+    "watchers_count": 16,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-02-27T08:23:30Z",
+    "pushed_at": "2024-09-30T07:19:17Z",
+    "updated_at": "2026-03-31T08:59:56Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/TIMSDK",
+    "description": "Free Chat SDK (IM SDK) — 1,000 MAU/month free forever with push notifications & no concurrency limits. Build in-app messaging with chat API, UIKit & send message. Supports Android, iOS, Flutter, Web, React Native, uni-app, HarmonyOS & more.",
+    "html_url": "https://github.com/TencentCloud/TIMSDK",
+    "stargazers_count": 2741,
+    "forks_count": 2734,
+    "open_issues_count": 396,
+    "watchers_count": 2741,
+    "language": "Objective-C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-17T07:35:20Z",
+    "pushed_at": "2026-07-31T11:00:40Z",
+    "updated_at": "2026-09-05T18:54:16Z",
+    "default_branch": "master",
+    "topics": [
+      "android",
+      "chat-api",
+      "chat-sdk",
+      "chat-ui-components",
+      "chat-uikit",
+      "flutter",
+      "free-chat-api",
+      "free-chat-sdk",
+      "im-sdk",
+      "in-app-chat",
+      "in-app-messaging",
+      "instant-messaging",
+      "ios",
+      "messaging-sdk",
+      "offline-push",
+      "push-notification",
+      "react-native",
+      "real-time-messaging",
+      "tencent-cloud"
+    ],
+    "homepage": "https://trtc.io/products/chat",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-ios-soe",
+    "description": "soe iOS sdk",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-ios-soe",
+    "stargazers_count": 13,
+    "forks_count": 6,
+    "open_issues_count": 10,
+    "watchers_count": 13,
+    "language": "C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-20T15:16:15Z",
+    "pushed_at": "2022-11-01T08:14:50Z",
+    "updated_at": "2026-03-31T08:59:53Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cluster-api-provider-tencent",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/cluster-api-provider-tencent",
+    "stargazers_count": 16,
+    "forks_count": 5,
+    "open_issues_count": 4,
+    "watchers_count": 16,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-12T02:56:28Z",
+    "pushed_at": "2022-10-24T03:51:42Z",
+    "updated_at": "2022-11-29T07:00:25Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cni-bridge-networking",
+    "description": "tool for bridge and loopback cni plugin deploying and configuring",
+    "html_url": "https://github.com/TencentCloud/cni-bridge-networking",
+    "stargazers_count": 2,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 2,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-07T15:48:12Z",
+    "pushed_at": "2018-08-23T12:37:41Z",
+    "updated_at": "2023-09-01T06:51:12Z",
+    "default_branch": "master",
+    "topics": [
+      "cni",
+      "kubernetes"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-dotnet",
+    "description": "Tencent Cloud API 3.0 SDK for .NET",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-dotnet",
+    "stargazers_count": 362,
+    "forks_count": 130,
+    "open_issues_count": 15,
+    "watchers_count": 362,
+    "language": "C#",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-06T07:38:38Z",
+    "pushed_at": "2026-09-03T19:12:37Z",
+    "updated_at": "2026-09-03T19:12:54Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/ingress-tke-bm",
+    "description": "tke bm lb l7 controller for ingress",
+    "html_url": "https://github.com/TencentCloud/ingress-tke-bm",
+    "stargazers_count": 0,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 0,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-07-27T07:49:18Z",
+    "pushed_at": "2018-07-27T08:10:21Z",
+    "updated_at": "2018-07-27T08:10:22Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/kubernetes-csi-tencentcloud",
+    "description": "kubernetes csi volume plugin for tencentcloud",
+    "html_url": "https://github.com/TencentCloud/kubernetes-csi-tencentcloud",
+    "stargazers_count": 69,
+    "forks_count": 24,
+    "open_issues_count": 20,
+    "watchers_count": 69,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-07-16T11:02:43Z",
+    "pushed_at": "2025-07-08T02:54:12Z",
+    "updated_at": "2026-08-23T13:59:43Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/scf-node-debug",
+    "description": null,
+    "html_url": "https://github.com/TencentCloud/scf-node-debug",
+    "stargazers_count": 76,
+    "forks_count": 2,
+    "open_issues_count": 5,
+    "watchers_count": 76,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-07-02T03:49:14Z",
+    "pushed_at": "2020-07-13T21:54:44Z",
+    "updated_at": "2023-06-20T17:42:14Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-nodejs",
+    "description": "Tencent Cloud API 3.0 SDK for NodeJS",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-nodejs",
+    "stargazers_count": 599,
+    "forks_count": 112,
+    "open_issues_count": 27,
+    "watchers_count": 599,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-05-25T05:47:01Z",
+    "pushed_at": "2026-09-03T18:52:58Z",
+    "updated_at": "2026-09-03T18:57:38Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cloud-controller-manager",
+    "description": "tencentcloud cloud controller manager for kubernetes",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cloud-controller-manager",
+    "stargazers_count": 83,
+    "forks_count": 24,
+    "open_issues_count": 8,
+    "watchers_count": 83,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-05-17T10:20:10Z",
+    "pushed_at": "2020-04-21T07:43:50Z",
+    "updated_at": "2026-04-04T00:11:17Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-cli",
+    "description": "Tencent Cloud API 3.0 Command Line Interface",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-cli",
+    "stargazers_count": 133,
+    "forks_count": 32,
+    "open_issues_count": 18,
+    "watchers_count": 133,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-24T09:23:58Z",
+    "pushed_at": "2026-09-04T03:42:20Z",
+    "updated_at": "2026-09-04T03:42:31Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-php",
+    "description": "Tencent Cloud API 3.0 SDK for PHP",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-php",
+    "stargazers_count": 366,
+    "forks_count": 180,
+    "open_issues_count": 6,
+    "watchers_count": 366,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-22T10:10:00Z",
+    "pushed_at": "2026-09-03T18:27:05Z",
+    "updated_at": "2026-09-03T18:28:56Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-python",
+    "description": "Tencent Cloud API 3.0 SDK for Python",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-python",
+    "stargazers_count": 710,
+    "forks_count": 253,
+    "open_issues_count": 11,
+    "watchers_count": 710,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-19T02:23:12Z",
+    "pushed_at": "2026-09-03T18:55:36Z",
+    "updated_at": "2026-09-03T18:55:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-go",
+    "description": "Tencent Cloud API 3.0 SDK for Golang",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-go",
+    "stargazers_count": 746,
+    "forks_count": 205,
+    "open_issues_count": 14,
+    "watchers_count": 746,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-19T02:13:48Z",
+    "pushed_at": "2026-09-03T18:46:28Z",
+    "updated_at": "2026-09-03T18:49:24Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/tencentcloud-sdk-java",
+    "description": "Tencent Cloud API 3.0 SDK for Java",
+    "html_url": "https://github.com/TencentCloud/tencentcloud-sdk-java",
+    "stargazers_count": 582,
+    "forks_count": 281,
+    "open_issues_count": 18,
+    "watchers_count": 582,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-17T02:58:16Z",
+    "pushed_at": "2026-09-03T19:08:07Z",
+    "updated_at": "2026-09-03T19:12:46Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/cosbrowser",
+    "description": "腾讯云 COS 客户端",
+    "html_url": "https://github.com/TencentCloud/cosbrowser",
+    "stargazers_count": 100,
+    "forks_count": 13,
+    "open_issues_count": 33,
+    "watchers_count": 100,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-03-24T01:37:16Z",
+    "pushed_at": "2026-08-28T05:04:31Z",
+    "updated_at": "2026-08-28T05:04:42Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://cloud.tencent.com/document/product/436/11366",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/httpdns-sdk-android",
+    "description": "Tencent Cloud HTTPDNS SDK",
+    "html_url": "https://github.com/TencentCloud/httpdns-sdk-android",
+    "stargazers_count": 180,
+    "forks_count": 48,
+    "open_issues_count": 14,
+    "watchers_count": 180,
+    "language": "Kotlin",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-06-28T05:18:23Z",
+    "pushed_at": "2025-10-09T06:38:16Z",
+    "updated_at": "2026-07-18T12:48:02Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "TencentCloud/httpdns-sdk-ios",
+    "description": "智营防劫持SDK",
+    "html_url": "https://github.com/TencentCloud/httpdns-sdk-ios",
+    "stargazers_count": 153,
+    "forks_count": 43,
+    "open_issues_count": 2,
+    "watchers_count": 153,
+    "language": "Objective-C",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-06-24T09:59:07Z",
+    "pushed_at": "2025-08-13T02:52:22Z",
+    "updated_at": "2026-06-17T10:59:18Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-06",
+    "source_topic": null,
+    "source": "org",
+    "category": [
+      "core"
+    ]
+  }
+]
