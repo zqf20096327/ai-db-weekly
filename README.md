@@ -7,7 +7,7 @@
 
 <!-- LATEST:START -->
 <!-- 本区块由 v2-weekly.yml 自动维护（v1 update_readme 已退役），请勿手动编辑 -->
-> 📖 **本期周报**：[第 4 期 · 2026-08-31](v2/reports/report_snapshot_20260831.md)
+> 📖 **本期周报**：[第 5 期 · 2026-09-07](v2/reports/report_snapshot_20260907.md)
 > 📚 **历史周报**：见文末[「往期周报」](#往期周报)
 <!-- LATEST:END -->
 
@@ -18,6 +18,7 @@
 <!-- ARCHIVE:START -->
 | 期数 | 日期 | 链接 |
 |------|------|------|
+| 第 5 期 | 2026-09-07 | [report_snapshot_20260907.md](v2/reports/report_snapshot_20260907.md) |
 | 第 4 期 | 2026-08-31 | [report_snapshot_20260831.md](v2/reports/report_snapshot_20260831.md) |
 | 第 3 期 | 2026-08-24 | [report_snapshot_20260824.md](v2/reports/report_snapshot_20260824.md) |
 | 第 2 期 | 2026-08-17 | [report_snapshot_20260817.md](v2/reports/report_snapshot_20260817.md) |
