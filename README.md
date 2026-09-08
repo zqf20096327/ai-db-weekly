@@ -22,7 +22,7 @@
 
 ### 📌 本周 DBA 速览
 
-- 🗄️ **国外数据库**：[ETH-transactions-storage](https://github.com/Adamant-im/ETH-transactions-storage)（+573）—— Self-hosted Ethereum transaction indexer for native ETH and 
+- 🗄️ **国外数据库**：[databasement](https://github.com/David-Crty/databasement)（+267）—— Self-hosted database backup manager with a web UI. Schedule,
 - 🇨🇳 **国产数据库**：[bytebase](https://github.com/bytebase/bytebase)（+17）—— Database governance built for humans and agents — controllin
 - 🤖 **AI工具**：[dbx](https://github.com/t8y2/dbx)（+630）—— 20 MB lightweight cross-platform database client for 90+ dat
 
@@ -33,49 +33,49 @@
 
 #### 🔥 活跃榜 Top3
 
-> 🥇 **[Adamant-im/ETH-transactions-storage](https://github.com/Adamant-im/ETH-transactions-storage)** · ⭐ 573 · 本周 **+573**
-> `其他` · 适用：PostgreSQL
-> Self-hosted Ethereum transaction indexer for native ETH and ERC-20 transfers wit
-> 🤖 **AI 解读**：该项目用Python读取以太坊节点区块，将ETH及ERC-20转账存入PostgreSQL，经PostgREST提供只读HTTP接口，供钱包
-
-> 🥈 **[David-Crty/databasement](https://github.com/David-Crty/databasement)** · ⭐ 2.3k · 本周 **+267**
+> 🥇 **[David-Crty/databasement](https://github.com/David-Crty/databasement)** · ⭐ 2.3k · 本周 **+267**
 > `备份` · 适用：SQL Server / MySQL / PostgreSQL / MariaDB
 > Self-hosted database backup manager with a web UI. Schedule, backup, and restore
-> 🤖 **AI 解读**：自托管数据库备份管理工具，提供Web界面，支持多种数据库的定时备份与恢复，可存储至S3等远端，并支持SSH隧道连接。
+> 🤖 **AI 解读**：自托管数据库备份管理工具，提供Web界面，支持多种数据库的定时备份与恢复，可存储至S3、SFTP等，并支持SSH隧道连接。
 
-> 🥉 **[evangelosvlachos96-dotcom/booking-microservices](https://github.com/evangelosvlachos96-dotcom/booking-microservices)** · ⭐ 240 · 本周 **+240**
+> 🥈 **[pgrundev/pgbot](https://github.com/pgrundev/pgbot)** · ⭐ 984 · 本周 **+159**
 > `其他` · 适用：PostgreSQL
-> Flight booking system built as .NET 10 microservices with Vertical Slice Archite
-> 🤖 **AI 解读**：.NET 10微服务航班预订系统，采用PostgreSQL及多种非关系型存储，演示CQRS与事件溯源模式，为数据库使用者提供微服务数据架构参考。
+> Postgres intelligence for ai agents & apps
+> 🤖 **AI 解读**：pgbot是PostgreSQL只读诊断工具，静态连接数据库，读取统计视图并输出健康报告及变更对比。支持PostgreSQL 14至18
+
+> 🥉 **[TableProApp/TablePro](https://github.com/TableProApp/TablePro)** · ⭐ 5.8k · 本周 **+149**
+> `其他` · 适用：7+种数据库（Oracle / SQL Server / MySQL等）
+> Free and open source database client built natively for developers
+> 🤖 **AI 解读**：TablePro是面向开发者的免费开源数据库客户端，原生支持多类SQL及NoSQL数据库，提供SQL编辑、数据管理等功能，并集成AI辅助与MCP服务。
 
 #### 🌱 新锐发现（最多 3 个）
 
-> ① **[LuisCarlos01/sentinel-auth-api](https://github.com/LuisCarlos01/sentinel-auth-api)** · ⭐ 9 · 本周 **+9**
-> `其他` · 适用：PostgreSQL
-> Production-inspired authentication API with Spring Boot, JWT, Refresh Tokens, RB
-> 🤖 **AI 解读**：基于Spring Boot的认证API示例，用PostgreSQL存用户与角色，支持JWT及刷新令牌。
-
-> ② **[el1s7/model](https://github.com/el1s7/model)** · ⭐ 5 · 本周 **+5**
+> ① **[el1s7/model](https://github.com/el1s7/model)** · ⭐ 5 · 本周 **+5**
 > `其他` · 适用：MySQL / MariaDB
 > A minimal Python ORM for MariaDB/MySQL and SQLite. Made for humans.
 > 🤖 **AI 解读**：el1s7/model 是面向 MariaDB/MySQL 及嵌入式数据库的 Python ORM，支持静态类型检查、自动建表与模型生成
 
-> ③ **[Jayavisaag/Mysql-GUI](https://github.com/Jayavisaag/Mysql-GUI)** · ⭐ 4 · 本周 **+4**
+> ② **[Jayavisaag/Mysql-GUI](https://github.com/Jayavisaag/Mysql-GUI)** · ⭐ 4 · 本周 **+4**
 > `平台` · 适用：SQL Server / MySQL
 > "MySQL Admin Pro," a Tkinter-based GUI built with mysql.connector for visual dat
-> 🤖 **AI 解读**：基于Python与Tkinter的MySQL图形管理工具，支持建库建表、增删改查、SQL执行、用户权限管理及CSV导出
+> 🤖 **AI 解读**：基于Python与Tkinter构建的MySQL图形管理工具，提供建库建表、增删改查、SQL执行、用户权限管理及CSV导出功能，适用于MySQL日常运维操作。
 
-#### 🔍 本周解读 · ETH-transactions-storage
+> ③ **[oscarbol09/branchbase](https://github.com/oscarbol09/branchbase)** · ⭐ 3 · 本周 **+3**
+> `其他` · 适用：MySQL / PostgreSQL
+> Zero-config, Git-native local database branching for PostgreSQL, MySQL, and SQLi
+> 🤖 **AI 解读**：BranchBase 为 PostgreSQL、MySQL 等数据库提供 Git 原生分支能力，可随代码分支切换本地库状态，减少手动重建或回滚迁移的操作。
 
-> 🔍 **[Adamant-im/ETH-transactions-storage](https://github.com/Adamant-im/ETH-transactions-storage)** · ⭐ 573 · 本周 **+573**
-> `其他` · 适用：PostgreSQL
-> Self-hosted Ethereum transaction indexer for native ETH and ERC-20 transfers with PostgreSQL and PostgREST
+#### 🔍 本周解读 · databasement
 
-**解决什么**：Ethereum节点无法直接查询某地址的交易历史，此项目通过自建索引器读取区块，将原生ETH与ERC-20转账写入PostgreSQL，并提供只读HTTP接口，解决地址交易记录检索问题。
+> 🔍 **[David-Crty/databasement](https://github.com/David-Crty/databasement)** · ⭐ 2.3k · 本周 **+267**
+> `备份` · 适用：SQL Server / MySQL / PostgreSQL / MariaDB
+> Self-hosted database backup manager with a web UI. Schedule, backup, and restore MySQL, PostgreSQL, MariaDB, Microsoft S
 
-**核心亮点**：基于PostgreSQL事务写入区块与检查点，支持断点续跑；经PostgREST暴露只读API；兼容Geth、Nethermind等客户端，支持HTTP、WebSocket、IPC；可选地址过滤。
+**解决什么**：自托管数据库备份管理工具，通过Web界面统一调度备份任务，解决多类型数据库备份分散、恢复流程复杂的问题，并提供集中化的存储与监控能力。
 
-**使用场景**：适用于加密货币钱包展示账户资产与交易历史、区块浏览器与仪表盘构建地址页面、会计与财务对账工具导出转账记录，以及监控特定地址集合或需要直接SQL查询转账数据的自定义应用。
+**核心亮点**：支持MySQL、PostgreSQL、MariaDB、SQL Server及文档数据库的定时备份与恢复。提供SSH隧道和远程代理访问隔离网络。支持S3、SFTP、Samba及本地存储。
+
+**使用场景**：适用于需要统一管理多种数据库备份的中小团队或运维人员。适合数据库位于私有网络、需通过跳板机访问的环境。适合对备份安全性与自动化恢复流程有要求的自托管部署场景。
 
 
 
@@ -87,24 +87,17 @@
 > 🥇 **[bytebase/bytebase](https://github.com/bytebase/bytebase)** · ⭐ 14.5k · 本周 **+17**
 > `管理` · 适用：8+种数据库（Oracle / SQL Server / MySQL等）
 > Database governance built for humans and agents — controlling changes and access
-> 🤖 **AI 解读**：Bytebase是开源数据库治理平台，为人工与AI代理提供统一控制面，管理Oracle、SQL Server、MySQL等数据库的变更、访问与合规流程
+> 🤖 **AI 解读**：Bytebase是开源数据库治理平台，为人工及AI代理提供统一控制面，管理变更、访问与合规。支持十余种数据库及多种集成，具备GUI工作流、GitOps
 
 > 🥈 **[suoten/dbbridge](https://github.com/suoten/dbbridge)** · ⭐ 16 · 本周 **+15**
 > `其他` · 适用：8+种数据库（MySQL / PostgreSQL / MariaDB等）
 > Description: 开源、免费、零依赖的数据库迁移与SQL转换工具。支持 MySQL/PostgreSQL/SQLite/OceanBase/TiDB/达
-> 🤖 **AI 解读**：开源免费、零依赖的数据库迁移与SQL转换工具，支持十余种数据库互转，单文件小于30MB，双击即用，适用于异构数据库迁移场景。
+> 🤖 **AI 解读**：DBBridge是一款开源免费的数据库迁移与SQL转换工具，支持十余种数据库间的数据互转。其单文件免安装，通过图形界面操作，适用于需要跨数据库迁移数据的用户。
 
 > 🥉 **[tikv/pprof-rs](https://github.com/tikv/pprof-rs)** · ⭐ 1.7k · 本周 **+3**
 > `其他` · 适用：TiDB
 > A Rust CPU profiler implemented with the help of backtrace-rs
-> 🤖 **AI 解读**：pprof-rs为Rust程序提供CPU性能分析，基于backtrace-rs实现。TiDB用户可借此定位CPU热点，优化查询执行路径，辅助性能调优。
-
-#### 🌱 新锐发现（最多 3 个）
-
-> ① **[tikv/.project](https://github.com/tikv/.project)** · ⭐ 0 · 近7天 1 commits
-> `其他` · 适用：TiDB
-> Project metadata for TiKV - CNCF .project automation
-> 🤖 **AI 解读**：TiKV的CNCF元数据仓库存project.yaml与maintainers.yaml，供自动化工具校验维护，属项目治理辅助文件
+> 🤖 **AI 解读**：pprof-rs是Rust编写的CPU分析器，基于backtrace-rs实现。TiDB等数据库开发者可集成它定位CPU热点，生成调用栈报告，辅助性能调优。
 
 #### 🔍 本周解读 · bytebase
 
@@ -112,11 +105,11 @@
 > `管理` · 适用：8+种数据库（Oracle / SQL Server / MySQL等）
 > Database governance built for humans and agents — controlling changes and access across every major database.
 
-**解决什么**：Bytebase 提供集中平台，整合数据库变更管理、访问控制与合规审计，覆盖 Oracle、SQL Server、MySQL、PostgreSQL 等主流数据库，解决管控分散、缺乏统一治理的问题。
+**解决什么**：数据库变更与访问管控分散在多个工具中，导致流程割裂且难以审计。Bytebase 提供一个统一控制平面，将变更管理、权限控制和合规记录整合，覆盖主流数据库。
 
-**核心亮点**：支持GUI工作流与GitOps集成，实现数据库即代码。提供200余条SQL审查规则、细粒度RBAC、动态数据脱敏及完整审计日志。内置MCP服务器与文本转SQL功能，便于AI代理接入。
+**核心亮点**：支持GUI与GitOps双模式变更流程，内置200+SQL审查规则。提供基于角色的细粒度权限、临时授权及动态列级脱敏。具备完整审计日志，可通过MCP协议接入AI代理执行操作。
 
-**使用场景**：适用于需要规范化数据库变更流程的开发团队，需统一管理多环境数据库的 DBA，以及要求列级权限控制与审计追踪的安全合规场景。支持自托管或 Kubernetes 部署。
+**使用场景**：适用于需要规范化数据库变更流程的开发团队，需集中管理多环境数据库的 DBA，以及要求敏感数据访问可控、操作可追溯的安全合规场景。支持自托管或 Kubernetes 部署。
 
 
 
@@ -128,24 +121,24 @@
 > 🥇 **[t8y2/dbx](https://github.com/t8y2/dbx)** · ⭐ 18.2k · 本周 **+630**
 > `平台` · 适用：15+种数据库（Oracle / SQL Server / DB2等）
 > 20 MB lightweight cross-platform database client for 90+ databases, including My
-> 🤖 **AI 解读**：20MB客户端支持90余种数据库，覆盖Oracle、SQL Server、DB2、MySQL、PostgreSQL等，提供桌面、Docker
+> 🤖 **AI 解读**：20MB客户端支持90余种数据库，含Oracle、SQL Server、DB2、MySQL等，提供桌面、Docker、CLI界面
 
 > 🥈 **[TabularisDB/tabularis](https://github.com/TabularisDB/tabularis)** · ⭐ 4.8k · 本周 **+249**
 > `平台` · 适用：9+种数据库（Oracle / SQL Server / DB2等）
 > Open-source desktop SQL workspace for PostgreSQL, MySQL/MariaDB, SQLite and 15+ 
-> 🤖 **AI 解读**：Tabularis是开源桌面SQL工作台，支持PostgreSQL、MySQL、MariaDB等十余种数据库。内置MCP服务器
+> 🤖 **AI 解读**：Tabularis为开源桌面SQL工作台，支持十余种数据库，含PostgreSQL、MySQL/MariaDB及轻量级文件数据库。内置MCP服务器
 
 > 🥉 **[Canner/WrenAI](https://github.com/Canner/WrenAI)** · ⭐ 17.5k · 本周 **+85**
 > `平台` · 适用：PostgreSQL / ClickHouse
 > GenBI (Generative BI) for AI agents, an open-source, governed text-to-SQL throug
-> 🤖 **AI 解读**：WrenAI是开源生成式BI引擎，面向AI智能体提供受治理的text-to-SQL与语义层，通过上下文层将自然语言转为仪表盘、图表及SQL
+> 🤖 **AI 解读**：WrenAI为开源生成式BI引擎，提供受治理的text-to-SQL与语义层，支持20余种数据源，可将自然语言转为SQL、图表及仪表盘。
 
 #### 🌱 新锐发现（最多 3 个）
 
 > ① **[CesarPetrescu/ledger](https://github.com/CesarPetrescu/ledger)** · ⭐ 4 · 本周 **+4**
 > `其他` · 适用：PostgreSQL
 > Self-hosted MCP project memory with OAuth 2.1, PostgreSQL full-text search, and 
-> 🤖 **AI 解读**：Ledger是基于PostgreSQL的自托管MCP服务器，为AI助手提供跨会话项目记忆，支持决策记录、全文检索及任务交接，数据存于自有实例。
+> 🤖 **AI 解读**：Ledger 是一款自托管MCP服务器，基于PostgreSQL存储数据，为AI助手提供跨对话的项目记忆与上下文检索功能。
 
 #### 🔍 本周解读 · dbx
 
@@ -153,11 +146,11 @@
 > `平台` · 适用：15+种数据库（Oracle / SQL Server / DB2等）
 > 20 MB lightweight cross-platform database client for 90+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB,
 
-**解决什么**：20MB安装包集成90余种数据库访问能力，覆盖MySQL、PostgreSQL、文件库、内存库、文档库、Oracle、SQL Server、DB2、DM等主流及国产库
+**解决什么**：20MB安装包集成90余种数据库访问能力，覆盖MySQL、PostgreSQL、文件、内存、文档、Oracle、SQL Server、DB2、达梦等，提供统一桌面端、Docker与命令行入口
 
-**核心亮点**：跨平台桌面端、Docker、CLI 三种使用形态。内置 AI 助手辅助生成与解释查询。提供 MCP Server 接口，便于接入支持 MCP 的 AI 工具链。单文件体积小，便于分发与部署。
+**核心亮点**：内置AI助手辅助查询与排错，集成MCP Server便于接入外部AI编排工具。支持桌面端、Docker、CLI三种运行形态，适配不同部署环境。安装包约20MB，资源占用低，便于分发与携带。
 
-**使用场景**：适用于需要同时管理多种类型数据库的开发、测试及运维场景。适合在资源受限的容器环境或远程服务器上通过 CLI 或 Docker 执行数据库操作。适合作为 AI 编程工具访问数据库的中间层。
+**使用场景**：适用于需同时管理多种数据库的开发运维人员；适合资源受限设备常驻，Docker快速搭建临时环境，命令行或脚本执行操作，及通过MCP协议接入AI工作流。
 
 
 

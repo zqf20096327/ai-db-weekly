@@ -531,6 +531,21 @@ SOP_EXCLUDE_KEYWORDS = {
                   "awesome list", "course"],
 }
 
+# ----- 人工/领域排除（叠加在 SOP_EXCLUDE_KEYWORDS 之上）-----
+# 人工兜底黑名单：full_name 精确匹配（数据库无关但关键词规则拦不住的项目）。
+# 每周 run_weekly 日志会打印命中名单，可审计误杀。
+MANUAL_EXCLUDE_REPOS = {
+    "Adamant-im/ETH-transactions-storage",                 # 以太坊索引器，仅用 PG 存储
+    "evangelosvlachos96-dotcom/booking-microservices",     # .NET 航班预订应用
+    "LuisCarlos01/sentinel-auth-api",                      # Spring Boot 认证 API
+}
+# 领域排除：仅匹配项目自带 topics 标签（不扫描述，防误杀），且只收
+# 经候选池全量试跑验证零误伤的词。auth/jwt/microservices/crypto 等词
+# 会误杀 Supabase/NocoDB/Prest 及区块链数据库本体，禁止加入。
+DOMAIN_EXCLUDE_TOPICS = {
+    "booking", "flight-booking", "travel-booking",         # 预订类垂直应用
+}
+
 # ----- §3.6 / §3.7 选取条数与字数上限 -----
 SECTION_TOP_N = 3          # 各板块活跃榜 TopN（按 weekly_growth 降序）
 NEWSTAR_DAYS = 7           # 新锐发现：created_at 在 N 天内

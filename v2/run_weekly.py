@@ -142,8 +142,13 @@ def stage_compute(
     items_by_sec: dict[str, list[dict[str, Any]]] = {s: [] for s in SECTION_ORDER}
     meta_map: dict[str, tuple[str, str]] = {}  # full_name -> (category, databases)
     excluded_kernel = excluded_sop = excluded_scope = 0
+    excluded_extra: list[str] = []
     for it in display_pool:
         full = _full(it)
+        reason = sections.exclusion_reason(it)
+        if reason:
+            excluded_extra.append(f"{full}({reason})")
+            continue
         if reg.is_kernel(full):
             excluded_kernel += 1
             continue
@@ -165,6 +170,8 @@ def stage_compute(
         len(items_by_sec["国外数据库"]), len(items_by_sec["国产数据库"]),
         len(items_by_sec["AI工具"]), excluded_kernel, excluded_sop, excluded_scope,
     )
+    if excluded_extra:
+        log.info("人工/领域排除 %d 个：%s", len(excluded_extra), ", ".join(excluded_extra))
 
     # 新锐发现：新生项目源（new_projects：30 天窗 + star≥3）为主，
     # 存量池里 7 天内创建的项目（org 扫描/白名单捞到的，如 openGauss 镜像仓）并入。
@@ -176,7 +183,12 @@ def stage_compute(
     new_raw = filters.filter_display_pool(storage.load_all_new_projects(date))
     for it in new_raw:
         full = _full(it)
-        if reg.is_kernel(full) or sections.should_exclude_sop(it) or sections.is_out_of_scope(it):
+        if (
+            reg.is_kernel(full)
+            or sections.should_exclude_sop(it)
+            or sections.is_out_of_scope(it)
+            or sections.exclusion_reason(it)
+        ):
             continue
         if not analytics._created_recent(it, config.NEWSTAR_DAYS):
             continue
@@ -239,7 +251,8 @@ def stage_compute(
     # 内核 / SOP排除 / 范围外 / 无归属的项目一律不收）
     tb_sorted = sorted(
         (it for it in display_pool
-         if not reg.is_kernel(_full(it)) and not sections.should_exclude_sop(it)),
+         if not reg.is_kernel(_full(it)) and not sections.should_exclude_sop(it)
+         and not sections.exclusion_reason(it)),
         key=lambda it: it.get("stargazers_count", 0) or 0,
         reverse=True,
     )

@@ -292,3 +292,19 @@ def should_exclude_sop(item: dict[str, Any]) -> bool:
         if _match(group, hay, toks):
             return True
     return False
+
+
+def exclusion_reason(item: dict[str, Any]) -> str | None:
+    """人工/领域排除：返回排除原因（None = 不排除）。
+
+    两层（均叠加在 should_exclude_sop 之上）：
+      - manual：config.MANUAL_EXCLUDE_REPOS 精确黑名单（full_name）
+      - domain：topics 标签命中 config.DOMAIN_EXCLUDE_TOPICS（预订类垂直应用）
+    词表口径见 config 注释——只收经候选池全量试跑零误伤的词。
+    """
+    full = (item.get("full_name") or "").lower()
+    if full in {r.lower() for r in config.MANUAL_EXCLUDE_REPOS}:
+        return "manual"
+    if _topics_set(item) & config.DOMAIN_EXCLUDE_TOPICS:
+        return "domain"
+    return None
