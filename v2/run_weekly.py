@@ -8,7 +8,8 @@
   3. select    README 范围复核（范围外生态剔除递补 + 适用数据库精化）
                + 定榜（活跃榜 Top3 / 新锐 / 本周解读）→ 回写 sections.json
   4. ai        每项目 80 字中性 AI 解读 + 本周解读三维分析（带缓存）→ ai_reviews.json
-  5. render    组装三板块周报 Markdown（板块卡片 + Top 总榜表格）→ weekly/report.md
+  5. render    组装三板块周报 Markdown → weekly/report.md
+               + 公众号专用 HTML（全内联样式）→ weekly/wechat.html
 
 依赖 run_daily 已产出当日候选池（merged/all_projects.json）。
 旧版 releases/license 采集与 toolkit 周报已移除（新 SOP 不含 License 栏 / 工具合辑）。
@@ -44,6 +45,7 @@ import analytics
 import filters
 import render
 import sections
+import wechat
 import tool_registry as reg
 
 log = logging.getLogger("run_weekly")
@@ -540,7 +542,15 @@ def stage_render(date: str, sections_data: dict[str, Any], ai_reviews: dict[str,
     report_path = storage.report_file(date)
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(report_md)
+
+    # 公众号专用 HTML（全内联样式；浏览器打开全选复制 → 粘贴公众号编辑器）
+    wechat_html = wechat.render_wechat_html(sections_data, issue_no=_issue_no(date))
+    wechat_path = storage.wechat_file(date)
+    with open(wechat_path, "w", encoding="utf-8") as f:
+        f.write(wechat_html)
+
     log.info("周报已生成：%s", report_path)
+    log.info("公众号版已生成：%s", wechat_path)
     return report_path
 
 
@@ -613,6 +623,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
         print()
         print("=" * 56)
         print(f"  周报：    {report_path}")
+        print(f"  公众号版：{storage.wechat_file(date)}")
         print(f"  采集日：{sections_data.get('snapshot_date') or config.TODAY_HUMAN} ({date})  基准：{prev_date or '无(首期)'}")
         print("=" * 56)
 

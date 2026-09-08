@@ -102,6 +102,11 @@ def toolkit_file(date: str | None = None) -> str:
     return os.path.join(weekly_dir(date), "toolkit.md")
 
 
+def wechat_file(date: str | None = None) -> str:
+    """公众号专用 HTML 路径：weekly/wechat.html（全内联样式，粘贴公众号编辑器用）"""
+    return os.path.join(weekly_dir(date), "wechat.html")
+
+
 def save_weekly_meta(name: str, data: Any, date: str | None = None) -> None:
     """写周报中间数据到 weekly/meta/{name}.json。"""
     _write_json(os.path.join(weekly_meta_dir(date), f"{name}.json"), data)
