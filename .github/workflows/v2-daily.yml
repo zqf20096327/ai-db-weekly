@@ -3,9 +3,10 @@ name: v2 每日采集
 # 每日跑 v2 版全数据源采集（run_daily.py）。
 #   - 北京 09:00 (UTC 01:00)
 # 采集产物 v2/data/ 双轨持久化：
-#   1. actions/cache —— 全量历史快照（含 30 天 new_projects 窗口所需），运行间累积；
-#   2. 仓库 v2/data/ —— 滚动 8 天窗口（新快照入库 + 窗口外移出索引），
-#      供周报 7 天 diff 与人工核查；白名单由下方同步步骤每日重写 .gitignore。
+#   1. actions/cache —— 全量明文历史（含 30 天 new_projects 窗口所需），运行间累积；
+#   2. 仓库 v2/data/ —— 永久数据湖（2026-09-20 起替代"滚动 8 天窗口"）：
+#      近 8 天保持明文目录（周报 7 天 diff），出窗快照压缩为 snapshot_*.zip 永久入库；
+#      白名单与转档由 v2/snapshot_retention.py 每日执行（见下方步骤 6）。
 "on":
   schedule:
     - cron: '0 1 * * *'    # UTC 01:00 = 北京 09:00
@@ -57,9 +58,10 @@ jobs:
           AI_MODEL: ${{ secrets.AI_MODEL }}
         run: python run_daily.py
 
-      # 6. 提交今日快照到仓库（滚动 8 天窗口）
-      #    只动 git 索引不删磁盘文件：cache 仍保留全量历史（30 天 new_projects 窗口要用）
-      - name: 提交快照（滚动 8 天窗口）
+      # 6. 提交今日快照 + 窗口外快照 zip 永久归档（v2/snapshot_retention.py 统一执行：
+      #    重写 .gitignore 白名单 → 出窗明文目录打 zip → rm --cached 明文 / add zip）
+      #    近 8 天明文供周报 7 天 diff；出窗快照压缩永久保留（约 33MB → 5MB/天）
+      - name: 提交快照（近 8 天明文 + 窗口外 zip 永久归档）
         run: |
           set -euo pipefail
           TODAY="$(date -u +%Y%m%d)"
@@ -69,45 +71,15 @@ jobs:
             exit 0
           fi
 
-          # 最近 8 天窗口（含今天），用 epoch 秒做日期回退，避免 date 解析歧义
-          BASE="$(date -u -d "${TODAY:0:4}-${TODAY:4:2}-${TODAY:6:2}" +%s)"
-          W=()
-          for i in 0 1 2 3 4 5 6 7; do
-            W+=( "$(date -u -d "@$(( BASE - i * 86400 ))" +%Y%m%d)" )
-          done
-          echo "窗口：${W[*]}"
-
-          # 重写 .gitignore 白名单（BEGIN/END 标记之间，勿手工编辑）
-          python3 -c '
-          import sys
-          from pathlib import Path
-          days = sys.argv[1:]
-          p = Path(".gitignore")
-          t = p.read_text(encoding="utf-8")
-          b = "# BEGIN snapshot whitelist (auto-generated)"
-          e = "# END snapshot whitelist"
-          pre, rest = t.split(b, 1)
-          _, post = rest.split(e, 1)
-          block = "".join(f"!v2/data/snapshot_{d}/\n" for d in days)
-          p.write_text(pre + b + "\n" + block + e + post, encoding="utf-8")
-          ' "${W[@]}"
-
-          # 窗口外的已跟踪快照移出索引（--cached：磁盘文件保留，cache 照常全量保存）
-          for d in $(git ls-files "v2/data/snapshot_*" | cut -d/ -f3 | sort -u); do
-            case " ${W[*]} " in
-              *" ${d#snapshot_} "*) ;;
-              *) echo "移出窗口：$d"; git rm -r -q --cached "v2/data/$d" ;;
-            esac
-          done
+          python3 v2/snapshot_retention.py --date "$TODAY"
 
           git config user.name "ai-db-weekly-bot"
           git config user.email "bot@ai-db-weekly.local"
-          git add .gitignore "$SNAP"
           if git diff --staged --quiet; then
             echo "no changes to commit"
             exit 0
           fi
-          git commit -m "auto: ${TODAY} 采集快照入库（滚动 8 天窗口）"
+          git commit -m "auto: ${TODAY} 采集快照入库（窗口外 zip 永久归档）"
           # 缓存恢复会把已跟踪的旧快照覆盖成 CI 版本，与 HEAD 产生未暂存漂移；
           # 漂移不入库，rebase 前丢弃，否则 pull 因工作区不干净直接失败（exit 128）
           git restore .

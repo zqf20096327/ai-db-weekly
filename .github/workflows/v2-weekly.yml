@@ -60,7 +60,7 @@ jobs:
         working-directory: v2
         run: |
           mkdir -p reports
-          SNAP=$(ls -1d data/snapshot_* | sort | tail -1)
+          SNAP=$(ls -1d data/snapshot_*/ | sort | tail -1)
           echo "最新快照目录：$SNAP"
           if [ -f "$SNAP/weekly/report.md" ]; then
             cp "$SNAP/weekly/report.md" "reports/report_$(basename "$SNAP").md"
