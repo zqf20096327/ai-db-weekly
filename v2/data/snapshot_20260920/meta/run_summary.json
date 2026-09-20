@@ -1,0 +1,13 @@
+{
+  "snapshot_date": "2026-09-20",
+  "elapsed_minutes": 85.3,
+  "api_calls": {
+    "search_calls": 361,
+    "core_calls": 4038,
+    "total_calls": 4399,
+    "rate_wait_minutes": 51.9,
+    "errors": {}
+  },
+  "stage": "full",
+  "candidate_pool_size": 15970
+}
