@@ -435,12 +435,15 @@ def _md_truncate(s: str, limit: int) -> str:
 
 # 句读边界字符：超字数截断时优先在这些边界收尾，避免句子拦腰截断
 _BREAK_CHARS = "。！？；，、：,;"
+# 句号类边界：整句收尾，不加省略号；其余（逗号/顿号等）为分句收尾，须补省略号
+_SENTENCE_END_CHARS = "。！？!?"
 
 
 def _smart_truncate(text: str, limit: int) -> str:
-    """截断到 limit 字内：能落在句读边界就整句/整分句收尾，否则才硬截加省略号。
+    """截断到 limit 字内：句号类边界整句收尾，逗号类边界分句收尾并补省略号。
 
-    向前找边界时保底保留 60% 篇幅，防止首句超长时被截得只剩几个字。
+    向前找边界时保底保留 60% 篇幅，防止首句超长时被截得只剩几个字；
+    全无边界才硬截加省略号。
     """
     t = (text or "").replace("\n", " ").strip()
     if len(t) <= limit:
@@ -448,8 +451,10 @@ def _smart_truncate(text: str, limit: int) -> str:
     cut = t[:limit]
     floor = max(int(limit * 0.6), 1)
     for i in range(len(cut) - 1, floor - 1, -1):
-        if cut[i] in _BREAK_CHARS:
-            return cut[: i + 1].rstrip("，、；：,; ")
+        ch = cut[i]
+        if ch in _BREAK_CHARS:
+            head = cut[: i + 1].rstrip("，、；：,; ")
+            return head if ch in _SENTENCE_END_CHARS else head + "…"
     return cut[:-1] + "…"
 
 

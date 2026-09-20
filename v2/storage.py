@@ -107,6 +107,13 @@ def wechat_file(date: str | None = None) -> str:
     return os.path.join(weekly_dir(date), "wechat.html")
 
 
+def reports_dir() -> str:
+    """周报产物归档目录：reports/（跨期统一存放，不随快照窗口滚动）。"""
+    p = os.path.join(config.HERE, "reports")
+    _ensure_dir(p)
+    return p
+
+
 def save_weekly_meta(name: str, data: Any, date: str | None = None) -> None:
     """写周报中间数据到 weekly/meta/{name}.json。"""
     _write_json(os.path.join(weekly_meta_dir(date), f"{name}.json"), data)

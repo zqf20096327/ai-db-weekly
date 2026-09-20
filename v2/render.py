@@ -126,9 +126,22 @@ def render_main_report(report_data: dict[str, Any], issue_no: int = 0) -> str:
                  f"{_render_topboard(report_data.get('topboard', []))}\n")
 
     # ---- 互动与说明 ----
+    # 版式与第 1 期保持一致：轮换口径不在正文披露，规则记录于 SOP §6.z
     parts.append(f"\n## 💬 互动与说明\n\n{T.MAIN_META.format(date=snapshot_date)}\n")
     parts.append("\n---\n")
     return "\n".join(parts).rstrip() + "\n"
+
+
+def _clip_desc(s: str, limit: int) -> str:
+    """描述截断：超长补省略号；英文在词边界收尾，避免单词拦腰截断（如 SQLit…）。"""
+    s = (s or "").strip()
+    if len(s) <= limit:
+        return s
+    cut = s[:limit]
+    sp = cut.rfind(" ")
+    if sp >= int(limit * 0.6):
+        cut = cut[:sp]
+    return cut.rstrip(" ，,、；;：:") + "…"
 
 
 def _render_overview(sections: list[dict[str, Any]], first_period: bool) -> str:
@@ -149,7 +162,7 @@ def _render_overview(sections: list[dict[str, Any]], first_period: bool) -> str:
         url = rep.get("html_url", "#")
         growth = rep.get("growth")
         growth_str = f"+{growth}" if isinstance(growth, int) and growth > 0 else ""
-        desc = _md_escape_cell(rep.get("description", ""))[:60]
+        desc = _md_escape_cell(_clip_desc(rep.get("description", ""), 60))
         lines.append(
             f"- {emoji} **{name}**：[{_short_name(full)}]({url})"
             f"（{growth_str}）—— {desc}"
@@ -209,7 +222,7 @@ def _render_cards(rows: list[dict[str, Any]], badges: list[str]) -> str:
             head,
             f"> `{_row_field(r, 'category')}` · 适用：{_row_field(r, 'databases')}",
         ]
-        desc = _md_escape_cell(r.get("description", ""))[:80]
+        desc = _md_escape_cell(_clip_desc(r.get("description", ""), 80))
         if desc:
             lines.append(f"> {desc}")
         review = _md_escape_cell(_row_field(r, "review", "")).strip()
@@ -232,7 +245,7 @@ def _render_focus(focus: dict[str, Any]) -> str:
         f"> 🔍 **[{full}]({url})** · ⭐ {_star_k(focus.get('star'))}{growth_part}",
         f"> `{_row_field(focus, 'category')}` · 适用：{_row_field(focus, 'databases')}",
     ]
-    intro = _md_escape_cell(desc)[:120]
+    intro = _md_escape_cell(_clip_desc(desc, 120))
     if intro:
         head.append(f"> {intro}")
 
@@ -258,6 +271,6 @@ def _render_topboard(rows: list[dict[str, Any]]) -> str:
             f"| {_star_k(r.get('star'))} "
             f"| {_row_field(r, 'section')} "
             f"| {_row_field(r, 'category')} "
-            f"| {_md_escape_cell(r.get('description', ''))[:70]} |"
+            f"| {_md_escape_cell(_clip_desc(r.get('description', ''), 70))} |"
         )
     return "\n".join(out) + "\n"

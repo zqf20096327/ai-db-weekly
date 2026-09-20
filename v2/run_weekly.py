@@ -29,6 +29,8 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
+import shutil
 import sys
 import time
 from typing import Any
@@ -46,6 +48,7 @@ import filters
 import render
 import sections
 import wechat
+import weekly_history
 import tool_registry as reg
 
 log = logging.getLogger("run_weekly")
@@ -385,14 +388,28 @@ def _fetch_zero_star_commits(rows: list[dict[str, Any]]) -> GitHubClient | None:
 
 
 def stage_select(date: str, sections_data: dict[str, Any], readmes: dict[str, str]) -> dict[str, Any]:
-    """README 范围复核 + 三板块定榜（活跃榜 Top3 / 新锐 / 本周解读）→ 回写 sections.json。
+    """README 范围复核 + 跨期轮换 + 三板块定榜（活跃榜 Top3 / 新锐 / 本周解读）→ 回写 sections.json。
 
     compute 超额选取的候选池在此复核：范围外生态项目剔除后由后续名次递补；
     上榜项目用 README 精化「适用数据库」（关键词表仅含范围内库，不会引入范围外名）。
     新锐排序：star 降序，0-star（或同 star）项目按近 7 天 commit 数降序。
+    跨期轮换（2026-09-19）：活跃榜剔除最近 K 期已上榜项目（爆发豁免可提前回归，
+    凑不满 TopN 按净增顺序放回补位）；解读对象再叠加最近 N 期冷却，全员冷却时
+    取活跃榜榜首兜底。历史索引缺失（首期）时冷却名单为空，规则自然失效。
     """
-    log.info("==== 阶段3：定榜（README 范围复核）====")
+    log.info("==== 阶段3：定榜（README 范围复核 + 跨期轮换）====")
     readmes = readmes or {}
+    history = weekly_history.load_history(exclude_dates={date})
+    active_cd = weekly_history.cooldown_map(
+        history, date, config.ACTIVE_COOLDOWN_ISSUES, "active")
+    focus_cd = weekly_history.cooldown_map(
+        history, date, config.FOCUS_COOLDOWN_ISSUES, "focus")
+    if active_cd or focus_cd:
+        log.info(
+            "冷却基准（最近 %d 期在榜 / %d 期解读，历史 %d 期）：在榜 %d 项、解读 %d 项",
+            config.ACTIVE_COOLDOWN_ISSUES, config.FOCUS_COOLDOWN_ISSUES,
+            len(history), len(active_cd), len(focus_cd),
+        )
     interpreted: set[str] = set()
     for sec in sections_data.get("sections", []):
         key = sec.get("key", "")
@@ -408,9 +425,12 @@ def stage_select(date: str, sections_data: dict[str, Any], readmes: dict[str, st
         def _ok(row: dict[str, Any]) -> bool:
             return _readme_scope_ok(row, readmes.get(row.get("full_name", "")))
 
-        active = [r for r in active_pool if _ok(r)][: config.SECTION_TOP_N]
+        scoped = [r for r in active_pool if _ok(r)]
+        active, rotated_out = analytics.rotate_active_board(scoped, active_cd)
         for r in active:
             _refine(r)
+        if rotated_out:
+            log.info("  %s：轮换让位（上期在榜）：%s", key, ", ".join(rotated_out))
 
         active_names = {r.get("full_name", "") for r in active}
         newcomer_cands = [
@@ -425,7 +445,16 @@ def stage_select(date: str, sections_data: dict[str, Any], readmes: dict[str, st
         for r in newcomers:
             _refine(r)
 
-        focus = analytics.pick_section_focus(active, interpreted)
+        # 解读候选：叠加解读冷却（爆发豁免同活跃榜）；全员冷却 → 榜首兜底
+        def _focus_eligible(row: dict[str, Any]) -> bool:
+            fn = str(row.get("full_name") or "")
+            rec = focus_cd.get(fn)
+            return rec is None or analytics.growth_exempt(row.get("growth"), rec.get("growth"))
+
+        focus_cands = [r for r in active if _focus_eligible(r)]
+        if not focus_cands:
+            focus_cands = active  # 板块候选全员冷却：取榜首兜底，栏目不空
+        focus = analytics.pick_section_focus(focus_cands, interpreted)
         if focus:
             interpreted.add(focus.get("full_name", ""))
 
@@ -549,6 +578,15 @@ def stage_render(date: str, sections_data: dict[str, Any], ai_reviews: dict[str,
     with open(wechat_path, "w", encoding="utf-8") as f:
         f.write(wechat_html)
 
+    # 产物统一归档到 reports/（快照出窗后转 zip 归档，定稿产物统一在此明文留存）
+    archive_dir = storage.reports_dir()
+    for src, name in (
+        (report_path, f"report_snapshot_{date}.md"),
+        (wechat_path, f"wechat_snapshot_{date}.html"),
+    ):
+        shutil.copyfile(src, os.path.join(archive_dir, name))
+    log.info("周报产物已归档：%s（report/wechat_snapshot_%s.*）", archive_dir, date)
+
     log.info("周报已生成：%s", report_path)
     log.info("公众号版已生成：%s", wechat_path)
     return report_path
@@ -620,6 +658,9 @@ def run_pipeline(args: argparse.Namespace) -> None:
         # 基准日以 sections.json 为准（compute 时记入），避免 render 单跑时重新自动定位导致显示不一致
         prev_date = sections_data.get("prev_date") or prev_date
         report_path = stage_render(date, sections_data, ai_reviews)
+        # 定榜结果入历史索引（同日重跑覆盖），供下期跨期轮换做冷却基准
+        weekly_history.save_entry(weekly_history.entry_from_sections(date, sections_data))
+        log.info("历史索引已更新：%s", weekly_history.history_file())
         print()
         print("=" * 56)
         print(f"  周报：    {report_path}")

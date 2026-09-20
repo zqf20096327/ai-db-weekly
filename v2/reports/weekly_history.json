@@ -1,0 +1,136 @@
+{
+  "entries": [
+    {
+      "date": "20260907",
+      "issue_no": 1,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "David-Crty/databasement",
+              "growth": 267
+            },
+            {
+              "full_name": "pgrundev/pgbot",
+              "growth": 159
+            },
+            {
+              "full_name": "TableProApp/TablePro",
+              "growth": 149
+            }
+          ],
+          "focus": {
+            "full_name": "David-Crty/databasement",
+            "growth": 267
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "bytebase/bytebase",
+              "growth": 17
+            },
+            {
+              "full_name": "suoten/dbbridge",
+              "growth": 15
+            },
+            {
+              "full_name": "tikv/pprof-rs",
+              "growth": 3
+            }
+          ],
+          "focus": {
+            "full_name": "bytebase/bytebase",
+            "growth": 17
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "t8y2/dbx",
+              "growth": 630
+            },
+            {
+              "full_name": "TabularisDB/tabularis",
+              "growth": 249
+            },
+            {
+              "full_name": "Canner/WrenAI",
+              "growth": 85
+            }
+          ],
+          "focus": {
+            "full_name": "t8y2/dbx",
+            "growth": 630
+          }
+        }
+      }
+    },
+    {
+      "date": "20260918",
+      "issue_no": 2,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "libredb/libredb-studio",
+              "growth": 205
+            },
+            {
+              "full_name": "grafana/grafana",
+              "growth": 108
+            },
+            {
+              "full_name": "malisper/pgrust",
+              "growth": 99
+            }
+          ],
+          "focus": {
+            "full_name": "libredb/libredb-studio",
+            "growth": 205
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "ClouGence/open-cdm",
+              "growth": 9
+            },
+            {
+              "full_name": "tikv/raft-rs",
+              "growth": 7
+            },
+            {
+              "full_name": "DotNetNext/SqlSugar",
+              "growth": 4
+            }
+          ],
+          "focus": {
+            "full_name": "ClouGence/open-cdm",
+            "growth": 9
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "drawdb-io/drawdb",
+              "growth": 169
+            },
+            {
+              "full_name": "oceanbase/powercontext",
+              "growth": 113
+            },
+            {
+              "full_name": "rekursiv-ai/trackinizer",
+              "growth": 47
+            }
+          ],
+          "focus": {
+            "full_name": "drawdb-io/drawdb",
+            "growth": 169
+          }
+        }
+      }
+    }
+  ]
+}

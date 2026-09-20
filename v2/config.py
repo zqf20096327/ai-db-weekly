@@ -538,6 +538,7 @@ MANUAL_EXCLUDE_REPOS = {
     "Adamant-im/ETH-transactions-storage",                 # 以太坊索引器，仅用 PG 存储
     "evangelosvlachos96-dotcom/booking-microservices",     # .NET 航班预订应用
     "LuisCarlos01/sentinel-auth-api",                      # Spring Boot 认证 API
+    "InsForge/InsForge",                                   # agentic coding 全栈后端平台，DB/auth/托管均为打包组件
 }
 # 领域排除：仅匹配项目自带 topics 标签（不扫描述，防误杀），且只收
 # 经候选池全量试跑验证零误伤的词。auth/jwt/microservices/crypto 等词
@@ -557,5 +558,25 @@ FOCUS_SEG_MAX_CHARS = 100  # 本周解读三段（解决什么/核心亮点/使�
 SECTION_POOL_N = 8         # 活跃榜候选池（含缓冲）
 NEWSTAR_POOL_N = 6         # 新锐候选池（含缓冲）
 
-# 期号编排：第 01 期采集日（SOP §附录样板），期号 = 距首期满周数 + 1
-FIRST_ISSUE_DATE = "20260805"
+# ----- 跨期轮换（活跃榜排他 / 解读冷却，2026-09-19 定稿） -----
+# 活跃榜排他：剔除「最近 K 期」已上榜项目，霸榜者每 K+1 期回归一次（K=1 即隔期轮换）。
+# 排他是软约束：剔除后凑不满 TopN 时按净增顺序放回补位（足额优先于轮换）。
+# 历史状态存 reports/weekly_history.json（出窗快照为 zip 归档不可直接读，以此索引为准）。
+ACTIVE_COOLDOWN_ISSUES = 1
+# 爆发豁免：项目本周净增 >= 其上次上榜当期净增 × 该倍数时，可跳过冷却直接回归（0 = 关闭）。
+ACTIVE_GROWTH_EXEMPT_RATIO = 2.0
+# 解读冷却：最近 N 期做过「本周解读」的项目不再入选解读对象（豁免同上；
+# 板块候选全员冷却时取活跃榜榜首兜底，保证栏目不空）。
+FOCUS_COOLDOWN_ISSUES = 4
+
+# 期号编排：对外正式创刊日（2026-09-07 = 第 1 期），期号 = 距创刊日的满周数 + 1。
+# 2026-08 的 0817/0824/0831 三份为试刊（文件头"第 N 期"占位），不占期号。
+FIRST_ISSUE_DATE = "20260907"
+
+# ----- 快照保留策略（2026-09-20 定稿：数据湖永久积累，替代"滚动 8 天清理"） -----
+# GitHub API 只返回当前状态，历史 star/forks/issues 无法回填 → 每日快照即不可再生的
+# 数据资产。新策略（执行者 v2/snapshot_retention.py，CI 调用见 v2-daily.yml 步骤 6）：
+#   - 近 N 天保持明文目录（周报 7 天 diff 与 storage.find_prev_snapshot_date 依赖目录结构）；
+#   - 出窗快照压缩为 data/snapshot_YYYYMMDD.zip 永久入库（约 33MB → 5MB/天），不再删除；
+#   - .gitignore 快照白名单块每日重写（近 N 天目录 + snapshot_*.zip 全量例外）。
+SNAPSHOT_PLAIN_KEEP_DAYS = 8

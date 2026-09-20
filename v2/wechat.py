@@ -16,7 +16,7 @@ from typing import Any
 
 import config
 
-# ---- 设计令牌（与 2026-09-07 第 5 期手工定稿版一致，调整需同步 SOP） ----
+# ---- 设计令牌（与 2026-09-07 第 1 期手工定稿版一致，调整需同步 SOP） ----
 TXT = "#1e293b"          # 正文
 TXT_DARK = "#0f172a"     # 标题/强调
 TXT_GRAY = "#475569"     # 次要信息
@@ -60,9 +60,18 @@ def _field(row: dict[str, Any], key: str, default: str = "—") -> str:
 
 
 def _cut(s: str, n: int) -> str:
-    """手机卡片内截断长描述（GitHub description 常为长英文，撑爆卡片）。"""
+    """手机卡片内截断长描述（GitHub description 常为长英文，撑爆卡片）。
+
+    英文按词边界收尾再补省略号，避免单词拦腰截断。
+    """
     s = (s or "").strip()
-    return s if len(s) <= n else s[: n - 1] + "…"
+    if len(s) <= n:
+        return s
+    cut = s[: n - 1]
+    sp = cut.rfind(" ")
+    if sp >= int(n * 0.6):
+        cut = cut[:sp]
+    return cut.rstrip(" ，,、；;：:") + "…"
 
 
 def _h2(text: str, margin_top: str = "28px") -> str:
@@ -126,7 +135,8 @@ def _w_header(report_data: dict[str, Any], issue_no: int) -> str:
 
 
 def _w_card(row: dict[str, Any], badge: str) -> str:
-    """活跃榜卡片：核心亮点取 description，AI 解读单列一段。"""
+    """活跃榜卡片：核心亮点取 description（沿用第 1 期定稿版式，跨期保持一致），
+    AI 解读单列一段。"""
     parts = [_card_open(), _card_head(
         f"{badge} {_short_name(row.get('full_name', ''))}",
         _field(row, "category"),
@@ -220,7 +230,6 @@ def _w_topboard(rows: list[dict[str, Any]]) -> str:
 
 
 def _w_footer(report_data: dict[str, Any]) -> str:
-    date = report_data.get("snapshot_date", "")
     return (
         f'<section style="margin-top:24px;padding-top:16px;border-top:2px solid #eef2f6;'
         f'font-size:13px;color:{TXT_GRAY};line-height:1.8;">'
@@ -231,10 +240,6 @@ def _w_footer(report_data: dict[str, Any]) -> str:
         f'板块一：{SECTION_SCOPE["国外数据库"]}<br/>'
         f'板块二：{SECTION_SCOPE["国产数据库"]}<br/>'
         f'板块三：上述数据库生态的 AI 辅助工具。范围外数据库项目不入周报。</p>'
-        f'<p style="margin:6px 0 0 0;"><strong style="color:{TXT_DARK};">📌 数据说明</strong>：'
-        f'由 ai_db_weekly 基于 GitHub 数据自动采集（截至 {_esc(date)}）。'
-        f'项目描述来自 GitHub 的 description 字段；AI 解读基于 README 生成，仅供参考。'
-        f'国产数据库板块仅收录在 GitHub 上活跃的开源项目，内核以各厂商官方为准。</p>'
         '</section>'
     )
 

@@ -458,6 +458,61 @@ def pick_section_focus(
     return None
 
 
+# ============================================================
+# 跨期轮换（活跃榜排他 / 解读冷却，2026-09-19 规则）
+# ============================================================
+def growth_exempt(current_growth: Any, last_growth: Any, ratio: float | None = None) -> bool:
+    """爆发豁免：本周净增 >= 上次上榜当期净增 × 倍率（上次为 0/负或倍率<=0 时不豁免）。"""
+    if ratio is None:
+        ratio = config.ACTIVE_GROWTH_EXEMPT_RATIO
+    try:
+        cur = int(current_growth or 0)
+        last = int(last_growth or 0)
+        ratio = float(ratio or 0)
+    except (TypeError, ValueError):
+        return False
+    return ratio > 0 and last > 0 and cur >= last * ratio
+
+
+def rotate_active_board(
+    scoped: list[dict[str, Any]],
+    cooldown: dict[str, dict[str, Any]],
+    *,
+    n: int | None = None,
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """活跃榜跨期排他：剔除冷却名单后按序取 TopN；凑不满按净增顺序放回补位。
+
+    scoped：README 范围复核后的候选（weekly_growth 降序）。
+    cooldown：{full_name: {"growth": 上次上榜当期净增}}（weekly_history.cooldown_map 产出）。
+    足额优先于轮换——板块候选不足时冷却项目按净增顺序回补，保证榜单不空、不捧弱项。
+    返回 (榜单, 让位未回归名单)。
+    """
+    limit = n if n is not None else config.SECTION_TOP_N
+    fresh: list[dict[str, Any]] = []
+    cooled: list[dict[str, Any]] = []
+    for row in scoped:
+        rec = cooldown.get(str(row.get("full_name") or ""))
+        if rec is not None and not growth_exempt(row.get("growth"), rec.get("growth")):
+            cooled.append(row)
+        else:
+            fresh.append(row)
+
+    board = fresh[:limit]
+    seated = {str(r.get("full_name") or "") for r in board}
+    for row in cooled:  # 补位兜底
+        if len(board) >= limit:
+            break
+        fn = str(row.get("full_name") or "")
+        if fn not in seated:
+            board.append(row)
+            seated.add(fn)
+    rotated_out = [
+        str(r.get("full_name") or "") for r in cooled
+        if str(r.get("full_name") or "") not in seated
+    ]
+    return board, rotated_out
+
+
 def global_topboard(
     pool: list[dict[str, Any]],
     *,

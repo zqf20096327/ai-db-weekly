@@ -1,4 +1,4 @@
-# 📋 数据库开源生态周报 · 第 5 期
+# 📋 数据库开源生态周报 · 第 1 期
 
 > 📌 **数据源**：GitHub。聚焦开源工具与实验项目，不涉及厂商内核信息。生产可用性请自行评估。
 
@@ -167,7 +167,8 @@
 <!-- ARCHIVE:START -->
 | 期数 | 日期 | 链接 |
 |------|------|------|
-| 第 4 期 | 2026-08-31 | [report_snapshot_20260831.md](v2/reports/report_snapshot_20260831.md) |
-| 第 3 期 | 2026-08-24 | [report_snapshot_20260824.md](v2/reports/report_snapshot_20260824.md) |
-| 第 2 期 | 2026-08-17 | [report_snapshot_20260817.md](v2/reports/report_snapshot_20260817.md) |
+| 第 2 期 | 2026-09-18 | [report_snapshot_20260918.md](v2/reports/report_snapshot_20260918.md) |
+| 试刊 03 | 2026-08-31 | [report_snapshot_20260831.md](v2/reports/report_snapshot_20260831.md) |
+| 试刊 02 | 2026-08-24 | [report_snapshot_20260824.md](v2/reports/report_snapshot_20260824.md) |
+| 试刊 01 | 2026-08-17 | [report_snapshot_20260817.md](v2/reports/report_snapshot_20260817.md) |
 <!-- ARCHIVE:END -->
