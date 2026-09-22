@@ -123,6 +123,15 @@ def load_weekly_meta(name: str, date: str | None = None) -> Any:
     return _read_json(os.path.join(weekly_meta_dir(date), f"{name}.json"))
 
 
+def save_meta(name: str, data: Any, date: str | None = None) -> None:
+    """写快照元数据到 meta/{name}.json（M5 富集采集：release_state / security）。"""
+    _write_json(os.path.join(meta_dir(date), f"{name}.json"), data)
+
+
+def load_meta(name: str, date: str | None = None) -> Any:
+    return _read_json(os.path.join(config.snapshot_dir(date), "meta", f"{name}.json"))
+
+
 # ============================================================
 # 历史快照定位（SOP 4.1 时间序列对比 —— 基准快照查找）
 # ============================================================

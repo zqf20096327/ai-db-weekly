@@ -573,10 +573,34 @@ FOCUS_COOLDOWN_ISSUES = 4
 # 2026-08 的 0817/0824/0831 三份为试刊（文件头"第 N 期"占位），不占期号。
 FIRST_ISSUE_DATE = "20260907"
 
-# ----- 快照保留策略（2026-09-20 定稿：数据湖永久积累，替代"滚动 8 天清理"） -----
-# GitHub API 只返回当前状态，历史 star/forks/issues 无法回填 → 每日快照即不可再生的
+# ----- 快照保留策略（2026-09-20 定稿：数据湖永久积累，替代"滚动 8 天清理"） -----# GitHub API 只返回当前状态，历史 star/forks/issues 无法回填 → 每日快照即不可再生的
 # 数据资产。新策略（执行者 v2/snapshot_retention.py，CI 调用见 v2-daily.yml 步骤 6）：
 #   - 近 N 天保持明文目录（周报 7 天 diff 与 storage.find_prev_snapshot_date 依赖目录结构）；
 #   - 出窗快照压缩为 data/snapshot_YYYYMMDD.zip 永久入库（约 33MB → 5MB/天），不再删除；
 #   - .gitignore 快照白名单块每日重写（近 N 天目录 + snapshot_*.zip 全量例外）。
 SNAPSHOT_PLAIN_KEEP_DAYS = 8
+
+# ============================================================
+# M5 富集采集（2026-09-22 新增：维护信号 / 安全信号 / 人群分类）
+# 用途：站点资产页（地图/档案）的信任字段，与周报栏目无关，按周节奏采集。
+#   run_enrich.py   —— releases 维护信号 + GHSA 安全通告（Core API，断点续采）
+#   run_personas.py —— 批量 AI 人群分类（用库/管库/造库 + AI 叠加标）
+# ============================================================
+
+# 富集目标：最新观察池内 scoped 且 star≥10（≈watched 集合），按 star 降序
+ENRICH_STAR_MIN = 10
+# 单次运行最多采多少 repo（2 次 API/repo：releases + advisories；
+# 1500 repo ≈ 3000 次 Core 调用 ≈ 40 分钟，断点续采分次覆盖全量）
+ENRICH_MAX_REPOS = 1500
+# releases 状态：单 repo 取多少条（算最近版本 + 90 天发版节奏足够）
+ENRICH_RELEASE_PER_PAGE = 12
+# GHSA：单 repo 最多取多少条通告
+ENRICH_ADVISORY_PER_PAGE = 30
+# 每 N 个 repo 落一次盘（崩溃安全）
+ENRICH_SAVE_EVERY = 200
+
+# personas：默认只对默认展示档（国际/AI≥300、国产≥50，≈850 项）跑 AI 分类；
+# --all 可扩到全量 watched。已有缓存的项目自动跳过（增量）。
+PERSONA_TIER1_ONLY = True
+PERSONA_SLEEP_SEC = 0.3        # AI 调用间隔（防限流）
+

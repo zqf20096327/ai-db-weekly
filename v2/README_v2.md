@@ -243,3 +243,28 @@ python run_weekly.py --no-resume
 ## 依赖
 
 仅 `requests`（Python 3.x）。无其他第三方依赖。
+
+---
+
+## M5 富集采集（2026-09-22 新增：维护/安全/人群信任字段）
+
+服务于站点资产页（生态地图/数据库档案），与周报栏目无关，**周节奏**采集：
+
+| 脚本 | 数据源 | 产出 | 频率 |
+|---|---|---|---|
+| `run_enrich.py` | `GET /repos/{o}/{r}/releases` + `GET /repos/{o}/{r}/security-advisories` | 快照 `meta/release_state.json`（最新版本/距今天数/90天发版数）+ `meta/security.json`（披露条数/最高severity/最近披露日） | 每周四（daily_update.sh 自动），或手动 |
+| `run_personas.py` | DeepSeek 批量分类（规则见脚本头） | `site_export/personas.json` 缓存（用库/管库/造库 + AI 叠加标） | 一次性+增量 |
+
+```bash
+python run_enrich.py                 # 续采（cap 1500/次，断点缓存自动跳过）
+python run_enrich.py --tier1 --no-resume   # 周度刷新默认展示档（≈850 项 ≈25 分钟）
+python run_personas.py               # tier1 增量分类（首次 ≈20 分钟）
+python run_personas.py --all --cap 100    # 扩量试跑
+```
+
+配额账：每 repo 2 次 Core 调用（releases+advisories）；tier1 全量 ≈1700 次 ≈25 分钟。
+GHSA 口径注意：`security-advisories` 只覆盖**项目自身披露**的漏洞（CVE 同步）；
+依赖组件漏洞（Dependabot）是私有数据不采；API 的 `first_patched_version` 普遍为
+null，**不做「未修复」断言**，只记 条数/最高级/最近日期，由前端如实展示。
+聚合端 `aggregate_daily.py` 自动把富集字段（ver/verd/n90/secn/secw/secl/AI persona）
+合并进 map/archive 记录，`now.json.enrich` 记录覆盖进度。

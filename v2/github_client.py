@@ -427,6 +427,24 @@ class GitHubClient:
         data = resp.json()
         return data if isinstance(data, list) else []
 
+    def list_advisories(
+        self, owner: str, repo: str, *, per_page: int = 30,
+    ) -> list[dict[str, Any]]:
+        """列某 repo 自己发布的安全通告（GHSA，M5 富集数据源）。
+
+        GET /repos/{owner}/{repo}/security-advisories —— 项目自身披露的漏洞通告
+        （CVE 同步），公开数据、无需额外 scope，符合「数据只有 GitHub」边界。
+        注意与依赖漏洞（Dependabot，需私有权限）区分：这里只覆盖项目自身披露。
+        返回空列表 = 该 repo 无自主披露（调用方按「已扫描·干净」处理）。
+        """
+        params: dict[str, Any] = {"per_page": per_page}
+        resp = self._request(
+            "GET", f"/repos/{owner}/{repo}/security-advisories", kind="core", params=params,
+        )
+        self._record_rate_headers(resp, "core")
+        data = resp.json()
+        return data if isinstance(data, list) else []
+
 
 # ============================================================
 # 环境加载（不依赖 python-dotenv，避免第三方依赖；只读 .env）
