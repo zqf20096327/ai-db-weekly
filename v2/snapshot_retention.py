@@ -181,6 +181,10 @@ def stage_changes(window: list[str], out_of_window: list[str]) -> None:
         log.info("  git rm --cached：snapshot_%s（磁盘文件保留）", d)
 
     adds: list[str] = [".gitignore"]
+    # 人群分类增量缓存（v2/data/personas.json）：CI 每日富集产物，随快照一起入库
+    personas_abs = os.path.join(config.DATA_DIR, "personas.json")
+    if os.path.isfile(personas_abs):
+        adds.append(os.path.relpath(personas_abs, _REPO_ROOT).replace("\\", "/"))
     tracked = tracked_snapshot_dirs()  # rm 之后的最新索引状态
     for d in plain_snapshots():
         if d in window and d not in tracked:
@@ -188,7 +192,7 @@ def stage_changes(window: list[str], out_of_window: list[str]) -> None:
     for d in zip_snapshots():
         adds.append(f"v2/data/snapshot_{d}.zip")
     _git("add", "--", *adds)
-    log.info("git add：%d 个路径（.gitignore + 窗口内新目录 + 全部 zip）", len(adds))
+    log.info("git add：%d 个路径（.gitignore + personas + 窗口内新目录 + 全部 zip）", len(adds))
 
 
 # ============================================================

@@ -603,4 +603,7 @@ ENRICH_SAVE_EVERY = 200
 # --all 可扩到全量 watched。已有缓存的项目自动跳过（增量）。
 PERSONA_TIER1_ONLY = True
 PERSONA_SLEEP_SEC = 0.3        # AI 调用间隔（防限流）
+# 人群分类缓存落盘点：入仓库数据湖（随快照白名单提交，CI 与本地共用一份增量缓存，
+# 跨运行累积避免重复花 AI 配额）；环境变量 PERSONAS_FILE 可覆盖（本地旧路径兼容）。
+PERSONAS_FILE = os.environ.get("PERSONAS_FILE") or os.path.join(DATA_DIR, "personas.json")
 

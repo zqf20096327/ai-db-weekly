@@ -5,8 +5,9 @@
   - 灰地带：迁移同步/数据治理 → ops；BI/报表 → use；内核级性能库/协议实现 → build；
   - AI 横切：核心能力是 LLM/Agent/text2sql/MCP 等范式时叠加 ai 标，不改变主类。
 
-缓存：site_export/personas.json {fn: {p, ai, why, when}}（只存 AI 成功结果，
-增量续跑自动跳过；规则版 persona_of 仍是聚合时的兜底）。
+缓存：v2/data/personas.json（config.PERSONAS_FILE，随快照白名单入库，CI/本地
+共用一份增量缓存；环境变量 PERSONAS_FILE 可覆盖）。只存 AI 成功结果，
+增量续跑自动跳过；规则版 persona_of 仍是聚合时的兜底。
 默认只跑默认展示档（≈850 项，30-40 分钟一次性）；--all 扩到全量 watched。
 
 用法：
@@ -30,7 +31,7 @@ import config
 
 log = logging.getLogger("run_personas")
 
-PERSONAS_FILE = Path(r"D:\db-oss-observer\site_export\personas.json")
+PERSONAS_FILE = Path(config.PERSONAS_FILE)
 
 _PROMPT = """你是数据库开源工具的分类助手。只依据给出的信息，把项目分给最合适的"使用人群"主类，并判断是否叠加 AI 标。
 

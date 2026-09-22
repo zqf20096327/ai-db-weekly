@@ -13,12 +13,18 @@ cd "$(dirname "$0")"
 NO_DEPLOY="${1:-}"
 
 mkdir -p logs
+# personas 缓存已入仓库（v2/data/personas.json，CI 每日增量提交）；site_export 读取
+# 路径固定，聚合前同步过去（本地仓库越新，站点人群标越全）
+sync_personas() {
+    [ -f data/personas.json ] && cp -f data/personas.json /d/db-oss-observer/site_export/personas.json || true
+}
 echo "==== $(date '+%F %T') 日更开始 ===="
 
 echo "-- 1/3 每日采集（run_daily）"
 python run_daily.py || { echo "!! run_daily 失败，中止（今日不更新站点）"; exit 1; }
 
 echo "-- 2/3 日聚合（aggregate_daily，site_export 已移至 db-oss-observer/）"
+sync_personas
 python D:/db-oss-observer/site_export/aggregate_daily.py || { echo "!! aggregate_daily 失败，中止"; exit 1; }
 
 # 周四出刊日顺带跑维护/安全/人群富集（周节奏足够；watched 全量靠断点续采分次完成）
@@ -26,6 +32,7 @@ if [ "$(date +%u)" = "4" ]; then
     echo "-- 2.5/3 周度富集（releases + GHSA 安全 / personas 人群）"
     python run_enrich.py --cap 1500 || echo "!! run_enrich 失败（不影响本次部署，下次续采）"
     python run_personas.py || echo "!! run_personas 失败（不影响本次部署）"
+    sync_personas
     python D:/db-oss-observer/site_export/aggregate_daily.py || echo "!! 富集后重聚合失败"
 fi
 

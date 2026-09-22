@@ -1,12 +1,15 @@
 name: v2 每日采集
 
-# 每日跑 v2 版全数据源采集（run_daily.py）。
+# 每日跑 v2 版全数据源采集（run_daily.py）+ M5 富集（releases/GHSA + personas）。
 #   - 北京 09:00 (UTC 01:00)
 # 采集产物 v2/data/ 双轨持久化：
 #   1. actions/cache —— 全量明文历史（含 30 天 new_projects 窗口所需），运行间累积；
 #   2. 仓库 v2/data/ —— 永久数据湖（2026-09-20 起替代"滚动 8 天窗口"）：
 #      近 8 天保持明文目录（周报 7 天 diff），出窗快照压缩为 snapshot_*.zip 永久入库；
 #      白名单与转档由 v2/snapshot_retention.py 每日执行（见下方步骤 6）。
+# 富集节奏（2026-09-22 起每日）：releases+GHSA 对 tier1 默认展示档全量刷新
+# （断点缓存只认当日快照 meta，跨日无可续，直接刷新 ≈847 项）；personas 增量
+# （缓存 v2/data/personas.json 随仓库提交，跨运行累积，每天只分类新增项目）。
 "on":
   schedule:
     - cron: '0 1 * * *'    # UTC 01:00 = 北京 09:00
@@ -19,7 +22,7 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 240
     steps:
       # 1. 拉取代码
       - name: Checkout
@@ -58,9 +61,30 @@ jobs:
           AI_MODEL: ${{ secrets.AI_MODEL }}
         run: python run_daily.py
 
+      # 5.5 每日富集：releases 维护信号 + GHSA 安全通告（tier1 默认展示档全量刷新，
+      #     ≈847 repo × 2 次 Core 调用 ≈ 25 分钟；失败不阻断快照提交，明日重试）
+      - name: 富集采集（releases + GHSA）
+        working-directory: v2
+        timeout-minutes: 45
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python run_enrich.py --tier1 --no-resume || echo "::warning::run_enrich 失败（不影响快照提交，明日重试）"
+
+      # 5.6 每日人群分类（tier1 增量：缓存 v2/data/personas.json 随仓库提交跨运行累积，
+      #     首跑≈45 分钟，之后每天只分类新增项目；失败不阻断快照提交）
+      - name: 人群分类（personas）
+        working-directory: v2
+        timeout-minutes: 60
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+        run: python run_personas.py || echo "::warning::run_personas 失败（不影响快照提交，明日续跑）"
+
       # 6. 提交今日快照 + 窗口外快照 zip 永久归档（v2/snapshot_retention.py 统一执行：
       #    重写 .gitignore 白名单 → 出窗明文目录打 zip → rm --cached 明文 / add zip）
-      #    近 8 天明文供周报 7 天 diff；出窗快照压缩永久保留（约 33MB → 5MB/天）
+      #    近 8 天明文供周报 7 天 diff；出窗快照压缩永久保留（约 33MB → 5MB/天）；
+      #    当日 meta/（releases+GHSA）与 personas.json 一并入库
       - name: 提交快照（近 8 天明文 + 窗口外 zip 永久归档）
         run: |
           set -euo pipefail
@@ -79,7 +103,7 @@ jobs:
             echo "no changes to commit"
             exit 0
           fi
-          git commit -m "auto: ${TODAY} 采集快照入库（窗口外 zip 永久归档）"
+          git commit -m "auto: ${TODAY} 采集+富集快照入库（窗口外 zip 永久归档）"
           # 缓存恢复会把已跟踪的旧快照覆盖成 CI 版本，与 HEAD 产生未暂存漂移；
           # 漂移不入库，rebase 前丢弃，否则 pull 因工作区不干净直接失败（exit 128）
           git restore .

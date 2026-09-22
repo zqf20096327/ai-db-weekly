@@ -33,6 +33,8 @@ v2/data/*
 !v2/data/snapshot_20260915/
 !v2/data/snapshot_*.zip
 # END snapshot whitelist
+# 人群分类增量缓存（CI 每日富集入库；静态白名单，不在上方自动重写块内）
+!v2/data/personas.json
 # === v2 打包/日志/会话产物 ===
 v2.zip
 *.log
