@@ -1,15 +1,16 @@
-"""每日采集编排入口（SOP 4.3「每日凌晨」全部 4 个数据源）。
+"""每日采集编排入口（SOP 4.3「每日凌晨」全部数据源）。
 
 流程顺序：
   1. 读 .env（GITHUB_TOKEN）
-  2. 探测 16 topic 规模           → meta/probe_results.json      （数据源1前置）
+  2. 探测 topic 规模             → meta/probe_results.json      （数据源1前置）
   3. topic 采集（分级）           → topics/{topic}.json          （数据源1）
   4. 白名单内核采集               → whitelist/whitelist.json     （数据源1补）
   5. org 全量扫描                 → orgs/{org}.json              （数据源6）
-  6. 新生项目 30 天窗             → new_projects/{topic}.json    （数据源2）
-  7. 去重合并 → 候选池            → merged/all_projects.json
-  8. commit 活跃度（候选池）      → meta/commit_activity.json    （数据源4）
-  9. 打印汇总                     → meta/run_summary.json
+  6. 关键词搜索采集（国产库）      → keywords/{name}.json         （数据源7）
+  7. 新生项目 30 天窗             → new_projects/{topic}.json    （数据源2）
+  8. 去重合并 → 候选池            → merged/all_projects.json
+  9. commit 活跃度（候选池）      → meta/commit_activity.json    （数据源4）
+ 10. 打印汇总                     → meta/run_summary.json
 
 用法：
   python run_daily.py                        # 全流程
@@ -17,6 +18,7 @@
   python run_daily.py --only topic           # 只采 topic（依赖已有 probe 结果）
   python run_daily.py --only whitelist
   python run_daily.py --only org
+  python run_daily.py --only keyword
   python run_daily.py --only new
   python run_daily.py --only commit          # 只跑 commit 活跃度（需先有候选池）
   python run_daily.py --only merge           # 只合并（不采新数据）
@@ -40,6 +42,7 @@ from collectors import probe as probe_mod
 from collectors import topic as topic_mod
 from collectors import whitelist as whitelist_mod
 from collectors import org_scan as org_mod
+from collectors import keyword_search as keyword_mod
 from collectors import new_projects as new_mod
 from collectors import commit_activity as commit_mod
 
@@ -63,21 +66,25 @@ def _parse_topics(arg: str | None) -> list[str] | None:
 
 
 def build_candidate_pool(date: str | None = None) -> list[dict[str, Any]]:
-    """合并 topic + whitelist + org 三源为候选池（不含 new_projects，新生单独成榜）。
+    """合并 topic + whitelist + org + keyword 四源为候选池（不含 new_projects，新生单独成榜）。
 
     返回合并后的项目列表，并落盘到 merged/all_projects.json。
     """
     topics_items = storage.load_all_topics(date)
     whitelist_items = storage.load_whitelist(date)
     org_items = storage.load_all_orgs(date)
+    keyword_items = storage.load_all_keywords(date)
 
-    merged = storage.merge_dedupe(topics_items, whitelist_items, org_items)
+    merged = storage.merge_dedupe(
+        topics_items, whitelist_items, org_items, keyword_items
+    )
     # 按 star 降序排（候选池默认序，便于后续榜单截取）
     merged.sort(key=lambda x: x.get("stargazers_count", 0), reverse=True)
     storage.save_merged(merged, date)
     log.info(
-        "候选池合并：topic=%d + whitelist=%d + org=%d → 去重后 %d（已落盘）",
-        len(topics_items), len(whitelist_items), len(org_items), len(merged),
+        "候选池合并：topic=%d + whitelist=%d + org=%d + keyword=%d → 去重后 %d（已落盘）",
+        len(topics_items), len(whitelist_items), len(org_items),
+        len(keyword_items), len(merged),
     )
     return merged
 
@@ -112,6 +119,10 @@ def run_pipeline(args: argparse.Namespace) -> None:
     # ---- org 扫描 ----
     if only in (None, "org"):
         org_mod.collect_all_orgs(client, resume=resume, date=date)
+
+    # ---- 关键词搜索采集（数据源7，国产库社区工具）----
+    if only in (None, "keyword"):
+        keyword_mod.collect_all_keywords(client, resume=resume, date=date)
 
     # ---- 新生项目 ----
     if only in (None, "new"):
@@ -172,7 +183,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--only",
-        choices=["probe", "topic", "whitelist", "org", "new", "merge", "commit"],
+        choices=["probe", "topic", "whitelist", "org", "keyword", "new", "merge", "commit"],
         help="只跑指定阶段（默认全流程）",
     )
     parser.add_argument("--topics", help="只采指定 topic（逗号分隔，如 tidb,oceanbase）")

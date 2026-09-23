@@ -28,7 +28,7 @@ def snapshot_dir(date: str | None = None) -> str:
 
 
 # ============================================================
-# Topic 范围（SOP 2.1 —— 16 个 topic，不区分大小写）
+# Topic 范围（SOP 2.1 + 后续扩充 —— 19 个 topic，不区分大小写）
 # ============================================================
 TOPICS = [
     "database",
@@ -46,10 +46,15 @@ TOPICS = [
     "yashandb",
     "goldendb",
     "gbase",
-    "dm",
     # 2026-08-14 板块范围新增：ClickHouse（板块一）/ GaussDB（板块二）生态采集
     "clickhouse",
     "gaussdb",
+    # 2026-09-23 达梦生态采集调整：
+    #  - 新增 dameng（36 个，达梦生态主阵地）+ dm8（11 个，驱动/连接器常用标签）
+    #  - 移除 dm（实测 198 个中 181 个为噪音：Discord 机器人/SS13 游戏站/下载器，
+    #    真·达梦仅 4 个，已入 WHITELIST_REPOS 兜底）
+    "dameng",
+    "dm8",
 ]
 
 # 四大"泛库"topic（SOP 4.9.1）
@@ -207,6 +212,12 @@ WHITELIST_REPOS = [
     # 国产-阿里
     "polardb/PolarDB-for-PostgreSQL",
     "polardb/polardbx-engine",
+    # 国产-达梦（2026-09-23 移除 topic:dm 采集后兜底：
+    # 这 4 个只打 dm 标签、无 dameng/dm8，靠白名单保住）
+    "gaoyuan98/dameng_exporter",
+    "Jackfinal/laravel-dm8",
+    "nfjBill/gorm-driver-dm",
+    "sjm1327605995/dm-xorm",
     # 重要生态工具兜底（官方 org 已确认；曾因多 topic 互斥漏采，互斥已修复，
     # 白名单保留作双保险）
     "OtterMind/Chat2DB",  # Chat2DB 主仓库（原 CodePhiliaX/Chat2DB，org 已更名）
@@ -257,7 +268,40 @@ ORG_SCAN_LIST = [
     "postgres",         # PostgreSQL 官方（6 仓库，兜底）
     "huaweicloud",      # GaussDB 主阵地（161 仓库，云产品噪音靠下游过滤）
     "tencentcloud",     # TDSQL 相关（202 仓库）
+    # 2026-09-23 新增：崖山官方 org（46 仓库，topics 全空 → topic:yashandb 在
+    # GitHub 上为 0，org 扫描是唯一覆盖路径；org 外个人生态仓库 star 低，接受不采）
+    "yashan-technologies",
 ]
+
+# ============================================================
+# 关键词搜索采集源（数据源7 —— 补"社区工具不打 topic"盲区）
+# ============================================================
+# 背景（2026-09-23 实测）：nacos-plus(292★)、db-migration(79★)、
+# OracleSync2MySQL(86★)、DotNetCore.GaussDB(11★) 等社区生态工具 topics 全空，
+# topic 搜索/org 扫描/白名单三条路径都够不着。关键词全文搜索是唯一覆盖手段。
+# 设计：
+#   - 只搜板块二国产库名（板块一 oracle/mysql 等词太泛）；star>=10 对齐
+#     big 桶门槛；fork:false 排除 fork
+#   - 关键词选词实测防撞名：不用裸 dm（Discord/SS13）、裸 yashan（人名）、
+#     裸 gbase（5GBase/10GBase/AI框架）——gbase 用短语 "gbase 8s" 精确匹配
+#   - polardb 一个词覆盖三种写法（polardb / polardb-x / polardbx 均含该子串）
+#   - math-inc/OpenGauss 是撞名 Python 项目（非华为 openGauss），查询级排除
+#   - 噪音防线复用既有层：课程/比赛→采集黑名单；归档/fork→pass_gate；
+#     混合多库工具→范围外排斥层
+KEYWORD_SEARCH_QUERIES = {
+    "opengauss": "opengauss stars:>=10 fork:false -repo:math-inc/OpenGauss",
+    "gaussdb": "gaussdb stars:>=10 fork:false",
+    "tidb": "tidb stars:>=10 fork:false",
+    "tikv": "tikv stars:>=10 fork:false",
+    "oceanbase": "oceanbase stars:>=10 fork:false",
+    "tdsql": "tdsql stars:>=10 fork:false",
+    "polardb": "polardb stars:>=10 fork:false",
+    "yashandb": "yashandb stars:>=10 fork:false",
+    "gbase": '"gbase 8s" stars:>=10 fork:false',
+    "dameng": "dameng stars:>=10 fork:false",
+    "dm8": "dm8 stars:>=10 fork:false",
+    "goldendb": "goldendb stars:>=10 fork:false",
+}
 
 
 # ============================================================
@@ -341,6 +385,8 @@ KERNEL_REPOS = {
     # 国产内核（主阵地在 Gitee / 厂商官网）
     "opengauss-mirror/openGauss-server", "opengauss-mirror/openGauss",
     "polardb/PolarDB-for-PostgreSQL", "polardb/polardbx-engine",
+    # 2026-09-22 分类试验 L4 堵漏：MySQL 分支属内核性质，版本口径归厂商官方
+    "alibaba/AliSQL",
 }
 
 # ----- 导语 / 精选解读 阈值（编辑策展）-----
@@ -423,12 +469,13 @@ OUT_OF_SCOPE_DB_KEYWORDS = [
     "mongodb", "mongo", "redis", "valkey", "dragonfly", "kvrocks", "etcd",
     "cassandra", "scylla", "dynamodb", "couchdb", "couchbase",
     "hbase", "firebase", "firestore", "realmdb",
-    # 图 / 向量 / 搜索
+    # 图 / 向量 / 搜索（2026-09-22 分类试验 L4 堵漏：+manticore/seekdb 自研搜索库）
     "neo4j", "falkordb", "memgraph", "arangodb", "nebula",
     "qdrant", "milvus", "weaviate", "pinecone", "faiss", "lancedb", "chromadb",
     "vector database", "vector-database", "vector search", "vector-search",
     "vector store", "vector-store", "embedding database", "embeddings database",
     "elasticsearch", "opensearch", "meilisearch", "typesense", "solr",
+    "manticore", "seekdb",
     # OLAP / 数仓 / 湖仓（范围外）
     "duckdb", "doris", "starrocks", "greenplum", "vertica",
     "trino", "prestodb", "bigquery", "redshift", "databricks",
@@ -539,6 +586,8 @@ MANUAL_EXCLUDE_REPOS = {
     "evangelosvlachos96-dotcom/booking-microservices",     # .NET 航班预订应用
     "LuisCarlos01/sentinel-auth-api",                      # Spring Boot 认证 API
     "InsForge/InsForge",                                   # agentic coding 全栈后端平台，DB/auth/托管均为打包组件
+    # 2026-09-22 分类试验 L4 堵漏：泛运维脚本集，非数据库生态工具
+    "HariSekhon/DevOps-Bash-tools",
 }
 # 领域排除：仅匹配项目自带 topics 标签（不扫描述，防误杀），且只收
 # 经候选池全量试跑验证零误伤的词。auth/jwt/microservices/crypto 等词
@@ -569,9 +618,10 @@ ACTIVE_GROWTH_EXEMPT_RATIO = 2.0
 # 板块候选全员冷却时取活跃榜榜首兜底，保证栏目不空）。
 FOCUS_COOLDOWN_ISSUES = 4
 
-# 期号编排：对外正式创刊日（2026-09-07 = 第 1 期），期号 = 距创刊日的满周数 + 1。
-# 2026-08 的 0817/0824/0831 三份为试刊（文件头"第 N 期"占位），不占期号。
-FIRST_ISSUE_DATE = "20260907"
+# 期号编排：对外正式创刊日，期号 = 距创刊日的满周数 + 1。
+# 2026-09-22 回填历史周报（8/8 起每隔 7 天一期）时锚点由 20260907 前移到 20260808：
+# 周带 [0808-0814]→第1期 … [0919-0925]→第7期；下期出刊日须 ≥20260926（第8期）。
+FIRST_ISSUE_DATE = "20260808"
 
 # ----- 快照保留策略（2026-09-20 定稿：数据湖永久积累，替代"滚动 8 天清理"） -----# GitHub API 只返回当前状态，历史 star/forks/issues 无法回填 → 每日快照即不可再生的
 # 数据资产。新策略（执行者 v2/snapshot_retention.py，CI 调用见 v2-daily.yml 步骤 6）：
@@ -598,11 +648,23 @@ ENRICH_RELEASE_PER_PAGE = 12
 ENRICH_ADVISORY_PER_PAGE = 30
 # 每 N 个 repo 落一次盘（崩溃安全）
 ENRICH_SAVE_EVERY = 200
+# 增量滚动：超过 N 天未刷新的旧条目重采（每日跑的稳态 ≈ watched/N 个/天 ≈ 170，
+# 配合 cap 500 安全上限，Core 配额占用 ~400 次/天，与日采集错峰无压力）
+ENRICH_REFRESH_DAYS = 30
+# 每日自动档的采集上限（手动全量可 --cap 覆盖）
+ENRICH_DAILY_CAP = 500
 
 # personas：默认只对默认展示档（国际/AI≥300、国产≥50，≈850 项）跑 AI 分类；
 # --all 可扩到全量 watched。已有缓存的项目自动跳过（增量）。
+# 缓存正本 v2/data/*.json 随快照白名单入仓（CI 增量提交），daily_update.sh
+# 聚合前同步到 site_export/（环境变量 PERSONAS_FILE/CATEGORIES_FILE 可覆盖）。
 PERSONA_TIER1_ONLY = True
 PERSONA_SLEEP_SEC = 0.3        # AI 调用间隔（防限流）
+import os as _os  # noqa: E402（路径默认值需要 os.environ）
+PERSONAS_FILE = _os.environ.get(
+    "PERSONAS_FILE", _os.path.join(DATA_DIR, "personas.json"))
+CATEGORIES_FILE = _os.environ.get(
+    "CATEGORIES_FILE", _os.path.join(DATA_DIR, "categories.json"))
 # 人群分类缓存落盘点：入仓库数据湖（随快照白名单提交，CI 与本地共用一份增量缓存，
 # 跨运行累积避免重复花 AI 配额）；环境变量 PERSONAS_FILE 可覆盖（本地旧路径兼容）。
 PERSONAS_FILE = os.environ.get("PERSONAS_FILE") or os.path.join(DATA_DIR, "personas.json")

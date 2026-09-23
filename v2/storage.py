@@ -44,6 +44,12 @@ def orgs_dir(date: str | None = None) -> str:
     return p
 
 
+def keywords_dir(date: str | None = None) -> str:
+    p = os.path.join(config.snapshot_dir(date), "keywords")
+    _ensure_dir(p)
+    return p
+
+
 def new_projects_dir(date: str | None = None) -> str:
     p = os.path.join(config.snapshot_dir(date), "new_projects")
     _ensure_dir(p)
@@ -68,6 +74,10 @@ def topic_file(topic: str, date: str | None = None) -> str:
 
 def org_file(org: str, date: str | None = None) -> str:
     return os.path.join(orgs_dir(date), f"{org}.json")
+
+
+def keyword_file(name: str, date: str | None = None) -> str:
+    return os.path.join(keywords_dir(date), f"{name}.json")
 
 
 def merged_file(date: str | None = None) -> str:
@@ -215,7 +225,7 @@ def normalize_repo(
     raw: dict[str, Any],
     *,
     source_topic: str | None = None,
-    source: str = "topic",  # topic / whitelist / org / new
+    source: str = "topic",  # topic / whitelist / org / keyword / new
     snapshot_date: str | None = None,
 ) -> dict[str, Any]:
     """把 GitHub 原始 repo JSON 标准化为 SOP 4.7 字段集。
@@ -223,7 +233,7 @@ def normalize_repo(
     加自填字段：
       - snapshot_date：采集日期（对比用）
       - source_topic：哪个 topic 搜到的（溯源用，可为 None）
-      - source：来源类型（topic/whitelist/org/new）
+      - source：来源类型（topic/whitelist/org/keyword/new）
     """
     out: dict[str, Any] = {k: raw.get(k) for k in _REPO_FIELDS}
     # license 可能是 None（无 license）或 dict
@@ -292,6 +302,10 @@ def save_org(org: str, items: list[dict[str, Any]], date: str | None = None) -> 
     _write_json(org_file(org, date), items)
 
 
+def save_keyword(name: str, items: list[dict[str, Any]], date: str | None = None) -> None:
+    _write_json(keyword_file(name, date), items)
+
+
 def save_new_projects(
     topic: str, items: list[dict[str, Any]], date: str | None = None
 ) -> None:
@@ -328,6 +342,10 @@ def org_exists(org: str, date: str | None = None) -> bool:
     return os.path.exists(org_file(org, date))
 
 
+def keyword_exists(name: str, date: str | None = None) -> bool:
+    return os.path.exists(keyword_file(name, date))
+
+
 def load_topic(topic: str, date: str | None = None) -> list[dict[str, Any]] | None:
     data = _read_json(topic_file(topic, date))
     return data if isinstance(data, list) else None
@@ -340,6 +358,11 @@ def load_whitelist(date: str | None = None) -> list[dict[str, Any]]:
 
 def load_org(org: str, date: str | None = None) -> list[dict[str, Any]]:
     data = _read_json(org_file(org, date))
+    return data if isinstance(data, list) else []
+
+
+def load_keyword(name: str, date: str | None = None) -> list[dict[str, Any]]:
+    data = _read_json(keyword_file(name, date))
     return data if isinstance(data, list) else []
 
 
@@ -404,17 +427,28 @@ def load_all_orgs(date: str | None = None) -> list[dict[str, Any]]:
     return out
 
 
+def load_all_keywords(date: str | None = None) -> list[dict[str, Any]]:
+    d = keywords_dir(date)
+    out: list[dict[str, Any]] = []
+    for fn in os.listdir(d):
+        if fn.endswith(".json"):
+            data = _read_json(os.path.join(d, fn))
+            if isinstance(data, list):
+                out.extend(data)
+    return out
+
+
 # ============================================================
 # 去重合并（采集策略清单 第四步去重 + 全局规范去重）
 # ============================================================
 def merge_dedupe(*sources: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     """合并多源，按 full_name 去重。
 
-    优先级：whitelist > org > topic > new。
+    优先级：whitelist > org > topic > keyword > new。
     同一 full_name 出现多次时，保留优先级最高的那条（含其 source 字段，便于溯源）。
     合并各源的 source_topic（一个项目可能被多个 topic 采到，收集所有 topic）。
     """
-    priority = {"whitelist": 0, "org": 1, "topic": 2, "new": 3}
+    priority = {"whitelist": 0, "org": 1, "topic": 2, "keyword": 3, "new": 4}
     merged: dict[str, dict[str, Any]] = {}
 
     for source in sources:
