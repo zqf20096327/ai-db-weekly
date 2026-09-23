@@ -254,6 +254,7 @@ python run_weekly.py --no-resume
 |---|---|---|---|
 | `run_enrich.py` | `GET /repos/{o}/{r}/releases` + `GET /repos/{o}/{r}/security-advisories` | 快照 `meta/release_state.json`（最新版本/距今天数/90天发版数）+ `meta/security.json`（披露条数/最高severity/最近披露日） | 每周四（daily_update.sh 自动），或手动 |
 | `run_personas.py` | DeepSeek 批量分类（规则见脚本头） | `site_export/personas.json` 缓存（用库/管库/造库 + AI 叠加标） | 一次性+增量 |
+| `run_categories.py` | DeepSeek 任务分类兜底（护栏版：禁既有认知/置信度/增量） | `v2/data/categories.json` 缓存（第 8 类「开发库」定案） | 每周四 + 增量 |
 
 ```bash
 python run_enrich.py                 # 续采（cap 1500/次，断点缓存自动跳过）

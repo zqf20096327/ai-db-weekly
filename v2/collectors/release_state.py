@@ -58,6 +58,38 @@ def release_state(raws: list[dict[str, Any]], today: datetime) -> dict[str, Any]
     }
 
 
+def _load_cached(name: str, date: str | None, resume: bool) -> tuple[dict[str, Any], str]:
+    """读已采缓存；条目无 ts 时用文件级 date 回填（旧数据兼容）。"""
+    if not resume:
+        return {}, ""
+    prev = storage.load_meta(name, date)
+    if not isinstance(prev, dict):
+        return {}, ""
+    by_repo = prev.get("by_repo") or {}
+    fdate = (prev.get("date") or "").replace("-", "")
+    for v in by_repo.values():
+        if isinstance(v, dict) and not v.get("ts"):
+            v["ts"] = fdate
+    return by_repo, fdate
+
+
+def _todo_list(
+    targets: list[dict[str, Any]], by_repo: dict[str, Any],
+    refresh_days: int, cap: int,
+) -> list[dict[str, Any]]:
+    """增量待采：未采过的优先（star 序），再补超过 refresh_days 未刷新的旧条目。"""
+    cutoff = (
+        (datetime.now(timezone.utc) - timedelta(days=refresh_days)).strftime("%Y%m%d")
+        if refresh_days > 0 else "")
+    fresh_missing = [t for t in targets if t.get("full_name") not in by_repo]
+    stale = []
+    if cutoff:
+        stale = [t for t in targets
+                 if t.get("full_name") in by_repo
+                 and str(by_repo[t["full_name"]].get("ts") or "") <= cutoff]
+    return (fresh_missing + stale)[:cap]
+
+
 def collect_release_state(
     client: GitHubClient,
     targets: list[dict[str, Any]],
@@ -65,18 +97,20 @@ def collect_release_state(
     resume: bool = True,
     date: str | None = None,
     cap: int = config.ENRICH_MAX_REPOS,
+    refresh_days: int = 0,
 ) -> dict[str, Any]:
-    """对目标 repo 集采集 release 状态，落盘快照 meta/release_state.json。"""
-    today = datetime.now(timezone.utc)
-    existing: dict[str, Any] = {}
-    if resume:
-        prev = storage.load_meta("release_state", date)
-        if isinstance(prev, dict):
-            existing = prev.get("by_repo") or {}
+    """对目标 repo 集采集 release 状态，落盘快照 meta/release_state.json。
 
-    todo = [t for t in targets if t.get("full_name") not in existing][:cap]
-    log.info("==== release 状态采集：目标 %d（缓存 %d，本次采 %d）====",
-             len(targets), len(existing), len(todo))
+    增量滚动：未采过的优先；refresh_days>0 时，超过 N 天未刷新的旧条目重采
+    （ver/verd 等时效字段的保鲜机制，稳态 ≈ watched/refresh_days 个/天）。
+    """
+    today = datetime.now(timezone.utc)
+    today_s = today.strftime("%Y%m%d")
+    existing, _ = _load_cached("release_state", date, resume)
+
+    todo = _todo_list(targets, existing, refresh_days, cap)
+    log.info("==== release 状态采集：目标 %d（缓存 %d，本次采 %d，refresh=%d 天）====",
+             len(targets), len(existing), len(todo), refresh_days)
 
     by_repo = dict(existing)
     fetched = 0
@@ -87,9 +121,11 @@ def collect_release_state(
             continue
         try:
             raws = client.list_releases(owner, repo, per_page=config.ENRICH_RELEASE_PER_PAGE)
-            by_repo[full] = release_state(raws, today)
+            st = release_state(raws, today)
+            st["ts"] = today_s
+            by_repo[full] = st
         except NotFoundError:
-            by_repo[full] = {"none": True}
+            by_repo[full] = {"none": True, "ts": today_s}
         except GitHubError as e:
             log.debug("release 状态失败 %s: %s", full, e)
             continue  # 失败不写缓存，下次续采重试

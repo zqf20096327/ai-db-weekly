@@ -1,0 +1,34 @@
+{
+  "snapshot_date": "2026-09-19",
+  "brief": {
+    "pgrundev/pgbot": "pgbot 是 PostgreSQL 只读观测工具，读取系统统计视图，输出健康报告及变化，供 AI 代理与应用使用。",
+    "databasus/databasus": "Databasus 是自托管开源备份工具，支持 PostgreSQL 等数据库，提供时间点恢复与恢复校验。",
+    "dbeaver/dbeaver": "DBeaver是免费通用数据库工具与SQL客户端，支持Oracle、SQL Server、DB2等，提供SQL编辑、数据管理与AI辅助功能。",
+    "cumakurt/central-flow-collector": "该工具采集NetFlow、IPFIX与sFlow，归一化后存入ClickHouse，供流量查询与容量分析。",
+    "Sahil1337/perch": "Perch 是面向开发者的轻量 SQL 工作区，支持 MySQL 与 PostgreSQL，本地运行，提供模式浏览、编辑与查询执行。",
+    "ClickHouse/kb2cs": "该项目用于将 Elasticsearch 与 Kibana 仪表板迁移至 ClickHouse 和 ClickStack，便于相关使用者转移可视化配置。",
+    "bytebase/bytebase": "Bytebase 是开源数据库治理平台，统一管理变更、访问与合规，支持 Oracle、MySQL、PostgreSQL 等。",
+    "suoten/dbbridge": "DBBridge 是开源数据库迁移与 SQL 转换工具，支持 Oracle、MySQL、PostgreSQL、TiDB、OceanBase、DM 等互转…",
+    "hanchuanchuan/goInception": "goInception 是 MySQL 运维工具，可审核、执行 SQL，备份并生成回滚语句，支持 TiDB。",
+    "tconbeer/harlequin": "Harlequin 是终端中的 SQL IDE，支持 SQL Server、MySQL、PostgreSQL、MariaDB 等，便于在命令行连接并操作数据库。",
+    "t8y2/dbx": "轻量跨平台数据库客户端，支持Oracle、MySQL等，含AI助手与CLI，便于统一管理多种数据库。",
+    "Canner/WrenAI": "WrenAI是开源GenBI引擎，可将自然语言转为SQL，支持PostgreSQL、ClickHouse等数据源。"
+  },
+  "three": {
+    "tconbeer/harlequin": {
+      "what": "终端中运行的SQL集成开发环境，提供图形化查询编辑与结果浏览，无需离开命令行即可操作数据库。",
+      "highlights": "基于文本界面的SQL编辑器、支持嵌入式分析数据库与轻量级文件数据库内置适配器、可通过插件连接多种数据库、支持主题与快捷键自定义。",
+      "scenarios": "适合在终端环境下编写和执行SQL、管理多种关系型数据库、进行数据查询与结果查看的场景。"
+    },
+    "pgrundev/pgbot": {
+      "what": "提供PostgreSQL数据库内可观测性，以只读方式读取统计视图，输出健康报告及与上次的差异。",
+      "highlights": "单静态二进制、只读连接、无需代理或外部服务、findings优先报告、JSON契约版本化、支持MCP与CI集成。",
+      "scenarios": "数据库健康巡检、性能问题排查、CI中自动化检查、AI代理调用数据库诊断工具。"
+    },
+    "hanchuanchuan/goInception": {
+      "what": "面向MySQL运维，提供SQL审核、执行、备份与回滚语句生成能力，基于自定义规则解析语法并返回审核结果。",
+      "highlights": "基于TiDB SQL解析器、支持审核与执行、自动备份、生成回滚语句、可配置审核规则。",
+      "scenarios": "适用于MySQL变更发布前的SQL审核、上线执行、数据备份及回滚方案准备等运维环节。"
+    }
+  }
+}

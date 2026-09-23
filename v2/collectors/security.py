@@ -20,6 +20,8 @@ import config
 import storage
 from github_client import GitHubClient, GitHubError, NotFoundError
 
+from collectors.release_state import _load_cached, _todo_list  # noqa: F401（增量滚动共用）
+
 log = logging.getLogger(__name__)
 
 _SEV_RANK = {"critical": 4, "high": 3, "moderate": 2, "medium": 2, "low": 1}
@@ -64,17 +66,20 @@ def collect_security(
     resume: bool = True,
     date: str | None = None,
     cap: int = config.ENRICH_MAX_REPOS,
+    refresh_days: int = 0,
 ) -> dict[str, Any]:
-    """对目标 repo 集采集安全通告状态，落盘快照 meta/security.json。"""
-    existing: dict[str, Any] = {}
-    if resume:
-        prev = storage.load_meta("security", date)
-        if isinstance(prev, dict):
-            existing = prev.get("by_repo") or {}
+    """对目标 repo 集采集安全通告状态，落盘快照 meta/security.json。
 
-    todo = [t for t in targets if t.get("full_name") not in existing][:cap]
-    log.info("==== GHSA 安全采集：目标 %d（缓存 %d，本次采 %d）====",
-             len(targets), len(existing), len(todo))
+    增量滚动语义与 release_state 相同：未采优先，refresh_days 天未刷新的重采。
+    """
+    from datetime import datetime, timezone  # noqa: PLC0415
+
+    today_s = datetime.now(timezone.utc).strftime("%Y%m%d")
+    existing, _ = _load_cached("security", date, resume)
+
+    todo = _todo_list(targets, existing, refresh_days, cap)
+    log.info("==== GHSA 安全采集：目标 %d（缓存 %d，本次采 %d，refresh=%d 天）====",
+             len(targets), len(existing), len(todo), refresh_days)
 
     by_repo = dict(existing)
     fetched = 0
@@ -85,9 +90,11 @@ def collect_security(
             continue
         try:
             raws = client.list_advisories(owner, repo, per_page=config.ENRICH_ADVISORY_PER_PAGE)
-            by_repo[full] = advisory_state(raws)
+            st = advisory_state(raws)
+            st["ts"] = today_s
+            by_repo[full] = st
         except NotFoundError:
-            by_repo[full] = {"n": 0}   # 无通告 = 干净（与未扫描区分）
+            by_repo[full] = {"n": 0, "ts": today_s}   # 无通告 = 干净（与未扫描区分）
         except GitHubError as e:
             log.debug("advisories 失败 %s: %s", full, e)
             continue

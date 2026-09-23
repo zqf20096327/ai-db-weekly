@@ -63,6 +63,9 @@ def main() -> None:
     ap.add_argument("--only", choices=["release", "security"], help="只跑其中一项（默认都跑）")
     ap.add_argument("--cap", type=int, default=config.ENRICH_MAX_REPOS,
                     help=f"本次最多采 N 个 repo（默认 {config.ENRICH_MAX_REPOS}，断点续采）")
+    ap.add_argument("--refresh-days", type=int, default=config.ENRICH_REFRESH_DAYS,
+                    help="超过 N 天未刷新的旧条目重采（0=只采新；时效字段保鲜，"
+                         "稳态 ≈ watched/N 个/天）")
     ap.add_argument("--tier1", action="store_true", help="只采默认展示档（≈850 项）")
     ap.add_argument("--no-resume", action="store_true", help="忽略缓存全量重采（周度刷新）")
     ap.add_argument("--date", help="指定快照日期 YYYYMMDD（默认最新）")
@@ -95,10 +98,12 @@ def main() -> None:
 
     if args.only in (None, "release"):
         rel_mod.collect_release_state(
-            client, targets, resume=not args.no_resume, date=date, cap=args.cap)
+            client, targets, resume=not args.no_resume, date=date, cap=args.cap,
+            refresh_days=args.refresh_days)
     if args.only in (None, "security"):
         sec_mod.collect_security(
-            client, targets, resume=not args.no_resume, date=date, cap=args.cap)
+            client, targets, resume=not args.no_resume, date=date, cap=args.cap,
+            refresh_days=args.refresh_days)
 
     stats = client.stats.summary()
     log.info("==== 富集完成（%.1f 分钟，Core=%d 调用）====",
