@@ -25,7 +25,8 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    # 300：三步最坏情况 120+90+60=270 仍放得下收尾提交（240 会挤掉提交步骤）
+    timeout-minutes: 300
     steps:
       # 1. 拉取代码
       - name: Checkout
@@ -54,9 +55,11 @@ jobs:
             v2-data-
 
       # 5. 运行采集（v2 脚本在子目录，必须 working-directory: v2，否则 import config 失败）
+      #    timeout 120：CI 常态 ~36 分钟，本地最差 80 分钟（participation 202 重试多），
+      #    留足余量；采集规模（commit 4000）不缩减。
       - name: 运行采集
         working-directory: v2
-        timeout-minutes: 90
+        timeout-minutes: 120
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
@@ -68,9 +71,12 @@ jobs:
       #     ≈847 repo × 2 次 Core 调用，常态 ≈25 分钟，API 慢时会拉长；失败不阻断
       #     快照提交，明日重试。⚠ timeout-minutes 超时是强杀，`|| warning` 拦不住，
       #     2026-09-24 曾在 45 分钟被杀并连带跳过提交（当天采集报废），故：
-      #     上限放宽到 90 分钟 + 下游步骤 if: always() 兜底。）
+      #     上限放宽到 90 分钟 + 下游步骤 if: always() 兜底 + continue-on-error
+      #     三重防护：超时被强杀时步骤标红但 job 保持绿（workflow_run 接力
+      #     照常触发），快照照常提交，富集数据次日自动补新。）
       - name: 富集采集（releases + GHSA）
         if: always()   # 采集失败也试跑：缓存里可能有部分当日数据可续（无害）
+        continue-on-error: true   # 超时强杀不再染红 job（site 接力依赖 success）
         working-directory: v2
         timeout-minutes: 90
         env:
@@ -81,6 +87,7 @@ jobs:
       #     首跑≈45 分钟，之后每天只分类新增项目；失败不阻断快照提交）
       - name: 人群分类（personas）
         if: always()   # 同上：富集超时/失败不应连带跳过本步与提交
+        continue-on-error: true   # 同上：超时/失败不染红 job
         working-directory: v2
         timeout-minutes: 60
         env:
