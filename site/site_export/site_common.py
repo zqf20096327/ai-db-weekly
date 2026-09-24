@@ -295,7 +295,7 @@ def record(it: dict, growth=None) -> dict:
     return {
         "fn": fn,
         "url": it.get("html_url") or ("https://github.com/" + fn),
-        "desc": (it.get("description") or "")[:110],
+        "desc": it.get("description") or "",   # 全文入库(GitHub 本身限 ~350 字),前端卡片样式自行控制展示
         "stars": it.get("stargazers_count") or 0,
         "growth": growth,
         "section": sections.assign_section(it) or "",
