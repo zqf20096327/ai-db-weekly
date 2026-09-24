@@ -2,7 +2,7 @@
 
 > 本目录是《数据库开源周报》SOP 第四章采集架构的工程实现 —— **每日采集地基**。
 > 规范文档：[`数据库开源周报-SOP.md`](./数据库开源周报-SOP.md)、[`采集策略清单.md`](./采集策略清单.md)
-> 与旧脚本 `../db_trending.py` **完全隔离**，不接管其 CI（`../.github/workflows/daily.yml`），新旧并存。
+> v1 旧脚本（`db_trending.py` / `gitee_trending.py` 及其 cache/output 产物）已于 2026-09-24 整体退役清除，本仓库全量由 v2 流水线驱动。
 
 ---
 
