@@ -1,0 +1,106 @@
+name: site 聚合接力
+
+# 挂在「v2 每日采集」完成之后自动接力，v2/ 采集层零改动：
+#   categories（AI 任务分类，增量缓存随仓库提交）
+#   → 周六加跑 run_weekly + export_weekly（出刊日=周六，期号按周六锚定）
+#   → aggregate_daily（聚合出站点 JSON → site/data/site/）
+#   → validate_site（部署闸门，失败则不上传）
+#   → 提交产物与状态文件入库
+#
+# 数据来源：纯仓库 checkout。v2-daily 已提交当日快照/meta/personas，
+# 近 8 天明文快照足以支撑 7 天 diff；不读 actions/cache，与采集流程零耦合。
+# 服务器侧只需 cron git pull + rsync（见 site/README.md），全程无密钥。
+"on":
+  workflow_run:
+    workflows: ["v2 每日采集"]
+    types: [completed]
+  workflow_dispatch: {}    # 允许手动补跑
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      # 1. 检出采集产出的那个 commit（接力场景）；手动触发时检出默认分支
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 安装依赖
+        run: pip install -r v2/requirements.txt
+
+      # 2. 聚合层路径全部走环境变量（site_common 支持覆盖，代码零改动）
+      - name: 环境变量
+        run: |
+          echo "V2_ROOT=$PWD/v2" >> "$GITHUB_ENV"
+          echo "BLOG_SITE_DIR=$PWD/site/data/site" >> "$GITHUB_ENV"
+          # personas 正本 = v2-daily 每日提交的 v2/data/personas.json，直接引用不复制
+          echo "PERSONAS_FILE=$PWD/v2/data/personas.json" >> "$GITHUB_ENV"
+
+      # 3. 任务分类（增量：缓存 site/site_export/categories.json 随仓库累积；
+      #    驱动脚本绕开 v2/run_categories.py 的旧本机硬编码路径）
+      - name: 任务分类（categories）
+        working-directory: site/site_export
+        timeout-minutes: 25
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+        run: python run_ci_categories.py || echo "::warning::categories 失败（聚合将退回规则分类，明日续跑）"
+
+      # 4. 周报（仅周六；run_weekly 自动定位 7 天前快照做 diff，冷却历史读
+      #    v2/reports/weekly_history.json）→ 导出站点周报 JSON
+      - name: 周报生成与导出（仅周六）
+        working-directory: v2
+        timeout-minutes: 50
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+        run: |
+          if [ "$(date -u +%u)" != "6" ]; then
+            echo "非周六，跳过周报（出刊日=周六）"
+            exit 0
+          fi
+          python run_weekly.py
+          python ../site/site_export/export_weekly.py --date "$(date -u +%Y%m%d)"
+
+      # 5. 日聚合（now/map/archive-*；默认取最新观察日）
+      - name: 日聚合
+        timeout-minutes: 10
+        run: python site/site_export/aggregate_daily.py
+
+      # 6. 部署闸门（任一失败则本 job 失败 → 不提交不上线，服务器停留在上一版）
+      - name: 校验站点数据
+        run: python site/site_export/validate_site.py
+
+      # 7. 提交产物 + 状态（与 v2-daily 相同的 rebase 推送模式）
+      - name: 提交产物
+        run: |
+          set -euo pipefail
+          git config user.name "ai-db-weekly-bot"
+          git config user.email "bot@ai-db-weekly.local"
+          git add -A site
+          git add v2/reports
+          if git diff --staged --quiet; then
+            echo "no changes to commit"
+            exit 0
+          fi
+          TODAY="$(date -u +%Y%m%d)"
+          git commit -m "auto: site 聚合产物入库 ${TODAY}（categories/history/站点 JSON）"
+          git pull --rebase origin "${GITHUB_REF_NAME:-main}"
+          git push origin "${GITHUB_REF_NAME:-main}"
