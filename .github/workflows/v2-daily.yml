@@ -55,8 +55,9 @@ jobs:
             v2-data-
 
       # 5. 运行采集（v2 脚本在子目录，必须 working-directory: v2，否则 import config 失败）
-      #    timeout 120：CI 常态 ~36 分钟，本地最差 80 分钟（participation 202 重试多），
-      #    留足余量；采集规模（commit 4000）不缩减。
+      #    --commit-cap 6000：commit 活跃度覆盖全部 watched（scoped+star≥10 ≈ 4.9k，
+      #    原 4000 会截掉长尾展示项）；7 天滚动指标必须日采，周采会陈旧。
+      #    timeout 120：常态 ~55 分钟（+2000 次 commit 调用），留足余量。
       - name: 运行采集
         working-directory: v2
         timeout-minutes: 120
@@ -65,7 +66,7 @@ jobs:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
-        run: python run_daily.py
+        run: python run_daily.py --commit-cap 6000
 
       # 5.5 每日富集：releases 维护信号 + GHSA 安全通告（tier1 默认展示档全量刷新，
       #     ≈847 repo × 2 次 Core 调用，常态 ≈25 分钟，API 慢时会拉长；失败不阻断
@@ -83,8 +84,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python run_enrich.py --tier1 --no-resume || echo "::warning::run_enrich 失败（不影响快照提交，明日重试）"
 
-      # 5.6 每日人群分类（tier1 增量：缓存 v2/data/personas.json 随仓库提交跨运行累积，
-      #     首跑≈45 分钟，之后每天只分类新增项目；失败不阻断快照提交）
+      # 5.6 每日人群分类（全量 watched 增量铺底：--all + cap 700 ≈ 20-35 分钟，
+      #     缓存命中跳过，约一周铺满 4.9k 后进入纯增量（每天只分新项目）；
+      #     失败不阻断快照提交）
       - name: 人群分类（personas）
         if: always()   # 同上：富集超时/失败不应连带跳过本步与提交
         continue-on-error: true   # 同上：超时/失败不染红 job
@@ -94,7 +96,7 @@ jobs:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
-        run: python run_personas.py || echo "::warning::run_personas 失败（不影响快照提交，明日续跑）"
+        run: python run_personas.py --all --cap 700 || echo "::warning::run_personas 失败（不影响快照提交，明日续跑）"
 
       # 6. 提交今日快照 + 窗口外快照 zip 永久归档（v2/snapshot_retention.py 统一执行：
       #    重写 .gitignore 白名单 → 出窗明文目录打 zip → rm --cached 明文 / add zip）

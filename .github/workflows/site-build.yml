@@ -25,7 +25,8 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # 周六含长尾富集(约 1.5-2h)与周报,普通日 10 分钟内;240 覆盖最坏情况
+    timeout-minutes: 240
     steps:
       # 1. 检出默认分支最新代码 —— 必须用分支名而非 workflow_run.head_sha:
       #    head_sha 是触发运行「所基于」的提交,不含该运行过程中新推的数据提交
@@ -83,6 +84,24 @@ jobs:
           python run_weekly.py
           python ../site/site_export/export_weekly.py --date "$(date -u +%Y%m%d)"
 
+      # 4.5 周六长尾富集（releases+GHSA 扩到全量 watched，增量轮换）：
+      #     --refresh-days 10 → 只采「新增 + 超 10 天未刷新」的条目，周六节奏下
+      #     每周恰好轮换一半（≈2,400 repo × 2 次 ≈ 4,800 调用 ≈ 1 个配额窗口，
+      #     与采集层 workflow 天然错峰），约 7-8 天完成全量铺底后进入稳态。
+      #     失败/超时不阻断聚合（数据最多延后一周期）。
+      - name: 长尾富集（releases + GHSA，仅周六）
+        working-directory: v2
+        timeout-minutes: 100
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "$(date -u +%u)" != "6" ]; then
+            echo "非周六，跳过长尾富集"
+            exit 0
+          fi
+          python run_enrich.py --cap 3000 --refresh-days 10
+
       # 5. 日聚合（now/map/archive-*；默认取最新观察日）
       - name: 日聚合
         timeout-minutes: 10
@@ -100,6 +119,8 @@ jobs:
           git config user.email "bot@ai-db-weekly.local"
           git add -A site
           git add v2/reports
+          # 周六长尾富集/周报写进当日快照 meta（.gitignore 白名单内，可提交）
+          git add -A v2/data/snapshot_* || true
           if git diff --staged --quiet; then
             echo "no changes to commit"
             exit 0
