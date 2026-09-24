@@ -12,7 +12,10 @@ name: v2 每日采集
 # （缓存 v2/data/personas.json 随仓库提交，跨运行累积，每天只分类新增项目）。
 "on":
   schedule:
-    - cron: '0 1 * * *'    # UTC 01:00 = 北京 09:00
+    # UTC 01:17 = 北京 09:17。刻意避开整点：GitHub 高负载时段（尤其整点）
+    # 的定时任务会被延迟甚至直接丢弃（2026-09-24 的 01:00 定时即被丢弃，
+    # 前两日也实际拖到 05:28/05:50 才跑）；错峰分钟数可显著降低丢弃率。
+    - cron: '17 1 * * *'  # UTC 01:17 = 北京 09:17
   workflow_dispatch: {}    # 允许手动触发
 
 # 需 push 每日快照，必须显式给写权限
@@ -62,10 +65,14 @@ jobs:
         run: python run_daily.py
 
       # 5.5 每日富集：releases 维护信号 + GHSA 安全通告（tier1 默认展示档全量刷新，
-      #     ≈847 repo × 2 次 Core 调用 ≈ 25 分钟；失败不阻断快照提交，明日重试）
+      #     ≈847 repo × 2 次 Core 调用，常态 ≈25 分钟，API 慢时会拉长；失败不阻断
+      #     快照提交，明日重试。⚠ timeout-minutes 超时是强杀，`|| warning` 拦不住，
+      #     2026-09-24 曾在 45 分钟被杀并连带跳过提交（当天采集报废），故：
+      #     上限放宽到 90 分钟 + 下游步骤 if: always() 兜底。）
       - name: 富集采集（releases + GHSA）
+        if: always()   # 采集失败也试跑：缓存里可能有部分当日数据可续（无害）
         working-directory: v2
-        timeout-minutes: 45
+        timeout-minutes: 90
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python run_enrich.py --tier1 --no-resume || echo "::warning::run_enrich 失败（不影响快照提交，明日重试）"
@@ -73,6 +80,7 @@ jobs:
       # 5.6 每日人群分类（tier1 增量：缓存 v2/data/personas.json 随仓库提交跨运行累积，
       #     首跑≈45 分钟，之后每天只分类新增项目；失败不阻断快照提交）
       - name: 人群分类（personas）
+        if: always()   # 同上：富集超时/失败不应连带跳过本步与提交
         working-directory: v2
         timeout-minutes: 60
         env:
@@ -86,6 +94,7 @@ jobs:
       #    近 8 天明文供周报 7 天 diff；出窗快照压缩永久保留（约 33MB → 5MB/天）；
       #    当日 meta/（releases+GHSA）与 personas.json 一并入库
       - name: 提交快照（近 8 天明文 + 窗口外 zip 永久归档）
+        if: always()   # 兜底：任何前置步骤超时/失败，已落盘的采集数据仍要入库
         run: |
           set -euo pipefail
           TODAY="$(date -u +%Y%m%d)"
