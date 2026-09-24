@@ -12283,5 +12283,115 @@
   "cat": "其他",
   "why": "TiDB百科，非工具类",
   "ev": "中"
+ },
+ "tomsik68/docker-xampp": {
+  "cat": "其他",
+  "why": "XAMPP镜像含MySQL/PHP/SSH，非上",
+  "ev": "中"
+ },
+ "Shannon-Data/ShannonBase": {
+  "cat": "其他",
+  "why": "面向AI的新一代数据库，非上述类目",
+  "ev": "中"
+ },
+ "yanlongma/docker-lnmp": {
+  "cat": "其他",
+  "why": "LNMP docker-compose部署，非数",
+  "ev": "中"
+ },
+ "aws-samples/aws-lambda-clickhouse": {
+  "cat": "其他",
+  "why": "在Lambda运行ClickHouse，非上述类",
+  "ev": "中"
+ },
+ "linux-china/h2-functions-4-mysql": {
+  "cat": "开发库",
+  "why": "H2 functions for MySQL，函",
+  "ev": "中"
+ },
+ "rohlacanna/postgresql4noobs": {
+  "cat": "其他",
+  "why": "仅学习PostgreSQL教程，无工具功能",
+  "ev": "高"
+ },
+ "guuuuo/dubai": {
+  "cat": "其他",
+  "why": "后台系统框架，非数据库工具",
+  "ev": "中"
+ },
+ "yangsoon/talen-plan-report": {
+  "cat": "其他",
+  "why": "Talent-Plan题解成绩，非工具",
+  "ev": "高"
+ },
+ "kuroda/multi_tenancy": {
+  "cat": "其他",
+  "why": "仅为Rails多租户示例应用",
+  "ev": "中"
+ },
+ "brettlaforge/pg_redis_pubsub": {
+  "cat": "其他",
+  "why": "从PostgreSQL向Redis发布消息，非上",
+  "ev": "中"
+ },
+ "Dani3lSun/apex-plugin-templates": {
+  "cat": "其他",
+  "why": "Oracle APEX插件模板，非数据库工具",
+  "ev": "高"
+ },
+ "firmanJS/Dockerize-Codeigniter-With-docker-compose": {
+  "cat": "其他",
+  "why": "Docker化Codeigniter应用，非数据",
+  "ev": "高"
+ },
+ "abel9851/mcp-server-mariadb": {
+  "cat": "开发库",
+  "why": "mcp server提供只读访问接口",
+  "ev": "中"
+ },
+ "postgres/pgcommitfest": {
+  "cat": "其他",
+  "why": "仅为CommitFest网站源码，无数据库功能",
+  "ev": "高"
+ },
+ "benchANT/database-ranking": {
+  "cat": "其他",
+  "why": "仅性能数据排名，非上述类目",
+  "ev": "中"
+ },
+ "LintangWisesa/CRUD_Flask_PostgreSQL": {
+  "cat": "其他",
+  "why": "Flask+PostgreSQL基础CRUD示例",
+  "ev": "中"
+ },
+ "jocrugon/Pokedex": {
+  "cat": "其他",
+  "why": "Spring Boot API练习，非数据库工具",
+  "ev": "中"
+ },
+ "nazarli-shabnam/MicroFlow": {
+  "cat": "其他",
+  "why": "微服务架构示例，非数据库工具",
+  "ev": "中"
+ },
+ "jonatas/sql-snippets": {
+  "cat": "其他",
+  "why": "仅为Postgresql代码片段POC集合",
+  "ev": "中"
+ },
+ "firstbatchxyz/dria-oracle-node": {
+  "cat": "其他",
+  "why": "描述为Dria知识网络预言机节点，非数据库工具",
+  "ev": "高"
+ },
+ "tschf/odb-task": {
+  "cat": "其他",
+  "why": "任务运行器，非上述类目",
+  "ev": "中"
+ },
+ "labex-labs/mysql-practice-projects": {
+  "cat": "其他",
+  "why": "MySQL练习项目，非工具类",
+  "ev": "中"
  }
 }
