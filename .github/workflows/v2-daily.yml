@@ -25,8 +25,8 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    # 300：三步最坏情况 120+90+60=270 仍放得下收尾提交（240 会挤掉提交步骤）
-    timeout-minutes: 300
+    # 360(GitHub 单 job 上限)：三步超时之和 120+90+120=330,300 会砍掉收尾提交
+    timeout-minutes: 360
     steps:
       # 1. 拉取代码
       - name: Checkout
