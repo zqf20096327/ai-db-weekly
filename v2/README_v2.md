@@ -174,16 +174,16 @@ ORG_SCAN_LIST = [..., "新org"]
 ## 周报生产 run_weekly.py
 
 > 对标 `run_daily.py`（每日采集）的独立编排，跑通 SOP 第十章「每周生产流程」。
-> 流水线：采集（数据源3/5）→ 计算（7天diff/评分/归属）→ 渲染（10栏目 Markdown）。
+> 流水线：计算（7天diff/评分/归属）→ 渲染（10栏目 Markdown）。
 
 ### 它做什么
 
 | 阶段 | 模块 | 产出（data/snapshot_*/weekly/） |
 |---|---|---|
-| 数据源3 Release 采集 | `collectors/releases.py` | `meta/releases.json` |
-| 数据源5 License 变更检测 | `collectors/license_changes.py` | `meta/license_changes.json` |
 | 7天快照 diff / 价值评分 / 信号分 / 榜单归属 | `analytics.py` | `meta/{diff,scoring,attribution}.json` |
 | 10 栏目 Markdown 渲染 | `render.py` + `templates.py` + `ai_client.py` | `report.md` |
+
+> 📌 数据源3（Release）已并入每日富集：`run_enrich.py` → `collectors/release_state.py`，落盘快照 `meta/release_state.json`（供 site_export 消费）。数据源5（License 雷达）暂未接线。旧 `collectors/releases.py` / `collectors/license_changes.py` 已于 2026-09-24 删除。
 
 ### 快速开始
 
@@ -193,17 +193,15 @@ cd D:/daily_github/v2
 # 前置：当日候选池必须已由 run_daily.py 产出
 python run_daily.py            # 每日采集（地基）
 
-# 周报生产（全流程，含 release/license 采集）
+# 周报生产（全流程）
 python run_weekly.py
 
 # 单阶段调试
-python run_weekly.py --only releases           # 只采本周 release
-python run_weekly.py --only license            # 只检本周 license 变更
 python run_weekly.py --only compute            # 只算（diff/评分/归属，纯本地不调API）
+python run_weekly.py --only readme             # 只拉候选 README（需先 compute）
+python run_weekly.py --only select             # 只跑定榜（select，范围复核后递补定榜）
+python run_weekly.py --only ai                 # 只生成 AI 解读（需先 compute+readme）
 python run_weekly.py --only render             # 只渲染（需已有 compute 结果）
-
-# 快速验证（限制 release/license 采集只跑头部 30 个 repo，约 3 分钟）
-python run_weekly.py --acquire-cap 30
 
 # 指定快照日期 / 对比基准
 python run_weekly.py --date 20260806 --prev-date 20260531
