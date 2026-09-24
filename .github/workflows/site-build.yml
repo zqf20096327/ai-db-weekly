@@ -27,12 +27,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      # 1. 检出采集产出的那个 commit（接力场景）；手动触发时检出默认分支
+      # 1. 检出默认分支最新代码 —— 必须用分支名而非 workflow_run.head_sha:
+      #    head_sha 是触发运行「所基于」的提交,不含该运行过程中新推的数据提交
+      #    (v2-daily 的快照入库发生在其收尾步骤);且显式检 sha 会 detached HEAD,
+      #    本地无 main 分支导致 push 报 "src refspec main does not match any"。
+      #    workflow_run 在触发运行完结后才 fire,此时数据提交必已在 main 上。
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
+          ref: ${{ github.event.workflow_run.head_branch || github.ref }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
