@@ -23,6 +23,7 @@ import logging
 import re
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import config
@@ -34,6 +35,9 @@ import site_common as sc  # noqa: E402
 log = logging.getLogger("run_categories")
 
 CATS = ["备份", "监控", "高可用", "迁移", "连接/代理", "管理", "平台", "开发库", "其他"]
+# 重判 TTL（天）：缓存条目（含低置信拒绝条目）超过此天数后重新分类，
+# 项目转型时标签最迟 90 天自愈；全量 ~4.9k 下稳态重判 ≈54 项/天
+RECLASSIFY_DAYS = 90
 
 PROMPT = """你是数据库开源工具的任务分类助手。
 
@@ -84,10 +88,30 @@ def main() -> None:
     # 残余 = 新三层分类（topics+词形+已有缓存）后仍为其他
     # 缓存正本在 v2/data/categories.json（随白名单入仓），聚合端读同步副本
     cache = sc.load_categories()
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    n_stamped = 0
+    for hit in cache.values():
+        if isinstance(hit, dict) and not hit.get("when"):
+            hit["when"] = today   # 存量迁移：TTL 从今天起算，避免一次性全量重判
+            n_stamped += 1
+    if n_stamped:
+        log.info("存量缓存 %d 条补 when=%s（TTL 起算迁移）", n_stamped, today)
+
+    def _fresh(hit) -> bool:
+        """重判 TTL 内的条目跳过（含低置信拒绝条目——退避期内不重试）。"""
+        w = str((hit or {}).get("when") or "")
+        try:
+            d = datetime.strptime(w, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        except ValueError:
+            return True
+        return (datetime.now(timezone.utc) - d).days < RECLASSIFY_DAYS
+
     path = Path(config.CATEGORIES_FILE)
     todo = []
     for it in targets:
-        if sc.task_cat(it) == "其他" and it.get("full_name") not in cache:
+        fn = it.get("full_name") or ""
+        hit = cache.get(fn)
+        if sc.task_cat(it) == "其他" and not (hit and _fresh(hit)):
             todo.append(it)
     if args.cap > 0:
         todo = todo[:args.cap]
@@ -114,10 +138,15 @@ def main() -> None:
             obj = {}
         ev = str(obj.get("ev") or "低")
         if obj.get("cat") in CATS and ev in ("高", "中"):
-            cache[fn] = {"cat": obj["cat"], "why": str(obj.get("why") or "")[:24], "ev": ev}
+            cache[fn] = {"cat": obj["cat"], "why": str(obj.get("why") or "")[:24], "ev": ev,
+                         "when": today}
             ok += 1
         else:
-            low += 1  # 枚举外/低置信：不落缓存（下次仍可重试）
+            # 低置信/枚举外：以 cat=其他 落缓存当拒绝条目——聚合端忽略（其他不在
+            # CAT_ORDER），TTL 内不重试（退避），过期后自然重判
+            cache[fn] = {"cat": "其他", "why": str(obj.get("why") or "")[:24], "ev": "低",
+                         "when": today}
+            low += 1
         if i % 20 == 0:
             log.info("  进度 %d/%d（采纳 %d 低置信/无效 %d）", i, len(todo), ok, low)
             path.write_text(json.dumps(cache, ensure_ascii=False, indent=1), encoding="utf-8")

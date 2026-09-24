@@ -32,6 +32,19 @@ import config
 log = logging.getLogger("run_personas")
 
 PERSONAS_FILE = Path(config.PERSONAS_FILE)
+# 重判 TTL（天）：人群分类超过此天数后重判（项目转型时 ai 标/主类最迟 90 天自愈）；
+# 全量 watched ~4.9k 下稳态重判 ≈54 项/天，与铺底增量同管道
+RECLASSIFY_DAYS = 90
+
+
+def _fresh(hit) -> bool:
+    """缓存条目是否在重判 TTL 内（缺 when 视为新鲜，防存量爆发）。"""
+    w = str((hit or {}).get("when") or "")
+    try:
+        d = datetime.strptime(w, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    except ValueError:
+        return True
+    return (datetime.now(timezone.utc) - d).days < RECLASSIFY_DAYS
 
 _PROMPT = """你是数据库开源工具的分类助手。只依据给出的信息，把项目分给最合适的"使用人群"主类，并判断是否叠加 AI 标。
 
@@ -113,7 +126,8 @@ def main() -> None:
     log.info("分类目标：%d 项（%s，%s）", len(targets), date, "tier1" if tier1 else "全量")
 
     cache = load_cache()
-    todo = [t for t in targets if t.get("full_name") not in cache]
+    todo = [t for t in targets
+            if not (cache.get(t.get("full_name") or "") and _fresh(cache[t["full_name"]]))]
     if args.cap > 0:
         todo = todo[:args.cap]
     log.info("缓存已有 %d，本次待分类 %d", len(cache), len(todo))

@@ -84,19 +84,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python run_enrich.py --tier1 --no-resume || echo "::warning::run_enrich 失败（不影响快照提交，明日重试）"
 
-      # 5.6 每日人群分类（全量 watched 增量铺底：--all + cap 700 ≈ 20-35 分钟，
-      #     缓存命中跳过，约一周铺满 4.9k 后进入纯增量（每天只分新项目）；
+      # 5.6 每日人群分类（全量 watched 增量铺底：--all + cap 1500，
+      #     铺底期 ~75 分钟、3-4 天铺满 4.9k，之后每天只分新项目 + 90 天 TTL 重判；
       #     失败不阻断快照提交）
       - name: 人群分类（personas）
         if: always()   # 同上：富集超时/失败不应连带跳过本步与提交
         continue-on-error: true   # 同上：超时/失败不染红 job
         working-directory: v2
-        timeout-minutes: 60
+        timeout-minutes: 120
         env:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
           AI_MODEL: ${{ secrets.AI_MODEL }}
-        run: python run_personas.py --all --cap 700 || echo "::warning::run_personas 失败（不影响快照提交，明日续跑）"
+        run: python run_personas.py --all --cap 1500 || echo "::warning::run_personas 失败（不影响快照提交，明日续跑）"
 
       # 6. 提交今日快照 + 窗口外快照 zip 永久归档（v2/snapshot_retention.py 统一执行：
       #    重写 .gitignore 白名单 → 出窗明文目录打 zip → rm --cached 明文 / add zip）
