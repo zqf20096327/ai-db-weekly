@@ -1,0 +1,55 @@
+[
+  {
+    "full_name": "doublechaintech/his-biz-suite",
+    "description": "用于演示智能化开发的系统，一个医院的排班系统，管理医院的科室，收费条目，医生和医生预约，本演示运行于南大通用GBase 8s v8.7之上。",
+    "html_url": "https://github.com/doublechaintech/his-biz-suite",
+    "stargazers_count": 160,
+    "forks_count": 42,
+    "open_issues_count": 9,
+    "watchers_count": 160,
+    "language": "JavaScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-07T06:45:59Z",
+    "pushed_at": "2023-01-25T17:16:58Z",
+    "updated_at": "2026-05-29T05:42:35Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mengweijin/db-migration",
+    "description": "Flyway、Liquibase 扩展支持达梦（DM）、南大通用（GBase 8s）、OpenGauss 等国产数据库。提供了使用 Flyway/Liquibase 执行 Flowable 脚本的方案。",
+    "html_url": "https://github.com/mengweijin/db-migration",
+    "stargazers_count": 80,
+    "forks_count": 13,
+    "open_issues_count": 0,
+    "watchers_count": 80,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-10-29T04:04:56Z",
+    "pushed_at": "2026-09-15T12:43:01Z",
+    "updated_at": "2026-09-24T07:48:34Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://aday.fun",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  }
+]

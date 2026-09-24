@@ -1,0 +1,1772 @@
+[
+  {
+    "full_name": "oceanbase/oceanbase",
+    "description": "OceanBase is the unified distributed database for the AI era — open-source, multi-model, one engine for your most demanding workloads.",
+    "html_url": "https://github.com/oceanbase/oceanbase",
+    "stargazers_count": 10290,
+    "forks_count": 1921,
+    "open_issues_count": 602,
+    "watchers_count": 10290,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-31T14:36:17Z",
+    "pushed_at": "2026-09-24T01:01:14Z",
+    "updated_at": "2026-09-24T05:15:48Z",
+    "default_branch": "master",
+    "topics": [
+      "analytics",
+      "cloud-native",
+      "database",
+      "distributed-database",
+      "fulltext",
+      "fulltext-search",
+      "fulltext-support",
+      "hacktoberfest",
+      "htap",
+      "mysql",
+      "mysql-compatibility",
+      "oceanbase",
+      "olap",
+      "oltp",
+      "paxos",
+      "scalable",
+      "vector",
+      "vector-database",
+      "vector-search",
+      "vectors"
+    ],
+    "homepage": "https://en.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "DotNetNext/SqlSugar",
+    "description": ".Net aot ORM   SqlServer ORM Mongodb ORM MySql  瀚高 Postgresql ORM  DB2 Hana 高斯 Duckdb C# VB.NET Sqlite  ORM Oracle ORM Mysql Orm 虚谷数据库 达梦 ORM 人大金仓 ORM 神通ORM  C# ORM , C# ORM .NET ORM NET9 ORM .NET8 ORM ClickHouse ORM QuestDb ,TDengine ORM,OceanBase ORM,GaussDB ORM,Tidb ORM Object/Relational Mapping",
+    "html_url": "https://github.com/DotNetNext/SqlSugar",
+    "stargazers_count": 5836,
+    "forks_count": 1392,
+    "open_issues_count": 17,
+    "watchers_count": 5836,
+    "language": "C#",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-07-13T05:07:40Z",
+    "pushed_at": "2026-09-13T06:47:46Z",
+    "updated_at": "2026-09-23T09:06:42Z",
+    "default_branch": "master",
+    "topics": [
+      "clickhouse",
+      "mongodb",
+      "mysql",
+      "oralce",
+      "orm",
+      "postgresql",
+      "sqlite",
+      "sqlsever"
+    ],
+    "homepage": "https://www.donet5.com/Home/Doc",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/seekdb",
+    "description": "The AI-Native Search Database. Best for agent storage, it unifies vector, text, structured, and semi-structured data into a single engine. This all-in-one database makes agents smarter, easier to run, and more stable.",
+    "html_url": "https://github.com/oceanbase/seekdb",
+    "stargazers_count": 3055,
+    "forks_count": 357,
+    "open_issues_count": 373,
+    "watchers_count": 3055,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-10-21T11:31:11Z",
+    "pushed_at": "2026-09-24T09:47:58Z",
+    "updated_at": "2026-09-24T09:55:41Z",
+    "default_branch": "master",
+    "topics": [
+      "ai-agents",
+      "copy-on-write",
+      "embedded-database",
+      "full-text-search",
+      "hnsw",
+      "hybrid-search",
+      "langchain",
+      "llamaindex",
+      "mysql",
+      "oceanbase",
+      "python",
+      "rag",
+      "sql",
+      "vector-databases"
+    ],
+    "homepage": "https://seekdb.ai",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "0voice/newsql_nosql_library",
+    "description": "整理12种数据库相关资料，mysql，mariaDB，Percona Server，MongoDB，Redis，RocksDB，TiDB，CouchDB，Cassandra，TokuDB，MemDB，Oceanbase",
+    "html_url": "https://github.com/0voice/newsql_nosql_library",
+    "stargazers_count": 614,
+    "forks_count": 179,
+    "open_issues_count": 2,
+    "watchers_count": 614,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-09-04T15:20:10Z",
+    "pushed_at": "2024-05-20T12:17:08Z",
+    "updated_at": "2026-09-11T07:18:39Z",
+    "default_branch": "main",
+    "topics": [
+      "cassandra",
+      "couchdb",
+      "mariadb",
+      "mongodb",
+      "mysql",
+      "oceanbase",
+      "percona-server",
+      "redis",
+      "rocksdb",
+      "tidb",
+      "tokudb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/odc",
+    "description": "OceanBase Developer Center(ODC), An open-source, enterprise-grade database tool for collaborative development",
+    "html_url": "https://github.com/oceanbase/odc",
+    "stargazers_count": 592,
+    "forks_count": 76,
+    "open_issues_count": 368,
+    "watchers_count": 592,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-08T02:05:35Z",
+    "pushed_at": "2026-09-22T13:16:57Z",
+    "updated_at": "2026-08-07T09:27:36Z",
+    "default_branch": "main",
+    "topics": [
+      "collaboration",
+      "data-security",
+      "database",
+      "developer-tools",
+      "doris",
+      "mysql",
+      "oceanbase",
+      "oracle",
+      "sql",
+      "tool"
+    ],
+    "homepage": "https://github.com/oceanbase/odc",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "altairbow/django-db-connection-pool",
+    "description": "Database connection pool component library for Django",
+    "html_url": "https://github.com/altairbow/django-db-connection-pool",
+    "stargazers_count": 246,
+    "forks_count": 26,
+    "open_issues_count": 8,
+    "watchers_count": 246,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-09T09:50:42Z",
+    "pushed_at": "2025-05-05T03:44:39Z",
+    "updated_at": "2026-08-28T07:27:56Z",
+    "default_branch": "master",
+    "topics": [
+      "database",
+      "database-pool",
+      "database-pooling",
+      "django",
+      "jdbc",
+      "mysql",
+      "oceanbase",
+      "odbc",
+      "pool",
+      "pooling",
+      "postgres",
+      "postgresql",
+      "python"
+    ],
+    "homepage": "https://pypi.python.org/pypi/django-db-connection-pool/",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "alibaba/oceanbase",
+    "description": null,
+    "html_url": "https://github.com/alibaba/oceanbase",
+    "stargazers_count": 245,
+    "forks_count": 47,
+    "open_issues_count": 5,
+    "watchers_count": 245,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-25T03:27:59Z",
+    "pushed_at": "2021-06-02T02:50:58Z",
+    "updated_at": "2026-04-09T09:34:47Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ob-labs/agentseek",
+    "description": "AgentSeek is an application development lifecycle toolkit for AI ecosystem apps, built by OceanBase OSS Team.",
+    "html_url": "https://github.com/ob-labs/agentseek",
+    "stargazers_count": 187,
+    "forks_count": 30,
+    "open_issues_count": 5,
+    "watchers_count": 187,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-03-05T03:07:29Z",
+    "pushed_at": "2026-09-21T09:47:35Z",
+    "updated_at": "2026-09-23T17:07:41Z",
+    "default_branch": "main",
+    "topics": [
+      "agentic-ai",
+      "agents",
+      "ai",
+      "ai-agents",
+      "bub",
+      "database",
+      "harness-engineering",
+      "llms",
+      "python",
+      "skills"
+    ],
+    "homepage": "https://ob-labs.github.io/agentseek/",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/ob-operator",
+    "description": "Kubernetes operator for OceanBase",
+    "html_url": "https://github.com/oceanbase/ob-operator",
+    "stargazers_count": 172,
+    "forks_count": 44,
+    "open_issues_count": 34,
+    "watchers_count": 172,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-01-05T08:19:56Z",
+    "pushed_at": "2026-09-24T07:41:16Z",
+    "updated_at": "2026-09-16T06:25:57Z",
+    "default_branch": "master",
+    "topics": [
+      "cloud",
+      "cloudnative",
+      "container",
+      "distributed-database",
+      "docker",
+      "kubernetes",
+      "kubernetes-operator",
+      "mysql",
+      "oceanbase",
+      "sql"
+    ],
+    "homepage": "https://oceanbase.github.io/ob-operator/",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/obdiag",
+    "description": "obdiag (OceanBase Diagnostic Tool)  is designed to help OceanBase users quickly gather necessary information and analyze the root cause of the problem.",
+    "html_url": "https://github.com/oceanbase/obdiag",
+    "stargazers_count": 163,
+    "forks_count": 40,
+    "open_issues_count": 84,
+    "watchers_count": 163,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MulanPSL-2.0",
+      "name": "Mulan Permissive Software License, Version 2"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-22T06:18:53Z",
+    "pushed_at": "2026-05-19T08:35:28Z",
+    "updated_at": "2026-09-17T04:20:22Z",
+    "default_branch": "master",
+    "topics": [
+      "hacktoberfest",
+      "obdiag",
+      "oceanbase",
+      "python",
+      "toolkit"
+    ],
+    "homepage": "https://www.oceanbase.com/docs/obdiag-cn",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/obproxy",
+    "description": "A proxy server for OceanBase Database.",
+    "html_url": "https://github.com/oceanbase/obproxy",
+    "stargazers_count": 133,
+    "forks_count": 89,
+    "open_issues_count": 30,
+    "watchers_count": 133,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-31T14:35:33Z",
+    "pushed_at": "2026-08-19T08:32:37Z",
+    "updated_at": "2026-08-20T17:10:06Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://open.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "alibaba/OceanBase-0.5",
+    "description": null,
+    "html_url": "https://github.com/alibaba/OceanBase-0.5",
+    "stargazers_count": 128,
+    "forks_count": 78,
+    "open_issues_count": 1,
+    "watchers_count": 128,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2014-05-20T06:02:41Z",
+    "pushed_at": "2017-06-30T12:16:43Z",
+    "updated_at": "2025-12-02T18:45:08Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "luooofan/miniob-2023",
+    "description": "2023 OceanBase 数据库大赛初赛",
+    "html_url": "https://github.com/luooofan/miniob-2023",
+    "stargazers_count": 114,
+    "forks_count": 59,
+    "open_issues_count": 5,
+    "watchers_count": 114,
+    "language": "C++",
+    "license": {
+      "spdx_id": "MulanPSL-2.0",
+      "name": "Mulan Permissive Software License, Version 2"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-08-25T14:43:31Z",
+    "pushed_at": "2024-05-08T06:56:16Z",
+    "updated_at": "2026-09-04T13:40:45Z",
+    "default_branch": "2023-competition",
+    "topics": [],
+    "homepage": "https://open.oceanbase.com/train?questionId=600004",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/kernel-quickstart",
+    "description": "Documentation that introduces the OceanBase kernel",
+    "html_url": "https://github.com/oceanbase/kernel-quickstart",
+    "stargazers_count": 101,
+    "forks_count": 27,
+    "open_issues_count": 7,
+    "watchers_count": 101,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-09-07T08:16:03Z",
+    "pushed_at": "2023-08-09T06:05:01Z",
+    "updated_at": "2026-09-21T12:28:35Z",
+    "default_branch": "V1.0.0",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "jooksoft/jookdb",
+    "description": "JookDB is a database development tool that allows you to simultaneously connect to MySQL, MariaDB, Oracle, PostgreSQL, SQLite, MongoDB, DM, OceanBase, TiDB and SQLServer databases from a single application. You can quickly and easily build, manage and maintain your databases.",
+    "html_url": "https://github.com/jooksoft/jookdb",
+    "stargazers_count": 99,
+    "forks_count": 15,
+    "open_issues_count": 4,
+    "watchers_count": 99,
+    "language": "C++",
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-13T02:44:57Z",
+    "pushed_at": "2024-04-14T09:51:14Z",
+    "updated_at": "2026-09-23T01:46:17Z",
+    "default_branch": "main",
+    "topics": [
+      "database-development-tool",
+      "mariadb",
+      "mysql",
+      "oracle",
+      "sqlserver"
+    ],
+    "homepage": "https://jookdb.com/",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/obdeploy",
+    "description": "A deployer and package manager for OceanBase open-source software.",
+    "html_url": "https://github.com/oceanbase/obdeploy",
+    "stargazers_count": 96,
+    "forks_count": 136,
+    "open_issues_count": 8,
+    "watchers_count": 96,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-31T14:35:57Z",
+    "pushed_at": "2026-09-20T03:17:13Z",
+    "updated_at": "2026-09-22T01:56:29Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://open.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/obclient",
+    "description": "A MariaDB-based command line tool to connect to OceanBase Database.",
+    "html_url": "https://github.com/oceanbase/obclient",
+    "stargazers_count": 94,
+    "forks_count": 42,
+    "open_issues_count": 17,
+    "watchers_count": 94,
+    "language": "C++",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-31T14:34:09Z",
+    "pushed_at": "2026-08-21T07:02:58Z",
+    "updated_at": "2026-08-27T02:56:30Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://open.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "iverycd/OracleSync2MySQL",
+    "description": "Oracle  to MySQL, PolarDB, Percona Server MySQL, MariaDB, OceanBase, TiDB, GaussDB for MySQL",
+    "html_url": "https://github.com/iverycd/OracleSync2MySQL",
+    "stargazers_count": 86,
+    "forks_count": 29,
+    "open_issues_count": 6,
+    "watchers_count": 86,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-27T03:19:09Z",
+    "pushed_at": "2024-06-13T07:58:19Z",
+    "updated_at": "2026-08-26T08:01:12Z",
+    "default_branch": "master",
+    "topics": [
+      "oracle2mysql",
+      "oraclemigmysql",
+      "oralce-to-mysql"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/pyseekdb",
+    "description": "A unified python SDK supports OceanBase or OceanBase seekdb, more efficient and easy-to-use.",
+    "html_url": "https://github.com/oceanbase/pyseekdb",
+    "stargazers_count": 62,
+    "forks_count": 35,
+    "open_issues_count": 33,
+    "watchers_count": 62,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-11-05T03:07:17Z",
+    "pushed_at": "2026-09-20T08:05:55Z",
+    "updated_at": "2026-09-20T08:06:00Z",
+    "default_branch": "develop",
+    "topics": [
+      "agentic-ai",
+      "ai-search",
+      "database",
+      "fulltext-search",
+      "python3",
+      "sdk",
+      "sdk-python",
+      "vector",
+      "vector-database",
+      "vector-sdk"
+    ],
+    "homepage": "https://seekdb.ai",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "BankOfCommunications/CBASE",
+    "description": "CBASE是交通银行基于 OceanBase 0.4.2 研发的可扩展的关系数据库",
+    "html_url": "https://github.com/BankOfCommunications/CBASE",
+    "stargazers_count": 56,
+    "forks_count": 37,
+    "open_issues_count": 3,
+    "watchers_count": 56,
+    "language": "C++",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-24T05:37:25Z",
+    "pushed_at": "2019-03-24T09:08:14Z",
+    "updated_at": "2026-08-30T20:55:34Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ob-labs/ChatBot",
+    "description": "ChatBot, show how to implement a RAG based on OceanBase or OceanBase seekdb AI capabilities escpecailly hybrid search and AI embedding.",
+    "html_url": "https://github.com/ob-labs/ChatBot",
+    "stargazers_count": 55,
+    "forks_count": 21,
+    "open_issues_count": 21,
+    "watchers_count": 55,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-10-18T02:24:20Z",
+    "pushed_at": "2026-04-26T01:23:03Z",
+    "updated_at": "2026-06-25T07:16:17Z",
+    "default_branch": "main",
+    "topics": [
+      "agentic-ai",
+      "agents",
+      "ai-agents",
+      "hybrid-search",
+      "oceanbase",
+      "rag",
+      "rag-chatbot",
+      "vector-database"
+    ],
+    "homepage": "https://en.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "aliyun/alibabacloud-dms-mcp-server",
+    "description": "A universal multi-cloud data MCP Server supporting over 40 types of data source connections, providing secure, unified data access in a single platform. Supports full range of Alibaba Cloud services and Mainstream databases/data warehouses.",
+    "html_url": "https://github.com/aliyun/alibabacloud-dms-mcp-server",
+    "stargazers_count": 53,
+    "forks_count": 17,
+    "open_issues_count": 16,
+    "watchers_count": 53,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-05-06T02:28:15Z",
+    "pushed_at": "2026-07-29T04:22:13Z",
+    "updated_at": "2026-09-16T12:11:13Z",
+    "default_branch": "main",
+    "topics": [
+      "ai",
+      "analyticsdb",
+      "claude",
+      "clickhouse",
+      "cursor",
+      "db2",
+      "dify",
+      "dify-plugins",
+      "mariadb",
+      "mcp-server",
+      "mongodb",
+      "mysql",
+      "oceanbase",
+      "oracle",
+      "polardb",
+      "polardb-x",
+      "postgresql",
+      "redis",
+      "sqlserver",
+      "starrocks"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/oceanbase-design",
+    "description": "An enterprise-class design system based on Ant Design and extending it.",
+    "html_url": "https://github.com/oceanbase/oceanbase-design",
+    "stargazers_count": 52,
+    "forks_count": 27,
+    "open_issues_count": 45,
+    "watchers_count": 52,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-28T10:59:41Z",
+    "pushed_at": "2026-09-24T06:37:12Z",
+    "updated_at": "2026-09-24T06:31:35Z",
+    "default_branch": "master",
+    "topics": [
+      "design-system",
+      "oceanbase",
+      "oceanbase-design",
+      "react",
+      "typescript",
+      "ui-kit",
+      "ui-library"
+    ],
+    "homepage": "https://design.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/oblogproxy",
+    "description": "A proxy service of incremental log of OceanBase",
+    "html_url": "https://github.com/oceanbase/oblogproxy",
+    "stargazers_count": 45,
+    "forks_count": 24,
+    "open_issues_count": 7,
+    "watchers_count": 45,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-01T06:41:29Z",
+    "pushed_at": "2025-05-13T10:20:52Z",
+    "updated_at": "2026-09-01T06:18:29Z",
+    "default_branch": "v4",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "apisql-dev/apisql-mcp",
+    "description": "一个 MCP Server 连接你的所有数据库，数据库 MCP Server 的瑞士军刀。One MCP Server for all your databases. The Swiss Army Knife of Database MCP Servers. ",
+    "html_url": "https://github.com/apisql-dev/apisql-mcp",
+    "stargazers_count": 41,
+    "forks_count": 7,
+    "open_issues_count": 1,
+    "watchers_count": 41,
+    "language": "JavaScript",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-02-17T09:38:45Z",
+    "pushed_at": "2026-07-07T11:17:15Z",
+    "updated_at": "2026-08-21T03:45:07Z",
+    "default_branch": "main",
+    "topics": [
+      "dameng",
+      "database",
+      "doris",
+      "duckdb",
+      "mcp",
+      "mcp-servers",
+      "model-context-protocol",
+      "mysql",
+      "oceanbase",
+      "oracle",
+      "postgresql",
+      "presto",
+      "sqlite",
+      "sqlserver",
+      "starrocks",
+      "starrocks-ai",
+      "tidb",
+      "trino"
+    ],
+    "homepage": "https://www.apisql.cn/",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "oceanbase/obconnector-j",
+    "description": "OceanBase Client for Java is a JDBC 4.2–compatible driver that enables Java applications to connect to the OceanBase Database Server, supporting OceanBase both MySQL and Oracle compatibility modes.",
+    "html_url": "https://github.com/oceanbase/obconnector-j",
+    "stargazers_count": 38,
+    "forks_count": 14,
+    "open_issues_count": 17,
+    "watchers_count": 38,
+    "language": "Java",
+    "license": {
+      "spdx_id": "LGPL-2.1",
+      "name": "GNU Lesser General Public License v2.1"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-01T08:12:41Z",
+    "pushed_at": "2026-09-08T09:00:16Z",
+    "updated_at": "2026-07-17T01:39:50Z",
+    "default_branch": "master",
+    "topics": [
+      "databases",
+      "jdbc-driver",
+      "oceanbase"
+    ],
+    "homepage": "https://en.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "DBdoctor-DAS/DBdoctor",
+    "description": "DBdoctor team technical articles shared with tutorials",
+    "html_url": "https://github.com/DBdoctor-DAS/DBdoctor",
+    "stargazers_count": 34,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 34,
+    "language": null,
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-09-04T05:03:20Z",
+    "pushed_at": "2024-09-11T02:04:28Z",
+    "updated_at": "2026-09-15T16:48:40Z",
+    "default_branch": "main",
+    "topics": [
+      "audit-log",
+      "basic-monitoring",
+      "dbdoctor",
+      "gbase-8a",
+      "index-recommendation",
+      "instance-inspection",
+      "lock-perspective",
+      "mysql",
+      "oceanbase",
+      "oracle",
+      "performance-insight",
+      "performance-monitoring",
+      "polardb-x",
+      "postgresql-database",
+      "root-cause-diagnosis",
+      "sql-audit",
+      "sql-server",
+      "storage-analysis",
+      "tdsql"
+    ],
+    "homepage": "https://www.dbdoctor.cn/",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "luooofan/miniob-2022",
+    "description": "https://open.oceanbase.com/competition/index",
+    "html_url": "https://github.com/luooofan/miniob-2022",
+    "stargazers_count": 33,
+    "forks_count": 4,
+    "open_issues_count": 1,
+    "watchers_count": 33,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-10-17T02:18:33Z",
+    "pushed_at": "2022-12-26T01:27:09Z",
+    "updated_at": "2026-09-13T08:30:59Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/obkv-table-client-java",
+    "description": "OBKV Table Client is Java Library that can be used to access table data from OceanBase storage layer.",
+    "html_url": "https://github.com/oceanbase/obkv-table-client-java",
+    "stargazers_count": 32,
+    "forks_count": 25,
+    "open_issues_count": 31,
+    "watchers_count": 32,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-11-08T02:56:35Z",
+    "pushed_at": "2026-09-03T06:50:18Z",
+    "updated_at": "2026-09-03T06:51:10Z",
+    "default_branch": "master",
+    "topics": [
+      "hbase",
+      "key-value-database",
+      "obkv",
+      "oceanbase"
+    ],
+    "homepage": "https://en.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "wenshao/oceanbase",
+    "description": null,
+    "html_url": "https://github.com/wenshao/oceanbase",
+    "stargazers_count": 31,
+    "forks_count": 278,
+    "open_issues_count": 4,
+    "watchers_count": 31,
+    "language": "C++",
+    "license": {
+      "spdx_id": "GPL-2.0",
+      "name": "GNU General Public License v2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2013-03-04T12:59:31Z",
+    "pushed_at": "2022-06-29T15:53:04Z",
+    "updated_at": "2025-11-15T08:43:27Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "http://oceanbase.taobao.org/",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "suoten/dbbridge",
+    "description": "Description: 开源、免费、零依赖的数据库迁移与SQL转换工具。支持 Mssql/MySQL/PostgreSQL/SQLite/OceanBase/TiDB/达梦/金仓 等 23 种数据库互转。单文件 < 30MB，双击即用。",
+    "html_url": "https://github.com/suoten/dbbridge",
+    "stargazers_count": 31,
+    "forks_count": 10,
+    "open_issues_count": 0,
+    "watchers_count": 31,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-30T11:05:52Z",
+    "pushed_at": "2026-09-23T12:39:01Z",
+    "updated_at": "2026-09-23T12:39:05Z",
+    "default_branch": "master",
+    "topics": [
+      "data-migration",
+      "database-migrations",
+      "mysql",
+      "oceanbase",
+      "opengauss",
+      "postgresql",
+      "sql-converter",
+      "sqlite",
+      "tidb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/obconnector-c",
+    "description": "OceanBase Client for C is a native driver that enables C applications to connect to the OceanBase Database.",
+    "html_url": "https://github.com/oceanbase/obconnector-c",
+    "stargazers_count": 29,
+    "forks_count": 25,
+    "open_issues_count": 3,
+    "watchers_count": 29,
+    "language": "C",
+    "license": {
+      "spdx_id": "LGPL-2.1",
+      "name": "GNU Lesser General Public License v2.1"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-31T14:19:37Z",
+    "pushed_at": "2026-08-18T02:59:20Z",
+    "updated_at": "2026-08-19T02:47:45Z",
+    "default_branch": "master",
+    "topics": [
+      "c-driver",
+      "database",
+      "databases",
+      "oceanbase"
+    ],
+    "homepage": "https://en.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "S-1-T/miniob",
+    "description": "OceanBase 数据库大赛初赛赛题",
+    "html_url": "https://github.com/S-1-T/miniob",
+    "stargazers_count": 27,
+    "forks_count": 5,
+    "open_issues_count": 1,
+    "watchers_count": 27,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-09-07T12:54:29Z",
+    "pushed_at": "2024-03-06T05:17:44Z",
+    "updated_at": "2025-11-15T08:43:34Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/odc-client",
+    "description": "OceanBase Developer Center Client",
+    "html_url": "https://github.com/oceanbase/odc-client",
+    "stargazers_count": 26,
+    "forks_count": 17,
+    "open_issues_count": 20,
+    "watchers_count": 26,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-10T07:26:47Z",
+    "pushed_at": "2026-04-11T14:25:54Z",
+    "updated_at": "2026-04-21T01:41:01Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/flink-connector-oceanbase",
+    "description": "Apache Flink Connectors for OceanBase.",
+    "html_url": "https://github.com/oceanbase/flink-connector-oceanbase",
+    "stargazers_count": 24,
+    "forks_count": 10,
+    "open_issues_count": 4,
+    "watchers_count": 24,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-12-12T11:30:33Z",
+    "pushed_at": "2026-07-20T06:20:09Z",
+    "updated_at": "2026-07-08T17:18:58Z",
+    "default_branch": "main",
+    "topics": [
+      "apache-flink",
+      "flink",
+      "flink-connector",
+      "obkv",
+      "obkv-hbase",
+      "oceanbase"
+    ],
+    "homepage": "https://oceanbase.github.io/flink-connector-oceanbase/",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tbs005/DataX",
+    "description": "DataX 是阿里巴巴集团内被广泛使用的离线数据同步工具/平台，实现包括 MySQL、Oracle、HDFS、Hive、OceanBase、HBase、OTS、ODPS 等各种异构数据源之间高效的数据同步功能。",
+    "html_url": "https://github.com/tbs005/DataX",
+    "stargazers_count": 24,
+    "forks_count": 1233,
+    "open_issues_count": 3,
+    "watchers_count": 24,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-12-11T08:20:29Z",
+    "pushed_at": "2021-11-05T01:57:20Z",
+    "updated_at": "2026-06-08T07:55:36Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/obkv-hbase-client-java",
+    "description": "OBKV HBase Client is a Java library that enables access to OceanBase data by the HBase 0.94, 1.x, or 2.x APIs.",
+    "html_url": "https://github.com/oceanbase/obkv-hbase-client-java",
+    "stargazers_count": 21,
+    "forks_count": 21,
+    "open_issues_count": 36,
+    "watchers_count": 21,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-01-12T03:20:48Z",
+    "pushed_at": "2026-09-03T07:57:45Z",
+    "updated_at": "2026-09-03T07:58:19Z",
+    "default_branch": "master",
+    "topics": [
+      "hbase-client",
+      "key-value-database",
+      "obkv",
+      "oceanbase"
+    ],
+    "homepage": "https://en.oceanbase.com",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/obagent",
+    "description": "An agent client that provides operation and data collecting interface for OceanBase",
+    "html_url": "https://github.com/oceanbase/obagent",
+    "stargazers_count": 21,
+    "forks_count": 10,
+    "open_issues_count": 3,
+    "watchers_count": 21,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MulanPSL-2.0",
+      "name": "Mulan Permissive Software License, Version 2"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-09-27T11:34:08Z",
+    "pushed_at": "2025-07-14T03:39:22Z",
+    "updated_at": "2026-08-31T08:51:58Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/oblogclient",
+    "description": "A Java library to get commit log data from OceanBase.",
+    "html_url": "https://github.com/oceanbase/oblogclient",
+    "stargazers_count": 20,
+    "forks_count": 13,
+    "open_issues_count": 1,
+    "watchers_count": 20,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-09-27T11:22:47Z",
+    "pushed_at": "2025-12-19T23:00:52Z",
+    "updated_at": "2026-08-30T06:58:26Z",
+    "default_branch": "master",
+    "topics": [
+      "binlog",
+      "cdc",
+      "oblogproxy",
+      "oceanbase"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/seekdb-js",
+    "description": "The JavaScript/TypeScript SDK for OceanBase or OceanBase seekdb.",
+    "html_url": "https://github.com/oceanbase/seekdb-js",
+    "stargazers_count": 19,
+    "forks_count": 4,
+    "open_issues_count": 8,
+    "watchers_count": 19,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-01-12T02:35:48Z",
+    "pushed_at": "2026-09-02T10:13:06Z",
+    "updated_at": "2026-09-02T10:14:32Z",
+    "default_branch": "main",
+    "topics": [
+      "ai",
+      "javascript",
+      "sdk-js",
+      "typescript"
+    ],
+    "homepage": "https://seekdb.ai",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/pyobvector",
+    "description": "A Python SDK for OceanBase Multimodal Store—enabling vector search, full-text search, and JSON table operations—offers both Milvus-compatible API and SQLAlchemy-based SQL mode, and supports both OceanBase and OceanBase seekdb.",
+    "html_url": "https://github.com/oceanbase/pyobvector",
+    "stargazers_count": 19,
+    "forks_count": 12,
+    "open_issues_count": 5,
+    "watchers_count": 19,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-09-25T03:26:25Z",
+    "pushed_at": "2026-07-29T02:51:34Z",
+    "updated_at": "2026-07-29T02:50:56Z",
+    "default_branch": "main",
+    "topics": [
+      "agent-sdk",
+      "agentic-ai",
+      "agents",
+      "python-sdk",
+      "vector-database"
+    ],
+    "homepage": "https://www.oceanbase.ai",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "oceanbase/ob-samples",
+    "description": "Show how to use OceanBase, providing the sample projects for OceanBase.",
+    "html_url": "https://github.com/oceanbase/ob-samples",
+    "stargazers_count": 18,
+    "forks_count": 23,
+    "open_issues_count": 3,
+    "watchers_count": 18,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-08-08T03:02:44Z",
+    "pushed_at": "2025-11-27T01:49:11Z",
+    "updated_at": "2025-09-19T10:13:42Z",
+    "default_branch": "master",
+    "topics": [
+      "applications",
+      "database",
+      "oceanbase",
+      "sample-code"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "Sean-Lu/DbRepository",
+    "description": "🔥ORM framework, support databases: MySQL, MariaDB, TiDB, OceanBase, SQL Server, Oracle, SQLite, DuckDB, MS Access, Firebird, PostgreSql, OpenGauss, HighgoDB, IvorySQL, QuestDB, DB2, Informix, ClickHouse, 达梦, 人大金仓, 神通, 虚谷, ...",
+    "html_url": "https://github.com/Sean-Lu/DbRepository",
+    "stargazers_count": 16,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 16,
+    "language": "C#",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-21T11:38:29Z",
+    "pushed_at": "2026-09-11T09:06:44Z",
+    "updated_at": "2026-09-11T09:06:48Z",
+    "default_branch": "dev",
+    "topics": [
+      "crud",
+      "dapper",
+      "ddd",
+      "orm",
+      "repository"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "oceanbase/langchain-oceanbase",
+    "description": "This package contains the LangChain integration with OceanBase.",
+    "html_url": "https://github.com/oceanbase/langchain-oceanbase",
+    "stargazers_count": 15,
+    "forks_count": 12,
+    "open_issues_count": 4,
+    "watchers_count": 15,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-12-18T08:29:49Z",
+    "pushed_at": "2026-09-21T11:47:23Z",
+    "updated_at": "2026-09-20T14:02:50Z",
+    "default_branch": "develop",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "yuesong-feng/miniob",
+    "description": "mini OceanBase",
+    "html_url": "https://github.com/yuesong-feng/miniob",
+    "stargazers_count": 15,
+    "forks_count": 3,
+    "open_issues_count": 1,
+    "watchers_count": 15,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-21T20:50:06Z",
+    "pushed_at": "2023-06-14T10:03:47Z",
+    "updated_at": "2025-11-27T06:10:04Z",
+    "default_branch": "master",
+    "topics": [
+      "database",
+      "miniob",
+      "oceanbase"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ligen131/miniob",
+    "description": "OceanBase 大赛仓库，由偏远小渔村传统弱校队维护",
+    "html_url": "https://github.com/ligen131/miniob",
+    "stargazers_count": 13,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 13,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-05T04:31:15Z",
+    "pushed_at": "2022-10-18T18:23:41Z",
+    "updated_at": "2025-10-16T16:59:24Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/oceanbase.github.io",
+    "description": "Welcome Developers, It's our OceanBase Community Website.",
+    "html_url": "https://github.com/oceanbase/oceanbase.github.io",
+    "stargazers_count": 12,
+    "forks_count": 19,
+    "open_issues_count": 59,
+    "watchers_count": 12,
+    "language": "TypeScript",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-06-14T03:08:42Z",
+    "pushed_at": "2026-02-05T13:15:27Z",
+    "updated_at": "2026-09-10T07:27:29Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://oceanbase.github.io",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "oceanbase/docker-images",
+    "description": "Official source of container configurations and images for OceanBase products.",
+    "html_url": "https://github.com/oceanbase/docker-images",
+    "stargazers_count": 12,
+    "forks_count": 13,
+    "open_issues_count": 14,
+    "watchers_count": 12,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-05-31T07:26:46Z",
+    "pushed_at": "2026-08-31T04:59:38Z",
+    "updated_at": "2026-09-24T04:40:36Z",
+    "default_branch": "main",
+    "topics": [
+      "docker",
+      "docker-compose",
+      "docker-image",
+      "dockerfile",
+      "oceanbase"
+    ],
+    "homepage": "https://hub.docker.com/r/oceanbase",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "amber-moe/oceanbase-doc-skills",
+    "description": "Structured database solution for AI Agent Skills management. Markdown parser, SQLite storage, Python API.",
+    "html_url": "https://github.com/amber-moe/oceanbase-doc-skills",
+    "stargazers_count": 11,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-01-16T06:20:14Z",
+    "pushed_at": "2026-01-27T03:56:42Z",
+    "updated_at": "2026-09-17T20:14:56Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "netease-im/lb-driver",
+    "description": "Load-Balance-Driver, wrapper of mysql-jdbc-driver, suitable for use in databases with proxy architecture, such as OceanBase, TiDB, etc.",
+    "html_url": "https://github.com/netease-im/lb-driver",
+    "stargazers_count": 11,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Java",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-12-11T06:55:27Z",
+    "pushed_at": "2026-08-24T04:09:31Z",
+    "updated_at": "2026-09-08T09:10:34Z",
+    "default_branch": "main",
+    "topics": [
+      "driver",
+      "jdbc-driver",
+      "oceanbase",
+      "tidb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "zzxCoding/Flydb",
+    "description": "给开发、运维和 AI Agent 的数据库迁移工具：CLI + 本机 GUI，共用配置、预览与执行记录；覆盖主流与国产数据库，Java 8 零依赖内核。",
+    "html_url": "https://github.com/zzxCoding/Flydb",
+    "stargazers_count": 11,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-04T02:53:00Z",
+    "pushed_at": "2026-09-10T01:42:12Z",
+    "updated_at": "2026-09-23T02:50:05Z",
+    "default_branch": "main",
+    "topics": [
+      "ai-agents",
+      "cli",
+      "dameng",
+      "database-devops",
+      "database-migration",
+      "flyway-alternative",
+      "gui",
+      "java",
+      "jdbc",
+      "kingbasees",
+      "mcp",
+      "mysql",
+      "oceanbase",
+      "opengauss",
+      "oracle",
+      "postgresql",
+      "schema-migration",
+      "spring-boot",
+      "tidb",
+      "xinchuang"
+    ],
+    "homepage": "https://flydb.zzxcoding.dev",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcy/oceanbase-multimodal-demo",
+    "description": "🚀 OceanBase 向量数据库多模态产品推荐系统 - 演示向量检索与AI智能推荐的强大能力",
+    "html_url": "https://github.com/pingcy/oceanbase-multimodal-demo",
+    "stargazers_count": 10,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 10,
+    "language": "Python",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-08-31T04:42:32Z",
+    "pushed_at": "2025-09-11T13:16:14Z",
+    "updated_at": "2026-01-21T02:27:39Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "JNYH/OceanBase_technical_demo",
+    "description": "OceanBase database technical demo",
+    "html_url": "https://github.com/JNYH/OceanBase_technical_demo",
+    "stargazers_count": 10,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 10,
+    "language": "Jupyter Notebook",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-09-16T02:26:58Z",
+    "pushed_at": "2023-09-28T17:54:20Z",
+    "updated_at": "2024-09-17T16:33:53Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  }
+]

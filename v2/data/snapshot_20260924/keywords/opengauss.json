@@ -1,0 +1,523 @@
+[
+  {
+    "full_name": "opengauss-mirror/openGauss-server",
+    "description": "openGauss kernel",
+    "html_url": "https://github.com/opengauss-mirror/openGauss-server",
+    "stargazers_count": 790,
+    "forks_count": 302,
+    "open_issues_count": 4,
+    "watchers_count": 790,
+    "language": "C++",
+    "license": {
+      "spdx_id": "MulanPSL-2.0",
+      "name": "Mulan Permissive Software License, Version 2"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-30T14:08:59Z",
+    "pushed_at": "2026-09-05T22:38:25Z",
+    "updated_at": "2026-09-23T03:19:37Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "dylan-tao/nacos-plus",
+    "description": "Nacos support the database type: OpenGauss、GaussDB、DM、MariaDB、PostgreSQL、Oracle、SQLServer",
+    "html_url": "https://github.com/dylan-tao/nacos-plus",
+    "stargazers_count": 292,
+    "forks_count": 30,
+    "open_issues_count": 5,
+    "watchers_count": 292,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-09-20T06:04:36Z",
+    "pushed_at": "2026-01-28T07:26:47Z",
+    "updated_at": "2026-09-20T07:55:32Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "yanmin-wu/OpenGaussian",
+    "description": "[NeurIPS 2024] OpenGaussian: Towards Point-Level 3D Gaussian-based Open Vocabulary Understanding",
+    "html_url": "https://github.com/yanmin-wu/OpenGaussian",
+    "stargazers_count": 221,
+    "forks_count": 17,
+    "open_issues_count": 21,
+    "watchers_count": 221,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-10-31T07:45:40Z",
+    "pushed_at": "2025-05-27T15:35:00Z",
+    "updated_at": "2026-09-19T01:41:16Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "https://3d-aigc.github.io/OpenGaussian/",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "mengweijin/db-migration",
+    "description": "Flyway、Liquibase 扩展支持达梦（DM）、南大通用（GBase 8s）、OpenGauss 等国产数据库。提供了使用 Flyway/Liquibase 执行 Flowable 脚本的方案。",
+    "html_url": "https://github.com/mengweijin/db-migration",
+    "stargazers_count": 80,
+    "forks_count": 13,
+    "open_issues_count": 0,
+    "watchers_count": 80,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-10-29T04:04:56Z",
+    "pushed_at": "2026-09-15T12:43:01Z",
+    "updated_at": "2026-09-24T07:48:34Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "https://aday.fun",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "hareOuO/NK_openGauss",
+    "description": null,
+    "html_url": "https://github.com/hareOuO/NK_openGauss",
+    "stargazers_count": 76,
+    "forks_count": 13,
+    "open_issues_count": 0,
+    "watchers_count": 76,
+    "language": "C++",
+    "license": {
+      "spdx_id": "MulanPSL-2.0",
+      "name": "Mulan Permissive Software License, Version 2"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-12-03T08:35:49Z",
+    "pushed_at": "2024-12-19T09:06:04Z",
+    "updated_at": "2026-06-24T02:11:22Z",
+    "default_branch": "2.0.0",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "enmotech/enmotech-docker-opengauss",
+    "description": "Ennotech openGauss Docker Image",
+    "html_url": "https://github.com/enmotech/enmotech-docker-opengauss",
+    "stargazers_count": 63,
+    "forks_count": 33,
+    "open_issues_count": 11,
+    "watchers_count": 63,
+    "language": "Shell",
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-01T05:18:22Z",
+    "pushed_at": "2024-11-08T03:52:20Z",
+    "updated_at": "2026-06-27T07:52:54Z",
+    "default_branch": "master",
+    "topics": [
+      "containers",
+      "database",
+      "docker",
+      "docker-image",
+      "enmotech",
+      "opengauss"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "opengauss-mirror/openGauss-connector-jdbc",
+    "description": "openGauss jdbc connector",
+    "html_url": "https://github.com/opengauss-mirror/openGauss-connector-jdbc",
+    "stargazers_count": 31,
+    "forks_count": 15,
+    "open_issues_count": 0,
+    "watchers_count": 31,
+    "language": "Java",
+    "license": {
+      "spdx_id": "BSD-2-Clause",
+      "name": "BSD 2-Clause \"Simplified\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-30T14:08:09Z",
+    "pushed_at": "2026-09-21T14:04:03Z",
+    "updated_at": "2026-09-21T14:05:10Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "suoten/dbbridge",
+    "description": "Description: 开源、免费、零依赖的数据库迁移与SQL转换工具。支持 Mssql/MySQL/PostgreSQL/SQLite/OceanBase/TiDB/达梦/金仓 等 23 种数据库互转。单文件 < 30MB，双击即用。",
+    "html_url": "https://github.com/suoten/dbbridge",
+    "stargazers_count": 31,
+    "forks_count": 10,
+    "open_issues_count": 0,
+    "watchers_count": 31,
+    "language": "Go",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-08-30T11:05:52Z",
+    "pushed_at": "2026-09-23T12:39:01Z",
+    "updated_at": "2026-09-23T12:39:05Z",
+    "default_branch": "master",
+    "topics": [
+      "data-migration",
+      "database-migrations",
+      "mysql",
+      "oceanbase",
+      "opengauss",
+      "postgresql",
+      "sql-converter",
+      "sqlite",
+      "tidb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "opengauss-mirror/openGauss-DBMind",
+    "description": null,
+    "html_url": "https://github.com/opengauss-mirror/openGauss-DBMind",
+    "stargazers_count": 22,
+    "forks_count": 1,
+    "open_issues_count": 3,
+    "watchers_count": 22,
+    "language": "Python",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-08-22T10:24:52Z",
+    "pushed_at": "2026-09-21T13:42:46Z",
+    "updated_at": "2026-09-21T13:42:50Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "Sean-Lu/DbRepository",
+    "description": "🔥ORM framework, support databases: MySQL, MariaDB, TiDB, OceanBase, SQL Server, Oracle, SQLite, DuckDB, MS Access, Firebird, PostgreSql, OpenGauss, HighgoDB, IvorySQL, QuestDB, DB2, Informix, ClickHouse, 达梦, 人大金仓, 神通, 虚谷, ...",
+    "html_url": "https://github.com/Sean-Lu/DbRepository",
+    "stargazers_count": 16,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 16,
+    "language": "C#",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-21T11:38:29Z",
+    "pushed_at": "2026-09-11T09:06:44Z",
+    "updated_at": "2026-09-11T09:06:48Z",
+    "default_branch": "dev",
+    "topics": [
+      "crud",
+      "dapper",
+      "ddd",
+      "orm",
+      "repository"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "nhocatofb/OpenGaussianSplatting",
+    "description": "About 🚀 A modular, royalty-free, and commercial-friendly implementation of vanilla 3D Gaussian Splatting, built for easy extensions and custom SOTA top-ups.",
+    "html_url": "https://github.com/nhocatofb/OpenGaussianSplatting",
+    "stargazers_count": 13,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 13,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-06-27T20:53:44Z",
+    "pushed_at": "2026-06-28T14:33:33Z",
+    "updated_at": "2026-06-29T12:31:14Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "opengauss-mirror/openGauss-connector-odbc",
+    "description": "openGauss odbc connector",
+    "html_url": "https://github.com/opengauss-mirror/openGauss-connector-odbc",
+    "stargazers_count": 11,
+    "forks_count": 7,
+    "open_issues_count": 1,
+    "watchers_count": 11,
+    "language": "C",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-30T14:08:30Z",
+    "pushed_at": "2026-09-21T13:25:14Z",
+    "updated_at": "2026-09-21T13:25:42Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "CyrusZhou-CN/openGauss_master_slave",
+    "description": "openGauss 数据库 docker compose ，patroni 自动主备切换，HAProxy 数据库读写负载均衡，测试环境",
+    "html_url": "https://github.com/CyrusZhou-CN/openGauss_master_slave",
+    "stargazers_count": 11,
+    "forks_count": 6,
+    "open_issues_count": 1,
+    "watchers_count": 11,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-19T08:29:26Z",
+    "pushed_at": "2022-05-16T09:00:01Z",
+    "updated_at": "2025-06-16T13:57:17Z",
+    "default_branch": "master",
+    "topics": [
+      "huawei",
+      "opengauss"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "hbh112233abc/db",
+    "description": "ThinkPHP orm driver for DM8(达梦),GBase8s(南大通用),OpenGauss(高斯),KingDatabase(金仓)",
+    "html_url": "https://github.com/hbh112233abc/db",
+    "stargazers_count": 11,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "PHP",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2024-04-03T01:08:26Z",
+    "pushed_at": "2026-09-14T05:48:22Z",
+    "updated_at": "2026-09-14T05:47:29Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "assembly-hub/orm",
+    "description": "最好用的ORM组件，DB的orm功能集合，将数据库的复杂造作进行处理，支持自定义查询条件编写以及todata智能函数，支持mysql mariadb sqlserver postgres opengauss sqllite oracle",
+    "html_url": "https://github.com/assembly-hub/orm",
+    "stargazers_count": 11,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-01-20T04:26:23Z",
+    "pushed_at": "2023-06-19T07:13:46Z",
+    "updated_at": "2025-07-30T13:45:20Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "zzxCoding/Flydb",
+    "description": "给开发、运维和 AI Agent 的数据库迁移工具：CLI + 本机 GUI，共用配置、预览与执行记录；覆盖主流与国产数据库，Java 8 零依赖内核。",
+    "html_url": "https://github.com/zzxCoding/Flydb",
+    "stargazers_count": 11,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-06-04T02:53:00Z",
+    "pushed_at": "2026-09-10T01:42:12Z",
+    "updated_at": "2026-09-23T02:50:05Z",
+    "default_branch": "main",
+    "topics": [
+      "ai-agents",
+      "cli",
+      "dameng",
+      "database-devops",
+      "database-migration",
+      "flyway-alternative",
+      "gui",
+      "java",
+      "jdbc",
+      "kingbasees",
+      "mcp",
+      "mysql",
+      "oceanbase",
+      "opengauss",
+      "oracle",
+      "postgresql",
+      "schema-migration",
+      "spring-boot",
+      "tidb",
+      "xinchuang"
+    ],
+    "homepage": "https://flydb.zzxcoding.dev",
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "luzhixing12345/library-system",
+    "description": "数据库系统实现(java+html+css+js+华为opengauss数据库)",
+    "html_url": "https://github.com/luzhixing12345/library-system",
+    "stargazers_count": 10,
+    "forks_count": 3,
+    "open_issues_count": 0,
+    "watchers_count": 10,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-03-04T07:34:23Z",
+    "pushed_at": "2022-03-10T11:00:30Z",
+    "updated_at": "2025-12-30T09:07:55Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-24",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  }
+]
