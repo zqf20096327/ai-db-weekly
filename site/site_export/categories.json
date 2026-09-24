@@ -12393,5 +12393,25 @@
   "cat": "其他",
   "why": "MySQL练习项目，非工具类",
   "ev": "中"
+ },
+ "ks-amit/Distributed-Database": {
+  "cat": "其他",
+  "why": "旅游应用，非数据库工具",
+  "ev": "中"
+ },
+ "ClickHouse/clickhub": {
+  "cat": "其他",
+  "why": "描述为GitHub分析应用，非数据库工具",
+  "ev": "高"
+ },
+ "PRAKALP-PANDE/Php_CRUD": {
+  "cat": "其他",
+  "why": "PHP+MySQL的CRUD示例，非上述类别",
+  "ev": "中"
+ },
+ "jayantrane/Secure-Systems-of-SQL-Injection-Attack": {
+  "cat": "其他",
+  "why": "描述仅涉SQL注入安全漏洞，非上述类目",
+  "ev": "中"
  }
 }
