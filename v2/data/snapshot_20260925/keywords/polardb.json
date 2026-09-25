@@ -1,0 +1,825 @@
+[
+  {
+    "full_name": "polardb/PolarDB-for-PostgreSQL",
+    "description": "A cloud-native database based on PostgreSQL developed by Alibaba Cloud.",
+    "html_url": "https://github.com/polardb/PolarDB-for-PostgreSQL",
+    "stargazers_count": 3205,
+    "forks_count": 523,
+    "open_issues_count": 67,
+    "watchers_count": 3205,
+    "language": "C",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-05-25T01:27:40Z",
+    "pushed_at": "2026-09-25T00:06:56Z",
+    "updated_at": "2026-09-25T01:01:59Z",
+    "default_branch": "POLARDB_17_STABLE",
+    "topics": [
+      "cloud-native",
+      "database",
+      "dbms",
+      "distributed",
+      "htap",
+      "postgresql",
+      "sql",
+      "storage"
+    ],
+    "homepage": "https://polardb.github.io/polardb-pg-docs/zh/",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "polardb/polardbx-sql",
+    "description": "PolarDB-X is a cloud native distributed SQL Database designed for high concurrency, massive storage, complex querying scenarios.",
+    "html_url": "https://github.com/polardb/polardbx-sql",
+    "stargazers_count": 1686,
+    "forks_count": 337,
+    "open_issues_count": 116,
+    "watchers_count": 1686,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-16T05:49:09Z",
+    "pushed_at": "2026-09-20T04:53:29Z",
+    "updated_at": "2026-09-21T08:01:49Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud-native",
+      "distributed-transactions",
+      "enterprise-class",
+      "high-availability",
+      "high-concurrency",
+      "horizontal-scaling",
+      "htap",
+      "massive-datasets",
+      "mysql",
+      "relational-database"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "polardb/polardbx-engine",
+    "description": "polardbx-engine is a MySQL branch originated from Alibaba Group, especially supports large-scale distributed database system.",
+    "html_url": "https://github.com/polardb/polardbx-engine",
+    "stargazers_count": 574,
+    "forks_count": 142,
+    "open_issues_count": 26,
+    "watchers_count": 574,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-16T05:26:48Z",
+    "pushed_at": "2026-09-15T06:41:33Z",
+    "updated_at": "2026-09-22T03:38:07Z",
+    "default_branch": "polardbx-8.0.42",
+    "topics": [
+      "mysql",
+      "polardb-x"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-FileSystem",
+    "description": null,
+    "html_url": "https://github.com/ApsaraDB/PolarDB-FileSystem",
+    "stargazers_count": 231,
+    "forks_count": 85,
+    "open_issues_count": 10,
+    "watchers_count": 231,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-12T04:23:23Z",
+    "pushed_at": "2023-11-17T08:15:04Z",
+    "updated_at": "2026-09-21T01:20:27Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "polardb/polardbx",
+    "description": "PolarDB-X is a cloud native distributed SQL Database designed for high concurrency, massive storage, complex querying scenarios.",
+    "html_url": "https://github.com/polardb/polardbx",
+    "stargazers_count": 102,
+    "forks_count": 26,
+    "open_issues_count": 8,
+    "watchers_count": 102,
+    "language": "Makefile",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-14T07:34:29Z",
+    "pushed_at": "2025-08-29T02:50:03Z",
+    "updated_at": "2026-09-13T11:53:01Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud-native",
+      "distributed-transactions",
+      "enterprise-class",
+      "high-availability",
+      "high-concurrency",
+      "horizontal-scaling",
+      "htap",
+      "massive-datasets",
+      "mysql",
+      "relational-databases"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "polardb/polardbx-operator",
+    "description": "polardbx-operator is a Kubernetes extension that aims to create and manage PolarDB-X cluster on Kubernetes.",
+    "html_url": "https://github.com/polardb/polardbx-operator",
+    "stargazers_count": 99,
+    "forks_count": 33,
+    "open_issues_count": 13,
+    "watchers_count": 99,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-16T05:53:07Z",
+    "pushed_at": "2026-09-23T08:01:19Z",
+    "updated_at": "2026-04-16T13:15:39Z",
+    "default_branch": "main",
+    "topics": [
+      "cloud-native",
+      "database",
+      "k8s",
+      "kubernetes",
+      "operator",
+      "polardb-x"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "iverycd/OracleSync2MySQL",
+    "description": "Oracle  to MySQL, PolarDB, Percona Server MySQL, MariaDB, OceanBase, TiDB, GaussDB for MySQL",
+    "html_url": "https://github.com/iverycd/OracleSync2MySQL",
+    "stargazers_count": 86,
+    "forks_count": 29,
+    "open_issues_count": 6,
+    "watchers_count": 86,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-07-27T03:19:09Z",
+    "pushed_at": "2024-06-13T07:58:19Z",
+    "updated_at": "2026-08-26T08:01:12Z",
+    "default_branch": "master",
+    "topics": [
+      "oracle2mysql",
+      "oraclemigmysql",
+      "oralce-to-mysql"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "polardb/polardbx-cdc",
+    "description": "polardbx-cdc is a core component of PolarDB-X which is responsible for global binary log generation, publication and subscription.",
+    "html_url": "https://github.com/polardb/polardbx-cdc",
+    "stargazers_count": 80,
+    "forks_count": 48,
+    "open_issues_count": 3,
+    "watchers_count": 80,
+    "language": "Java",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-16T05:52:07Z",
+    "pushed_at": "2026-09-18T09:53:17Z",
+    "updated_at": "2026-09-18T09:45:19Z",
+    "default_branch": "main",
+    "topics": [
+      "binlog",
+      "cdc",
+      "change-master",
+      "global-binary-log",
+      "mysql",
+      "mysql-binlog",
+      "mysql-dump",
+      "mysqlbinlog",
+      "replication"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "HappyCS-Gu/Parallel-Raft-tla",
+    "description": "Specifying and Verfying concensus algorithms in PolarDB using TLA+",
+    "html_url": "https://github.com/HappyCS-Gu/Parallel-Raft-tla",
+    "stargazers_count": 59,
+    "forks_count": 14,
+    "open_issues_count": 1,
+    "watchers_count": 59,
+    "language": "TLA",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-04-06T08:24:44Z",
+    "pushed_at": "2024-09-19T05:46:31Z",
+    "updated_at": "2025-10-03T11:52:06Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "polardb/polardbx-tools",
+    "description": "Tools for PolarDB-X, such as data migration, CSV files import, benchmark, etc.",
+    "html_url": "https://github.com/polardb/polardbx-tools",
+    "stargazers_count": 55,
+    "forks_count": 29,
+    "open_issues_count": 3,
+    "watchers_count": 55,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-12-29T05:36:24Z",
+    "pushed_at": "2026-03-25T02:09:03Z",
+    "updated_at": "2026-06-30T12:07:01Z",
+    "default_branch": "main",
+    "topics": [
+      "csv-import",
+      "data-migration",
+      "database-be",
+      "distributed-database"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "aliyun/alibabacloud-dms-mcp-server",
+    "description": "A universal multi-cloud data MCP Server supporting over 40 types of data source connections, providing secure, unified data access in a single platform. Supports full range of Alibaba Cloud services and Mainstream databases/data warehouses.",
+    "html_url": "https://github.com/aliyun/alibabacloud-dms-mcp-server",
+    "stargazers_count": 53,
+    "forks_count": 17,
+    "open_issues_count": 16,
+    "watchers_count": 53,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-05-06T02:28:15Z",
+    "pushed_at": "2026-07-29T04:22:13Z",
+    "updated_at": "2026-09-16T12:11:13Z",
+    "default_branch": "main",
+    "topics": [
+      "ai",
+      "analyticsdb",
+      "claude",
+      "clickhouse",
+      "cursor",
+      "db2",
+      "dify",
+      "dify-plugins",
+      "mariadb",
+      "mcp-server",
+      "mongodb",
+      "mysql",
+      "oceanbase",
+      "oracle",
+      "polardb",
+      "polardb-x",
+      "postgresql",
+      "redis",
+      "sqlserver",
+      "starrocks"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "polardb/polardbx-glue",
+    "description": "polardbx-glue is an extension to MySQL Connector/J 8.0.",
+    "html_url": "https://github.com/polardb/polardbx-glue",
+    "stargazers_count": 48,
+    "forks_count": 37,
+    "open_issues_count": 1,
+    "watchers_count": 48,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-16T05:50:56Z",
+    "pushed_at": "2026-09-20T05:33:22Z",
+    "updated_at": "2026-09-20T02:41:11Z",
+    "default_branch": "main",
+    "topics": [
+      "mysql-xprotocol"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-Stack-Operator",
+    "description": "PolarDB Stack is a DBaaS implementation for PolarDB-for-Postgres, as an operator creates and manages PolarDB/PostgreSQL clusters running in Kubernetes. It provides re-construct, failover swtich-over, scale up/out, high-available capabilities for each clusters.",
+    "html_url": "https://github.com/ApsaraDB/PolarDB-Stack-Operator",
+    "stargazers_count": 25,
+    "forks_count": 19,
+    "open_issues_count": 4,
+    "watchers_count": 25,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-15T08:50:48Z",
+    "pushed_at": "2022-05-09T08:35:21Z",
+    "updated_at": "2025-08-10T02:07:19Z",
+    "default_branch": "master",
+    "topics": [
+      "dbaas",
+      "high-availability",
+      "k8s",
+      "k8s-operator",
+      "kubernetes",
+      "operator",
+      "polardb",
+      "postgresql",
+      "postgresql-database"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "AlexZFX/engine",
+    "description": "第一届PolarDB数据库性能大赛代码。Java语言实现",
+    "html_url": "https://github.com/AlexZFX/engine",
+    "stargazers_count": 17,
+    "forks_count": 4,
+    "open_issues_count": 0,
+    "watchers_count": 17,
+    "language": "Java",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-19T15:02:03Z",
+    "pushed_at": "2018-12-22T16:18:14Z",
+    "updated_at": "2022-10-09T03:18:59Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-NodeAgent",
+    "description": "PolarDB-NodeAgent is a light-weight and flexible agent for data collection, which supports performance data collection from hosts and instances. It is a plug-in process running on physical machines or virtual machines, collecting performance data every second and real-time logs of all the instances (both containerized instances and non-containerized instances) on the machine.",
+    "html_url": "https://github.com/ApsaraDB/PolarDB-NodeAgent",
+    "stargazers_count": 15,
+    "forks_count": 10,
+    "open_issues_count": 0,
+    "watchers_count": 15,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-09-01T10:34:19Z",
+    "pushed_at": "2022-06-15T03:35:32Z",
+    "updated_at": "2024-08-13T01:28:43Z",
+    "default_branch": "main",
+    "topics": [
+      "monitoring-tool",
+      "polardb",
+      "postgresql-polardb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai",
+      "tool"
+    ]
+  },
+  {
+    "full_name": "aliyun/alibabacloud-polardb-mcp-server",
+    "description": "MCP Servers to access PolarDB.",
+    "html_url": "https://github.com/aliyun/alibabacloud-polardb-mcp-server",
+    "stargazers_count": 15,
+    "forks_count": 4,
+    "open_issues_count": 16,
+    "watchers_count": 15,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-04-28T03:37:21Z",
+    "pushed_at": "2026-08-17T22:11:38Z",
+    "updated_at": "2026-06-25T21:41:30Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "ai"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-Stack-Workflow",
+    "description": null,
+    "html_url": "https://github.com/ApsaraDB/PolarDB-Stack-Workflow",
+    "stargazers_count": 13,
+    "forks_count": 7,
+    "open_issues_count": 0,
+    "watchers_count": 13,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-15T08:48:01Z",
+    "pushed_at": "2022-05-09T08:47:29Z",
+    "updated_at": "2022-07-18T07:59:27Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "NaOH2333/FaceRecognition",
+    "description": "基于百度人脸识别API的人脸识别信息收集小程序，使用 PolarDB 云数据库、云服务器搭建开发；该小程序通过特别的人脸标识码来标记人脸，微信调用gps记录地理位置信息，并记录用户相关信息。 已有体验版小程序已通过微信小程序审核，正在申请域名，准备正式上线微信小程序。",
+    "html_url": "https://github.com/NaOH2333/FaceRecognition",
+    "stargazers_count": 13,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 13,
+    "language": null,
+    "license": {
+      "spdx_id": "GPL-3.0",
+      "name": "GNU General Public License v3.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-04-05T01:34:19Z",
+    "pushed_at": "2021-04-06T07:42:29Z",
+    "updated_at": "2025-03-10T13:05:40Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-Stack-Storage",
+    "description": null,
+    "html_url": "https://github.com/ApsaraDB/PolarDB-Stack-Storage",
+    "stargazers_count": 11,
+    "forks_count": 9,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-15T08:49:54Z",
+    "pushed_at": "2022-03-22T09:57:57Z",
+    "updated_at": "2021-12-24T09:07:34Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/polardb-pg-docker-images",
+    "description": null,
+    "html_url": "https://github.com/ApsaraDB/polardb-pg-docker-images",
+    "stargazers_count": 11,
+    "forks_count": 6,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Shell",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-01-16T02:34:23Z",
+    "pushed_at": "2026-08-18T08:04:18Z",
+    "updated_at": "2026-08-18T08:05:09Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-Stack-Daemon",
+    "description": "PolarStack-Daemon is a daemon process in DBaaS PolarStack. It runs on all hosts and is responsible for port status collection, db log clear, db engine images availability collection, host network status collection.  It provides the basic host information and status for db cluster creating/migrating/state recognition and running.",
+    "html_url": "https://github.com/ApsaraDB/PolarDB-Stack-Daemon",
+    "stargazers_count": 11,
+    "forks_count": 5,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-15T08:44:16Z",
+    "pushed_at": "2022-03-21T07:31:19Z",
+    "updated_at": "2025-06-21T03:44:00Z",
+    "default_branch": "master",
+    "topics": [
+      "dbaas",
+      "k8s-kubernetes",
+      "polardb",
+      "postgresql-polardb"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "ApsaraDB/PolarDB-ClusterManager",
+    "description": "PolarDB Cluster Manager is the cluster management component of PolarDB for PostgreSQL, responsible for topology management, high availability, configuration management, and plugin extensions. ",
+    "html_url": "https://github.com/ApsaraDB/PolarDB-ClusterManager",
+    "stargazers_count": 11,
+    "forks_count": 4,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-10-15T09:24:17Z",
+    "pushed_at": "2021-10-19T03:35:09Z",
+    "updated_at": "2024-08-28T02:37:15Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "polardb/polardbx-proxy",
+    "description": "polardbx-proxy is a proxy for PolarDB-X standard version.",
+    "html_url": "https://github.com/polardb/polardbx-proxy",
+    "stargazers_count": 11,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-08-21T03:53:40Z",
+    "pushed_at": "2026-09-20T06:47:16Z",
+    "updated_at": "2026-04-26T14:07:34Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "aliyun/polardb_for_jdbc",
+    "description": "PolarDB JDBC Driver allows Java programs to connect to a PolarDB for PostgreSQL database (including the Oracle-compatible editions) using standard, database independent Java code. It is an open source JDBC driver written in Pure Java (Type 4).",
+    "html_url": "https://github.com/aliyun/polardb_for_jdbc",
+    "stargazers_count": 11,
+    "forks_count": 1,
+    "open_issues_count": 0,
+    "watchers_count": 11,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2025-08-20T06:25:17Z",
+    "pushed_at": "2026-08-28T07:04:50Z",
+    "updated_at": "2026-08-28T07:06:27Z",
+    "default_branch": "POLARDB_14_STABLE",
+    "topics": [],
+    "homepage": "https://help.aliyun.com/zh/polardb/polardb-for-oracle/jdbc-o-2-0?spm=a2c4g.11186623.help-menu-2249963.d_7_1_1_0.429f3bb7ViCiy9",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "polardb/polardbx-backup",
+    "description": "polardbx-backup is a hot backup tool for PolarDB-X",
+    "html_url": "https://github.com/polardb/polardbx-backup",
+    "stargazers_count": 10,
+    "forks_count": 6,
+    "open_issues_count": 1,
+    "watchers_count": 10,
+    "language": "C++",
+    "license": {
+      "spdx_id": "NOASSERTION",
+      "name": "Other"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-10-13T09:00:55Z",
+    "pushed_at": "2026-09-15T04:17:55Z",
+    "updated_at": "2025-10-30T07:44:46Z",
+    "default_branch": "polardbx-8.0.42",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "polardb/langchain-polardb-pg",
+    "description": null,
+    "html_url": "https://github.com/polardb/langchain-polardb-pg",
+    "stargazers_count": 10,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 10,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2026-07-23T12:00:50Z",
+    "pushed_at": "2026-08-13T06:17:35Z",
+    "updated_at": "2026-08-20T11:53:15Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-25",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  }
+]

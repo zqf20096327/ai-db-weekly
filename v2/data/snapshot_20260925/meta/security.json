@@ -1,0 +1,3848 @@
+{
+  "date": "2026-09-25",
+  "count": 860,
+  "fetched_this_run": 860,
+  "by_repo": {
+    "grafana/grafana": {
+      "n": 28,
+      "worst": "critical",
+      "last": "2023-03-01",
+      "ids": [
+        "GHSA-7rqg-hjwc-6mjf(2023-22462,medium)",
+        "GHSA-8xmm-x63g-f6xv(2022-23552,high)",
+        "GHSA-2j8f-6whh-frc8(2022-23498,high)",
+        "GHSA-5hcf-rqj9-xh96(2022-41912,high)",
+        "GHSA-vqc4-mpj8-jxch(2022-39328,critical)",
+        "GHSA-4724-7jwc-3fpw(2022-39324,medium)",
+        "GHSA-3p62-42x7-gxg5(2022-39307,medium)",
+        "GHSA-2x6g-h2hg-rq84(2022-39306,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "dbeaver/dbeaver": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "drawdb-io/drawdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "OtterMind/Chat2DB": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "PostgREST/postgrest": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sinaptik-ai/pandas-ai": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "beekeeper-studio/beekeeper-studio": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "timescale/timescaledb": {
+      "n": 4,
+      "worst": "high",
+      "last": "2026-08-06",
+      "ids": [
+        "GHSA-hcfx-29v5-2rcw(high)",
+        "GHSA-vgp2-jj5c-828m(2026-29089,high)",
+        "GHSA-44jh-j22r-33wq(2023-25149,high)",
+        "GHSA-fh8v-663w-79w9(2022-24128,high)"
+      ],
+      "ts": "20260925"
+    },
+    "pubkey/rxdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "neondatabase/neon": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "chartdb/chartdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "vitessio/vitess": {
+      "n": 13,
+      "worst": "critical",
+      "last": "2026-09-23",
+      "ids": [
+        "GHSA-w6mx-2f8x-pqf4(high)",
+        "GHSA-fxqj-c35w-x6rq(high)",
+        "GHSA-gpx4-c9vj-vxrp(medium)",
+        "GHSA-8w9q-hpjc-5xrf(high)",
+        "GHSA-v75v-6fpf-gvw8(critical)",
+        "GHSA-mhc4-g3wh-cw7m(2026-65959,medium)",
+        "GHSA-fr6v-4xmf-vvjx(medium)",
+        "GHSA-r492-hjgh-c9gw(2026-27969,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "apache/shardingsphere": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "t8y2/dbx": {
+      "n": 1,
+      "worst": "critical",
+      "last": "2026-07-11",
+      "ids": [
+        "GHSA-rqp4-8fxh-22vh(2026-55642,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "knex/knex": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "golang-migrate/migrate": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysqljs/mysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sqlc-dev/sqlc": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Canner/WrenAI": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "transact-rs/sqlx": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "electric-sql/pglite": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "go-sql-driver/mysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bytebase/bytebase": {
+      "n": 1,
+      "worst": "medium",
+      "last": "2022-05-25",
+      "ids": [
+        "GHSA-5r3p-6rj5-7937(medium)"
+      ],
+      "ts": "20260925"
+    },
+    "kysely-org/kysely": {
+      "n": 4,
+      "worst": "high",
+      "last": "2026-05-07",
+      "ids": [
+        "GHSA-pv5w-4p9q-p3v2(2026-44635,high)",
+        "GHSA-fr9j-6mvq-frcv(2026-33442,high)",
+        "GHSA-8cpq-38p9-67gx(2026-33468,high)",
+        "GHSA-wmrf-hv6w-mr66(2026-32763,high)"
+      ],
+      "ts": "20260925"
+    },
+    "diesel-rs/diesel": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "geldata/gel": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "github/gh-ost": {
+      "n": 1,
+      "worst": "low",
+      "last": "2022-01-31",
+      "ids": [
+        "GHSA-rrp4-2xx3-mv29(2022-21687,low)"
+      ],
+      "ts": "20260925"
+    },
+    "dbcli/pgcli": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "brianc/node-postgres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "citusdata/citus": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ubicloud/ubicloud": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "manticoresoftware/manticoresearch": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dbcli/mycli": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pressly/goose": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "FerretDB/FerretDB": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xo/usql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "flyway/flyway": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "hyperdxio/hyperdx": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "doctrine/dbal": {
+      "n": 1,
+      "worst": "critical",
+      "last": "2021-11-15",
+      "ids": [
+        "GHSA-r7cj-8hjg-x622(2021-43608,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "tobymao/sqlglot": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sosedoff/pgweb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "cloudnative-pg/cloudnative-pg": {
+      "n": 4,
+      "worst": "critical",
+      "last": "2026-06-29",
+      "ids": [
+        "GHSA-7qwx-x8ff-3px9(medium)",
+        "GHSA-x8c2-3p4r-v9r6(2026-55769,critical)",
+        "GHSA-w3gf-xc94-wvmj(2026-55765,high)",
+        "GHSA-423p-g724-fr39(2026-44477,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "paradedb/paradedb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mikro-orm/mikro-orm": {
+      "n": 10,
+      "worst": "critical",
+      "last": "2026-08-17",
+      "ids": [
+        "GHSA-jv98-hgvp-xwx7(medium)",
+        "GHSA-93qp-gfm8-3hc7(low)",
+        "GHSA-mp38-qxj6-v7jr(low)",
+        "GHSA-mfxv-v6q8-gfrx(low)",
+        "GHSA-vr2q-6mwx-8248(low)",
+        "GHSA-7j79-7q93-6v69(2026-84993,medium)",
+        "GHSA-v5x2-6hgv-vwwv(medium)",
+        "GHSA-cfw5-68c4-ffqp(2026-44680,high)"
+      ],
+      "ts": "20260925"
+    },
+    "sequelpro/sequelpro": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "cookieY/Yearning": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "XiaoMi/soar": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "porsager/postgres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "databasus/databasus": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "smartcontractkit/chainlink": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "MagicStack/asyncpg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "turbot/steampipe": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "warp-tech/warpgate": {
+      "n": 16,
+      "worst": "critical",
+      "last": "2026-09-18",
+      "ids": [
+        "GHSA-xr7p-gw3r-m3jx(medium)",
+        "GHSA-pw7m-635x-pmx7(2026-91168,medium)",
+        "GHSA-m2h4-9m63-6vqp(medium)",
+        "GHSA-hrfx-fm67-gv64(2026-91163,low)",
+        "GHSA-fjgc-484v-j6mf(2026-91167,medium)",
+        "GHSA-78rf-vg74-7cr8(high)",
+        "GHSA-w9jj-vpw3-5r8f(2026-91166,medium)",
+        "GHSA-vvpj-p7j8-4rv4(2026-91165,low)"
+      ],
+      "ts": "20260925"
+    },
+    "phpmyadmin/phpmyadmin": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "vrana/adminer": {
+      "n": 21,
+      "worst": "critical",
+      "last": "2026-09-07",
+      "ids": [
+        "GHSA-7c5h-q78c-fpxx(medium)",
+        "GHSA-q8h3-4cx4-prgm(medium)",
+        "GHSA-77qq-q8fv-x45v(medium)",
+        "GHSA-rwxg-xph9-82cj(medium)",
+        "GHSA-fr74-9mf9-gf44(low)",
+        "GHSA-8478-xrj3-h9c2(medium)",
+        "GHSA-58cq-mgw2-38m5(medium)",
+        "GHSA-75xm-qwfq-9wp5(medium)"
+      ],
+      "ts": "20260925"
+    },
+    "PyMySQL/PyMySQL": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supabase/realtime": {
+      "n": 4,
+      "worst": "high",
+      "last": "2026-09-24",
+      "ids": [
+        "GHSA-9vjf-j9f7-j42c(high)",
+        "GHSA-pfwq-rf2r-mjgc(low)",
+        "GHSA-rcr8-2525-4r7p(2026-62247,medium)",
+        "GHSA-hg9h-6mhq-6c2v(2026-54238,low)"
+      ],
+      "ts": "20260925"
+    },
+    "Sequel-Ace/Sequel-Ace": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "amacneil/dbmate": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dbgate/dbgate": {
+      "n": 7,
+      "worst": "critical",
+      "last": "2026-05-22",
+      "ids": [
+        "GHSA-8v3q-9vmx-36vc(2026-47668,critical)",
+        "GHSA-hv83-ggc4-v385(2026-48017,high)",
+        "GHSA-wm5r-5qp3-5vxf(2026-47670,critical)",
+        "GHSA-35xm-qvjg-8m42(2026-34725,high)",
+        "GHSA-h535-j5hr-mv56(2026-47669,critical)",
+        "GHSA-2fp9-29gv-p5gm(2025-50184,high)",
+        "GHSA-7x75-fmx7-q6h9(2025-50185,high)"
+      ],
+      "ts": "20260925"
+    },
+    "hhyo/Archery": {
+      "n": 8,
+      "worst": "medium",
+      "last": "2023-04-18",
+      "ids": [
+        "GHSA-349r-2663-cr3w(2023-30555,medium)",
+        "GHSA-6pv9-9gq7-hr68(2023-30556,medium)",
+        "GHSA-9pvw-f8jv-xxjr(2023-30557,medium)",
+        "GHSA-jwjj-jgfv-x66q(2023-30558,medium)",
+        "GHSA-6mqc-w2qp-fvhp(2023-30605,medium)",
+        "GHSA-3p43-89m6-7x5w(2023-30554,medium)",
+        "GHSA-hvcq-r2r2-34ch(2023-30553,medium)",
+        "GHSA-9jvj-8h33-6cqp(2023-30552,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "aarondl/sqlboiler": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "akopytov/sysbench": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jOOQ/jOOQ": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xataio/pgroll": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dimitri/pgloader": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tconbeer/harlequin": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "flike/kingshard": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "MaterializeInc/materialize": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bookshelf/bookshelf": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "HeidiSQL/HeidiSQL": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "outerbase/studio": {
+      "n": 1,
+      "worst": "medium",
+      "last": "2026-06-19",
+      "ids": [
+        "GHSA-wwf9-7jrc-rv4q(2026-55650,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "JSQLParser/JSqlParser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "TableProApp/TablePro": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sqlchat/sqlchat": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "DotNetNext/SqlSugar": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "go-pg/pg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgdogdev/pgdog": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "achristmascarl/rainfrog": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "readysettech/readyset": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "cube2222/octosql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "zalando/postgres-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mathesar-foundation/mathesar": {
+      "n": 3,
+      "worst": "medium",
+      "last": "2026-04-23",
+      "ids": [
+        "GHSA-jh9v-hqw8-5cq8(2026-44719,medium)",
+        "GHSA-wf8r-g5rp-w69f(2026-44718,medium)",
+        "GHSA-v2h3-wwpj-p6q4(low)"
+      ],
+      "ts": "20260925"
+    },
+    "malisper/pgrust": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "TabularisDB/tabularis": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "uptrace/bun": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "catfan/Medoo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gajus/slonik": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Maxteabag/sqlit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "apache/age": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sorintlab/stolon": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgcentralfoundation/pgrx": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "prest/prest": {
+      "n": 11,
+      "worst": "critical",
+      "last": "2026-07-29",
+      "ids": [
+        "GHSA-5rwc-2hg5-2hmc(high)",
+        "GHSA-x62p-38px-pp73(medium)",
+        "GHSA-v9v2-98xq-627c(high)",
+        "GHSA-rhfr-5rf5-f2h5(high)",
+        "GHSA-r3hj-2fxx-7f3h(high)",
+        "GHSA-qvx3-q8vx-9q3c(critical)",
+        "GHSA-vm7c-w4p2-6cp9(high)",
+        "GHSA-rf54-gp27-88rv(high)"
+      ],
+      "ts": "20260925"
+    },
+    "nalgeon/redka": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "CrunchyData/postgres-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "crate/crate": {
+      "n": 9,
+      "worst": "critical",
+      "last": "2026-09-09",
+      "ids": [
+        "GHSA-gvhg-w5hf-g282(high)",
+        "GHSA-q2wh-fx2h-rqfh(high)",
+        "GHSA-cf3f-xgm5-jfrm(medium)",
+        "GHSA-8jr8-9wjf-7m2h(medium)",
+        "GHSA-xw2x-w5xq-9w8r(high)",
+        "GHSA-x296-hxfr-jq2h(critical)",
+        "GHSA-2xv8-gjwh-fv8p(2026-49989,low)",
+        "GHSA-x268-qpg6-w9g2(2024-37309,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "Qovery/Replibyte": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgbackrest/pgbackrest": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dotnetcore/FreeSql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "autobase-tech/autobase": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sidorares/node-mysql2": {
+      "n": 2,
+      "worst": "high",
+      "last": "2026-07-19",
+      "ids": [
+        "GHSA-rgwj-5xj2-c3m3(medium)",
+        "GHSA-3f6p-5ww8-9rcr(high)"
+      ],
+      "ts": "20260925"
+    },
+    "pgbouncer/pgbouncer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "k1LoW/tbls": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "whoiskatrin/sql-translator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "orioledb/orioledb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "aws/aws-sdk-pandas": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "garylab/dnmp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "darold/pgbadger": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "chartbrew/chartbrew": {
+      "n": 30,
+      "worst": "critical",
+      "last": "2026-09-20",
+      "ids": [
+        "GHSA-w8g3-j8rf-qc5j(2026-86005,critical)",
+        "GHSA-mr45-2r9x-cgwf(2026-85726,high)",
+        "GHSA-p5h6-f969-jpfv(2026-85736,high)",
+        "GHSA-6gv3-8wxh-6vfq(2026-85712,high)",
+        "GHSA-3chp-cr6f-hp63(2026-85708,high)",
+        "GHSA-qvv4-r3q6-8797(2026-85295,critical)",
+        "GHSA-jw2r-hrxg-cfgc(2026-69128,high)",
+        "GHSA-4q3v-5r7x-58q2(2026-68935,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "postgresml/pgcat": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "borisdj/EFCore.BulkExtensions": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "timescale/pg_textsearch": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "HVF/franchise": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "timgit/pg-boss": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xo/dbtpl": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "citusdata/pg_cron": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgadmin-org/pgadmin4": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "go-jet/jet": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "zhblue/hustoj": {
+      "n": 3,
+      "worst": "critical",
+      "last": "2026-01-20",
+      "ids": [
+        "GHSA-gr38-j53f-5827(medium)",
+        "GHSA-xmgg-2rw4-7fxj(2026-24479,critical)",
+        "GHSA-gqwv-v7vx-2qjw(2026-23873,high)"
+      ],
+      "ts": "20260925"
+    },
+    "mevdschee/php-crud-api": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "npgsql/npgsql": {
+      "n": 1,
+      "worst": "high",
+      "last": "2024-05-09",
+      "ids": [
+        "GHSA-x9vc-6hfv-hg8c(2024-32655,high)"
+      ],
+      "ts": "20260925"
+    },
+    "frectonz/sql-studio": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "upper/db": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "psycopg/psycopg2": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Dataherald/dataherald": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "yandex/odyssey": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "scenic-views/scenic": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dalibo/pev2": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nullptrlabs/pgmodeler": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bytebase/dbhub": {
+      "n": 3,
+      "worst": "high",
+      "last": "2026-06-24",
+      "ids": [
+        "GHSA-j656-3hf2-fvjc(2026-61789,high)",
+        "GHSA-mwwr-p57h-56pf(2026-61788,high)",
+        "GHSA-fm8p-53ww-hf6w(2026-61742,high)"
+      ],
+      "ts": "20260925"
+    },
+    "danfengcao/binlog2sql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "vitaly-t/pg-promise": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "olahallengren/sql-server-maintenance-solution": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ankane/pgsync": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "wal-e/wal-e": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "liyupi/sql-generator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/raft-rs": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sqlkata/querybuilder": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supabase/pg_graphql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/clickhouse-go": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "linq2db/linq2db": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "PeerDB-io/peerdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "adelsz/pgtyped": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lakesoul-io/LakeSoul": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "EnterpriseDB/barman": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "danvergara/dblab": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Wisser/Jailer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jaredwray/keyv": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sqldef/sqldef": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sqitchers/sqitch": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "apecloud/kubeblocks": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "requery/requery": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "acl-dev/acl": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/seekdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "djrobstep/migra": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "hydradatabase/columnar": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dalibo/pg_activity": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xyproto/algernon": {
+      "n": 11,
+      "worst": "critical",
+      "last": "2026-07-26",
+      "ids": [
+        "GHSA-675p-g98j-mfwf(critical)",
+        "GHSA-vm84-8c4p-64hx(2026-68548,critical)",
+        "GHSA-mm6c-5j6x-hq8m(2026-52792,high)",
+        "GHSA-jc3j-x6pg-4hmv(2026-48126,high)",
+        "GHSA-gj84-924c-48fx(2026-46430,medium)",
+        "GHSA-hw27-4v2q-5qff(2026-46431,medium)",
+        "GHSA-fwqx-8365-9983(2026-45728,high)",
+        "GHSA-9v4j-7g44-qcqw(medium)"
+      ],
+      "ts": "20260925"
+    },
+    "PomeloFoundation/Pomelo.EntityFrameworkCore.MySql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "multiprocessio/datastation": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "teddysun/lamp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "chdb-io/chdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dataplat/dbatools": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgpartman/pg_partman": {
+      "n": 7,
+      "worst": "critical",
+      "last": "2026-07-22",
+      "ids": [
+        "GHSA-9m6c-hw23-c6h2(2026-61822,medium)",
+        "GHSA-pxp2-x8cf-rfhc(2026-61821,high)",
+        "GHSA-xqxh-6hh3-974m(2026-61820,high)",
+        "GHSA-gv5h-j2cm-rhc3(2026-61819,high)",
+        "GHSA-fm3m-9fh7-mqfc(2026-61818,high)",
+        "GHSA-gmw2-52wc-258g(2026-61817,high)",
+        "GHSA-742w-3j7c-qwvp(2026-61781,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "microsoft/pg_durable": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "maxpert/marmot": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "codedrinker/community": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "XiaoMi/Gaea": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Meituan-Dianping/Zebra": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "le0pard/pgtune": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "okbob/pspg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "aimeos/upscheme": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "devflowinc/trieve": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jfcoz/postgresqltuner": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "doug-martin/goqu": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pipelinedb/pipelinedb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dolthub/go-mysql-server": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "antares-sql/antares": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "multigres/multigres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "eduardolat/pgbackweb": {
+      "n": 1,
+      "worst": "critical",
+      "last": "2026-08-28",
+      "ids": [
+        "GHSA-4m4g-rcf2-g3p8(critical)"
+      ],
+      "ts": "20260925"
+    },
+    "supabase/supabase-py": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Altinity/clickhouse-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sqlpage/SQLPage": {
+      "n": 1,
+      "worst": "critical",
+      "last": "2023-09-18",
+      "ids": [
+        "GHSA-v5wf-jg37-r9m5(2023-42454,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "PyMySQL/mysqlclient": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jarulraj/sqlcheck": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "psycopg/psycopg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "rbatis/rbatis": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "David-Crty/databasement": {
+      "n": 17,
+      "worst": "critical",
+      "last": "2026-09-07",
+      "ids": [
+        "GHSA-76f6-wp5v-23c2(critical)",
+        "GHSA-3hxh-4mph-pwcc(medium)",
+        "GHSA-3ph2-p5rh-cfm5(high)",
+        "GHSA-pj5m-hqvp-ggjq(high)",
+        "GHSA-646p-mq36-28r4(medium)",
+        "GHSA-m2p8-hhp6-wcgm(medium)",
+        "GHSA-hg7p-x7x2-xp2x(high)",
+        "GHSA-xxfc-phj8-424w(medium)"
+      ],
+      "ts": "20260925"
+    },
+    "supabase/cli": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "julien-duponchelle/python-mysql-replication": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "graphile/worker": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "spiritLHLS/Oracle-server-keep-alive-script": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/node-oracledb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supabase/etl": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ben-nour/SQL-tips-and-tricks": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supabase/supavisor": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "timeplus-io/proton": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "postgis/postgis": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sequinstream/sequin": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "azimuttapp/azimutt": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "noborus/trdsql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "zio/zio-quill": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dolthub/doltgresql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "EvgSkv/logica": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "trickstercache/trickster": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "brokercap/Bifrost": {
+      "n": 2,
+      "worst": "high",
+      "last": "2022-10-16",
+      "ids": [
+        "GHSA-mxrx-fg8p-5p5j(2022-39267,high)",
+        "GHSA-p6fh-xc6r-g5hw(2022-39219,high)"
+      ],
+      "ts": "20260925"
+    },
+    "toddwschneider/nyc-taxi-data": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "alash3al/sqler": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "plv8/plv8": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "eosphoros-ai/DB-GPT-Hub": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "matrixorigin/matrixone": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Mooncake-Labs/pg_mooncake": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "piccolo-orm/piccolo": {
+      "n": 2,
+      "worst": "high",
+      "last": "2023-11-10",
+      "ids": [
+        "GHSA-xq59-7jf3-rjc6(2023-47128,high)",
+        "GHSA-h7cm-mrvq-wcfr(2023-41885,low)"
+      ],
+      "ts": "20260925"
+    },
+    "enhancedformysql/The-Art-of-Problem-Solving-in-Software-Engineering_How-to-Make-MySQL-Better": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gaitco/quran-database": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "eveningkid/denodb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Syngnat/GoNavi": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "40t/go-sniffer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "aio-libs/aiomysql": {
+      "n": 1,
+      "worst": "high",
+      "last": "2025-10-22",
+      "ids": [
+        "GHSA-r397-ff8c-wv2g(2025-62611,high)"
+      ],
+      "ts": "20260925"
+    },
+    "microsoft/mssql-docker": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "arkdb/inception": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nisshi-io/nisshi": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "zalando/spilo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "fabianlindfors/reshape": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/grpc-rs": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "timescale/pg-aiguide": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "npgsql/efcore.pg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "NikolayS/PgQue": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ptyadana/SQL-Data-Analysis-and-Visualization-Projects": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supervc-stack/VectorChord": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "radondb/radon": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "stephenafamo/bob": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "citusdata/cstore_fdw": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "julien040/anyquery": {
+      "n": 12,
+      "worst": "critical",
+      "last": "2026-08-05",
+      "ids": [
+        "GHSA-rj3v-75f4-r542(medium)",
+        "GHSA-cgx9-879j-533x(high)",
+        "GHSA-7jrp-4mmv-mw39(high)",
+        "GHSA-4rr9-66j6-r74m(low)",
+        "GHSA-j4wj-p47h-f9cc(medium)",
+        "GHSA-xhv3-pjg4-555g(high)",
+        "GHSA-j9rx-rppg-6hh4(2026-47253,high)",
+        "GHSA-hrj8-hjv8-mgwc(2026-47252,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "nanoninja/docker-nginx-php-mysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Portabase/portabase": {
+      "n": 1,
+      "worst": "critical",
+      "last": "2026-07-04",
+      "ids": [
+        "GHSA-7697-vf3j-253j(2026-67449,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "mtxr/vscode-sqltools": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "GreenmaskIO/greenmask": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "SeaQL/sea-query": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "louislivi/SMProxy": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sqlancer/sqlancer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "hanchuanchuan/goInception": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Giorgi/EntityFramework.Exceptions": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgjdbc/pgjdbc": {
+      "n": 8,
+      "worst": "critical",
+      "last": "2026-06-29",
+      "ids": [
+        "GHSA-j92g-9f8w-j867(2026-54291,high)",
+        "GHSA-98qh-xjc8-98pq(2026-42198,high)",
+        "GHSA-hq9p-pm7w-8p54(2025-49146,high)",
+        "GHSA-24rp-q3w6-vc56(2024-1597,critical)",
+        "GHSA-562r-vg33-8x8h(2022-41946,medium)",
+        "GHSA-r38f-c4h4-hqq2(2022-31197,medium)",
+        "GHSA-673j-qm5f-xpv8(medium)",
+        "GHSA-v7wg-cpwc-24m4(2022-21724,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "MyCATApache/Mycat2": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "huandu/go-sqlbuilder": {
+      "n": 2,
+      "worst": "high",
+      "last": "2026-08-21",
+      "ids": [
+        "GHSA-q772-88hp-xrff(high)",
+        "GHSA-rgmg-wwx9-p36c(high)"
+      ],
+      "ts": "20260925"
+    },
+    "HypoPG/hypopg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "EnterpriseDB/repmgr": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "x-ream/sqli": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgaudit/pgaudit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "metrico/gigapipe": {
+      "n": 1,
+      "worst": "critical",
+      "last": "2026-05-06",
+      "ids": [
+        "GHSA-q243-4xq7-r2fw(critical)"
+      ],
+      "ts": "20260925"
+    },
+    "backup-manager/backup-manager": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supabase/index_advisor": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "palkan/logidze": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "polardb/polardbx-sql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "osm2pgsql-dev/osm2pgsql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "typelevel/skunk": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "FrigadeHQ/trench": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/pprof-rs": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Altinity/clickhouse-backup": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "clickvisual/clickvisual": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Paxa/postbird": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ariacom/Seal-Report": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lesovsky/pgcenter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pixeltable/pixeltable": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mgartner/pg_flame": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "SOCI/soci": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/clickhouse-java": {
+      "n": 1,
+      "worst": "medium",
+      "last": "2023-05-12",
+      "ids": [
+        "GHSA-g8ph-74m6-8m7r(medium)"
+      ],
+      "ts": "20260925"
+    },
+    "apache/gluten": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "stefangabos/world_countries": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dbos-inc/dbos-transact-py": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Casecommons/pg_search": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jly8866/archer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xormplus/xorm": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "garrylachman/ElectroCRUD": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgstack-io/BemiDB": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gobuffalo/pop": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "janbjorge/pgqueuer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "yulichang/mybatis-plus-join": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "georgysavva/scany": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "skaiworldwide-oss/agensgraph": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "actiontech/sqle": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysql-net/MySqlConnector": {
+      "n": 1,
+      "worst": "medium",
+      "last": "2026-06-25",
+      "ids": [
+        "GHSA-473q-m89c-ghf8(medium)"
+      ],
+      "ts": "20260925"
+    },
+    "yehongzhi/learningSummary": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "salsita/node-pg-migrate": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ContentSquare/chproxy": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "myide/see": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pg-sharding/spqr": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "datazip-inc/olake": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "wannabespace/conar": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "yongman/tidis": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/parser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "wx-chevalier/Database-Notes": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "aio-libs/aiopg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "yahoo/mysql_perf_analyzer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ongres/stackgres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "toluaina/pgsync": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Aiven-Open/pghoard": {
+      "n": 3,
+      "worst": "high",
+      "last": "2026-07-25",
+      "ids": [
+        "GHSA-rh99-q79h-vvx3(2026-63120,high)",
+        "GHSA-mpx4-jmpr-vm8v(2026-54711,low)",
+        "GHSA-m9hc-vxjj-4x6q(2024-56142,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "dbcli/mssql-cli": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "apache/cloudberry": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "distributedio/titan": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "cybertec-postgresql/pg_timetable": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jawj/zapatos": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "quarylabs/sqruff": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "procrastinate-org/procrastinate": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "designcomputer/mysql_mcp_server": {
+      "n": 1,
+      "worst": "critical",
+      "last": "2026-06-21",
+      "ids": [
+        "GHSA-rqfv-2mw9-78g2(2026-59971,critical)"
+      ],
+      "ts": "20260925"
+    },
+    "hapostgres/pg_auto_failover": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "skeema/skeema": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "event-driven-io/Pongo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dbos-inc/dbos-transact-ts": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Dataojitori/nocturne_memory": {
+      "n": 1,
+      "worst": "high",
+      "last": "2026-05-05",
+      "ids": [
+        "GHSA-crr4-xrj9-ww8g(2026-44830,high)"
+      ],
+      "ts": "20260925"
+    },
+    "jtv/libpqxx": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "reactive-tech/kubegres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "walkccc/LeetCode": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tidb-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgrundev/pgbot": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "k8gege/K8CScan": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mymarilyn/clickhouse-driver": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "khezen/compose-postgres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "NikolayS/postgres_dba": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "maxpou/docker-symfony": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ifsnop/mysqldump-php": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "docs4dev/docs4dev": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "scalikejdbc/scalikejdbc": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "zerodha/dungbeetle": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pawurb/rails-pg-extras": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supabase/postgres-meta": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "session-replay-tools/cetus": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "1340691923/ElasticView": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "2ndQuadrant/pglogical": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "baidu/BaikalDB": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "alash3al/redix": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "superlinear-ai/raglite": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "charles-001/dolphie": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xataio/pgstream": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgautoupgrade/docker-pgautoupgrade": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sbdchd/squawk": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/rust-prometheus": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "spatie/db-dumper": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "commanded/eventstore": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gohouse/gorose": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/pd": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "HariSekhon/Nagios-Plugins": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "cornucopia-rs/cornucopia": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/powercontext": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dotnetcore/SmartSql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "protonemedia/laravel-cross-eloquent-search": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "geerlingguy/ansible-role-mysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "paunin/PostDock": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "TencentCloudBase/CloudBase-AI-Toolkit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ridgepole/ridgepole": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "actiontech/dble": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Archmonger/django-dbbackup": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "rapidloop/pgmetrics": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/ClickBench": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgjdbc/r2dbc-postgresql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "aquametalabs/aquameta": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "timestored/qstudio": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "datawhalechina/wonderful-sql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bitpoke/mysql-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/clickhouse-presentations": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tortoise/aerich": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "stripe/sync-engine": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Neeky/mysqltools": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "niledatabase/niledatabase": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xataio/xata": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "IvorySQL/IvorySQL": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "SweetIQ/schemats": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "devlive-community/datacap": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgplex/pgschema": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "liyupi/yu-picture": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "shayonj/pg_easy_replicate": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "CrunchyData/crunchy-containers": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "woooowen/iBooks": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sidequestjs/sidequest": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysql/mysql-connector-j": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mariadb-operator/mariadb-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysql/mysql-workbench": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "1N3/PrivEsc": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "totumonline/totum-mit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Mimetis/Dotmim.Sync": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "zeromicro/cds": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "rails-sqlserver/activerecord-sqlserver-adapter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sijms/go-ora": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "textacular/textacular": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysql/mysql-connector-python": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "djc/bb8": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle-samples/db-sample-schemas": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysql/mysql-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "rgeo/activerecord-postgis-adapter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ANXS/postgresql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "flant/loghouse": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "aermin/ghChat": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "MariaDB/mariadb-docker": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "envms/fluentpdo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "chinnonsantos/sql-paises-estados-cidades": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "eclipse-vertx/vertx-sql-client": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lecaillon/Evolve": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "LibreChat-AI/rag-api": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mr-karan/logchef": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "MariaDB4j/MariaDB4j": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xoraus/CrackingTheSQLInterview": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/agatedb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lanterndata/lantern": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "flike/kingbus": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tispark": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Deodat-Lawson/LaunchStack": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supabase/wrappers": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/python-cx_Oracle": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "houko/SpringBootUnity": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "macbre/sql-metadata": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "libredb/libredb-studio": {
+      "n": 1,
+      "worst": "high",
+      "last": "2026-09-21",
+      "ids": [
+        "GHSA-3wh2-8x78-jfw4(high)"
+      ],
+      "ts": "20260925"
+    },
+    "ClickHouse/mcp-clickhouse": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jumpmindinc/symmetric-ds": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "yajra/laravel-oci8": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/terraform-provider-oci": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ged/ruby-pg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "amutu/zhparser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ezSQL/ezsql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "anse1/sqlsmith": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "src-d/go-kallax": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/skills": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "smi2/phpClickHouse": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mrkamel/search_cop": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "frectonz/pglite-fusion": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "serenedb/serenedb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "philippgille/gokv": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "amatsuda/database_rewinder": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Thomas-George-T/HackerRank-SQL-Challenges-Solutions": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sjjian/openhare": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "AltimateAI/altimate-code": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "allaboutapps/integresql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "grimzy/laravel-mysql-spatial": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sunng87/pgwire": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sasha-alias/sqltabs": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "NetSPI/SQLInjectionWiki": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lesovsky/noisia": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "postgrespro/pg_probackup": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "TPC-Council/HammerDB": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "datawan-labs/pg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "hidu/mysql-schema-sync": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "team-ide/teamide": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "rin-nas/postgresql-patterns-library": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "okbob/plpgsql_check": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Urunov/SpringBoot-Projects-FullStack": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dromara/easy-query": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgagroal/pgagroal": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Altinity/clickhouse-grafana": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dalibo/temboard": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "vran-dev/databasir": {
+      "n": 4,
+      "worst": "critical",
+      "last": "2022-08-29",
+      "ids": [
+        "GHSA-qvg8-427f-852q(2022-31196,medium)",
+        "GHSA-9prp-5jc9-jpgg(2022-24860,critical)",
+        "GHSA-r8m9-r74j-vc6m(2022-24862,medium)",
+        "GHSA-5r2v-wcwh-7xmp(2022-24861,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "anthonydb/practical-sql-2": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nearform/temporal_tables": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "SectorLabs/django-postgres-extra": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "adithyakhamithkar/ansible-playbooks": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Osedea/nodock": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "fatkodima/online_migrations": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "kishan0725/Hospital-Management-System": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/minitrace-rust": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mrts/docker-postgresql-multiple-databases": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "DBDiff/DBDiff": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "signal18/replication-manager": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tanelpoder/tpt-oracle": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lazzyfu/goInsight": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "SaiUpadhyayula/spring-reddit-clone": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "opentable/otj-pg-embedded": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "iamtelescope/telescope": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tidb-incubator/tidb-in-action": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysql/mysql-connector-cpp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "runreveal/pql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "radondb/xenon": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "MaksymBilenko/docker-oracle-12c": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "anthonydb/practical-sql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "github/github-ds": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "cybertec-postgresql/pg_squeeze": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "blackbeam/rust-mysql-simple": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Giorgi/EFCore.Visualizer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "CrunchyData/pg_parquet": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dolyw/ShiroJwt": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nim4/DBShield": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "cyq1162/cyqdata": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "fsprojects/Rezoom.SQL": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nullobject/rein": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/oci-cli": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "IsNemoEqualTrue/monitor-table-change-with-sqltabledependency": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sunkaifei/FlyCms": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "denodrivers/postgres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "geerlingguy/ansible-role-postgresql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "zhongyu09/openchatbi": {
+      "n": 1,
+      "worst": "medium",
+      "last": "2026-03-02",
+      "ids": [
+        "GHSA-vmwq-8g8c-jm79(2026-28795,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "afair/postgresql_cursor": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "brianluft/sqlnotebook": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "vrmiguel/pgpad": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sastraxi/pgsh": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "JacobLinCool/d1-manager": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "AmbitionEng/django-pgtrigger": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "veloxbase/veloxdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/raft-engine": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "J1ong/FilmSys": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "haskell-beam/beam": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ForbesLindesay/atdatabases": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "andywer/pg-listen": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "PostHog/HouseWatch": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "MobilityDB/MobilityDB": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "fsprojects/SQLProvider": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "kviklet/kviklet": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "utPLSQL/utPLSQL": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "f1db/f1db": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "thorsten/phpMyFAQ": {
+      "n": 30,
+      "worst": "critical",
+      "last": "2026-08-20",
+      "ids": [
+        "GHSA-72vj-pvm4-mm7x(medium)",
+        "GHSA-6w97-49h8-58wh(medium)",
+        "GHSA-xhgx-2wj8-g4pj(medium)",
+        "GHSA-gpwm-82cg-4wfw(medium)",
+        "GHSA-h96g-59xp-7r5m(high)",
+        "GHSA-6r2c-694w-24qv(high)",
+        "GHSA-546h-9ghq-x49g(low)",
+        "GHSA-x6qj-5jhf-xgpm(medium)"
+      ],
+      "ts": "20260925"
+    },
+    "shayonj/pg-osc": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "davidesantangelo/dato.rss": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "0voice/newsql_nosql_library": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "michelp/pgsodium": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "DataflareApp/dataflare": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "impossibl/pgjdbc-ng": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "yoosuf/Messenger": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "alantech/iasql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "apecloud/ape-dts": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bucardo/check_postgres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "godror/godror": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "domainmod/domainmod": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pashagolub/pgxmock": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "free/sql_exporter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ning1022/SQLInjectionWiki": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dotnetcore/CanalSharp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/odc": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "apecloud/myduckserver": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ScientaNL/DoctrineJsonFunctions": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "percona/pg_stat_monitor": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "postgrespro/pg_pathman": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "burningalchemist/sql_exporter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "adamchainz/django-mysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jkkummerfeld/text2sql-data": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xataio/pgzx": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tokio-rs/rdbc": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "l1xnan/duckling": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "postgrespro/zson": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "egeominotti/bunqueue": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "evilmartians/evil-seed": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "amirsanni/Mini-Inventory-and-Sales-Management-System": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/clickhouse-rs": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "actiontech/dtle": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nikita-volkov/hasql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "leosussan/fastapi-gino-arq-uvicorn": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "morenoh149/postgresDBSamples": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "neondatabase/serverless": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "kedarvj/mysqldumpsplitter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "stackrender/stackrender": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jackc/pglogrepl": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "orafce/orafce": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "subnetmarco/pgmcp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "housepower/ClickHouse-Native-JDBC": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/agent-skills": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "myminwang/myblog": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "thecodemonkey86/qt_mysql_driver": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/oraclejet": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "randoneering/pgFirstAid": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "housepower/clickhouse_sinker": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dbfixtures/pytest-postgresql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "wangziqi2013/BwTree": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "rkrage/pg_party": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "GordonHong/dokit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tidb-incubator/tidis": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "grillazz/fastapi-sqlalchemy-asyncpg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/clickhouse-connect": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "halvardssm/deno-nessie": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dbkangaroo/kangaroo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "abbasudo/laravel-purity": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/titan": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nikepan/clickhouse-bulk": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "slicebit/qb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "geek-fun/sqlkit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Azure-Samples/rag-postgres-openai-python": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "joncrlsn/pgdiff": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "erikdarlingdata/PerformanceMonitor": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "BlinkTagInc/node-gtfs": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ossc-db/pg_rman": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "starcwang/canal_mysql_elasticsearch_sync": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "alextanhongpin/database-design": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "glassflow/clickhouse-etl": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "justwatchcom/sql_exporter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jet/equinox": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "osalvador/ReplicaDB": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dibi/dibi": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "postgrespro/aqo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "marcingminski/sqlwatch": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dxxzst/OfflineMap": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "blastrain/vitess-sqlparser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ossc-db/pg_bulkload": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bobbyiliev/introduction-to-sql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgr0ss/pgledger": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gnormal/gnorm": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bvisible/mcp-ssh-manager": {
+      "n": 4,
+      "worst": "critical",
+      "last": "2026-08-28",
+      "ids": [
+        "GHSA-qwwm-vrm9-4mw8(high)",
+        "GHSA-796j-h5q5-jx6p(critical)",
+        "GHSA-m793-whw6-f537(critical)",
+        "GHSA-4jx9-2fwj-pg4j(2026-77383,high)"
+      ],
+      "ts": "20260925"
+    },
+    "daydreamdev/seconds-kill": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Ff00ff/mammoth": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "phpmyadmin/sql-parser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dataplat/dbachecks": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "housepower/ckman": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "schemalex/schemalex": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xzkostyan/clickhouse-sqlalchemy": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "3dcitydb/3dcitydb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "priyank-purohit/PostGUI": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "raramuridesign/mysql-country-list": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "valderman/selda": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "TeslaFly01/SmartSqlT": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jeessy2/backup-x": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "c9s/maghead": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "kaspermarstal/plprql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mbucc/shmig": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "TheKingOfDuck/MySQLMonitor": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "techouse/sqlite3-to-mysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dirkaholic/vagrant-php-dev-box": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/oci-python-sdk": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "9tigerio/db2rest": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ihippik/wal-listener": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/coherence": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "hibernate/hibernate-reactive": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tiup": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ronknight/InventorySystem": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "siamon123/warehouse-inventory-system": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tiflow": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "premAI-io/premsql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/adsb.exposed": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pljson/pljson": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "martin-georgiev/postgresql-for-doctrine": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "joereynolds/sql-lint": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "hangfire-postgres/Hangfire.PostgreSql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "cloudquery/pg_gpt": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "amalshaji/dbcooper": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "auraphp/Aura.SqlQuery": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lqs/sqlingo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/python-oracledb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "theseus-rs/rsql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "walkable-server/walkable": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "epgsql/epgsql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/mcp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "alicfeng/mysql_markdown": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "the4thdoctor/pg_chameleon": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supabase/dbdev": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mailru/go-clickhouse": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "yuzd/AntData.ORM": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "leafo/pgmoon": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tds-fdw/tds_fdw": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "fboulnois/pg_uuidv7": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "wasmerio/wasmer-postgres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "rdagumampan/yuniql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/ch-go": {
+      "n": 1,
+      "worst": "medium",
+      "last": "2025-04-11",
+      "ids": [
+        "GHSA-m454-3xv7-qj85(2025-1386,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "vapor/postgres-nio": {
+      "n": 1,
+      "worst": "medium",
+      "last": "2023-05-04",
+      "ids": [
+        "GHSA-9cfh-vx93-84vv(2023-31136,medium)"
+      ],
+      "ts": "20260925"
+    },
+    "CrunchyData/crunchy-proxy": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/client-rust": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgq/pgq": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "VADOSWARE/pg_idkit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "imdrasil/jennifer.cr": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "melin/superior-sql-parser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nilportugues/php-sql-query-builder": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "HaloTech-Co-Ltd/openHalo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "moigagoo/norm": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Giorgi/LINQPad.QueryPlanVisualizer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysqljs/sqlstring": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "itinycheng/flink-connector-clickhouse": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "alitrack/duckdb_fdw": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgMemento/pgMemento": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "AlexanderConnelly/BrainTree_SQL_Coding_Challenge_Data_Analyst": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "aws/pg_tle": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "viascom/nanoid-postgres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "DataDog/pg_tracing": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Dzoukr/Dapper.FSharp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "epam/Indigo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/clickhouse_exporter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "devlive-community/dbm": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pganalyze/collector": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "manjeshpv/node-express-passport-mysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lelit/pglast": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgstack-io/bemi-io": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClouGence/open-cdm": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "eulerto/pgquarrel": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "theseus-rs/postgresql-embedded": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "craigmichaelmartin/pure-orm": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "akarki15/dbdot": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "DTStack/dt-sql-parser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "DigitalChinaOpenSource/TiDB-for-PostgreSQL": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jin06/binlogo": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gigapi/gigapi": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/pingcap.github.io": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "apache/age-viewer": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "long2ice/asyncmy": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nilenso/postgresql-monitoring": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "kingluo/pgcat": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "joist-orm/joist-orm": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "postgis/h3-pg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "percona/percona-postgresql-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dsccommunity/SqlServerDsc": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "executeautomation/mcp-database-server": {
+      "n": 1,
+      "worst": "high",
+      "last": "2025-09-16",
+      "ids": [
+        "GHSA-65hm-pwj5-73pw(2025-59333,high)"
+      ],
+      "ts": "20260925"
+    },
+    "long2ice/meilisync": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "nevill/zongji": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bersler/OpenLogReplicator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/clickhouse-cpp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "malthe/pq": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ivi-ru/flink-clickhouse-sink": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "WebwareForPython/DBUtils": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "morphismtech/squeal": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/fail-rs": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "edwinkys/oasysdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Altinity/clickhouse-mysql-data-reader": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "rabbitLove520/WinWnmp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "amphp/mysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysql-otp/mysql-otp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "felixge/sqlbench": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jcavat/docker-lamp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "supabase/pg_net": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "radondb/radondb-mysql-kubernetes": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "DataSystemsLab/recdb-postgresql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "agoodway/walex": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/migrate-to-ol": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bibendi/activerecord-postgres_enum": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "psqlpy-python/psqlpy": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/dbt-clickhouse": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/client-go": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "uber/storagetapper": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "overextended/oxmysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gohouse/converter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/linux-uek": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "a1phanumeric/PHP-MySQL-Class": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "long2ice/synch": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mla/pg_sample": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "erdemcer/kafka-connect-oracle": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "bagashiz/go-pos": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "sethreno/schemazen": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "aplus-framework/database": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Crecto/crecto": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dbcodeio/public": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "garethflowers/postgresql-portable": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClusterLabs/PAF": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oguimbal/pgsql-ast-parser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "systemsdk/docker-nginx-php-laravel": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Altinity/clickhouse-sink-connector": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "CreditEaseDBA/Themis": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "forgeekscn/domt": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "elliotchance/vsql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "19-84/redd-archiver": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "r-dbi/RPostgres": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "krowinski/php-mysql-replication": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "powa-team/pg_qualstats": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "suharev7/clickhouse-rs": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "PomZWJ/database-export": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Zaid-Ajaj/Npgsql.FSharp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oelmekki/pgrebase": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "vrogier/ocilib": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "babelfish-for-postgresql/babelfish_extensions": {
+      "n": 1,
+      "worst": "medium",
+      "last": "2022-11-04",
+      "ids": [
+        "GHSA-m399-rrc8-j6fj(medium)"
+      ],
+      "ts": "20260925"
+    },
+    "TonicAI/condenser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Skyfay/DBackup": {
+      "n": 2,
+      "worst": "high",
+      "last": "2026-06-06",
+      "ids": [
+        "GHSA-cj5h-46h6-72wc(high)",
+        "GHSA-h929-x237-c5h2(high)"
+      ],
+      "ts": "20260925"
+    },
+    "WeihanLi/DbTool": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mysql/mysql-connector-net": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "wsporto/typesql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mpgn/Padding-oracle-attack": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "WebDB-App/app": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ClickHouse/clickhouse-js": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tomoyane/springboot-bestpractice": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Azure-Samples/SQL-AI-samples": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ThomWright/postgres-migrations": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "eggjs/mysql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Dr-Nekoma/lyceum": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "better/jsonschema2db": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "DavidSchanzer/Sql-Server-DBA-Toolbox": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "FrankChen021/datastoria": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dataux/dataux": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tilyupo/qustar": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "petere/pguri": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "MatteoGioioso/serverless-pg": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "iCyberon/pg_hashids": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "osalabs/phpminiadmin": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "microsoft/bobsql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tidb-tools": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "xocolatl/periods": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "azer/crud": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ulule/loukoum": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oraclebase/dba": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/javavscode": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "KuiBaDB/KuiBaDB": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "LucieEveille/kiwi-mem": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgmoneta/pgmoneta": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mihailShumilov/mysql2postgresql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "wesql/wescale": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "vgarvardt/gue": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "TongchengOpenSource/ckibana": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "smyrgeorge/sqlx4k": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "auxten/postgresql-parser": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "philip/MySQLConverterTool": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "NDXDeveloper/formation-postgresql-18": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "triestpa/Atlas-Of-Thrones": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "DataPupOrg/DataPup": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "riii111/sabiql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "caiopizzol/cnpj-data-pipeline": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oracle/oracle-db-tools": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "petere/homebrew-postgresql": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "kurtbuilds/ormlite": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "amberframework/granite": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Releem/releem-agent": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "go-pg/migrations": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tao12345666333/redis-articles": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pgplex/pgtui": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "snower/TorMySQL": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "battcn/wemirr-platform": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Zeb-D/my-review": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "olirice/alembic_utils": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "CrystallineCore/Biscuit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "SwifQL/SwifQL": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tidb-binlog": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "dylan-tao/nacos-plus": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/community": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "altairbow/django-db-connection-pool": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "ApsaraDB/PolarDB-FileSystem": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/TiBigData": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tidb-dashboard": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/minstant": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "eleme/tedis": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/ob-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/kvproto": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/obdiag": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "SolerHo/database-kernel-develop": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/yatp": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/obproxy": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "Zhuoyuan1/EasyDataBaseExport": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/client-java": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tidb-bench": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "luooofan/miniob-2023": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "polardb/polardbx": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/kernel-quickstart": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "polardb/polardbx-operator": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "jooksoft/jookdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gitstliu/MysqlToAll": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tipb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/tidb-map": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/obdeploy": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "wentaojin/transferdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/obclient": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "devlive-community/dameng-connector": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tidb-incubator/tide": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "iverycd/OracleSync2MySQL": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lazzyfu/gAudit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "springrain/zorm": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gaoyuan98/dameng_exporter": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "camry/mysqldiff": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "LittleFall/flink-tidb-rdw": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "polardb/polardbx-cdc": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "mengweijin/db-migration": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/rfcs": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/async-speed-limit": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "TiFlink/TiFlink": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "enmotech/enmotech-docker-opengauss": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/pyseekdb": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "gengmei-tech/titea": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/sig-transaction": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "lucklove/tidb-wasm": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pig-mesh/nacos-datasource-plugin-dm8": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "HappyCS-Gu/Parallel-Raft-tla": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "tikv/crc64fast": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "pingcap/ticdc": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "BankOfCommunications/CBASE": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "polardb/polardbx-tools": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "WangXiangUSTC/tidb-lite": {
+      "n": 0,
+      "ts": "20260925"
+    },
+    "oceanbase/oceanbase-design": {
+      "n": 0,
+      "ts": "20260925"
+    }
+  }
+}
