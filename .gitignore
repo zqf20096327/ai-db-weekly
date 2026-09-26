@@ -23,6 +23,7 @@ orasqldiag_skill.tar.gz
 # 快照白名单由 v2/snapshot_retention.py 每日自动重写（CI 调用见 .github/workflows/v2-daily.yml），勿手工编辑
 v2/data/*
 # BEGIN snapshot whitelist (auto-generated)
+!v2/data/snapshot_20260926/
 !v2/data/snapshot_20260925/
 !v2/data/snapshot_20260924/
 !v2/data/snapshot_20260923/
@@ -30,7 +31,6 @@ v2/data/*
 !v2/data/snapshot_20260921/
 !v2/data/snapshot_20260920/
 !v2/data/snapshot_20260919/
-!v2/data/snapshot_20260918/
 !v2/data/snapshot_*.zip
 # END snapshot whitelist
 # 人群分类增量缓存（CI 每日富集入库；静态白名单，不在上方自动重写块内）

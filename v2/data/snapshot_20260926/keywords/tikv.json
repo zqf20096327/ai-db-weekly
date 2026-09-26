@@ -1,0 +1,1083 @@
+[
+  {
+    "full_name": "tikv/tikv",
+    "description": "Distributed transactional key-value database, originally created to complement TiDB",
+    "html_url": "https://github.com/tikv/tikv",
+    "stargazers_count": 16876,
+    "forks_count": 2349,
+    "open_issues_count": 1832,
+    "watchers_count": 16876,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2015-12-31T04:51:32Z",
+    "pushed_at": "2026-09-26T05:51:10Z",
+    "updated_at": "2026-09-26T05:51:20Z",
+    "default_branch": "master",
+    "topics": [
+      "cncf",
+      "consensus",
+      "distributed-transactions",
+      "hacktoberfest",
+      "key-value",
+      "raft",
+      "rocksdb",
+      "rust",
+      "tidb",
+      "tikv"
+    ],
+    "homepage": "https://tikv.org",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "yongman/tidis",
+    "description": "Distributed transactional NoSQL database, Redis protocol compatible using tikv as backend",
+    "html_url": "https://github.com/yongman/tidis",
+    "stargazers_count": 1443,
+    "forks_count": 139,
+    "open_issues_count": 0,
+    "watchers_count": 1443,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-04-17T07:25:40Z",
+    "pushed_at": "2022-09-20T06:03:03Z",
+    "updated_at": "2026-09-24T09:50:01Z",
+    "default_branch": "master",
+    "topics": [
+      "2pc",
+      "database",
+      "distributed-nosql-database",
+      "nosql",
+      "raft",
+      "redis",
+      "rocksdb",
+      "shared-nothing",
+      "tikv",
+      "transaction",
+      "transaction-storage"
+    ],
+    "homepage": "https://github.com/tidb-incubator/tidis",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "distributedio/titan",
+    "description": "A Distributed Redis Protocol Compatible NoSQL Database",
+    "html_url": "https://github.com/distributedio/titan",
+    "stargazers_count": 1404,
+    "forks_count": 119,
+    "open_issues_count": 44,
+    "watchers_count": 1404,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-14T08:18:40Z",
+    "pushed_at": "2023-10-21T05:34:32Z",
+    "updated_at": "2026-09-24T09:50:54Z",
+    "default_branch": "master",
+    "topics": [
+      "distributed",
+      "nosql",
+      "redis",
+      "tidb",
+      "tikv"
+    ],
+    "homepage": "https://medium.com/@shafreeck/titan-a-distributed-redis-protocol-compatible-nosql-database-4379a1307661",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/pd",
+    "description": "Placement driver for TiKV",
+    "html_url": "https://github.com/tikv/pd",
+    "stargazers_count": 1159,
+    "forks_count": 784,
+    "open_issues_count": 1001,
+    "watchers_count": 1159,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-03-07T09:13:06Z",
+    "pushed_at": "2026-09-24T07:26:28Z",
+    "updated_at": "2026-09-24T09:47:33Z",
+    "default_branch": "master",
+    "topics": [
+      "hacktoberfest"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/tispark",
+    "description": "TiSpark is built for running Apache Spark on top of TiDB/TiKV",
+    "html_url": "https://github.com/pingcap/tispark",
+    "stargazers_count": 890,
+    "forks_count": 251,
+    "open_issues_count": 122,
+    "watchers_count": 890,
+    "language": "Scala",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2017-05-02T17:48:30Z",
+    "pushed_at": "2026-08-20T07:13:21Z",
+    "updated_at": "2026-09-08T21:02:52Z",
+    "default_branch": "master",
+    "topics": [
+      "bigdata",
+      "spark",
+      "tidb",
+      "tikv"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tidb-incubator/tidis",
+    "description": "A distributed transactional large-scale NoSQL database powered by TiKV",
+    "html_url": "https://github.com/tidb-incubator/tidis",
+    "stargazers_count": 527,
+    "forks_count": 35,
+    "open_issues_count": 19,
+    "watchers_count": 527,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-04-22T02:25:53Z",
+    "pushed_at": "2024-01-05T23:34:04Z",
+    "updated_at": "2026-09-10T14:26:36Z",
+    "default_branch": "master",
+    "topics": [
+      "distributed-database",
+      "nosql",
+      "redis",
+      "rocksdb",
+      "tikv",
+      "transaction"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/client-rust",
+    "description": "Rust Client for TiKV.",
+    "html_url": "https://github.com/tikv/client-rust",
+    "stargazers_count": 426,
+    "forks_count": 163,
+    "open_issues_count": 86,
+    "watchers_count": 426,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-30T01:23:10Z",
+    "pushed_at": "2026-09-16T02:58:00Z",
+    "updated_at": "2026-09-22T14:28:18Z",
+    "default_branch": "master",
+    "topics": [
+      "client",
+      "cncf",
+      "key-value-store",
+      "rust"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/client-go",
+    "description": "Go client for TiKV",
+    "html_url": "https://github.com/tikv/client-go",
+    "stargazers_count": 363,
+    "forks_count": 274,
+    "open_issues_count": 234,
+    "watchers_count": 363,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-12-01T04:03:34Z",
+    "pushed_at": "2026-09-24T07:12:31Z",
+    "updated_at": "2026-09-23T12:13:56Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "Hexilee/tifs",
+    "description": "A distributed POSIX filesystem based on TiKV, with partition tolerance and strict consistency.",
+    "html_url": "https://github.com/Hexilee/tifs",
+    "stargazers_count": 362,
+    "forks_count": 25,
+    "open_issues_count": 3,
+    "watchers_count": 362,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-11-27T05:44:10Z",
+    "pushed_at": "2024-07-10T07:37:14Z",
+    "updated_at": "2026-07-05T19:56:40Z",
+    "default_branch": "main",
+    "topics": [
+      "distributed-file-system",
+      "distributed-systems",
+      "filesystem",
+      "fuse",
+      "posix-compatible",
+      "tifs",
+      "tikv"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "maelstrom-rs/maelstrom",
+    "description": "The Matrix homeserver for serious scale. Clusterable, highly available, horizontally scalable.",
+    "html_url": "https://github.com/maelstrom-rs/maelstrom",
+    "stargazers_count": 262,
+    "forks_count": 19,
+    "open_issues_count": 105,
+    "watchers_count": 262,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-04-03T12:35:09Z",
+    "pushed_at": "2026-04-14T07:00:05Z",
+    "updated_at": "2026-08-05T01:55:55Z",
+    "default_branch": "master",
+    "topics": [
+      "chat",
+      "clustering",
+      "high-availability",
+      "homeserver",
+      "horizontal-scaling",
+      "matrix",
+      "matrix-homeserver",
+      "matrix-org",
+      "rust-lang",
+      "surrealdb",
+      "tikv"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "pingcap/TiBigData",
+    "description": "TiDB connectors for Flink/Hive/Presto",
+    "html_url": "https://github.com/pingcap/TiBigData",
+    "stargazers_count": 219,
+    "forks_count": 56,
+    "open_issues_count": 29,
+    "watchers_count": 219,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-08T08:51:05Z",
+    "pushed_at": "2024-04-12T07:13:32Z",
+    "updated_at": "2026-07-13T20:17:20Z",
+    "default_branch": "master",
+    "topics": [
+      "bigdata",
+      "cdc",
+      "flink",
+      "hive",
+      "presto",
+      "tidb",
+      "tikv"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "eleme/tedis",
+    "description": "基于TiKV的兼容Redis协议的强一致性NoSQL数据库",
+    "html_url": "https://github.com/eleme/tedis",
+    "stargazers_count": 184,
+    "forks_count": 28,
+    "open_issues_count": 5,
+    "watchers_count": 184,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-22T05:24:09Z",
+    "pushed_at": "2019-05-22T09:34:43Z",
+    "updated_at": "2026-07-13T20:16:07Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "pingcap/kvproto",
+    "description": "Protocol buffer files for TiKV",
+    "html_url": "https://github.com/pingcap/kvproto",
+    "stargazers_count": 171,
+    "forks_count": 243,
+    "open_issues_count": 68,
+    "watchers_count": 171,
+    "language": "CMake",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2016-03-11T00:50:02Z",
+    "pushed_at": "2026-09-24T07:44:25Z",
+    "updated_at": "2026-09-22T06:07:36Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/client-java",
+    "description": "TiKV Java Client",
+    "html_url": "https://github.com/tikv/client-java",
+    "stargazers_count": 116,
+    "forks_count": 118,
+    "open_issues_count": 91,
+    "watchers_count": 116,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-15T08:52:53Z",
+    "pushed_at": "2026-09-14T06:38:00Z",
+    "updated_at": "2026-08-31T04:15:17Z",
+    "default_branch": "master",
+    "topics": [
+      "client",
+      "cncf",
+      "grpc",
+      "java",
+      "tikv"
+    ],
+    "homepage": "https://tikv.github.io/client-java/",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/rfcs",
+    "description": "RFCs for changes to TiKV and its ecosystem",
+    "html_url": "https://github.com/tikv/rfcs",
+    "stargazers_count": 79,
+    "forks_count": 68,
+    "open_issues_count": 41,
+    "watchers_count": 79,
+    "language": null,
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-08-17T18:55:29Z",
+    "pushed_at": "2026-09-14T06:37:25Z",
+    "updated_at": "2026-05-20T01:10:46Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "TiFlink/TiFlink",
+    "description": "An experimental materialized view solution based on TiDB/TiKV and Flink with strong consistency support.",
+    "html_url": "https://github.com/TiFlink/TiFlink",
+    "stargazers_count": 65,
+    "forks_count": 13,
+    "open_issues_count": 2,
+    "watchers_count": 65,
+    "language": "Java",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-05T13:08:26Z",
+    "pushed_at": "2021-10-18T13:39:42Z",
+    "updated_at": "2026-05-19T03:41:15Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "BusyJay/mini-pd",
+    "description": "A minimal implementation of tikv/pd in Rust.",
+    "html_url": "https://github.com/BusyJay/mini-pd",
+    "stargazers_count": 64,
+    "forks_count": 4,
+    "open_issues_count": 2,
+    "watchers_count": 64,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-07-21T17:38:46Z",
+    "pushed_at": "2021-07-28T13:19:05Z",
+    "updated_at": "2026-07-10T14:44:25Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "gengmei-tech/titea",
+    "description": "A Distributed Redis Protocol Compatible NoSQL Database Base On Tikv And PD",
+    "html_url": "https://github.com/gengmei-tech/titea",
+    "stargazers_count": 62,
+    "forks_count": 10,
+    "open_issues_count": 0,
+    "watchers_count": 62,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-01-11T08:19:23Z",
+    "pushed_at": "2019-01-29T12:39:44Z",
+    "updated_at": "2026-09-24T09:51:10Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/sig-transaction",
+    "description": "Resources for the transaction SIG",
+    "html_url": "https://github.com/tikv/sig-transaction",
+    "stargazers_count": 60,
+    "forks_count": 12,
+    "open_issues_count": 23,
+    "watchers_count": 60,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2020-06-04T03:20:00Z",
+    "pushed_at": "2026-09-14T06:40:15Z",
+    "updated_at": "2026-09-15T03:21:49Z",
+    "default_branch": "master",
+    "topics": [
+      "distributed-transactions",
+      "tidb",
+      "tikv"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "c4pt0r/tcli",
+    "description": "The ultimate CLI tool for TiKV",
+    "html_url": "https://github.com/c4pt0r/tcli",
+    "stargazers_count": 58,
+    "forks_count": 14,
+    "open_issues_count": 5,
+    "watchers_count": 58,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-05T15:36:12Z",
+    "pushed_at": "2024-05-15T22:46:28Z",
+    "updated_at": "2026-03-26T08:09:40Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/community",
+    "description": "TiKV community content",
+    "html_url": "https://github.com/tikv/community",
+    "stargazers_count": 43,
+    "forks_count": 57,
+    "open_issues_count": 6,
+    "watchers_count": 43,
+    "language": null,
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-10-09T01:36:34Z",
+    "pushed_at": "2026-09-14T06:36:59Z",
+    "updated_at": "2026-09-14T06:37:04Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "rmqtt/rmqtt-raft",
+    "description": "A raft framework, for regular people",
+    "html_url": "https://github.com/rmqtt/rmqtt-raft",
+    "stargazers_count": 43,
+    "forks_count": 10,
+    "open_issues_count": 0,
+    "watchers_count": 43,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-05-15T09:40:52Z",
+    "pushed_at": "2026-06-03T15:22:20Z",
+    "updated_at": "2026-06-20T12:31:34Z",
+    "default_branch": "main",
+    "topics": [
+      "raft",
+      "riteraft",
+      "rust",
+      "tikv"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/client-c",
+    "description": "The C++ TiKV client used by TiFlash.",
+    "html_url": "https://github.com/tikv/client-c",
+    "stargazers_count": 41,
+    "forks_count": 56,
+    "open_issues_count": 21,
+    "watchers_count": 41,
+    "language": "C++",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-02-22T10:03:36Z",
+    "pushed_at": "2026-09-16T06:27:01Z",
+    "updated_at": "2026-08-31T00:00:06Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "tikv/migration",
+    "description": "Migration tools for TiKV, e.g. online bulk load.",
+    "html_url": "https://github.com/tikv/migration",
+    "stargazers_count": 38,
+    "forks_count": 27,
+    "open_issues_count": 37,
+    "watchers_count": 38,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-08-19T05:23:03Z",
+    "pushed_at": "2026-03-09T01:44:43Z",
+    "updated_at": "2026-03-09T01:44:47Z",
+    "default_branch": "main",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "distributedio/tips",
+    "description": "TiKV based Pub/Sub server",
+    "html_url": "https://github.com/distributedio/tips",
+    "stargazers_count": 35,
+    "forks_count": 2,
+    "open_issues_count": 13,
+    "watchers_count": 35,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-29T11:37:15Z",
+    "pushed_at": "2019-06-04T03:22:16Z",
+    "updated_at": "2025-12-12T11:20:59Z",
+    "default_branch": "master",
+    "topics": [
+      "distributed",
+      "distributed-systems",
+      "message-queue",
+      "pubsub",
+      "tikv"
+    ],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "siddontang/redis-tikv-example",
+    "description": "A very simple example to show how to build a Redis Compatibility Cluster based on TiKV",
+    "html_url": "https://github.com/siddontang/redis-tikv-example",
+    "stargazers_count": 31,
+    "forks_count": 4,
+    "open_issues_count": 0,
+    "watchers_count": 31,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-05-08T22:40:16Z",
+    "pushed_at": "2018-05-10T00:10:23Z",
+    "updated_at": "2026-04-09T09:41:46Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "orcastor/orcas",
+    "description": "🗄️【开放开箱即用内容寻址对象存储】支持主流操作系统和廉价低功耗设备 [OrcaS] Open Ready-to-use Content Addressable Storage - for popular OS & cheap and low power devices.",
+    "html_url": "https://github.com/orcastor/orcas",
+    "stargazers_count": 30,
+    "forks_count": 4,
+    "open_issues_count": 0,
+    "watchers_count": 30,
+    "language": "Go",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-03-28T10:31:22Z",
+    "pushed_at": "2026-09-23T11:42:34Z",
+    "updated_at": "2026-09-23T10:31:00Z",
+    "default_branch": "master",
+    "topics": [
+      "ceph",
+      "content-addressable-storage",
+      "embedded",
+      "fastdfs",
+      "hacktoberfest",
+      "minio",
+      "nas",
+      "object-file-system",
+      "object-storage",
+      "object-store",
+      "osd",
+      "oss",
+      "s3",
+      "storage",
+      "tikv"
+    ],
+    "homepage": "https://orcastor.github.io/doc/",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "IkuzaDev/TikViews",
+    "description": "Zefoy Automator without selenium",
+    "html_url": "https://github.com/IkuzaDev/TikViews",
+    "stargazers_count": 28,
+    "forks_count": 11,
+    "open_issues_count": 2,
+    "watchers_count": 28,
+    "language": "Python",
+    "license": null,
+    "fork": false,
+    "archived": false,
+    "created_at": "2022-11-23T09:01:51Z",
+    "pushed_at": "2024-03-21T01:28:50Z",
+    "updated_at": "2026-05-29T07:09:35Z",
+    "default_branch": "main",
+    "topics": [
+      "tiktok-views"
+    ],
+    "homepage": "https://d5studio.my.id/",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "niebayes/tinykv-summary",
+    "description": "Summary of PingCap tinykv camp. No codes presented.",
+    "html_url": "https://github.com/niebayes/tinykv-summary",
+    "stargazers_count": 22,
+    "forks_count": 2,
+    "open_issues_count": 0,
+    "watchers_count": 22,
+    "language": "Go",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-05-04T07:10:37Z",
+    "pushed_at": "2023-05-09T11:15:32Z",
+    "updated_at": "2026-01-05T11:04:27Z",
+    "default_branch": "main",
+    "topics": [
+      "database",
+      "distributed-systems",
+      "etcd",
+      "raft",
+      "tikv",
+      "tinykv"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "lablup/rraft-py",
+    "description": "Unofficial Python Binding of the tikv/raft-rs",
+    "html_url": "https://github.com/lablup/rraft-py",
+    "stargazers_count": 22,
+    "forks_count": 0,
+    "open_issues_count": 4,
+    "watchers_count": 22,
+    "language": "Python",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2023-03-07T08:58:53Z",
+    "pushed_at": "2023-11-24T03:46:37Z",
+    "updated_at": "2026-07-12T13:47:57Z",
+    "default_branch": "main",
+    "topics": [
+      "distributed-consensus-algorithms",
+      "distributed-systems",
+      "python",
+      "raft",
+      "rust"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/importer",
+    "description": "tikv-importer is a front-end to help ingesting large number of KV pairs into a TiKV cluster",
+    "html_url": "https://github.com/tikv/importer",
+    "stargazers_count": 20,
+    "forks_count": 13,
+    "open_issues_count": 11,
+    "watchers_count": 20,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-05-19T10:37:05Z",
+    "pushed_at": "2026-09-14T06:38:49Z",
+    "updated_at": "2026-08-31T05:49:31Z",
+    "default_branch": "release-5.0",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "bsdelf/tikv-browser",
+    "description": "TiKV Browser: inspect key-values in a browser",
+    "html_url": "https://github.com/bsdelf/tikv-browser",
+    "stargazers_count": 16,
+    "forks_count": 0,
+    "open_issues_count": 0,
+    "watchers_count": 16,
+    "language": "TypeScript",
+    "license": {
+      "spdx_id": "BSD-2-Clause",
+      "name": "BSD 2-Clause \"Simplified\" License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2019-08-03T03:28:33Z",
+    "pushed_at": "2019-08-26T15:46:30Z",
+    "updated_at": "2023-03-25T08:28:34Z",
+    "default_branch": "master",
+    "topics": [
+      "antd",
+      "docker",
+      "go",
+      "mobx",
+      "msgpack",
+      "react",
+      "tikv",
+      "typescript",
+      "websocket"
+    ],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  },
+  {
+    "full_name": "tikv/client-cpp",
+    "description": "TiKV Client for C++",
+    "html_url": "https://github.com/tikv/client-cpp",
+    "stargazers_count": 15,
+    "forks_count": 14,
+    "open_issues_count": 10,
+    "watchers_count": 15,
+    "language": "Rust",
+    "license": {
+      "spdx_id": "Apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2021-01-04T09:08:13Z",
+    "pushed_at": "2026-09-14T06:37:50Z",
+    "updated_at": "2026-04-09T08:34:04Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": "",
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "tool"
+    ]
+  },
+  {
+    "full_name": "geschke/hugo-tikva",
+    "description": "Tikva is a minimalistic Hugo theme, based on Bootstrap v4 CSS framework.",
+    "html_url": "https://github.com/geschke/hugo-tikva",
+    "stargazers_count": 12,
+    "forks_count": 9,
+    "open_issues_count": 3,
+    "watchers_count": 12,
+    "language": "HTML",
+    "license": {
+      "spdx_id": "MIT",
+      "name": "MIT License"
+    },
+    "fork": false,
+    "archived": false,
+    "created_at": "2018-11-06T12:57:01Z",
+    "pushed_at": "2025-12-10T19:20:14Z",
+    "updated_at": "2026-05-23T18:15:56Z",
+    "default_branch": "master",
+    "topics": [],
+    "homepage": null,
+    "snapshot_date": "2026-09-26",
+    "source_topic": null,
+    "source": "keyword",
+    "category": [
+      "core"
+    ]
+  }
+]
