@@ -1,0 +1,40 @@
+{
+  "snapshot_date": "2026-09-26",
+  "brief": {
+    "pgstack-io/BemiDB": "BemiDB 是开源数据仓库与同步工具，兼容 PostgreSQL，可将 MySQL、PostgreSQL 数据同步至 S3 列式存储并查询。",
+    "pgstack-io/bemi-io": "Bemi 通过解析 PostgreSQL 预写日志，自动记录数据变更，无需改动表结构，可用于审计追踪与数据版本查询。",
+    "grafana/grafana": "Grafana是开源可组合观测平台，可查询、可视化MySQL与PostgreSQL等数据源指标并告警。",
+    "0xmikadzyki/ghost": "该项目用ClickHouse存储Robinhood Chain全量ERC-20转账，供只读资金流查询。",
+    "hakureiyuyuko/LMBY": "LMBY是自托管媒体服务器，用PostgreSQL存元数据与任务队列，适合轻量部署场景。",
+    "avison9/cdclint": "cdclint 用于在部署前检查数据库、Debezium 连接器与下游目标间的模式一致性，支持 MySQL、PostgreSQL 等源，减少列静默丢失。",
+    "tidb-incubator/tidb-in-action": "TiDB In Action 是一本基于 TiDB 4.0 的开源电子书，由社区贡献，介绍其原理与操作，供使用者查阅。",
+    "cyq1162/cyqdata": "cyq.data 是 .NET 的 ORM 框架，支持 Oracle、SQL Server、DB2、MySQL、PostgreSQL、DM 等…",
+    "tidb-incubator/tidis": "Tidis 是 TiKV 上的服务层，以 Rust 实现，提供兼容某内存数据库协议的分布式存储，支持多种数据类型与事务。",
+    "openeverest/provider-tidb": "OpenEverest的TiDB提供程序，将通用实例转为TiDB Operator资源，助用户在Kubernetes上部署TiDB。",
+    "ngclara07/tcm-explorer": "该项目基于Node.js与MySQL/TiDB，提供中药知识图谱查询，含搜索与仪表盘，供数据库使用者检索草药、成分、靶点及疾病关联。",
+    "tuxin-labs/trino-418-dameng": "该项目为Trino 418提供DM连接器，支持SQL查询、写入与谓词下推，便于用户联邦访问DM数据。",
+    "LibreChat-AI/rag-api": "基于PostgreSQL/pgvector的ID级RAG接口，支持文档索引与检索。",
+    "matrixorigin/matrixone": "MatrixOne 是兼容 MySQL 的 AI 原生 HTAP 数据库，支持 Git-for-Data 与向量检索，可为智能体提供数据与记忆支撑。",
+    "drawdb-io/drawdb": "drawDB 是浏览器端 ER 图编辑器，可绘制数据库结构并生成 SQL，支持 Oracle、PostgreSQL、MariaDB 等。",
+    "ww-1009/ob_agent": "基于FastAPI与Vue 3的对话式OceanBase运维助手，可检索OCP元数据、诊断慢SQL并流式返回结果。",
+    "Sajjad-rafiee/CareerOpportunityEngine": "该项目用PostgreSQL加pgvector存储职位数据，支持语义检索与资格信息提取，供数据库使用者查询分析。",
+    "Cyrax321/QwerySmith-1.0": "QwerySmith 是面向 PostgreSQL 的开源 text-to-SQL 模型，依据检索证据生成带可验证引用的 SQL 或拒答，并附训练评测工具。"
+  },
+  "three": {
+    "tidb-incubator/tidb-in-action": {
+      "what": "提供基于 TiDB 4.0 的原理与操作指南，以开源协作方式编写，帮助读者理解并使用 TiDB。",
+      "highlights": "基于 TiDB 4.0 编写、社区共同贡献、重实操轻原理、涵盖工具使用与实践。",
+      "scenarios": "适合学习 TiDB 基本原理与操作、查阅工具用法、参考部署与运维实践流程。"
+    },
+    "pgstack-io/BemiDB": {
+      "what": "将多数据源同步至对象存储，并以Postgres兼容引擎查询分析数据，替代传统数据集成与分析组合。",
+      "highlights": "列式压缩存储于S3、内置多源连接器、Postgres兼容查询引擎、单镜像无状态部署。",
+      "scenarios": "集中多源数据、用Postgres工具查询分析、运行复杂分析查询、归档历史数据。"
+    },
+    "LibreChat-AI/rag-api": {
+      "what": "提供基于文件ID的文档索引与检索API，将Langchain与FastAPI异步集成，使用PostgreSQL/pgvector存储向量，服务于按文件粒度的查询场景。",
+      "highlights": "按file_id组织嵌入、异步接口、基于令牌的属主范围校验、支持文档增删查与向量检索。",
+      "scenarios": "适合与LibreChat等应用集成，用于按文件ID管理知识库、结合文件元数据做定向检索，以及需要多租户属主隔离的RAG服务。"
+    }
+  }
+}

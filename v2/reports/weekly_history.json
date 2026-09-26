@@ -1,466 +1,532 @@
 {
- "entries": [
-  {
-   "date": "20260808",
-   "issue_no": 1,
-   "sections": {
-    "国外数据库": {
-     "active": [
-      {
-       "full_name": "drawdb-io/drawdb",
-       "growth": 213
-      },
-      {
-       "full_name": "grafana/grafana",
-       "growth": 60
-      },
-      {
-       "full_name": "warp-tech/warpgate",
-       "growth": 54
+  "entries": [
+    {
+      "date": "20260808",
+      "issue_no": 1,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "drawdb-io/drawdb",
+              "growth": 213
+            },
+            {
+              "full_name": "grafana/grafana",
+              "growth": 60
+            },
+            {
+              "full_name": "warp-tech/warpgate",
+              "growth": 54
+            }
+          ],
+          "focus": {
+            "full_name": "drawdb-io/drawdb",
+            "growth": 213
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "bytebase/bytebase",
+              "growth": 6
+            },
+            {
+              "full_name": "ClouGence/open-cdm",
+              "growth": 4
+            },
+            {
+              "full_name": "dotnetcore/FreeSql",
+              "growth": 3
+            }
+          ],
+          "focus": {
+            "full_name": "bytebase/bytebase",
+            "growth": 6
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "Canner/WrenAI",
+              "growth": 301
+            },
+            {
+              "full_name": "OtterMind/Chat2DB",
+              "growth": 202
+            },
+            {
+              "full_name": "sinaptik-ai/pandas-ai",
+              "growth": 39
+            }
+          ],
+          "focus": {
+            "full_name": "Canner/WrenAI",
+            "growth": 301
+          }
+        }
       }
-     ],
-     "focus": {
-      "full_name": "drawdb-io/drawdb",
-      "growth": 213
-     }
     },
-    "国产数据库": {
-     "active": [
-      {
-       "full_name": "bytebase/bytebase",
-       "growth": 6
-      },
-      {
-       "full_name": "ClouGence/open-cdm",
-       "growth": 4
-      },
-      {
-       "full_name": "dotnetcore/FreeSql",
-       "growth": 3
+    {
+      "date": "20260815",
+      "issue_no": 2,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "PostgREST/postgrest",
+              "growth": 27600
+            },
+            {
+              "full_name": "timescale/timescaledb",
+              "growth": 23333
+            },
+            {
+              "full_name": "neondatabase/neon",
+              "growth": 22861
+            }
+          ],
+          "focus": {
+            "full_name": "PostgREST/postgrest",
+            "growth": 27600
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "DotNetNext/SqlSugar",
+              "growth": 5828
+            },
+            {
+              "full_name": "bytebase/bytebase",
+              "growth": 23
+            },
+            {
+              "full_name": "ClouGence/open-cdm",
+              "growth": 17
+            }
+          ],
+          "focus": {
+            "full_name": "DotNetNext/SqlSugar",
+            "growth": 5828
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "t8y2/dbx",
+              "growth": 14806
+            },
+            {
+              "full_name": "prest/prest",
+              "growth": 4609
+            },
+            {
+              "full_name": "xyproto/algernon",
+              "growth": 3023
+            }
+          ],
+          "focus": {
+            "full_name": "t8y2/dbx",
+            "growth": 14806
+          }
+        }
       }
-     ],
-     "focus": {
-      "full_name": "bytebase/bytebase",
-      "growth": 6
-     }
     },
-    "AI工具": {
-     "active": [
-      {
-       "full_name": "Canner/WrenAI",
-       "growth": 301
-      },
-      {
-       "full_name": "OtterMind/Chat2DB",
-       "growth": 202
-      },
-      {
-       "full_name": "sinaptik-ai/pandas-ai",
-       "growth": 39
+    {
+      "date": "20260822",
+      "issue_no": 3,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "nfrastack/db-backup",
+              "growth": 1532
+            },
+            {
+              "full_name": "janbjorge/pgqueuer",
+              "growth": 1517
+            },
+            {
+              "full_name": "pgrundev/pgbot",
+              "growth": 571
+            }
+          ],
+          "focus": {
+            "full_name": "nfrastack/db-backup",
+            "growth": 1532
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "polardb/langchain-polardb-pg",
+              "growth": 10
+            },
+            {
+              "full_name": "tikv/client-go",
+              "growth": 6
+            },
+            {
+              "full_name": "sqlancer/sqlancer",
+              "growth": 5
+            }
+          ],
+          "focus": {
+            "full_name": "polardb/langchain-polardb-pg",
+            "growth": 10
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "Canner/WrenAI",
+              "growth": 85
+            },
+            {
+              "full_name": "TabularisDB/tabularis",
+              "growth": 76
+            },
+            {
+              "full_name": "OtterMind/Chat2DB",
+              "growth": 50
+            }
+          ],
+          "focus": {
+            "full_name": "TabularisDB/tabularis",
+            "growth": 76
+          }
+        }
       }
-     ],
-     "focus": {
-      "full_name": "Canner/WrenAI",
-      "growth": 301
-     }
+    },
+    {
+      "date": "20260829",
+      "issue_no": 4,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "BlinkTagInc/node-gtfs",
+              "growth": 503
+            },
+            {
+              "full_name": "databasus/databasus",
+              "growth": 381
+            },
+            {
+              "full_name": "AndrianBdn/oddk",
+              "growth": 238
+            }
+          ],
+          "focus": {
+            "full_name": "BlinkTagInc/node-gtfs",
+            "growth": 503
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "bytebase/bytebase",
+              "growth": 31
+            },
+            {
+              "full_name": "ClouGence/open-cdm",
+              "growth": 6
+            },
+            {
+              "full_name": "gaoyuan98/dameng_exporter",
+              "growth": 3
+            }
+          ],
+          "focus": {
+            "full_name": "bytebase/bytebase",
+            "growth": 31
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "t8y2/dbx",
+              "growth": 1085
+            },
+            {
+              "full_name": "egeominotti/bunqueue",
+              "growth": 540
+            },
+            {
+              "full_name": "TabularisDB/tabularis",
+              "growth": 217
+            }
+          ],
+          "focus": {
+            "full_name": "egeominotti/bunqueue",
+            "growth": 540
+          }
+        }
+      }
+    },
+    {
+      "date": "20260905",
+      "issue_no": 5,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "ClickHouse/ClickBench",
+              "growth": 1098
+            },
+            {
+              "full_name": "MariaDB/mariadb-docker",
+              "growth": 926
+            },
+            {
+              "full_name": "oracle/python-cx_Oracle",
+              "growth": 887
+            }
+          ],
+          "focus": {
+            "full_name": "ClickHouse/ClickBench",
+            "growth": 1098
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "suoten/dbbridge",
+              "growth": 10
+            },
+            {
+              "full_name": "DotNetNext/SqlSugar",
+              "growth": 4
+            },
+            {
+              "full_name": "tikv/raft-rs",
+              "growth": 4
+            }
+          ],
+          "focus": {
+            "full_name": "suoten/dbbridge",
+            "growth": 10
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "ClickHouse/mcp-clickhouse",
+              "growth": 866
+            },
+            {
+              "full_name": "oracle/mcp",
+              "growth": 434
+            },
+            {
+              "full_name": "MariaDB/mcp",
+              "growth": 200
+            }
+          ],
+          "focus": {
+            "full_name": "ClickHouse/mcp-clickhouse",
+            "growth": 866
+          }
+        }
+      }
+    },
+    {
+      "date": "20260912",
+      "issue_no": 6,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "veegres/ivory",
+              "growth": 269
+            },
+            {
+              "full_name": "pgrundev/pgterm",
+              "growth": 237
+            },
+            {
+              "full_name": "libredb/libredb-studio",
+              "growth": 234
+            }
+          ],
+          "focus": {
+            "full_name": "veegres/ivory",
+            "growth": 269
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "tikv/raft-rs",
+              "growth": 3
+            },
+            {
+              "full_name": "ClouGence/open-cdm",
+              "growth": 3
+            },
+            {
+              "full_name": "polardb/duckdb-paimon",
+              "growth": 3
+            }
+          ],
+          "focus": {
+            "full_name": "tikv/raft-rs",
+            "growth": 3
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "LucieEveille/kiwi-mem",
+              "growth": 292
+            },
+            {
+              "full_name": "turanmahmudov/masume",
+              "growth": 67
+            },
+            {
+              "full_name": "fj1981/dqex",
+              "growth": 48
+            }
+          ],
+          "focus": {
+            "full_name": "LucieEveille/kiwi-mem",
+            "growth": 292
+          }
+        }
+      }
+    },
+    {
+      "date": "20260919",
+      "issue_no": 7,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "pgrundev/pgbot",
+              "growth": 159
+            },
+            {
+              "full_name": "databasus/databasus",
+              "growth": 80
+            },
+            {
+              "full_name": "dbeaver/dbeaver",
+              "growth": 73
+            }
+          ],
+          "focus": {
+            "full_name": "pgrundev/pgbot",
+            "growth": 159
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "bytebase/bytebase",
+              "growth": 19
+            },
+            {
+              "full_name": "suoten/dbbridge",
+              "growth": 9
+            },
+            {
+              "full_name": "hanchuanchuan/goInception",
+              "growth": 3
+            }
+          ],
+          "focus": {
+            "full_name": "hanchuanchuan/goInception",
+            "growth": 3
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "tconbeer/harlequin",
+              "growth": 6404
+            },
+            {
+              "full_name": "t8y2/dbx",
+              "growth": 884
+            },
+            {
+              "full_name": "Canner/WrenAI",
+              "growth": 98
+            }
+          ],
+          "focus": {
+            "full_name": "tconbeer/harlequin",
+            "growth": 6404
+          }
+        }
+      }
+    },
+    {
+      "date": "20260926",
+      "issue_no": 8,
+      "sections": {
+        "国外数据库": {
+          "active": [
+            {
+              "full_name": "pgstack-io/BemiDB",
+              "growth": 1533
+            },
+            {
+              "full_name": "pgstack-io/bemi-io",
+              "growth": 402
+            },
+            {
+              "full_name": "grafana/grafana",
+              "growth": 107
+            }
+          ],
+          "focus": {
+            "full_name": "pgstack-io/BemiDB",
+            "growth": 1533
+          }
+        },
+        "国产数据库": {
+          "active": [
+            {
+              "full_name": "tidb-incubator/tidb-in-action",
+              "growth": 711
+            },
+            {
+              "full_name": "cyq1162/cyqdata",
+              "growth": 683
+            },
+            {
+              "full_name": "tidb-incubator/tidis",
+              "growth": 527
+            }
+          ],
+          "focus": {
+            "full_name": "tidb-incubator/tidb-in-action",
+            "growth": 711
+          }
+        },
+        "AI工具": {
+          "active": [
+            {
+              "full_name": "LibreChat-AI/rag-api",
+              "growth": 908
+            },
+            {
+              "full_name": "matrixorigin/matrixone",
+              "growth": 123
+            },
+            {
+              "full_name": "drawdb-io/drawdb",
+              "growth": 120
+            }
+          ],
+          "focus": {
+            "full_name": "LibreChat-AI/rag-api",
+            "growth": 908
+          }
+        }
+      }
     }
-   }
-  },
-  {
-   "date": "20260815",
-   "issue_no": 2,
-   "sections": {
-    "国外数据库": {
-     "active": [
-      {
-       "full_name": "PostgREST/postgrest",
-       "growth": 27600
-      },
-      {
-       "full_name": "timescale/timescaledb",
-       "growth": 23333
-      },
-      {
-       "full_name": "neondatabase/neon",
-       "growth": 22861
-      }
-     ],
-     "focus": {
-      "full_name": "PostgREST/postgrest",
-      "growth": 27600
-     }
-    },
-    "国产数据库": {
-     "active": [
-      {
-       "full_name": "DotNetNext/SqlSugar",
-       "growth": 5828
-      },
-      {
-       "full_name": "bytebase/bytebase",
-       "growth": 23
-      },
-      {
-       "full_name": "ClouGence/open-cdm",
-       "growth": 17
-      }
-     ],
-     "focus": {
-      "full_name": "DotNetNext/SqlSugar",
-      "growth": 5828
-     }
-    },
-    "AI工具": {
-     "active": [
-      {
-       "full_name": "t8y2/dbx",
-       "growth": 14806
-      },
-      {
-       "full_name": "prest/prest",
-       "growth": 4609
-      },
-      {
-       "full_name": "xyproto/algernon",
-       "growth": 3023
-      }
-     ],
-     "focus": {
-      "full_name": "t8y2/dbx",
-      "growth": 14806
-     }
-    }
-   }
-  },
-  {
-   "date": "20260822",
-   "issue_no": 3,
-   "sections": {
-    "国外数据库": {
-     "active": [
-      {
-       "full_name": "nfrastack/db-backup",
-       "growth": 1532
-      },
-      {
-       "full_name": "janbjorge/pgqueuer",
-       "growth": 1517
-      },
-      {
-       "full_name": "pgrundev/pgbot",
-       "growth": 571
-      }
-     ],
-     "focus": {
-      "full_name": "nfrastack/db-backup",
-      "growth": 1532
-     }
-    },
-    "国产数据库": {
-     "active": [
-      {
-       "full_name": "polardb/langchain-polardb-pg",
-       "growth": 10
-      },
-      {
-       "full_name": "tikv/client-go",
-       "growth": 6
-      },
-      {
-       "full_name": "sqlancer/sqlancer",
-       "growth": 5
-      }
-     ],
-     "focus": {
-      "full_name": "polardb/langchain-polardb-pg",
-      "growth": 10
-     }
-    },
-    "AI工具": {
-     "active": [
-      {
-       "full_name": "Canner/WrenAI",
-       "growth": 85
-      },
-      {
-       "full_name": "TabularisDB/tabularis",
-       "growth": 76
-      },
-      {
-       "full_name": "OtterMind/Chat2DB",
-       "growth": 50
-      }
-     ],
-     "focus": {
-      "full_name": "TabularisDB/tabularis",
-      "growth": 76
-     }
-    }
-   }
-  },
-  {
-   "date": "20260829",
-   "issue_no": 4,
-   "sections": {
-    "国外数据库": {
-     "active": [
-      {
-       "full_name": "BlinkTagInc/node-gtfs",
-       "growth": 503
-      },
-      {
-       "full_name": "databasus/databasus",
-       "growth": 381
-      },
-      {
-       "full_name": "AndrianBdn/oddk",
-       "growth": 238
-      }
-     ],
-     "focus": {
-      "full_name": "BlinkTagInc/node-gtfs",
-      "growth": 503
-     }
-    },
-    "国产数据库": {
-     "active": [
-      {
-       "full_name": "bytebase/bytebase",
-       "growth": 31
-      },
-      {
-       "full_name": "ClouGence/open-cdm",
-       "growth": 6
-      },
-      {
-       "full_name": "gaoyuan98/dameng_exporter",
-       "growth": 3
-      }
-     ],
-     "focus": {
-      "full_name": "bytebase/bytebase",
-      "growth": 31
-     }
-    },
-    "AI工具": {
-     "active": [
-      {
-       "full_name": "t8y2/dbx",
-       "growth": 1085
-      },
-      {
-       "full_name": "egeominotti/bunqueue",
-       "growth": 540
-      },
-      {
-       "full_name": "TabularisDB/tabularis",
-       "growth": 217
-      }
-     ],
-     "focus": {
-      "full_name": "egeominotti/bunqueue",
-      "growth": 540
-     }
-    }
-   }
-  },
-  {
-   "date": "20260905",
-   "issue_no": 5,
-   "sections": {
-    "国外数据库": {
-     "active": [
-      {
-       "full_name": "ClickHouse/ClickBench",
-       "growth": 1098
-      },
-      {
-       "full_name": "MariaDB/mariadb-docker",
-       "growth": 926
-      },
-      {
-       "full_name": "oracle/python-cx_Oracle",
-       "growth": 887
-      }
-     ],
-     "focus": {
-      "full_name": "ClickHouse/ClickBench",
-      "growth": 1098
-     }
-    },
-    "国产数据库": {
-     "active": [
-      {
-       "full_name": "suoten/dbbridge",
-       "growth": 10
-      },
-      {
-       "full_name": "DotNetNext/SqlSugar",
-       "growth": 4
-      },
-      {
-       "full_name": "tikv/raft-rs",
-       "growth": 4
-      }
-     ],
-     "focus": {
-      "full_name": "suoten/dbbridge",
-      "growth": 10
-     }
-    },
-    "AI工具": {
-     "active": [
-      {
-       "full_name": "ClickHouse/mcp-clickhouse",
-       "growth": 866
-      },
-      {
-       "full_name": "oracle/mcp",
-       "growth": 434
-      },
-      {
-       "full_name": "MariaDB/mcp",
-       "growth": 200
-      }
-     ],
-     "focus": {
-      "full_name": "ClickHouse/mcp-clickhouse",
-      "growth": 866
-     }
-    }
-   }
-  },
-  {
-   "date": "20260912",
-   "issue_no": 6,
-   "sections": {
-    "国外数据库": {
-     "active": [
-      {
-       "full_name": "veegres/ivory",
-       "growth": 269
-      },
-      {
-       "full_name": "pgrundev/pgterm",
-       "growth": 237
-      },
-      {
-       "full_name": "libredb/libredb-studio",
-       "growth": 234
-      }
-     ],
-     "focus": {
-      "full_name": "veegres/ivory",
-      "growth": 269
-     }
-    },
-    "国产数据库": {
-     "active": [
-      {
-       "full_name": "tikv/raft-rs",
-       "growth": 3
-      },
-      {
-       "full_name": "ClouGence/open-cdm",
-       "growth": 3
-      },
-      {
-       "full_name": "polardb/duckdb-paimon",
-       "growth": 3
-      }
-     ],
-     "focus": {
-      "full_name": "tikv/raft-rs",
-      "growth": 3
-     }
-    },
-    "AI工具": {
-     "active": [
-      {
-       "full_name": "LucieEveille/kiwi-mem",
-       "growth": 292
-      },
-      {
-       "full_name": "turanmahmudov/masume",
-       "growth": 67
-      },
-      {
-       "full_name": "fj1981/dqex",
-       "growth": 48
-      }
-     ],
-     "focus": {
-      "full_name": "LucieEveille/kiwi-mem",
-      "growth": 292
-     }
-    }
-   }
-  },
-  {
-   "date": "20260919",
-   "issue_no": 7,
-   "sections": {
-    "国外数据库": {
-     "active": [
-      {
-       "full_name": "pgrundev/pgbot",
-       "growth": 159
-      },
-      {
-       "full_name": "databasus/databasus",
-       "growth": 80
-      },
-      {
-       "full_name": "dbeaver/dbeaver",
-       "growth": 73
-      }
-     ],
-     "focus": {
-      "full_name": "pgrundev/pgbot",
-      "growth": 159
-     }
-    },
-    "国产数据库": {
-     "active": [
-      {
-       "full_name": "bytebase/bytebase",
-       "growth": 19
-      },
-      {
-       "full_name": "suoten/dbbridge",
-       "growth": 9
-      },
-      {
-       "full_name": "hanchuanchuan/goInception",
-       "growth": 3
-      }
-     ],
-     "focus": {
-      "full_name": "hanchuanchuan/goInception",
-      "growth": 3
-     }
-    },
-    "AI工具": {
-     "active": [
-      {
-       "full_name": "tconbeer/harlequin",
-       "growth": 6404
-      },
-      {
-       "full_name": "t8y2/dbx",
-       "growth": 884
-      },
-      {
-       "full_name": "Canner/WrenAI",
-       "growth": 98
-      }
-     ],
-     "focus": {
-      "full_name": "tconbeer/harlequin",
-      "growth": 6404
-     }
-    }
-   }
-  }
- ]
+  ]
 }

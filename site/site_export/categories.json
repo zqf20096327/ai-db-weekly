@@ -16174,5 +16174,11 @@
   "why": "SQL工作区，探索模式、编写运行SQL",
   "ev": "高",
   "when": "2026-09-25"
+ },
+ "VIJAYAPANDIANT/smart-resume-builder": {
+  "cat": "其他",
+  "why": "AI简历生成与ATS检查，非数据库工具",
+  "ev": "高",
+  "when": "2026-09-26"
  }
 }
