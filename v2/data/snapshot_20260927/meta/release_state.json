@@ -1,0 +1,5967 @@
+{
+  "date": "2026-09-27",
+  "count": 860,
+  "fetched_this_run": 860,
+  "by_repo": {
+    "grafana/grafana": {
+      "ver": "v13.2.2",
+      "pub": "2026-09-15",
+      "days": 12,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbeaver/dbeaver": {
+      "ver": "26.2.1",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 6,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "drawdb-io/drawdb": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "OtterMind/Chat2DB": {
+      "ver": "v5.4.0-beta.1",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 11,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "PostgREST/postgrest": {
+      "ver": "v16.4",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 10,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sinaptik-ai/pandas-ai": {
+      "ver": "v3.0.0",
+      "pub": "2025-10-07",
+      "days": 355,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "beekeeper-studio/beekeeper-studio": {
+      "ver": "v6.1.2",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "timescale/timescaledb": {
+      "ver": "2.30.1",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 7,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pubkey/rxdb": {
+      "ver": "17.5.0",
+      "pub": "2026-08-20",
+      "days": 38,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "neondatabase/neon": {
+      "ver": "release-proxy-8853",
+      "pub": "2025-07-29",
+      "days": 425,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "chartdb/chartdb": {
+      "ver": "v1.20.1",
+      "pub": "2026-04-07",
+      "days": 173,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "vitessio/vitess": {
+      "ver": "v24.0.3",
+      "pub": "2026-09-03",
+      "days": 24,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "apache/shardingsphere": {
+      "ver": "5.5.3",
+      "pub": "2026-02-28",
+      "days": 211,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "t8y2/dbx": {
+      "ver": "v0.6.25",
+      "pub": "2026-09-27",
+      "days": 0,
+      "n90": 11,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "knex/knex": {
+      "ver": "3.3.0",
+      "pub": "2026-06-26",
+      "days": 93,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "golang-migrate/migrate": {
+      "ver": "v4.20.1",
+      "pub": "2026-09-09",
+      "days": 18,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mysqljs/mysql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "sqlc-dev/sqlc": {
+      "ver": "v1.31.1",
+      "pub": "2026-04-22",
+      "days": 158,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Canner/WrenAI": {
+      "ver": "wren-v0.15.0",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "transact-rs/sqlx": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "electric-sql/pglite": {
+      "ver": "@electric-sql/pglite@0.5.8",
+      "pub": "2026-08-26",
+      "days": 32,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "go-sql-driver/mysql": {
+      "ver": "v1.10.1",
+      "pub": "2026-09-02",
+      "days": 25,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "bytebase/bytebase": {
+      "ver": "3.23.0",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 7,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "kysely-org/kysely": {
+      "ver": "v0.29.6",
+      "pub": "2026-09-16",
+      "days": 11,
+      "n90": 7,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "diesel-rs/diesel": {
+      "ver": "v2.3.13",
+      "pub": "2026-09-04",
+      "days": 23,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "geldata/gel": {
+      "ver": "v7.0",
+      "pub": "2025-11-05",
+      "days": 326,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "github/gh-ost": {
+      "ver": "v1.1.11",
+      "pub": "2026-08-17",
+      "days": 41,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbcli/pgcli": {
+      "ver": "v4.7.1",
+      "pub": "2026-09-20",
+      "days": 7,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "brianc/node-postgres": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "citusdata/citus": {
+      "ver": "v14.2.0",
+      "pub": "2026-08-06",
+      "days": 52,
+      "n90": 6,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ubicloud/ubicloud": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "manticoresoftware/manticoresearch": {
+      "ver": "release-29.9.0",
+      "pub": "2026-09-11",
+      "days": 16,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbcli/mycli": {
+      "ver": "v2.26.0",
+      "pub": "2026-09-26",
+      "days": 1,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pressly/goose": {
+      "ver": "v3.28.0",
+      "pub": "2026-09-02",
+      "days": 25,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "FerretDB/FerretDB": {
+      "ver": "v2.7.0",
+      "pub": "2025-11-10",
+      "days": 321,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xo/usql": {
+      "ver": "v0.21.6",
+      "pub": "2026-09-22",
+      "days": 5,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "flyway/flyway": {
+      "ver": "flyway-13.8.0",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 11,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "hyperdxio/hyperdx": {
+      "ver": "@hyperdx/otel-collector@2.39.1",
+      "pub": "2026-09-19",
+      "days": 8,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "doctrine/dbal": {
+      "ver": "4.5.0",
+      "pub": "2026-09-26",
+      "days": 1,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tobymao/sqlglot": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "sosedoff/pgweb": {
+      "ver": "v0.17.0",
+      "pub": "2025-11-22",
+      "days": 309,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "cloudnative-pg/cloudnative-pg": {
+      "ver": "v1.30.1",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "paradedb/paradedb": {
+      "ver": "v0.25.10",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mikro-orm/mikro-orm": {
+      "ver": "v7.2.1",
+      "pub": "2026-09-19",
+      "days": 8,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sequelpro/sequelpro": {
+      "ver": "release-1.1.2",
+      "pub": "2016-04-03",
+      "days": 3829,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "cookieY/Yearning": {
+      "ver": "v3.1.9.1",
+      "pub": "2024-11-10",
+      "days": 686,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "XiaoMi/soar": {
+      "ver": "0.11.0",
+      "pub": "2019-01-21",
+      "days": 2806,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "porsager/postgres": {
+      "ver": "v3.4.9",
+      "pub": "2026-04-05",
+      "days": 175,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "databasus/databasus": {
+      "ver": "v3.60.0",
+      "pub": "2026-09-22",
+      "days": 5,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "smartcontractkit/chainlink": {
+      "ver": "v2.65.0",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "MagicStack/asyncpg": {
+      "ver": "v0.31.0",
+      "pub": "2025-11-24",
+      "days": 307,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "warp-tech/warpgate": {
+      "ver": "v0.29.1",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "turbot/steampipe": {
+      "ver": "v2.4.7",
+      "pub": "2026-09-16",
+      "days": 11,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "phpmyadmin/phpmyadmin": {
+      "ver": "RELEASE_5_2_3",
+      "pub": "2025-10-08",
+      "days": 354,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "vrana/adminer": {
+      "ver": "v6.1.1",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 9,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "PyMySQL/PyMySQL": {
+      "ver": "v1.2.3",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "supabase/realtime": {
+      "ver": "v2.138.1",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Sequel-Ace/Sequel-Ace": {
+      "ver": "production/6.0.1-20114",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 9,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "amacneil/dbmate": {
+      "ver": "v2.36.0",
+      "pub": "2026-09-19",
+      "days": 8,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbgate/dbgate": {
+      "ver": "v7.3.1",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "hhyo/Archery": {
+      "ver": "v1.14.0",
+      "pub": "2026-03-07",
+      "days": 204,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "aarondl/sqlboiler": {
+      "ver": "v4.19.5",
+      "pub": "2025-06-27",
+      "days": 457,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "akopytov/sysbench": {
+      "ver": "1.0.20",
+      "pub": "2020-04-24",
+      "days": 2347,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jOOQ/jOOQ": {
+      "ver": "version-3.21.9",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 9,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xataio/pgroll": {
+      "ver": "v0.16.3",
+      "pub": "2026-09-08",
+      "days": 19,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dimitri/pgloader": {
+      "ver": "v3.6.9",
+      "pub": "2022-10-24",
+      "days": 1434,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "tconbeer/harlequin": {
+      "ver": "v2.15.0",
+      "pub": "2026-09-16",
+      "days": 11,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "flike/kingshard": {
+      "ver": "1.6",
+      "pub": "2018-06-07",
+      "days": 3034,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "MaterializeInc/materialize": {
+      "ver": "v26.43.0",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "bookshelf/bookshelf": {
+      "ver": "1.2.0",
+      "pub": "2020-06-07",
+      "days": 2303,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "HeidiSQL/HeidiSQL": {
+      "ver": "v12.21",
+      "pub": "2026-08-03",
+      "days": 55,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "outerbase/studio": {
+      "ver": "v0.10.2",
+      "pub": "2025-03-31",
+      "days": 545,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "JSQLParser/JSqlParser": {
+      "ver": "jsqlparser-5.4",
+      "pub": "2026-09-13",
+      "days": 14,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "TableProApp/TablePro": {
+      "ver": "v0.75.0",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sqlchat/sqlchat": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "DotNetNext/SqlSugar": {
+      "ver": "5.1.4.197",
+      "pub": "2025-07-06",
+      "days": 448,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "go-pg/pg": {
+      "ver": "v10.15.1",
+      "pub": "2026-05-29",
+      "days": 121,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pgdogdev/pgdog": {
+      "ver": "v0.1.60",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "achristmascarl/rainfrog": {
+      "ver": "v0.4.6",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 7,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "readysettech/readyset": {
+      "ver": "stable-260924",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "cube2222/octosql": {
+      "ver": "v0.13.0",
+      "pub": "2024-05-11",
+      "days": 869,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "zalando/postgres-operator": {
+      "ver": "v2.0.2",
+      "pub": "2026-08-20",
+      "days": 38,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "malisper/pgrust": {
+      "ver": "v0.3",
+      "pub": "2026-09-15",
+      "days": 12,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mathesar-foundation/mathesar": {
+      "ver": "0.12.0",
+      "pub": "2026-07-02",
+      "days": 87,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "TabularisDB/tabularis": {
+      "ver": "v0.25.0",
+      "pub": "2026-09-22",
+      "days": 5,
+      "n90": 12,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "uptrace/bun": {
+      "ver": "v1.2.18",
+      "pub": "2026-02-28",
+      "days": 211,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "catfan/Medoo": {
+      "ver": "v2.6.0",
+      "pub": "2026-08-22",
+      "days": 36,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "gajus/slonik": {
+      "ver": "slonik@49.10.10",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Maxteabag/sqlit": {
+      "ver": "v1.6.4",
+      "pub": "2026-09-05",
+      "days": 22,
+      "n90": 6,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "apache/age": {
+      "ver": "PG18/v1.8.0-rc0",
+      "pub": "2026-07-09",
+      "days": 80,
+      "n90": 2,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "sorintlab/stolon": {
+      "ver": "v0.17.0",
+      "pub": "2021-09-03",
+      "days": 1850,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pgcentralfoundation/pgrx": {
+      "ver": "v0.19.2",
+      "pub": "2026-07-30",
+      "days": 59,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "prest/prest": {
+      "ver": "v2.4.2",
+      "pub": "2026-08-11",
+      "days": 47,
+      "n90": 8,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nalgeon/redka": {
+      "ver": "v1.0.1",
+      "pub": "2026-02-04",
+      "days": 235,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "CrunchyData/postgres-operator": {
+      "ver": "v6.0.2",
+      "pub": "2026-06-02",
+      "days": 117,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "crate/crate": {
+      "ver": "6.4.5",
+      "pub": "2026-09-16",
+      "days": 11,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Qovery/Replibyte": {
+      "ver": "v0.10.0",
+      "pub": "2022-10-14",
+      "days": 1444,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pgbackrest/pgbackrest": {
+      "ver": "release/2.59.1",
+      "pub": "2026-08-17",
+      "days": 41,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dotnetcore/FreeSql": {
+      "ver": "v3.5.311",
+      "pub": "2026-07-31",
+      "days": 58,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "autobase-tech/autobase": {
+      "ver": "2.11.0",
+      "pub": "2026-09-06",
+      "days": 21,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sidorares/node-mysql2": {
+      "ver": "v3.24.4",
+      "pub": "2026-09-08",
+      "days": 19,
+      "n90": 11,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pgbouncer/pgbouncer": {
+      "ver": "pgbouncer_1_26_0",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "k1LoW/tbls": {
+      "ver": "v1.96.0",
+      "pub": "2026-09-03",
+      "days": 24,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "whoiskatrin/sql-translator": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "orioledb/orioledb": {
+      "ver": "beta18",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "aws/aws-sdk-pandas": {
+      "ver": "3.17.1",
+      "pub": "2026-08-03",
+      "days": 55,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "garylab/dnmp": {
+      "ver": "v3.0.0",
+      "pub": "2025-05-27",
+      "days": 488,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "darold/pgbadger": {
+      "ver": "v13.2",
+      "pub": "2025-12-29",
+      "days": 272,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "chartbrew/chartbrew": {
+      "ver": "v5.3.2",
+      "pub": "2026-09-20",
+      "days": 7,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "postgresml/pgcat": {
+      "ver": "pgcat-0.2.5",
+      "pub": "2024-11-11",
+      "days": 685,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "timescale/pg_textsearch": {
+      "ver": "v1.4.0",
+      "pub": "2026-08-18",
+      "days": 40,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "borisdj/EFCore.BulkExtensions": {
+      "ver": "8.1.2",
+      "pub": "2024-12-01",
+      "days": 665,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "HVF/franchise": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "timgit/pg-boss": {
+      "ver": "12.35.0",
+      "pub": "2026-09-26",
+      "days": 1,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "citusdata/pg_cron": {
+      "ver": "v1.6.8",
+      "pub": "2026-09-08",
+      "days": 19,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xo/dbtpl": {
+      "ver": "v1.0.2",
+      "pub": "2024-05-24",
+      "days": 856,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pgadmin-org/pgadmin4": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "go-jet/jet": {
+      "ver": "v2.16.0",
+      "pub": "2026-08-31",
+      "days": 27,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "zhblue/hustoj": {
+      "ver": "26.08.19",
+      "pub": "2026-08-19",
+      "days": 39,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mevdschee/php-crud-api": {
+      "ver": "v2.16.6",
+      "pub": "2026-08-28",
+      "days": 30,
+      "n90": 6,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "npgsql/npgsql": {
+      "ver": "v10.0.3",
+      "pub": "2026-05-27",
+      "days": 123,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "frectonz/sql-studio": {
+      "ver": "0.1.53",
+      "pub": "2026-08-26",
+      "days": 32,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "upper/db": {
+      "ver": "v4.10.0",
+      "pub": "2025-03-09",
+      "days": 567,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "psycopg/psycopg2": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "Dataherald/dataherald": {
+      "ver": "1.0.3",
+      "pub": "2024-04-30",
+      "days": 880,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "yandex/odyssey": {
+      "ver": "v1.5.2",
+      "pub": "2026-09-13",
+      "days": 14,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "scenic-views/scenic": {
+      "ver": "v1.4.0",
+      "pub": "2017-05-19",
+      "days": 3418,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dalibo/pev2": {
+      "ver": "v1.24.0",
+      "pub": "2026-09-10",
+      "days": 17,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nullptrlabs/pgmodeler": {
+      "ver": "v1.2.3",
+      "pub": "2026-02-06",
+      "days": 233,
+      "n90": 1,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "bytebase/dbhub": {
+      "ver": "v1.3.1",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "danfengcao/binlog2sql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "vitaly-t/pg-promise": {
+      "ver": "12.7.1",
+      "pub": "2026-08-20",
+      "days": 38,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "olahallengren/sql-server-maintenance-solution": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ankane/pgsync": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "wal-e/wal-e": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "liyupi/sql-generator": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tikv/raft-rs": {
+      "ver": "v0.7.0",
+      "pub": "2023-03-07",
+      "days": 1300,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sqlkata/querybuilder": {
+      "ver": "v4.0.1",
+      "pub": "2025-02-01",
+      "days": 603,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "supabase/pg_graphql": {
+      "ver": "v1.6.2",
+      "pub": "2026-08-26",
+      "days": 32,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/clickhouse-go": {
+      "ver": "v2.48.0",
+      "pub": "2026-08-04",
+      "days": 54,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "linq2db/linq2db": {
+      "ver": "v6.5.0",
+      "pub": "2026-09-11",
+      "days": 16,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "PeerDB-io/peerdb": {
+      "ver": "v0.37.10",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "adelsz/pgtyped": {
+      "ver": "v2.4.3",
+      "pub": "2025-03-15",
+      "days": 561,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "lakesoul-io/LakeSoul": {
+      "ver": "py-v2.0.0",
+      "pub": "2026-09-08",
+      "days": 19,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "EnterpriseDB/barman": {
+      "ver": "release/3.20.0",
+      "pub": "2026-08-27",
+      "days": 31,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "danvergara/dblab": {
+      "ver": "v0.51.0",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Wisser/Jailer": {
+      "ver": "v17.2.4",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 6,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jaredwray/keyv": {
+      "ver": "v6.0.0-rc.1",
+      "pub": "2026-08-03",
+      "days": 55,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sqldef/sqldef": {
+      "ver": "v3.11.24",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sqitchers/sqitch": {
+      "ver": "v1.6.1",
+      "pub": "2026-01-06",
+      "days": 264,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "apecloud/kubeblocks": {
+      "ver": "v1.1.0-beta.13",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "requery/requery": {
+      "ver": "1.6.0",
+      "pub": "2019-05-22",
+      "days": 2685,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "acl-dev/acl": {
+      "ver": "v3.6.8",
+      "pub": "2026-06-04",
+      "days": 115,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oceanbase/seekdb": {
+      "ver": "v1.4.0",
+      "pub": "2026-08-27",
+      "days": 31,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "djrobstep/migra": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "hydradatabase/columnar": {
+      "ver": "v1.1.2",
+      "pub": "2024-04-01",
+      "days": 909,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dalibo/pg_activity": {
+      "ver": "v3.6.2",
+      "pub": "2026-06-05",
+      "days": 114,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xyproto/algernon": {
+      "ver": "v1.17.11",
+      "pub": "2026-07-26",
+      "days": 63,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "PomeloFoundation/Pomelo.EntityFrameworkCore.MySql": {
+      "ver": "9.0.0",
+      "pub": "2025-08-17",
+      "days": 406,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "multiprocessio/datastation": {
+      "ver": "0.11.0",
+      "pub": "2022-05-26",
+      "days": 1585,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "teddysun/lamp": {
+      "ver": "20241215_2",
+      "pub": "2024-12-15",
+      "days": 651,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "chdb-io/chdb": {
+      "ver": "v4.4.0",
+      "pub": "2026-09-11",
+      "days": 16,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dataplat/dbatools": {
+      "ver": "v2.9.0",
+      "pub": "2026-09-16",
+      "days": 11,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "microsoft/pg_durable": {
+      "ver": "v0.2.8",
+      "pub": "2026-09-11",
+      "days": 16,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pgpartman/pg_partman": {
+      "ver": "v5.5.0",
+      "pub": "2026-07-22",
+      "days": 67,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "maxpert/marmot": {
+      "ver": "v2.9.16-beta",
+      "pub": "2026-09-02",
+      "days": 25,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "codedrinker/community": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "XiaoMi/Gaea": {
+      "ver": "v2.4.2",
+      "pub": "2024-09-20",
+      "days": 737,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Meituan-Dianping/Zebra": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "le0pard/pgtune": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "okbob/pspg": {
+      "ver": "5.8.16",
+      "pub": "2026-02-18",
+      "days": 221,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "aimeos/upscheme": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "devflowinc/trieve": {
+      "ver": "trieve-helm-0.2.2",
+      "pub": "2025-03-07",
+      "days": 569,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jfcoz/postgresqltuner": {
+      "ver": "1.0.1",
+      "pub": "2019-02-24",
+      "days": 2772,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "doug-martin/goqu": {
+      "ver": "v9.19.0",
+      "pub": "2023-11-21",
+      "days": 1041,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pipelinedb/pipelinedb": {
+      "ver": "1.0.0-13",
+      "pub": "2019-02-19",
+      "days": 2777,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dolthub/go-mysql-server": {
+      "ver": "v0.20.0",
+      "pub": "2025-05-13",
+      "days": 502,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "antares-sql/antares": {
+      "ver": "v0.7.35",
+      "pub": "2025-06-20",
+      "days": 464,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "multigres/multigres": {
+      "ver": "v0.1.0",
+      "pub": "2026-05-30",
+      "days": 120,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "eduardolat/pgbackweb": {
+      "ver": "v0.5.2",
+      "pub": "2026-08-28",
+      "days": 30,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "supabase/supabase-py": {
+      "ver": "v2.31.0",
+      "pub": "2026-06-04",
+      "days": 115,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Altinity/clickhouse-operator": {
+      "ver": "release-0.27.4",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sqlpage/SQLPage": {
+      "ver": "v0.46.3",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "PyMySQL/mysqlclient": {
+      "ver": "v2.3.0",
+      "pub": "2026-09-07",
+      "days": 20,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jarulraj/sqlcheck": {
+      "ver": "v1.3",
+      "pub": "2022-03-20",
+      "days": 1652,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "psycopg/psycopg": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "rbatis/rbatis": {
+      "ver": "v4.9.7",
+      "pub": "2026-07-29",
+      "days": 60,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "David-Crty/databasement": {
+      "ver": "v1.8.0",
+      "pub": "2026-09-19",
+      "days": 8,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "supabase/cli": {
+      "ver": "v2.118.0",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 12,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "julien-duponchelle/python-mysql-replication": {
+      "ver": "1.0.17",
+      "pub": "2026-08-06",
+      "days": 52,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "graphile/worker": {
+      "ver": "v0.18.0",
+      "pub": "2026-09-08",
+      "days": 19,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "spiritLHLS/Oracle-server-keep-alive-script": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oracle/node-oracledb": {
+      "ver": "v7.0.1",
+      "pub": "2026-07-15",
+      "days": 74,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "supabase/etl": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ben-nour/SQL-tips-and-tricks": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "supabase/supavisor": {
+      "ver": "v2.9.13",
+      "pub": "2026-09-10",
+      "days": 17,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "timeplus-io/proton": {
+      "ver": "v3.0.31",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "postgis/postgis": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "sequinstream/sequin": {
+      "ver": "v0.14.6",
+      "pub": "2026-02-18",
+      "days": 221,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "azimuttapp/azimutt": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "noborus/trdsql": {
+      "ver": "v1.2.3",
+      "pub": "2026-05-29",
+      "days": 121,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "zio/zio-quill": {
+      "ver": "v4.8.6",
+      "pub": "2025-07-17",
+      "days": 437,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dolthub/doltgresql": {
+      "ver": "v1.3.3",
+      "pub": "2026-09-15",
+      "days": 12,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "EvgSkv/logica": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "brokercap/Bifrost": {
+      "ver": "v2.4.5-beta",
+      "pub": "2025-10-19",
+      "days": 343,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "trickstercache/trickster": {
+      "ver": "v2.1.0",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "toddwschneider/nyc-taxi-data": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "alash3al/sqler": {
+      "ver": "v2.2",
+      "pub": "2019-11-21",
+      "days": 2502,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "plv8/plv8": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "matrixorigin/matrixone": {
+      "ver": "v4.2.4",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "eosphoros-ai/DB-GPT-Hub": {
+      "ver": "v0.3.0",
+      "pub": "2023-12-08",
+      "days": 1024,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Mooncake-Labs/pg_mooncake": {
+      "ver": "v0.1.2",
+      "pub": "2025-02-12",
+      "days": 592,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "piccolo-orm/piccolo": {
+      "ver": "1.36.0",
+      "pub": "2026-07-27",
+      "days": 62,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "enhancedformysql/The-Art-of-Problem-Solving-in-Software-Engineering_How-to-Make-MySQL-Better": {
+      "ver": "book-release-v4",
+      "pub": "2025-04-23",
+      "days": 522,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "gaitco/quran-database": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "eveningkid/denodb": {
+      "ver": "v1.4.0",
+      "pub": "2023-03-09",
+      "days": 1298,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Syngnat/GoNavi": {
+      "ver": "v1.0.0",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 12,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "40t/go-sniffer": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "aio-libs/aiomysql": {
+      "ver": "v0.3.2",
+      "pub": "2025-10-22",
+      "days": 340,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "microsoft/mssql-docker": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "arkdb/inception": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "nisshi-io/nisshi": {
+      "ver": "v0.7.0-pre.2",
+      "pub": "2026-07-31",
+      "days": 58,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "zalando/spilo": {
+      "ver": "3.0-p1",
+      "pub": "2023-03-10",
+      "days": 1297,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "fabianlindfors/reshape": {
+      "ver": "v0.11.2",
+      "pub": "2026-09-09",
+      "days": 18,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/grpc-rs": {
+      "ver": "v0.13.0",
+      "pub": "2023-10-07",
+      "days": 1086,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "timescale/pg-aiguide": {
+      "ver": "v0.6.1",
+      "pub": "2026-09-04",
+      "days": 23,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "npgsql/efcore.pg": {
+      "ver": "v10.0.3",
+      "pub": "2026-09-14",
+      "days": 13,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "NikolayS/PgQue": {
+      "ver": "v0.2.0",
+      "pub": "2026-05-25",
+      "days": 125,
+      "n90": 1,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "ptyadana/SQL-Data-Analysis-and-Visualization-Projects": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "supervc-stack/VectorChord": {
+      "ver": "1.1.1",
+      "pub": "2026-02-28",
+      "days": 211,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "radondb/radon": {
+      "ver": "v1.1.4",
+      "pub": "2021-02-01",
+      "days": 2064,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "stephenafamo/bob": {
+      "ver": "v0.50.0",
+      "pub": "2026-08-11",
+      "days": 47,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "citusdata/cstore_fdw": {
+      "ver": "v1.7.0",
+      "pub": "2020-02-18",
+      "days": 2413,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Portabase/portabase": {
+      "ver": "1.30.2",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "julien040/anyquery": {
+      "ver": "0.5.0",
+      "pub": "2026-08-05",
+      "days": 53,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "GreenmaskIO/greenmask": {
+      "ver": "v0.2.23",
+      "pub": "2026-08-22",
+      "days": 36,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nanoninja/docker-nginx-php-mysql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "mtxr/vscode-sqltools": {
+      "ver": "v0.28.6",
+      "pub": "2026-07-06",
+      "days": 83,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "SeaQL/sea-query": {
+      "ver": "1.0.2",
+      "pub": "2026-08-12",
+      "days": 46,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "louislivi/SMProxy": {
+      "ver": "v1.3.1",
+      "pub": "2020-01-11",
+      "days": 2451,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sqlancer/sqlancer": {
+      "ver": "v2.0.0",
+      "pub": "2022-01-12",
+      "days": 1719,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "hanchuanchuan/goInception": {
+      "ver": "v1.3.0",
+      "pub": "2022-06-12",
+      "days": 1568,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Giorgi/EntityFramework.Exceptions": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pgjdbc/pgjdbc": {
+      "ver": "REL42.7.13",
+      "pub": "2026-07-06",
+      "days": 83,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "MyCATApache/Mycat2": {
+      "ver": "v1.22-2022-6-25",
+      "pub": "2022-06-25",
+      "days": 1555,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "huandu/go-sqlbuilder": {
+      "ver": "v1.43.0",
+      "pub": "2026-08-21",
+      "days": 37,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "HypoPG/hypopg": {
+      "ver": "1.4.3",
+      "pub": "2026-06-19",
+      "days": 100,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "EnterpriseDB/repmgr": {
+      "ver": "v5.5.0+debpgdg",
+      "pub": "2024-12-19",
+      "days": 647,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "x-ream/sqli": {
+      "ver": "2.1.10",
+      "pub": "2024-05-29",
+      "days": 851,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pgaudit/pgaudit": {
+      "ver": "18.0",
+      "pub": "2025-09-24",
+      "days": 368,
+      "n90": 1,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "backup-manager/backup-manager": {
+      "ver": "3.1.0",
+      "pub": "2022-07-05",
+      "days": 1545,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "metrico/gigapipe": {
+      "ver": "v5.5.2",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "supabase/index_advisor": {
+      "ver": "v0.2.0",
+      "pub": "2024-04-03",
+      "days": 907,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "palkan/logidze": {
+      "ver": "v1.3.0",
+      "pub": "2024-01-09",
+      "days": 992,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "polardb/polardbx-sql": {
+      "ver": "polardbx-sql-5.4.21-20260918_17897218",
+      "pub": "2026-09-20",
+      "days": 7,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "osm2pgsql-dev/osm2pgsql": {
+      "ver": "2.3.1",
+      "pub": "2026-07-05",
+      "days": 84,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "typelevel/skunk": {
+      "ver": "v1.0.0",
+      "pub": "2026-04-15",
+      "days": 165,
+      "n90": 3,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "FrigadeHQ/trench": {
+      "ver": "trench-js@0.0.17",
+      "pub": "2024-12-04",
+      "days": 662,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/pprof-rs": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "Altinity/clickhouse-backup": {
+      "ver": "v2.8.1",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "clickvisual/clickvisual": {
+      "ver": "v1.1.2",
+      "pub": "2026-09-03",
+      "days": 24,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Paxa/postbird": {
+      "ver": "0.8.4",
+      "pub": "2019-11-20",
+      "days": 2503,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ariacom/Seal-Report": {
+      "ver": "v10.1",
+      "pub": "2026-09-16",
+      "days": 11,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "lesovsky/pgcenter": {
+      "ver": "v0.11.0",
+      "pub": "2026-06-22",
+      "days": 97,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pixeltable/pixeltable": {
+      "ver": "v0.7.11",
+      "pub": "2026-09-26",
+      "days": 1,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mgartner/pg_flame": {
+      "ver": "v1.2",
+      "pub": "2020-01-13",
+      "days": 2449,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "SOCI/soci": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ClickHouse/clickhouse-java": {
+      "ver": "v0.9.9",
+      "pub": "2026-08-25",
+      "days": 33,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "apache/gluten": {
+      "ver": "v1.7.0",
+      "pub": "2026-08-26",
+      "days": 32,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "stefangabos/world_countries": {
+      "ver": "3.3.0",
+      "pub": "2025-11-05",
+      "days": 326,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbos-inc/dbos-transact-py": {
+      "ver": "3.1.0",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 9,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Casecommons/pg_search": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "jly8866/archer": {
+      "ver": "v2.0.1",
+      "pub": "2018-05-03",
+      "days": 3069,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xormplus/xorm": {
+      "ver": "v1.0.1.0430",
+      "pub": "2020-04-30",
+      "days": 2341,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "garrylachman/ElectroCRUD": {
+      "ver": "v3.0.19",
+      "pub": "2023-06-05",
+      "days": 1210,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "pgstack-io/BemiDB": {
+      "ver": "v1.8.0",
+      "pub": "2026-01-07",
+      "days": 263,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "janbjorge/pgqueuer": {
+      "ver": "v1.4.0",
+      "pub": "2026-09-14",
+      "days": 13,
+      "n90": 7,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "gobuffalo/pop": {
+      "ver": "v6.4.1",
+      "pub": "2026-09-16",
+      "days": 11,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "yulichang/mybatis-plus-join": {
+      "ver": "v1.5.7",
+      "pub": "2026-04-16",
+      "days": 164,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "georgysavva/scany": {
+      "ver": "v2.1.4",
+      "pub": "2025-03-19",
+      "days": 557,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "skaiworldwide-oss/agensgraph": {
+      "ver": "v2.17.0",
+      "pub": "2026-06-19",
+      "days": 100,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "actiontech/sqle": {
+      "ver": "untagged-8c92bf7deddc25b5b200",
+      "pub": "2026-09-03",
+      "days": 24,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mysql-net/MySqlConnector": {
+      "ver": "2.6.2",
+      "pub": "2026-08-11",
+      "days": 47,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "yehongzhi/learningSummary": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "salsita/node-pg-migrate": {
+      "ver": "v9.0.0",
+      "pub": "2026-07-17",
+      "days": 72,
+      "n90": 5,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "ContentSquare/chproxy": {
+      "ver": "v1.30.0",
+      "pub": "2025-09-10",
+      "days": 382,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "myide/see": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pg-sharding/spqr": {
+      "ver": "3.1.0",
+      "pub": "2026-08-28",
+      "days": 30,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "datazip-inc/olake": {
+      "ver": "v0.11.0",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "wannabespace/conar": {
+      "ver": "v0.32.0",
+      "pub": "2026-06-26",
+      "days": 93,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "yongman/tidis": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pingcap/parser": {
+      "ver": "v5.2.0-alpha",
+      "pub": "2021-06-07",
+      "days": 1938,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "wx-chevalier/Database-Notes": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "aio-libs/aiopg": {
+      "ver": "v1.4.0",
+      "pub": "2022-10-27",
+      "days": 1431,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "yahoo/mysql_perf_analyzer": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ongres/stackgres": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "Aiven-Open/pghoard": {
+      "ver": "2.8.0",
+      "pub": "2026-07-30",
+      "days": 59,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "toluaina/pgsync": {
+      "ver": "7.3.0",
+      "pub": "2026-08-13",
+      "days": 45,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbcli/mssql-cli": {
+      "ver": "1.0",
+      "pub": "2020-05-01",
+      "days": 2340,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "apache/cloudberry": {
+      "ver": "2.1.0-incubating",
+      "pub": "2026-04-15",
+      "days": 165,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "distributedio/titan": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "cybertec-postgresql/pg_timetable": {
+      "ver": "v7.1.0",
+      "pub": "2026-08-24",
+      "days": 34,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jawj/zapatos": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "quarylabs/sqruff": {
+      "ver": "v0.40.0",
+      "pub": "2026-08-14",
+      "days": 44,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "procrastinate-org/procrastinate": {
+      "ver": "3.10.0",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "designcomputer/mysql_mcp_server": {
+      "ver": "v0.4.4",
+      "pub": "2026-07-30",
+      "days": 59,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "hapostgres/pg_auto_failover": {
+      "ver": "v2.2",
+      "pub": "2025-04-03",
+      "days": 542,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "skeema/skeema": {
+      "ver": "v1.14.1",
+      "pub": "2026-07-23",
+      "days": 66,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "event-driven-io/Pongo": {
+      "ver": "0.16.11",
+      "pub": "2026-02-10",
+      "days": 229,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbos-inc/dbos-transact-ts": {
+      "ver": "v5.1",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 7,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Dataojitori/nocturne_memory": {
+      "ver": "2.5.6",
+      "pub": "2026-08-09",
+      "days": 49,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jtv/libpqxx": {
+      "ver": "8.0.2",
+      "pub": "2026-07-18",
+      "days": 71,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "reactive-tech/kubegres": {
+      "ver": "v1.19",
+      "pub": "2025-01-04",
+      "days": 631,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "walkccc/LeetCode": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pingcap/tidb-operator": {
+      "ver": "v1.6.6",
+      "pub": "2026-08-12",
+      "days": 46,
+      "n90": 10,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "pgrundev/pgbot": {
+      "ver": "v0.8.1",
+      "pub": "2026-09-06",
+      "days": 21,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "k8gege/K8CScan": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "mymarilyn/clickhouse-driver": {
+      "ver": "0.2.11",
+      "pub": "2026-07-17",
+      "days": 72,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "khezen/compose-postgres": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "NikolayS/postgres_dba": {
+      "ver": "7.0",
+      "pub": "2026-02-10",
+      "days": 229,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "maxpou/docker-symfony": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ifsnop/mysqldump-php": {
+      "ver": "v2.13",
+      "pub": "2026-08-25",
+      "days": 33,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "docs4dev/docs4dev": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "scalikejdbc/scalikejdbc": {
+      "ver": "4.3.5",
+      "pub": "2025-08-16",
+      "days": 407,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "zerodha/dungbeetle": {
+      "ver": "v2.0.1",
+      "pub": "2024-04-10",
+      "days": 900,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "supabase/postgres-meta": {
+      "ver": "v0.99.0",
+      "pub": "2026-08-31",
+      "days": 27,
+      "n90": 6,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pawurb/rails-pg-extras": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "session-replay-tools/cetus": {
+      "ver": "v2.4.0",
+      "pub": "2023-04-25",
+      "days": 1251,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "2ndQuadrant/pglogical": {
+      "ver": "REL2_4_8",
+      "pub": "2026-07-28",
+      "days": 61,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "baidu/BaikalDB": {
+      "ver": "v5.0.0",
+      "pub": "2026-06-15",
+      "days": 104,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "1340691923/ElasticView": {
+      "ver": "v0.0.37",
+      "pub": "2025-09-04",
+      "days": 388,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "alash3al/redix": {
+      "ver": "v5.2.0",
+      "pub": "2022-09-17",
+      "days": 1471,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "superlinear-ai/raglite": {
+      "ver": "v1.1.1",
+      "pub": "2026-05-18",
+      "days": 132,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "charles-001/dolphie": {
+      "ver": "6.18.0",
+      "pub": "2026-09-15",
+      "days": 12,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sbdchd/squawk": {
+      "ver": "v2.66.0",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 7,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xataio/pgstream": {
+      "ver": "v1.5.0",
+      "pub": "2026-09-10",
+      "days": 17,
+      "n90": 12,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "pgautoupgrade/docker-pgautoupgrade": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tikv/rust-prometheus": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "spatie/db-dumper": {
+      "ver": "4.1.1",
+      "pub": "2026-05-04",
+      "days": 146,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "commanded/eventstore": {
+      "ver": "v1.4.8",
+      "pub": "2025-03-06",
+      "days": 570,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "gohouse/gorose": {
+      "ver": "v2.1.8",
+      "pub": "2020-07-27",
+      "days": 2253,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/pd": {
+      "ver": "v7.5.8",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "HariSekhon/Nagios-Plugins": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oceanbase/powercontext": {
+      "ver": "powercontext-v1.1.0",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 10,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "cornucopia-rs/cornucopia": {
+      "ver": "cornucopia-v1.0.1",
+      "pub": "2026-08-14",
+      "days": 44,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dotnetcore/SmartSql": {
+      "ver": "v4.2.0",
+      "pub": "2026-05-14",
+      "days": 136,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "protonemedia/laravel-cross-eloquent-search": {
+      "ver": "3.7.0",
+      "pub": "2026-02-23",
+      "days": 216,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "geerlingguy/ansible-role-mysql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "paunin/PostDock": {
+      "ver": "1.15",
+      "pub": "2019-10-27",
+      "days": 2527,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "TencentCloudBase/CloudBase-AI-Toolkit": {
+      "ver": "v2.34.6",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ridgepole/ridgepole": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "actiontech/dble": {
+      "ver": "3.23.08.0/tag",
+      "pub": "2023-11-02",
+      "days": 1060,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Archmonger/django-dbbackup": {
+      "ver": "5.3.1",
+      "pub": "2026-09-10",
+      "days": 17,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "rapidloop/pgmetrics": {
+      "ver": "v1.19.1",
+      "pub": "2026-09-04",
+      "days": 23,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/ClickBench": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pgjdbc/r2dbc-postgresql": {
+      "ver": "v1.1.3.RELEASE",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "aquametalabs/aquameta": {
+      "ver": "v0.4.2",
+      "pub": "2025-06-04",
+      "days": 480,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "timestored/qstudio": {
+      "ver": "5.01",
+      "pub": "2025-12-06",
+      "days": 295,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "datawhalechina/wonderful-sql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "bitpoke/mysql-operator": {
+      "ver": "v0.6.3",
+      "pub": "2023-05-22",
+      "days": 1224,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/clickhouse-presentations": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tortoise/aerich": {
+      "ver": "v0.10.1",
+      "pub": "2026-08-24",
+      "days": 34,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "stripe/sync-engine": {
+      "ver": "v0.48.5",
+      "pub": "2026-03-26",
+      "days": 185,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Neeky/mysqltools": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "niledatabase/niledatabase": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "xataio/xata": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "IvorySQL/IvorySQL": {
+      "ver": "IvorySQL_5.6",
+      "pub": "2026-09-18",
+      "days": 9,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "SweetIQ/schemats": {
+      "ver": "v3.0.3",
+      "pub": "2018-02-14",
+      "days": 3147,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "devlive-community/datacap": {
+      "ver": "2025.1.1",
+      "pub": "2025-07-28",
+      "days": 426,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pgplex/pgschema": {
+      "ver": "v1.13.1",
+      "pub": "2026-09-20",
+      "days": 7,
+      "n90": 8,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "liyupi/yu-picture": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "shayonj/pg_easy_replicate": {
+      "ver": "v0.4.0",
+      "pub": "2025-10-27",
+      "days": 335,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "CrunchyData/crunchy-containers": {
+      "ver": "v4.7.2",
+      "pub": "2021-08-13",
+      "days": 1871,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "woooowen/iBooks": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "mysql/mysql-connector-j": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "sidequestjs/sidequest": {
+      "ver": "v1.16.5",
+      "pub": "2026-09-22",
+      "days": 5,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mariadb-operator/mariadb-operator": {
+      "ver": "26.10.1",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 8,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mysql/mysql-workbench": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "1N3/PrivEsc": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "sijms/go-ora": {
+      "ver": "v3.0.1",
+      "pub": "2026-07-24",
+      "days": 65,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "totumonline/totum-mit": {
+      "ver": "7.17.63.0",
+      "pub": "2025-06-12",
+      "days": 472,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Mimetis/Dotmim.Sync": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "zeromicro/cds": {
+      "ver": "v1.1.0",
+      "pub": "2022-03-21",
+      "days": 1651,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "rails-sqlserver/activerecord-sqlserver-adapter": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "textacular/textacular": {
+      "ver": "v5.5.1",
+      "pub": "2022-01-09",
+      "days": 1722,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mysql/mysql-connector-python": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "djc/bb8": {
+      "ver": "bb8-redis-0.26.0",
+      "pub": "2025-12-09",
+      "days": 292,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle-samples/db-sample-schemas": {
+      "ver": "v23.3",
+      "pub": "2023-04-18",
+      "days": 1258,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mysql/mysql-operator": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "rgeo/activerecord-postgis-adapter": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ANXS/postgresql": {
+      "ver": "v1.17.0",
+      "pub": "2025-03-17",
+      "days": 559,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "flant/loghouse": {
+      "ver": "v0.3.1",
+      "pub": "2020-03-27",
+      "days": 2375,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "aermin/ghChat": {
+      "ver": "v2.5",
+      "pub": "2020-02-19",
+      "days": 2412,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "MariaDB/mariadb-docker": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "envms/fluentpdo": {
+      "ver": "v2.2.4",
+      "pub": "2022-01-27",
+      "days": 1704,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "chinnonsantos/sql-paises-estados-cidades": {
+      "ver": "v.1.1.0",
+      "pub": "2016-04-29",
+      "days": 3803,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "eclipse-vertx/vertx-sql-client": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "LibreChat-AI/rag-api": {
+      "ver": "v0.9.0",
+      "pub": "2026-07-31",
+      "days": 58,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "lecaillon/Evolve": {
+      "ver": "3.2.0",
+      "pub": "2023-06-30",
+      "days": 1185,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "mr-karan/logchef": {
+      "ver": "v2.1.0",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 9,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "MariaDB4j/MariaDB4j": {
+      "ver": "mariaDB4j-3.3.1",
+      "pub": "2026-01-02",
+      "days": 268,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xoraus/CrackingTheSQLInterview": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tikv/agatedb": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "lanterndata/lantern": {
+      "ver": "v0.5.0",
+      "pub": "2024-11-15",
+      "days": 681,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "flike/kingbus": {
+      "ver": "0.8.0",
+      "pub": "2018-12-30",
+      "days": 2828,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/tispark": {
+      "ver": "v2.5.3",
+      "pub": "2024-11-18",
+      "days": 678,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "libredb/libredb-studio": {
+      "ver": "0.17.0",
+      "pub": "2026-09-26",
+      "days": 1,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Deodat-Lawson/LaunchStack": {
+      "ver": "v1.0.0",
+      "pub": "2026-04-20",
+      "days": 160,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "supabase/wrappers": {
+      "ver": "v0.6.3",
+      "pub": "2026-09-11",
+      "days": 16,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/python-cx_Oracle": {
+      "ver": "8.3.0",
+      "pub": "2021-11-04",
+      "days": 1788,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "houko/SpringBootUnity": {
+      "ver": "v2020.2",
+      "pub": "2020-10-09",
+      "days": 2179,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "macbre/sql-metadata": {
+      "ver": "v3.0.1",
+      "pub": "2026-06-30",
+      "days": 89,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/mcp-clickhouse": {
+      "ver": "v0.7.0",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jumpmindinc/symmetric-ds": {
+      "ver": "3.18.1",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 9,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "yajra/laravel-oci8": {
+      "ver": "v13.14.0",
+      "pub": "2026-09-15",
+      "days": 12,
+      "n90": 10,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/terraform-provider-oci": {
+      "ver": "v9.3.0",
+      "pub": "2026-09-24",
+      "days": 3,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ged/ruby-pg": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "amutu/zhparser": {
+      "ver": "v2.3",
+      "pub": "2025-01-24",
+      "days": 611,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ezSQL/ezsql": {
+      "ver": "5.1.3",
+      "pub": "2026-04-02",
+      "days": 178,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "anse1/sqlsmith": {
+      "ver": "v1.5",
+      "pub": "2026-05-15",
+      "days": 135,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/skills": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "src-d/go-kallax": {
+      "ver": "v1.3.5",
+      "pub": "2018-06-07",
+      "days": 3034,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "smi2/phpClickHouse": {
+      "ver": "1.26.925",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "serenedb/serenedb": {
+      "ver": "v26.09.1.2",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mrkamel/search_cop": {
+      "ver": "v1.4.0",
+      "pub": "2024-05-30",
+      "days": 850,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "frectonz/pglite-fusion": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "philippgille/gokv": {
+      "ver": "release/v0.7.0",
+      "pub": "2024-01-28",
+      "days": 973,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "amatsuda/database_rewinder": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "Thomas-George-T/HackerRank-SQL-Challenges-Solutions": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "sjjian/openhare": {
+      "ver": "0.13.0",
+      "pub": "2026-08-09",
+      "days": 49,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "AltimateAI/altimate-code": {
+      "ver": "v0.12.3",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "allaboutapps/integresql": {
+      "ver": "v1.1.0",
+      "pub": "2024-01-30",
+      "days": 971,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "grimzy/laravel-mysql-spatial": {
+      "ver": "5.0.0",
+      "pub": "2020-10-17",
+      "days": 2171,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sunng87/pgwire": {
+      "ver": "v0.41.0",
+      "pub": "2026-09-05",
+      "days": 22,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "sasha-alias/sqltabs": {
+      "ver": "v1.1.0",
+      "pub": "2020-05-03",
+      "days": 2338,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "NetSPI/SQLInjectionWiki": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "lesovsky/noisia": {
+      "ver": "v0.4.0",
+      "pub": "2026-07-14",
+      "days": 75,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "postgrespro/pg_probackup": {
+      "ver": "2.5.16",
+      "pub": "2025-12-09",
+      "days": 292,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "TPC-Council/HammerDB": {
+      "ver": "v6.0",
+      "pub": "2026-06-26",
+      "days": 93,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "datawan-labs/pg": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "hidu/mysql-schema-sync": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "team-ide/teamide": {
+      "ver": "v2.6.38",
+      "pub": "2025-09-26",
+      "days": 366,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "rin-nas/postgresql-patterns-library": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "Urunov/SpringBoot-Projects-FullStack": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "okbob/plpgsql_check": {
+      "ver": "v2.10.11",
+      "pub": "2026-09-27",
+      "days": 0,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dromara/easy-query": {
+      "ver": "3.2.14",
+      "pub": "2026-08-05",
+      "days": 53,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pgagroal/pgagroal": {
+      "ver": "2.1.0",
+      "pub": "2026-04-29",
+      "days": 151,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Altinity/clickhouse-grafana": {
+      "ver": "v3.5.0",
+      "pub": "2026-08-05",
+      "days": 53,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dalibo/temboard": {
+      "ver": "v10.0.0",
+      "pub": "2025-12-08",
+      "days": 293,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "vran-dev/databasir": {
+      "ver": "1.0.8",
+      "pub": "2025-12-02",
+      "days": 299,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nearform/temporal_tables": {
+      "ver": "v1.2.1",
+      "pub": "2025-09-09",
+      "days": 383,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "anthonydb/practical-sql-2": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "SectorLabs/django-postgres-extra": {
+      "ver": "v2.0.9",
+      "pub": "2025-07-11",
+      "days": 443,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "adithyakhamithkar/ansible-playbooks": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "Osedea/nodock": {
+      "ver": "v1.2.0",
+      "pub": "2018-03-01",
+      "days": 3132,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "fatkodima/online_migrations": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "kishan0725/Hospital-Management-System": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tikv/minitrace-rust": {
+      "ver": "v0.6.2",
+      "pub": "2023-11-02",
+      "days": 1060,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mrts/docker-postgresql-multiple-databases": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "DBDiff/DBDiff": {
+      "ver": "v3.0.0-rc.12",
+      "pub": "2026-09-15",
+      "days": 12,
+      "n90": 10,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "signal18/replication-manager": {
+      "ver": "v3.1.42",
+      "pub": "2026-09-18",
+      "days": 9,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tanelpoder/tpt-oracle": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "lazzyfu/goInsight": {
+      "ver": "v2.1.0",
+      "pub": "2026-03-04",
+      "days": 207,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "SaiUpadhyayula/spring-reddit-clone": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "opentable/otj-pg-embedded": {
+      "ver": "otj-pg-embedded-1.1.3",
+      "pub": "2026-09-16",
+      "days": 11,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "iamtelescope/telescope": {
+      "ver": "v0.0.27",
+      "pub": "2026-05-08",
+      "days": 142,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tidb-incubator/tidb-in-action": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "mysql/mysql-connector-cpp": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "runreveal/pql": {
+      "ver": "v0.2.0",
+      "pub": "2025-01-02",
+      "days": 633,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "radondb/xenon": {
+      "ver": "v1.1.4",
+      "pub": "2021-02-01",
+      "days": 2064,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "MaksymBilenko/docker-oracle-12c": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "anthonydb/practical-sql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "github/github-ds": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "cybertec-postgresql/pg_squeeze": {
+      "ver": "REL1_9_4",
+      "pub": "2026-07-29",
+      "days": 60,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "blackbeam/rust-mysql-simple": {
+      "ver": "v28.0.2",
+      "pub": "2026-09-01",
+      "days": 26,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Giorgi/EFCore.Visualizer": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "CrunchyData/pg_parquet": {
+      "ver": "v0.5.1",
+      "pub": "2025-10-01",
+      "days": 361,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dolyw/ShiroJwt": {
+      "ver": "v2.0",
+      "pub": "2020-01-14",
+      "days": 2448,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nim4/DBShield": {
+      "ver": "1.0.0-beta4",
+      "pub": "2016-11-07",
+      "days": 3611,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "cyq1162/cyqdata": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "fsprojects/Rezoom.SQL": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oracle/oci-cli": {
+      "ver": "v3.94.0",
+      "pub": "2026-09-22",
+      "days": 5,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nullobject/rein": {
+      "ver": "v5.1.0",
+      "pub": "2020-01-08",
+      "days": 2454,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "IsNemoEqualTrue/monitor-table-change-with-sqltabledependency": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "sunkaifei/FlyCms": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "geerlingguy/ansible-role-postgresql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "denodrivers/postgres": {
+      "ver": "v0.19.5",
+      "pub": "2025-04-24",
+      "days": 521,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "zhongyu09/openchatbi": {
+      "ver": "v0.3.0",
+      "pub": "2026-05-30",
+      "days": 120,
+      "n90": 1,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "afair/postgresql_cursor": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "brianluft/sqlnotebook": {
+      "ver": "v2.0.0",
+      "pub": "2025-06-09",
+      "days": 475,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "vrmiguel/pgpad": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "sastraxi/pgsh": {
+      "ver": "v0.12.1",
+      "pub": "2022-03-13",
+      "days": 1659,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "JacobLinCool/d1-manager": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "AmbitionEng/django-pgtrigger": {
+      "ver": "4.17.0",
+      "pub": "2025-12-04",
+      "days": 297,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "veloxbase/veloxdb": {
+      "ver": "v0.4.0",
+      "pub": "2026-09-07",
+      "days": 20,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/raft-engine": {
+      "ver": "0.4.2",
+      "pub": "2024-04-26",
+      "days": 884,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "J1ong/FilmSys": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "haskell-beam/beam": {
+      "ver": "v0.11.1.0",
+      "pub": "2026-05-13",
+      "days": 137,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ForbesLindesay/atdatabases": {
+      "ver": "@databases/sql-commenter@1.0.0",
+      "pub": "2026-08-19",
+      "days": 39,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "andywer/pg-listen": {
+      "ver": "v1.7.0",
+      "pub": "2020-12-19",
+      "days": 2108,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "PostHog/HouseWatch": {
+      "ver": "housewatch-0.1.9",
+      "pub": "2024-06-04",
+      "days": 845,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "MobilityDB/MobilityDB": {
+      "ver": "v1.3.0",
+      "pub": "2026-05-01",
+      "days": 149,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "kviklet/kviklet": {
+      "ver": "0.9.0",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "fsprojects/SQLProvider": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "utPLSQL/utPLSQL": {
+      "ver": "v.3.2.3",
+      "pub": "2026-07-10",
+      "days": 79,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "f1db/f1db": {
+      "ver": "v2026.15.0",
+      "pub": "2026-09-26",
+      "days": 1,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "thorsten/phpMyFAQ": {
+      "ver": "4.1-nightly-2026-09-27",
+      "pub": "2026-09-27",
+      "days": 0,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "shayonj/pg-osc": {
+      "ver": "v0.9.10",
+      "pub": "2024-10-13",
+      "days": 714,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "davidesantangelo/dato.rss": {
+      "ver": "0.1",
+      "pub": "2021-02-19",
+      "days": 2046,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "0voice/newsql_nosql_library": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "michelp/pgsodium": {
+      "ver": "v3.1.11",
+      "pub": "2026-06-10",
+      "days": 109,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "DataflareApp/dataflare": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "impossibl/pgjdbc-ng": {
+      "ver": "v0.8.9",
+      "pub": "2021-05-25",
+      "days": 1951,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "yoosuf/Messenger": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "alantech/iasql": {
+      "ver": "v0.1.9",
+      "pub": "2023-04-11",
+      "days": 1265,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "apecloud/ape-dts": {
+      "ver": "v2.0.26",
+      "pub": "2026-08-03",
+      "days": 55,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "bucardo/check_postgres": {
+      "ver": "2.26.0",
+      "pub": "2023-04-03",
+      "days": 1273,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "godror/godror": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "domainmod/domainmod": {
+      "ver": "v4.23.0",
+      "pub": "2025-01-04",
+      "days": 631,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "free/sql_exporter": {
+      "ver": "0.5",
+      "pub": "2019-01-14",
+      "days": 2813,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pashagolub/pgxmock": {
+      "ver": "v5.2.0",
+      "pub": "2026-09-11",
+      "days": 16,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ning1022/SQLInjectionWiki": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "dotnetcore/CanalSharp": {
+      "ver": "v1.2.0",
+      "pub": "2023-02-27",
+      "days": 1308,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oceanbase/odc": {
+      "ver": "v4.3.4_bp2",
+      "pub": "2025-06-06",
+      "days": 478,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "apecloud/myduckserver": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ScientaNL/DoctrineJsonFunctions": {
+      "ver": "6.5.0",
+      "pub": "2026-03-10",
+      "days": 201,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "percona/pg_stat_monitor": {
+      "ver": "2.4.0",
+      "pub": "2026-09-08",
+      "days": 19,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "burningalchemist/sql_exporter": {
+      "ver": "0.24.8",
+      "pub": "2026-09-02",
+      "days": 25,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "postgrespro/pg_pathman": {
+      "ver": "1.5.12",
+      "pub": "2020-11-08",
+      "days": 2149,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "adamchainz/django-mysql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "jkkummerfeld/text2sql-data": {
+      "ver": "4.0",
+      "pub": "2019-11-19",
+      "days": 2504,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xataio/pgzx": {
+      "ver": "v0.3.0",
+      "pub": "2025-03-13",
+      "days": 563,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tokio-rs/rdbc": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "l1xnan/duckling": {
+      "ver": "v0.59.2",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "egeominotti/bunqueue": {
+      "ver": "v2.9.5",
+      "pub": "2026-09-09",
+      "days": 18,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "postgrespro/zson": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "evilmartians/evil-seed": {
+      "ver": "v0.7.0",
+      "pub": "2025-02-07",
+      "days": 597,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "amirsanni/Mini-Inventory-and-Sales-Management-System": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ClickHouse/clickhouse-rs": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "actiontech/dtle": {
+      "ver": "v4.23.04.3",
+      "pub": "2023-08-17",
+      "days": 1137,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nikita-volkov/hasql": {
+      "ver": "v2.0.1.0",
+      "pub": "2026-08-12",
+      "days": 46,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "leosussan/fastapi-gino-arq-uvicorn": {
+      "ver": "v0.5.0",
+      "pub": "2020-05-13",
+      "days": 2328,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "morenoh149/postgresDBSamples": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "stackrender/stackrender": {
+      "ver": "v1.4.0",
+      "pub": "2026-06-10",
+      "days": 109,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "neondatabase/serverless": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "kedarvj/mysqldumpsplitter": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "jackc/pglogrepl": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "orafce/orafce": {
+      "ver": "VERSION_4_16_12",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "subnetmarco/pgmcp": {
+      "ver": "v0.3.0",
+      "pub": "2025-09-25",
+      "days": 367,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/agent-skills": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "housepower/ClickHouse-Native-JDBC": {
+      "ver": "v2.8.0",
+      "pub": "2025-06-22",
+      "days": 462,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "myminwang/myblog": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "thecodemonkey86/qt_mysql_driver": {
+      "ver": "qmysql_6.11.2",
+      "pub": "2026-08-19",
+      "days": 39,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/oraclejet": {
+      "ver": "21.0.0",
+      "pub": "2026-08-17",
+      "days": 41,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "randoneering/pgFirstAid": {
+      "ver": "v2.2.3",
+      "pub": "2026-09-10",
+      "days": 17,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "housepower/clickhouse_sinker": {
+      "ver": "v3.2.0",
+      "pub": "2025-03-31",
+      "days": 545,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbfixtures/pytest-postgresql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "wangziqi2013/BwTree": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "rkrage/pg_party": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "GordonHong/dokit": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tidb-incubator/tidis": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "grillazz/fastapi-sqlalchemy-asyncpg": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ClickHouse/clickhouse-connect": {
+      "ver": "v1.9.0",
+      "pub": "2026-09-22",
+      "days": 5,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "halvardssm/deno-nessie": {
+      "ver": "2.0.11",
+      "pub": "2023-09-24",
+      "days": 1099,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbkangaroo/kangaroo": {
+      "ver": "v9.8.1.906",
+      "pub": "2026-09-05",
+      "days": 22,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "abbasudo/laravel-purity": {
+      "ver": "v3.3.9",
+      "pub": "2026-03-25",
+      "days": 186,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/titan": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "nikepan/clickhouse-bulk": {
+      "ver": "v1.4.2",
+      "pub": "2026-08-25",
+      "days": 33,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "slicebit/qb": {
+      "ver": "0.2",
+      "pub": "2016-07-08",
+      "days": 3733,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "geek-fun/sqlkit": {
+      "ver": "v0.8.8",
+      "pub": "2026-09-09",
+      "days": 18,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Azure-Samples/rag-postgres-openai-python": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "BlinkTagInc/node-gtfs": {
+      "ver": "4.21.0",
+      "pub": "2026-08-23",
+      "days": 35,
+      "n90": 7,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "joncrlsn/pgdiff": {
+      "ver": "v0.9.2",
+      "pub": "2016-03-02",
+      "days": 3861,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "erikdarlingdata/PerformanceMonitor": {
+      "ver": "v3.8.0",
+      "pub": "2026-09-18",
+      "days": 9,
+      "n90": 10,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "ossc-db/pg_rman": {
+      "ver": "V1.3.19",
+      "pub": "2026-01-13",
+      "days": 257,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "starcwang/canal_mysql_elasticsearch_sync": {
+      "ver": "1.0.5",
+      "pub": "2019-07-04",
+      "days": 2642,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "alextanhongpin/database-design": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "glassflow/clickhouse-etl": {
+      "ver": "v3.2.0",
+      "pub": "2026-05-22",
+      "days": 128,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "justwatchcom/sql_exporter": {
+      "ver": "v0.8",
+      "pub": "2025-06-16",
+      "days": 468,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jet/equinox": {
+      "ver": "4.1.4",
+      "pub": "2026-09-22",
+      "days": 5,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "osalvador/ReplicaDB": {
+      "ver": "v1.0.2",
+      "pub": "2026-09-15",
+      "days": 12,
+      "n90": 6,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dibi/dibi": {
+      "ver": "v5.1.1",
+      "pub": "2026-02-22",
+      "days": 217,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "postgrespro/aqo": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "marcingminski/sqlwatch": {
+      "ver": "4.11",
+      "pub": "2025-09-26",
+      "days": 366,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dxxzst/OfflineMap": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "blastrain/vitess-sqlparser": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ossc-db/pg_bulkload": {
+      "ver": "VERSION3_1_23",
+      "pub": "2026-01-13",
+      "days": 257,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "bobbyiliev/introduction-to-sql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pgr0ss/pgledger": {
+      "ver": "v0.7.0",
+      "pub": "2025-12-03",
+      "days": 298,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "bvisible/mcp-ssh-manager": {
+      "ver": "v3.8.5",
+      "pub": "2026-08-28",
+      "days": 30,
+      "n90": 11,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "gnormal/gnorm": {
+      "ver": "v1.1.1",
+      "pub": "2020-12-10",
+      "days": 2117,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "daydreamdev/seconds-kill": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "Ff00ff/mammoth": {
+      "ver": "v1.0.0-rc.7",
+      "pub": "2020-10-12",
+      "days": 2176,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "phpmyadmin/sql-parser": {
+      "ver": "6.0.0",
+      "pub": "2025-10-31",
+      "days": 331,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dataplat/dbachecks": {
+      "ver": "v3.0.2",
+      "pub": "2025-03-10",
+      "days": 566,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "housepower/ckman": {
+      "ver": "v4.0.0",
+      "pub": "2026-05-22",
+      "days": 128,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "schemalex/schemalex": {
+      "ver": "v0.1.1",
+      "pub": "2019-11-21",
+      "days": 2502,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xzkostyan/clickhouse-sqlalchemy": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "3dcitydb/3dcitydb": {
+      "ver": "v5.1.4",
+      "pub": "2026-08-25",
+      "days": 33,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "priyank-purohit/PostGUI": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "raramuridesign/mysql-country-list": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "jeessy2/backup-x": {
+      "ver": "v2.9.0",
+      "pub": "2025-10-23",
+      "days": 339,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "valderman/selda": {
+      "ver": "0.5.2.1",
+      "pub": "2025-12-25",
+      "days": 276,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "TeslaFly01/SmartSqlT": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "c9s/maghead": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "kaspermarstal/plprql": {
+      "ver": "v18.0.2",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mbucc/shmig": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "techouse/sqlite3-to-mysql": {
+      "ver": "v2.6.1",
+      "pub": "2026-09-20",
+      "days": 7,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "TheKingOfDuck/MySQLMonitor": {
+      "ver": "1.0",
+      "pub": "2020-10-08",
+      "days": 2180,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dirkaholic/vagrant-php-dev-box": {
+      "ver": "v1.4.1",
+      "pub": "2017-05-05",
+      "days": 3432,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/oci-python-sdk": {
+      "ver": "v2.187.0",
+      "pub": "2026-09-22",
+      "days": 5,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "9tigerio/db2rest": {
+      "ver": "1.6.8",
+      "pub": "2025-12-21",
+      "days": 280,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ihippik/wal-listener": {
+      "ver": "v2.11.0",
+      "pub": "2026-04-22",
+      "days": 158,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/coherence": {
+      "ver": "15.1.1-0-5",
+      "pub": "2026-09-15",
+      "days": 12,
+      "n90": 10,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "hibernate/hibernate-reactive": {
+      "ver": "4.5.8",
+      "pub": "2026-09-27",
+      "days": 0,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/tiup": {
+      "ver": "v1.17.1",
+      "pub": "2026-09-08",
+      "days": 19,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ronknight/InventorySystem": {
+      "ver": "v1",
+      "pub": "2024-07-22",
+      "days": 797,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "siamon123/warehouse-inventory-system": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pingcap/tiflow": {
+      "ver": "v8.5.8",
+      "pub": "2026-08-27",
+      "days": 31,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "premAI-io/premsql": {
+      "ver": "0.2.1",
+      "pub": "2024-11-13",
+      "days": 683,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/adsb.exposed": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pljson/pljson": {
+      "ver": "v3.7.1",
+      "pub": "2024-03-06",
+      "days": 935,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "martin-georgiev/postgresql-for-doctrine": {
+      "ver": "v4.8.1",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "joereynolds/sql-lint": {
+      "ver": "v1.0.1",
+      "pub": "2025-05-30",
+      "days": 485,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "hangfire-postgres/Hangfire.PostgreSql": {
+      "ver": "1.21.1",
+      "pub": "2026-02-11",
+      "days": 228,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "cloudquery/pg_gpt": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "amalshaji/dbcooper": {
+      "ver": "v0.0.69",
+      "pub": "2026-09-03",
+      "days": 24,
+      "n90": 12,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "auraphp/Aura.SqlQuery": {
+      "ver": "3.0.0",
+      "pub": "2023-04-25",
+      "days": 1251,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "lqs/sqlingo": {
+      "ver": "v0.13.0",
+      "pub": "2024-07-23",
+      "days": 796,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/python-oracledb": {
+      "ver": "v26.0.1",
+      "pub": "2026-09-22",
+      "days": 5,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "theseus-rs/rsql": {
+      "ver": "v0.20.0",
+      "pub": "2026-07-26",
+      "days": 63,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "walkable-server/walkable": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "epgsql/epgsql": {
+      "ver": "4.8.0",
+      "pub": "2025-06-06",
+      "days": 478,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/mcp": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "alicfeng/mysql_markdown": {
+      "ver": "1.0.6",
+      "pub": "2022-11-11",
+      "days": 1416,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "the4thdoctor/pg_chameleon": {
+      "ver": "v2.0.21",
+      "pub": "2025-01-21",
+      "days": 614,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "supabase/dbdev": {
+      "ver": "v0.1.7",
+      "pub": "2026-04-22",
+      "days": 158,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mailru/go-clickhouse": {
+      "ver": "v2.5.1",
+      "pub": "2026-01-18",
+      "days": 252,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "yuzd/AntData.ORM": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "leafo/pgmoon": {
+      "ver": "v1.18.0",
+      "pub": "2026-08-11",
+      "days": 47,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tds-fdw/tds_fdw": {
+      "ver": "v2.0.5",
+      "pub": "2025-09-18",
+      "days": 374,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "fboulnois/pg_uuidv7": {
+      "ver": "v1.7.0",
+      "pub": "2025-10-13",
+      "days": 349,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "wasmerio/wasmer-postgres": {
+      "ver": "0.1.0",
+      "pub": "2019-08-30",
+      "days": 2585,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/ch-go": {
+      "ver": "v0.74.0",
+      "pub": "2026-07-30",
+      "days": 59,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "rdagumampan/yuniql": {
+      "ver": "v1.3.15",
+      "pub": "2022-05-25",
+      "days": 1586,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "vapor/postgres-nio": {
+      "ver": "1.33.1",
+      "pub": "2026-07-20",
+      "days": 69,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "CrunchyData/crunchy-proxy": {
+      "ver": "v1.0.0beta",
+      "pub": "2017-07-17",
+      "days": 3359,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/client-rust": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pgq/pgq": {
+      "ver": "v3.5.2",
+      "pub": "2026-07-09",
+      "days": 80,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "VADOSWARE/pg_idkit": {
+      "ver": "v0.4.0",
+      "pub": "2025-10-28",
+      "days": 334,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "imdrasil/jennifer.cr": {
+      "ver": "v0.13.0",
+      "pub": "2023-06-05",
+      "days": 1210,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nilportugues/php-sql-query-builder": {
+      "ver": "1.8.0",
+      "pub": "2020-04-07",
+      "days": 2364,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "HaloTech-Co-Ltd/openHalo": {
+      "ver": "v1.0-beta1",
+      "pub": "2025-07-09",
+      "days": 445,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "melin/superior-sql-parser": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "moigagoo/norm": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "Giorgi/LINQPad.QueryPlanVisualizer": {
+      "ver": "v2.1.0",
+      "pub": "2021-06-21",
+      "days": 1924,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "AlexanderConnelly/BrainTree_SQL_Coding_Challenge_Data_Analyst": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "mysqljs/sqlstring": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "itinycheng/flink-connector-clickhouse": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pgMemento/pgMemento": {
+      "ver": "v0.7.4",
+      "pub": "2022-10-31",
+      "days": 1427,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "alitrack/duckdb_fdw": {
+      "ver": "v1.3.2",
+      "pub": "2025-08-29",
+      "days": 394,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "aws/pg_tle": {
+      "ver": "v1.5.2",
+      "pub": "2025-10-01",
+      "days": 361,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "viascom/nanoid-postgres": {
+      "ver": "3.0.0",
+      "pub": "2026-07-20",
+      "days": 69,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "DataDog/pg_tracing": {
+      "ver": "v0.1.3",
+      "pub": "2025-03-24",
+      "days": 552,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "epam/Indigo": {
+      "ver": "indigo-1.46.0",
+      "pub": "2026-08-24",
+      "days": 34,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Dzoukr/Dapper.FSharp": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "devlive-community/dbm": {
+      "ver": "1.23.0",
+      "pub": "2022-09-17",
+      "days": 1471,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pganalyze/collector": {
+      "ver": "v0.74.0",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/clickhouse_exporter": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "manjeshpv/node-express-passport-mysql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "lelit/pglast": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pgstack-io/bemi-io": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ClouGence/open-cdm": {
+      "ver": "v4.2.2",
+      "pub": "2026-09-04",
+      "days": 23,
+      "n90": 12,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "eulerto/pgquarrel": {
+      "ver": "pgquarrel_0_7_0",
+      "pub": "2020-02-26",
+      "days": 2405,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "theseus-rs/postgresql-embedded": {
+      "ver": "v0.21.0",
+      "pub": "2026-07-19",
+      "days": 70,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "craigmichaelmartin/pure-orm": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "akarki15/dbdot": {
+      "ver": "v0.2",
+      "pub": "2020-05-24",
+      "days": 2317,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "DTStack/dt-sql-parser": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "DigitalChinaOpenSource/TiDB-for-PostgreSQL": {
+      "ver": "TiDB4PG_v4.0.11",
+      "pub": "2022-02-21",
+      "days": 1679,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jin06/binlogo": {
+      "ver": "v2.0.6-alpha",
+      "pub": "2025-03-05",
+      "days": 571,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "apache/age-viewer": {
+      "ver": "v1.0.0-rc2",
+      "pub": "2022-02-07",
+      "days": 1693,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "gigapi/gigapi": {
+      "ver": "v2.0.44",
+      "pub": "2025-08-01",
+      "days": 422,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/pingcap.github.io": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "long2ice/asyncmy": {
+      "ver": "v0.2.15",
+      "pub": "2026-09-21",
+      "days": 6,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nilenso/postgresql-monitoring": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "kingluo/pgcat": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "joist-orm/joist-orm": {
+      "ver": "v2.3.0",
+      "pub": "2026-06-30",
+      "days": 89,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "postgis/h3-pg": {
+      "ver": "v4.5.0",
+      "pub": "2026-06-08",
+      "days": 111,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "percona/percona-postgresql-operator": {
+      "ver": "v3.1.0",
+      "pub": "2026-09-09",
+      "days": 18,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dsccommunity/SqlServerDsc": {
+      "ver": "v17.5.1",
+      "pub": "2026-02-05",
+      "days": 234,
+      "n90": 2,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "executeautomation/mcp-database-server": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "long2ice/meilisync": {
+      "ver": "0.1.3",
+      "pub": "2024-02-13",
+      "days": 957,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "nevill/zongji": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "bersler/OpenLogReplicator": {
+      "ver": "v2.0.0",
+      "pub": "2026-07-19",
+      "days": 70,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/clickhouse-cpp": {
+      "ver": "v2.6.2",
+      "pub": "2026-06-10",
+      "days": 109,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "malthe/pq": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ivi-ru/flink-clickhouse-sink": {
+      "ver": "v1.4.0",
+      "pub": "2023-05-08",
+      "days": 1238,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "WebwareForPython/DBUtils": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "morphismtech/squeal": {
+      "ver": "0.9.2.0",
+      "pub": "2024-12-26",
+      "days": 640,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/fail-rs": {
+      "ver": "v0.5.1",
+      "pub": "2022-10-08",
+      "days": 1450,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "edwinkys/oasysdb": {
+      "ver": "v0.7.3",
+      "pub": "2024-08-07",
+      "days": 781,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "amphp/mysql": {
+      "ver": "v3.1.1",
+      "pub": "2026-05-16",
+      "days": 134,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "rabbitLove520/WinWnmp": {
+      "ver": "1.9",
+      "pub": "2016-11-01",
+      "days": 3617,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Altinity/clickhouse-mysql-data-reader": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "mysql-otp/mysql-otp": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "felixge/sqlbench": {
+      "ver": "v1.1.0",
+      "pub": "2020-09-29",
+      "days": 2189,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jcavat/docker-lamp": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "supabase/pg_net": {
+      "ver": "v0.20.5",
+      "pub": "2026-07-09",
+      "days": 80,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "radondb/radondb-mysql-kubernetes": {
+      "ver": "v3.0.1",
+      "pub": "2024-11-07",
+      "days": 689,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "DataSystemsLab/recdb-postgresql": {
+      "ver": "v1.1",
+      "pub": "2017-03-27",
+      "days": 3471,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "agoodway/walex": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oracle/migrate-to-ol": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "bibendi/activerecord-postgres_enum": {
+      "ver": "v2.1.0",
+      "pub": "2024-06-13",
+      "days": 836,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "psqlpy-python/psqlpy": {
+      "ver": "0.12.1",
+      "pub": "2026-06-28",
+      "days": 91,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClickHouse/dbt-clickhouse": {
+      "ver": "v1.10.3",
+      "pub": "2026-09-15",
+      "days": 12,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/client-go": {
+      "ver": "v2.0.7",
+      "pub": "2023-04-14",
+      "days": 1262,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "uber/storagetapper": {
+      "ver": "v1.1.0-beta",
+      "pub": "2020-04-06",
+      "days": 2365,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "overextended/oxmysql": {
+      "ver": "v2.14.1",
+      "pub": "2026-05-04",
+      "days": 146,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "gohouse/converter": {
+      "ver": "v0.0.3",
+      "pub": "2018-11-21",
+      "days": 2867,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/linux-uek": {
+      "ver": "v2.6.39-400.298.3",
+      "pub": "2018-03-07",
+      "days": 3126,
+      "n90": 0,
+      "pre": true,
+      "ts": "20260927"
+    },
+    "a1phanumeric/PHP-MySQL-Class": {
+      "ver": "2.4",
+      "pub": "2025-01-17",
+      "days": 618,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "long2ice/synch": {
+      "ver": "v0.7.2",
+      "pub": "2021-09-18",
+      "days": 1835,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mla/pg_sample": {
+      "ver": "1.17",
+      "pub": "2024-03-03",
+      "days": 938,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "erdemcer/kafka-connect-oracle": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "bagashiz/go-pos": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "sethreno/schemazen": {
+      "ver": "1.4",
+      "pub": "2020-03-06",
+      "days": 2396,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "aplus-framework/database": {
+      "ver": "v4.3.1",
+      "pub": "2025-12-18",
+      "days": 283,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Crecto/crecto": {
+      "ver": "v0.14.0",
+      "pub": "2025-10-10",
+      "days": 352,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dbcodeio/public": {
+      "ver": "v1.38.7",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "garethflowers/postgresql-portable": {
+      "ver": "v10.4.1",
+      "pub": "2018-06-24",
+      "days": 3017,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ClusterLabs/PAF": {
+      "ver": "v2.3.0",
+      "pub": "2020-03-09",
+      "days": 2393,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oguimbal/pgsql-ast-parser": {
+      "ver": "11.1.0",
+      "pub": "2023-06-05",
+      "days": 1210,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "systemsdk/docker-nginx-php-laravel": {
+      "ver": "v5.1.0",
+      "pub": "2026-07-27",
+      "days": 62,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Altinity/clickhouse-sink-connector": {
+      "ver": "2.10.3",
+      "pub": "2026-08-31",
+      "days": 27,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "elliotchance/vsql": {
+      "ver": "v0.30.3",
+      "pub": "2024-12-31",
+      "days": 635,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "CreditEaseDBA/Themis": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "forgeekscn/domt": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "19-84/redd-archiver": {
+      "ver": "v1.1.0",
+      "pub": "2026-06-14",
+      "days": 105,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "r-dbi/RPostgres": {
+      "ver": "v1.4.10",
+      "pub": "2026-02-18",
+      "days": 221,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "krowinski/php-mysql-replication": {
+      "ver": "v11.1.0",
+      "pub": "2026-07-21",
+      "days": 68,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "powa-team/pg_qualstats": {
+      "ver": "2.1.4",
+      "pub": "2026-06-20",
+      "days": 99,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "suharev7/clickhouse-rs": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "PomZWJ/database-export": {
+      "ver": "6.0.0",
+      "pub": "2026-07-25",
+      "days": 64,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Zaid-Ajaj/Npgsql.FSharp": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oelmekki/pgrebase": {
+      "ver": "1.2.0",
+      "pub": "2023-07-03",
+      "days": 1182,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "vrogier/ocilib": {
+      "ver": "v4.9.0",
+      "pub": "2026-05-19",
+      "days": 131,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Skyfay/DBackup": {
+      "ver": "v3.4.0",
+      "pub": "2026-09-16",
+      "days": 11,
+      "n90": 11,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "babelfish-for-postgresql/babelfish_extensions": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "TonicAI/condenser": {
+      "ver": "v2",
+      "pub": "2019-07-24",
+      "days": 2622,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "WeihanLi/DbTool": {
+      "ver": "4.0.0",
+      "pub": "2025-12-21",
+      "days": 280,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mysql/mysql-connector-net": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "wsporto/typesql": {
+      "ver": "v0.24.0",
+      "pub": "2026-05-25",
+      "days": 125,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mpgn/Padding-oracle-attack": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "WebDB-App/app": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ClickHouse/clickhouse-js": {
+      "ver": "client-web-1.23.1",
+      "pub": "2026-07-07",
+      "days": 82,
+      "n90": 10,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tomoyane/springboot-bestpractice": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "Azure-Samples/SQL-AI-samples": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "ThomWright/postgres-migrations": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "eggjs/mysql": {
+      "ver": "v6.0.0",
+      "pub": "2025-03-23",
+      "days": 553,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Dr-Nekoma/lyceum": {
+      "ver": "v0.2.4",
+      "pub": "2026-07-27",
+      "days": 62,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "better/jsonschema2db": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "DavidSchanzer/Sql-Server-DBA-Toolbox": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "FrankChen021/datastoria": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "dataux/dataux": {
+      "ver": "0.15.5",
+      "pub": "2018-04-28",
+      "days": 3074,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tilyupo/qustar": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "petere/pguri": {
+      "ver": "1.20251029",
+      "pub": "2025-10-29",
+      "days": 333,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "MatteoGioioso/serverless-pg": {
+      "ver": "v2.1.2",
+      "pub": "2025-05-12",
+      "days": 503,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "iCyberon/pg_hashids": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "osalabs/phpminiadmin": {
+      "ver": "v1.9.251125",
+      "pub": "2025-11-26",
+      "days": 305,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "microsoft/bobsql": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pingcap/tidb-tools": {
+      "ver": "v7.5.8",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "xocolatl/periods": {
+      "ver": "v1.2.2",
+      "pub": "2022-10-24",
+      "days": 1434,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "azer/crud": {
+      "ver": "v2.2.0",
+      "pub": "2021-11-24",
+      "days": 1768,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "LucieEveille/kiwi-mem": {
+      "ver": "v1.7.0",
+      "pub": "2026-09-10",
+      "days": 17,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ulule/loukoum": {
+      "ver": "v3.5.2",
+      "pub": "2021-05-18",
+      "days": 1958,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oraclebase/dba": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oracle/javavscode": {
+      "ver": "v26.0.2",
+      "pub": "2026-08-20",
+      "days": 38,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "KuiBaDB/KuiBaDB": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pgmoneta/pgmoneta": {
+      "ver": "0.21.0",
+      "pub": "2026-04-29",
+      "days": 151,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mihailShumilov/mysql2postgresql": {
+      "ver": "v0.1.3",
+      "pub": "2015-02-14",
+      "days": 4243,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "wesql/wescale": {
+      "ver": "0.1.0",
+      "pub": "2023-07-17",
+      "days": 1168,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "smyrgeorge/sqlx4k": {
+      "ver": "1.13.1",
+      "pub": "2026-09-04",
+      "days": 23,
+      "n90": 3,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "vgarvardt/gue": {
+      "ver": "v6.0.1",
+      "pub": "2026-09-08",
+      "days": 19,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "TongchengOpenSource/ckibana": {
+      "ver": "v1.0.5",
+      "pub": "2024-08-29",
+      "days": 759,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "NDXDeveloper/formation-postgresql-18": {
+      "ver": "v1.0.5",
+      "pub": "2026-07-03",
+      "days": 86,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "auxten/postgresql-parser": {
+      "ver": "v1.0.1",
+      "pub": "2022-08-03",
+      "days": 1516,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "philip/MySQLConverterTool": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "riii111/sabiql": {
+      "ver": "v3.0.1",
+      "pub": "2026-09-05",
+      "days": 22,
+      "n90": 7,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "triestpa/Atlas-Of-Thrones": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "DataPupOrg/DataPup": {
+      "ver": "v0.0.2-alpha",
+      "pub": "2025-08-13",
+      "days": 410,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "caiopizzol/cnpj-data-pipeline": {
+      "ver": "v1.38.9",
+      "pub": "2026-09-08",
+      "days": 19,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oracle/oracle-db-tools": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "petere/homebrew-postgresql": {
+      "ver": "bottles-201506260",
+      "pub": "2015-06-27",
+      "days": 4110,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "kurtbuilds/ormlite": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "amberframework/granite": {
+      "ver": "v0.23.4",
+      "pub": "2024-12-19",
+      "days": 647,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Releem/releem-agent": {
+      "ver": "1.25.4",
+      "pub": "2026-09-25",
+      "days": 2,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "go-pg/migrations": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tao12345666333/redis-articles": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pgplex/pgtui": {
+      "ver": "v0.3.0",
+      "pub": "2026-06-12",
+      "days": 107,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "snower/TorMySQL": {
+      "ver": "0.4.3",
+      "pub": "2021-01-11",
+      "days": 2085,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "battcn/wemirr-platform": {
+      "ver": "2.0.3-release",
+      "pub": "2024-02-02",
+      "days": 968,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Zeb-D/my-review": {
+      "ver": "v2021",
+      "pub": "2022-01-11",
+      "days": 1720,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "olirice/alembic_utils": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "CrystallineCore/Biscuit": {
+      "ver": "v3.1.0",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "SwifQL/SwifQL": {
+      "ver": "2.0.0-beta.6.0.0",
+      "pub": "2026-09-05",
+      "days": 22,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/tidb-binlog": {
+      "ver": "v7.5.8",
+      "pub": "2026-09-17",
+      "days": 10,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "dylan-tao/nacos-plus": {
+      "ver": "release-2.3.2.6",
+      "pub": "2025-05-16",
+      "days": 499,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/community": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "altairbow/django-db-connection-pool": {
+      "ver": "1.2.6",
+      "pub": "2025-05-05",
+      "days": 510,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "ApsaraDB/PolarDB-FileSystem": {
+      "ver": "pfsd4pg-release-1.2.42-20220419",
+      "pub": "2022-04-19",
+      "days": 1622,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/TiBigData": {
+      "ver": "v0.0.3",
+      "pub": "2021-05-06",
+      "days": 1970,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/tidb-dashboard": {
+      "ver": "v9.0.0-9b13f4fd",
+      "pub": "2026-09-20",
+      "days": 7,
+      "n90": 5,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/minstant": {
+      "ver": "v0.1.6",
+      "pub": "2024-01-24",
+      "days": 977,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "eleme/tedis": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oceanbase/ob-operator": {
+      "ver": "oceanbase-dashboard-0.6.1",
+      "pub": "2026-06-11",
+      "days": 108,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/kvproto": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oceanbase/obdiag": {
+      "ver": "v5.0.0",
+      "pub": "2026-05-19",
+      "days": 131,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "SolerHo/database-kernel-develop": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tikv/yatp": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oceanbase/obproxy": {
+      "ver": "v4.4.1",
+      "pub": "2026-08-21",
+      "days": 37,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "Zhuoyuan1/EasyDataBaseExport": {
+      "ver": "v0.1.7",
+      "pub": "2023-09-08",
+      "days": 1115,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/client-java": {
+      "ver": "v3.3.5",
+      "pub": "2023-05-31",
+      "days": 1215,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/tidb-bench": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "luooofan/miniob-2023": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "polardb/polardbx": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oceanbase/kernel-quickstart": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "polardb/polardbx-operator": {
+      "ver": "v1.7.1",
+      "pub": "2026-09-23",
+      "days": 4,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "jooksoft/jookdb": {
+      "ver": "v6.5",
+      "pub": "2024-04-14",
+      "days": 896,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "gitstliu/MysqlToAll": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pingcap/tipb": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pingcap/tidb-map": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oceanbase/obdeploy": {
+      "ver": "v4.7.0",
+      "pub": "2026-09-20",
+      "days": 7,
+      "n90": 4,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "wentaojin/transferdb": {
+      "ver": "v1.0.34",
+      "pub": "2025-06-05",
+      "days": 479,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oceanbase/obclient": {
+      "ver": "2.2.14",
+      "pub": "2026-08-21",
+      "days": 37,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "devlive-community/dameng-connector": {
+      "ver": "2026.0.0",
+      "pub": "2026-08-17",
+      "days": 41,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tidb-incubator/tide": {
+      "ver": "v0.3.5",
+      "pub": "2021-08-19",
+      "days": 1865,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "iverycd/OracleSync2MySQL": {
+      "ver": "v0.1.3",
+      "pub": "2024-06-04",
+      "days": 845,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "lazzyfu/gAudit": {
+      "ver": "v1.2.2",
+      "pub": "2024-07-22",
+      "days": 797,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "springrain/zorm": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "gaoyuan98/dameng_exporter": {
+      "ver": "v1.2.5",
+      "pub": "2026-04-13",
+      "days": 167,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "camry/mysqldiff": {
+      "ver": "v3.0.14",
+      "pub": "2026-04-01",
+      "days": 179,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "LittleFall/flink-tidb-rdw": {
+      "ver": "testpackage",
+      "pub": "2020-08-21",
+      "days": 2228,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "polardb/polardbx-cdc": {
+      "ver": "polardbx-cdc-5.4.21-20260918",
+      "pub": "2026-09-18",
+      "days": 9,
+      "n90": 1,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "mengweijin/db-migration": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tikv/rfcs": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tikv/async-speed-limit": {
+      "ver": "v0.4.2",
+      "pub": "2024-10-05",
+      "days": 722,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "TiFlink/TiFlink": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "enmotech/enmotech-docker-opengauss": {
+      "ver": "openGauss_v1001",
+      "pub": "2020-10-01",
+      "days": 2187,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "oceanbase/pyseekdb": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "gengmei-tech/titea": {
+      "ver": "v1.0.0",
+      "pub": "2019-01-16",
+      "days": 2811,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "tikv/sig-transaction": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "lucklove/tidb-wasm": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "pig-mesh/nacos-datasource-plugin-dm8": {
+      "ver": "0.0.6",
+      "pub": "2025-06-28",
+      "days": 456,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "HappyCS-Gu/Parallel-Raft-tla": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "tikv/crc64fast": {
+      "ver": "v1.1.0",
+      "pub": "2024-01-18",
+      "days": 983,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "pingcap/ticdc": {
+      "ver": "v8.5.8",
+      "pub": "2026-08-27",
+      "days": 31,
+      "n90": 2,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "BankOfCommunications/CBASE": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "polardb/polardbx-tools": {
+      "ver": "batch-tool-v1.5.2",
+      "pub": "2026-03-25",
+      "days": 186,
+      "n90": 0,
+      "pre": false,
+      "ts": "20260927"
+    },
+    "WangXiangUSTC/tidb-lite": {
+      "none": true,
+      "ts": "20260927"
+    },
+    "oceanbase/oceanbase-design": {
+      "ver": "@oceanbase/ui@1.5.0",
+      "pub": "2026-09-10",
+      "days": 17,
+      "n90": 12,
+      "pre": false,
+      "ts": "20260927"
+    }
+  }
+}
