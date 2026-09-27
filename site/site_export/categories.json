@@ -16180,5 +16180,17 @@
   "why": "AI简历生成与ATS检查，非数据库工具",
   "ev": "高",
   "when": "2026-09-26"
+ },
+ "coriocactus/dj_queue": {
+  "cat": "其他",
+  "why": "Django任务队列后端，非上述类目",
+  "ev": "中",
+  "when": "2026-09-27"
+ },
+ "maludb/maludb-core": {
+  "cat": "其他",
+  "why": "内存DBMS，非上述类目",
+  "ev": "中",
+  "when": "2026-09-27"
  }
 }
