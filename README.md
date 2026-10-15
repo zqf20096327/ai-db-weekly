@@ -1,5 +1,7 @@
 # 数据库开源生态观测（demo · 周刊形态）
 
+**在线站点**：<https://zqf20096327.github.io/ai-db-weekly/>
+
 数据库开源生态观测站（周刊 + 工具）—— 基于 [dbhub_collect](https://github.com/zqf20096327/dbhub_collect)
 采集数据构建的纯静态站点，为部署到 GitHub Pages 而设计。
 
