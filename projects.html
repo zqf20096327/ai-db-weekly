@@ -196,7 +196,6 @@ table.mx th a:hover, .mx .cat-name a:hover { color: var(--accent); text-decorati
       </div>
     </section>
   </main>
-  <footer id="foot"></footer>
 </div>
 <div id="drawer-mount"></div>
 
@@ -918,12 +917,6 @@ document.addEventListener("click", ev => {
 /* ---------- 启动 ---------- */
 document.body.insertAdjacentHTML("afterbegin", navHtml("projects.html"));
 el("drawer-mount").innerHTML = drawerHtml();
-el("foot").innerHTML = `快照 ${M.snap||"?"} · 构建于 ${M.built||"?"} · 数据源：<a href="https://github.com/zqf20096327/dbhub_collect" target="_blank" rel="noopener">dbhub_collect</a> ·
-<details><summary>口径 ⓘ</summary><span class="dk small muted">
-全量收录 ${(M.total||0).toLocaleString()} 项；类别 / 归属库 / 维护状态 / 官方 / AI 类型 = AI 解读优先（${(M.interp||0).toLocaleString()} 项已覆盖）、规则兜底。<br>
-搜索：本页实时过滤、与筛选条件叠加（不清筛选）；建议面板 ↑↓ / 悬停选择、Enter 确认、Esc 关闭。导航栏「搜索全站」为跨页入口（按 / 聚焦，回车跳转本页并带条件）。<br>
-维护状态统一口径：AI 弃用/停维 &gt; 已归档 &gt; 疑似停维（★≥100 且 90 天零提交）。冠军格 = 本土优先、通用让位、通用垫底（⊙）。
-</span></details>`;
 applyHash();
 bindThemeBtn(); bindDrawer();
 renderLegend();

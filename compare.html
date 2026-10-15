@@ -46,7 +46,6 @@
       <div id="ai-body"></div>
     </section>
   </main>
-  <footer id="foot"></footer>
 </div>
 <div id="drawer-mount"></div>
 
@@ -313,9 +312,6 @@ if (hv.cmp && !getCompare().length) {
 if (hv.demo && DEMOS[hv.demo] && !getCompare().length) saveCompare(DEMOS[hv.demo]);
 document.body.insertAdjacentHTML("afterbegin", navHtml("compare.html"));
 el("drawer-mount").innerHTML = drawerHtml();
-el("foot").innerHTML = `AI 解读为构建期离线生成（基于 README 摘录与站内信号，非运行时调用、无数据上传）·
-样例内置 2 组；正式版由 build/ai_compare.py（需 DBHUB_AI_KEY）为热门组合自动生成 ·
-数据快照 ${M.snap||"?"}`;
 bindThemeBtn(); bindDrawer();
 const boot = el("boot"); if (boot) boot.remove();
 el("main").style.display = "";

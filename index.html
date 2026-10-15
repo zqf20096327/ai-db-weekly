@@ -52,7 +52,6 @@
     </section>
 
   </main>
-  <footer id="foot"></footer>
 </div>
 
 <script src="data/pool.js"></script>
@@ -152,10 +151,6 @@ function renderIssue() {
     d.onclick = () => openDrawer(esc(d.dataset.fn),
       projectDetailHtml(d.dataset.fn)
       || '<div class="empty"><div class="big">🕳️</div>该项目已不在当前收录中（往期记录）</div>'));
-  const cov = R.total && R.g7cov ? Math.round(100 * R.g7cov / R.total) : "—";
-  el("foot").innerHTML = `第 ${R.no} 期 · 数据快照 ${R.snap || "?"} · 构建于 ${R.built || "?"} · 周增星基线 ${R.growthBase || "—"}（覆盖 ${cov}%）<br>
-    深读正文为当期定稿；速览与数字按「只报变化」口径于发刊时冻结（安全=近 7 天新披露，发版=近 7 天发布）。往期内容见 <a href="archive.html">往期周刊</a>。<br>
-    数据源：<a href="https://github.com/zqf20096327/dbhub_collect" target="_blank" rel="noopener">dbhub_collect</a>（每晚自动采集）。`;
   history.replaceState(null, "", CUR === WK_LAST ? location.pathname : "#issue=" + CUR);
 }
 document.body.insertAdjacentHTML("afterbegin", navHtml("index.html"));

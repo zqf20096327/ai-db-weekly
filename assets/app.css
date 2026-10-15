@@ -52,6 +52,17 @@ header { border-bottom: 1px solid var(--line); border-top: 3px solid var(--accen
             border-radius: 8px; padding: 4px 11px; cursor: pointer; font-size: 12px; }
 .icon-btn:hover { color: var(--ink); border-color: var(--accent); }
 
+/* 公众号二维码 popover（导航联系入口；[hidden] 显式兜底防 display 类盖掉 UA 样式） */
+.contact-wrap { position: relative; display: inline-flex; }
+.contact-pop { position: absolute; right: 0; top: calc(100% + 10px); z-index: 30;
+               display: block; width: 182px; padding: 12px; text-align: center;
+               background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+               box-shadow: var(--shadow); }
+.contact-pop[hidden] { display: none; }
+.contact-pop img { display: block; width: 158px; height: 158px; margin: 0 auto;
+                   background: #fff; border-radius: 6px; }
+.contact-pop .cap { display: block; margin-top: 8px; font-size: 12px; color: var(--muted); }
+
 /* ---------- stats bar ---------- */
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
          gap: 1px; background: var(--line); border: 1px solid var(--line);

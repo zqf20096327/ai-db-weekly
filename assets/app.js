@@ -354,7 +354,13 @@ function navHtml(cur) {
       <kbd>/</kbd>
       <div class="gnav-sug" id="gnav-sug"></div>
     </span>
-    <span class="small muted mono">快照 ${M.snap||""}</span>
+    <span class="contact-wrap">
+      <button class="icon-btn" id="contact-btn" title="联系作者 · 公众号" aria-haspopup="true" aria-expanded="false">💬 联系我们</button>
+      <span class="contact-pop" id="contact-pop" hidden>
+        <img src="assets/qr-wechat.jpg" alt="公众号二维码" width="158" height="158">
+        <span class="cap">微信扫码关注公众号</span>
+      </span>
+    </span>
     <button class="icon-btn" id="theme-btn" title="切换主题">🌗</button>
   </div></header>`;
 }
@@ -565,3 +571,14 @@ function bindGlobalSearch() {
   });
 }
 setTimeout(bindGlobalSearch, 0);   /* 等 navHtml 注入后再绑定 */
+
+/* ---------- 公众号二维码 popover（导航右端，全站共用） ---------- */
+function bindContact() {
+  const btn = document.getElementById("contact-btn"), pop = document.getElementById("contact-pop");
+  if (!btn || !pop) return;
+  const set = on => { pop.hidden = !on; btn.setAttribute("aria-expanded", String(on)); };
+  btn.addEventListener("click", e => { e.stopPropagation(); set(pop.hidden); });
+  document.addEventListener("click", e => { if (!pop.hidden && !pop.contains(e.target)) set(false); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !pop.hidden) set(false); });
+}
+setTimeout(bindContact, 0);

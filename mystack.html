@@ -291,7 +291,7 @@ el("import-file").onchange = e => {
 
 document.body.insertAdjacentHTML("afterbegin", navHtml("mystack.html"));
 el("drawer-mount").innerHTML = drawerHtml();
-el("foot").innerHTML = `关注数据存在本浏览器（localStorage），不做账户与上报 —— 换设备用「🔗 分享链接」或「⬇ 导出备份」迁移 · 数据快照 ${M.snap||"?"} · 构建于 ${M.built||"?"}<br>
+el("foot").innerHTML = `关注数据存在本浏览器（localStorage），不做账户与上报 —— 换设备用「🔗 分享链接」或「⬇ 导出备份」迁移<br>
 提示：数据每日重建后重访本页即可看到最新事件；正式版将提供 RSS/公众号订阅推送。`;
 bindThemeBtn(); bindDrawer();
 const boot = el("boot"); if (boot) boot.remove();
