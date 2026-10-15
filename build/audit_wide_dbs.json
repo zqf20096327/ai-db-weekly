@@ -1,0 +1,347 @@
+{
+ "built": "2026-10-15 12:01",
+ "snap": "20261014",
+ "count": 18,
+ "items": [
+  {
+   "fn": "dbeaver/dbeaver",
+   "n": 12,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "Dameng",
+    "GaussDB",
+    "GBase"
+   ],
+   "gen": "2026-10-01"
+  },
+  {
+   "fn": "t8y2/dbx",
+   "n": 14,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "openGauss",
+    "GaussDB",
+    "GBase",
+    "YashanDB",
+    "GoldenDB"
+   ],
+   "gen": "2026-10-14"
+  },
+  {
+   "fn": "TableProApp/TablePro",
+   "n": 10,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "Dameng"
+   ],
+   "gen": "2026-10-09"
+  },
+  {
+   "fn": "DotNetNext/SqlSugar",
+   "n": 12,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "Dameng",
+    "GaussDB",
+    "GBase"
+   ],
+   "gen": "2026-10-01"
+  },
+  {
+   "fn": "Syngnat/GoNavi",
+   "n": 15,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "Dameng",
+    "openGauss",
+    "GaussDB",
+    "GBase",
+    "YashanDB",
+    "GoldenDB"
+   ],
+   "gen": "2026-10-06"
+  },
+  {
+   "fn": "feigeCode/navop",
+   "n": 10,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "OceanBase",
+    "Dameng",
+    "openGauss",
+    "GBase"
+   ],
+   "gen": "2026-10-07"
+  },
+  {
+   "fn": "ClouGence/open-cdm",
+   "n": 11,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "PolarDB",
+    "Dameng",
+    "GaussDB"
+   ],
+   "gen": "2026-10-14"
+  },
+  {
+   "fn": "geek-fun/sqlkit",
+   "n": 16,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "PolarDB",
+    "Dameng",
+    "openGauss",
+    "GaussDB",
+    "TDSQL",
+    "YashanDB",
+    "GoldenDB"
+   ],
+   "gen": "2026-10-03"
+  },
+  {
+   "fn": "fiyo/DBCheck",
+   "n": 12,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "Dameng",
+    "GBase",
+    "TDSQL",
+    "YashanDB"
+   ],
+   "gen": "2026-10-10"
+  },
+  {
+   "fn": "suoten/dbbridge",
+   "n": 11,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "PolarDB",
+    "Dameng",
+    "openGauss"
+   ],
+   "gen": "2026-10-02"
+  },
+  {
+   "fn": "dbbao/dbhealthcheck",
+   "n": 13,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQL Server",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "PolarDB",
+    "Dameng",
+    "openGauss",
+    "GBase",
+    "TDSQL",
+    "YashanDB"
+   ],
+   "gen": "2026-10-03"
+  },
+  {
+   "fn": "vfaner/muask",
+   "n": 10,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQL Server",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "Dameng",
+    "openGauss",
+    "GBase"
+   ],
+   "gen": "2026-10-04"
+  },
+  {
+   "fn": "Sean-Lu/DbRepository",
+   "n": 11,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "Dameng",
+    "openGauss"
+   ],
+   "gen": "2026-10-04"
+  },
+  {
+   "fn": "tteamtm/dbcli",
+   "n": 13,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "PolarDB",
+    "Dameng",
+    "GaussDB",
+    "GBase"
+   ],
+   "gen": "2026-10-04"
+  },
+  {
+   "fn": "hufafu1-cloud/dbconnect",
+   "n": 13,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "PolarDB",
+    "Dameng",
+    "openGauss",
+    "GaussDB"
+   ],
+   "gen": "2026-10-04"
+  },
+  {
+   "fn": "dmsql123/dmsql",
+   "n": 10,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "Dameng",
+    "openGauss",
+    "GaussDB"
+   ],
+   "gen": "2026-10-14"
+  },
+  {
+   "fn": "dhsolo/plainly",
+   "n": 10,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "MariaDB",
+    "OceanBase",
+    "Dameng",
+    "openGauss",
+    "GaussDB"
+   ],
+   "gen": "2026-10-04"
+  },
+  {
+   "fn": "yashan-technologies/dbeaver",
+   "n": 11,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "Dameng",
+    "GaussDB",
+    "GBase"
+   ],
+   "gen": "2026-10-04"
+  }
+ ]
+}

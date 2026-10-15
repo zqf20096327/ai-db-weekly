@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>项目浏览 · 数据库开源生态观测</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+/* ═══ 本页补充样式：三段式布局 / 两级胶囊 / 状态行 / 微件，颜色全走设计令牌 ═══ */
+.card-head { align-items: center; }
+/* GitHub 式全局搜索框 + 建议面板（颜色全走 app.css 设计令牌，亮/暗自适应） */
+.gsearch { position: relative; display: flex; align-items: center; gap: 7px;
+  border: 1px solid var(--line); background: var(--card); border-radius: 6px;
+  height: 30px; padding: 0 10px; flex: 1 1 220px; max-width: 420px; min-width: 0; }
+.gsearch:focus-within { border-color: var(--accent); background: var(--card);
+  box-shadow: 0 0 0 3px var(--accent-soft); }
+.gsearch svg { flex: 0 0 auto; color: var(--muted); }
+.gsearch:focus-within svg { color: var(--accent); }
+.gsearch input { border: none; outline: none; background: transparent; flex: 1;
+  min-width: 0; font: inherit; color: var(--ink); }
+.gsearch input::placeholder { color: var(--muted); }
+.gsearch kbd { font: 12px var(--mono); border: 1px solid var(--line);
+  border-radius: 4px; padding: 0 5px; color: var(--muted); line-height: 1.5; }
+.gsearch:focus-within kbd { display: none; }
+.gsug { position: absolute; top: calc(100% + 6px); left: 0; width: 440px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: var(--shadow); z-index: 60; max-height: 62vh; overflow: auto;
+  padding: 4px; display: none; }
+.gsug.open { display: block; }
+.gsug .gh { display: flex; align-items: baseline; font-size: 12px; font-weight: 400;
+  color: var(--muted); padding: 7px 10px 3px; text-transform: uppercase; letter-spacing: 2px; }
+.gsug .gh .clr { margin-left: auto; font-size: 12px; font-weight: 400;
+  color: var(--accent); cursor: pointer; text-transform: none; letter-spacing: 0; }
+.gsug .gi { display: flex; align-items: center; gap: 8px; padding: 6px 10px;
+  border-radius: 6px; cursor: pointer; font-size: 12px; min-width: 0; }
+.gsug .gi.on { background: var(--accent-soft); }
+.gsug .gi:hover { background: var(--accent-soft); }
+.gsug .gi .ico { flex: 0 0 auto; font-size: 12px; width: 15px; text-align: center; }
+.gsug .gi .t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.gsug .gi .m { margin-left: auto; color: var(--muted); font-size: 12px;
+  white-space: nowrap; padding-left: 12px; }
+.gsug .gi mark { background: none; color: var(--accent); font-weight: 700; }
+.gsug .act { border-top: 1px solid var(--line); margin-top: 4px; }
+.gsug .none { padding: 14px 10px; color: var(--muted); font-size: 12px; text-align: center; }
+#rows mark { background: var(--accent-soft); color: var(--accent); padding: 0 1px; border-radius: 2px; }
+@media (max-width: 760px) {
+  .gsug { width: auto; left: 0; right: 0; }
+}
+
+/* 段落节奏：筛选段淡底、段间细线 */
+.fzone { background: var(--bg); border-radius: 10px; padding: 8px 12px 10px;
+         display: grid; gap: 8px; margin-top: 10px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+
+/* 结构行：板块 tabs + 类别两级胶囊（+尾部库折叠） */
+.srow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.sp { flex: 1; }
+.grp-sep { align-self: stretch; border-left: 1px solid var(--line); margin: 0 2px; }
+/* 组标记胶囊化：与 .chip 同形态（本页覆盖 app.css，不影响其他页面） */
+.fzone .grp-mark { display: inline-flex; align-items: center; font-size: 12px;
+  font-weight: 400; color: var(--accent); padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  cursor: default; margin: 0 2px 0 4px; letter-spacing: 0; }
+.rolepill { display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
+  padding: 3px 6px 3px 12px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--accent-soft); cursor: pointer; user-select: none; }
+.rolepill:hover { border-color: var(--accent); }
+.rolepill.on { border-color: var(--accent); color: var(--accent); }
+.rolepill .n { font-size: 12px; color: var(--muted); font-weight: 400; }
+.rolepill.on .n { color: var(--accent); opacity: .75; }
+.rolepill .tw { font-size: 12px; color: var(--muted); padding: 1px 6px;
+  border-left: 1px solid var(--line); margin-left: 4px; border-radius: 0 999px 999px 0; }
+.rolepill:hover .tw { color: var(--accent); background: var(--card); }
+.rolepill.exp .tw { color: var(--accent); }
+.chip.plain { background: var(--card); }
+
+/* 状态行：匹配大数 + 缺口微条 + 药丸 */
+.statline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+.statline .big { font-size: 16px; font-weight: 700; color: var(--ink); cursor: help; }
+.statline .sub { font-size: 12px; color: var(--muted); cursor: help; }
+.gapbar { display: inline-block; width: 52px; height: 3px; border-radius: 2px;
+          background: var(--line); overflow: hidden; vertical-align: middle; }
+.gapbar i { display: block; height: 100%; background: var(--muted); border-radius: 2px; }
+.statline .pillrow { display: inline-flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+
+/* 图例 / 视图菜单 popover */
+.pop-wrap { position: relative; display: inline-block; }
+.pop-wrap .pop { position: absolute; top: calc(100% + 6px); right: 0;
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: var(--shadow); padding: 10px 14px; display: none; z-index: 50;
+  font-size: 12px; min-width: 280px; text-align: left; }
+.pop-wrap.open .pop { display: block; }
+.pop-wrap .pop .h { font-size: 12px; font-weight: 400; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 2px; margin: 6px 0 4px; }
+.pop-wrap .pop .h:first-child { margin-top: 0; }
+.pop-wrap .pop .row { display: flex; gap: 14px; flex-wrap: wrap; }
+.pop-wrap .pop .item { display: inline-flex; align-items: center; gap: 6px; }
+
+/* 冠军视图表格：撑满卡宽 / 行 hover / 行头退后；全部地域时两表拼接的分块小标题 */
+.mx-cap { font-size: 12px; font-weight: 400; color: var(--ink); margin: 14px 0 4px; }
+.mx-cap:first-child { margin-top: 0; }
+table.mx { width: 100%; }
+table.mx th, table.mx .cat-name { font-weight: 400; color: var(--muted); }
+table.mx th a:hover, .mx .cat-name a:hover { color: var(--accent); text-decoration: underline; }
+
+/* 页脚口径折叠 */
+#foot summary { cursor: pointer; color: var(--accent); font-size: 12px; display: inline; }
+#foot details { display: inline; }
+#foot details .dk { display: none; }
+#foot details[open] { display: block; }
+#foot details[open] .dk { display: block; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div id="nav"></div>
+<div class="wrap">
+  <div id="boot">正在加载生态数据（约 16MB，仅首次）…<div class="bar"></div></div>
+  <main id="main" style="display:none">
+    <section class="card">
+
+      <!-- ═══ 头部段：标题（右上留白） ═══ -->
+      <div class="card-head" style="margin-bottom:2px">
+        <h2 id="page-h2" title="▦ 冠军看格局（库 × 类别 · 每格冠军）；☰ 清单查项目（全量 · 可搜可排）。同一筛选，切换看法。">项目浏览<span class="hint">一套筛选 · 两种看法</span></h2>
+      </div>
+
+      <!-- ═══ 筛选块（淡底）：局部搜索（实时过滤）+ 全部平铺直列（地域并入数据库行） ═══ -->
+      <div class="fzone">
+        <div class="tagrow" style="align-items:center"><span class="glabel">搜索</span>
+          <div class="gsearch" id="gsearch">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M10.5 10.5 L14.5 14.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <input id="q" type="text" autocomplete="off" spellcheck="false"
+                   placeholder="搜索项目名 / 描述…（实时过滤，与筛选叠加）" aria-label="搜索当前列表">
+            <div class="gsug" id="gsug"></div>
+          </div>
+        </div>
+        <div class="tagrow"><span class="glabel">数据库</span><span id="db-row"></span></div>
+        <div class="tagrow"><span class="glabel">类别</span><span id="cat-chips"></span></div>
+        <div class="tagrow"><span class="glabel">属性</span>
+          <span id="mnt-chips"></span>
+          <span class="grp-sep"></span>
+          <span id="off-chips"></span>
+          <span class="grp-sep"></span>
+          <span id="sec-chips"></span>
+          <span class="grp-sep"></span>
+          <span id="ai-chips"></span>
+          <span class="grp-sep"></span>
+          <select class="ctl" id="f-st" title="Star 下限">
+            <option value="0">Star≥ 0</option><option value="10">Star≥ 10</option>
+            <option value="100">Star≥ 100</option><option value="1000">Star≥ 1k</option>
+            <option value="10000">Star≥ 10k</option>
+          </select>
+        </div>
+            <div class="tagrow"><span class="glabel">语言</span><span id="lang-all"></span><span id="lang-chips"></span></div>
+        <div class="tagrow"><span class="glabel">视图</span>
+          <button class="btn" id="save-btn" title="把当前筛选保存为视图（最多 5 个）">＋ 保存视图</button>
+          <span id="views-chips" style="margin-left:8px"></span>
+        </div>
+      </div>
+
+      <!-- ═══ 排序块：独立于筛选块之外 ═══ -->
+      <div class="tagrow" style="margin-top:10px"><span class="glabel">排序</span><span class="seg" id="sort-seg"></span></div>
+
+      <!-- ═══ 工具行：纯显示控制（视图形态 / 重置 / 图例） ═══ -->
+      <div class="srow" style="margin-top:10px">
+        <span class="seg" id="vswitch"></span>
+        <button class="btn" id="reset-btn" title="恢复默认筛选（保留当前视图）">↺ 重置</button>
+        <span class="sp"></span>
+        <span class="pop-wrap" id="lg-wrap" style="display:none">
+          <button class="btn" id="lg-btn" title="冠军视图的格子符号与规则说明">ⓘ 图例</button>
+          <div class="pop" id="lg-pop"></div>
+        </span>
+      </div>
+
+      <!-- ═══ 状态行：匹配 + 缺口微条 + 药丸 ═══ -->
+      <div class="statline" id="statline"></div>
+
+      <hr class="divider">
+
+      <!-- ═══ 结果段：冠军 / 清单 ═══ -->
+      <div class="mx-wrap" id="mx-blk"></div>
+      <div id="list-wrap" style="display:none">
+        <div class="tblwrap">
+          <table class="rows">
+            <thead><tr>
+              <th style="min-width:250px">项目</th><th>库</th><th>类别</th>
+              <th>语言</th><th class="r">Star</th><th class="r">本周</th>
+              <th>最近发版</th><th>安全</th>
+            </tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <div id="pager"></div>
+      </div>
+    </section>
+  </main>
+  <footer id="foot"></footer>
+</div>
+<div id="drawer-mount"></div>
+
+<script src="data/pool.js"></script>
+<script src="data/detail.js"></script>
+<script src="assets/app.js"></script>
+<script>
+"use strict";
+/* ═══ explore v2：v1 的引擎与 GitHub 搜索原样，布局按简化方案重构 ═══
+   三段式（头部 / 筛选段淡底 / 结果段）+ 类别两级胶囊 + 库折叠 +
+   状态行（匹配大数+缺口微条+药丸）+ 排序下拉 + 图例/视图 popover。
+   去冗余：清除入口只留「↺」；安全合并为高危有无。 */
+
+const dims = r => {
+  const dbs = r[I.DBS] && r[I.DBS].length ? r[I.DBS] : (r[I.DB] ? [r[I.DB]] : []);
+  return { c: r[I.CAT], d: dbs, s: r[I.STAT], k: r[I.AIK], o: r[I.O] };
+};
+const CN_START = DBS.indexOf("TiDB");
+const GROUPS = [
+  { id:"cn",   title:"国产数据库", short:"国产", dbs: DBS.slice(CN_START) },
+  { id:"intl", title:"国外数据库", short:"国外", dbs: DBS.slice(0, CN_START) },
+];
+const ROLE_GROUPS = [
+  { id:"ops",   name:"管库", desc:"运维与治理 · 备份/监控/高可用/安全/迁移/管理/平台",
+    cats:["备份","监控","高可用","安全/审计","迁移","管理","平台"] },
+  { id:"use",   name:"用库", desc:"开发与应用 · 驱动/ORM/建模/代理 与 应用系统",
+    cats:["开发库","建模/设计","连接/代理","应用"] },
+  { id:"build", name:"造库", desc:"内核与质量 · 引擎/内核 与 测试/基准",
+    cats:["内核/引擎","测试/质量"] },
+];
+const MNT_CHIPS = [
+  { v:"ok",    label:"健康" },
+  { v:"stale", label:"疑似停维" },
+  { v:"gone",  label:"弃用/归档" },
+];
+const MNT_KEYS = new Set(MNT_CHIPS.map(c => c.v));
+const mkey = r => { const m = maint(r); return m === "" ? "ok" : m === "stale" ? "stale" : "gone"; };
+const OFF_CHIPS = [
+  { v:"off", label:"官方" },
+  { v:"soc", label:"社区" },
+];
+const SORTS = [
+  ["gro",  "本周增星", "按本周新增 Star 排名（对比 7 天前快照）"],
+  ["act",  "开发活跃", "按提交/发版/贡献者综合的活跃度排名"],
+  ["star", "Star",     "按项目总 Star 排名"],
+  ["new",  "最新创建", "按仓库创建时间倒序"],
+  ["rel",  "最近发版", "按最近发版时间倒序"],
+  ["push", "最近推送", "按最近推送时间倒序"],
+];
+const langCnt = {};
+for (const r of P) { if (r[I.LANG]) langCnt[r[I.LANG]] = (langCnt[r[I.LANG]]||0)+1; }
+const TOP_LANGS = Object.entries(langCnt).sort((a,b)=>b[1]-a[1]).slice(0,8).map(x=>x[0]);
+const AI_CHIPS = [{v:"ai",label:"AI"}];   /* 单开关：MCP/Text2SQL/RAG/Agent/LLM/Skill 均属 AI 范围 */
+const SEC_CHIPS = [{v:"hi",label:"高危"}];   /* 单开关：critical(严重) 与 high(高危) 均算 */
+
+/* ---------- 唯一状态 ---------- */
+const st = { view:"mx", db:new Set(DBS), cat:new Set(CATS),
+             mnt:new Set(), off:new Set(), ai:"", stv:0, sec:"",
+             lang:new Set(), sort:"gro", q:"", p:1 };
+const PAGE_SZ = 20;
+/* 发动机：库选择集合（st.db）为唯一真相，无地域层 */
+
+/* ---------- hash ---------- */
+function applyHash() {
+  const h = parseHash();
+  st.view = h.view === "list" ? "list" : "mx";
+  st.db = new Set((h.db||"").split(",").filter(x => DBS.includes(x)));
+  if (!st.db.size) {
+    /* blk 兼容层：旧地域深链映射为对应组选中态；缺省 = 国产 10 库（与旧默认视图一致） */
+    if (h.blk === "intl") st.db = new Set(GROUPS[1].dbs);
+    else if (h.blk === "all") st.db = new Set(DBS);
+    else st.db = new Set(GROUPS[0].dbs);
+  }
+  st.cat = new Set((h.cat||"").split(",").filter(x => CATS.includes(x)));
+  if (!st.cat.size) st.cat = new Set(CATS);
+  st.mnt = new Set((h.mst||"").split(",").filter(x => MNT_KEYS.has(x)));
+  st.sort = SORTS.some(s => s[0]===h.sort) ? h.sort : "gro";
+  st.q = h.q || ""; st.p = +h.p || 1;
+  st.ai = AI_CHIPS.some(c => c.v === h.ai) ? h.ai : "";
+  st.stv = +h.st || 0;
+  st.sec = h.sec === "hi" ? "hi" : "";
+  st.off.clear(); st.lang.clear();
+  for (const tok of (h.attr||"").split(",")) {
+    if (!tok) continue;
+    if (tok.startsWith("lang:")) { if (langCnt[tok.slice(5)]) st.lang.add(tok.slice(5)); }
+    else if (tok === "off" || tok === "soc") st.off.add(tok);
+  }
+}
+function hashObj() {
+  const attr = [...st.off]
+    .concat([...st.lang].map(v=>"lang:"+v));
+  const o = {};
+  if (st.view !== "mx") o.view = st.view;
+  /* 库选择为唯一真相：纯组态写 blk（旧链兼容），自定义集写 db，默认态（国产全选）不写 */
+  const sameSet = arr => st.db.size === arr.length && arr.every(d => st.db.has(d));
+  if (sameSet(GROUPS[0].dbs)) { /* 默认态 */ }
+  else if (sameSet(GROUPS[1].dbs)) o.blk = "intl";
+  else if (sameSet(DBS)) o.blk = "all";
+  else o.db = [...st.db].join(",");
+  if (st.cat.size !== CATS.length) o.cat = [...st.cat].join(",");
+  if (st.mnt.size) o.mst = [...st.mnt].join(",");
+  if (attr.length) o.attr = attr.join(",");
+  if (st.ai) o.ai = st.ai;
+  if (st.sec) o.sec = st.sec;
+  if (st.stv) o.st = st.stv;
+  if (st.sort !== "gro") o.sort = st.sort;
+  if (st.q) o.q = st.q;
+  if (st.view === "list" && st.p > 1) o.p = st.p;
+  return o;
+}
+function syncHash() { writeHash(hashObj()); }
+/* 全局搜索在本页 Enter＝仅变 hash 的同文档导航；writeHash 走 replaceState 不发 hashchange，此监听只接外部变化（含后退/前进） */
+addEventListener("hashchange", () => {
+  applyHash(); render(); syncHash();
+  el("statline").scrollIntoView({ behavior:"smooth", block:"start" });   /* 落地滚动：状态行到顶、结果区铺满视口 */
+});
+
+/* ---------- 发动机（板块 = 真筛选：冠军的列与清单的数据同受其约束） ---------- */
+function pass(r) {
+  const a = dims(r);
+  if (!a.d.some(d => st.db.has(d))) return false;
+  if (!st.cat.has(a.c)) return false;
+  if (st.mnt.size && !st.mnt.has(mkey(r))) return false;
+  if (st.off.has("off") && !a.o) return false;
+  if (st.off.has("soc") && a.o) return false;
+  if (st.ai && !aikHas(r, st.ai)) return false;
+  if (r[I.ST] < st.stv) return false;
+  if (st.sec === "hi" && r[I.SW] !== "critical" && r[I.SW] !== "high") return false;
+  if (st.q) {
+    const s = st.q.toLowerCase();
+    if (!r[I.FN].toLowerCase().includes(s)
+        && !(r[I.DESC]||"").toLowerCase().includes(s)) return false;
+  }
+  return true;
+}
+let filtered = [];
+function refilter() {
+  filtered = P.filter(pass);
+  filtered.sort((a,b) => cmpRec(a,b,st.sort));
+}
+
+/* ---------- 外壳一：冠军视图 ---------- */
+const isDedicated = (r, db) => {
+  const dbs = r[I.DBS] && r[I.DBS].length ? r[I.DBS] : [r[I.DB]];
+  return (dbs.length === 1 && dbs[0] === db) || (r[I.O] && r[I.DB] === db);
+};
+const bestOf = (arr) => arr.reduce((m, x) => cmpRec(x, m, st.sort) < 0 ? x : m, arr[0]);
+/* 冠军评选唯一事实源：冠军格与点格抽屉同读这份结果，不再各算各的 */
+let MX_RES = new Map();
+function resolveRow(cat, cols, candsBy) {
+  const key = (d) => d + "\x00" + cat;
+  const res = new Map(), need = [];
+  const ownerOf = new Map();   /* 本行已任职冠军 项目名 → 库；专属冠军同样登记，垫底认领不再与之撞名 */
+  for (const db of cols) {
+    const cands = candsBy.get(key(db)) || [];
+    if (!cands.length) continue;
+    const ded = cands.filter(r => isDedicated(r, db));
+    if (ded.length) {
+      const w = bestOf(ded);
+      ownerOf.set(w[I.FN], db);
+      res.set(key(db), { r: w, n: cands.length, gen: false });
+    } else need.push({ db, bg: bestOf(cands), cands });
+  }
+  need.sort((A, B) => { const c = cmpRec(A.bg, B.bg, st.sort); return c < 0 ? -1 : c > 0 ? 1 : 0; });
+  for (const cell of need) {
+    let pick = cell.cands.find(r => !ownerOf.has(r[I.FN]));
+    const dup = !pick;
+    if (dup) pick = cell.cands[0];
+    else ownerOf.set(pick[I.FN], cell.db);
+    res.set(key(cell.db), { r: pick, n: cell.cands.length, gen: true, dup,
+                            ownerDb: dup ? (ownerOf.get(pick[I.FN]) || "") : "" });
+  }
+  return res;
+}
+function cellHtml(res, rawMap, db, cat) {
+  const k = db + "\x00" + cat;
+  const c = res.get(k), raw = rawMap.get(k);
+  if (c) {
+    const r = c.r;
+    const dep = maint(r) === "dep" || maint(r) === "arc";
+    return `<td><a class="mc zf" data-db="${esc(db)}" data-cat="${esc(cat)}">`
+         + `<span class="nm${dep?" dep":""}${c.gen?" gen":""}">${c.dup ? "⊙" : (c.gen?"⊙ ":"") + esc(r[I.FN].split("/")[1])}</span></a></td>`;
+  }
+  if (raw && raw.n > 0)
+    return `<td><span class="mc filt">○</span></td>`;
+  return `<td><span class="mc z0">·</span></td>`;
+}
+function renderMatrix() {
+  /* 列结构按库选择派生：两组都有选中＝国产表+国外表拼接，单组＝单表，全空＝空态 */
+  const boards = GROUPS.map(g => ({ title:g.title, dbs:g.dbs.filter(d => st.db.has(d)) }))
+                       .filter(b => b.dbs.length);
+  const mount = el("mx-blk");
+  MX_RES.clear();
+  if (!st.cat.size) {
+    mount.innerHTML = `<div class="empty small">已取消全部类别 —— 再点一次「全部」恢复</div>`;
+    return { gaps: 0, filt: 0, cells: 0 };
+  }
+  if (!boards.length) {
+    mount.innerHTML = `<div class="empty small">17 库已全部取消选择 —— 点「全选」恢复</div>`;
+    return { gaps: 0, filt: 0, cells: 0 };
+  }
+  const candsBy = new Map(), rawMap = new Map();
+  const key = (db,cat) => db + "\x00" + cat;
+  for (const r of filtered) {
+    const a = dims(r);
+    for (const db of a.d) {
+      if (!st.db.has(db) || !st.cat.has(a.c)) continue;
+      const k = key(db, a.c);
+      let arr = candsBy.get(k); if (!arr) candsBy.set(k, arr = []);
+      arr.push(r);
+    }
+  }
+  for (const r of P) {
+    const a = dims(r);
+    for (const db of a.d) {
+      if (!st.db.has(db) || !st.cat.has(a.c)) continue;
+      const k = key(db, a.c);
+      let raw = rawMap.get(k); if (!raw) rawMap.set(k, raw = {n:0});
+      raw.n++;
+    }
+  }
+  let gaps = 0, filt = 0, cells = 0, html = "";
+  for (const b of boards) {
+    const cols = b.dbs;
+    const hasRaw = cat => cols.some(d => { const raw = rawMap.get(key(d,cat)); return raw && raw.n > 0; });
+    const colTot = {}; cols.forEach(c => colTot[c] = 0);
+    const rowHtml = cat => {
+      const res = resolveRow(cat, cols, candsBy);
+      for (const [k, v] of res) MX_RES.set(k, v);
+      let h = `<tr><td class="cat-name"><a data-jcat="${esc(cat)}" title="在清单视图查看「${esc(cat)}」">${esc(cat)}</a></td>`;
+      for (const db of cols) {
+        h += cellHtml(res, rawMap, db, cat);
+        cells++;
+        const c = res.get(key(db, cat));
+        if (!c) { if ((rawMap.get(key(db, cat)) || {}).n > 0) filt++; else gaps++; }
+        if (c) colTot[db] += c.n;
+      }
+      return h + `</tr>`;
+    };
+    html += (boards.length > 1 ? `<div class="mx-cap">${b.title}（${cols.length} 库）</div>` : "")
+         + `<table class="mx"><tr><th>类别 \\ 库</th>`
+         + cols.map(d => `<th><a data-jdb="${esc(d)}" title="在清单视图查看 ${esc(d)}">${esc(d)}</a></th>`).join("") + `</tr>`;
+    for (const rg of ROLE_GROUPS)
+      for (const c of rg.cats)
+        if (st.cat.has(c) && hasRaw(c)) html += rowHtml(c);
+    if (st.cat.has("其他") && hasRaw("其他")) html += rowHtml("其他");
+    html += `<tr class="sumrow"><td class="cat-name" title="该库在当前筛选 × 已显示类别下的项目数；多库归属项目计入多列，跨列相加会与「匹配」数不一致">合计</td>`
+      + cols.map(d => `<td class="mono small">${colTot[d]||0}</td>`).join("") + `</tr></table>`;
+  }
+  mount.innerHTML = html;
+  mount.querySelectorAll("a.mc").forEach(a =>
+    a.onclick = ev => { ev.preventDefault(); openCombo(a.dataset.db, a.dataset.cat); });
+  mount.querySelectorAll("[data-jdb]").forEach(a =>
+    a.onclick = ev => { ev.preventDefault(); jump({ db:new Set([a.dataset.jdb]) }); });
+  mount.querySelectorAll("[data-jcat]").forEach(a =>
+    a.onclick = ev => { ev.preventDefault(); jump({ cat:new Set([a.dataset.jcat]) }); });
+  return { gaps, filt, cells };
+}
+function jump(over) {
+  if (over.db) st.db = over.db;
+  if (over.cat) st.cat = over.cat;
+  st.view = "list"; st.p = 1;
+  render(); syncHash();
+  el("list-wrap").scrollIntoView({ behavior:"smooth", block:"start" });
+}
+
+/* ---------- 外壳二：清单（8 列，砍 c/7d） ---------- */
+function dbTags(r) {
+  const list = dims(r).d;
+  const extra = list.length > 3 ? `<span class="tag gray">+${list.length-3}</span>` : "";
+  return list.slice(0,3).map(x => `<span class="tag">${esc(x)}</span>`).join(" ") + extra;
+}
+/* 清单命中词高亮 */
+function hlt(text) {
+  const t = String(text == null ? "" : text), s = st.q;
+  if (!s) return esc(t);
+  const at = t.toLowerCase().indexOf(s.toLowerCase());
+  if (at < 0) return esc(t);
+  return esc(t.slice(0,at)) + "<mark>" + esc(t.slice(at, at+s.length)) + "</mark>"
+       + esc(t.slice(at+s.length));
+}
+function renderList() {
+  if (!filtered.length) {
+    el("rows").innerHTML = `<tr><td colspan="8"><div class="empty">
+      <div class="big">🕳️</div>没有匹配的项目 —— 条件太严了。</div></td></tr>`;
+    el("pager").innerHTML = "";
+    return;
+  }
+  const start = (st.p-1)*PAGE_SZ;
+  const pageRows = filtered.slice(start, start+PAGE_SZ);
+  el("rows").innerHTML = pageRows.map(r => `<tr data-fn="${esc(r[I.FN])}">
+      <td><a class="repo" href="${GH(r[I.FN])}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${hlt(r[I.FN])}</a>${maintBadge(r)}${r[I.CR] >= NEW_CUT ? '<span class="bdg new">新</span>' : ""}
+          <div class="sub">${r[I.DESC] ? hlt(r[I.DESC]) : '<span class="muted">（无描述）</span>'}</div></td>
+      <td>${dbTags(r)}</td>
+      <td class="small">${confDot(r)}${esc(r[I.CAT])}</td>
+      <td class="small mono">${esc(r[I.LANG])||"—"}</td>
+      <td class="r mono">${fmtK(r[I.ST])}</td>
+      <td class="r mono small">${g7Txt(r)}</td>
+      <td class="small mono">${relTxt(r)}</td>
+      <td>${r[I.SN]?sevBadge(r[I.SW]):'<span class="muted small">—</span>'}</td>
+    </tr>`).join("");
+  el("pager").innerHTML = pagerHtml(filtered.length, st.p, PAGE_SZ);
+  bindPager(el("pager"), p => { st.p = p; render(); syncHash(); window.scrollTo({top:0}); });
+  el("rows").querySelectorAll("tr[data-fn]").forEach(tr =>
+    tr.onclick = () => openDrawer(esc(tr.dataset.fn), projectDetailHtml(tr.dataset.fn)));
+}
+
+/* ---------- 抽屉 ---------- */
+const SORT2TIP = { gro:"本周增星", act:"开发活跃", star:"Star", new:"最新创建", rel:"最近发版", push:"最近推送" };
+function openCombo(db, cat) {
+  const c = MX_RES.get(db + "\x00" + cat);
+  if (!c) { openDrawer(`${esc(db)} × ${esc(cat)}`, '<div class="empty">该组合暂无匹配项目</div>'); return; }
+  const r = c.r;
+  let note = `共 ${c.n} 项候选 · 冠军按「${SORT2TIP[st.sort]}」选出`;
+  if (c.dup) note += ` · ⊙ ${esc(r[I.FN].split("/")[1] || r[I.FN])} 已在「${esc(c.ownerDb || "本行他格")} × ${esc(cat)}」格担任冠军，本格为其占位`;
+  else if (c.gen) note += " · 该库无本土专属项目，通用工具垫底（⊙）";
+  openDrawer(`${esc(db)} × ${esc(cat)}`,
+    `<div class="small muted" style="margin-bottom:10px">${note}</div>`
+    + projectDetailHtml(r[I.FN])
+    + `<button class="btn primary" id="to-list" style="margin-top:12px">在清单视图看全部 ${c.n} 项（其余筛选保留）↘</button>`);
+  el("to-list").onclick = () => {
+    st.db = new Set([db]); st.cat = new Set([cat]);
+    st.view = "list"; st.p = 1;
+    closeDrawer(); render(); syncHash();
+    el("list-wrap").scrollIntoView({ behavior:"smooth", block:"start" });
+  };
+}
+
+/* ---------- 药丸（面板条件 + 搜索词；类别/库的状态由胶囊计数与库按钮表达，不双写） ---------- */
+function pills() {
+  const out = [];
+  for (const m of st.mnt) out.push({ label:(MNT_CHIPS.find(c=>c.v===m)||{}).label || m,
+                                     reset:() => st.mnt.delete(m) });
+  for (const o of st.off) out.push({ label:(OFF_CHIPS.find(c=>c.v===o)||{}).label || o,
+                                     reset:() => st.off.delete(o) });
+  for (const l of st.lang) out.push({ label:l, reset:() => st.lang.delete(l) });
+  if (st.ai) out.push({ label: st.ai === "ai" ? "AI" : "AI·"+st.ai, reset:() => st.ai = "" });
+  if (st.sec) out.push({ label:"高危", reset:() => st.sec = "" });
+  if (st.stv) out.push({ label:"Star≥"+fmtK(st.stv), reset:() => st.stv = 0 });
+  if (st.q) out.push({ label:"“"+st.q+"”", reset:() => { st.q = ""; el("q").value = ""; } });
+  return out;
+}
+
+/* ---------- 筛选段：数据库行（17 库平铺换行 + 组标整组开关）+ 类别分组平铺 ---------- */
+function renderStructure() {
+  /* 数据库行：全选 toggle（17 库全选 ⇄ 全不选）+ 国产/国外组标（点亮=该组全选，点击=只看该组）
+     + 17 库胶囊平铺换行 —— 库选择集合是唯一真相，无展开/收起状态 */
+  const grpBtn = g => {
+    const lit = g.dbs.every(d => st.db.has(d));
+    return `<span class="chip plain${lit?" on":""}" data-g="${g.id}" title="只看${g.title}（${g.dbs.length} 库）">${g.short}</span>`;
+  };
+  const pill = d => `<span class="chip plain${st.db.has(d)?" on":""}" data-d="${esc(d)}">${esc(d)}</span>`;
+  const dr = el("db-row");
+  dr.innerHTML =
+    `<span class="chip plain${st.db.size===DBS.length?" on":""}" data-a="dball" title="全选 17 库 / 再点一次全部取消">全选</span>`
+    + grpBtn(GROUPS[0]) + GROUPS[0].dbs.map(pill).join("")
+    + grpBtn(GROUPS[1]) + GROUPS[1].dbs.map(pill).join("");
+  dr.querySelector("[data-a=dball]").onclick = () => {
+    if (st.db.size === DBS.length) st.db.clear();
+    else DBS.forEach(d => st.db.add(d));
+    st.p = 1; render(); syncHash();
+  };
+  dr.querySelectorAll("[data-g]").forEach(m => m.onclick = () => {
+    const g = GROUPS.find(x => x.id === m.dataset.g);
+    const o = GROUPS.find(x => x.id !== m.dataset.g);
+    g.dbs.forEach(d => st.db.add(d)); o.dbs.forEach(d => st.db.delete(d));
+    st.p = 1; render(); syncHash();
+  });
+  dr.querySelectorAll("[data-d]").forEach(ch => ch.onclick = () => {
+    const d = ch.dataset.d;
+    st.db.has(d) ? st.db.delete(d) : st.db.add(d);
+    st.p = 1; render(); syncHash();
+  });
+  /* 类别分组平铺：管库/用库/造库 角色标记 + 具体类别 chips 直接展示 */
+  const allOn = st.cat.size >= CATS.length;
+  let h = `<span class="chip plain${allOn?" on":""}" data-a="all" title="全部类别">全部</span>`;
+  for (const rg of ROLE_GROUPS) {
+    h += `<span class="grp-mark" title="${esc(rg.desc)}">${rg.name}</span>`;
+    for (const c of rg.cats)
+      h += `<span class="chip plain${st.cat.has(c)?" on":""}" data-c="${esc(c)}">${esc(c)}</span>`;
+  }
+  h += `<span class="chip plain${st.cat.has("其他")?" on":""}" data-a="other" style="margin-left:12px">其他</span>`;
+  const row = el("cat-chips");
+  row.innerHTML = h;
+  row.querySelector('[data-a="all"]').onclick = () => {
+    /* 开关：全选态再点一次 = 全部取消；非全选态 = 选择全部 */
+    st.cat = st.cat.size >= CATS.length ? new Set() : new Set(CATS);
+    st.p=1; render(); syncHash();
+  };
+  row.querySelector('[data-a="other"]').onclick = () => {
+    st.cat.has("其他") ? st.cat.delete("其他") : st.cat.add("其他"); st.p=1; render(); syncHash(); };
+  row.querySelectorAll("[data-c]").forEach(ch => ch.onclick = () => {
+    const c = ch.dataset.c;
+    st.cat.has(c) ? st.cat.delete(c) : st.cat.add(c);
+    st.p = 1; render(); syncHash();
+  });
+}
+
+/* ---------- 工具行 + 面板 + 图例 ---------- */
+function renderTools() {
+  el("vswitch").innerHTML =
+    `<span class="${st.view==="mx"?"on":""}" data-v="mx" title="库 × 类别 · 每格显示该组合的冠军项目（Top1）">▦ 冠军</span>
+     <span class="${st.view==="list"?"on":""}" data-v="list" title="项目清单 · 可搜可排">☰ 清单</span>`;
+  el("vswitch").querySelectorAll("span").forEach(s =>
+    s.onclick = () => switchView(s.dataset.v));
+  el("sort-seg").innerHTML = SORTS.map(([v,l,tip]) =>
+    `<span class="${st.sort===v?"on":""}" data-s="${v}" title="${esc(tip)}${st.view==="mx"?"（冠军视图：决定每格冠军）":"（清单：决定行序）"}">${l}</span>`).join("");
+  el("sort-seg").querySelectorAll("span").forEach(s =>
+    s.onclick = () => { st.sort = s.dataset.s; st.p = 1; render(); syncHash(); });
+  el("lg-wrap").style.display = st.view === "mx" ? "" : "none";
+  el("mx-blk").style.display = st.view === "mx" ? "" : "none";
+  el("list-wrap").style.display = st.view === "list" ? "" : "none";
+  /* 面板 chips / 下拉回填 */
+  renderChips(el("mnt-chips"), MNT_CHIPS, st.mnt,
+    (v,on) => { on ? st.mnt.add(v) : st.mnt.delete(v); st.p = 1; render(); syncHash(); }, 10);
+  renderChips(el("off-chips"), OFF_CHIPS, st.off,
+    (v,on) => { on ? st.off.add(v) : st.off.delete(v); st.p = 1; render(); syncHash(); }, 10);
+  /* 语言行（「全部」= 开关：全选 ⇄ 清空不限） */
+  const langAll = el("lang-all");
+  langAll.innerHTML =
+    `<span class="chip plain${st.lang.size===TOP_LANGS.length?" on":""}" title="选择全部 / 再点一次全部取消（不限语言）">全部</span>`;
+  langAll.querySelector(".chip").onclick = () => {
+    if (st.lang.size === TOP_LANGS.length) st.lang.clear();
+    else TOP_LANGS.forEach(l => st.lang.add(l));
+    st.p = 1; render(); syncHash();
+  };
+  renderChips(el("lang-chips"),
+    TOP_LANGS.map(l => ({v:l,label:l})), st.lang,
+    (v) => { st.lang.has(v) ? st.lang.delete(v) : st.lang.add(v);
+             st.p = 1; render(); syncHash(); }, 20);
+  renderChips(el("ai-chips"), AI_CHIPS,
+    new Set(st.ai ? [st.ai] : []),
+    (v,on) => { st.ai = v === "*" ? "" : (on ? v : ""); st.p = 1; render(); syncHash(); }, 12);
+  renderChips(el("sec-chips"), SEC_CHIPS,
+    new Set(st.sec ? [st.sec] : []),
+    (v,on) => { st.sec = on ? v : ""; st.p = 1; render(); syncHash(); }, 12);
+  el("f-st").value = String(st.stv);
+  if (document.activeElement !== el("q")) el("q").value = st.q;   /* 焦点在输入框时不回填，避免吃掉正在输入的空格 */
+  renderViews();
+}
+function switchView(v) {
+  if (v === st.view) return;
+  st.view = v;
+  if (v === "list") st.p = 1;
+  render(); syncHash();
+}
+function renderLegend() {
+  el("lg-pop").innerHTML =
+    `<div class="h">冠军视图 · 格子符号</div>
+     <div class="row">
+       <span class="item">每格 = 该库 × 该类别的冠军项目（Top1）</span>
+       <span class="item">⊙ 通用工具垫底（该库无本土专属项目）</span>
+       <span class="item">⊙ 单独显示 = 候选已被本行其他格子认领，仅占位</span>
+       <span class="item">○ 被筛选排除</span>
+       <span class="item">· 空格 = 结构性缺口</span>
+     </div>
+     <div class="h">冠军规则</div>
+     <div>本土优先 · 通用让位 · 该库无本土专属项目时通用工具垫底（⊙） · 同一项目在本行不重复占格</div>
+     <div>冠军由「排序」决定，切换排序即更换评选标准</div>`;
+}
+
+/* ---------- 状态行 ---------- */
+function renderStatline(gz, aiN) {
+  const ps = pills();
+  el("statline").innerHTML =
+    `<span class="big" title="一套筛选的唯一结果集 · 冠军与清单显示同一批项目&#10;全量收录 ${(M.total||0).toLocaleString()} 项 · 其中 AI 已解读（当前匹配内）${aiN.toLocaleString()} 项，其余规则兜底&#10;未归属任何数据库的项目不参与本页筛选">匹配 ${filtered.length.toLocaleString()}</span>`
+  + (st.view === "mx" && gz.cells
+    ? `<span class="sub" title="结构性空白：全量收录中该库 × 类别组合无任何项目的格子（·）">缺口 ${gz.gaps}/${gz.cells}</span>
+       <span class="gapbar" title="结构性空白占比 ${Math.round(100*gz.gaps/gz.cells)}%"><i style="width:${Math.round(100*gz.gaps/gz.cells)}%"></i></span>`
+       + (gz.filt ? `<span class="sub" title="有收录但被当前筛选排除的格子（○），不计入缺口">筛除 ${gz.filt}</span>` : "")
+    : "")
+  + (ps.length
+    ? `<span class="pillrow">` + ps.map((p,i) =>
+        `<span class="pill" title="点击 × 移除该条件">${esc(p.label)}<span class="x" data-i="${i}">×</span></span>`).join("") + `</span>`
+    : "");
+  el("statline").querySelectorAll(".x").forEach(x => x.onclick = () => {
+    ps[+x.dataset.i].reset(); st.p = 1; render(); syncHash();
+  });
+}
+
+/* ---------- 总渲染 ---------- */
+function render() {
+  refilter();
+  const aiN = filtered.reduce((n, r) => n + (r[I.CS] === "ai" ? 1 : 0), 0);
+  let gz = { gaps:0, filt:0, cells:0 };
+  if (st.view === "mx") gz = renderMatrix();
+  else renderList();
+  renderStructure();
+  renderTools();
+  renderStatline(gz, aiN);
+}
+
+/* ═════════ 全局搜索（GitHub 式，与 v1 一致）═════════ */
+const qEl = el("q"), sug = el("gsug");
+const SEARCH_IX = P.map(r => [r[I.FN].toLowerCase(), (r[I.DESC]||"").toLowerCase()]);
+let sugIdx = -1, sugFlat = [], sugTimer = null;
+function qhist() { try { return JSON.parse(localStorage.getItem("dbh_qhist")||"[]"); }
+                   catch(e){ return []; } }
+function pushQHist(q) {
+  const h = qhist().filter(x => x !== q);
+  h.unshift(q);
+  localStorage.setItem("dbh_qhist", JSON.stringify(h.slice(0,5)));
+}
+function clearQHist() { localStorage.removeItem("dbh_qhist"); renderSug(""); }
+function nameHit(fn, q) {
+  if (!/^[\x21-\x7e]+$/.test(q)) return fn.includes(q);
+  const re = new RegExp("(^|[^a-z0-9])"
+    + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "($|[^a-z0-9])");
+  return re.test(fn);
+}
+function searchHits(q) {
+  const hits = [];
+  for (let i = 0; i < P.length; i++) {
+    if (!P[i][I.DB]) continue;   /* 只搜已归库项目：未归类不进页面宇宙，建议不露 */
+    const fn = SEARCH_IX[i][0], ds = SEARCH_IX[i][1];
+    let w = 0;
+    if (nameHit(fn, q)) w = 2;
+    else if (ds.indexOf(q) >= 0) w = 1;
+    if (w) hits.push({ i, sc: w * (Math.log10((P[i][I.ST]||0) + 1) + 1) });
+  }
+  hits.sort((a,b) => b.sc - a.sc);
+  return hits;
+}
+function hl(text, q) {
+  const at = text.toLowerCase().indexOf(q);
+  if (!q || at < 0) return esc(text);
+  return esc(text.slice(0,at)) + "<mark>" + esc(text.slice(at, at+q.length)) + "</mark>"
+       + esc(text.slice(at+q.length));
+}
+const catCnt2 = {}, dbCnt2 = {};
+for (const r of P) { catCnt2[r[I.CAT]] = (catCnt2[r[I.CAT]]||0)+1;
+                     for (const d of dims(r).d) dbCnt2[d] = (dbCnt2[d]||0)+1; }
+function renderSug(raw) {
+  const q = raw.trim().toLowerCase();
+  sugFlat = [];
+  let html = "";
+  if (!q) {
+    const h = qhist();
+    if (h.length) {
+      html += `<div class="gh">最近搜索<span class="clr" data-clr="1">清除</span></div>`;
+      for (const t of h) {
+        sugFlat.push({ kind:"hist", q:t });
+        html += `<div class="gi" data-k="${sugFlat.length-1}"><span class="ico">🕘</span><span class="t">${esc(t)}</span></div>`;
+      }
+    } else {
+      html += `<div class="none">搜索项目名 / 描述，实时过滤、与筛选叠加<br>输入类别或库名可直达筛选 · ↑↓ 或悬停选择建议，Enter 确认</div>`;
+    }
+  } else {
+    const hits = searchHits(q);
+    const projs = hits.slice(0,5).map(h => P[h.i]);
+    const cats  = CATS.filter(c => c.toLowerCase().includes(q)).slice(0,3);
+    const dbs   = DBS.filter(d => d.toLowerCase().includes(q)).slice(0,3);
+    if (!hits.length && !cats.length && !dbs.length)
+      html += `<div class="none">没有匹配“${esc(raw)}”的项目 / 类别 / 数据库</div>`;
+    if (projs.length) {
+      html += `<div class="gh">项目</div>`;
+      for (const r of projs) {
+        sugFlat.push({ kind:"proj", fn:r[I.FN] });
+        html += `<div class="gi" data-k="${sugFlat.length-1}">
+          <span class="ico">📦</span><span class="t mono">${hl(r[I.FN], q)}</span>
+          <span class="m">★${fmtK(r[I.ST])} · ${esc(r[I.CAT])}${r[I.DB]?" · "+esc(r[I.DB]):""}</span></div>`;
+      }
+    }
+    if (cats.length) {
+      html += `<div class="gh">类别</div>`;
+      for (const c of cats) {
+        sugFlat.push({ kind:"cat", v:c });
+        html += `<div class="gi" data-k="${sugFlat.length-1}">
+          <span class="ico">🗂</span><span class="t">${hl(c, q)}</span>
+          <span class="m">${(catCnt2[c]||0).toLocaleString()} 个项目</span></div>`;
+      }
+    }
+    if (dbs.length) {
+      html += `<div class="gh">数据库</div>`;
+      for (const d of dbs) {
+        sugFlat.push({ kind:"db", v:d });
+        html += `<div class="gi" data-k="${sugFlat.length-1}">
+          <span class="ico">🗄</span><span class="t">${hl(d, q)}</span>
+          <span class="m">${(dbCnt2[d]||0).toLocaleString()} 项归属</span></div>`;
+      }
+    }
+    /* 计数 = filtered.length：输入已实时过滤，这才是"当前筛选+搜索词"的真实落地数；0 则不出此行 */
+    if (filtered.length) {
+      sugFlat.push({ kind:"act", q: raw.trim() });
+      html += `<div class="gi act" data-k="${sugFlat.length-1}">
+        <span class="ico">🔍</span><span class="t">在清单中查看 <b>${filtered.length.toLocaleString()}</b> 个匹配项目</span>
+        <span class="m">↵</span></div>`;
+    }
+  }
+  sug.innerHTML = html;
+  sug.classList.add("open");
+  sugIdx = -1;
+  bindSug();
+}
+function closeSug() {
+  sug.classList.remove("open");
+  sugIdx = -1; sugFlat = [];
+}
+function bindSug() {
+  sug.querySelectorAll(".gi").forEach(gi => {
+    gi.onclick = () => execSugItem(sugFlat[+gi.dataset.k]);
+    /* 悬停即选中（与 ↑↓ 共用同一选中态），回车执行当前选中项 */
+    gi.addEventListener("mouseenter", () => {
+      sugIdx = +gi.dataset.k;
+      sug.querySelectorAll(".gi").forEach(g =>
+        g.classList.toggle("on", +g.dataset.k === sugIdx));
+    });
+  });
+  const clr = sug.querySelector("[data-clr]");
+  if (clr) clr.onclick = clearQHist;
+}
+function execSugItem(it) {
+  if (!it) return;
+  if (it.kind === "proj") { closeSug(); qEl.blur(); openDrawer(it.fn, projectDetailHtml(it.fn)); return; }
+  if (it.kind === "hist") { qEl.value = it.q; qEl.dispatchEvent(new Event("input", {bubbles:true})); return; }
+  if (it.kind === "cat" || it.kind === "db") {
+    closeSug(); qEl.blur();
+    st.q = ""; qEl.value = "";
+    st.db = it.kind === "db" ? new Set([it.v]) : new Set(GROUPS[0].dbs);
+    st.cat = it.kind === "cat" ? new Set([it.v]) : new Set(CATS);
+    st.view = "list"; st.p = 1;
+    render(); syncHash();
+    el("list-wrap").scrollIntoView({ behavior:"smooth", block:"start" });
+    return;
+  }
+  if (it.kind === "act") {          /* 切到清单看当前过滤结果（不清任何条件） */
+    closeSug(); qEl.blur();
+    st.view = "list"; st.p = 1;
+    render(); syncHash();
+    el("list-wrap").scrollIntoView({ behavior:"smooth", block:"start" });
+  }
+}
+function moveSug(d) {
+  if (!sugFlat.length) return;
+  sugIdx = (sugIdx + d + sugFlat.length) % sugFlat.length;
+  sug.querySelectorAll(".gi").forEach(g => g.classList.toggle("on", +g.dataset.k === sugIdx));
+  const cur = sug.querySelectorAll(".gi")[sugIdx];
+  if (cur) cur.scrollIntoView({ block:"nearest" });
+}
+qEl.addEventListener("focus", () => renderSug(qEl.value));
+/* 局部搜索：实时过滤，与已勾选条件 AND 共存（不清筛选） */
+qEl.addEventListener("input", () => {
+  const v = qEl.value;
+  st.q = v.trim();
+  st.p = 1;
+  render(); syncHash();
+  clearTimeout(sugTimer);
+  sugTimer = setTimeout(() => renderSug(v), 150);
+});
+qEl.addEventListener("blur", () => setTimeout(() => {
+  if (!sug.contains(document.activeElement)) closeSug();
+}, 120));
+qEl.addEventListener("keydown", e => {
+  if (e.key === "ArrowDown") { e.preventDefault(); moveSug(1); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); moveSug(-1); }
+  else if (e.key === "Enter") {
+    e.preventDefault();
+    const v = qEl.value.trim();
+    if (v) pushQHist(v);                          /* 回车 = 确认这次搜索（记入历史） */
+    if (sugIdx >= 0 && sugFlat[sugIdx]) execSugItem(sugFlat[sugIdx]);
+    else { closeSug(); qEl.blur(); }              /* 无高亮：仅收起面板，过滤已实时生效 */
+  }
+  else if (e.key === "Escape") { closeSug(); qEl.blur(); }
+});
+sug.addEventListener("mousedown", e => e.preventDefault());
+
+/* ---------- 保存视图（平铺直列：保存按钮 + 已存视图 chips） ---------- */
+function views() { try { return JSON.parse(localStorage.getItem("dbh_xviews")||"[]"); }
+                   catch(e){ return []; } }
+function saveViews(v) { localStorage.setItem("dbh_xviews", JSON.stringify(v)); }
+el("save-btn").onclick = () => {
+  const name = prompt("视图名称：", "视图" + (views().length+1));
+  if (!name) return;
+  const v = views();
+  v.push({ name, view:st.view, db:[...st.db], cat:[...st.cat],
+    mnt:[...st.mnt], off:[...st.off], lang:[...st.lang],
+    ai:st.ai, stv:st.stv, sec:st.sec, sort:st.sort, q:st.q });
+  saveViews(v.slice(-5));
+  renderViews();
+};
+function renderViews() {
+  const v = views();
+  el("views-chips").innerHTML = v.length
+    ? v.map((x,i) => `<span class="chip" title="${esc(x.name)}（${x.view==="list"?"清单":"冠军"}）">${esc(x.name)} <span class="more-btn" data-a="use" data-i="${i}">应用</span> <span class="more-btn" data-a="del" data-i="${i}" style="color:var(--sev)">✕</span></span>`).join("")
+    : `<span class="small muted">调好筛选后点「＋ 保存视图」，最多 5 个</span>`;
+  el("views-chips").querySelectorAll("[data-a]").forEach(b => b.onclick = () => {
+    const i = +b.dataset.i, v2 = views();
+    if (b.dataset.a === "del") { v2.splice(i,1); saveViews(v2); renderViews(); return; }
+    const x = v2[i];
+    st.view = x.view === "list" ? "list" : "mx";
+    st.db = new Set(x.db && x.db.length ? x.db : DBS);
+    /* 旧存档兼容：blk 有效且 db 为 17 全量时，按 blk 映射为对应组选中态 */
+    if ((!x.db || x.db.length === DBS.length) && ["cn","intl"].includes(x.blk))
+      st.db = new Set(GROUPS.find(g => g.id === x.blk).dbs);
+    st.cat = new Set(x.cat);
+    st.mnt = new Set(x.mnt||[]); st.off = new Set(x.off||[]);
+    st.lang = new Set(x.lang||[]);
+    st.ai = x.ai||""; st.stv = x.stv||0; st.sec = x.sec||"";
+    st.sort = x.sort||"gro"; st.q = x.q||""; el("q").value = st.q; st.p = 1;
+    render(); syncHash();
+  });
+}
+
+/* ---------- 面板 / 图例 / 事件 ---------- */
+el("reset-btn").onclick = () => {
+  st.db = new Set(GROUPS[0].dbs); st.cat = new Set(CATS);
+  st.mnt.clear(); st.off.clear(); st.lang.clear();
+  st.ai = ""; st.stv = 0; st.sec = "";
+  st.q = ""; el("q").value = "";
+  st.sort = "gro"; st.p = 1;
+  render(); syncHash();
+};
+el("f-st").addEventListener("change", e => { st.stv = +e.target.value; st.p = 1; render(); syncHash(); });
+el("lg-btn").onclick = () => el("lg-wrap").classList.toggle("open");
+document.addEventListener("click", ev => {
+  if (!el("lg-wrap").contains(ev.target)) el("lg-wrap").classList.remove("open");
+});
+
+/* ---------- 启动 ---------- */
+document.body.insertAdjacentHTML("afterbegin", navHtml("projects.html"));
+el("drawer-mount").innerHTML = drawerHtml();
+el("foot").innerHTML = `快照 ${M.snap||"?"} · 构建于 ${M.built||"?"} · 数据源：<a href="https://github.com/zqf20096327/dbhub_collect" target="_blank" rel="noopener">dbhub_collect</a> ·
+<details><summary>口径 ⓘ</summary><span class="dk small muted">
+全量收录 ${(M.total||0).toLocaleString()} 项；类别 / 归属库 / 维护状态 / 官方 / AI 类型 = AI 解读优先（${(M.interp||0).toLocaleString()} 项已覆盖）、规则兜底。<br>
+搜索：本页实时过滤、与筛选条件叠加（不清筛选）；建议面板 ↑↓ / 悬停选择、Enter 确认、Esc 关闭。导航栏「搜索全站」为跨页入口（按 / 聚焦，回车跳转本页并带条件）。<br>
+维护状态统一口径：AI 弃用/停维 &gt; 已归档 &gt; 疑似停维（★≥100 且 90 天零提交）。冠军格 = 本土优先、通用让位、通用垫底（⊙）。
+</span></details>`;
+applyHash();
+bindThemeBtn(); bindDrawer();
+renderLegend();
+const _boot = el("boot"); if (_boot) _boot.remove();
+el("main").style.display = "";
+render(); syncHash();
+</script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>项目对比 · 数据库开源生态观测</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div id="nav"></div>
+<div class="wrap">
+  <div id="boot">正在加载生态数据（约 8MB，仅首次）…<div class="bar"></div></div>
+  <main id="main" style="display:none">
+    <section class="hero" style="padding:24px 0 8px">
+      <h1>项目对比</h1>
+      <p>选 2-4 个同类项目并排比较信号；已生成 AI 解读的组合会给出「怎么选」。
+        在任意项目抽屉里点「⇄ 加入对比」，或用下面的搜索、推荐挑选。</p>
+    </section>
+
+    <section class="card">
+      <div class="card-head"><h2>对比篮<span class="hint" id="basket-n"></span></h2>
+        <span style="display:inline-flex;gap:6px">
+          <button class="btn" id="share-btn">🔗 复制对比链接</button>
+          <button class="btn" id="clear-btn">清空</button>
+        </span></div>
+      <div class="slots" id="slots"></div>
+      <div class="csearch">
+        <input id="cadd" type="text" autocomplete="off" spellcheck="false"
+               placeholder="搜索添加项目（名字 / 描述）…">
+        <div class="csug" id="csug" style="display:none"></div>
+      </div>
+      <div id="picker"></div>
+      <div class="sec-title" style="margin:12px 0 0"><h3>热门对比</h3><span class="line"></span>
+        <span class="muted small">点按载入 · 已生成 AI 解读的组合给出「怎么选」</span></div>
+      <div class="tagrow" style="margin-top:8px" id="pairs"></div>
+    </section>
+
+    <section class="card" id="sig-card" style="display:none">
+      <div class="card-head"><h2>信号并排<span class="hint">数据层自动 · 加粗=行内最高 · 点列头看详情</span></h2>
+        <button class="chip" id="diff-btn">只看差异</button></div>
+      <div class="tblwrap"><table class="cmp" id="cmp"></table></div>
+    </section>
+
+    <section class="card" id="ai-card" style="display:none">
+      <div class="card-head"><h2>🤖 AI 对比解读<span class="hint">构建期由 AI 基于双方 README 与信号生成 · 非运行时调用</span></h2></div>
+      <div id="ai-body"></div>
+    </section>
+  </main>
+  <footer id="foot"></footer>
+</div>
+<div id="drawer-mount"></div>
+
+<script src="data/pool.js"></script>
+<script src="data/detail.js"></script>
+<script src="data/comparisons.js"></script>
+<script src="assets/app.js"></script>
+<script>
+"use strict";
+const CMP = window.COMPARE || {};
+
+function render() {
+  const fns = getCompare();
+  const full = fns.length >= 4;
+  el("basket-n").textContent =
+      fns.length === 0 ? "搜索或从推荐加入 · 上限 4 个"
+    : fns.length === 1 ? "1 / 4 · 再选 1 个开始并排"
+    : `${fns.length} / 4 · 并排已就绪`;
+  const cadd = el("cadd");
+  cadd.disabled = full;
+  cadd.placeholder = full ? "已满 4 / 4 —— 移出一个再加" : "搜索添加项目（名字 / 描述）…";
+  /* ---- 对比篮 ---- */
+  el("slots").innerHTML = [0,1,2,3].map(i => {
+    const fn = fns[i];
+    return fn
+      ? `<span class="slot filled"><span class="repo">${esc(fn)}</span>
+           <button class="icon-btn" data-rm="${esc(fn)}" title="移除">✕</button></span>`
+      : `<span class="slot" data-plus title="点击搜索添加">＋</span>`;
+  }).join("");
+  el("slots").querySelectorAll("[data-rm]").forEach(b => b.onclick = () => {
+    saveCompare(getCompare().filter(x => x !== b.dataset.rm)); render();
+  });
+  el("slots").querySelectorAll("[data-plus]").forEach(s =>
+    s.onclick = () => cadd.focus());
+  /* ---- 选择器：同类推荐 ---- */
+  const first = fns.length ? byFn(fns[0]) : null;
+  let pool2 = P.filter(r => !isNA(r) && !fns.includes(r[I.FN]));
+  if (first) pool2 = pool2.filter(r => r[I.CAT] === first[I.CAT]
+        && dbList(r).some(d => dbList(first).includes(d)));
+  const recs = pool2.sort((a,b) => b[I.ST] - a[I.ST]).slice(0, 10);
+  el("picker").innerHTML =
+    `<div class="sec-title" style="margin:12px 0 8px"><h3>${first
+       ? `同类推荐（${esc(first[I.CAT])} · 与 ${esc(fns[0])} 库重叠）`
+       : "热门起点"}</h3><span class="line"></span>
+       <span class="muted small">${first ? "" : "先选一个，推荐会按同类收敛"}</span></div>
+     <div class="tagrow">${recs.map(r =>
+       `<span class="chip${full ? " off" : ""}" data-add="${esc(r[I.FN])}">${esc(r[I.FN].split("/")[1])}
+          <span class="n">★${fmtK(r[I.ST])}</span></span>`).join("")
+       || '<span class="small muted">（暂无推荐）</span>'}</div>`;
+  el("picker").querySelectorAll("[data-add]").forEach(c => c.onclick = () => {
+    if (full) return;
+    const a = getCompare();
+    if (a.includes(c.dataset.add)) return;
+    a.push(c.dataset.add); saveCompare(a); render();
+  });
+  /* ---- AI 解读 ---- */
+  const ai = fns.length >= 2 ? CMP[cmpKey(fns)] : null;
+  el("ai-card").style.display = fns.length >= 2 ? "" : "none";
+  el("ai-body").innerHTML = ai
+    ? `<h3 class="ai-title">${esc(ai.title)}</h3>
+       <div class="ai-verdict">${esc(ai.verdict)}</div>
+       ${ai.sections.map(s => `<div class="ai-sec"><b>${esc(s.h)}</b><p>${esc(s.text)}</p></div>`).join("")}
+       <div class="ai-picks">${ai.picks.map(p =>
+          `<div class="ai-pick"><span class="scene">${esc(p.scene)}</span>
+           → <b>${esc(p.pick)}</b><span class="muted small">（${esc(p.why)}）</span></div>`).join("")}</div>`
+    : (fns.length >= 2
+        ? `<div class="small muted" style="padding:2px 2px 8px">该组合暂无 AI 解读 —— 内置样例 2 组见上方对比篮；正式版由 build/ai_compare.py 在构建期为热门组合自动生成。</div>`
+        : "");
+  /* ---- 信号并排：5 组 · 行内最高值加粗（须为正，风险行不参与） · 只看差异 ---- */
+  el("sig-card").style.display = fns.length >= 2 ? "" : "none";
+  if (fns.length >= 2) {
+    const rs = fns.map(byFn).filter(Boolean);
+    const td = h => `<td>${h}</td>`;
+    const bestSet = (getV, invert, needPos) => {   // 行最优：并列全取；needPos=最高值须为正
+      let m = null;
+      for (const r of rs) { const v = getV(r); if (v == null) continue;
+        const k = invert ? -v : v; if (m === null || k > m) m = k; }
+      if (m === null || (needPos && m <= 0)) return null;
+      const s = new Set();
+      for (const r of rs) { const v = getV(r); if (v == null) continue;
+        if ((invert ? -v : v) === m) s.add(r[I.FN]); }
+      return s;
+    };
+    const W = {
+      st:  bestSet(r => r[I.ST] || 0, false, true),
+      g7:  bestSet(r => r[I.G7], false, true),
+      act: bestSet(r => act(r), false, true),
+      c7:  bestSet(r => r[I.C7], false, true),
+      c90: bestSet(r => r[I.C90], false, true),
+      ct:  bestSet(r => r[I.CT], false, true),
+      rd:  bestSet(r => (r[I.RV] && r[I.RD] != null) ? r[I.RD] : null, true, false),
+    };
+    const tw = (set, r, html) => `<td class="${set && set.has(r[I.FN]) ? "win" : ""}">${html}</td>`;
+    const rowT = (label, cells, title) =>
+      ({ label, title, html: cells.join(""), same: cells.every(c => c === cells[0]) });
+    const head = rs.map(r => `<th class="cmp-proj" data-fn="${esc(r[I.FN])}" title="点列头看项目详情">${esc(r[I.FN].split("/")[1])}`
+      + ` <span class="muted small mono">${esc(r[I.FN].split("/")[0])}</span>`
+      + ` <button class="cx" data-rm="${esc(r[I.FN])}" title="移除该列">✕</button></th>`).join("");
+    const dbsTags = r => {
+      const l = r[I.DBS] || [];
+      const shown = l.slice(0, 4).map(x => `<span class="tag gray">${esc(x)}</span>`).join(" ");
+      return l.length > 4
+        ? shown + ` <span class="tag gray" title="${esc(l.slice(4).join("、"))}">+${l.length - 4}</span>`
+        : shown;
+    };
+    const descOf = r => (D[r[I.FN]] && D[r[I.FN]].ol) || r[I.DESC] || "";
+    const cellDesc = rs.map(r => td(descOf(r) ? `<div class="clamp">${esc(descOf(r))}</div>` : '<span class="muted">—</span>'));
+    const cellAiList = key => rs.map(r => {
+      const v = D[r[I.FN]] && D[r[I.FN]][key];
+      return td(v && v.length ? `<div class="clamp">${esc(v.join(" · "))}</div>` : '<span class="muted">—</span>');
+    });
+    const cellRm = rs.map(r => td((D[r[I.FN]] && D[r[I.FN]].rm)
+      ? `<div class="clamp">${esc(D[r[I.FN]].rm.slice(0, 220))}…</div>`
+      : '<span class="muted small">（Star≥100 才收录摘录）</span>'));
+    const secCell = r => {
+      if (!r[I.SN]) return '<span class="muted">无在册</span>';
+      const dt = r[I.SL] ? `<span class="muted small"> · 最近披露 ${esc(String(r[I.SL]).slice(0, 10))}</span>` : "";
+      return `${sevBadge(r[I.SW])} ×${r[I.SN]}${dt}`;
+    };
+    const GROUPS = [
+      { name: "画像", rows: [
+        rowT("一句话定位", cellDesc),
+        rowT("类别", rs.map(r => td(`<span class="tag gray">${esc(r[I.CAT])}</span>`))),
+        rowT("主语言", rs.map(r => td(esc(r[I.LANG]) || "—"))),
+        rowT("许可证", rs.map(r => td(`<span class="mono small">${esc(r[I.LIC])||"—"}</span>`))),
+        rowT("目标人群", rs.map(r => td(r[I.PF] ? `<span class="tag gray">${PF_CN[r[I.PF]] || esc(r[I.PF])}</span>` : '<span class="muted">—</span>'))),
+        rowT("AI 能力", rs.map(r => td(aikLabel(r) ? `<span class="tag gray">${esc(aikLabel(r))}</span>` : '<span class="muted">—</span>'))),
+        rowT("支持库", rs.map(r => td(dbsTags(r)))),
+        rowT("官方出品", rs.map(r => td(r[I.O] ? "✓" : "—"))),
+        rowT("创建于", rs.map(r => td(`<span class="mono small">${esc(r[I.CR])}</span>`))),
+      ]},
+      { name: "信号", rows: [
+        rowT("Star", rs.map(r => tw(W.st, r, `<span class="mono">${fmtK(r[I.ST])}</span>`)), "GitHub Stars 总数"),
+        rowT("本周增星", rs.map(r => tw(W.g7, r, g7Txt(r))), "对比周增星基线的差分；无基线的项目不计"),
+        rowT("活跃度指数", rs.map(r => tw(W.act, r, `<span class="mono">${act(r)}</span>`)), "口径：7 天提交×2 + 近 30 天发版 +15 + 贡献者档(÷20 封顶 20)，封顶 100"),
+        rowT("7 天提交", rs.map(r => tw(W.c7, r, `<span class="mono">${r[I.C7]==null?"—":r[I.C7]}</span>`)), "近 7 天 commit 数（GitHub API）"),
+        rowT("近 90 天提交", rs.map(r => tw(W.c90, r, `<span class="mono">${r[I.C90]==null?"—":r[I.C90]}</span>`)), "更稳的持续活跃窗口，抗单周波动"),
+        rowT("贡献者", rs.map(r => tw(W.ct, r, `<span class="mono">${r[I.CT]==null?"—":fmtK(r[I.CT])}</span>`))),
+        rowT("最新发版", rs.map(r => tw(W.rd, r, relTxt(r))), "距最近 release 的天数"),
+        rowT("最近推送", rs.map(r => td(`<span class="mono small">${esc(r[I.PU]) || "—"}</span>`)), "最近一次 push 日期；与发版互补看日常活性"),
+      ]},
+      { name: "风险", rows: [
+        rowT("维护状态", rs.map(r => td(maintBadge(r) || '<span class="muted">活跃/正常</span>'))),
+        rowT("安全通告", rs.map(r => td(secCell(r))), "在册 GitHub Security Advisories；日期=最近披露"),
+      ]},
+      { name: "AI 解读", sub: "README 提炼 · 非逐项对齐", rows: [
+        rowT("亮点", cellAiList("hl")),
+        rowT("适用场景", cellAiList("uc")),
+      ]},
+      { name: "参考", rows: [
+        rowT("README 开头", cellRm),
+      ]},
+    ];
+    let hidden = 0, shown = 0, body = "";
+    for (const g of GROUPS) {
+      const vis = g.rows.filter(rw => !diffOnly || !rw.same);
+      hidden += g.rows.length - vis.length;
+      if (!vis.length) continue;
+      shown += vis.length;
+      body += `<tr class="cg"><th colspan="${rs.length + 1}">${g.name}`
+        + (g.sub ? `<span class="cg-sub">${g.sub}</span>` : "") + `</th></tr>`
+        + vis.map(rw => `<tr><th${rw.title ? ` title="${esc(rw.title)}"` : ""}>${rw.label}</th>${rw.html}</tr>`).join("");
+    }
+    if (!shown) body = `<tr class="allsame"><th colspan="${rs.length + 1}">这组项目的以上信号几乎一致 —— 点「显示全部」查看完整表格。</th></tr>`;
+    el("cmp").innerHTML = `<tr><th></th>${head}</tr>` + body;
+    el("diff-btn").textContent = diffOnly ? `显示全部（已隐藏 ${hidden} 行）` : "只看差异";
+    el("diff-btn").classList.toggle("on", diffOnly);
+    el("cmp").querySelectorAll(".cx").forEach(b => b.onclick = e => {
+      e.stopPropagation();
+      saveCompare(getCompare().filter(x => x !== b.dataset.rm)); render();
+    });
+    el("cmp").querySelectorAll(".cmp-proj").forEach(h =>
+      h.onclick = () => openDrawer(esc(h.dataset.fn), projectDetailHtml(h.dataset.fn)));
+  }
+}
+
+/* ================= 搜索添加（输入框静态、只绑一次；建议 Top6） ================= */
+let sugList = [], sugIdx = -1;
+function addFn(fn) {
+  const a = getCompare();
+  if (a.length >= 4 || a.includes(fn)) return;
+  a.push(fn); saveCompare(a); render();
+}
+function closeSug() { el("csug").style.display = "none"; sugIdx = -1; }
+function renderSug() {
+  const q = el("cadd").value.trim().toLowerCase();
+  sugIdx = -1;
+  if (!q) { sugList = []; closeSug(); return; }
+  const inBasket = new Set(getCompare());
+  sugList = P.filter(r => !isNA(r) && !inBasket.has(r[I.FN]))
+    .map(r => {
+      const name = r[I.FN].toLowerCase(), desc = (r[I.DESC] || "").toLowerCase();
+      const hit = name.includes(q) ? 2 : desc.includes(q) ? 1 : 0;
+      return hit ? { r, s: hit * (Math.log10((r[I.ST] || 0) + 1) + 1) } : null;
+    })
+    .filter(Boolean).sort((a, b) => b.s - a.s).slice(0, 6).map(x => x.r);
+  el("csug").innerHTML = sugList.map((r, i) =>
+    `<div class="ci" data-i="${i}"><span class="repo">${esc(r[I.FN])}</span>`
+    + `<span class="muted small">${esc(r[I.CAT])} · ★${fmtK(r[I.ST])}</span></div>`).join("")
+    || `<div class="ci off">没有匹配「${esc(q)}」的项目</div>`;
+  el("csug").style.display = "";
+}
+el("cadd").oninput = renderSug;
+el("cadd").onkeydown = e => {
+  const items = el("csug").querySelectorAll(".ci[data-i]");
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    e.preventDefault();
+    if (!items.length) return;
+    sugIdx = sugIdx < 0 ? (e.key === "ArrowDown" ? 0 : items.length - 1)
+      : (sugIdx + (e.key === "ArrowDown" ? 1 : -1) + items.length) % items.length;
+    items.forEach((it, i) => it.classList.toggle("on", i === sugIdx));
+  } else if (e.key === "Enter") {
+    const pick = sugList[sugIdx >= 0 ? sugIdx : 0];
+    if (pick) { e.preventDefault(); addFn(pick[I.FN]); el("cadd").value = ""; closeSug(); }
+  } else if (e.key === "Escape") closeSug();
+};
+el("cadd").onblur = () => setTimeout(closeSug, 150);
+el("csug").onmousedown = e => {
+  e.preventDefault();                       // 抢在 blur 关面板前处理
+  const it = e.target.closest(".ci[data-i]");
+  if (it) { addFn(sugList[+it.dataset.i][I.FN]); el("cadd").value = ""; closeSug(); el("cadd").focus(); }
+};
+
+el("clear-btn").onclick = () => { saveCompare([]); render(); };
+
+/* ---- 只看差异（会话内状态）· 分享链接 ---- */
+let diffOnly = false;
+el("diff-btn").onclick = () => { diffOnly = !diffOnly; render(); };
+el("share-btn").onclick = () => {
+  const a = getCompare(), b = el("share-btn");
+  const reset = () => { b.textContent = "🔗 复制对比链接"; };
+  if (a.length < 2) { b.textContent = "先选 2 个项目"; setTimeout(reset, 1500); return; }
+  const url = location.origin + location.pathname + "#cmp=" + a.join("|");
+  const done = () => { b.textContent = "已复制 ✓"; setTimeout(reset, 1600); };
+  if (navigator.clipboard && navigator.clipboard.writeText)
+    navigator.clipboard.writeText(url).then(done, () => prompt("复制下面的链接：", url));
+  else prompt("复制下面的链接：", url);
+};
+
+/* ---- 热门对比（策展组合，页内 const——compare_pairs.json 是纯 JSON 无法静态加载） ---- */
+const PAIRS = [
+  { fns: ["pgbackrest/pgbackrest", "EnterpriseDB/barman"], hint: "PostgreSQL · 备份" },
+  { fns: ["dbeaver/dbeaver", "OtterMind/Chat2DB", "TableProApp/TablePro"], hint: "跨库 · 客户端" },
+  { fns: ["bytebase/bytebase", "actiontech/sqle"], hint: "MySQL · SQL 审核" },
+  { fns: ["pingcap/tiup", "oceanbase/obdeploy"], hint: "国产 · 部署管理" },
+];
+const DEMOS = { backup: PAIRS[0].fns, gui: PAIRS[1].fns };   // 旧 #demo= 深链兼容
+function loadPair(fns) {
+  saveCompare(fns.filter(byFn).slice(0, 4)); render();
+  const t = getCompare().length >= 2 ? el("sig-card") : el("slots");
+  window.scrollTo({ top: t.offsetTop - 70, behavior: "smooth" });
+}
+el("pairs").innerHTML = PAIRS.map((p, i) =>
+  `<span class="chip" data-pair="${i}">${esc(p.hint)}<span class="n">${p.fns.length} 项</span></span>`).join("");
+el("pairs").querySelectorAll("[data-pair]").forEach(c =>
+  c.onclick = () => loadPair(PAIRS[+c.dataset.pair].fns));
+
+/* ---- 深链：#cmp=a|b|c 分享装载（空篮时）· #demo= 旧链兼容 ---- */
+const hv = parseHash();
+if (hv.cmp && !getCompare().length) {
+  const a = hv.cmp.split("|").filter(byFn).slice(0, 4);
+  if (a.length >= 2) saveCompare(a);
+}
+if (hv.demo && DEMOS[hv.demo] && !getCompare().length) saveCompare(DEMOS[hv.demo]);
+document.body.insertAdjacentHTML("afterbegin", navHtml("compare.html"));
+el("drawer-mount").innerHTML = drawerHtml();
+el("foot").innerHTML = `AI 解读为构建期离线生成（基于 README 摘录与站内信号，非运行时调用、无数据上传）·
+样例内置 2 组；正式版由 build/ai_compare.py（需 DBHUB_AI_KEY）为热门组合自动生成 ·
+数据快照 ${M.snap||"?"}`;
+bindThemeBtn(); bindDrawer();
+const boot = el("boot"); if (boot) boot.remove();
+el("main").style.display = "";
+render();
+</script>
+</body>
+</html>

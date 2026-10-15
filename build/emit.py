@@ -1,0 +1,64 @@
+# -*- coding: utf-8 -*-
+"""输出层：pool.js / detail.js / audit_wide_dbs.json 写盘。
+
+输出格式是前端契约：window.META + window.POOL（32 列数组）与
+window.DETAIL 由页面 <script> 直载，键序与序列化参数不可变。
+"""
+import json
+import os
+from datetime import datetime
+
+import classify as classify_mod
+import taxonomy as taxonomy_mod
+
+
+def build_meta(bundle, records, stats):
+    meta = {
+        "built": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "snap": bundle.snap, "growthBase": bundle.old_date,
+        "total": len(records),
+        "attributed": len(records) - stats["db_cnt"].get("未归类", 0),
+        "unattr": stats["db_cnt"].get("未归类", 0),
+        "enriched": len(bundle.enrich), "ai": stats["ai_n"],
+        "sec": stats["sec_n"], "stale": stats["stale_n"],
+        "g7cov": stats["g7cov"], "interp": stats["interp_n"],
+        "aiCat": stats["ai_cat_n"], "app": stats["eco_app_n"],
+        "dbOrder": taxonomy_mod.DB_ORDER,
+        "catOrder": classify_mod.CAT_ORDER,
+    }
+    return meta
+
+
+def write_outputs(out, bundle, records, detail, stats, wide_dbs):
+    """三件输出写盘，返回 (meta, 各文件路径)。"""
+    meta = build_meta(bundle, records, stats)
+    data_dir = os.path.join(out, "data")
+    os.makedirs(data_dir, exist_ok=True)
+    pool_path = os.path.join(data_dir, "pool.js")
+    with open(pool_path, "w", encoding="utf-8") as f:
+        f.write("window.META=" + json.dumps(meta, ensure_ascii=False,
+                                            separators=(",", ":")))
+        f.write(";\nwindow.POOL=")
+        json.dump(records, f, ensure_ascii=False, separators=(",", ":"))
+        f.write(";\n")
+    detail_path = os.path.join(data_dir, "detail.js")
+    with open(detail_path, "w", encoding="utf-8") as f:
+        f.write("window.DETAIL=")
+        json.dump(detail, f, ensure_ascii=False, separators=(",", ":"))
+        f.write(";\n")
+    audit_dir = os.path.join(out, "build")
+    os.makedirs(audit_dir, exist_ok=True)
+    audit_path = os.path.join(audit_dir, "audit_wide_dbs.json")
+    with open(audit_path, "w", encoding="utf-8") as f:
+        json.dump({"built": meta["built"], "snap": bundle.snap,
+                   "count": len(wide_dbs), "items": wide_dbs},
+                  f, ensure_ascii=False, indent=1)
+
+    sz1 = os.path.getsize(pool_path) / 1e6
+    sz2 = os.path.getsize(detail_path) / 1e6
+    print(f"records={len(records)} detail={len(detail)} "
+          f"pool.js={sz1:.1f}MB detail.js={sz2:.1f}MB")
+    print("META:", json.dumps({k: v for k, v in meta.items()
+                               if k not in ("dbOrder", "catOrder")},
+                              ensure_ascii=False))
+    return meta, (pool_path, detail_path, audit_path)

@@ -1,0 +1,42 @@
+{
+  "no": 2,
+  "date": "2026-10-03",
+  "theme": { "cat": "", "side": "cn", "note": "手工续写期（dbx 连载），三席轮盘自第 3 期正式生效" },
+  "lede": [
+    ["亮点", "<a href=\"#\" class=\"jump\" data-fn=\"t8y2/dbx\">dbx</a>（周 +3,212★）连续两周霸榜全站；腾讯一周双上榜——Octop +1,498、<a href=\"#\" class=\"jump\" data-fn=\"TencentCloud/TencentDB-Agent-Memory\">Agent Memory</a> +410"],
+    ["风险", "近 7 天<b>新披露</b>高危通告 9 起，payload 影响最大；1,058 个千星级工具停维或归档"],
+    ["规模", "全站收录 34,295 个项目，17 库生态，每周更新一次"]
+  ],
+  "deep": [
+    {
+      "sec": "intl", "tag": "国际开源", "fn": "FalkorDB/FalkorDB",
+      "title": "图数据库押注 Agent 记忆：FalkorDB 用线性代数跑图查询",
+      "summary": "GraphBLAS 稀疏矩阵打底、Redis 模块形态分发的图数据库，把 GraphRAG 与 Agent Memory 当主战场——本周 +270 星，三天前刚发 v4.20.7。",
+      "body": [
+        "FalkorDB 是一个属性图数据库：Rust 实现的 Redis 模块（libfalkordb），把图的邻接矩阵放进 GraphBLAS 稀疏矩阵、用线性代数执行查询，支持 OpenCypher 查询语言，任意 Redis 客户端都能直接发 GRAPH.QUERY。官方定位写得直白：为生成式 AI、Agent Memory、云安全与反欺诈提供超快多租户图数据库。",
+        "为什么本期选它：★6,553、本周 +270 星，v4.20.7 发布于三天前，67 位贡献者。更值得注意的是赛道信号——站内本周增星榜上「Agent 记忆」方向集中冒头（腾讯 Agent Memory、tigerless-labs/agent-memory 等），而 FalkorDB 也把 Agent Memory 列为一级场景：检索增强与记忆层正在成为数据库的新前线，图结构恰好是知识图谱的天然载体。",
+        "适合谁：做 GraphRAG、知识图谱、反欺诈关系计算、且已有 Redis 运维经验的团队。风险观察点：SSPLv1 不是 OSI 认证的开源协议，商用集成前建议过一遍条款；以 Redis 模块形态运行意味着资源与版本策略跟随 Redis 走；它属于独立图数据库赛道，站内暂未归入 17 库生态，联动信号有限。"
+      ]
+    },
+    {
+      "sec": "cn", "tag": "国产开源", "fn": "t8y2/dbx",
+      "title": "dbx 连载：周增星翻三倍，两周连霸全站第一",
+      "summary": "上期 +1,103、本期 +3,212——25MB 的国产多库工作台用一周把 ★21.5k 冲到 ★23.8k，热度验证不是昙花一现。",
+      "body": [
+        "上期深读我们把它选为国产栏主角，当时的悬念是热度能不能接得住。一周后的答案很明确：本周 +3,212 星，全站第一且大幅领先第二名（+1,498），总星从 ★21,505 涨到 ★23,823，连续两周霸榜。",
+        "为什么继续选它：工程节奏撑住了热度。7 天 463 次提交、90 天 4,726 次、295 位贡献者，v0.6.24 发布于一天前——这不是营销冲星曲线，是持续吞吐。站内归属横跨 PostgreSQL、MySQL、SQLite、SQL Server、ClickHouse 五个生态；内置 AI SQL 助手加独立 MCP Server 的组合，正踩在「AI 客户端工具化」的节拍上。",
+        "适合谁：多库切换的一线开发与运维——25MB 的 Rust 单二进制替掉一排客户端，Apache-2.0 许可证对商用友好。风险观察点：与上期判断一致，商业化路径尚不明朗；陡增的用户量对 issue 响应与文档跟进是真实考验，深度生产使用前建议在非核心环境先跑两个版本周期。"
+      ]
+    },
+    {
+      "sec": "ai", "tag": "AI×数据库", "fn": "TencentCloud/TencentDB-Agent-Memory",
+      "title": "腾讯一周双上榜：把 Agent 记忆做成数据库",
+      "summary": "把对话/文档/代码提炼成可复用记忆资产的团队级 Memory Hub，★27.6k、本周 +410——与 Octop（+1,498）组成腾讯开源双响炮。",
+      "body": [
+        "TencentDB Agent Memory 是腾讯云开源的 AI Agent 团队记忆中枢：Memory Hub 与 Proxy 两类服务，把对话、文档、代码库自动提炼为 Chat Memory、Skill、Wiki、CodeGraph 四类资产，支持导入已有代码库与会话冷启动，配套团队、权限（private/team/ACL）与资产版本管理面板。",
+        "为什么本期选它：★27,638、本周 +410，加上 Octop 的 +1,498，腾讯在同一周把两个项目送进全站增星前十——大厂在 AI×数据基础设施上的开源节奏肉眼可见。技术上它走「Proxy 零代码集成」路线：Claude Code、CodeBuddy 等 Agent 不装插件、不挂 MCP Server 即可接入记忆层，这个取舍与满世界做 MCP Server 的潮流正好相反。",
+        "适合谁：用 Agent 做日常开发的团队，想把散落在会话里的经验沉淀成可治理的共享资产。风险观察点：7 天仅 8 次提交，工程节奏与 2.7 万星的关注度尚不匹配；许可证为非标准开源协议（NOASSERTION），商用前建议细读；站内归入 TDSQL 生态，与数据库本体的深度结合仍在早期。"
+      ]
+    }
+  ]
+}

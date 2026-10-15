@@ -1,0 +1,6 @@
+[
+  {"fns": ["pgbackrest/pgbackrest", "EnterpriseDB/barman"], "hint": "PostgreSQL·备份"},
+  {"fns": ["dbeaver/dbeaver", "OtterMind/Chat2DB", "TableProApp/TablePro"], "hint": "跨库·客户端"},
+  {"fns": ["bytebase/bytebase", "actiontech/sqle"], "hint": "MySQL·SQL审核"},
+  {"fns": ["pingcap/tiup", "oceanbase/obdeploy"], "hint": "国产·部署管理"}
+]

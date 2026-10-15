@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库开源生态周刊</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+/* 期号行：期号 + 上/下期导航（右对齐） */
+.iss-no-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.iss-nav { margin-left: auto; display: inline-flex; gap: 14px; font-size: 12px; }
+.iss-nav a { color: var(--muted); }
+.iss-nav a:hover { color: var(--accent); }
+.iss-nav .off { color: var(--line); }
+</style>
+</head>
+<body>
+<div id="nav"></div>
+<div class="wrap">
+  <section class="hero issue-hero">
+    <div class="iss-no-row">
+      <div class="issue-no">第 <span id="iss-no">—</span> 期 <span class="muted">· <span id="iss-date">—</span> · 每周一刊</span></div>
+      <span class="iss-nav" id="iss-nav"></span>
+    </div>
+    <div class="h1-row">
+      <h1>数据库开源生态周刊</h1>
+      <a class="btn primary cta-top" href="mystack.html">设置我的关注 → 每日盯变化</a>
+    </div>
+    <div class="issue-slogan">国际 7 库 · 国产 10 库 · 每周更新</div>
+    <div class="numline" id="numline"></div>
+    <div class="lede-label">本期导读</div>
+    <div class="lede" id="lede"></div>
+  </section>
+  <div id="boot">正在加载生态数据（约 20MB，仅首次）…<div class="bar"></div></div>
+  <main id="main" style="display:none">
+    <section>
+      <div class="sec-title"><h3>💬 一句话情报</h3><span class="line"></span>
+        <span class="muted">知道就好 · 数据自动生成</span></div>
+      <div class="card oneline-card"><ul id="onelines"></ul></div>
+    </section>
+
+    <section>
+      <div class="sec-title"><h3>📖 本期深读</h3><span class="line"></span>
+        <span class="muted">国际开源 · 国产开源 · AI×数据库 · 点卡片读全文</span></div>
+      <div class="grid3 issue-grid" id="issue"></div>
+    </section>
+
+    <section>
+      <div class="sec-title"><h3>⚡ 本周速览</h3><span class="line"></span>
+        <span class="muted">只报变化（事件）· 发刊时冻结 · 状态请查工具页</span></div>
+      <div class="grid2" id="digest"></div>
+    </section>
+
+  </main>
+  <footer id="foot"></footer>
+</div>
+
+<script src="data/pool.js"></script>
+<script src="data/detail.js"></script>
+<script src="data/weekly.js"></script>
+<script src="assets/app.js"></script>
+<script>
+"use strict";
+/* 周刊渲染器：深读正文与数据段全部读 data/weekly.js 冻结记录（论据冻结、探索实时——
+   点速览行或「最新信号」看到的才是现状）。写稿与冻结流程见 build/freeze_issue.py：
+   python build/freeze_issue.py --plan N   选题日历（类别轮值/板块配额/事件信号/冷却）
+   写 weekly/issues/issue-N.json → python build/freeze_issue.py --freeze N */
+const WK = window.WEEKLY || {};
+const WK_NOS = Object.keys(WK).map(Number).sort((a, b) => a - b);
+const WK_LAST = WK_NOS[WK_NOS.length - 1];
+let CUR = WK_LAST;
+(() => { const h = parseHash().issue; if (h && WK[+h]) CUR = +h; })();
+
+function articleCard(a, i) {
+  return `<div class="article-card" data-i="${i}" tabindex="0">
+    <div class="sector">${esc(a.tag)}</div>
+    <h3>${esc(a.title)}</h3>
+    <div class="fn mono">${esc(a.fn)}</div>
+    <p>${esc(a.summary)}</p>
+    <div class="nums">${a.nums.map(([k, v]) => `<span><b>${esc(v)}</b> ${esc(k)}</span>`).join("")}</div>
+    <div class="read">阅读全文 →</div>
+  </div>`;
+}
+function articleDrawer(R, a) {
+  const paras = a.body.map(p => `<p>${esc(p)}</p>`).join("");
+  const panel = `<div class="issue-panel">${a.panel.map(([k, v]) =>
+    `<div class="ip"><div class="k">${esc(k)}</div><div class="v mono">${esc(v)}</div></div>`).join("")}</div>`;
+  const inScope = !!(byFn(a.fn) || {})[I.DB];   /* 未归库项目不在项目浏览页宇宙，不给出跳转死链 */
+  return `<div class="dr-article">
+    <div class="sector">${esc(a.tag)}</div>
+    <h3>${esc(a.title)}</h3>
+    ${paras}
+    ${panel}
+    ${inScope ? `<div class="dr-actions">
+      <a class="btn" href="projects.html#q=${encodeURIComponent(a.fn)}&view=list">看该项目最新信号 →</a>
+    </div>` : ""}
+    <div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 ${R.no} 期（快照 ${esc(R.snap)}）${inScope ? "；「最新信号」跳项目浏览页看现状" : ""}。</div>
+  </div>`;
+}
+function dRow(item) {
+  return `<div class="d-item" data-fn="${esc(item.fn)}">${item.chip || ""}
+    <span class="repo">${esc(item.fn)}</span><span class="d-meta">${item.meta}</span></div>`;
+}
+function renderIssue() {
+  const R = WK[CUR];
+  document.title = `数据库开源生态周刊 · 第 ${R.no} 期`;
+  el("iss-no").textContent = R.no;
+  el("iss-date").textContent = R.date;
+  const prev = WK_NOS.filter(n => n < CUR), next = WK_NOS.filter(n => n > CUR);
+  el("iss-nav").innerHTML =
+    (prev.length ? `<a href="#issue=${prev[prev.length - 1]}" data-go="${prev[prev.length - 1]}">‹ 上一期</a>`
+                 : `<span class="off">‹ 上一期</span>`)
+    + (next.length ? `<a href="#issue=${next[0]}" data-go="${next[0]}">下一期 ›</a>` : "")
+    + (CUR !== WK_LAST ? `<a href="index.html">回到最新</a>` : "")
+    + `<a href="archive.html">往期 →</a>`;
+  el("iss-nav").querySelectorAll("[data-go]").forEach(a => a.onclick = e => {
+    e.preventDefault();
+    CUR = +a.dataset.go;
+    renderIssue();
+    history.replaceState(null, "", "#issue=" + CUR);
+    window.scrollTo({ top: 0 });
+  });
+  el("numline").innerHTML = R.nums.map(([k, v, href]) =>
+    `<a href="${href}"><b>${esc(v)}</b>${esc(k)}</a>`).join("<i>·</i>");
+  el("lede").innerHTML = R.lede.map(([k, html]) =>
+    `<div class="lede-row"><span class="lede-k">${esc(k)}</span><div class="lede-t">${html}</div></div>`).join("");
+  el("lede").querySelectorAll(".jump").forEach(a => a.onclick = e => {
+    e.preventDefault();
+    const d = R.deep.find(x => x.fn === a.dataset.fn);
+    if (d) openDrawer("本期深读", articleDrawer(R, d));
+  });
+  el("onelines").innerHTML = R.onelines.map(l => `<li>${l}</li>`).join("");
+  el("issue").innerHTML = R.deep.map((a, i) => articleCard(a, i)).join("");
+  el("issue").querySelectorAll(".article-card").forEach(c => {
+    const open = () => openDrawer("本期深读", articleDrawer(R, R.deep[+c.dataset.i]));
+    c.onclick = open;
+    c.onkeydown = e => { if (e.key === "Enter") open(); };
+  });
+  const G = R.glance;
+  const card = (cls, emoji, name, hint, href, rows, empty) =>
+    `<section class="card digest ${cls}">
+      <div class="card-head"><h2>${emoji} ${name}<span class="hint">${esc(hint)}</span></h2>
+        <a class="small" href="${href}" style="color:var(--accent)">全部 →</a></div>
+      ${rows.map(dRow).join("") || `<div class="d-empty">${empty}</div>`}
+    </section>`;
+  el("digest").innerHTML =
+    card("risk", "🔴", "风险预警", G.risk.hint, "projects.html#sec=hi", G.risk.rows, "✓ 本周无风险事件")
+    + card("ver", "📦", "版本动态", G.rel.hint, "projects.html#sort=rel", G.rel.rows, "✓ 本周无发版")
+    + card("gain", "📈", "增星榜", G.gain.hint, "projects.html#sort=gro", G.gain.rows, "✓ 本周无增星")
+    + card("newb", "🌱", "新项目", G.newb.hint, "projects.html#sort=new", G.newb.rows, "本期暂无入库新工具");
+  el("digest").querySelectorAll(".d-item").forEach(d =>
+    d.onclick = () => openDrawer(esc(d.dataset.fn),
+      projectDetailHtml(d.dataset.fn)
+      || '<div class="empty"><div class="big">🕳️</div>该项目已不在当前收录中（往期记录）</div>'));
+  const cov = R.total && R.g7cov ? Math.round(100 * R.g7cov / R.total) : "—";
+  el("foot").innerHTML = `第 ${R.no} 期 · 数据快照 ${R.snap || "?"} · 构建于 ${R.built || "?"} · 周增星基线 ${R.growthBase || "—"}（覆盖 ${cov}%）<br>
+    深读正文为当期定稿；速览与数字按「只报变化」口径于发刊时冻结（安全=近 7 天新披露，发版=近 7 天发布）。往期内容见 <a href="archive.html">往期周刊</a>。<br>
+    数据源：<a href="https://github.com/zqf20096327/dbhub_collect" target="_blank" rel="noopener">dbhub_collect</a>（每晚自动采集）。`;
+  history.replaceState(null, "", CUR === WK_LAST ? location.pathname : "#issue=" + CUR);
+}
+document.body.insertAdjacentHTML("afterbegin", navHtml("index.html"));
+document.body.insertAdjacentHTML("beforeend", `<div id="drawer-mount"></div>`);
+document.getElementById("drawer-mount").innerHTML = drawerHtml();
+bindThemeBtn(); bindDrawer();
+const boot = el("boot"); if (boot) boot.remove();
+el("main").style.display = "";
+if (WK_NOS.length) renderIssue();
+else el("numline").innerHTML = `<span class="muted">weekly.js 为空 —— 先运行 python build/freeze_issue.py --freeze 1</span>`;
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+backup/
+sandbox/
+_shots/
+__pycache__/
+*.log
+.zcode/

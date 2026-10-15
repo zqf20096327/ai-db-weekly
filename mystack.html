@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的关注 · 数据库开源生态观测</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div id="nav"></div>
+<div class="wrap">
+  <div id="boot">正在加载生态数据（约 8MB，仅首次）…<div class="bar"></div></div>
+  <main id="main" style="display:none">
+    <section class="hero" style="padding-bottom:14px">
+      <h1>我的关注</h1>
+      <p>勾选你在用的数据库、在项目页点 ☆ 关注工具 —— 这里只看<b>你的</b>生态：
+        安全通告、停维、发版、以及你的库有没有新工具出现。空收件箱是好收件箱。</p>
+      <div class="stack-toolbar" style="margin-top:12px">
+        <button class="btn" id="share-btn">🔗 分享我的关注（复制链接）</button>
+        <button class="btn" id="export-btn">⬇ 导出备份</button>
+        <button class="btn" id="import-btn">⬆ 导入备份</button>
+        <input type="file" id="import-file" accept=".json,application/json" style="display:none">
+      </div>
+    </section>
+    <div id="stack-banner"></div>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>我在用的数据库<span class="hint">勾选后，收件箱与缺口雷达只看这些库</span></h2>
+        <span class="small muted" id="mydbs-n"></span>
+      </div>
+      <div class="tagbar-wrap"><div class="tagrow"><span id="db-chips"></span></div></div>
+      <div class="grid3" id="mydbs-cards" style="margin-top:6px"></div>
+    </section>
+
+    <div class="grid2">
+      <section class="card">
+        <div class="card-head"><h2>📬 收件箱<span class="hint">我关注的项目的事件 · 安全 > 停维 > 发版</span></h2></div>
+        <div id="inbox"></div>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2>🆕 我在用的库 · 本期新项目<span class="hint">创建 ≤45 天 · 按 Star 排序</span></h2></div>
+        <div id="newtools"></div>
+      </section>
+    </div>
+
+    <section class="card">
+      <div class="card-head"><h2>我关注的项目<span class="hint" id="watch-n"></span></h2></div>
+      <div id="watchlist"></div>
+    </section>
+  </main>
+  <footer id="foot"></footer>
+</div>
+<div id="drawer-mount"></div>
+
+<script src="data/pool.js"></script>
+<script src="data/detail.js"></script>
+<script src="assets/app.js"></script>
+<script>
+"use strict";
+const TOOL_CATS = new Set(CATS.slice(0, 12));
+
+/* ---------- 我的数据库 ---------- */
+const myDbs = getMyDbs();
+const dbCnt = {};
+for (const r of P) for (const db of dbList(r)) dbCnt[db] = (dbCnt[db]||0)+1;
+function renderDbChips() {
+  renderChips(el("db-chips"),
+    DBS.map(d => ({ v:d, label:d, n:dbCnt[d]||0 })), myDbs,
+    (v, on) => { on ? myDbs.add(v) : myDbs.delete(v); saveMyDbs(myDbs); renderAll(); }, 20);
+  el("mydbs-n").textContent = myDbs.size ? `已选 ${myDbs.size} 库` : "未选择";
+}
+function inMyDbs(r) { return dbList(r).some(d => myDbs.has(d)); }
+
+function myDbCard(db) {
+  let n=0, c7=0, sec=0, cov=new Set();
+  for (const r of P) if (dbList(r).includes(db)) {
+    n++; c7 += r[I.C7]||0; if (r[I.SN]) sec++;
+    if (TOOL_CATS.has(r[I.CAT])) cov.add(r[I.CAT]);
+  }
+  return `<a class="dbcard" href="projects.html#db=${encodeURIComponent(db)}">
+    <div class="nm">${esc(db)}<span class="cnt">${n} 项</span></div>
+    <div class="row"><span class="cov${cov.size<8?" low":""}">${cov.size}/12 类覆盖</span></div>
+    <div class="row"><span>周提交 <b>${c7.toLocaleString()}</b></span>
+      <span>安全 <b style="color:${sec?"var(--sev)":"inherit"}">${sec}</b></span></div>
+  </a>`;
+}
+function renderMyDbCards() {
+  el("mydbs-cards").innerHTML = [...myDbs].map(myDbCard).join("")
+    || `<div class="small muted" style="grid-column:1/-1">↑ 先勾选你在用的数据库 —— 例如 PostgreSQL + TiDB。</div>`;
+}
+
+/* ---------- 收件箱（关注项目事件） ---------- */
+const EV_RANK = { sec:0, arc:1, stale:2, rel:3, gro:4 };
+function eventsOf(r) {
+  const evs = [];
+  if (r[I.SN]) evs.push({ t:"sec", icon:"🔴",
+    txt:`${sevBadge(r[I.SW])} 在册安全通告 ${r[I.SN]} 条` });
+  if (r[I.ARC]) evs.push({ t:"arc", icon:"⚠️", txt:`仓库已归档，不再维护` });
+  else if (r[I.ST] >= 100 && r[I.C90] === 0) evs.push({ t:"stale", icon:"⚠️",
+    txt:`疑似停维：★${fmtK(r[I.ST])} 且近 90 天零提交` });
+  if (r[I.RD] != null && r[I.RD] <= 30 && r[I.RV])
+    evs.push({ t:"rel", icon:"📦", txt:`发布 ${esc(String(r[I.RV]).slice(0,20))}（${r[I.RD]} 天前）` });
+  if ((r[I.G7]||0) >= 30) evs.push({ t:"gro", icon:"📈", txt:`本周 +${r[I.G7]} 星` });
+  return evs;
+}
+function renderInbox() {
+  const watch = getWatch();
+  const items = [];
+  for (const fn of watch) {
+    const r = byFn(fn); if (!r) continue;
+    for (const e of eventsOf(r)) items.push({ fn, r, e });
+  }
+  items.sort((a,b) => EV_RANK[a.e.t] - EV_RANK[b.e.t] || b.r[I.ST] - a.r[I.ST]);
+  if (!watch.size) {
+    el("inbox").innerHTML = `<div class="empty">
+      <div class="big">📭</div>还没有关注任何项目。<br>
+      去 <a href="projects.html">项目浏览器</a> 点开一个项目，在抽屉里按「☆ 关注」。<br>
+      <span class="small">关注后：它出安全通告 / 停维 / 发版，都会出现在这里。</span></div>`;
+    return;
+  }
+  el("inbox").innerHTML = items.length
+    ? `<table class="rows"><tbody>` + items.slice(0,40).map(it =>
+        `<tr data-fn="${esc(it.fn)}">
+           <td style="width:24px">${it.e.icon}</td>
+           <td><span class="repo">${esc(it.fn)}</span>
+               <div class="sub">${it.e.txt}</div></td>
+           <td class="small" style="white-space:nowrap">${dbList(it.r).slice(0,2).map(x=>`<span class="tag${x===NA?" gray":""}">${esc(x)}</span>`).join(" ")}</td>
+         </tr>`).join("") + `</tbody></table>`
+    : `<div class="empty"><div class="big">✓</div>空收件箱是好收件箱 —— 关注的项目一切正常。</div>`;
+  el("inbox").querySelectorAll("tr[data-fn]").forEach(tr =>
+    tr.onclick = () => openDrawer(esc(tr.dataset.fn), projectDetailHtml(tr.dataset.fn)));
+}
+
+/* ---------- 我的库 · 新工具 ---------- */
+function renderNewTools() {
+  if (!myDbs.size) {
+    el("newtools").innerHTML = `<div class="empty"><div class="big">🌱</div>先勾选你在用的数据库 —— 新工具只从你的库里冒出来。</div>`;
+    return;
+  }
+  const news = P.filter(r => !isNA(r) && inMyDbs(r)
+      && r[I.CR] >= NEW_CUT && TOOL_CATS.has(r[I.CAT]))
+    .sort((a,b) => b[I.ST] - a[I.ST]).slice(0, 10);
+  el("newtools").innerHTML = news.length
+    ? `<table class="rows"><tbody>` + news.map(r =>
+        `<tr data-fn="${esc(r[I.FN])}">
+           <td><span class="repo">${esc(r[I.FN])}</span><span class="bdg new">新</span>
+               <div class="sub">${esc(r[I.DESC])||""}</div></td>
+           <td class="small" style="white-space:nowrap"><span class="tag gray">${esc(r[I.CAT])}</span></td>
+           <td class="r mono">★${fmtK(r[I.ST])}</td>
+         </tr>`).join("") + `</tbody></table>`
+    : `<div class="empty"><div class="big">🌱</div>本期你的库没有新工具入库。<br>
+       <span class="small">空白也是信号：这个生态近期没有新工具长出来。</span></div>`;
+  el("newtools").querySelectorAll("tr[data-fn]").forEach(tr =>
+    tr.onclick = () => openDrawer(esc(tr.dataset.fn), projectDetailHtml(tr.dataset.fn)));
+}
+
+/* ---------- 关注列表管理 ---------- */
+function renderWatchlist() {
+  const watch = getWatch();
+  el("watch-n").textContent = watch.size ? `${watch.size} 项` : "";
+  if (!watch.size) {
+    el("watchlist").innerHTML = `<div class="small muted">空 —— 在任意项目抽屉里点「☆ 关注」即可加入。</div>`;
+    return;
+  }
+  const rows = [...watch].map(fn => byFn(fn)).filter(Boolean)
+    .sort((a,b) => b[I.ST] - a[I.ST]);
+  el("watchlist").innerHTML = `<table class="rows"><tbody>` + rows.map(r =>
+    `<tr data-fn="${esc(r[I.FN])}">
+       <td><span class="repo">${esc(r[I.FN])}</span>${maintBadge(r)}
+           <div class="sub">${esc(r[I.DESC])||""}</div></td>
+       <td class="small" style="white-space:nowrap">${dbList(r).slice(0,2).map(x=>`<span class="tag${x===NA?" gray":""}">${esc(x)}</span>`).join(" ")} <span class="tag gray">${esc(r[I.CAT])}</span></td>
+       <td class="r mono">★${fmtK(r[I.ST])}</td>
+       <td class="r"><button class="icon-btn" data-unwatch="${esc(r[I.FN])}" title="取消关注">✕</button></td>
+     </tr>`).join("") + `</tbody></table>`;
+  el("watchlist").querySelectorAll("[data-unwatch]").forEach(b => b.onclick = e => {
+    e.stopPropagation();
+    const s = getWatch(); s.delete(b.dataset.unwatch); saveWatch(s); renderAll();
+  });
+  el("watchlist").querySelectorAll("tr[data-fn]").forEach(tr =>
+    tr.onclick = () => openDrawer(esc(tr.dataset.fn), projectDetailHtml(tr.dataset.fn)));
+}
+
+function renderAll() { renderDbChips(); renderMyDbCards(); renderInbox(); renderNewTools(); renderWatchlist(); }
+
+/* ================= 分享 / 备份（纯前端，跨设备迁移） ================= */
+function stackPayload() {
+  return { v: 1, d: [...myDbs].sort(), w: [...getWatch()].sort() };
+}
+function parseStack(obj) {                       // 宽松校验，脏数据静默丢弃
+  if (!obj || typeof obj !== "object") return null;
+  const d = Array.isArray(obj.d) ? obj.d.filter(x => DBS.includes(x)) : [];
+  const w = Array.isArray(obj.w) ? obj.w.filter(x => typeof x === "string" && x.includes("/")) : [];
+  if (!d.length && !w.length) return null;
+  return { d, w };
+}
+function applyStack(s, mode) {
+  if (mode === "replace") { myDbs.clear(); }
+  s.d.forEach(x => myDbs.add(x)); saveMyDbs(myDbs);
+  const watch = getWatch();
+  if (mode === "replace") watch.clear();
+  s.w.forEach(x => watch.add(x)); saveWatch(watch);
+  history.replaceState(null, "", location.pathname);   // 清掉 #stack 参数
+  renderAll();
+  toast(`已${mode === "replace" ? "替换为" : "合并"}分享的关注：${s.d.length} 库 + ${s.w.length} 工具`);
+}
+function banner(html, warn) {
+  el("stack-banner").innerHTML =
+    `<div class="stack-banner${warn ? " warn" : ""}">${html}</div>`;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+function clearBanner() { el("stack-banner").innerHTML = ""; }
+
+function shareStack() {
+  const s = stackPayload();
+  if (!s.d.length && !s.w.length) { toast("还没有关注 —— 先勾选数据库或关注项目"); return; }
+  const url = location.origin + location.pathname
+            + "#stack=" + encodeURIComponent(JSON.stringify(s));
+  const done = () => toast("链接已复制 —— 发给自己或其他设备即可同步");
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(done, () => fallbackCopy(url, done));
+  } else fallbackCopy(url, done);
+}
+function fallbackCopy(text, done) {
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); done(); }
+  catch (e) { prompt("复制下面的链接：", text); }
+  ta.remove();
+}
+function exportStack() {
+  const s = stackPayload();
+  if (!s.d.length && !s.w.length) { toast("没有关注内容，无需备份"); return; }
+  const blob = new Blob([JSON.stringify(s, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `dbhub_mystack_${(M.snap || "backup")}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+  toast("备份文件已下载");
+}
+function importStackFile(file) {
+  const rd = new FileReader();
+  rd.onload = () => {
+    let s = null;
+    try { s = parseStack(JSON.parse(rd.result)); } catch (e) {}
+    if (!s) { toast("文件格式不对（需要导出的 JSON）"); return; }
+    banner(`读到备份：<b>${s.d.length}</b> 个库 + <b>${s.w.length}</b> 个工具 —— 与当前栈合并还是替换？
+      <button class="btn primary" id="bn-merge">合并导入</button>
+      <button class="btn" id="bn-replace">替换导入</button>
+      <button class="btn" id="bn-drop">忽略</button>`, true);
+    el("bn-merge").onclick = () => { applyStack(s, "merge"); clearBanner(); };
+    el("bn-replace").onclick = () => { applyStack(s, "replace"); clearBanner(); };
+    el("bn-drop").onclick = clearBanner;
+  };
+  rd.readAsText(file);
+}
+let toastTimer = null;
+function toast(msg) {
+  let t = document.querySelector(".toast");
+  if (!t) { t = document.createElement("div"); t.className = "toast"; document.body.appendChild(t); }
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
+}
+el("share-btn").onclick = shareStack;
+el("export-btn").onclick = exportStack;
+el("import-btn").onclick = () => el("import-file").click();
+el("import-file").onchange = e => {
+  if (e.target.files[0]) importStackFile(e.target.files[0]);
+  e.target.value = "";
+};
+/* 启动时检查 #stack= 分享链接 */
+(function loadSharedStack() {
+  const m = location.hash.match(/[#&]stack=([^&]+)/);
+  if (!m) return;
+  let s = null;
+  try { s = parseStack(JSON.parse(decodeURIComponent(m[1]))); } catch (e) {}
+  if (!s) return;
+  const empty = myDbs.size === 0 && getWatch().size === 0;
+  if (empty) { applyStack(s, "merge"); }          // 本地为空：直接导入
+  else banner(`收到分享的关注：<b>${s.d.length}</b> 库 + <b>${s.w.length}</b> 工具 —— 与本机已保存的关注合并还是替换？
+      <button class="btn primary" id="bn-merge">合并</button>
+      <button class="btn" id="bn-replace">替换</button>
+      <button class="btn" id="bn-drop">忽略</button>`, true),
+    el("bn-merge").onclick = () => { applyStack(s, "merge"); clearBanner(); },
+    el("bn-replace").onclick = () => { applyStack(s, "replace"); clearBanner(); },
+    el("bn-drop").onclick = () => { history.replaceState(null, "", location.pathname); clearBanner(); };
+})();
+
+document.body.insertAdjacentHTML("afterbegin", navHtml("mystack.html"));
+el("drawer-mount").innerHTML = drawerHtml();
+el("foot").innerHTML = `关注数据存在本浏览器（localStorage），不做账户与上报 —— 换设备用「🔗 分享链接」或「⬇ 导出备份」迁移 · 数据快照 ${M.snap||"?"} · 构建于 ${M.built||"?"}<br>
+提示：数据每日重建后重访本页即可看到最新事件；正式版将提供 RSS/公众号订阅推送。`;
+bindThemeBtn(); bindDrawer();
+const boot = el("boot"); if (boot) boot.remove();
+el("main").style.display = "";
+renderAll();
+</script>
+</body>
+</html>
