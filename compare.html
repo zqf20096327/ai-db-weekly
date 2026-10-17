@@ -221,6 +221,11 @@ function render() {
     el("cmp").querySelectorAll(".cmp-proj").forEach(h =>
       h.onclick = () => openDrawer(esc(h.dataset.fn), projectDetailHtml(h.dataset.fn)));
   }
+  /* 篮内项目的 detail 片按需补取（首渲回落 pool 字段），到货重画；失败不循环重试 */
+  const need = fns.filter(fn => !(window.DETAIL || {})[fn]);
+  if (need.length) loadDetailFor(need).then(() => {
+    if (need.every(fn => (window.DETAIL || {})[fn] !== undefined)) render();
+  });
 }
 
 /* ================= 搜索添加（输入框静态、只绑一次；建议 Top6） ================= */
@@ -317,8 +322,6 @@ bindThemeBtn(); bindDrawer();
 const boot = el("boot"); if (boot) boot.remove();
 el("main").style.display = "";
 render();
-/* 画像/AI 行首渲染用 pool 回落，detail（懒加载）到货后补全重画一次 */
-if (!window.DETAIL) loadDetail().then(render);
 </script>
 </body>
 </html>

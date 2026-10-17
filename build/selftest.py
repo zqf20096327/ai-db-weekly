@@ -14,6 +14,7 @@
 import argparse
 import json
 import os
+import subprocess
 import sys
 
 try:
@@ -22,6 +23,7 @@ except Exception:
     pass
 
 import classify
+import emit
 import interp
 import sources
 import taxonomy
@@ -244,12 +246,46 @@ def _load_outputs(page_dir):
     assert left.startswith("window.META=") and right.endswith(";\n")
     meta = json.loads(left[len("window.META="):])
     pool = json.loads(right[:right.rindex(";")])
-    dtxt = open(os.path.join(page_dir, "data", "detail.js"), encoding="utf-8").read()
-    assert dtxt.startswith("window.DETAIL=") and dtxt.endswith(";\n")
-    detail = json.loads(dtxt[len("window.DETAIL="):dtxt.rindex(";")])
+    detail = {}                                   # data/d/s{n}.json 分片合并
+    for fname in os.listdir(os.path.join(page_dir, "data", "d")):
+        detail.update(json.load(open(os.path.join(page_dir, "data", "d", fname),
+                                     encoding="utf-8")))
     audit = json.load(open(os.path.join(page_dir, "build", "audit_wide_dbs.json"),
                            encoding="utf-8"))
     return meta, pool, detail, audit
+
+
+def test_shards(page_dir):
+    """detail 分片契约：片齐全 / 片号正确 / 无跨片重复 / 分布均衡 / 双端 hash 一致"""
+    shard_dir = os.path.join(page_dir, "data", "d")
+    files = sorted(os.listdir(shard_dir),
+                   key=lambda f: int(f[1:-5]) if f[1:-5].isdigit() else 1 << 30)
+    assert len(files) == emit.SHARD_N, f"片数 {len(files)} ≠ {emit.SHARD_N}"
+    detail = {}
+    sizes = []
+    for n, fname in enumerate(files):
+        bucket = json.load(open(os.path.join(shard_dir, fname), encoding="utf-8"))
+        sizes.append(len(bucket))
+        for fn in bucket:
+            assert fn not in detail, f"跨片重复: {fn}"
+            assert emit.shard_of(fn) == n, f"{fn} 住错片 {emit.shard_of(fn)}≠{n}"
+            assert all(32 <= ord(c) <= 126 for c in fn), f"非 ASCII 项目名: {fn}"
+            detail[fn] = bucket[fn]
+    assert min(sizes) > 0, "存在空片"
+    mean = sum(sizes) / len(sizes)
+    assert max(sizes) <= mean * 1.5, f"分布失衡 max={max(sizes)} mean={mean:.1f}"
+    # 双端对答案：从线上 app.js 提取真实 shardOf 源码跑 node，与 python 版逐名比对
+    src = open(os.path.join(page_dir, "assets", "app.js"), encoding="utf-8").read()
+    defs = src[src.index("const SHARD_N"):src.index("const _shards")]
+    sample = sorted(detail)[::max(1, len(detail) // 100)][:100]
+    js = (defs.replace("\n", " ")
+          + "console.log(JSON.stringify(process.argv.slice(1).map(shardOf)));")
+    r = subprocess.run(["node", "-e", js, *sample],
+                       capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+    assert json.loads(r.stdout) == [emit.shard_of(fn) for fn in sample], \
+        "app.js shardOf 与 emit.shard_of 不一致"
+    return len(detail)
 
 
 def test_contract(page_dir):
@@ -363,7 +399,9 @@ def main():
           lambda: test_sources_edge(args.collect_dir))
 
     print("== B. 输出契约 ==")
-    check("pool.js/detail.js/audit 契约（32列/值域/排序/闭合/detail门槛）",
+    check("detail 分片契约（512片齐全/片号正确/无重复/分布/双端hash对答案）",
+          lambda: test_shards(args.page_dir))
+    check("pool.js/detail分片/audit 契约（32列/值域/排序/闭合/detail门槛）",
           lambda: test_contract(args.page_dir))
 
     print("== C. 数据一致性 ==")

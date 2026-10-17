@@ -48,24 +48,34 @@ function byFn(fn) {
 }
 const isNA = r => !r[I.DB];
 
-/* ---------- detail.js 按需加载 ---------- */
-/* detail.js（AI 解读/README 摘录，gzip 约 18MB）只有打开项目抽屉/对比页才用得上，
-   首屏不加载：首次需要时才下载整文件，之后走浏览器缓存；无预取 */
-let _detP = null;
-function loadDetail() {
-  if (window.DETAIL) return Promise.resolve();
-  if (!_detP) {
-    _detP = new Promise(res => {
-      const s = document.createElement("script");
-      s.src = "data/detail.js";
-      s.onload = () => res();
-      s.onerror = () => { _detP = null; s.remove(); res(); };   /* 失败置空，下次调用可重试 */
-      document.head.appendChild(s);
-    });
-  }
-  return _detP;
+/* ---------- detail 按需分片加载 ---------- */
+/* detail（AI 解读/README 摘录）按 djb2 hash 分 512 片存于 data/d/s{n}.json，
+   点开项目只取所在片（~40KB），合并进 window.DETAIL 供 dOf/D[fn] 读取。
+   算法与 build/emit.py 的 shard_of 逐字符一致（selftest 抽样对答案钉死）。 */
+const SHARD_N = 512;
+function shardOf(fn) {
+  let h = 5381;
+  for (let i = 0; i < fn.length; i++) h = (h * 33 + fn.charCodeAt(i)) >>> 0;
+  return h % SHARD_N;
 }
-/* detail 到货后：抽屉若仍开着且正文含项目详情段（.pd-body），就地补全重画 */
+const _shards = new Map();   // 片号 -> Promise<该片对象>（已合并则同步值）
+function loadShard(n) {
+  if (_shards.has(n)) return _shards.get(n);
+  const p = fetch(`data/d/s${n}.json`)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(obj => {
+      if (!window.DETAIL) window.DETAIL = {};
+      Object.assign(window.DETAIL, obj);
+      return obj;
+    })
+    .catch(() => { _shards.delete(n); return {}; });   /* 失败置空可重试；调用方按未就绪处理 */
+  _shards.set(n, p);
+  return p;
+}
+function loadDetailFor(fns) {
+  return Promise.all([...new Set(fns.map(shardOf))].map(loadShard));
+}
+/* 片到货后：抽屉若仍开着且正文含项目详情段（.pd-body），就地补全重画 */
 function refreshPdBody() {
   const node = document.querySelector("#drawer-body .pd-body");
   if (node && el("drawer").classList.contains("open"))
@@ -245,8 +255,10 @@ function projectDetailHtml(fn, extraHead) {
   const r = byFn(fn);
   if (!r) return "";
   const det = window.DETAIL;
-  const d = det ? (det[fn] || {}) : null;   /* null = detail 未到货（区别于到货后确无此条） */
-  if (!det) loadDetail().then(refreshPdBody);
+  const d = (det && det[fn] !== undefined) ? det[fn] : null;   /* null=所在片未到货（区别于到货后确无此条） */
+  if (!d) loadDetailFor([fn]).then(() => {
+    if ((window.DETAIL || {})[fn] !== undefined) refreshPdBody();   /* 失败不重画：停留占位，重开抽屉即重试 */
+  });
   const w = getWatch();
   const cN = getCompare().length;   // 篮内 ≥2 时抽屉里露出「去对比」直达链接
   const cmpGo = cN >= 2
