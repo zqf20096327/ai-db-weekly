@@ -50,12 +50,13 @@
 <div id="drawer-mount"></div>
 
 <script src="data/pool.js"></script>
-<script src="data/detail.js"></script>
 <script src="data/comparisons.js"></script>
 <script src="assets/app.js"></script>
 <script>
 "use strict";
 const CMP = window.COMPARE || {};
+/* detail 已改懒加载：实时取条，未到货返回空对象，各单元格回落 pool 字段/— */
+const dOf = fn => (window.DETAIL || {})[fn] || {};
 
 function render() {
   const fns = getCompare();
@@ -151,14 +152,14 @@ function render() {
         ? shown + ` <span class="tag gray" title="${esc(l.slice(4).join("、"))}">+${l.length - 4}</span>`
         : shown;
     };
-    const descOf = r => (D[r[I.FN]] && D[r[I.FN]].ol) || r[I.DESC] || "";
+    const descOf = r => dOf(r[I.FN]).ol || r[I.DESC] || "";
     const cellDesc = rs.map(r => td(descOf(r) ? `<div class="clamp">${esc(descOf(r))}</div>` : '<span class="muted">—</span>'));
     const cellAiList = key => rs.map(r => {
-      const v = D[r[I.FN]] && D[r[I.FN]][key];
+      const v = dOf(r[I.FN])[key];
       return td(v && v.length ? `<div class="clamp">${esc(v.join(" · "))}</div>` : '<span class="muted">—</span>');
     });
-    const cellRm = rs.map(r => td((D[r[I.FN]] && D[r[I.FN]].rm)
-      ? `<div class="clamp">${esc(D[r[I.FN]].rm.slice(0, 220))}…</div>`
+    const cellRm = rs.map(r => td(dOf(r[I.FN]).rm
+      ? `<div class="clamp">${esc(dOf(r[I.FN]).rm.slice(0, 220))}…</div>`
       : '<span class="muted small">（Star≥100 才收录摘录）</span>'));
     const secCell = r => {
       if (!r[I.SN]) return '<span class="muted">无在册</span>';
@@ -316,6 +317,8 @@ bindThemeBtn(); bindDrawer();
 const boot = el("boot"); if (boot) boot.remove();
 el("main").style.display = "";
 render();
+/* 画像/AI 行首渲染用 pool 回落，detail（懒加载）到货后补全重画一次 */
+if (!window.DETAIL) loadDetail().then(render);
 </script>
 </body>
 </html>

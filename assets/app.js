@@ -35,7 +35,6 @@ function snapCut(days) {
   return d.toISOString().slice(0, 10);
 }
 const P = window.POOL || [];
-const D = window.DETAIL || {};
 const M = window.META || {};
 const DBS = M.dbOrder || [];
 const CATS = M.catOrder || [];
@@ -48,6 +47,30 @@ function byFn(fn) {
   return _byFn[fn];
 }
 const isNA = r => !r[I.DB];
+
+/* ---------- detail.js 按需加载 ---------- */
+/* detail.js（AI 解读/README 摘录，gzip 约 18MB）只有打开项目抽屉/对比页才用得上，
+   首屏不加载：首次需要时才下载整文件，之后走浏览器缓存；无预取 */
+let _detP = null;
+function loadDetail() {
+  if (window.DETAIL) return Promise.resolve();
+  if (!_detP) {
+    _detP = new Promise(res => {
+      const s = document.createElement("script");
+      s.src = "data/detail.js";
+      s.onload = () => res();
+      s.onerror = () => { _detP = null; s.remove(); res(); };   /* 失败置空，下次调用可重试 */
+      document.head.appendChild(s);
+    });
+  }
+  return _detP;
+}
+/* detail 到货后：抽屉若仍开着且正文含项目详情段（.pd-body），就地补全重画 */
+function refreshPdBody() {
+  const node = document.querySelector("#drawer-body .pd-body");
+  if (node && el("drawer").classList.contains("open"))
+    node.outerHTML = projectDetailHtml(node.dataset.fn);
+}
 const dbList = r => (isNA(r) ? [NA] : (r[I.DBS] && r[I.DBS].length ? r[I.DBS] : [r[I.DB]]));
 
 /* ---------- 工具 ---------- */
@@ -216,11 +239,14 @@ function bindDrawer() {
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
 }
 
-/* 项目详情（抽屉正文）—— 含 AI 解读块（三源：快照指标 + 富集信号 + AI 解读文本） */
+/* 项目详情（抽屉正文）—— 含 AI 解读块（三源：快照指标 + 富集信号 + AI 解读文本）
+   外包 .pd-body 标记段：detail 懒加载到货后 refreshPdBody 据此定位补画 */
 function projectDetailHtml(fn, extraHead) {
   const r = byFn(fn);
   if (!r) return "";
-  const d = D[fn] || {};
+  const det = window.DETAIL;
+  const d = det ? (det[fn] || {}) : null;   /* null = detail 未到货（区别于到货后确无此条） */
+  if (!det) loadDetail().then(refreshPdBody);
   const w = getWatch();
   const cN = getCompare().length;   // 篮内 ≥2 时抽屉里露出「去对比」直达链接
   const cmpGo = cN >= 2
@@ -242,7 +268,7 @@ function projectDetailHtml(fn, extraHead) {
   const secLine = r[I.SN]
     ? `<div class="sec-line">${sevBadge(r[I.SW])}<span class="small muted">在册安全通告 ${r[I.SN]} 条</span></div>`
     : "";
-  const secIds = (d.si && r[I.SN])
+  const secIds = (d && d.si && r[I.SN])
     ? `<details class="ids"><summary>展开 GHSA / CVE 编号</summary><div class="mono small" style="margin-top:6px;word-break:break-all">${esc(d.si).replace(/;/g, "<br>")}</div></details>` : "";
   const evLine = r[I.EV]
     ? `<div class="small" style="margin-top:8px"><span class="muted">分类依据（${r[I.CS]==="ai"?"AI 解读为主，规则为辅":"规则推导"}）：</span><span class="mono">${esc(r[I.EV])}</span></div>` : "";
@@ -254,7 +280,9 @@ function projectDetailHtml(fn, extraHead) {
     : m === "stale"
     ? `<div class="warnbar soft">⚠ 疑似停维：★≥100 且近 90 天零提交。若无近期发版，建议评估替代品。</div>` : "";
   /* AI 解读块：一句话定位 + 中文解读 + 能力事实 + 适用场景 + 原文依据；无解读回落 README 摘录 */
-  const aiBlock = (d.rw || d.ol)
+  const aiBlock = !d
+    ? '<div class="small muted" style="margin:10px 0 2px">AI 解读与 README 摘录加载中…</div>'
+    : (d.rw || d.ol)
     ? `<div class="ai-read">
          <div class="ai-read-head"><b>AI 解读</b><span class="muted small">${d.src==="desc"?"基于简介（无 README）":"基于 README"} · 置信${d.cg==="mid"?"中":"高"}</span></div>
          ${d.ol ? `<div class="ol">${esc(d.ol)}</div>` : ""}
@@ -266,6 +294,7 @@ function projectDetailHtml(fn, extraHead) {
        </div>`
     : (d.rm ? `<div class="small muted" style="margin:10px 0 2px">README 摘录</div><div class="quote">${esc(d.rm)}</div>` : "");
   return `
+  <div class="pd-body" data-fn="${esc(fn)}">
   ${extraHead || ""}
   ${maintLine}
   <div class="dr-hero">
@@ -282,11 +311,11 @@ function projectDetailHtml(fn, extraHead) {
   ${secLine}${secIds}
   <div class="facts">
     <div class="fk">提交 7/90 天</div><div class="mono">${r[I.C7]==null?"—":r[I.C7]} / ${r[I.C90]==null?"—":r[I.C90]}</div>
-    <div class="fk">最新发版</div><div class="mono">${relTxt(r)}${d.rp?`<span class="muted small">（${esc(d.rp)}）</span>`:""}</div>
+    <div class="fk">最新发版</div><div class="mono">${relTxt(r)}${(d && d.rp)?`<span class="muted small">（${esc(d.rp)}）</span>`:""}</div>
     <div class="fk">活跃度指数</div><div class="mono">${act(r)} <span class="muted small">/100</span></div>
     <div class="fk">许可证</div><div class="mono">${r[I.LIC]?esc(r[I.LIC]):'<span class="muted">未声明/无</span>'}</div>
-    ${(d.ins && d.ins.length) ? `<div class="fk">安装方式</div><div class="mono small">${d.ins.join(" / ")}</div>` : ""}
-    ${d.lg?`<div class="fk">语言构成</div><div>${esc(d.lg)}</div>`:""}
+    ${(d && d.ins && d.ins.length) ? `<div class="fk">安装方式</div><div class="mono small">${d.ins.join(" / ")}</div>` : ""}
+    ${(d && d.lg)?`<div class="fk">语言构成</div><div>${esc(d.lg)}</div>`:""}
     <div class="fk">创建 / 最近推送</div><div class="mono small">${esc(r[I.CR])} / ${esc(r[I.PU])}</div>
   </div>
   ${evLine}
