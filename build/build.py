@@ -3,7 +3,7 @@
 
 从 dbhub_collect 读取采集数据（M2b 新形态：NDJSON 活文件 + 缓存分片 +
 git 历史增星基准），推导归属/类别/信号，产出前端可直接 <script> 加载的
-data/pool.js 与 data/detail.js，及 build/audit_wide_dbs.json 宽归属审计。
+data/pool.js、detail 分片 data/d/，及宽归属审计。
 
 模块划分：sources 装载 / taxonomy 库口径 / classify 规则分类 /
 interp AI 解读护栏 / assemble 主流水线 / emit 输出 / report 报告。
