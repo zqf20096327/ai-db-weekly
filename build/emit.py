@@ -2,7 +2,7 @@
 """输出层：pool.js / detail 分片 / audit_wide_dbs.json 写盘。
 
 输出格式是前端契约：window.META + window.POOL（32 列数组）；projects/mystack/compare
-由页面 <script> 直载，index 渲染同时经 assets/app.js 的 lazyPool() 后台注入同一文件；
+由页面 <script> 直载，index 于 load 事件后经 assets/app.js 的 lazyPool() 注入同一文件；
 detail 按需分片为 data/d/s{0..511}.json（assets/app.js 的 shardOf 用同一 djb2
 算法定位片号，双端一致性由 selftest 抽样对答案钉死），键序与序列化参数不可变。
 """

@@ -51,8 +51,9 @@ function byFn(fn) {
 const isNA = r => !r[I.DB];
 
 /* ---------- pool 按需加载（仅 index.html 使用；其余页面同步直载不经过这里） ----------
-   页面删掉 <script src="data/pool.js">，内联脚本调 lazyPool() 即刻开始后台下载（不阻塞渲染），
-   到货 → rebindPool() 重绑 P/M/DBS/CATS/NEW_CUT 并清 _byFn 空表缓存，再补画打开中的项目抽屉。
+   页面删掉 <script src="data/pool.js">，内联脚本调 lazyPool() 注册后台下载（load 事件后开拉，
+   不阻塞渲染也不拖住 window.load），到货 → rebindPool() 重绑 P/M/DBS/CATS/NEW_CUT 并清
+   _byFn 空表缓存，再补画打开中的项目抽屉。
    失败 1.5s 后自动重试一次；仍失败置 _poolFail（占位文案提示），下次开抽屉即再重试 */
 let _poolTask = null, _poolFail = false;
 function poolPending() { return window.POOL === undefined; }
@@ -84,7 +85,10 @@ function lazyPool() {
       s.onerror = fail;
       document.head.appendChild(s);
     };
-    tryLoad(false);
+    /* load 前注入的动态 script 会拖住 window.load——弱网 2.5MB 下标签页转圈数分钟
+       （页面其实早已可用）。等 load 事件后再开拉；抽屉/搜索此间走占位与降级不受影响 */
+    if (document.readyState === "complete") tryLoad(false);
+    else window.addEventListener("load", () => tryLoad(false), { once: true });
   });
   return _poolTask;
 }

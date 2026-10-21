@@ -68,7 +68,8 @@ const WK_LAST = WK_NOS[WK_NOS.length - 1];
 let CUR = WK_LAST;
 (() => { const h = parseHash().issue; if (h && WK[+h]) CUR = +h; })();
 
-/* pool.js 不再同步直载（gzip 后仍 2.5MB 级、拖慢首屏）：渲染同时后台拉取，到货 rebindPool 补齐
+/* pool.js 不再同步直载（gzip 后仍 2.5MB 级、拖慢首屏）：load 事件后后台拉取（load 前注入会
+   拖住 window.load，弱网下标签页转圈数分钟），到货 rebindPool 补齐
    pool 就绪前打开的深读抽屉（补「看最新信号」链接）与已输入的搜索建议
    typeof 守卫：max-age=600 缓存错位（新本页+旧 app.js，曾致 lazyPool is not defined 卡死
    在 boot 屏）时页面照常渲染，仅缺 pool 能力；app.js 契约变更须同步 bump 上面 ?v= */
