@@ -34,10 +34,12 @@ function snapCut(days) {
   d.setDate(d.getDate() - days);
   return d.toISOString().slice(0, 10);
 }
-const P = window.POOL || [];
-const M = window.META || {};
-const DBS = M.dbOrder || [];
-const CATS = M.catOrder || [];
+/* let 而非 const：index.html 不再同步直载 pool.js（gzip 后仍 2.5MB 级、拖慢首屏），改为渲染同时
+   lazyPool() 后台注入、到货 rebindPool() 重绑本组；其余三页 pool.js 仍在 app.js 之前加载，一次绑定到位 */
+let P = window.POOL || [];
+let M = window.META || {};
+let DBS = M.dbOrder || [];
+let CATS = M.catOrder || [];
 const NA = "未归类";
 const GH = fn => "https://github.com/" + fn;
 
@@ -47,6 +49,45 @@ function byFn(fn) {
   return _byFn[fn];
 }
 const isNA = r => !r[I.DB];
+
+/* ---------- pool 按需加载（仅 index.html 使用；其余页面同步直载不经过这里） ----------
+   页面删掉 <script src="data/pool.js">，内联脚本调 lazyPool() 即刻开始后台下载（不阻塞渲染），
+   到货 → rebindPool() 重绑 P/M/DBS/CATS/NEW_CUT 并清 _byFn 空表缓存，再补画打开中的项目抽屉。
+   失败 1.5s 后自动重试一次；仍失败置 _poolFail（占位文案提示），下次开抽屉即再重试 */
+let _poolTask = null, _poolFail = false;
+function poolPending() { return window.POOL === undefined; }
+function rebindPool() {
+  P = window.POOL || [];
+  M = window.META || {};
+  DBS = M.dbOrder || [];
+  CATS = M.catOrder || [];
+  NEW_CUT = typeof M.snap === "string" ? newCutoff() : "0000";
+  _byFn = null;   /* 空索引表一旦缓存，byFn 将永远查无此人 */
+}
+function lazyPool() {
+  if (window.POOL !== undefined) { rebindPool(); return Promise.resolve(); }
+  if (_poolTask) return _poolTask;
+  _poolFail = false;
+  _poolTask = new Promise((resolve, reject) => {
+    const tryLoad = retried => {
+      const s = document.createElement("script");
+      s.src = "data/pool.js";
+      const fail = () => {
+        s.remove();
+        if (!retried) setTimeout(() => tryLoad(true), 1500);   /* 弱网抖动，重试一次 */
+        else { _poolFail = true; _poolTask = null; reject(new Error("pool.js 加载失败")); }
+      };
+      s.onload = () => {
+        if (window.POOL === undefined) return fail();   /* 200 但内容无效（截断/代理页）：按失败重试，防永久"加载中" */
+        rebindPool(); refreshPdBody(); resolve();
+      };
+      s.onerror = fail;
+      document.head.appendChild(s);
+    };
+    tryLoad(false);
+  });
+  return _poolTask;
+}
 
 /* ---------- detail 按需分片加载 ---------- */
 /* detail（AI 解读/README 摘录）按 djb2 hash 分 512 片存于 data/d/s{n}.json，
@@ -79,7 +120,8 @@ function loadDetailFor(fns) {
 function refreshPdBody() {
   const node = document.querySelector("#drawer-body .pd-body");
   if (node && el("drawer").classList.contains("open"))
-    node.outerHTML = projectDetailHtml(node.dataset.fn);
+    node.outerHTML = projectDetailHtml(node.dataset.fn)
+      || '<div class="empty"><div class="big">🕳️</div>该项目已不在当前收录中（往期记录）</div>';   /* index 窗口期点往期行：pool 到货后占位符换诚实文案 */
 }
 const dbList = r => (isNA(r) ? [NA] : (r[I.DBS] && r[I.DBS].length ? r[I.DBS] : [r[I.DB]]));
 
@@ -142,7 +184,7 @@ function newCutoff() {
   d.setDate(d.getDate() - 45);
   return d.toISOString().slice(0, 10);
 }
-const NEW_CUT = typeof M.snap === "string" ? newCutoff() : "0000";
+let NEW_CUT = typeof M.snap === "string" ? newCutoff() : "0000";
 
 /* ---------- 主题 ---------- */
 (function initTheme() {
@@ -252,6 +294,11 @@ function bindDrawer() {
 /* 项目详情（抽屉正文）—— 含 AI 解读块（三源：快照指标 + 富集信号 + AI 解读文本）
    外包 .pd-body 标记段：detail 懒加载到货后 refreshPdBody 据此定位补画 */
 function projectDetailHtml(fn, extraHead) {
+  if (poolPending()) {   /* pool 未就绪：占位段与正常返回同形（.pd-body[data-fn]），到货后 refreshPdBody 原地补画 */
+    const failed = _poolFail;   /* 先取状态：lazyPool() 会重置并立刻发起新一轮拉取 */
+    lazyPool().catch(() => {});   /* 本任务可能无他处挂 catch（如二次失败周期），失败态由占位文案呈现 */
+    return `<div class="pd-body" data-fn="${esc(fn)}"><div class="small muted" style="margin:10px 0 2px">生态数据${failed ? "加载失败，正在重试" : "加载中"}…</div></div>`;
+  }
   const r = byFn(fn);
   if (!r) return "";
   const det = window.DETAIL;

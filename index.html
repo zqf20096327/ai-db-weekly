@@ -54,7 +54,6 @@
   </main>
 </div>
 
-<script src="data/pool.js"></script>
 <script src="data/weekly.js"></script>
 <script src="assets/app.js"></script>
 <script>
@@ -68,6 +67,19 @@ const WK_NOS = Object.keys(WK).map(Number).sort((a, b) => a - b);
 const WK_LAST = WK_NOS[WK_NOS.length - 1];
 let CUR = WK_LAST;
 (() => { const h = parseHash().issue; if (h && WK[+h]) CUR = +h; })();
+
+/* pool.js 不再同步直载（gzip 后仍 2.5MB 级、拖慢首屏）：渲染同时后台拉取，到货 rebindPool 补齐
+   pool 就绪前打开的深读抽屉（补「看最新信号」链接）与已输入的搜索建议 */
+lazyPool().then(() => {
+  const node = document.querySelector("#drawer-body .dr-article");
+  if (node && el("drawer").classList.contains("open")) {
+    const a = WK[CUR].deep.find(x => x.fn === node.dataset.fn);
+    if (a) node.outerHTML = articleDrawer(WK[CUR], a);
+  }
+  const gq = el("gq");
+  if (gq && gq.value && el("gnav").classList.contains("open"))
+    gq.dispatchEvent(new Event("input"));   /* 建议面板按 input 事件重渲染，升级为真实项目结果 */
+}).catch(() => {});   /* 失败已由抽屉占位提示并自动重试，这里无需再报 */
 
 function articleCard(a, i) {
   return `<div class="article-card" data-i="${i}" tabindex="0">
@@ -84,7 +96,7 @@ function articleDrawer(R, a) {
   const panel = `<div class="issue-panel">${a.panel.map(([k, v]) =>
     `<div class="ip"><div class="k">${esc(k)}</div><div class="v mono">${esc(v)}</div></div>`).join("")}</div>`;
   const inScope = !!(byFn(a.fn) || {})[I.DB];   /* 未归库项目不在项目浏览页宇宙，不给出跳转死链 */
-  return `<div class="dr-article">
+  return `<div class="dr-article" data-fn="${esc(a.fn)}">
     <div class="sector">${esc(a.tag)}</div>
     <h3>${esc(a.title)}</h3>
     ${paras}
