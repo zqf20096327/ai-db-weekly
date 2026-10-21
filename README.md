@@ -5,6 +5,30 @@
 数据库开源生态观测站（周刊 + 工具）—— 基于 [dbhub_collect](https://github.com/zqf20096327/dbhub_collect)
 采集数据构建的纯静态站点，为部署到 GitHub Pages 而设计。
 
+## 页面速览
+
+（截图冻结于 2026-10-21，页面数据随构建日更）
+
+**周刊 `index`** —— 每周一刊：导读 → 3 篇深读 → 速览四卡（风险/版本/增星/新项目）
+
+![周刊首页](docs/shots/index.png)
+
+**项目浏览 `projects`** —— 库 × 类别矩阵看格局（每格冠军·缺口信号），清单查项目
+
+![项目浏览](docs/shots/projects.png)
+
+**我的关注 `mystack`** —— 勾选在用的数据库 + 关注工具，收件箱式事件流（示例：PG / MySQL / TiDB）
+
+![我的关注](docs/shots/mystack.png)
+
+**项目对比 `compare`** —— 2-4 个同类项目信号并排 + AI 对比解读（示例：客户端三国杀）
+
+![项目对比](docs/shots/compare.png)
+
+**往期周刊 `archive`** —— 过刊归档
+
+![往期周刊](docs/shots/archive.png)
+
 ## 产品结构：编辑层制造访问理由，数据层承接访问意图
 
 | 页面 | 角色 | 内容 |
