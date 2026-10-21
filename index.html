@@ -55,7 +55,7 @@
 </div>
 
 <script src="data/weekly.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=20261021"></script>
 <script>
 "use strict";
 /* 周刊渲染器：深读正文与数据段全部读 data/weekly.js 冻结记录（论据冻结、探索实时——
@@ -69,8 +69,10 @@ let CUR = WK_LAST;
 (() => { const h = parseHash().issue; if (h && WK[+h]) CUR = +h; })();
 
 /* pool.js 不再同步直载（gzip 后仍 2.5MB 级、拖慢首屏）：渲染同时后台拉取，到货 rebindPool 补齐
-   pool 就绪前打开的深读抽屉（补「看最新信号」链接）与已输入的搜索建议 */
-lazyPool().then(() => {
+   pool 就绪前打开的深读抽屉（补「看最新信号」链接）与已输入的搜索建议
+   typeof 守卫：max-age=600 缓存错位（新本页+旧 app.js，曾致 lazyPool is not defined 卡死
+   在 boot 屏）时页面照常渲染，仅缺 pool 能力；app.js 契约变更须同步 bump 上面 ?v= */
+if (typeof lazyPool === "function") lazyPool().then(() => {
   const node = document.querySelector("#drawer-body .dr-article");
   if (node && el("drawer").classList.contains("open")) {
     const a = WK[CUR].deep.find(x => x.fn === node.dataset.fn);
@@ -80,6 +82,7 @@ lazyPool().then(() => {
   if (gq && gq.value && el("gnav").classList.contains("open"))
     gq.dispatchEvent(new Event("input"));   /* 建议面板按 input 事件重渲染，升级为真实项目结果 */
 }).catch(() => {});   /* 失败已由抽屉占位提示并自动重试，这里无需再报 */
+else console.warn("app.js 为旧版缓存（与本页错位）：暂无 pool 数据能力，强刷（Ctrl+F5）恢复");
 
 function articleCard(a, i) {
   return `<div class="article-card" data-i="${i}" tabindex="0">
