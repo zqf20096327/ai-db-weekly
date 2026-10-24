@@ -389,6 +389,7 @@ function projectDetailHtml(fn, extraHead) {
     <button class="btn" onclick="toggleCompareUi(this,'${esc(fn)}')">${getCompare().includes(fn)?"⇄ 已在对比":"⇄ 加入对比"}</button>
     ${cmpGo}
     ${r[I.SN]?`<a class="btn" href="https://github.com/advisories?query=${encodeURIComponent(fn)}" target="_blank" rel="noopener">安全通告 ↗</a>`:""}
+  </div>
   </div>`;
 }
 function toggleWatchUi(btn, fn) {
