@@ -16,6 +16,11 @@
 .iss-deep .it { display: flex; gap: 9px; align-items: baseline; font-size: 12px; min-width: 0; }
 .iss-deep .it .t { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .iss-deep .it .fn { color: var(--muted); }
+/* 手机断点：三列压太窄标题大量省略号，改上下堆叠（标签/标题/仓库各占一行） */
+@media (max-width: 640px) {
+  .iss-deep .it { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .iss-deep .it .t { white-space: normal; }
+}
 </style>
 </head>
 <body>

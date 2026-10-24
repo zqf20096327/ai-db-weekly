@@ -554,3 +554,19 @@ table.cmp { width: 100%; border-collapse: collapse; }
 .clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .cmp .cg .cg-sub { margin-left: 10px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
 .cmp tr.allsame th { font-weight: 400; color: var(--muted); padding: 18px 8px; text-align: center; }
+
+/* ---------- 手机断点（≤640px）----------
+   760px 档导航是横滚，项目对比/💬/🌗 裁在屏外不可发现，此处改平铺换行；
+   刊头 30px 标题与 CTA 挤压；issue-panel 4 列在窄屏一格仅 ~85px 数值截断。
+   往期周刊深读条目的堆叠改在 archive.html 内联样式（规则定义在那里）。 */
+@media (max-width: 640px) {
+  .nav { flex-wrap: wrap; height: auto; overflow-x: visible;
+         gap: 8px 16px; padding: 10px 0; }
+  .nav .spacer { display: none; }
+  .issue-hero h1 { font-size: 22px; }
+  .h1-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .h1-row .cta-top { display: block; width: 100%; box-sizing: border-box;
+                     text-align: center; padding: 8px 0; }
+  .issue-slogan { letter-spacing: 1px; }
+  .issue-panel { grid-template-columns: repeat(2, 1fr); }
+}
