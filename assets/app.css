@@ -569,4 +569,8 @@ table.cmp { width: 100%; border-collapse: collapse; }
                      text-align: center; padding: 8px 0; }
   .issue-slogan { letter-spacing: 1px; }
   .issue-panel { grid-template-columns: repeat(2, 1fr); }
+  /* 速览/抽屉的 d-item 行：mono 仓库名+nowrap 元信息的最小内容宽 ~451px，会顶爆
+     main 隐式 grid 轨道（无列模板，轨道下限=子项最小内容宽）把所有栏目拖宽致整页横滑；
+     手机上放不下时让元信息掉到第二行（margin-left:auto 保持右对齐） */
+  .d-item { flex-wrap: wrap; row-gap: 2px; }
 }
