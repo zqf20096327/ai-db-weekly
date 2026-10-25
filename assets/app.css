@@ -573,4 +573,14 @@ table.cmp { width: 100%; border-collapse: collapse; }
      main 隐式 grid 轨道（无列模板，轨道下限=子项最小内容宽）把所有栏目拖宽致整页横滑；
      手机上放不下时让元信息掉到第二行（margin-left:auto 保持右对齐） */
   .d-item { flex-wrap: wrap; row-gap: 2px; }
+  /* 项目浏览：筛选胶囊 innerHTML join("") 无空白、Chromium 对无空白 inline-flex 序列
+     不给断行机会（库行 886px / 类别 886px / 语言 446px），排序 .seg 六项 414px 不可断
+     —— 顶爆隐式轨道整页横滑（实测 PW=970@375）。flex-wrap 确定性换行，不赌断行规则 */
+  #db-row, #cat-chips, #lang-chips, #mnt-chips, #off-chips, #views-chips {
+    display: flex; flex-wrap: wrap; gap: 6px; }
+  .seg { flex-wrap: wrap; }   /* 仅项目浏览使用 .seg：排序 6 项手机上分两行 */
+  /* 块级滚动容器（overflow:auto）不阻断 min-content 向 grid 轨道传播：斩断轨道后
+     冠军表 900px / 清单表 744px 回到 .mx-wrap / .tblwrap 内各自横滚，不再拖爆整页 */
+  main { grid-template-columns: minmax(0, 1fr); }
+  #mx-blk, #list-wrap { min-width: 0; }
 }
