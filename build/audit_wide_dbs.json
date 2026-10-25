@@ -1,7 +1,7 @@
 {
- "built": "2026-10-20 20:51",
- "snap": "20261019",
- "count": 19,
+ "built": "2026-10-25 14:23",
+ "snap": "20261024",
+ "count": 20,
  "items": [
   {
    "fn": "dbeaver/dbeaver",
@@ -41,7 +41,7 @@
     "YashanDB",
     "GoldenDB"
    ],
-   "gen": "2026-10-14"
+   "gen": "2026-10-20"
   },
   {
    "fn": "DotNetNext/SqlSugar",
@@ -82,24 +82,24 @@
     "YashanDB",
     "GoldenDB"
    ],
-   "gen": "2026-10-15"
+   "gen": "2026-10-22"
   },
   {
    "fn": "feigeCode/navop",
    "n": 10,
    "dbs": [
-    "PostgreSQL",
     "MySQL",
-    "Oracle",
+    "PostgreSQL",
     "SQLite",
     "SQL Server",
+    "Oracle",
     "ClickHouse",
     "OceanBase",
     "Dameng",
     "openGauss",
     "GBase"
    ],
-   "gen": "2026-10-07"
+   "gen": "2026-10-21"
   },
   {
    "fn": "ClouGence/open-cdm",
@@ -159,7 +159,7 @@
     "TDSQL",
     "YashanDB"
    ],
-   "gen": "2026-10-10"
+   "gen": "2026-10-24"
   },
   {
    "fn": "suoten/dbbridge",
@@ -236,7 +236,7 @@
   },
   {
    "fn": "cuipengdba/agentsql",
-   "n": 13,
+   "n": 10,
    "dbs": [
     "PostgreSQL",
     "MySQL",
@@ -244,15 +244,12 @@
     "SQLite",
     "SQL Server",
     "ClickHouse",
-    "TiDB",
-    "OceanBase",
     "PolarDB",
     "Dameng",
     "openGauss",
-    "TDSQL",
     "YashanDB"
    ],
-   "gen": "2026-10-20"
+   "gen": "2026-10-24"
   },
   {
    "fn": "tteamtm/dbcli",
@@ -332,6 +329,27 @@
     "openGauss",
     "GaussDB",
     "TDSQL",
+    "GoldenDB"
+   ],
+   "gen": "2026-10-20"
+  },
+  {
+   "fn": "303562915/dbx",
+   "n": 14,
+   "dbs": [
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "SQLite",
+    "SQL Server",
+    "ClickHouse",
+    "MariaDB",
+    "TiDB",
+    "OceanBase",
+    "openGauss",
+    "GaussDB",
+    "GBase",
+    "YashanDB",
     "GoldenDB"
    ],
    "gen": "2026-10-20"
