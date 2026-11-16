@@ -88,5 +88,7 @@
    "misc",
    "综合"
   ]
- ]
+ ],
+ "base_path": "",
+ "mirror": false
 }

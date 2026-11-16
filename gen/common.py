@@ -20,6 +20,10 @@ def load_contract(cfg=None):
 
 def esc(s): return html.escape(str(s), quote=True)
 
+def url(path, cfg):
+    """站内 URL 唯一出口：根绝对路径 + base_path 前缀（GH 镜像仓库名路径）。改 URL 前缀只动这里。"""
+    return cfg.get("base_path", "").rstrip("/") + path
+
 CSS = """
 :root{--brand:#0F766E;--brand-soft:rgba(15,118,110,.08);--ink:#1F2937;--sub:#6B7280;--line:#E5E7EB;--bg:#F8FAFC}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -45,6 +49,12 @@ ol.rows li{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:11px
 .pager a,.pager .cur,.pager .dot{padding:4px 11px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink)}
 .pager .cur{background:var(--brand);color:#fff;border-color:var(--brand)}
 .pager .dot{border:none;background:none;color:var(--sub)}
+.vs-grid{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;margin:14px 0;align-items:stretch}
+.vs-side{border:1px solid var(--line);background:#fff;border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.vs-mid{display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--sub)}
+.vs-why{color:var(--sub);font-size:13px}
+.vs-score{margin-top:auto;font-size:12.5px;color:var(--brand);font-weight:600}
+@media(max-width:720px){.vs-grid{grid-template-columns:1fr}.vs-mid{padding:8px 0}}
 .ft{border-top:1px solid var(--line);margin-top:28px;padding-top:12px;color:var(--sub);font-size:12.5px}
 """
 
@@ -57,14 +67,14 @@ def chips_html(cfg, cur_slug):
     out = []
     for slug, name in cfg["cats"]:
         on = ' on' if slug == cur_slug else ""
-        out.append(f'<a class="chip{on}" href="/cat/{esc(slug)}/">{esc(name)}</a>')
+        out.append(f'<a class="chip{on}" href="{esc(url("/cat/" + slug + "/", cfg))}">{esc(name)}</a>')
     allon = ' on' if cur_slug == "all" else ""
-    return ('<a class="chip%s" href="/projects/">全部</a>' % allon) + "".join(out)
+    return (f'<a class="chip{allon}" href="{esc(url("/projects/", cfg))}">全部</a>') + "".join(out)
 
-def item_row(it):
+def item_row(it, cfg):
     stars = f'{it["stars"]:,}★' if isinstance(it.get("stars"), int) else ""
     meta = " · ".join(x for x in (it.get("lang"), (it.get("ol") or "")) if x)
-    return (f'<li><div class="r-top"><a class="r-name" href="{esc(it["url"])}">{esc(it["name"])}</a>'
+    return (f'<li><div class="r-top"><a class="r-name" href="{esc(url(it["url"], cfg))}">{esc(it["name"])}</a>'
             f'<span class="r-fn">{esc(it["fn"])}</span><span class="r-stars">{stars}</span></div>'
             f'<div class="r-meta">{esc(meta)}</div></li>')
 
@@ -83,16 +93,18 @@ def pager(cur, pages, first_url, page_url):
     return f'<div class="pager">{prev}{"".join(seg)}{nxt}</div>'
 
 def page(cfg, title, desc, canon, body, active=""):
-    """整页壳。canon=None 不输出 canonical（如分页第 2 页起，canonical 指 first）。"""
+    """整页壳。canon 传绝对 URL（ct.base+路径）；分页第 2 页起传 None 不输出。
+    镜像模式（cfg.mirror）：加 noindex——镜像站只做灾备不做收录，SEO 收敛到主站。"""
     c = f'<link rel="canonical" href="{esc(canon)}">\n' if canon else ""
+    ni = '<meta name="robots" content="noindex">\n' if cfg.get("mirror") else ""
     return ("<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"UTF-8\">\n"
             '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
             f"<title>{esc(title)}</title>\n"
-            f'<meta name="description" content="{esc(desc)}">\n{c}'
+            f'<meta name="description" content="{esc(desc)}">\n{ni}{c}'
             f"<style>{CSS}</style>\n</head>\n<body>\n"
-            f'<div class="wrap">\n<div class="hd"><a class="brand" href="/">{esc(cfg["site_name"])}</a>{nav_html(cfg, active)}</div>\n'
+            f'<div class="wrap">\n<div class="hd"><a class="brand" href="{esc(url("/", cfg))}">{esc(cfg["site_name"])}</a>{nav_html(cfg, active)}</div>\n'
             f"{body}\n"
-            f'<div class="ft">数据每日更新 · <a href="/projects/">项目库</a> · <a href="/weekly/">周刊</a> · '
+            f'<div class="ft">数据每日更新 · <a href="{esc(url("/projects/", cfg))}">项目库</a> · '
             f'本项目档案由 dbhub 采集管线自动生成</div>\n</div>\n</body>\n</html>\n')
 
 def dump(p, s):

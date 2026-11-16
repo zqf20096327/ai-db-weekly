@@ -13,7 +13,7 @@
 import argparse, glob, io, json, os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # -I 隔离模式不自动加脚本目录
 import common as C
-import list_pages, db_pages, cards, legacy, platform
+import list_pages, db_pages, cards, legacy, platform, vs_pages
 
 VER = "gen/1.0"
 
@@ -41,18 +41,19 @@ def verify(cfg, ct, out_dir):
     # 2) 内链 404：列表/库页里每个 /p/ 链接必须有对应物理页；导航链接必须存在
     page_files = (glob.glob(os.path.join(out_dir, "projects", "*.html"))
                   + glob.glob(os.path.join(out_dir, "cat", "*", "*.html"))
-                  + glob.glob(os.path.join(out_dir, "db", "*", "index.html")))
-    bad = 0
+                  + glob.glob(os.path.join(out_dir, "db", "*", "index.html"))
+                  + glob.glob(os.path.join(out_dir, "vs", "*", "index.html")))
+    bad = 0; bp = cfg.get("base_path", "")
     for pf in page_files:
         t = io.open(pf, encoding="utf-8").read()
-        for href in set(re.findall(r'href="(/p/[^"]+)"', t)):
+        for href in set(re.findall(r'href="([^"]*/p/[^"]+)"', t)):
+            href = href[len(bp):] if bp and href.startswith(bp) else href
             if not os.path.exists(os.path.join(out_dir, *href.strip("/").split("/"), "index.html")):
                 bad += 1
                 if bad <= 3: errs.append(f"内链 404: {href} (from {os.path.relpath(pf, out_dir)})")
     for u, _ in cfg["nav"]:
-        if u == "/": continue
-        target = (os.path.join(out_dir, *u.strip("/").split("/"), "index.html") if u.endswith("/")
-                  else os.path.join(out_dir, *u.strip("/").split("/")))
+        if u == "/" or u.endswith(".html"): continue   # 外部/旧页链接（archive.html 由 legacy 保证）
+        target = os.path.join(out_dir, *u.strip("/").split("/"), "index.html")
         if not os.path.exists(target):
             errs.append(f"导航死链: {u}")
     # 3) 正文可索引：抽 3 个列表页，剥 script 后正文 >5,000 字且含已知项目名
@@ -79,10 +80,14 @@ def verify(cfg, ct, out_dir):
 
 def _selftest():
     cfg = {"site_name": "s", "site_desc": "d", "nav": [["/", "首页"]], "cats": [["library", "开发库"]]}
-    ct = {"card": "/p/{fn}/", "all_first": "/projects/", "all_page": "/projects/{n}.html",
+    ct = {"base": "https://x.example", "card": "/p/{fn}/", "all_first": "/projects/", "all_page": "/projects/{n}.html",
           "cat_first": "/cat/{slug}/", "cat_page": "/cat/{slug}/{n}.html", "db": "/db/{slug}/"}
     assert C.esc('<a>&"') == "&lt;a&gt;&amp;&quot;"
-    r = C.item_row({"fn": "o/r", "name": "r", "stars": 1234, "lang": "Go", "ol": "x<y", "url": "/p/o/r/"})
+    cfg["base_path"] = "/ai-db-weekly"
+    assert C.url("/p/o/r/", cfg) == "/ai-db-weekly/p/o/r/"
+    cfg["base_path"] = ""
+    assert C.url("/p/o/r/", cfg) == "/p/o/r/"
+    r = C.item_row({"fn": "o/r", "name": "r", "stars": 1234, "lang": "Go", "ol": "x<y", "url": "/p/o/r/"}, cfg)
     assert 'href="/p/o/r/"' in r and "1,234★" in r and "x&lt;y" in r
     pg = C.pager(6, 99, "/projects/", lambda n: f"/projects/{n}.html")
     assert pg.count("<a") == 12 and "…" in pg and '<span class="cur">6</span>' in pg   # 页码 3..9+1,2,98,99 共 10 链接+前后页
@@ -101,20 +106,30 @@ def _selftest():
     p3 = list_pages.render_list_page(cfg, ct, d2, out)
     assert p3.endswith(os.path.join("cat", "engine", "index.html"))
     t1 = io.open(p1, encoding="utf-8").read()
-    assert '<link rel="canonical" href="/projects/">' in t1          # 第 1 页 canonical
+    assert '<link rel="canonical" href="https://x.example/projects/">' in t1   # 第 1 页 canonical=绝对 URL
     assert "canonical" not in io.open(p2, encoding="utf-8").read()   # 分页第 2 页不出 canonical
-    print(f"OK {VER} selftest: 8 asserts passed")
+    cfg["mirror"] = True; cfg["base_path"] = "/ai-db-weekly"
+    d["items"] = [{"fn": "o/r", "name": "r", "stars": 1, "lang": "Go", "ol": "x", "url": "/p/o/r/"}]
+    p4 = list_pages.render_list_page(cfg, ct, {**d, "page": 1}, out)
+    t4 = io.open(p4, encoding="utf-8").read()
+    assert '<meta name="robots" content="noindex">' in t4 and 'href="/ai-db-weekly/p/' in t4  # 镜像 noindex+前缀
+    cfg["mirror"] = False; cfg["base_path"] = ""
+    print(f"OK {VER} selftest: 11 asserts passed")
     return 0
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", help="legacy,lists,db,cards,sitemap,platform 逗号分隔（默认全量）")
     ap.add_argument("--platform", default="cf", choices=["cf", "gh"])
+    ap.add_argument("--mirror", action="store_true",
+                    help="镜像变体：base_path=/ai-db-weekly + noindex，输出 dist-mirror/（GH Pages 用）")
     ap.add_argument("--verify", action="store_true")
     ap.add_argument("--selftest", action="store_true")
     a = ap.parse_args()
     if a.selftest: sys.exit(_selftest())
     cfg = C.load_config(); ct = C.load_contract(cfg)
+    if a.mirror:
+        cfg["base_path"] = "/ai-db-weekly"; cfg["mirror"] = True; cfg["out"] = "dist-mirror"
     out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", cfg["out"])
     out_dir = os.path.normpath(out_dir)
     os.makedirs(out_dir, exist_ok=True)
@@ -122,11 +137,12 @@ def main():
         errs = verify(cfg, ct, out_dir)
         sys.exit(1 if errs else 0)
     steps = (a.only.split(",") if a.only else
-             ["legacy", "lists", "db", "cards", "sitemap", "platform"])
+             ["legacy", "lists", "db", "vs", "cards", "sitemap", "platform"])
     for s in steps:
         if s == "legacy": legacy.copy_legacy(cfg, out_dir)
         elif s == "lists": list_pages.gen_lists(cfg, ct, out_dir)
         elif s == "db": db_pages.gen_db_pages(cfg, ct, out_dir)
+        elif s == "vs": vs_pages.gen_vs_pages(cfg, ct, out_dir)
         elif s == "cards": cards.copy_cards(cfg, out_dir)
         elif s == "sitemap":
             for f in ("sitemap.xml", "robots.txt"):
