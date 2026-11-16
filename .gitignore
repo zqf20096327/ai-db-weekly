@@ -4,3 +4,4 @@ _shots/
 __pycache__/
 *.log
 .zcode/
+dist/

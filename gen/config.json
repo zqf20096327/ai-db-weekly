@@ -1,0 +1,92 @@
+{
+ "site_name": "数据库开源生态 · 项目档案",
+ "site_desc": "13,944 个数据库相关开源项目档案：一句话定位、能力标签、适配数据库、star 趋势与生态提及，每日更新。",
+ "data_root": "C:/Users/qifang.zhou/OneDrive/桌面/tmp/dbhub_collect/项目卡片/site",
+ "cards_root": "C:/Users/qifang.zhou/OneDrive/桌面/tmp/dbhub_collect/项目卡片/cards",
+ "out": "dist",
+ "page_size": 100,
+ "nav": [
+  [
+   "/",
+   "首页"
+  ],
+  [
+   "/projects/",
+   "项目库"
+  ],
+  [
+   "/cat/library/",
+   "开发库"
+  ],
+  [
+   "/cat/engine/",
+   "内核/引擎"
+  ],
+  [
+   "/db/postgresql/",
+   "PostgreSQL"
+  ],
+  [
+   "/db/mysql/",
+   "MySQL"
+  ],
+  [
+   "/archive.html",
+   "往期周报"
+  ]
+ ],
+ "cats": [
+  [
+   "library",
+   "开发库"
+  ],
+  [
+   "engine",
+   "内核/引擎"
+  ],
+  [
+   "management",
+   "管理"
+  ],
+  [
+   "migration",
+   "迁移"
+  ],
+  [
+   "platform",
+   "平台"
+  ],
+  [
+   "connector",
+   "连接/代理"
+  ],
+  [
+   "monitoring",
+   "监控"
+  ],
+  [
+   "testing",
+   "测试/质量"
+  ],
+  [
+   "security",
+   "安全/审计"
+  ],
+  [
+   "backup",
+   "备份"
+  ],
+  [
+   "modeling",
+   "建模/设计"
+  ],
+  [
+   "ha",
+   "高可用"
+  ],
+  [
+   "misc",
+   "综合"
+  ]
+ ]
+}

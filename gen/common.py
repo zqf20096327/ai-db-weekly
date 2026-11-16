@@ -1,0 +1,101 @@
+# -*- coding: utf-8 -*-
+"""common.py -- 站点页公共壳（模板层，零数据逻辑）
+
+解耦纪律（见 gen/README.md）：
+  1. 本模块只管「页面长什么样」；读什么数据、出多少页，归 list_pages/db_pages；
+  2. URL 模式唯一权威 = 数据契约 site/urls.json（load_contract()），本模块不写死任何路径模式；
+  3. 样式自带（内联），不依赖旧 assets/app.css——新页与旧页互不影响。
+"""
+import html, io, json, os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+def load_config():
+    return json.load(io.open(os.path.join(HERE, "config.json"), encoding="utf-8"))
+
+def load_contract(cfg=None):
+    """site/urls.json = build_site 产物，URL 模式唯一权威。"""
+    cfg = cfg or load_config()
+    return json.load(io.open(os.path.join(cfg["data_root"], "urls.json"), encoding="utf-8"))
+
+def esc(s): return html.escape(str(s), quote=True)
+
+CSS = """
+:root{--brand:#0F766E;--brand-soft:rgba(15,118,110,.08);--ink:#1F2937;--sub:#6B7280;--line:#E5E7EB;--bg:#F8FAFC}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.7 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+a{color:var(--brand);text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:20px 16px 48px}
+.hd{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;padding:10px 0 14px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.hd .brand{font-size:17px;font-weight:700;color:var(--ink)}
+nav{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:14px}
+nav a,.on{color:var(--sub)}nav a:hover{color:var(--brand)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 16px}
+.chip{font-size:13px;padding:3px 11px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.chip.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+h1{font-size:21px;margin:4px 0 6px}.sub{color:var(--sub);font-size:13.5px;margin-bottom:14px}
+ol.rows{list-style:none}
+ol.rows li{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:11px 12px;border:1px solid var(--line);background:#fff;border-radius:8px;margin-bottom:8px}
+.r-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.r-name{font-weight:650;font-size:15.5px}
+.r-fn{color:var(--sub);font-size:12.5px}
+.r-stars{color:#B45309;font-size:13px;font-weight:600;white-space:nowrap}
+.r-meta{grid-column:1/-1;color:var(--sub);font-size:13px}
+.pager{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0;font-size:14px}
+.pager a,.pager .cur,.pager .dot{padding:4px 11px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink)}
+.pager .cur{background:var(--brand);color:#fff;border-color:var(--brand)}
+.pager .dot{border:none;background:none;color:var(--sub)}
+.ft{border-top:1px solid var(--line);margin-top:28px;padding-top:12px;color:var(--sub);font-size:12.5px}
+"""
+
+def nav_html(cfg, active):
+    links = "".join(
+        f'<a href="{esc(u)}"{" class=on" if u == active else ""}>{esc(t)}</a>' for u, t in cfg["nav"])
+    return f'<nav>{links}</nav>'
+
+def chips_html(cfg, cur_slug):
+    out = []
+    for slug, name in cfg["cats"]:
+        on = ' on' if slug == cur_slug else ""
+        out.append(f'<a class="chip{on}" href="/cat/{esc(slug)}/">{esc(name)}</a>')
+    allon = ' on' if cur_slug == "all" else ""
+    return ('<a class="chip%s" href="/projects/">全部</a>' % allon) + "".join(out)
+
+def item_row(it):
+    stars = f'{it["stars"]:,}★' if isinstance(it.get("stars"), int) else ""
+    meta = " · ".join(x for x in (it.get("lang"), (it.get("ol") or "")) if x)
+    return (f'<li><div class="r-top"><a class="r-name" href="{esc(it["url"])}">{esc(it["name"])}</a>'
+            f'<span class="r-fn">{esc(it["fn"])}</span><span class="r-stars">{stars}</span></div>'
+            f'<div class="r-meta">{esc(meta)}</div></li>')
+
+def pager(cur, pages, first_url, page_url):
+    """页码窗：首/末恒显，当前±3，省略号折叠。first_url=第 1 页 URL（无页号），page_url=fn(n)。"""
+    if pages <= 1: return ""
+    def want(n): return n in (1, 2, pages - 1, pages) or abs(n - cur) <= 3
+    seg, last = [], 0
+    for n in range(1, pages + 1):
+        if not want(n): continue
+        if last and n - last > 1: seg.append('<span class="dot">…</span>')
+        seg.append(f'<span class="cur">{n}</span>' if n == cur else f'<a href="{esc(page_url(n))}">{n}</a>')
+        last = n
+    prev = f'<a href="{esc(first_url if cur == 2 else page_url(cur - 1))}">上一页</a>' if cur > 1 else ""
+    nxt = f'<a href="{esc(page_url(cur + 1))}">下一页</a>' if cur < pages else ""
+    return f'<div class="pager">{prev}{"".join(seg)}{nxt}</div>'
+
+def page(cfg, title, desc, canon, body, active=""):
+    """整页壳。canon=None 不输出 canonical（如分页第 2 页起，canonical 指 first）。"""
+    c = f'<link rel="canonical" href="{esc(canon)}">\n' if canon else ""
+    return ("<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"UTF-8\">\n"
+            '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
+            f"<title>{esc(title)}</title>\n"
+            f'<meta name="description" content="{esc(desc)}">\n{c}'
+            f"<style>{CSS}</style>\n</head>\n<body>\n"
+            f'<div class="wrap">\n<div class="hd"><a class="brand" href="/">{esc(cfg["site_name"])}</a>{nav_html(cfg, active)}</div>\n'
+            f"{body}\n"
+            f'<div class="ft">数据每日更新 · <a href="/projects/">项目库</a> · <a href="/weekly/">周刊</a> · '
+            f'本项目档案由 dbhub 采集管线自动生成</div>\n</div>\n</body>\n</html>\n')
+
+def dump(p, s):
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    io.open(p, "w", encoding="utf-8", newline="\n").write(s)
+    return len(s)
