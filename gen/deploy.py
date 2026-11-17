@@ -28,6 +28,7 @@ def deploy_gh(dry):
     tmp = tempfile.mkdtemp(prefix="ghpages_")
     try:
         run(["git", "worktree", "add", "--detach", tmp], cwd=REPO)          # 挂临时 worktree
+        run(["git", "branch", "-D", "gh-pages"], cwd=tmp, check=False)      # 产物分支每次全量重建（干跑残留也清）
         run(["git", "checkout", "--orphan", "gh-pages"], cwd=tmp)           # 孤儿分支=无历史，仓库不背 220MB 负担
         run(["git", "rm", "-rf", "."], cwd=tmp, check=False)
         for item in os.listdir(src):
@@ -42,7 +43,7 @@ def deploy_gh(dry):
         run(["git", "push", "-f", "origin", "gh-pages"], cwd=tmp)
         p = run(["gh", "api", "-X", "POST", f"repos/{SLUG}/pages",
                  "-f", "source[branch]=gh-pages", "-f", "source[path]=/"], check=False)
-        if p.returncode != 0 and "already" not in (p.stdout + p.stderr).lower():   # 已开通返回 409
+        if p.returncode != 0:                        # 已开通(409)也必须 PUT 切源，别信旧源配置
             p2 = run(["gh", "api", "-X", "PUT", f"repos/{SLUG}/pages",
                       "-f", "source[branch]=gh-pages", "-f", "source[path]=/"], check=False)
             if p2.returncode != 0: print("WARN Pages 开通/更新:", p2.stdout, p2.stderr)
