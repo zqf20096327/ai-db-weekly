@@ -136,3 +136,31 @@ def dump(p, s):
     os.makedirs(os.path.dirname(p), exist_ok=True)
     io.open(p, "w", encoding="utf-8", newline="\n").write(s)
     return len(s)
+
+# ---------- 旧版设计壳（P7.13：周刊族页面恢复 assets/app.css 原排版） ----------
+
+LEGACY_NAV = [("/", "周刊"), ("/archive.html", "往期周刊"), ("/projects/", "项目浏览"), ("/compare/", "项目对比")]
+
+def page_legacy(cfg, title, desc, canon, body, cur_lk, extra_css=""):
+    """旧版设计整页壳：header/nav 与 hero 分节排版全部沿用 assets/app.css 令牌体系。
+    与 page() 的差别=外观壳（引用 assets/app.css）而非内联新样式；SEO 头（desc/canonical/
+    镜像 noindex）两边一致。cur_lk=当前高亮导航项路径。"""
+    c = f'<link rel="canonical" href="{esc(canon)}">\n' if canon else ""
+    ni = '<meta name="robots" content="noindex">\n' if cfg.get("mirror") else ""
+    links = "".join(
+        f'<a class="lk{" on" if u == cur_lk else ""}" href="{esc(url(u, cfg))}">{esc(t)}</a>'
+        for u, t in LEGACY_NAV)
+    ex = f"<style>\n{extra_css}\n</style>\n" if extra_css else ""
+    return ("<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\">\n"
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            f"<title>{esc(title)}</title>\n"
+            f'<meta name="description" content="{esc(desc)}">\n{ni}{c}'
+            f'<link rel="stylesheet" href="{esc(url("/assets/app.css", cfg))}">\n{ex}'
+            "</head>\n<body>\n"
+            f'<header><div class="wrap nav">\n'
+            f'<a class="brand" href="{esc(url("/", cfg))}">开源生态<b>观测</b></a>\n{links}\n'
+            f'<span class="spacer"></span>\n'
+            f'<a class="icon-btn" href="{esc(url("/assets/qr-wechat.jpg", cfg))}" target="_blank" '
+            'rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>\n'
+            "</div></header>\n"
+            f'<div class="wrap">\n{body}\n</div>\n</body>\n</html>\n')

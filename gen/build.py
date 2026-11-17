@@ -13,7 +13,7 @@
 import argparse, glob, io, json, os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # -I 隔离模式不自动加脚本目录
 import common as C
-import list_pages, db_pages, cards, platform, vs_pages, weekly_pages, home, compare_pages
+import list_pages, db_pages, cards, platform, vs_pages, weekly_pages, home, compare_pages, assets
 
 VER = "gen/1.0"
 
@@ -192,7 +192,7 @@ def _selftest():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", help="lists,db,vs,weekly,home,compare,cards,sitemap,platform 逗号分隔（默认全量；legacy 模块已随 P7 旧页全静态化退役）")
+    ap.add_argument("--only", help="lists,db,vs,assets,weekly,home,compare,cards,sitemap,platform 逗号分隔（默认全量）")
     ap.add_argument("--platform", default="cf", choices=["cf", "gh"])
     ap.add_argument("--mirror", action="store_true",
                     help="镜像变体：base_path=/ai-db-weekly + noindex，输出 dist-mirror/（GH Pages 用）")
@@ -210,11 +210,12 @@ def main():
         errs = verify(cfg, ct, out_dir)
         sys.exit(1 if errs else 0)
     steps = (a.only.split(",") if a.only else
-             ["lists", "db", "vs", "weekly", "home", "compare", "cards", "sitemap", "platform"])
+             ["lists", "db", "vs", "assets", "weekly", "home", "compare", "cards", "sitemap", "platform"])
     for s in steps:
         if s == "lists": list_pages.gen_lists(cfg, ct, out_dir)
         elif s == "db": db_pages.gen_db_pages(cfg, ct, out_dir)
         elif s == "vs": vs_pages.gen_vs_pages(cfg, ct, out_dir)
+        elif s == "assets": assets.copy_assets(cfg, out_dir)
         elif s == "weekly": weekly_pages.gen_weekly(cfg, ct, out_dir)
         elif s == "home": home.gen_home(cfg, ct, out_dir)
         elif s == "compare": compare_pages.gen_compare(cfg, ct, out_dir)
