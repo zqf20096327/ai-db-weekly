@@ -56,6 +56,30 @@ ol.rows li{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:11px
 .vs-score{margin-top:auto;font-size:12.5px;color:var(--brand);font-weight:600}
 @media(max-width:720px){.vs-grid{grid-template-columns:1fr}.vs-mid{padding:8px 0}}
 .ft{border-top:1px solid var(--line);margin-top:28px;padding-top:12px;color:var(--sub);font-size:12.5px}
+h2{font-size:17px;margin:24px 0 10px}
+h3{font-size:15.5px;margin:2px 0 4px}
+.wk-nums{color:var(--sub);font-size:13px}
+.wk-lede{display:flex;gap:10px;padding:10px 12px;border:1px solid var(--line);background:#fff;border-radius:8px;margin-bottom:8px;font-size:14px}
+.wk-lede b{flex:none;color:var(--brand)}
+.wk-deep{border:1px solid var(--line);background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.wk-deep p{margin:6px 0;font-size:14px}
+.wk-tag{display:inline-block;font-size:12px;color:var(--brand);background:var(--brand-soft);border-radius:10px;padding:1px 9px;margin-bottom:6px}
+.wk-panel{border-collapse:collapse;margin:8px 0;font-size:13px}
+.wk-panel td{border:1px solid var(--line);padding:3px 10px}
+.wk-card{font-size:13px}
+.wk-ol{margin:0 0 0 18px;font-size:14px}
+.wk-ol li{margin:4px 0}
+.wk-hint{font-weight:400;color:var(--sub);font-size:12.5px;margin-left:8px}
+.wk-glance{list-style:none;margin:0}
+.wk-glance li{display:flex;gap:10px;flex-wrap:wrap;padding:6px 10px;border-bottom:1px dashed var(--line);font-size:13.5px}
+.wk-fn{font-weight:600}
+.wk-meta{color:var(--sub)}
+.sev{color:#B91C1C;font-weight:600}
+.g7{color:#B45309;font-weight:600}
+.tag{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:0 6px}
+.tag.off{color:var(--brand);border-color:var(--brand)}
+.tag.gray{color:var(--sub)}
+.muted{color:var(--sub)}
 """
 
 def nav_html(cfg, active):
@@ -86,7 +110,8 @@ def pager(cur, pages, first_url, page_url):
     for n in range(1, pages + 1):
         if not want(n): continue
         if last and n - last > 1: seg.append('<span class="dot">…</span>')
-        seg.append(f'<span class="cur">{n}</span>' if n == cur else f'<a href="{esc(page_url(n))}">{n}</a>')
+        seg.append(f'<span class="cur">{n}</span>' if n == cur
+                   else f'<a href="{esc(first_url if n == 1 else page_url(n))}">{n}</a>')   # 第 1 页链 first（P3 遗留 404 修复）
         last = n
     prev = f'<a href="{esc(first_url if cur == 2 else page_url(cur - 1))}">上一页</a>' if cur > 1 else ""
     nxt = f'<a href="{esc(page_url(cur + 1))}">下一页</a>' if cur < pages else ""

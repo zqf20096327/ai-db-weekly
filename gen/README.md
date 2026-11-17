@@ -7,12 +7,19 @@ dbhub_collect                    dbhub_page/gen                产物
 ─────────────                    ─────────────                 ────
 daily_cards.py（数据+卡）
 build_site.py ──> site/ 契约 ──> build.py 编排 ──> dist/ ──> gh-pages 分支部署
-  data/*.json（分片）              ├ legacy.py（旧资产+导航修补）
-  sitemap.xml / robots.txt        ├ list_pages.py（/projects/ /cat/）
-  urls.json（URL 模式唯一权威）     ├ db_pages.py（/db/×17）
+  data/*.json（分片）              ├ list_pages.py（/projects/ /cat/）
+  sitemap.xml / robots.txt        ├ db_pages.py（/db/×17）
+  urls.json（URL 模式唯一权威）     ├ vs_pages.py（/vs/×545）
+                                  ├ weekly_pages.py（/weekly/{n}/ + archive.html，源=仓内 data/weekly.js）
+[内容源·不进数据契约]              ├ home.py（门面首页 /）
+  weekly.js / compare_deep.json ──┤ compare_pages.py（/compare/ 索引+AI 长文）
                                   ├ cards.py（卡→p/owner/repo/index.html 物理布局）
                                   └ platform.py（cf/gh 差异仅此一处）
 ```
+
+> legacy.py 已于 P7（2026-11-17）退役：四旧页全静态化后无旧资产可搬。
+> 内容源边界：weekly.js / compare_deep.json 是「内容」不是「数据」——期数篇数由本仓内容决定，
+> 不进 collect 的 site/ 契约；sitemap 里这些 URL 由 build.py merge_sitemap() 在 gen 侧并入。
 
 ## 七条纪律
 
@@ -28,8 +35,8 @@ build_site.py ──> site/ 契约 ──> build.py 编排 ──> dist/ ──>
 
 ```bash
 cd gen
-python -I build.py --selftest       # 8 断言（纯函数）
-python -I build.py                  # 全量 -> ../dist/ + VERIFY（卡对账/内链 400/正文长度/归档混入/pool.js）
+python -I build.py --selftest       # 14 断言（纯函数）
+python -I build.py                  # 全量 -> ../dist/ + VERIFY（卡对账/内链 404/正文长度/归档混入/JS 数据文件绝迹/周刊长文对比四查）
 python -I build.py --only lists,db  # 改模板后局部重出
 python -I build.py --verify         # 只校验不重建
 ```
