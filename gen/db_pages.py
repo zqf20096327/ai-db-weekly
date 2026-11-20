@@ -12,6 +12,8 @@ import list_pages as L
 def gen_db_pages(cfg, ct, out_dir):
     L._boot_maps(cfg)
     shutil.rmtree(os.path.join(out_dir, "db"), ignore_errors=True)   # 全量重写前清场
+    bins = L.combo_bins(L.load_all_items(cfg), {v: k for k, v in L.DB_NAME.items()},
+                        {name: slug for slug, name in cfg["cats"]})   # P8.4：类别行钻取 + 组合页共用
     n = 0
     for f in sorted(glob.glob(os.path.join(cfg["data_root"], "data", "db", "*.json"))):
         d = json.load(io.open(f, encoding="utf-8"))
@@ -23,7 +25,7 @@ def gen_db_pages(cfg, ct, out_dir):
       <div class="card-head" style="margin-bottom:2px"><h2>{C.esc(name)} 生态工具<span class="hint">收录 {d["count"]:,} 项 · Star 降序 · 本页 Top {len(d["items"])}</span></h2></div>
       <div class="fzone">
         <div class="tagrow"><span class="glabel">数据库</span>{L.db_chips(cfg, on_slug=slug)}</div>
-        <div class="tagrow"><span class="glabel">类别</span>{L.cat_chips(cfg)}</div>
+        <div class="tagrow"><span class="glabel">类别</span>{L.cat_chips(cfg, via_db=slug, combos=bins)}</div>
       </div>
       <div class="statline"><span class="big" title="{C.esc(name)} 相关的开源工具与项目">匹配 {d["count"]:,}</span>
         <span class="sub">库页封顶 500 热门 · 长尾走类目页</span></div>
@@ -41,5 +43,6 @@ def gen_db_pages(cfg, ct, out_dir):
                                 f"{name} 生态的开源项目档案 {d['count']} 个：驱动、备份、监控、迁移与管理工具，Star 降序。",
                                 ct["base"] + ct["db"].format(slug=slug), body, "/projects/", L.FZONE_CSS))
         n += 1
-    print(f"OK db_pages: {n} 库页（旧版排版，库 chip 高亮）")
+    n_combo = L.gen_combo_pages(cfg, ct, out_dir, bins)   # P8.3：组合页挂本步尾部（开头 rmtree db/ 已清场）
+    print(f"OK db_pages: {n} 库页（旧版排版，库 chip 高亮）+ {n_combo} 组合页")
     return n

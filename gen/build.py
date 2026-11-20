@@ -38,18 +38,23 @@ def verify(cfg, ct, out_dir):
     only_disk = disk_cards - fns_expect; only_data = fns_expect - disk_cards
     if only_disk: errs.append(f"盘上多出 {len(only_disk)} 张（归档/出池卡混入?）样例 {list(only_disk)[:3]}")
     if only_data: errs.append(f"缺卡 {len(only_data)} 张，样例 {list(only_data)[:3]}")
-    # 2) 内链 404：全站页（列表/库/vs + P7 内容页首页/周刊/对比/archive）里每个站内绝对链接必须有对应物理页
+    # 2) 内链 404：全站页（列表/库/组合/vs + P7 内容页首页/周刊/对比/archive）里每个站内绝对链接必须有对应物理页
     page_files = (glob.glob(os.path.join(out_dir, "projects", "*.html"))
                   + glob.glob(os.path.join(out_dir, "cat", "*", "*.html"))
                   + glob.glob(os.path.join(out_dir, "db", "*", "index.html"))
+                  + glob.glob(os.path.join(out_dir, "db", "*", "*", "*.html"))
                   + glob.glob(os.path.join(out_dir, "vs", "*", "index.html"))
                   + glob.glob(os.path.join(out_dir, "weekly", "*", "index.html"))
                   + glob.glob(os.path.join(out_dir, "compare", "*.html"))
                   + [os.path.join(out_dir, "index.html"), os.path.join(out_dir, "archive.html")])
     page_files = [p for p in page_files if os.path.exists(p)]
     bad = 0; bp = cfg.get("base_path", "")
+    n_script = 0
     for pf in page_files:
         t = io.open(pf, encoding="utf-8").read()
+        if "<script" in t:
+            n_script += 1                                       # P8.6：全站零 JS 纪律（含 2011 组合页）
+            if n_script <= 3: errs.append(f"页面含 <script>: {os.path.relpath(pf, out_dir)}")
         for href in set(re.findall(r'href="(/[^"#]+)"', t)):
             h = href[len(bp):] if bp and href.startswith(bp) else href   # 镜像前缀剥掉再对账
             path = os.path.join(out_dir, *h.strip("/").split("/"))
@@ -75,9 +80,27 @@ def verify(cfg, ct, out_dir):
                    if not e.get("restored_at")}   # restored_at=已回池的活跃仓，出现在 dist 是合法的
         hit = arc_fns & disk_cards
         if hit: errs.append(f"归档卡混进 dist: {len(hit)} 张，样例 {list(hit)[:3]}")
-    # 5) JS 数据文件绝迹（P7.6：旧页全静态化后，站内不再携带任何 JS 数据文件）
+    # 5) JS 数据文件绝迹（P7.6：旧页全静态化后，站内不再携带任何 JS 数据文件；P8 组合页同为零 JS，见 #2 的 script 断言）
     for bad_js in ("pool.js", "weekly.js", "comparisons.js"):
         if glob.glob(os.path.join(out_dir, "**", bad_js), recursive=True): errs.append(f"{bad_js} 在 dist 内")
+    # 5b) P8 组合对账：盘上组合首页/总页数 == 分箱重算（同源同序；数据漂移在此拦）
+    list_pages._boot_maps(cfg)
+    bins = list_pages.combo_bins(list_pages.load_all_items(cfg),
+                                 {v: k for k, v in list_pages.DB_NAME.items()},
+                                 {name: slug for slug, name in cfg["cats"]})
+    n_first_disk = len(glob.glob(os.path.join(out_dir, "db", "*", "*", "index.html")))
+    n_combo_disk = len(glob.glob(os.path.join(out_dir, "db", "*", "*", "*.html")))
+    if n_first_disk != len(bins):
+        errs.append(f"组合首页 {n_first_disk} != 分箱非空 {len(bins)}")
+    n_pages_calc = sum(len(list_pages.chunk_items(v, list_pages.COMBO_PAGE_SIZE)) for v in bins.values())
+    if n_combo_disk != n_pages_calc:
+        errs.append(f"组合页总数 {n_combo_disk} != 分箱切块 {n_pages_calc}")
+    # 5c) P8 组合页正文抽查：3 个大组合首页剥标签后 ≥800 字（渲染空壳在此拦）
+    for (ds, cs), v in sorted(bins.items(), key=lambda kv: -len(kv[1]))[:3]:
+        pf = os.path.join(out_dir, "db", ds, cs, "index.html")
+        body = re.sub(r"<script[\s\S]*?</script>", "", io.open(pf, encoding="utf-8").read())
+        if len(" ".join(re.sub(r"<[^>]+>", " ", body).split())) < 800:
+            errs.append(f"组合页正文过短: db/{ds}/{cs}/")
     # 6) P7 内容页四查：周刊每期正文≥3000 / archive 期链全通 / compare 索引覆盖全部 vs 页 / 长文篇数对账
     wk = sorted(glob.glob(os.path.join(out_dir, "weekly", "*", "index.html")))
     if not wk: errs.append("周刊页缺失（weekly/ 空）")
@@ -95,16 +118,17 @@ def verify(cfg, ct, out_dir):
         n_vs_link = len({m for m in re.findall(r'href="[^"]*/vs/([^"/]+)/"', t)})
         if n_vs_link != n_vs_disk: errs.append(f"compare 索引覆盖 {n_vs_link} != vs 页 {n_vs_disk}")
     print(f"VERIFY {'FAIL' if errs else 'OK'}: 卡 {len(disk_cards)}（对账 {len(fns_expect)}）· "
-          f"页面 {len(page_files)}（含周刊 {len(wk)}/长文 {n_deep_disk}）· 内链坏 {bad}")
+          f"页面 {len(page_files)}（含周刊 {len(wk)}/长文 {n_deep_disk}/组合 {n_combo_disk}）· 内链坏 {bad} · 含script {n_script}")
     for e in errs[:20]: print("  -", e)
     return errs
 
 # ---------- sitemap 内容页并入（P7.8） ----------
 
-def merge_sitemap(out_dir):
+def merge_sitemap(out_dir, combo_adds=None):
     """内容页 URL 并入 build_site 产的 sitemap：职责边界=数据 URL（卡/库/类目）归 build_site，
-    内容 URL（首页/往期/周刊/对比）归 gen——周刊期数取决于仓内 weekly.js，collect 侧看不到。
-    以 dist 盘上实际页面为准，追加去重，落盘后真解析自证。"""
+    内容 URL（首页/往期/周刊/对比/组合首页）归 gen——周刊期数取决于仓内 weekly.js，collect 侧看不到。
+    以 dist 盘上实际页面为准，追加去重，落盘后真解析自证。combo_adds=组合首页 URL 清单（P8.5，
+    由调用方用 list_pages.combo_sitemap_urls 算好传入；selftest 传 None 保持原口径）。"""
     import datetime
     import xml.etree.ElementTree as ET
     p = os.path.join(out_dir, "sitemap.xml")
@@ -124,6 +148,7 @@ def merge_sitemap(out_dir):
     adds = ["/", "/archive.html", "/compare/"] + [f"/compare/deep-{i}.html" for i in range(1, n_deep + 1)]
     adds += ["/weekly/" + os.path.basename(os.path.dirname(d)) + "/"
              for d in sorted(glob.glob(os.path.join(out_dir, "weekly", "*", "index.html")))]
+    adds += combo_adds or []
     lm = datetime.date.today().isoformat(); n = 0
     for u in adds:
         if base + u in have: continue
@@ -155,26 +180,46 @@ def _selftest():
     assert C.pager(1, 1, "/x/", lambda n: "") == ""
     assert C.pager(2, 2, "/x/", lambda n: f"/x/{n}.html").count('<a href="/x/') == 2  # 第1页+上一页都指 first
     # 列表页文件名映射：第 1 页 index.html，第 n 页 n.html
+    # （P8.0 修：P7.14 后 API=list_body；first_page=False 跳过冠军矩阵——它要真库分片，归全量 build 验）
     d = {"slug": "all", "cat": "全部", "page": 1, "pages": 2, "items": []}
-    import tempfile, os
+    import tempfile
     out = tempfile.mkdtemp()
-    p1 = list_pages.render_list_page(cfg, ct, d, out)
+    cfg["data_root"] = tempfile.mkdtemp()   # 空数据根：total 走 glob 空集=0（DB_NAME/DB_CNT 未 boot，.get 兜底）
+    p1 = list_pages.list_body(cfg, ct, d, out)
     assert p1.endswith(os.path.join("projects", "index.html"))
     d["page"] = 2
-    p2 = list_pages.render_list_page(cfg, ct, d, out)
+    p2 = list_pages.list_body(cfg, ct, d, out)
     assert p2.endswith(os.path.join("projects", "2.html")) and "第 2 页" in io.open(p2, encoding="utf-8").read()
     d2 = {"slug": "engine", "cat": "内核/引擎", "page": 1, "pages": 1, "items": []}
-    p3 = list_pages.render_list_page(cfg, ct, d2, out)
+    p3 = list_pages.list_body(cfg, ct, d2, out)
     assert p3.endswith(os.path.join("cat", "engine", "index.html"))
     t1 = io.open(p1, encoding="utf-8").read()
     assert '<link rel="canonical" href="https://x.example/projects/">' in t1   # 第 1 页 canonical=绝对 URL
     assert "canonical" not in io.open(p2, encoding="utf-8").read()   # 分页第 2 页不出 canonical
     cfg["mirror"] = True; cfg["base_path"] = "/ai-db-weekly"
     d["items"] = [{"fn": "o/r", "name": "r", "stars": 1, "lang": "Go", "ol": "x", "url": "/p/o/r/"}]
-    p4 = list_pages.render_list_page(cfg, ct, {**d, "page": 1}, out)
+    p4 = list_pages.list_body(cfg, ct, {**d, "page": 1}, out)
     t4 = io.open(p4, encoding="utf-8").read()
     assert '<meta name="robots" content="noindex">' in t4 and 'href="/ai-db-weekly/p/' in t4  # 镜像 noindex+前缀
     cfg["mirror"] = False; cfg["base_path"] = ""
+    # P8.7：组合分箱/切块/chips 钻取回落（纯函数，fixture 数据）
+    its = [
+        {"fn": "a/x", "name": "x", "stars": 10, "cat": "备份", "dbs": ["PostgreSQL"], "url": "/p/a/x/"},
+        {"fn": "b/y", "name": "y", "stars": 50, "cat": "备份", "dbs": ["PostgreSQL", "MySQL"], "url": "/p/b/y/"},
+        {"fn": "c/z", "name": "z", "stars": 99, "cat": "监控", "dbs": ["SQLite"], "url": "/p/c/z/"},
+        {"fn": "d/w", "name": "w", "stars": 1, "cat": "未知类", "dbs": ["PostgreSQL"], "url": "/p/d/w/"},
+    ]
+    b = list_pages.combo_bins(its, {"PostgreSQL": "postgresql", "MySQL": "mysql", "SQLite": "sqlite"},
+                              {"备份": "backup", "监控": "monitoring"})
+    assert set(b) == {("postgresql", "backup"), ("mysql", "backup"), ("sqlite", "monitoring")}  # 未知类剔除+一卡多库
+    assert [x["fn"] for x in b[("postgresql", "backup")]] == ["b/y", "a/x"]          # 桶内 Star 降序
+    assert list_pages.chunk_items(list(range(25)), 10) == [list(range(10)), list(range(10, 20)), list(range(20, 25))]
+    assert list_pages.chunk_items([], 10) == [[]]
+    cfg["cats"] = [["library", "开发库"], ["backup", "备份"], ["monitoring", "监控"]]
+    dbrow = list_pages.db_chips(cfg, via_cat="backup", combos=b)
+    assert 'href="/db/postgresql/backup/"' in dbrow and 'href="/db/sqlite/"' in dbrow   # 钻取 + 空组合回落库页
+    catrow = list_pages.cat_chips(cfg, via_db="postgresql", combos=b)
+    assert 'href="/db/postgresql/backup/"' in catrow and 'href="/cat/monitoring/"' in catrow  # 钻取 + 回落类目页
     # sitemap 内容页并入：临时 sitemap + 盘上 1 期周刊 -> 追加去重、可解析、首页不重复
     import xml.etree.ElementTree as ET
     tmp = tempfile.mkdtemp()
@@ -187,7 +232,7 @@ def _selftest():
     n, tot = merge_sitemap(tmp)
     assert n == tot - 2 and tot >= 5, f"并入计数异常 n={n} tot={tot}"
     assert "https://x.example/weekly/1/" in io.open(os.path.join(tmp, "sitemap.xml"), encoding="utf-8").read()
-    print(f"OK {VER} selftest: 14 asserts passed")
+    print(f"OK {VER} selftest: 20 asserts passed")
     return 0
 
 def main():
@@ -223,7 +268,7 @@ def main():
         elif s == "sitemap":
             for f in ("sitemap.xml", "robots.txt"):
                 shutil.copyfile(os.path.join(cfg["data_root"], f), os.path.join(out_dir, f))
-            n, tot = merge_sitemap(out_dir)
+            n, tot = merge_sitemap(out_dir, list_pages.combo_sitemap_urls(cfg))
             print(f"OK sitemap: 数据侧拷贝 + 内容页并入 {n} 条（总 {tot}；BASE 域名在 build_site 侧注入）")
         elif s == "platform": platform.emit(out_dir, a.platform)
         else: ap.error(f"unknown step {s}")
