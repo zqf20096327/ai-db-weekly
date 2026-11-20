@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>haohanyang/compass-web：MongoDB Compass 的 Web 版，浏览器中访问 MongoDB 图… · GitHub 97★</title>
+<meta name="description" content="MongoDB Compass 的 Web 版，浏览器中访问 MongoDB 图形界面（GitHub 97★，JavaScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "compass-web", "url": "https://github.com/haohanyang/compass-web", "codeRepository": "https://github.com/haohanyang/compass-web", "description": "MongoDB Compass 的 Web 版，浏览器中访问 MongoDB 图形界面", "applicationCategory": "DeveloperApplication", "programmingLanguage": "JavaScript", "license": "NOASSERTION", "author": {"@type": "Organization", "name": "haohanyang"}, "dateModified": "2026-11-08"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">管理</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/haohanyang/compass-web" target="_blank" rel="noopener">compass-web</a>
+<div class="c-meta"><span>语言 JavaScript</span><span>协议 NOASSERTION</span><span>创建于 2024</span><span>版本 0.5.1</span><span>贡献者 5 人</span><span>最近提交 2026-11-08</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="web-console · 置信 high">Web 控制台</span><span class="capchip mid" title="csv-tool · 置信 mid">CSV 工具</span><span class="capchip mid" title="gui-client · 置信 mid">GUI 客户端</span></div>
+</div>
+<div class="c-right"><div class="c-star">97<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="compass-web star trend 97 to 97"><title>compass-web star 趋势（2026-11-08 至 2026-11-16）</title><desc>由 97 增长至 97</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L69.0,34.0 L130.0,34.0 L160.5,34.0 L191.0,34.0 L221.5,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 69.0,34.0 130.0,34.0 160.5,34.0 191.0,34.0 221.5,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-08</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>MongoDB Compass 的 Web 版，浏览器中访问 MongoDB 图形界面</p><p class="pts-label">综述（解读层）</p><p class="pain">该项目将 MongoDB Compass 移植到 Web 环境，前端基于原 @mongodb-js/compass-web v1.46.2 重新构建打包。用户通过 npm、Docker 或 Docker Compose 部署后即可在浏览器中访问 MongoDB GUI，支持 Atlas、Amazon DocumentDB 和 Azure Cosmos DB。连接字符串在启动时固定，需开启 --enable-edit-connections 才能在界面中增改连接；内置 Basic auth 与 OIDC 两种认证方式，仅保护 Compass Web 本身而非数据库凭据。源码构建依赖 node-gyp 和 pnpm。</p><ul class="pts"><li>移植 Compass Desktop 的多项功能：JSON/CSV 结果导出、JSON/CSV 数据导入、Gen AI、连接编辑和 Mongo Shell</li><li>支持 npm、Docker、Docker Compose 三种部署方式，默认监听 8080 端口</li><li>提供 Basic auth 和 OIDC（Authorization Code + PKCE）两种认证，并可通过 CLI 标志或 CW_ 前缀环境变量配置服务器选项</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在浏览器中为团队提供集中部署的 MongoDB 图形管理界面</li><li>连接 MongoDB Atlas、Amazon DocumentDB 或 Azure Cosmos DB 进行数据查询与导入导出</li><li>通过 OIDC（如 Keycloak）对接企业单点登录后访问数据库 GUI</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">A port of the MongoDB Compass to Web. The frontend is rebuilt and re-packaged from the original @mongodb-js/compass-web v1.46.2. It provides an easy way deploy a MongoDB GUI and access it on a browser</p>
+</div>
+
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.5.1</b>（08-28）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 1 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

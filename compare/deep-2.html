@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PG 备份双雄：并行性能派 vs 多机灾备管理派 · AI 对比解读</title>
+<meta name="description" content="单库大、备份窗口紧选 pgBackRest（并行+压缩优化）；多套实例要集中灾备管理选 Barman。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://dbhub.example.com/compare/deep-2.html">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.card-head { align-items: center; }
+.fzone { background: var(--bg); border-radius: 10px; padding: 8px 12px 10px;
+         display: grid; gap: 8px; margin-top: 10px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+.grp-sep { align-self: stretch; border-left: 1px solid var(--line); margin: 0 2px; }
+.fzone .grp-mark { display: inline-flex; align-items: center; font-size: 12px;
+  font-weight: 400; color: var(--accent); padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  cursor: default; margin: 0 2px 0 4px; letter-spacing: 0; }
+.chip.plain { background: var(--card); }
+.statline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+.statline .big { font-size: 16px; font-weight: 700; color: var(--ink); cursor: help; }
+.statline .sub { font-size: 12px; color: var(--muted); cursor: help; }
+.mx-cap { font-size: 12px; font-weight: 400; color: var(--ink); margin: 14px 0 4px; }
+.mx-cap:first-child { margin-top: 0; }
+table.mx { width: 100%; }
+table.mx th, table.mx .cat-name { font-weight: 400; color: var(--muted); }
+table.mx th a:hover, .mx .cat-name a:hover { color: var(--accent); text-decoration: underline; }
+a.chip { color: var(--muted); } a.chip:hover { border-color: var(--accent); color: var(--accent); }
+a.chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk on" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<main>
+    <section class="hero" style="padding:24px 0 8px">
+      <h1>AI 对比解读 · EnterpriseDB/barman vs pgbackrest/pgbackrest</h1>
+      <p><a href="/ai-db-weekly/compare/" style="color:var(--accent)">← 返回项目对比</a></p>
+    </section>
+    <section class="card">
+      <div class="card-head"><h2>🤖 PG 备份双雄：并行性能派 vs 多机灾备管理派</h2></div>
+      <h3 class="ai-title">PG 备份双雄：并行性能派 vs 多机灾备管理派</h3>
+<div class="ai-verdict">单库大、备份窗口紧选 pgBackRest（并行+压缩优化）；多套实例要集中灾备管理选 Barman。</div>
+<div class="ai-sec"><b>定位差异</b><p>pgBackRest 自述为「可靠备份恢复方案，无缝扩展到最大的数据库与工作负载」，核心卖点是并行备份/恢复——文档直言「压缩通常是瓶颈」，工程取向是吞吐与规模。Barman（EnterpriseDB 维护，Python/GPL3）定位「PostgreSQL 灾备管理器」：强调对多台服务器的远程备份、面向业务关键环境降低风险、在恢复阶段辅助 DBA——取向是集中管理与流程编排。</p></div><div class="ai-sec"><b>数据信号</b><p>pgBackRest ★4.4k 高于 Barman ★3.2k；pgBackRest 两天前（09-27）刚发布 2.59.2 稳定版，近两月发版密集（2.59.1 → 2.59.2），Barman 最近发版为 08-27。两者均专注 PostgreSQL 生态，各自路线上的事实标准。</p></div><div class="ai-sec"><b>风险与观察点</b><p>pgBackRest 社区驱动、面向大规模打磨，配置项多、上手曲线略陡；Barman 由商业公司 EnterpriseDB 主导维护（注意其与商业产品线的协同可能），Python 实现在超大规模吞吐上不及 C 实现的 pgBackRest。两者均为 GPL 系许可证，内部使用无碍。</p></div>
+<div class="ai-picks"><div class="ai-pick"><span class="scene">超大库 / 备份窗口紧张</span> → <b>pgBackRest</b></div><div class="ai-pick"><span class="scene">多实例集中灾备管理</span> → <b>Barman</b></div><div class="ai-pick"><span class="scene">看重发版节奏与社区</span> → <b>pgBackRest</b></div></div>
+<div class="tagrow" style="margin-top:14px"><a class="chip" href="/ai-db-weekly/p/enterprisedb/barman/">EnterpriseDB/barman<span class="n">3,276★</span></a> <a class="chip" href="/ai-db-weekly/p/pgbackrest/pgbackrest/">pgbackrest/pgbackrest<span class="n">4,500★</span></a></div>
+<div class="small muted" style="margin-top:12px">相关：<a href="/ai-db-weekly/vs/pgbackrest__pgbackrest--enterprisedb__barman/" style="color:var(--accent)">EnterpriseDB/barman vs pgbackrest/pgbackrest 擂台对比页 →</a></div>
+<div class="small muted" style="margin-top:10px">AI 对比解读构建期生成（基于双方 README 与信号，非运行时调用）·
+选材冻结于发稿时，最新信号见各项目卡。</div>
+    </section>
+  </main>
+  <footer>AI 对比解读 · 构建期生成 · <a href="/ai-db-weekly/compare/">全部对比</a></footer>
+</div>
+</body>
+</html>

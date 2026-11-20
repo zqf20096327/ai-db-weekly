@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQLite 备份工具大全 · 88 个开源项目（第 3 页）</title>
+<meta name="description" content="SQLite 备份开源项目清单 88 个：Star 降序，含开发、管理与运维工具。">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.card-head { align-items: center; }
+.fzone { background: var(--bg); border-radius: 10px; padding: 8px 12px 10px;
+         display: grid; gap: 8px; margin-top: 10px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+.grp-sep { align-self: stretch; border-left: 1px solid var(--line); margin: 0 2px; }
+.fzone .grp-mark { display: inline-flex; align-items: center; font-size: 12px;
+  font-weight: 400; color: var(--accent); padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  cursor: default; margin: 0 2px 0 4px; letter-spacing: 0; }
+.chip.plain { background: var(--card); }
+.statline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+.statline .big { font-size: 16px; font-weight: 700; color: var(--ink); cursor: help; }
+.statline .sub { font-size: 12px; color: var(--muted); cursor: help; }
+.mx-cap { font-size: 12px; font-weight: 400; color: var(--ink); margin: 14px 0 4px; }
+.mx-cap:first-child { margin-top: 0; }
+table.mx { width: 100%; }
+table.mx th, table.mx .cat-name { font-weight: 400; color: var(--muted); }
+table.mx th a:hover, .mx .cat-name a:hover { color: var(--accent); text-decoration: underline; }
+a.chip { color: var(--muted); } a.chip:hover { border-color: var(--accent); color: var(--accent); }
+a.chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk on" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<main>
+    <section class="card">
+      <div class="card-head" style="margin-bottom:2px"><h2>SQLite · 备份<span class="hint">共 88 项 · Star 降序 · 静态分页</span></h2></div>
+      <div class="fzone">
+        <div class="tagrow"><span class="glabel">数据库</span><span class="grp-mark" title="国外数据库">国外</span><a class="chip plain" href="/ai-db-weekly/db/postgresql/backup/">PostgreSQL<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/mysql/backup/">MySQL<span class="n">3k</span></a><a class="chip plain on" href="/ai-db-weekly/db/sqlite/backup/">SQLite<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/mariadb/backup/">MariaDB<span class="n">960</span></a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/backup/">ClickHouse<span class="n">594</span></a><a class="chip plain" href="/ai-db-weekly/db/oracle/backup/">Oracle<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/sql-server/backup/">SQL Server<span class="n">1k</span></a><span class="grp-mark" title="国产数据库">国产</span><a class="chip plain" href="/ai-db-weekly/db/tidb/backup/">TiDB<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/oceanbase/backup/">OceanBase<span class="n">271</span></a><a class="chip plain" href="/ai-db-weekly/db/opengauss/backup/">openGauss<span class="n">172</span></a><a class="chip plain" href="/ai-db-weekly/db/polardb/backup/">PolarDB<span class="n">95</span></a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/backup/">GaussDB<span class="n">119</span></a><a class="chip plain" href="/ai-db-weekly/db/goldendb/">GoldenDB<span class="n">9</span></a><a class="chip plain" href="/ai-db-weekly/db/dameng/backup/">Dameng<span class="n">316</span></a><a class="chip plain" href="/ai-db-weekly/db/gbase/">GBase<span class="n">27</span></a><a class="chip plain" href="/ai-db-weekly/db/tdsql/">TDSQL<span class="n">21</span></a><a class="chip plain" href="/ai-db-weekly/db/yashandb/">YashanDB<span class="n">31</span></a></div>
+        <div class="tagrow"><span class="glabel">类别</span><a class="chip plain" href="/ai-db-weekly/projects/" title="全部类别">全部</a><span class="grp-mark" title="运维与治理 · 备份/监控/高可用/安全/迁移/管理/平台">管库</span><a class="chip plain on" href="/ai-db-weekly/db/sqlite/backup/">备份</a><a class="chip plain" href="/ai-db-weekly/db/sqlite/monitoring/">监控</a><a class="chip plain" href="/ai-db-weekly/db/sqlite/ha/">高可用</a><a class="chip plain" href="/ai-db-weekly/db/sqlite/security/">安全/审计</a><a class="chip plain" href="/ai-db-weekly/db/sqlite/migration/">迁移</a><a class="chip plain" href="/ai-db-weekly/db/sqlite/management/">管理</a><a class="chip plain" href="/ai-db-weekly/db/sqlite/platform/">平台</a><span class="grp-mark" title="开发与应用 · 驱动/ORM/建模/代理">用库</span><a class="chip plain" href="/ai-db-weekly/db/sqlite/library/">开发库</a><a class="chip plain" href="/ai-db-weekly/db/sqlite/modeling/">建模/设计</a><a class="chip plain" href="/ai-db-weekly/db/sqlite/connector/">连接/代理</a><span class="grp-mark" title="内核与质量 · 引擎/内核 与 测试/基准">造库</span><a class="chip plain" href="/ai-db-weekly/db/sqlite/engine/">内核/引擎</a><a class="chip plain" href="/ai-db-weekly/db/sqlite/testing/">测试/质量</a></div>
+      </div>
+      <div class="statline"><span class="big" title="SQLite备份组合清单">匹配 88</span>
+        <span class="sub">第 3 / 9 页 · 本页 10 项</span></div>
+      <hr class="divider">
+      <div class="tblwrap"><table class="rows">
+        <thead><tr><th style="min-width:250px">项目</th><th>库</th><th>类别</th><th>语言</th><th class="r">Star</th></tr></thead>
+        <tbody>
+<tr><td><a class="repo" href="/ai-db-weekly/p/s2thend/cursor-history/">s2thend/cursor-history</a><div class="sub">统一访问 Cursor 本地聊天历史的 CLI 与 Node.js 库</div></td><td><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">TypeScript</td><td class="r mono">153</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/nabroleonx/dbslice/">nabroleonx/dbslice</a><div class="sub">从生产库按外键提取可导入数据子集的 Python CLI 工具</div></td><td><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">Python</td><td class="r mono">144</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/simonw/sqlite-diffable/">simonw/sqlite-diffable</a><div class="sub">将 SQLite 数据库导出/导入为可 diff 目录结构的命令行工具</div></td><td><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">Python</td><td class="r mono">142</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/psamim/telegram-cli-backup/">psamim/telegram-cli-backup</a><div class="sub">一个将 Telegram 消息备份到 CSV 或 SQLite 数据库的 Lua 脚本</div></td><td><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">Lua</td><td class="r mono">115</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/heyroute-ai/codex-threadkeeper/">heyroute-ai/codex-threadkeeper</a><div class="sub">同步会话元数据与 SQLite 状态以恢复 Codex 历史线程的 CLI 工具</div></td><td><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">JavaScript</td><td class="r mono">106</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/akoutmos/litestream/">akoutmos/litestream</a><div class="sub">封装 Litestream 的 Elixir 库，用于备份 SQLite 数据库</div></td><td><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">Elixir</td><td class="r mono">104</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/dexter2389/whatsapp-backup-chat-viewer/">dexter2389/whatsapp-backup-chat-viewer</a><div class="sub">Python 编写的 WhatsApp 备份数据库解析导出工具，输出 JSON/TXT</div></td><td><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">Python</td><td class="r mono">97</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/jacobian/pinboard-to-sqlite/">jacobian/pinboard-to-sqlite</a><div class="sub">将 Pinboard 书签数据保存到 SQLite 数据库的命令行工具</div></td><td><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">Python</td><td class="r mono">89</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/pojntfx/stfs/">pojntfx/stfs</a><div class="sub">基于 tar 格式和 SQLite 索引的磁带/tar 文件文件系统</div></td><td><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">Go</td><td class="r mono">89</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/tylersustare/pocketbase-framework-litestream/">tylersustare/pocketbase-framework-litestream</a><div class="sub">基于 Go 框架方式使用 PocketBase 并用 Litestream 备份恢复 SQLite 的示例项目</div></td><td><span class="tag">SQLite</span></td><td class="small">备份</td><td class="small mono">Dockerfile</td><td class="r mono">84</td></tr>
+        </tbody></table></div>
+      <div class="pager"><a href="/ai-db-weekly/db/sqlite/backup/2.html">‹ 上一页</a><a href="/ai-db-weekly/db/sqlite/backup/">1</a><a href="/ai-db-weekly/db/sqlite/backup/2.html">2</a><span class="cur">3</span><a href="/ai-db-weekly/db/sqlite/backup/4.html">4</a><a href="/ai-db-weekly/db/sqlite/backup/5.html">5</a><a href="/ai-db-weekly/db/sqlite/backup/6.html">6</a><a href="/ai-db-weekly/db/sqlite/backup/7.html">7</a><a href="/ai-db-weekly/db/sqlite/backup/8.html">8</a><a href="/ai-db-weekly/db/sqlite/backup/9.html">9</a><a href="/ai-db-weekly/db/sqlite/backup/4.html">下一页 ›</a></div>
+    </section>
+  </main>
+  <footer>SQLite 备份工具清单 · 一卡可跨多库（计入多库组合）· 数据每日更新。</footer>
+</div>
+</body>
+</html>

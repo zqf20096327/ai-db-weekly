@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nazarli-shabnam/clevis：自托管的 GitHub 组织安全仪表盘，基于 GitHub API 数据生成安全… · GitHub 167★</title>
+<meta name="description" content="自托管的 GitHub 组织安全仪表盘，基于 GitHub API 数据生成安全评分与维护自动化。（GitHub 167★，JavaScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "clevis", "url": "https://github.com/nazarli-shabnam/clevis", "codeRepository": "https://github.com/nazarli-shabnam/clevis", "description": "自托管的 GitHub 组织安全仪表盘，基于 GitHub API 数据生成安全评分与维护自动化。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "JavaScript", "license": "GPL-3.0", "author": {"@type": "Organization", "name": "nazarli-shabnam"}, "dateModified": "2026-11-15"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">安全/审计</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/nazarli-shabnam/clevis" target="_blank" rel="noopener">clevis</a>
+<div class="c-meta"><span>语言 JavaScript</span><span>协议 GPL-3.0</span><span>创建于 2026</span><span>贡献者 7 人</span><span>最近提交 2026-11-15</span><span>90 天 1059 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="dashboard · 置信 high">监控面板</span><span class="capchip mid" title="audit-log · 置信 mid">审计日志</span></div>
+</div>
+<div class="c-right"><div class="c-star">167<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="clevis star trend 170 to 167"><title>clevis star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 170 增长至 167</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L15.4,10.0 L22.8,10.0 L30.2,26.0 L37.6,26.0 L45.0,26.0 L52.4,42.0 L59.8,42.0 L67.2,42.0 L74.5,42.0 L81.9,42.0 L89.3,42.0 L96.7,42.0 L104.1,42.0 L111.5,58.0 L118.9,58.0 L126.3,58.0 L133.7,58.0 L148.5,58.0 L155.9,58.0 L163.3,58.0 L170.7,58.0 L178.1,58.0 L185.5,58.0 L192.8,58.0 L207.6,58.0 L222.4,58.0 L229.8,58.0 L237.2,58.0 L244.6,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 15.4,10.0 22.8,10.0 30.2,26.0 37.6,26.0 45.0,26.0 52.4,42.0 59.8,42.0 67.2,42.0 74.5,42.0 81.9,42.0 89.3,42.0 96.7,42.0 104.1,42.0 111.5,58.0 118.9,58.0 126.3,58.0 133.7,58.0 148.5,58.0 155.9,58.0 163.3,58.0 170.7,58.0 178.1,58.0 185.5,58.0 192.8,58.0 207.6,58.0 222.4,58.0 229.8,58.0 237.2,58.0 244.6,58.0 252.0,58.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>自托管的 GitHub 组织安全仪表盘，基于 GitHub API 数据生成安全评分与维护自动化。</p><p class="pts-label">综述（解读层）</p><p class="pain">Clevis 是一个自托管面板，通过 GitHub App 或 PAT 连接组织，展示仓库活动、协作者及由六项核心检查（MFA、分支保护、密钥扫描等）计算的安全评分与趋势，并提供带 dry-run 和审计日志的 Actions 缓存清理等维护任务。采用 FastAPI、Next.js 与 PostgreSQL 三服务架构，长任务经 Postgres 队列由后台 worker 执行。适合需要集中查看组织安全状况与执行特权维护操作的自托管场景。</p><ul class="pts"><li>提供基于六项核心检查（MFA 强制、分支保护、密钥扫描、Dependabot 告警、代码扫描告警、默认分支强推保护）与可选卫生检查计算的安全评分，含修复指引</li><li>提供带 dry-run 支持与 append-only 审计日志的特权维护任务，任务经 Postgres 队列（SELECT … FOR UPDATE SKIP LOCKED）分发给可多副本运行的 worker</li><li>支持 GitHub App 安装令牌（短期 token）或 Fernet 加密的 PAT 两种凭据路径，路由级 JWT 鉴权与组织级 RBAC</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>集中查看 GitHub 组织的安全检查状态、评分趋势与仓库活动流</li><li>以 dry-run 和审计记录方式执行 Actions 缓存清理等特权维护作业</li><li>团队自托管部署，通过 Docker Compose 与反向代理接入现有环境</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Clevis turns the GitHub API into a dashboard. Track repository activity, audit organization security posture, and run privileged maintenance jobs — from a single, dense, self-hosted control panel.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/nazarli-shabnam/clevis" target="_blank" rel="noopener">nazarli-shabnam/clevis</a></td><td class="stars">167</td><td>Self-hosted GitHub security dashboard — tracks org security checks (MFA, branch protection, scanning) with score trends,...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/codenotary/immudb" target="_blank" rel="noopener">codenotary/immudb</a></td><td class="stars">9,052</td><td>immudb - immutable database based on zero trust, SQL/Key-Value/Document model, tamperproof, data change history</td><td class="stars">0.76</td></tr>
+<tr><td><a href="https://github.com/butterbase-ai/butterbase" target="_blank" rel="noopener">butterbase-ai/butterbase</a></td><td class="stars">3,031</td><td>Open-source backend-as-a-service. Postgres, auth, storage, functions, AI gateway, MCP.</td><td class="stars">0.76</td></tr>
+<tr><td><a href="https://github.com/pgaudit/pgaudit" target="_blank" rel="noopener">pgaudit/pgaudit</a></td><td class="stars">1,725</td><td>PostgreSQL Audit Extension</td><td class="stars">0.76</td></tr>
+<tr><td><a href="https://github.com/palkan/logidze" target="_blank" rel="noopener">palkan/logidze</a></td><td class="stars">1,688</td><td>Database changes log for Rails</td><td class="stars">0.76</td></tr>
+<tr><td><a href="https://github.com/pgmemento/pgmemento" target="_blank" rel="noopener">pgmemento/pgmemento</a></td><td class="stars">415</td><td>Audit trail with schema versioning for PostgreSQL using transaction-based logging · 6 个月未更</td><td class="stars">0.76</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

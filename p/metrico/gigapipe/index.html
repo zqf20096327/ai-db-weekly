@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>metrico/gigapipe：基于 ClickHouse 等存储的开源多标准可观测性栈 · GitHub 1728★</title>
+<meta name="description" content="基于 ClickHouse 等存储的开源多标准可观测性栈（GitHub 1728★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "gigapipe", "url": "https://github.com/metrico/gigapipe", "codeRepository": "https://github.com/metrico/gigapipe", "description": "基于 ClickHouse 等存储的开源多标准可观测性栈", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "AGPL-3.0", "author": {"@type": "Organization", "name": "metrico"}, "dateModified": "2026-11-13"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">监控</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/metrico/gigapipe" target="_blank" rel="noopener">gigapipe</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 AGPL-3.0</span><span>创建于 2018</span><span>版本 5.6.2</span><span>贡献者 32 人</span><span>最近提交 2026-11-13</span><span>90 天 118 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="metrics · 置信 high">指标采集</span><span class="capchip" title="observability · 置信 high">可观测</span></div>
+</div>
+<div class="c-right"><div class="c-star">1,728<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="gigapipe star trend 1711 to 1728"><title>gigapipe star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 1711 增长至 1728</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,49.5 L22.8,49.5 L30.2,49.5 L37.6,49.5 L45.0,49.5 L52.4,49.5 L59.8,49.5 L67.2,49.5 L74.5,46.7 L81.9,46.7 L89.3,46.7 L96.7,43.9 L104.1,38.2 L111.5,35.4 L118.9,29.8 L126.3,29.8 L133.7,26.9 L148.5,26.9 L155.9,24.1 L163.3,24.1 L170.7,24.1 L178.1,24.1 L185.5,21.3 L192.8,18.5 L207.6,15.6 L222.4,12.8 L229.8,10.0 L237.2,10.0 L244.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,49.5 22.8,49.5 30.2,49.5 37.6,49.5 45.0,49.5 52.4,49.5 59.8,49.5 67.2,49.5 74.5,46.7 81.9,46.7 89.3,46.7 96.7,43.9 104.1,38.2 111.5,35.4 118.9,29.8 126.3,29.8 133.7,26.9 148.5,26.9 155.9,24.1 163.3,24.1 170.7,24.1 178.1,24.1 185.5,21.3 192.8,18.5 207.6,15.6 222.4,12.8 229.8,10.0 237.2,10.0 244.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 ClickHouse 等存储的开源多标准可观测性栈</p><p class="pts-label">综述（解读层）</p><p class="pain">Gigapipe（前称 qryn）是面向日志、指标、追踪与性能剖析的开源可观测性后端，数据存储于 ClickHouse、DuckDB 或 GigAPI 加 S3。它实现 Loki、Prometheus、Tempo、Pyroscope 的 API 及 LogQL、PromQL、TraceQL 查询语言，支持 OpenTelemetry 及 Datadog、Elastic 等格式接入，可作 Grafana 数据源或使用内置 Explorer，采用 AGPL-3.0 许可。</p><ul class="pts"><li>实现 Loki、Prometheus、Tempo、Pyroscope 兼容 API，支持 LogQL、PromQL、TraceQL 查询</li><li>支持 OpenTelemetry OTLP（gRPC 与 HTTP，含 protobuf 与 JSON）及 Influx、Datadog、Elastic 等格式的数据接入</li><li>内置零依赖数据浏览器 view，并提供 DOT 格式剖析图渲染（含 maxNodes 参数）</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>以 ClickHouse/S3 为后端、自行掌控存储的可观测性数据采集与查询部署</li><li>作为现有 Loki/Prometheus/Tempo/Pyroscope 客户端与 Grafana 数据源的后端接入点</li><li>通过 OpenTelemetry Collector 直接推送日志、指标、追踪与剖析信号并集中查询</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">* Polyglot: All-in-one, drop-in compatible with Loki, Prometheus, Tempo, Pyroscope * Familiar: Use stable & popular LogQL, PromQL, TempoQL languages to _query and visualize data_</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>ClickHouse</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>5.6.2</b>（11-09）——If you can't upgrade straight away, enable basic auth (QRYN_LOGIN and QRYN_PASSWORD), or connect the reader with a read-only ClickHouse account limited to Gigapipe's database.</p><p class="t-sub" style="margin-top:4px;">90 天 20 发 · 安全通告 2</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🏭 生产采用</span><span class="t-sub">README 提及数</span></div>
+<div class="users"><div class="user">被池内 1 个其他项目的 README 以 owner/repo 引用（35625 篇全量扫描，截至 2026-11-16）</div></div>
+</div>
+
+
+
+</div>
+</body>
+</html>

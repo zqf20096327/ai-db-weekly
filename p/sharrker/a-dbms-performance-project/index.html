@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sharrker/a-dbms-performance-project：Java 21 基准程序，比较文本文件、PostgreSQL 与 openGau… · GitHub 0★</title>
+<meta name="description" content="Java 21 基准程序，比较文本文件、PostgreSQL 与 openGauss 的数据操作性能（GitHub 0★，Java 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "a-dbms-performance-project", "url": "https://github.com/sharrker/a-dbms-performance-project", "codeRepository": "https://github.com/sharrker/a-dbms-performance-project", "description": "Java 21 基准程序，比较文本文件、PostgreSQL 与 openGauss 的数据操作性能", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Java", "author": {"@type": "Organization", "name": "sharrker"}, "dateModified": "2026-10-17"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">测试/质量</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/sharrker/a-dbms-performance-project" target="_blank" rel="noopener">a-dbms-performance-project</a>
+<div class="c-meta"><span>语言 Java</span><span>创建于 2026</span><span>贡献者 1 人</span><span>最近提交 2026-10-17</span><span>90 天 2 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="benchmark · 置信 high">基准测试</span><span class="capchip" title="jdbc · 置信 high">JDBC 驱动</span></div>
+</div>
+<div class="c-right"><div class="c-star">0<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="a-dbms-performance-project star trend 0 to 0"><title>a-dbms-performance-project star 趋势（2026-10-17 至 2026-11-16）</title><desc>由 0 增长至 0</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L16.1,34.0 L24.3,34.0 L32.4,34.0 L40.5,34.0 L48.7,34.0 L56.8,34.0 L64.9,34.0 L73.1,34.0 L81.2,34.0 L89.3,34.0 L97.5,34.0 L105.6,34.0 L113.7,34.0 L121.9,34.0 L138.1,34.0 L146.3,34.0 L154.4,34.0 L162.5,34.0 L170.7,34.0 L178.8,34.0 L186.9,34.0 L203.2,34.0 L219.5,34.0 L227.6,34.0 L235.7,34.0 L243.9,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 16.1,34.0 24.3,34.0 32.4,34.0 40.5,34.0 48.7,34.0 56.8,34.0 64.9,34.0 73.1,34.0 81.2,34.0 89.3,34.0 97.5,34.0 105.6,34.0 113.7,34.0 121.9,34.0 138.1,34.0 146.3,34.0 154.4,34.0 162.5,34.0 170.7,34.0 178.8,34.0 186.9,34.0 203.2,34.0 219.5,34.0 227.6,34.0 235.7,34.0 243.9,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-17</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>Java 21 基准程序，比较文本文件、PostgreSQL 与 openGauss 的数据操作性能</p><p class="pts-label">综述（解读层）</p><p class="pain">该项目用 Java 21 实现了一套基准测试，比较 UTF-8 管道分隔文本文件、PostgreSQL 与 openGauss 在电影数据集上的查询、更新与并发读操作（E1–E4、U1–U4、C1），数据集含 9,204 行原始数据及确定生成的 1,012,440 行大表。仓库包含完整实现与不可变的原始测量 CSV。驱动 jar 与数据集未随仓库分发，需自行置于 lib/ 和 data/ 路径；密码仅从环境变量读取。</p><ul class="pts"><li>支持纯文本文件、PostgreSQL、openGauss 三种存储方式的查询/更新基准，并发测试覆盖 1/2/4/8 三个以上并发级</li><li>保留附加式（append-only）原始测量 CSV，附 SHA-256 校验与 experiment.md 中的方法学与操作 ID 映射</li><li>提供三个源码版本：canonical 多文件实现、单文件完整版，以及省略测量框架、无法复现正式计时的 Blackboard 简化版</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>需要对比文件扫描/重写与 JDBC 数据库操作在查找与更新负载下行为的课程实验或教学演示</li><li>需要在相同顺序与并发负载下对 PostgreSQL 与 openGauss 做可复现测量并保留原始记录的场景</li><li>以确定生成的 110 倍扩充数据集（含 SHA-256 校验）进行基准方法学或数据一致性验证</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">A Java 21 benchmark comparing data operations in a plain text file, PostgreSQL, and openGauss. The project asks:</p>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

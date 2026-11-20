@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>argon-lab/argon：面向 AI Agent 的 MongoDB 沙箱工具，提供 Git 式分支、数据… · GitHub 178★</title>
+<meta name="description" content="面向 AI Agent 的 MongoDB 沙箱工具，提供 Git 式分支、数据捕获与合并回滚机制。（GitHub 178★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "argon", "url": "https://github.com/argon-lab/argon", "codeRepository": "https://github.com/argon-lab/argon", "description": "面向 AI Agent 的 MongoDB 沙箱工具，提供 Git 式分支、数据捕获与合并回滚机制。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "MIT", "author": {"@type": "Organization", "name": "argon-lab"}, "dateModified": "2026-11-12"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">内核/引擎</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/argon-lab/argon" target="_blank" rel="noopener">argon</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 MIT</span><span>创建于 2025</span><span>版本 2.1.4</span><span>贡献者 2 人</span><span>最近提交 2026-11-12</span><span>90 天 15 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="db-branching · 置信 high">数据库分支</span><span class="capchip mid" title="proxy · 置信 mid">数据库代理</span><span class="capchip mid" title="web-console · 置信 mid">Web 控制台</span></div>
+</div>
+<div class="c-right"><div class="c-star">178<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="argon star trend 177 to 178"><title>argon star 趋势（2026-11-08 至 2026-11-16）</title><desc>由 177 增长至 178</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L69.0,58.0 L130.0,58.0 L160.5,10.0 L191.0,10.0 L221.5,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 69.0,58.0 130.0,58.0 160.5,10.0 191.0,10.0 221.5,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-08</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>面向 AI Agent 的 MongoDB 沙箱工具，提供 Git 式分支、数据捕获与合并回滚机制。</p><p class="pts-label">综述（解读层）</p><p class="pain">Argon 是一个基于 Go 的 CLI 工具，为每次 Agent 运行 fork 出独立的真实 MongoDB 数据库，通过 change-stream 捕获写入形成 diff，支持三路合并、按 actor 撤销与时间旅行查询，并提供 MCP 服务器、Python SDK 和本地 Web 控制台。适用于让 LLM Agent 操作真实数据但保留人工审查的团队；沙箱为完整物理副本，数据增长后创建耗时随之上升，索引与集合选项不做版本化。</p><ul class="pts"><li>提供一条命令创建沙箱（fork + checkout + TTL），任何 MongoDB 驱动可直接连接真实 mongod 实例</li><li>通过 `argon watch` 将文档写入捕获为历史，支持 diff 预览、三路合并（data PR）、按 actor 标签撤销和保留 LSN 的时间旅行查询</li><li>集成 MCP 服务器（13 个工具）、Python SDK 与 LangGraph 适配器，可禁用合并工具或启用只读模式以保留人工审批环节</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>为 AI Agent 每次运行分配独立数据库副本，运行结束后审查、合并或丢弃其写入</li><li>在共享数据集上创建可随时回退的长期分支，配合 pin 固定关键数据状态</li><li>通过 `argon mcp --read-only` 或禁用合并工具，实现需要人工批准合并的受控 Agent 工作流</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Give every agent run its own real MongoDB database, forked from your data. Review what it changed, merge what you want, discard the rest. Git-style branching, time travel and merge underneath. Any dri</p>
+</div>
+
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>2.1.4</b>（11-02）——fix: reject non-positive sandbox TTL extensions by @dajiaohuang in https://github.com/argon-lab/argon/pull/60</p><p class="t-sub" style="margin-top:4px;">90 天 5 发 · 安全通告 0</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install argon（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

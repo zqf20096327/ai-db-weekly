@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tcgoetz/garmindb：将 Garmin 等健康数据解析导入 SQLite 的 Python 脚本集 · GitHub 3368★</title>
+<meta name="description" content="将 Garmin 等健康数据解析导入 SQLite 的 Python 脚本集（GitHub 3368★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "garmindb", "url": "https://github.com/tcgoetz/garmindb", "codeRepository": "https://github.com/tcgoetz/garmindb", "description": "将 Garmin 等健康数据解析导入 SQLite 的 Python 脚本集", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "GPL-2.0", "author": {"@type": "Organization", "name": "tcgoetz"}, "dateModified": "2026-11-02"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">迁移</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/tcgoetz/garmindb" target="_blank" rel="noopener">garmindb</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 GPL-2.0</span><span>创建于 2017</span><span>版本 3.9.0</span><span>贡献者 29 人</span><span>最近提交 2026-11-02</span><span>90 天 7 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="backup · 置信 high">备份</span><span class="capchip" title="data-pipeline · 置信 high">数据管道</span><span class="capchip mid" title="data-export · 置信 mid">数据导出</span></div>
+</div>
+<div class="c-right"><div class="c-star">3,368<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="garmindb star trend 3348 to 3368"><title>garmindb star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 3348 增长至 3368</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,55.6 L22.8,58.0 L30.2,55.6 L37.6,55.6 L45.0,48.4 L52.4,43.6 L59.8,43.6 L67.2,41.2 L74.5,38.8 L81.9,36.4 L89.3,31.6 L96.7,26.8 L104.1,26.8 L111.5,26.8 L118.9,26.8 L126.3,29.2 L133.7,26.8 L148.5,26.8 L155.9,26.8 L163.3,26.8 L170.7,24.4 L178.1,17.2 L185.5,17.2 L192.8,14.8 L207.6,14.8 L222.4,12.4 L229.8,10.0 L237.2,10.0 L244.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,55.6 22.8,58.0 30.2,55.6 37.6,55.6 45.0,48.4 52.4,43.6 59.8,43.6 67.2,41.2 74.5,38.8 81.9,36.4 89.3,31.6 96.7,26.8 104.1,26.8 111.5,26.8 118.9,26.8 126.3,29.2 133.7,26.8 148.5,26.8 155.9,26.8 163.3,26.8 170.7,24.4 178.1,17.2 185.5,17.2 192.8,14.8 207.6,14.8 222.4,12.4 229.8,10.0 237.2,10.0 244.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>将 Garmin 等健康数据解析导入 SQLite 的 Python 脚本集</p><p class="pts-label">综述（解读层）</p><p class="pain">GarminDB 是一组 Python 脚本，用于从 Garmin Connect 下载每日监测、睡眠、体重、活动等数据并导入无服务器的 SQLite 数据库，也支持 FitBit CSV 与 MS Health CSV。脚本按日/周/月/年生成分组表，保留原始 JSON 与 FIT 文件以便离线重建数据库，可通过命令行或 Jupyter 笔记本查看数据。脚本主要在 MacOS 上开发。</p><ul class="pts"><li>从 Garmin Connect 下载并导入每日心率、活动、压力、睡眠、体重等数据，并支持 FitBit CSV 与 MS Health CSV</li><li>生成分日、周、月、年的汇总表，保留下载的 JSON/FIT 文件以支持离线重建数据库</li><li>提供插件机制处理第三方 Connect IQ 应用数据，支持导出 TCX 文件与 Jupyter 笔记本分析</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>将 Garmin 手表长期健康数据本地化存储于 SQLite 并用 SQL 或 Jupyter 分析</li><li>通过命令行定时增量下载导入，配合 SQLite 图形工具浏览个人活动与睡眠记录</li><li>基于课程视图比较同一赛道的多次活动数据</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Python scripts for parsing health data into and manipulating data in a SQLite database. SQLite is a light weight database that doesn't require a server.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>SQLite</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>3.9.0</b>（08-23）——Add PostgreSQL backend support by @no84by in https://github.com/tcgoetz/GarminDB/pull/316 https://pypi.org/project/GarminDb/3.9.0/ * Fix multi-sport activity import (#289) by @philippeauriach in https://github.com/tcgoetz/GarminDB/pull/313 * Retry Garmin stat downloads on transient failures by @deew</p><p class="t-sub" style="margin-top:4px;">90 天 1 发 · 安全通告 0</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🏭 生产采用</span><span class="t-sub">README 提及数</span></div>
+<div class="users"><div class="user">被池内 2 个其他项目的 README 以 owner/repo 引用（35625 篇全量扫描，截至 2026-11-16）</div></div>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install garmindb（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

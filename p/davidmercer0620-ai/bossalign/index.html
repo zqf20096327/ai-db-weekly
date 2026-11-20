@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>davidmercer0620-ai/bossalign：将人类反馈转为带范围确认的持久规则库，供 AI 代理检索校验 · GitHub 3★</title>
+<meta name="description" content="将人类反馈转为带范围确认的持久规则库，供 AI 代理检索校验（GitHub 3★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "bossalign", "url": "https://github.com/davidmercer0620-ai/bossalign", "codeRepository": "https://github.com/davidmercer0620-ai/bossalign", "description": "将人类反馈转为带范围确认的持久规则库，供 AI 代理检索校验", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "MIT", "author": {"@type": "Organization", "name": "davidmercer0620-ai"}, "dateModified": "2026-10-21"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/davidmercer0620-ai/bossalign" target="_blank" rel="noopener">bossalign</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 MIT</span><span>创建于 2026</span><span>贡献者 1 人</span><span>最近提交 2026-10-21</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="agent-memory · 置信 high">智能体记忆</span></div>
+</div>
+<div class="c-right"><div class="c-star">3<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="bossalign star trend 4 to 3"><title>bossalign star 趋势（2026-10-21 至 2026-11-16）</title><desc>由 4 增长至 3</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L17.4,10.0 L26.8,10.0 L36.2,10.0 L45.5,10.0 L54.9,10.0 L64.3,10.0 L73.7,10.0 L83.1,10.0 L92.5,10.0 L101.8,10.0 L120.6,10.0 L130.0,10.0 L139.4,58.0 L148.8,58.0 L158.2,58.0 L167.5,58.0 L176.9,58.0 L195.7,58.0 L214.5,58.0 L223.8,58.0 L233.2,58.0 L242.6,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 17.4,10.0 26.8,10.0 36.2,10.0 45.5,10.0 54.9,10.0 64.3,10.0 73.7,10.0 83.1,10.0 92.5,10.0 101.8,10.0 120.6,10.0 130.0,10.0 139.4,58.0 148.8,58.0 158.2,58.0 167.5,58.0 176.9,58.0 195.7,58.0 214.5,58.0 223.8,58.0 233.2,58.0 242.6,58.0 252.0,58.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-21</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>将人类反馈转为带范围确认的持久规则库，供 AI 代理检索校验</p><p class="pts-label">综述（解读层）</p><p class="pain">BossAlign 是一个独立的 Python 层，介于代理记忆与行为之间：把人类纠正反馈存为带证据、范围和排除边界、须经确认的规则提案，任务执行时只检索匹配的规则，并用 SQLite 持久化版本历史。核心不含运行时依赖，可配置 OpenAI 兼容 provider 做更广语义解读。适用于需要在多任务中复用人类偏好、且由应用自行完成身份认证的代理框架集成者。</p><ul class="pts"><li>规则带 draft/confirmed/inactive 生命周期、版本历史、valid_until 有效期与负向排除边界</li><li>反馈可标注归属者，第三方或 AI 推断的规则须经偏好归属者确认方可生效</li><li>敏感反馈本地优先存储，需显式存储与外部处理同意；内置校准循环与本地基准脚本</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>为 Claude Code/Codex 等代理工作流持久化项目级编码与写作偏好</li><li>将消费者文案等范围内的纠正限定在特定任务类型，避免推广到事故报告等场景</li><li>记录人工裁决并通过推广门控评估规则应用策略（strict/balanced/permissive）</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">BossAlign (蛔虫引擎) is a small, framework-independent layer between agent memory and agent behavior. It stores corrections as proposed rules with evidence, scope, and exclusions, then retrieves and check</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/davidmercer0620-ai/bossalign" target="_blank" rel="noopener">davidmercer0620-ai/bossalign</a></td><td class="stars">3</td><td>Stop re-explaining yourself to your AI. BossAlign turns corrections into scoped, human-confirmed rules — and measures wh...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">thedotmack/claude-mem</a></td><td class="stars">117,346</td><td>Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tigerless-labs/agent-memory" target="_blank" rel="noopener">tigerless-labs/agent-memory</a></td><td class="stars">4,320</td><td>Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independe...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tursodatabase/agentfs" target="_blank" rel="noopener">tursodatabase/agentfs</a></td><td class="stars">3,522</td><td>The filesystem for agents.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/kitfunso/hippo-memory" target="_blank" rel="noopener">kitfunso/hippo-memory</a></td><td class="stars">792</td><td>Stop re-teaching your agent. Make your agent's memory work like a brain. Hippo is long-term memory for coding agents. It...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/agentic-box/memora" target="_blank" rel="noopener">agentic-box/memora</a></td><td class="stars">748</td><td>Give your AI agents persistent, collective memory — with deduplicating absorb, supersession lineage, semantic search, an...</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install bossalign（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

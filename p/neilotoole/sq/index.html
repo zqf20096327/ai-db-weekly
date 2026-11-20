@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>neilotoole/sq：提供 jq 风格查询 SQL 数据库与 CSV/Excel 等文档格式的命令行数… · GitHub 2575★</title>
+<meta name="description" content="提供 jq 风格查询 SQL 数据库与 CSV/Excel 等文档格式的命令行数据工具（GitHub 2575★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "sq", "url": "https://github.com/neilotoole/sq", "codeRepository": "https://github.com/neilotoole/sq", "description": "提供 jq 风格查询 SQL 数据库与 CSV/Excel 等文档格式的命令行数据工具", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "MIT", "author": {"@type": "Organization", "name": "neilotoole"}, "dateModified": "2026-11-14"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">管理</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/neilotoole/sq" target="_blank" rel="noopener">sq</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 MIT</span><span>创建于 2016</span><span>版本 0.55.0</span><span>贡献者 12 人</span><span>最近提交 2026-11-14</span><span>90 天 206 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="data-export · 置信 high">数据导出</span><span class="capchip mid" title="csv-tool · 置信 mid">CSV 工具</span></div>
+</div>
+<div class="c-right"><div class="c-star">2,575<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="sq star trend 2573 to 2575"><title>sq star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 2573 增长至 2575</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,48.4 L15.4,48.4 L22.8,48.4 L30.2,48.4 L37.6,48.4 L45.0,48.4 L52.4,48.4 L59.8,48.4 L67.2,48.4 L74.5,48.4 L81.9,48.4 L89.3,48.4 L96.7,48.4 L104.1,58.0 L111.5,48.4 L118.9,38.8 L126.3,19.6 L133.7,10.0 L148.5,38.8 L155.9,38.8 L163.3,29.2 L170.7,29.2 L178.1,38.8 L185.5,38.8 L192.8,38.8 L207.6,38.8 L222.4,38.8 L229.8,29.2 L237.2,29.2 L244.6,29.2 L252.0,29.2 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,48.4 15.4,48.4 22.8,48.4 30.2,48.4 37.6,48.4 45.0,48.4 52.4,48.4 59.8,48.4 67.2,48.4 74.5,48.4 81.9,48.4 89.3,48.4 96.7,48.4 104.1,58.0 111.5,48.4 118.9,38.8 126.3,19.6 133.7,10.0 148.5,38.8 155.9,38.8 163.3,29.2 170.7,29.2 178.1,38.8 185.5,38.8 192.8,38.8 207.6,38.8 222.4,38.8 229.8,29.2 237.2,29.2 244.6,29.2 252.0,29.2" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="29.2" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>提供 jq 风格查询 SQL 数据库与 CSV/Excel 等文档格式的命令行数据工具</p><p class="pts-label">综述（解读层）</p><p class="pain">sq 是一个 Go 编写的命令行工具，通过驱动机制访问 SQLite、Postgres、MySQL、SQL Server、Oracle 等数据库及 CSV、Excel 等文档数据源，将其统一当作数据源处理。用户用 sq add 注册数据源后，可执行 jq 风格查询或原生 SQL，支持跨数据源连接、查询结果写入数据库表，并提供 inspect、diff、tbl copy/truncate/drop 等子命令。可通过 brew、scoop、脚本、go install 或 Docker 安装。</p><ul class="pts"><li>支持 jq 风格查询语法与数据库原生 SQL，可跨数据源执行连接（如 CSV 连接 Postgres 表）</li><li>输出格式包含 text、json、jsonl、csv/tsv、xlsx、html、xml、yaml、markdown 等，查询结果可直接插入数据库表</li><li>提供 sq inspect 查看源/表元数据，sq diff 比较表结构与行数据，tbl copy/truncate/drop 操作表，文件源支持 UNIX 管道输入</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在命令行中对 SQL 数据库或 CSV/Excel 文件执行查询并导出为多种格式</li><li>在不同数据库或文档数据源之间复制、迁移数据（如 Excel 写入 SQLite 表）</li><li>比较表结构或行数据差异，或在 Kubernetes 容器中执行数据操作任务</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">sq is a command line tool that provides jq-style access to structured data sources: SQL databases, or document formats like CSV or Excel. It is the lovechild of SQL+jq.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>ClickHouse、MySQL、Oracle、PostgreSQL、SQL Server、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/neilotoole/sq" target="_blank" rel="noopener">neilotoole/sq</a></td><td class="stars">2,575</td><td>sq data wrangler</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/noborus/trdsql" target="_blank" rel="noopener">noborus/trdsql</a></td><td class="stars">2,176</td><td>CLI tool that can execute SQL queries on CSV, LTSV, JSON, YAML and TBLN. Can output to various formats.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/fabioserpa/cnpj-full" target="_blank" rel="noopener">fabioserpa/cnpj-full</a></td><td class="stars">509</td><td>Utilitário em Python para ler os dados públicos do CNPJ disponibilizados pela Receita Federal e carregá-los em arquivos ... · 5 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/kiki-ki/go-qo" target="_blank" rel="noopener">kiki-ki/go-qo</a></td><td class="stars">406</td><td>qo is an interactive TUI to query JSON and CSV using SQL.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/nao1215/filesql" target="_blank" rel="noopener">nao1215/filesql</a></td><td class="stars">387</td><td>loads CSV, TSV, LTSV, JSON, JSONL, Parquet, XLSX, ACH, and Fedwire files into SQLite; includes prep and frame for cleanu...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tcgoetz/garmindb" target="_blank" rel="noopener">tcgoetz/garmindb</a></td><td class="stars">3,368</td><td>Download and parse data from Garmin Connect or a Garmin watch, FitBit CSV, and MS Health CSV files into and analyze data...</td><td class="stars">0.98</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.55.0</b>（09-10）——[#986]: sq driver ls with -j / -y now reports an is_embedded_sql field for each driver, true for the in-process SQL drivers (SQLite, DuckDB) and false for the networked engines (including rqlite, which is SQLite-backed but reached over HTTP) and non-SQL drivers.</p><p class="t-sub" style="margin-top:4px;">90 天 1 发 · 安全通告 0</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🏭 生产采用</span><span class="t-sub">README 提及数</span></div>
+<div class="users"><div class="user">被池内 1 个其他项目的 README 以 owner/repo 引用（35625 篇全量扫描，截至 2026-11-16）</div></div>
+</div>
+
+
+
+</div>
+</body>
+</html>

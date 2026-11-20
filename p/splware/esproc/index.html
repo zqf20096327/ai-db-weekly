@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>splware/esproc：面向结构化数据计算的JVM编程语言，采用网格式代码编写 · GitHub 4676★</title>
+<meta name="description" content="面向结构化数据计算的JVM编程语言，采用网格式代码编写（GitHub 4676★，Java 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "esproc", "url": "https://github.com/splware/esproc", "codeRepository": "https://github.com/splware/esproc", "description": "面向结构化数据计算的JVM编程语言，采用网格式代码编写", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Java", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "splware"}, "dateModified": "2026-11-12"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/splware/esproc" target="_blank" rel="noopener">esproc</a>
+<div class="c-meta"><span>语言 Java</span><span>协议 Apache-2.0</span><span>创建于 2021</span><span>贡献者 16 人</span><span>最近提交 2026-11-12</span><span>90 天 55 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="analytics · 置信 high">分析查询</span><span class="capchip" title="embedded · 置信 high">嵌入式</span></div>
+</div>
+<div class="c-right"><div class="c-star">4,676<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="esproc star trend 4681 to 4676"><title>esproc star 趋势（2026-11-02 至 2026-11-16）</title><desc>由 4681 增长至 4676</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L25.4,29.2 L42.9,29.2 L60.3,29.2 L77.7,38.8 L95.1,38.8 L112.6,38.8 L147.4,38.8 L182.3,38.8 L199.7,48.4 L217.1,58.0 L234.6,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 25.4,29.2 42.9,29.2 60.3,29.2 77.7,38.8 95.1,38.8 112.6,38.8 147.4,38.8 182.3,38.8 199.7,48.4 217.1,58.0 234.6,58.0 252.0,58.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-02</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>面向结构化数据计算的JVM编程语言，采用网格式代码编写</p><p class="pts-label">综述（解读层）</p><p class="pain">esProc SPL（Structured Process Language）是运行于JVM的编程语言，目标是结构化数据计算，代码以类似Excel的网格形式编写，可逐步查看执行结果。它可作为数据分析工具使用，也可嵌入Java应用作为计算引擎。开源版以ZIP包发布，无自动安装程序；项目采用Apache 2.0许可证。</p><ul class="pts"><li>代码以网格形式编写，支持逐步查看执行结果</li><li>提供分支、循环、递归等语言特性，并支持集合运算</li><li>支持多种数据源，包括关系数据库、NoSQL等，可进行混合计算</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>结构化数据的分析计算任务</li><li>嵌入Java应用作为报表查询等场景的计算引擎</li><li>多种数据源间的轻量级混合计算</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">esProc SPL is a programming language. Unlike most text-based programming languages, SPL code is written in a grid similar to Excel, and just like Excel, you can see the execution results step by step </p>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

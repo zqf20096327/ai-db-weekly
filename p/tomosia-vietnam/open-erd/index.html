@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tomosia-vietnam/open-erd：AI 代理插件，从源码生成项目 ERD，无需外键也能推断表关系。 · GitHub 6★</title>
+<meta name="description" content="AI 代理插件，从源码生成项目 ERD，无需外键也能推断表关系。（GitHub 6★，JavaScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "open-erd", "url": "https://github.com/tomosia-vietnam/open-erd", "codeRepository": "https://github.com/tomosia-vietnam/open-erd", "description": "AI 代理插件，从源码生成项目 ERD，无需外键也能推断表关系。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "JavaScript", "license": "MIT", "author": {"@type": "Organization", "name": "tomosia-vietnam"}, "dateModified": "2026-11-02"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">建模/设计</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/tomosia-vietnam/open-erd" target="_blank" rel="noopener">open-erd</a>
+<div class="c-meta"><span>语言 JavaScript</span><span>协议 MIT</span><span>创建于 2026</span><span>贡献者 2 人</span><span>最近提交 2026-11-02</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="erd · 置信 high">ER 图</span></div>
+</div>
+<div class="c-right"><div class="c-star">6<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="open-erd star trend 5 to 6"><title>open-erd star 趋势（2026-10-30 至 2026-11-16）</title><desc>由 5 增长至 6</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L51.1,58.0 L65.4,10.0 L79.8,10.0 L94.1,10.0 L108.5,10.0 L122.8,10.0 L137.2,10.0 L165.9,10.0 L194.6,10.0 L208.9,10.0 L223.3,10.0 L237.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 51.1,58.0 65.4,10.0 79.8,10.0 94.1,10.0 108.5,10.0 122.8,10.0 137.2,10.0 165.9,10.0 194.6,10.0 208.9,10.0 223.3,10.0 237.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-30</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>AI 代理插件，从源码生成项目 ERD，无需外键也能推断表关系。</p><p class="pts-label">综述（解读层）</p><p class="pain">open-erd 是一个 Claude Code / Codex 插件，通过读取模型、迁移与关联代码为项目生成实体关系图，即使数据库未声明外键也能推断关系，并经第二个代理逐项核对。输出交互式 SVG、Excel 与 draw.io 文件。支持 Rails、Laravel、Django、Prisma、TypeORM、Sequelize、Mongoose 及原始 SQL。仅读取文件，不启动应用、不写入仓库。</p><ul class="pts"><li>从模型、迁移和关联（含多态关联）中提取表关系，经第二个代理验证后写入结果</li><li>生成浏览器可用的交互式 erd.svg，附带 Excel（每表一页，含 Relations/PII/Health）与 draw.io 文件</li><li>支持命令面板搜索表与列、查看两表连接路径并生成 SELECT…JOIN、PII 高亮、schema 健康项列举及 /open-erd:diff 版本对比</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>为缺少外键声明的遗留数据库项目补全实体关系文档</li><li>代码变更后通过 /open-erd:sync 保持 ERD 与代码同步</li><li>面向数据模型提问（如退款流程）、梳理 PII 分布或准备讲解演示（按 domain 的 tour 模式）</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">- Finds the relations the database never declared: reads models, migrations and associations, polymorphic ones included. - Checks every fact against the code with a second agent before it is</p>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

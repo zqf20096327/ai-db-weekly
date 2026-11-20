@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ashishsinha1602/schemagate：文本到SQL的访问控制层，按调用者权限裁剪送入LLM的表结构 · GitHub 137★</title>
+<meta name="description" content="文本到SQL的访问控制层，按调用者权限裁剪送入LLM的表结构（GitHub 137★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "schemagate", "url": "https://github.com/ashishsinha1602/schemagate", "codeRepository": "https://github.com/ashishsinha1602/schemagate", "description": "文本到SQL的访问控制层，按调用者权限裁剪送入LLM的表结构", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "ashishsinha1602"}, "dateModified": "2026-11-14"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">安全/审计</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/ashishsinha1602/schemagate" target="_blank" rel="noopener">schemagate</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 Apache-2.0</span><span>创建于 2026</span><span>版本 1.18.1</span><span>贡献者 3 人</span><span>最近提交 2026-11-14</span><span>90 天 425 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="access-control · 置信 high">访问控制</span></div>
+</div>
+<div class="c-right"><div class="c-star">137<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="schemagate star trend 103 to 137"><title>schemagate star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 103 增长至 137</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,58.0 L22.8,57.4 L30.2,57.4 L37.6,56.8 L45.0,56.8 L52.4,53.0 L59.8,52.4 L67.2,56.8 L74.5,56.8 L81.9,25.0 L89.3,15.6 L96.7,13.1 L104.1,11.9 L111.5,10.6 L118.9,10.6 L126.3,10.6 L133.7,10.6 L148.5,10.6 L155.9,10.0 L163.3,14.4 L170.7,33.1 L178.1,39.3 L185.5,39.3 L192.8,34.9 L207.6,38.1 L222.4,37.4 L229.8,36.8 L237.2,36.8 L244.6,36.8 L252.0,36.8 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,58.0 22.8,57.4 30.2,57.4 37.6,56.8 45.0,56.8 52.4,53.0 59.8,52.4 67.2,56.8 74.5,56.8 81.9,25.0 89.3,15.6 96.7,13.1 104.1,11.9 111.5,10.6 118.9,10.6 126.3,10.6 133.7,10.6 148.5,10.6 155.9,10.0 163.3,14.4 170.7,33.1 178.1,39.3 185.5,39.3 192.8,34.9 207.6,38.1 222.4,37.4 229.8,36.8 237.2,36.8 244.6,36.8 252.0,36.8" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="36.8" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>文本到SQL的访问控制层，按调用者权限裁剪送入LLM的表结构</p><p class="pts-label">综述（解读层）</p><p class="pain">schemagate 是一个面向文本到SQL（text-to-SQL）应用的 schema 选择工具：在调用方发起提问时，先按其权限（principal 与角色）过滤数据库表目录，仅将被允许且相关的表 DDL 写入提示词，从而避免受限表出现在提示中，也减少提示词 token 消耗。它通过 pip 安装，依赖 SQLAlchemy，可离线运行（BM25 加哈希向量化的选择器不调用模型），支持 Postgres、Oracle、MySQL、SQL Server、SQLite，可集成 LangChain、LlamaIndex、MCP 等代理。需注意：裁剪可能导致问题所需表未被选中，README 自述在部分基准上覆盖率非 100%。</p><ul class="pts"><li>按调用者的 principal 与角色过滤表目录，无权读取的表不出现在提示词中</li><li>选择器离线运行（BM25 + 哈希 n-gram 向量化器），不调用模型，无 API 密钥即可使用</li><li>支持 Postgres、Oracle、MySQL、SQL Server、SQLite，兼容 LangChain、LlamaIndex、MCP 及任意 SQL 代理</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>为大模型 SQL 代理（LangChain/LlamaIndex/MCP）构建按身份过滤的 schema 注入流程</li><li>大表数量数据库上减少文本到SQL提示词的 token 消耗</li><li>在行级安全（RLS）场景下避免模型对不可读表生成有效但返回空结果的 SQL</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Most text-to-SQL prompts carry the whole schema, and on a big database that is most of the prompt, on every question. schemagate sends the model only the tables the question needs: 91.1% fewer schema </p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MariaDB、MySQL、Oracle、PostgreSQL、SQL Server、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/ashishsinha1602/schemagate" target="_blank" rel="noopener">ashishsinha1602/schemagate</a></td><td class="stars">137</td><td>Text-to-SQL access control: schema selection that gives the LLM only the tables the caller is allowed to read. Row-level...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/gravitational/teleport" target="_blank" rel="noopener">gravitational/teleport</a></td><td class="stars">21,099</td><td>The easiest, and most secure way to access and protect all of your infrastructure.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/cookiey/yearning" target="_blank" rel="noopener">cookiey/yearning</a></td><td class="stars">8,980</td><td>🐳 A most popular sql audit platform for mysql</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/authzed/spicedb" target="_blank" rel="noopener">authzed/spicedb</a></td><td class="stars">7,218</td><td>Open Source, Google Zanzibar-inspired database for scalably storing and querying fine-grained authorization data</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tarantool/tarantool" target="_blank" rel="noopener">tarantool/tarantool</a></td><td class="stars">3,686</td><td>Get your data in RAM. Get compute close to data. Enjoy the performance.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/nilsteampassnet/teampass" target="_blank" rel="noopener">nilsteampassnet/teampass</a></td><td class="stars">1,892</td><td>Self-hosted collaborative password manager for teams: folder-level access control, AES-256-GCM encryption, LDAP/AD, OAut...</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>1.18.1</b>（11-11）——Security fix: on PostgreSQL, run_query could read a column hidden by restrict_column through a whole-row PostgreSQL also returns every column of a row through the table or its alias used as a value: SELECT e FROM t e, - certify --golden on a schema with nothing visible now fails instead of passing.</p><p class="t-sub" style="margin-top:4px;">90 天 30 发 · 安全通告 0</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install schemagate（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

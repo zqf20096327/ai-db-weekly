@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ayushcmd/cloud_monitor：自托管 Docker 主机与容器监控平台，React+FastAPI+Prome… · GitHub 17★</title>
+<meta name="description" content="自托管 Docker 主机与容器监控平台，React+FastAPI+Prometheus 组成（GitHub 17★，JavaScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "cloud_monitor", "url": "https://github.com/ayushcmd/cloud_monitor", "codeRepository": "https://github.com/ayushcmd/cloud_monitor", "description": "自托管 Docker 主机与容器监控平台，React+FastAPI+Prometheus 组成", "applicationCategory": "DeveloperApplication", "programmingLanguage": "JavaScript", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "ayushcmd"}, "dateModified": "2026-11-13"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">监控</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/ayushcmd/cloud_monitor" target="_blank" rel="noopener">cloud_monitor</a>
+<div class="c-meta"><span>语言 JavaScript</span><span>协议 Apache-2.0</span><span>创建于 2026</span><span>贡献者 2 人</span><span>最近提交 2026-11-13</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="dashboard · 置信 high">监控面板</span><span class="capchip" title="metrics · 置信 high">指标采集</span><span class="capchip" title="observability · 置信 high">可观测</span></div>
+</div>
+<div class="c-right"><div class="c-star">17<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="cloud_monitor star trend 3 to 17"><title>cloud_monitor star 趋势（2026-11-03 至 2026-11-16）</title><desc>由 3 增长至 17</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L26.8,58.0 L45.5,58.0 L83.1,10.0 L101.8,10.0 L139.4,10.0 L176.9,10.0 L195.7,10.0 L214.5,10.0 L233.2,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 26.8,58.0 45.5,58.0 83.1,10.0 101.8,10.0 139.4,10.0 176.9,10.0 195.7,10.0 214.5,10.0 233.2,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-03</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>自托管 Docker 主机与容器监控平台，React+FastAPI+Prometheus 组成</p><p class="pts-label">综述（解读层）</p><p class="pain">CloudMonitor 是一个自托管可观测性平台，用于在单一仪表板中监控 Docker 主机及容器状态。它由 React 前端、FastAPI 后端、PostgreSQL 存储、Python 监控 agent 和 Prometheus 栈组成，面向运行小型 Docker 环境的开发团队、学生实验室和测试环境。Agent 读取 Docker 守护进程并上报心跳与容器指标；README 明确标注为学生课程项目，本地与 AWS 部署的服务覆盖不同，演示站点仅提供 HTTP。</p><ul class="pts"><li>Python agent 通过 Docker SDK 读取容器元数据与资源统计，以 JWT 认证方式向 API 发送心跳和遥测数据</li><li>后端为 FastAPI（JWT HS256 认证），使用 PostgreSQL 16、SQLAlchemy 与 Alembic 迁移持久化用户、agent 和指标记录</li><li>内置 Prometheus、Node Exporter、Alertmanager 及告警规则，本地 Compose 还包含 Grafana 与 cAdvisor；提供 Docker Compose 部署文件、可选 Caddy TLS profile 和 GitHub Actions CI/CD 工作流</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>集中查看已注册主机及其 Docker 容器的运行状态与 CPU、内存等资源指标</li><li>通过 Prometheus 与 Node Exporter 采集应用和主机级指标，并用告警规则演练运维监控流程</li><li>结合云端 VM、容器部署、服务网络与持久存储，用于云计算课程或 DevOps/SRE 实践学习</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">A self-hosted observability platform for monitoring Docker hosts and containers.</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/ayushcmd/cloud_monitor" target="_blank" rel="noopener">ayushcmd/cloud_monitor</a></td><td class="stars">17</td><td>A lightweight Docker monitoring platform for tracking container health, resource usage, and system metrics through a web...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/julien-r44/bentocache" target="_blank" rel="noopener">julien-r44/bentocache</a></td><td class="stars">665</td><td>🍱 Bentocache is a robust multi-tier caching library for Node.js applications</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/rapidloop/pgmetrics" target="_blank" rel="noopener">rapidloop/pgmetrics</a></td><td class="stars">1,114</td><td>Collect and display information and stats from a running PostgreSQL server</td><td class="stars">0.72</td></tr>
+<tr><td><a href="https://github.com/pganalyze/collector" target="_blank" rel="noopener">pganalyze/collector</a></td><td class="stars">408</td><td>pganalyze statistics collector for gathering PostgreSQL metrics and log data</td><td class="stars">0.72</td></tr>
+<tr><td><a href="https://github.com/netdata/netdata" target="_blank" rel="noopener">netdata/netdata</a></td><td class="stars">81,429</td><td>The fastest path to AI-powered full stack observability, even for lean teams.</td><td class="stars">0.67</td></tr>
+<tr><td><a href="https://github.com/janbjorge/pgqueuer" target="_blank" rel="noopener">janbjorge/pgqueuer</a></td><td class="stars">1,557</td><td>PostgreSQL-backed background job and task queue for Python.</td><td class="stars">0.61</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

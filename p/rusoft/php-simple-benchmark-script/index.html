@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rusoft/php-simple-benchmark-script：单文件 PHP 脚本，用于测量各版本 PHP 操作执行速度 · GitHub 62★</title>
+<meta name="description" content="单文件 PHP 脚本，用于测量各版本 PHP 操作执行速度（GitHub 62★，PHP 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "php-simple-benchmark-script", "url": "https://github.com/rusoft/php-simple-benchmark-script", "codeRepository": "https://github.com/rusoft/php-simple-benchmark-script", "description": "单文件 PHP 脚本，用于测量各版本 PHP 操作执行速度", "applicationCategory": "DeveloperApplication", "programmingLanguage": "PHP", "license": "MIT", "author": {"@type": "Organization", "name": "rusoft"}, "dateModified": "2026-11-14"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">测试/质量</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/rusoft/php-simple-benchmark-script" target="_blank" rel="noopener">php-simple-benchmark-script</a>
+<div class="c-meta"><span>语言 PHP</span><span>协议 MIT</span><span>创建于 2017</span><span>贡献者 2 人</span><span>最近提交 2026-11-14</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="benchmark · 置信 high">基准测试</span></div>
+</div>
+<div class="c-right"><div class="c-star">62<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="php-simple-benchmark-script star trend 63 to 62"><title>php-simple-benchmark-script star 趋势（2026-11-14 至 2026-11-16）</title><desc>由 63 增长至 62</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L130.0,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 130.0,58.0 252.0,58.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>单文件 PHP 脚本，用于测量各版本 PHP 操作执行速度</p><p class="pts-label">综述（解读层）</p><p class="pain">这是一个测试 PHP 操作执行速度的脚本，兼容 PHP 4.3 至 8.6。需将多个文件放入同一目录后，可通过命令行或 Web 服务器运行，支持以 JSON 或机器可读格式输出结果。部分测试依赖可选扩展（如 gd、redis、mysql 等）；脚本会提示 xdebug、opcache 等扩展可能影响测试结果。</p><ul class="pts"><li>支持 PHP 4.3 至 8.6 版本，可通过 CLI 参数或环境变量配置内存限制、时间限制、运行/跳过指定测试</li><li>输出格式包含普通文本、JSON 和机器可读格式，支持 -J、-M、-T 等命令行选项</li><li>可在 Web 服务器上通过 URL 参数运行，并可在 Linux 下配合 nice、ionice、taskset 调整进程优先级与 CPU 绑定</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在命令行或 Apache+PHP 环境中对指定 PHP 版本运行一组操作速度测试</li><li>需要 JSON 或机器可读格式结果以供程序处理的测试流程</li><li>在 Raspberry Pi 等 ARM/MIPS 开发板或老旧处理器上运行完整测试套件（需配合较长的时间限制参数）</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Работает со всеми версиями ПХП: от 4.3 до 8.6</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/rusoft/php-simple-benchmark-script" target="_blank" rel="noopener">rusoft/php-simple-benchmark-script</a></td><td class="stars">62</td><td>Очень простой скрипт тестирования быстродействия PHP | Very simple script for testing of PHP operations speed (rusoft re...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/akopytov/sysbench" target="_blank" rel="noopener">akopytov/sysbench</a></td><td class="stars">6,813</td><td>Scriptable database and system performance benchmark · 1 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/session-replay-tools/tcpcopy" target="_blank" rel="noopener">session-replay-tools/tcpcopy</a></td><td class="stars">4,689</td><td>An online request replication and TCP stream replay tool, ideal for real testing, performance testing, stability testing... · 1 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/processone/tsung" target="_blank" rel="noopener">processone/tsung</a></td><td class="stars">2,631</td><td>Tsung is a high-performance benchmark framework for various protocols including HTTP, XMPP, LDAP, etc. · 8 个月未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tpc-council/hammerdb" target="_blank" rel="noopener">tpc-council/hammerdb</a></td><td class="stars">800</td><td>HammerDB: The industry standard open-source database benchmark</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/percona-lab/sysbench-tpcc" target="_blank" rel="noopener">percona-lab/sysbench-tpcc</a></td><td class="stars">331</td><td>Sysbench scripts to generate a tpcc-like workload for MySQL and PostgreSQL · 1 年未更</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库客户端三国杀：全功能 · AI 原生 · 原生轻快 · AI 对比解读</title>
+<meta name="description" content="要功能全、生态成熟选 DBeaver；要 AI 优先且自带模型选 Chat2DB；嫌重只要快、能接受早期版本选 TablePro。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://dbhub.example.com/compare/deep-1.html">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.card-head { align-items: center; }
+.fzone { background: var(--bg); border-radius: 10px; padding: 8px 12px 10px;
+         display: grid; gap: 8px; margin-top: 10px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+.grp-sep { align-self: stretch; border-left: 1px solid var(--line); margin: 0 2px; }
+.fzone .grp-mark { display: inline-flex; align-items: center; font-size: 12px;
+  font-weight: 400; color: var(--accent); padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  cursor: default; margin: 0 2px 0 4px; letter-spacing: 0; }
+.chip.plain { background: var(--card); }
+.statline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+.statline .big { font-size: 16px; font-weight: 700; color: var(--ink); cursor: help; }
+.statline .sub { font-size: 12px; color: var(--muted); cursor: help; }
+.mx-cap { font-size: 12px; font-weight: 400; color: var(--ink); margin: 14px 0 4px; }
+.mx-cap:first-child { margin-top: 0; }
+table.mx { width: 100%; }
+table.mx th, table.mx .cat-name { font-weight: 400; color: var(--muted); }
+table.mx th a:hover, .mx .cat-name a:hover { color: var(--accent); text-decoration: underline; }
+a.chip { color: var(--muted); } a.chip:hover { border-color: var(--accent); color: var(--accent); }
+a.chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk on" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<main>
+    <section class="hero" style="padding:24px 0 8px">
+      <h1>AI 对比解读 · OtterMind/Chat2DB vs TableProApp/TablePro</h1>
+      <p><a href="/ai-db-weekly/compare/" style="color:var(--accent)">← 返回项目对比</a></p>
+    </section>
+    <section class="card">
+      <div class="card-head"><h2>🤖 数据库客户端三国杀：全功能 · AI 原生 · 原生轻快</h2></div>
+      <h3 class="ai-title">数据库客户端三国杀：全功能 · AI 原生 · 原生轻快</h3>
+<div class="ai-verdict">要功能全、生态成熟选 DBeaver；要 AI 优先且自带模型选 Chat2DB；嫌重只要快、能接受早期版本选 TablePro。</div>
+<div class="ai-sec"><b>定位差异</b><p>DBeaver 是「重装瑞士军刀」：README 功能清单覆盖 schema/SQL/数据编辑器、ER 图、导入导出与迁移、执行计划、管理面板、空间数据查看、SSH 隧道，开箱支持 100+ 数据库驱动、任何有 JDBC/ODBC 驱动的库。Chat2DB 定位「AI 驱动的 SQL 工作台」：支持 40+ 数据库（含 TiDB、Greenplum、IoTDB），新 JDBC 库仅靠配置即可添加；AI 助手采用自带模型（BYO model）方式，生成与解释 SQL。TablePro 只讲一件事：fast, native database client——以原生（无 WebView）换启动速度与低占用。</p></div><div class="ai-sec"><b>数据信号</b><p>三者均活跃：近两周内都有发版（DBeaver 09-21、Chat2DB 09-23、TablePro 09-17）。体量差距明显：DBeaver ★51.9k、Chat2DB ★28.3k、TablePro ★6.1k。站内跨库标记 DBeaver 覆盖 5 库、Chat2DB 6 库、TablePro 3 库。TablePro 本周 +129 星处于明显上升期。</p></div><div class="ai-sec"><b>风险与观察点</b><p>DBeaver 功能最全但 Java 系体积与内存开销也最大，社区版与 PRO 版存在功能分界；Chat2DB 的 AI 能力依赖你自配的模型 API，未配置时退化为普通客户端；TablePro 为 AGPL v3 + v0.75 早期版本，商用分发需注意许可证传染，生产重度使用前建议再观察两个版本周期。</p></div>
+<div class="ai-picks"><div class="ai-pick"><span class="scene">全场景日常使用 · 要老牌稳定</span> → <b>DBeaver</b></div><div class="ai-pick"><span class="scene">以 AI 辅助写 SQL 为主</span> → <b>Chat2DB</b></div><div class="ai-pick"><span class="scene">嫌现有客户端重 · 只要快</span> → <b>TablePro</b></div></div>
+<div class="tagrow" style="margin-top:14px"><a class="chip" href="/ai-db-weekly/p/ottermind/chat2db/">OtterMind/Chat2DB<span class="n">28,362★</span></a> <a class="chip" href="/ai-db-weekly/p/tableproapp/tablepro/">TableProApp/TablePro<span class="n">6,471★</span></a> <a class="chip" href="/ai-db-weekly/p/dbeaver/dbeaver/">dbeaver/dbeaver<span class="n">52,438★</span></a></div>
+
+<div class="small muted" style="margin-top:10px">AI 对比解读构建期生成（基于双方 README 与信号，非运行时调用）·
+选材冻结于发稿时，最新信号见各项目卡。</div>
+    </section>
+  </main>
+  <footer>AI 对比解读 · 构建期生成 · <a href="/ai-db-weekly/compare/">全部对比</a></footer>
+</div>
+</body>
+</html>

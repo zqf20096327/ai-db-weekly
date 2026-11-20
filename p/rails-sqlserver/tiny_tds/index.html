@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rails-sqlserver/tiny_tds：基于 FreeTDS DB-Library 的 Ruby SQL Server… · GitHub 616★</title>
+<meta name="description" content="基于 FreeTDS DB-Library 的 Ruby SQL Server 客户端 gem（GitHub 616★，Ruby 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "tiny_tds", "url": "https://github.com/rails-sqlserver/tiny_tds", "codeRepository": "https://github.com/rails-sqlserver/tiny_tds", "description": "基于 FreeTDS DB-Library 的 Ruby SQL Server 客户端 gem", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Ruby", "license": "NOASSERTION", "author": {"@type": "Organization", "name": "rails-sqlserver"}, "dateModified": "2026-10-27"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/rails-sqlserver/tiny_tds" target="_blank" rel="noopener">tiny_tds</a>
+<div class="c-meta"><span>语言 Ruby</span><span>协议 NOASSERTION</span><span>创建于 2010</span><span>版本 3.4.1</span><span>贡献者 42 人</span><span>最近提交 2026-10-27</span><span>90 天 2 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="driver · 置信 high">数据库驱动</span></div>
+</div>
+<div class="c-right"><div class="c-star">616<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="tiny_tds star trend 616 to 616"><title>tiny_tds star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 616 增长至 616</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L15.4,34.0 L22.8,34.0 L30.2,34.0 L37.6,34.0 L45.0,34.0 L52.4,34.0 L59.8,34.0 L67.2,34.0 L74.5,34.0 L81.9,34.0 L89.3,34.0 L96.7,34.0 L104.1,34.0 L111.5,34.0 L118.9,34.0 L126.3,34.0 L133.7,34.0 L148.5,34.0 L155.9,34.0 L163.3,34.0 L170.7,34.0 L178.1,34.0 L185.5,34.0 L192.8,34.0 L207.6,34.0 L222.4,34.0 L229.8,34.0 L237.2,34.0 L244.6,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 15.4,34.0 22.8,34.0 30.2,34.0 37.6,34.0 45.0,34.0 52.4,34.0 59.8,34.0 67.2,34.0 74.5,34.0 81.9,34.0 89.3,34.0 96.7,34.0 104.1,34.0 111.5,34.0 118.9,34.0 126.3,34.0 133.7,34.0 148.5,34.0 155.9,34.0 163.3,34.0 170.7,34.0 178.1,34.0 185.5,34.0 192.8,34.0 207.6,34.0 222.4,34.0 229.8,34.0 237.2,34.0 244.6,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 FreeTDS DB-Library 的 Ruby SQL Server 客户端 gem</p><p class="pts-label">综述（解读层）</p><p class="pain">TinyTDS 是一个 Ruby gem，用于连接 Microsoft SQL Server 并执行查询、迭代结果，底层调用 FreeTDS 的 DB-Library API。它将 SQL Server 数据类型转换为 Ruby 原生对象，支持 UTF-8 等连接编码和 :utc/:local 时区选项。适用于需要从 Ruby（v2.7+）访问 SQL Server 或 Azure SQL 的开发者；低 TDS 协议版本下部分日期类型会以字符串返回。</p><ul class="pts"><li>通过 TinyTds::Client/Result/Error 三个类提供连接、查询与错误封装，Result 包含 Enumerable 并支持懒加载行、取消结果集与多结果集处理</li><li>自动将 SQL Server 数据类型转换为 Ruby 原生对象，字符串与二进制数据按连接编码处理，时间类型支持 :utc/:local 时区</li><li>提供连接选项包括 host/port/dataserver、tds_version、login/timeout、encoding、azure 与 contained 标志、message_handler 回调</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>从 Ruby 应用（如需直连 SQL Server 的脚本或服务）执行查询、INSERT/UPDATE/DELETE 并获取受影响行数或自增主键</li><li>连接 Azure SQL 或包含数据库用户的 SQL Server 实例</li><li>执行返回多个结果集的批量 SQL 或存储过程并读取其返回码</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">* ![Gem Version](https://rubygems.org/gems/tiny_tds) - Gem Version * ![Gitter chat](https://gitter.im/rails-sqlserver/activerecord-sqlserver-adapter) - Community</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>SQL Server</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/rails-sqlserver/tiny_tds" target="_blank" rel="noopener">rails-sqlserver/tiny_tds</a></td><td class="stars">616</td><td>TinyTDS - Simple and fast FreeTDS bindings for Ruby using DB-Library.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tediousjs/node-mssql" target="_blank" rel="noopener">tediousjs/node-mssql</a></td><td class="stars">2,275</td><td>Microsoft SQL Server client for Node.js</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/microsoft/msphpsql" target="_blank" rel="noopener">microsoft/msphpsql</a></td><td class="stars">1,893</td><td>Microsoft Drivers for PHP for SQL Server</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/microsoft/mssql-jdbc" target="_blank" rel="noopener">microsoft/mssql-jdbc</a></td><td class="stars">1,139</td><td>The Microsoft JDBC Driver for SQL Server is a Type 4 JDBC driver that provides database connectivity with SQL Server thr...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/microsoft/mssql-python" target="_blank" rel="noopener">microsoft/mssql-python</a></td><td class="stars">483</td><td>Microsoft Python Driver for SQL Server</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/r-dbi/odbc" target="_blank" rel="noopener">r-dbi/odbc</a></td><td class="stars">418</td><td>Connect to ODBC databases (using the DBI interface)</td><td class="stars">0.85</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>3.4.1</b>（10-08）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 1 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

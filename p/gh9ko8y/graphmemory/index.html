@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gh9ko8y/graphmemory：基于 Graphiti、PostgreSQL 与 Redis 的双时态 AI 代… · GitHub 201★</title>
+<meta name="description" content="基于 Graphiti、PostgreSQL 与 Redis 的双时态 AI 代理长期记忆服务（GitHub 201★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "graphmemory", "url": "https://github.com/gh9ko8y/graphmemory", "codeRepository": "https://github.com/gh9ko8y/graphmemory", "description": "基于 Graphiti、PostgreSQL 与 Redis 的双时态 AI 代理长期记忆服务", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "MIT", "author": {"@type": "Organization", "name": "gh9ko8y"}, "dateModified": "2026-10-30"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/gh9ko8y/graphmemory" target="_blank" rel="noopener">graphmemory</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 MIT</span><span>创建于 2026</span><span>贡献者 2 人</span><span>最近提交 2026-10-30</span><span>90 天 5 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="agent-memory · 置信 high">智能体记忆</span><span class="capchip" title="knowledge-graph · 置信 high">知识图谱</span></div>
+</div>
+<div class="c-right"><div class="c-star">201<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="graphmemory star trend 12 to 201"><title>graphmemory star 趋势（2026-10-30 至 2026-11-16）</title><desc>由 12 增长至 201</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L22.4,48.1 L51.1,33.1 L65.4,15.1 L79.8,13.3 L94.1,12.3 L108.5,11.8 L122.8,10.3 L137.2,10.0 L165.9,10.0 L194.6,10.0 L208.9,10.0 L223.3,10.0 L237.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 22.4,48.1 51.1,33.1 65.4,15.1 79.8,13.3 94.1,12.3 108.5,11.8 122.8,10.3 137.2,10.0 165.9,10.0 194.6,10.0 208.9,10.0 223.3,10.0 237.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-30</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 Graphiti、PostgreSQL 与 Redis 的双时态 AI 代理长期记忆服务</p><p class="pts-label">综述（解读层）</p><p class="pain">GraphMemory 是一个面向 AI 代理的记忆服务，以 FastAPI 提供 REST 接口，并通过 MCP server 供支持 MCP 的代理调用。事实带有效时间与记录时间两条时间轴，采用六变量衰减模型、时间梯度与 TTL 分类时效，遗忘为降级而非删除，原文账本只追加保留。依赖 Docker 运行 Neo4j、PostgreSQL、Redis，需要 OpenAI 兼容的 Embedding 与 LLM 接口。仓库不含 IM 适配插件等部署环境集成。</p><ul class="pts"><li>双时态事实记录，每条事实同时包含有效时间（valid_from/until）与记录时间（tx time），并保留只追加的原文账本 episodes</li><li>六变量衰减模型（S/D/R/E/C/I）、分级 TTL 与时间梯度存储，配合基于激活、匹配与资源适配的竞争检索</li><li>提供 MCP server（add_memory、search_memory、memory_dedupe、memory_forget 等工具）与 Web 管理台（/ui）及 REST API</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>为支持 MCP 的 AI 代理接入可积累、可衰减的长期记忆库</li><li>需要区分「当时是什么」与「后来改了什么」的双时态事实查询场景</li><li>按内容类型自动设置时效（临时状态 1 天至不可更改事实永久）的记忆管理场景</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">双时态 AI 记忆系统 — 给 AI 代理一个会积累、会遗忘、会随时间变化的长期记忆库。</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/gh9ko8y/graphmemory" target="_blank" rel="noopener">gh9ko8y/graphmemory</a></td><td class="stars">201</td><td>Bitemporal AI memory system: six-variable decay, time-graded recall, TTL expiry, dedupe, competitive retrieval (Neo4j + ...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/deeplethe/utopia" target="_blank" rel="noopener">deeplethe/utopia</a></td><td class="stars">8,716</td><td>World's first open-source enterprise world model.</td><td class="stars">0.74</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install graphmemory（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

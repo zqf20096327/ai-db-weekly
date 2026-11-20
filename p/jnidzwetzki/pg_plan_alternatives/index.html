@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jnidzwetzki/pg_plan_alternatives：基于 eBPF 的 PostgreSQL 查询计划备选方案追踪器，展示优化器考虑… · GitHub 43★</title>
+<meta name="description" content="基于 eBPF 的 PostgreSQL 查询计划备选方案追踪器，展示优化器考虑过的全部计划。（GitHub 43★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "pg_plan_alternatives", "url": "https://github.com/jnidzwetzki/pg_plan_alternatives", "codeRepository": "https://github.com/jnidzwetzki/pg_plan_alternatives", "description": "基于 eBPF 的 PostgreSQL 查询计划备选方案追踪器，展示优化器考虑过的全部计划。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "MIT", "author": {"@type": "Organization", "name": "jnidzwetzki"}, "dateModified": "2026-09-30"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">监控</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/jnidzwetzki/pg_plan_alternatives" target="_blank" rel="noopener">pg_plan_alternatives</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 MIT</span><span>创建于 2026</span><span>版本 0.2.0</span><span>贡献者 2 人</span><span>最近提交 2026-09-30</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="observability · 置信 high">可观测</span><span class="capchip mid" title="query-analytics · 置信 mid">查询分析</span></div>
+</div>
+<div class="c-right"><div class="c-star">43<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="pg_plan_alternatives star trend 42 to 43"><title>pg_plan_alternatives star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 42 增长至 43</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,58.0 L22.8,58.0 L30.2,58.0 L37.6,58.0 L45.0,58.0 L52.4,58.0 L59.8,10.0 L67.2,10.0 L74.5,10.0 L81.9,10.0 L89.3,10.0 L96.7,10.0 L111.5,10.0 L118.9,10.0 L126.3,10.0 L133.7,10.0 L148.5,10.0 L155.9,10.0 L163.3,10.0 L170.7,10.0 L178.1,10.0 L185.5,10.0 L192.8,10.0 L207.6,10.0 L222.4,10.0 L229.8,10.0 L237.2,10.0 L244.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,58.0 22.8,58.0 30.2,58.0 37.6,58.0 45.0,58.0 52.4,58.0 59.8,10.0 67.2,10.0 74.5,10.0 81.9,10.0 89.3,10.0 96.7,10.0 111.5,10.0 118.9,10.0 126.3,10.0 133.7,10.0 148.5,10.0 155.9,10.0 163.3,10.0 170.7,10.0 178.1,10.0 185.5,10.0 192.8,10.0 207.6,10.0 222.4,10.0 229.8,10.0 237.2,10.0 244.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 eBPF 的 PostgreSQL 查询计划备选方案追踪器，展示优化器考虑过的全部计划。</p><p class="pts-label">综述（解读层）</p><p class="pain">该工具通过 eBPF 追踪 PostgreSQL 查询规划过程，输出优化器考虑的所有备选计划及其启动/总成本估算，并用 [CHOSEN] 标记最终选中计划，弥补 EXPLAIN 仅显示最终计划的不足。附带 visualize_plan_graph 工具可从 JSON 输出生成交互式图。支持 PostgreSQL 17/18，需 root 权限、含 DWARF 调试符号的 postgres 二进制及 nodetags.h 头文件。README 声明其为早期原型，不适用于生产环境。</p><ul class="pts"><li>捕获查询规划期间优化器考虑的所有备选路径，含 startup/total 成本、行数估算，并以 [CHOSEN] 标记最终选中计划</li><li>自动从 PostgreSQL 二进制的 DWARF 调试信息解析 planner 结构体偏移，支持 PostgreSQL 17 和 18</li><li>提供 JSON 输出，配套 visualize_plan_graph 工具可生成 PNG/SVG 图，并可通过 --db-url 连接数据库将 OID 解析为表名</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>研究 PostgreSQL 基于成本的优化器在特定查询中考虑过哪些执行路径（顺序扫描、索引扫描、位图扫描、各种连接策略等）</li><li>教学或内部演示：将规划备选方案可视化为图，展示 ORDER BY、聚合、JOIN 等场景下优化器的决策过程</li><li>将追踪结果与 EXPLAIN (VERBOSE, ANALYZE) 输出对照，核对最终计划的成本与行数估算</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">An eBPF-based tool designed to show all query plans that are considered by PostgreSQL during query planning, not just the final chosen plan as shown in EXPLAIN output.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/jnidzwetzki/pg_plan_alternatives" target="_blank" rel="noopener">jnidzwetzki/pg_plan_alternatives</a></td><td class="stars">43</td><td>An eBPF based query planning tracer for PostgreSQL</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/pgrundev/pgbot" target="_blank" rel="noopener">pgrundev/pgbot</a></td><td class="stars">1,493</td><td>Postgres intelligence for ai agents</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/nikolays/postgres_dba" target="_blank" rel="noopener">nikolays/postgres_dba</a></td><td class="stars">1,298</td><td>The missing set of useful tools for Postgres DBAs and all engineers</td><td class="stars">0.63</td></tr>
+<tr><td><a href="https://github.com/powa-team/pg_qualstats" target="_blank" rel="noopener">powa-team/pg_qualstats</a></td><td class="stars">345</td><td>A PostgreSQL extension for collecting statistics about predicates, helping find what indices are missing</td><td class="stars">0.63</td></tr>
+<tr><td><a href="https://github.com/tonbo-io/tonbo" target="_blank" rel="noopener">tonbo-io/tonbo</a></td><td class="stars">1,640</td><td>Tonbo is an embedded database for serverless and edge runtimes.</td><td class="stars">0.62</td></tr>
+<tr><td><a href="https://github.com/rapidloop/pgmetrics" target="_blank" rel="noopener">rapidloop/pgmetrics</a></td><td class="stars">1,114</td><td>Collect and display information and stats from a running PostgreSQL server</td><td class="stars">0.62</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.2.0</b>（03-01）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 0 发 · 安全通告 0</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install pg_plan_alternatives（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

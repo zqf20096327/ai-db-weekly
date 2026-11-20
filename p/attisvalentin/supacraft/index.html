@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>attisvalentin/supacraft：用 supacraft.json 声明整个后端，单二进制运行 REST/实时/M… · GitHub 15★</title>
+<meta name="description" content="用 supacraft.json 声明整个后端，单二进制运行 REST/实时/MCP 服务（GitHub 15★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "supacraft", "url": "https://github.com/attisvalentin/supacraft", "codeRepository": "https://github.com/attisvalentin/supacraft", "description": "用 supacraft.json 声明整个后端，单二进制运行 REST/实时/MCP 服务", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "MIT", "author": {"@type": "Organization", "name": "attisvalentin"}, "dateModified": "2026-11-13"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">平台</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/attisvalentin/supacraft" target="_blank" rel="noopener">supacraft</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 MIT</span><span>创建于 2026</span><span>版本 0.4.0</span><span>贡献者 2 人</span><span>最近提交 2026-11-13</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="baas · 置信 high">后端即服务</span></div>
+</div>
+<div class="c-right"><div class="c-star">15<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="supacraft star trend 12 to 15"><title>supacraft star 趋势（2026-11-10 至 2026-11-16）</title><desc>由 12 增长至 15</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L89.3,26.0 L130.0,26.0 L170.7,26.0 L211.3,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 89.3,26.0 130.0,26.0 170.7,26.0 211.3,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-10</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>用 supacraft.json 声明整个后端，单二进制运行 REST/实时/MCP 服务</p><p class="pts-label">综述（解读层）</p><p class="pain">SupaCraft 是一个 Go 编写的开源后端：数据库、认证、自定义端点、定时任务等全部在 supacraft.json 中声明式定义，由单个二进制读取并基于 SQLite 运行。它内置 MCP 服务器，Claude Code、Cursor 等 AI 代理可通过 MCP 生成并修改配置，每次改动先经校验再保存。迁移仅做增量新增，不删除或重命名既有数据。适合 MVP、原型、内部工具等场景。</p><ul class="pts"><li>提供 JWT 认证、Google/GitHub/OpenID Connect 登录、角色权限与行级策略，以及文件上传（本地磁盘、S3、GCS、Azure、FTP 等）、邮件、Webhook、后台任务与 WebSocket 实时订阅</li><li>内置 MCP 服务器，AI 代理可构建、测试和部署项目；配置在保存前经过校验，含列类型、引用存在性、步骤字段、cron 表达式等检查</li><li>生成 OpenAPI 3.1 文档，附种子数据与请求级测试（测试运行于全新数据库），单个 serve 进程可通过 X-Tenant-ID 托管多个项目</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>通过自然语言描述让 AI 代理生成 REST API 的 MVP 与原型开发</li><li>需要 SQLite 存储、认证、文件上传、定时任务的小型内部工具</li><li>在一台服务器上集中托管多个小型后端项目（多租户部署）</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Describe a backend in plain English. Get a running REST API.</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/attisvalentin/supacraft" target="_blank" rel="noopener">attisvalentin/supacraft</a></td><td class="stars">15</td><td>AI-native backend in a single binary: describe it, your agent builds supacraft.json over MCP, you get a REST API (SQLite...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/thevahidal/soul" target="_blank" rel="noopener">thevahidal/soul</a></td><td class="stars">1,676</td><td>🕉 Soul | Automatic SQLite RESTful  and realtime API server | Build CRUD APIs in minutes!</td><td class="stars">0.86</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.4.0</b>（11-04）——Changelog * 93f08aab4f13828f93f3e764162e8bff988c8612 feat: MCP parity with the CLI (deploy, tenants, secrets unset, seed reset, service, init) (#17) * b3fc18d58c9fffd8492fbfa6813c9485158d3821 feat: OAuth sign-in with Google, GitHub and any OpenID Connect provider (#19) * 58c9a7b78d298f564e9803a7122c</p><p class="t-sub" style="margin-top:4px;">90 天 6 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

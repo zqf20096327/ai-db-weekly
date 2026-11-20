@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pretix/slowtop：基于 Textual TUI 的 PostgreSQL 慢查询浏览与分析工具 · GitHub 10★</title>
+<meta name="description" content="基于 Textual TUI 的 PostgreSQL 慢查询浏览与分析工具（GitHub 10★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "slowtop", "url": "https://github.com/pretix/slowtop", "codeRepository": "https://github.com/pretix/slowtop", "description": "基于 Textual TUI 的 PostgreSQL 慢查询浏览与分析工具", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "GPL-3.0", "author": {"@type": "Organization", "name": "pretix"}, "dateModified": "2026-09-25"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">监控</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/pretix/slowtop" target="_blank" rel="noopener">slowtop</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 GPL-3.0</span><span>创建于 2026</span><span>贡献者 1 人</span><span>最近提交 2026-09-25</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="slow-query · 置信 high">慢查询分析</span><span class="capchip mid" title="query-analytics · 置信 mid">查询分析</span></div>
+</div>
+<div class="c-right"><div class="c-star">10<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="slowtop star trend 10 to 10"><title>slowtop star 趋势（2026-10-24 至 2026-11-16）</title><desc>由 10 增长至 10</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L18.6,34.0 L29.2,34.0 L50.4,34.0 L61.0,34.0 L71.7,34.0 L82.3,34.0 L103.5,34.0 L114.1,34.0 L124.7,34.0 L135.3,34.0 L145.9,34.0 L156.5,34.0 L167.1,34.0 L188.3,34.0 L209.6,34.0 L220.2,34.0 L230.8,34.0 L241.4,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 18.6,34.0 29.2,34.0 50.4,34.0 61.0,34.0 71.7,34.0 82.3,34.0 103.5,34.0 114.1,34.0 124.7,34.0 135.3,34.0 145.9,34.0 156.5,34.0 167.1,34.0 188.3,34.0 209.6,34.0 220.2,34.0 230.8,34.0 241.4,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-24</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 Textual TUI 的 PostgreSQL 慢查询浏览与分析工具</p><p class="pts-label">综述（解读层）</p><p class="pain">slowtop 是一个终端界面的 PostgreSQL 慢查询分析工具，可从 JSON 格式的 PostgreSQL 日志文件读取慢查询，也可通过 `-s` 选项读取 pg_stat_statements 数据。它提供按 query_id 分组的统计视图、语法高亮的 SQL 展示，并可将查询发送到 explain.dalibo.com 获取执行计划。需要 PostgreSQL 日志为 JSON 格式或启用 pg_stat_statements，通过克隆仓库并配置 config.py 安装， GPLv3 协议发布。</p><ul class="pts"><li>支持从 JSON 格式日志文件或 pg_stat_statements 读取慢查询</li><li>提供按 query_id 分组的统计视图，并支持分组/非分组视图在运行时切换</li><li>可将选中查询发送至 explain.dalibo.com 或兼容站点，并复制查询到剪贴板（支持 SSH 环境）</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>浏览和检索 PostgreSQL 日志文件中记录的慢查询</li><li>通过 pg_stat_statements 按查询分组查看执行统计数据</li><li>生成查询执行计划并提交到 explain.dalibo.com 进行分析</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">slowtop - Browse and Analyse Slow PostgreSQL Queries ======================================================</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/pretix/slowtop" target="_blank" rel="noopener">pretix/slowtop</a></td><td class="stars">10</td><td>Browse and Analyse Slow PostgreSQL Queries</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/darold/pgbadger" target="_blank" rel="noopener">darold/pgbadger</a></td><td class="stars">4,074</td><td>A fast PostgreSQL Log Analyzer</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/actiontech/sqle" target="_blank" rel="noopener">actiontech/sqle</a></td><td class="stars">1,505</td><td>一个支持多种不同类型数据库，覆盖事前控制、事后监督、标准发布场景，帮助您建立质量规范的SQL全生命周期质量管理平台</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/nikolays/postgres_dba" target="_blank" rel="noopener">nikolays/postgres_dba</a></td><td class="stars">1,298</td><td>The missing set of useful tools for Postgres DBAs and all engineers</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/nilenso/postgresql-monitoring" target="_blank" rel="noopener">nilenso/postgresql-monitoring</a></td><td class="stars">389</td><td>Queries to monitor postgresql · 3 年未更</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>phclaw/agentflow：自托管零代码 AI Agent 平台，拖拽工作流 + 知识库 RAG + 可扩展… · GitHub 24★</title>
+<meta name="description" content="自托管零代码 AI Agent 平台，拖拽工作流 + 知识库 RAG + 可扩展技能目录（GitHub 24★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "agentflow", "url": "https://github.com/phclaw/agentflow", "codeRepository": "https://github.com/phclaw/agentflow", "description": "自托管零代码 AI Agent 平台，拖拽工作流 + 知识库 RAG + 可扩展技能目录", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "phclaw"}, "dateModified": "2026-11-15"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">平台</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/phclaw/agentflow" target="_blank" rel="noopener">agentflow</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 Apache-2.0</span><span>创建于 2026</span><span>贡献者 4 人</span><span>最近提交 2026-11-15</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="vector-search · 置信 high">向量检索</span><span class="capchip mid" title="semantic-search · 置信 mid">语义检索</span></div>
+</div>
+<div class="c-right"><div class="c-star">24<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="agentflow star trend 23 to 24"><title>agentflow star 趋势（2026-11-12 至 2026-11-16）</title><desc>由 23 增长至 24</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L69.0,58.0 L130.0,10.0 L191.0,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 69.0,58.0 130.0,10.0 191.0,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-12</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>自托管零代码 AI Agent 平台，拖拽工作流 + 知识库 RAG + 可扩展技能目录</p><p class="pts-label">综述（解读层）</p><p class="pain">AgentFlow 是一个自托管的零代码 AI Agent 平台，提供 ReactFlow 拖拽式工作流编辑、知识库 RAG（向量模型独立配置）、多模型热切换和以 SKILL.md 目录形式扩展的技能体系，内置 26 个技能。默认使用 SQLite 单机运行，支持 docker compose 部署，面向无开发团队的企业、产品经理与低代码开发者。注意 Docker 镜像未装 sentence-transformers，需配置 EMBEDDING_BASE_URL 才能使用知识库检索。</p><ul class="pts"><li>六类节点（触发器/LLM/知识库/工具/条件分支/回复）的 ReactFlow 拖拽式工作流编辑，保存即生效</li><li>知识库 RAG：文档上传自动分块入库，向量嵌入与对话模型分开配置</li><li>内置 26 个技能目录，按 SKILL.md 格式添加文件夹即可扩展，管理员可后台增删</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>无开发团队的企业搭建 AI 客服、销售助手等场景 Agent</li><li>产品经理快速验证 Agent 场景（可用模板市场一键套用）</li><li>需要数据自托管的私有化部署，通过 docker compose 单机运行</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">拖拽式构建 AI Agent 工作流 · 无需一行代码 · 5 分钟上线</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/phclaw/agentflow" target="_blank" rel="noopener">phclaw/agentflow</a></td><td class="stars">24</td><td>自托管 AI Agent 平台：拖拽式工作流 + 知识库 RAG + 23 个预置技能，默认 SQLite 单机可跑，一条 docker compose 私有化部署。Self-hosted, OpenAI-compatible.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/superlinear-ai/raglite" target="_blank" rel="noopener">superlinear-ai/raglite</a></td><td class="stars">1,212</td><td>🥤 RAGLite is a Python toolkit for Retrieval-Augmented Generation (RAG) with DuckDB or PostgreSQL</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/agentic-box/memora" target="_blank" rel="noopener">agentic-box/memora</a></td><td class="stars">748</td><td>Give your AI agents persistent, collective memory — with deduplicating absorb, supersession lineage, semantic search, an...</td><td class="stars">0.66</td></tr>
+<tr><td><a href="https://github.com/0xk3vin/megamemory" target="_blank" rel="noopener">0xk3vin/megamemory</a></td><td class="stars">736</td><td>Persistent project knowledge graph for coding agents. MCP server with semantic search, in-process embeddings, and web ex... · 6 个月未更</td><td class="stars">0.66</td></tr>
+<tr><td><a href="https://github.com/asg017/sqlite-vec" target="_blank" rel="noopener">asg017/sqlite-vec</a></td><td class="stars">8,264</td><td>A vector search SQLite extension that runs anywhere! · 6 个月未更</td><td class="stars">0.60</td></tr>
+<tr><td><a href="https://github.com/objectbox/objectbox-java" target="_blank" rel="noopener">objectbox/objectbox-java</a></td><td class="stars">4,630</td><td>Database for Android and JVM - first and fast, lightweight on-device vector database</td><td class="stars">0.60</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

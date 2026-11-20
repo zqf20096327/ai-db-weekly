@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>memgraph/mgmigrate：mgmigrate 是一个在 MySQL、PostgreSQL 与 Memgra… · GitHub 21★</title>
+<meta name="description" content="mgmigrate 是一个在 MySQL、PostgreSQL 与 Memgraph 之间迁移数据的命令行工具（GitHub 21★，Cypher 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "mgmigrate", "url": "https://github.com/memgraph/mgmigrate", "codeRepository": "https://github.com/memgraph/mgmigrate", "description": "mgmigrate 是一个在 MySQL、PostgreSQL 与 Memgraph 之间迁移数据的命令行工具", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Cypher", "license": "GPL-3.0", "author": {"@type": "Organization", "name": "memgraph"}, "dateModified": "2023-08-10"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">迁移</span><span class="chip sub">3 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/memgraph/mgmigrate" target="_blank" rel="noopener">mgmigrate</a>
+<div class="c-meta"><span>语言 Cypher</span><span>协议 GPL-3.0</span><span>创建于 2020</span><span>贡献者 5 人</span><span>最近提交 2023-08-10</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="data-migration · 置信 high">数据迁移</span></div>
+</div>
+<div class="c-right"><div class="c-star">21<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="mgmigrate star trend 21 to 21"><title>mgmigrate star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 21 增长至 21</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L15.4,34.0 L22.8,34.0 L30.2,34.0 L37.6,34.0 L45.0,34.0 L52.4,34.0 L59.8,34.0 L67.2,34.0 L74.5,34.0 L81.9,34.0 L89.3,34.0 L96.7,34.0 L104.1,34.0 L111.5,34.0 L118.9,34.0 L126.3,34.0 L133.7,34.0 L148.5,34.0 L155.9,34.0 L163.3,34.0 L170.7,34.0 L178.1,34.0 L185.5,34.0 L192.8,34.0 L207.6,34.0 L222.4,34.0 L229.8,34.0 L237.2,34.0 L244.6,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 15.4,34.0 22.8,34.0 30.2,34.0 37.6,34.0 45.0,34.0 52.4,34.0 59.8,34.0 67.2,34.0 74.5,34.0 81.9,34.0 89.3,34.0 96.7,34.0 104.1,34.0 111.5,34.0 118.9,34.0 126.3,34.0 133.7,34.0 148.5,34.0 155.9,34.0 163.3,34.0 170.7,34.0 178.1,34.0 185.5,34.0 192.8,34.0 207.6,34.0 222.4,34.0 229.8,34.0 237.2,34.0 244.6,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>mgmigrate 是一个在 MySQL、PostgreSQL 与 Memgraph 之间迁移数据的命令行工具</p><p class="pts-label">综述（解读层）</p><p class="pain">mgmigrate 是 Memgraph 官方提供的数据迁移工具，用于从 MySQL 或 PostgreSQL 读取数据写入 Memgraph，也可在 Memgraph 实例之间迁移。通过 --source-kind 与 source/destination 参数指定源与目标。需注意 README 顶部声明该项目已归档，代码未随相关变更更新，维护者可能在未来重新评估。</p><ul class="pts"><li>支持 mysql、postgresql、memgraph 三种源类型（--source-kind）</li><li>支持在 Memgraph 实例之间迁移数据</li><li>源与目标连接均支持配置主机、端口、用户名、密码，目标 Memgraph 连接可启用 SSL</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>将关系型数据库（MySQL 或 PostgreSQL）中的数据导入 Memgraph</li><li>在两个 Memgraph 实例之间复制数据</li><li>通过指定源/目标主机、端口与凭据的命令行参数执行迁移</li></ul>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MySQL、PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/memgraph/mgmigrate" target="_blank" rel="noopener">memgraph/mgmigrate</a></td><td class="stars">21</td><td>mgmigrate is a tool for migrating data from MySQL or PostgreSQL to Memgraph and between Memgraph instances.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/github/gh-ost" target="_blank" rel="noopener">github/gh-ost</a></td><td class="stars">13,647</td><td>GitHub's Online Schema-migration Tool for MySQL</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/dolthub/doltgresql" target="_blank" rel="noopener">dolthub/doltgresql</a></td><td class="stars">2,210</td><td>DoltgreSQL - Version Controlled PostgreSQL</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/pgautoupgrade/docker-pgautoupgrade" target="_blank" rel="noopener">pgautoupgrade/docker-pgautoupgrade</a></td><td class="stars">1,197</td><td>A PostgreSQL Docker container that automatically upgrades your database</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/ifttt/polo" target="_blank" rel="noopener">ifttt/polo</a></td><td class="stars">787</td><td>Polo travels through your database and creates sample snapshots so you can work with real world data in development. · 1 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/shayonj/pg-osc" target="_blank" rel="noopener">shayonj/pg-osc</a></td><td class="stars">621</td><td>Easy CLI tool for making zero downtime schema changes and backfills  in PostgreSQL</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xogoodnow/clickhouse_cluster：基于 Terraform 与 Ansible 的 ClickHouse 生产集群… · GitHub 22★</title>
+<meta name="description" content="基于 Terraform 与 Ansible 的 ClickHouse 生产集群自动化部署方案（GitHub 22★，Jinja 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "clickhouse_cluster", "url": "https://github.com/xogoodnow/clickhouse_cluster", "codeRepository": "https://github.com/xogoodnow/clickhouse_cluster", "description": "基于 Terraform 与 Ansible 的 ClickHouse 生产集群自动化部署方案", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Jinja", "author": {"@type": "Organization", "name": "xogoodnow"}, "dateModified": "2024-12-20"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">平台</span><span class="chip sub">1 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/xogoodnow/clickhouse_cluster" target="_blank" rel="noopener">clickhouse_cluster</a>
+<div class="c-meta"><span>语言 Jinja</span><span>创建于 2023</span><span>贡献者 3 人</span><span>最近提交 2024-12-20</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="alerting · 置信 high">告警</span><span class="capchip" title="dashboard · 置信 high">监控面板</span><span class="capchip" title="orchestration · 置信 high">部署编排</span></div>
+</div>
+<div class="c-right"><div class="c-star">22<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="clickhouse_cluster star trend 22 to 22"><title>clickhouse_cluster star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 22 增长至 22</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L15.4,34.0 L22.8,34.0 L30.2,34.0 L37.6,34.0 L45.0,34.0 L52.4,34.0 L59.8,34.0 L67.2,34.0 L74.5,34.0 L81.9,34.0 L89.3,34.0 L96.7,34.0 L104.1,34.0 L111.5,34.0 L118.9,34.0 L126.3,34.0 L133.7,34.0 L148.5,34.0 L155.9,34.0 L163.3,34.0 L170.7,34.0 L178.1,34.0 L185.5,34.0 L192.8,34.0 L207.6,34.0 L222.4,34.0 L229.8,34.0 L237.2,34.0 L244.6,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 15.4,34.0 22.8,34.0 30.2,34.0 37.6,34.0 45.0,34.0 52.4,34.0 59.8,34.0 67.2,34.0 74.5,34.0 81.9,34.0 89.3,34.0 96.7,34.0 104.1,34.0 111.5,34.0 118.9,34.0 126.3,34.0 133.7,34.0 148.5,34.0 155.9,34.0 163.3,34.0 170.7,34.0 178.1,34.0 185.5,34.0 192.8,34.0 207.6,34.0 222.4,34.0 229.8,34.0 237.2,34.0 244.6,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 Terraform 与 Ansible 的 ClickHouse 生产集群自动化部署方案</p><p class="pts-label">综述（解读层）</p><p class="pain">该项目提供一套用于在 Hetzner Cloud 上部署 ClickHouse 集群的自动化实现：Terraform 1.5.4 负责服务器开通，Ansible 2.15.2 完成软件配置，节点运行 Ubuntu 22.04，使用 ClickHouse Keeper 做协调与元数据管理，并随附由 VictoriaMetrics、vmalert、vmagent、Alertmanager、Grafana 和 Node Exporter 组成的监控告警栈。适用对象是希望在 Hetzner 环境中以基础设施即代码方式搭建 ClickHouse 集群并配套监控的运维人员。README 明确说明：不具备初始部署后的扩缩容与维护自动化，Terraform 部分仅限 Hetzner，Grafana 数据源需手动配置。</p><ul class="pts"><li>通过 Terraform 在 Hetzner Cloud 上自动创建服务器，并通过 Ansible 角色完成集群软件部署，各 Ansible 角色附带通用与专属 README</li><li>集群包含 ClickHouse 与 ClickHouse Keeper 组件，Keeper 用于 DDL 处理与元数据管理，配置兼容 ZooKeeper</li><li>内置监控栈：vmagent 采集指标写入 VictoriaMetrics，vmalert 评估告警规则，Alertmanager 路由告警，Grafana 面板以 provisioning 方式自动加载</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在 Hetzner Cloud 上以基础设施即代码方式部署带副本（ReplicatedMergeTree/Distributed 表）的 ClickHouse 集群</li><li>为 ClickHouse 集群搭建基于 VictoriaMetrics 与 Grafana 的监控与告警环境</li><li>需要可重复创建与销毁（terraform apply/destroy）的 ClickHouse 测试或演示集群</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">* Create an Api on hetzner * Create a server as terraform and ansible provisioner (Needless to say that ansible and terraform must be installed) * Clone the project</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>ClickHouse、PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/xogoodnow/clickhouse_cluster" target="_blank" rel="noopener">xogoodnow/clickhouse_cluster</a></td><td class="stars">22</td><td>A production ready implementation of Clickhouse cluster</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/netdata/netdata" target="_blank" rel="noopener">netdata/netdata</a></td><td class="stars">81,429</td><td>The fastest path to AI-powered full stack observability, even for lean teams.</td><td class="stars">0.66</td></tr>
+<tr><td><a href="https://github.com/grafana/grafana" target="_blank" rel="noopener">grafana/grafana</a></td><td class="stars">77,923</td><td>The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple...</td><td class="stars">0.66</td></tr>
+<tr><td><a href="https://github.com/ccfos/nightingale" target="_blank" rel="noopener">ccfos/nightingale</a></td><td class="stars">13,488</td><td>Open-source, self-hosted alerting for metrics, logs, and databases. Includes a built-in AI agent and MCP server.</td><td class="stars">0.66</td></tr>
+<tr><td><a href="https://github.com/clickhouse/clickstack" target="_blank" rel="noopener">clickhouse/clickstack</a></td><td class="stars">10,041</td><td>Resolve production issues, fast. An open source observability platform unifying session replays, logs, metrics, traces a...</td><td class="stars">0.66</td></tr>
+<tr><td><a href="https://github.com/uptrace/uptrace" target="_blank" rel="noopener">uptrace/uptrace</a></td><td class="stars">4,315</td><td>Open source APM: OpenTelemetry traces, metrics, and logs</td><td class="stars">0.66</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

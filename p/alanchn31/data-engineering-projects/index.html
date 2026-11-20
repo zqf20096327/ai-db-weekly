@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>alanchn31/data-engineering-projects：基于 Udacity 数据工程课程实践的 ETL 与数据建模项目集合。 · GitHub 1048★</title>
+<meta name="description" content="基于 Udacity 数据工程课程实践的 ETL 与数据建模项目集合。（GitHub 1048★，Jupyter Notebook 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "data-engineering-projects", "url": "https://github.com/alanchn31/data-engineering-projects", "codeRepository": "https://github.com/alanchn31/data-engineering-projects", "description": "基于 Udacity 数据工程课程实践的 ETL 与数据建模项目集合。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Jupyter Notebook", "author": {"@type": "Organization", "name": "alanchn31"}, "dateModified": "2023-02-08"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">建模/设计</span><span class="chip sub">3 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/alanchn31/data-engineering-projects" target="_blank" rel="noopener">data-engineering-projects</a>
+<div class="c-meta"><span>语言 Jupyter Notebook</span><span>创建于 2020</span><span>贡献者 2 人</span><span>最近提交 2023-02-08</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="data-pipeline · 置信 high">数据管道</span><span class="capchip" title="etl · 置信 high">ETL/数据集成</span><span class="capchip mid" title="data-modeling · 置信 mid">数据建模</span></div>
+</div>
+<div class="c-right"><div class="c-star">1,048<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="data-engineering-projects star trend 1043 to 1048"><title>data-engineering-projects star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 1043 增长至 1048</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,58.0 L22.8,58.0 L30.2,48.4 L37.6,48.4 L45.0,48.4 L52.4,48.4 L59.8,48.4 L67.2,48.4 L74.5,38.8 L81.9,38.8 L89.3,38.8 L96.7,29.2 L104.1,19.6 L111.5,19.6 L118.9,19.6 L126.3,29.2 L133.7,29.2 L148.5,38.8 L155.9,29.2 L163.3,29.2 L170.7,29.2 L178.1,29.2 L185.5,29.2 L192.8,19.6 L207.6,19.6 L222.4,19.6 L229.8,10.0 L237.2,10.0 L244.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,58.0 22.8,58.0 30.2,48.4 37.6,48.4 45.0,48.4 52.4,48.4 59.8,48.4 67.2,48.4 74.5,38.8 81.9,38.8 89.3,38.8 96.7,29.2 104.1,19.6 111.5,19.6 118.9,19.6 126.3,29.2 133.7,29.2 148.5,38.8 155.9,29.2 163.3,29.2 170.7,29.2 178.1,29.2 185.5,29.2 192.8,19.6 207.6,19.6 222.4,19.6 229.8,10.0 237.2,10.0 244.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 Udacity 数据工程课程实践的 ETL 与数据建模项目集合。</p><p class="pts-label">综述（解读层）</p><p class="pain">该仓库收录作者在学习 Udacity 数据工程纳米学位期间完成的七个项目，涵盖 Postgres 星型模型、Cassandra 查询建模、Scrapy 采集入库 MongoDB、AWS Redshift 数据仓库、Spark 构建 S3 数据湖、Airflow 调度管道及电影数据仓库毕业项目。课程笔记存放于 `0. Back to Basics` 文件夹，适合参照学习多种存储与管道技术。</p><ul class="pts"><li>提供 Postgres、Cassandra、MongoDB 三种数据库的 ETL 与数据建模实践，分别采用 STAR schema、查询中心建模和文档存储</li><li>包含使用 Spark 将 JSON 文件反规范化为事实与维度表并以 Parquet 格式写入 AWS S3 数据湖的项目</li><li>使用 Airflow 定义并调度从 S3 到 Redshift 的 ETL 工作流，毕业项目为自选的电影数据仓库</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>参考 Postgres、Cassandra 等不同数据库在数据建模上的实践方式</li><li>了解从数据采集（Scrapy）、存储（MongoDB/S3/Redshift）到调度（Airflow）的 ETL 流程实现</li><li>作为学习数据仓库与数据湖构建时的代码示例</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">* This repo contains projects done which applies principles in data engineering. * Notes taken during the course can be found in folder 0. Back to Basics</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/alanchn31/data-engineering-projects" target="_blank" rel="noopener">alanchn31/data-engineering-projects</a></td><td class="stars">1,048</td><td>Personal Data Engineering Projects</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/san089/udacity-data-engineering-projects" target="_blank" rel="noopener">san089/udacity-data-engineering-projects</a></td><td class="stars">2,025</td><td>Few projects related to Data Engineering including Data Modeling, Infrastructure setup on cloud, Data Warehousing and Da... · 4 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/mara/mara-pipelines" target="_blank" rel="noopener">mara/mara-pipelines</a></td><td class="stars">2,090</td><td>A lightweight opinionated ETL framework, halfway between plain scripts and Apache Airflow · 2 年未更</td><td class="stars">0.71</td></tr>
+<tr><td><a href="https://github.com/kuwala-io/kuwala" target="_blank" rel="noopener">kuwala-io/kuwala</a></td><td class="stars">810</td><td>Kuwala is the no-code data platform for BI analysts and engineers enabling you to build powerful analytics workflows. We... · 4 年未更</td><td class="stars">0.71</td></tr>
+<tr><td><a href="https://github.com/omniscale/imposm3" target="_blank" rel="noopener">omniscale/imposm3</a></td><td class="stars">776</td><td>Imposm imports OpenStreetMap data into PostGIS</td><td class="stars">0.71</td></tr>
+<tr><td><a href="https://github.com/caiopizzol/cnpj-data-pipeline" target="_blank" rel="noopener">caiopizzol/cnpj-data-pipeline</a></td><td class="stars">345</td><td>Pipeline open-source que baixa e processa os dados da Receita Federal para PostgreSQL</td><td class="stars">0.71</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

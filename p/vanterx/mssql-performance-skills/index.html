@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vanterx/mssql-performance-skills：面向 LLM 的 SQL Server 性能调优技能集，含 29 个技能、950… · GitHub 13★</title>
+<meta name="description" content="面向 LLM 的 SQL Server 性能调优技能集，含 29 个技能、950 项检查（GitHub 13★，TypeScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "mssql-performance-skills", "url": "https://github.com/vanterx/mssql-performance-skills", "codeRepository": "https://github.com/vanterx/mssql-performance-skills", "description": "面向 LLM 的 SQL Server 性能调优技能集，含 29 个技能、950 项检查", "applicationCategory": "DeveloperApplication", "programmingLanguage": "TypeScript", "license": "MIT", "author": {"@type": "Organization", "name": "vanterx"}, "dateModified": "2026-10-29"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">监控</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/vanterx/mssql-performance-skills" target="_blank" rel="noopener">mssql-performance-skills</a>
+<div class="c-meta"><span>语言 TypeScript</span><span>协议 MIT</span><span>创建于 2026</span><span>贡献者 2 人</span><span>最近提交 2026-10-29</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip mid" title="query-analytics · 置信 mid">查询分析</span></div>
+</div>
+<div class="c-right"><div class="c-star">13<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="mssql-performance-skills star trend 10 to 13"><title>mssql-performance-skills star 趋势（2026-10-19 至 2026-11-16）</title><desc>由 10 增长至 13</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L16.7,58.0 L25.4,42.0 L34.1,42.0 L42.9,26.0 L51.6,26.0 L60.3,26.0 L69.0,26.0 L77.7,26.0 L86.4,26.0 L95.1,26.0 L103.9,26.0 L112.6,26.0 L130.0,26.0 L138.7,26.0 L147.4,26.0 L156.1,26.0 L164.9,26.0 L173.6,26.0 L182.3,26.0 L199.7,10.0 L217.1,10.0 L225.9,10.0 L234.6,10.0 L243.3,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 16.7,58.0 25.4,42.0 34.1,42.0 42.9,26.0 51.6,26.0 60.3,26.0 69.0,26.0 77.7,26.0 86.4,26.0 95.1,26.0 103.9,26.0 112.6,26.0 130.0,26.0 138.7,26.0 147.4,26.0 156.1,26.0 164.9,26.0 173.6,26.0 182.3,26.0 199.7,10.0 217.1,10.0 225.9,10.0 234.6,10.0 243.3,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-19</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>面向 LLM 的 SQL Server 性能调优技能集，含 29 个技能、950 项检查</p><p class="pts-label">综述（解读层）</p><p class="pain">该项目为 LLM（如 Claude）提供一组 SQL Server 性能调优技能，覆盖 T-SQL 源码审查、执行计划、等待统计、Query Store、死锁、索引、Always On AG、加密、SPN/Kerberos、内存与磁盘 I/O 等分析流程，并提供一个编排技能将混合产物路由到对应专项技能。适用于需要按诊断流程处理 SQL Server 各类诊断产物的 LLM 使用者。README 注明技能由 Claude 生成，检查目录与阈值有待人工验证。</p><ul class="pts"><li>包含 29 个专项技能与 950 项编号检查，覆盖从 T-SQL 审查到执行计划、死锁、加密、迁移就绪等 SQL Server 诊断环节</li><li>提供 agentic 编排技能（可别名 /sql-triage），将混合诊断产物路由到对应技能并生成含证据链与风险分级的合并报告</li><li>通过远程 MCP 服务器接入 Claude.ai（Settings → Connectors → Add custom connector 填入给定 URL）</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>将 .sqlplan、等待统计、Query Store DMV 输出、死锁 XML 等诊断产物交给 LLM 进行结构化分析</li><li>对比基线与当前工作负载采集，定位回退查询及配置、版本、等待特征差异</li><li>审查 Always On AG 健康状况、WSFC 集群日志、ERRORLOG 及 SPN/Kerberos 配置</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Go to claude.ai → Settings → Connectors → Add custom connector, enter the URL and click Add:</p>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

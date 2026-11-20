@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>luqman-v1/9router-go：Go 实现的 LLM 代理网关，单二进制内嵌 Svelte 面板，路由多提供商请… · GitHub 297★</title>
+<meta name="description" content="Go 实现的 LLM 代理网关，单二进制内嵌 Svelte 面板，路由多提供商请求（GitHub 297★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "9router-go", "url": "https://github.com/luqman-v1/9router-go", "codeRepository": "https://github.com/luqman-v1/9router-go", "description": "Go 实现的 LLM 代理网关，单二进制内嵌 Svelte 面板，路由多提供商请求", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "NOASSERTION", "author": {"@type": "Organization", "name": "luqman-v1"}, "dateModified": "2026-11-15"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">连接/代理</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/luqman-v1/9router-go" target="_blank" rel="noopener">9router-go</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 NOASSERTION</span><span>创建于 2026</span><span>版本 1.9.16-exp.9</span><span>贡献者 3 人</span><span>最近提交 2026-11-15</span><span>90 天 1044 commits</span></div>
+</div>
+<div class="c-right"><div class="c-star">297<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="9router-go star trend 188 to 297"><title>9router-go star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 188 增长至 297</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,53.2 L22.8,51.4 L30.2,51.0 L37.6,49.2 L45.0,47.9 L52.4,47.0 L59.8,46.1 L67.2,43.9 L74.5,41.7 L81.9,39.5 L89.3,38.6 L96.7,37.7 L104.1,36.9 L111.5,35.5 L118.9,29.4 L126.3,27.6 L133.7,26.7 L148.5,25.4 L155.9,23.7 L163.3,22.8 L170.7,21.9 L178.1,21.0 L185.5,21.0 L192.8,20.6 L207.6,20.1 L222.4,13.5 L229.8,12.6 L237.2,10.9 L244.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,53.2 22.8,51.4 30.2,51.0 37.6,49.2 45.0,47.9 52.4,47.0 59.8,46.1 67.2,43.9 74.5,41.7 81.9,39.5 89.3,38.6 96.7,37.7 104.1,36.9 111.5,35.5 118.9,29.4 126.3,27.6 133.7,26.7 148.5,25.4 155.9,23.7 163.3,22.8 170.7,21.9 178.1,21.0 185.5,21.0 192.8,20.6 207.6,20.1 222.4,13.5 229.8,12.6 237.2,10.9 244.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>Go 实现的 LLM 代理网关，单二进制内嵌 Svelte 面板，路由多提供商请求</p><p class="pts-label">综述（解读层）</p><p class="pain">9router-go 是 9Router 的 Go 实现，以单个二进制提供代理网关与内嵌 Svelte 仪表盘，面向使用 Claude Code、Cursor、Cline 等 CLI 工具的开发者。它将请求转发到 40+ 提供商与 100+ 模型，支持 RTK 工具输出压缩、组合路由（fallback/round-robin/sticky 等）与多账号轮换。默认监听 20130 端口，数据存于 ~/.9router，并直接读取上游 9Router 的同一 SQLite 数据库，无需迁移；仅做增量式 schema 变更，不导入旧 JSON 导出。</p><ul class="pts"><li>单二进制运行，无需 Node.js 运行时，支持 Docker、后台守护进程与 systemd/launchd/cron 等开机自启</li><li>支持 fallback、round-robin、sticky、capacity、fusion 等组合路由策略，可为每个 API key 绑定代理池</li><li>兼容 OpenAI Chat、Claude Messages、Gemini、Ollama 等接口格式，含 SSE 流式与每请求日志检查</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在 Claude Code、Codex、Cursor 等 CLI 工具中通过本地端点统一接入多个 AI 提供商</li><li>对工具输出类内容做自动压缩以减少 token 消耗</li><li>已使用 9Router（Next.js 版）时切换或并行运行 Go 实现而保留既有数据库配置</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Never stop coding. Save 20-40% tokens with RTK + auto-fallback to FREE & cheap AI models.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>SQLite</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>1.9.16-exp.9</b>（11-09）——Experimental build.</p><p class="t-sub" style="margin-top:4px;">90 天 30 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

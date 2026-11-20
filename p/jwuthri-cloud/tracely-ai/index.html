@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jwuthri-cloud/tracely-ai：面向 AI Agent 的 Trace 原生 CI/CD 平台，将生产失败固化回… · GitHub 948★</title>
+<meta name="description" content="面向 AI Agent 的 Trace 原生 CI/CD 平台，将生产失败固化回放用例（GitHub 948★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "tracely-ai", "url": "https://github.com/jwuthri-cloud/tracely-ai", "codeRepository": "https://github.com/jwuthri-cloud/tracely-ai", "description": "面向 AI Agent 的 Trace 原生 CI/CD 平台，将生产失败固化回放用例", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "MIT", "author": {"@type": "Organization", "name": "jwuthri-cloud"}, "dateModified": "2026-11-09"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">测试/质量</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/jwuthri-cloud/tracely-ai" target="_blank" rel="noopener">tracely-ai</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 MIT</span><span>创建于 2026</span><span>贡献者 1 人</span><span>最近提交 2026-11-09</span><span>90 天 24 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="alerting · 置信 high">告警</span></div>
+</div>
+<div class="c-right"><div class="c-star">948<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="tracely-ai star trend 1010 to 948"><title>tracely-ai star 趋势（2026-10-18 至 2026-11-16）</title><desc>由 1010 增长至 948</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,46.6 L16.4,33.1 L24.8,21.0 L33.2,18.3 L41.7,21.5 L50.1,19.7 L58.5,18.8 L66.9,17.4 L75.3,14.2 L83.7,12.3 L92.1,11.1 L100.6,10.7 L109.0,10.5 L117.4,10.2 L134.2,10.2 L142.6,10.0 L151.0,15.1 L159.4,41.0 L167.9,52.6 L176.3,52.6 L184.7,52.2 L201.5,58.0 L218.3,57.8 L226.8,57.8 L235.2,57.8 L243.6,57.8 L252.0,57.8 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,46.6 16.4,33.1 24.8,21.0 33.2,18.3 41.7,21.5 50.1,19.7 58.5,18.8 66.9,17.4 75.3,14.2 83.7,12.3 92.1,11.1 100.6,10.7 109.0,10.5 117.4,10.2 134.2,10.2 142.6,10.0 151.0,15.1 159.4,41.0 167.9,52.6 176.3,52.6 184.7,52.2 201.5,58.0 218.3,57.8 226.8,57.8 235.2,57.8 243.6,57.8 252.0,57.8" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="57.8" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-18</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>面向 AI Agent 的 Trace 原生 CI/CD 平台，将生产失败固化回放用例</p><p class="pts-label">综述（解读层）</p><p class="pain">Tracely 是一个 MIT 许可、可自托管的 AI Agent 观测与测试平台。它通过 OTLP 接收 Agent trace，用 LLM 评审与结构化检查打分，将失败按签名与嵌入聚类成 issue，并把失败 trace 固化为含工具/LLM 输出 fixture 的回归用例，供 CI 离线回放并通过 tracely gate 阻断 PR。技术栈含 ClickHouse、Postgres、Redis、MinIO，支持 Docker Compose 或 Railway 部署。</p><ul class="pts"><li>通过 OTLP/HTTP 接收 trace，将 agent.id、conversation.id 等语义提升为索引列，支持对话级/运行级/span 级的 LLM 评审与无模型结构化检查</li><li>将失败 trace 固化为携带录制 fixture 的密封回归用例，附 fail-to-pass 契约；CI 回放离线进行，无需 API key 或模型调用</li><li>提供 `tracely simulate/replay/gate` 命令与 GitHub Action，失败时输出非零退出码、commit status 与 PR 评论；API 兼作 MCP 端点</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>为在生产中持续接收 trace 的 AI Agent 应用建立失败检测、聚类与告警流程</li><li>将已知的失败 trace 转为回归用例，在 CI 中阻断引入同类回归的 PR</li><li>自托管部署需要 trace 存储、评估打分与失败告警完整栈的团队</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Trace-native CI/CD for AI agents. Tracely grades every agent trace as it lands, clusters the failures into issues, freezes the bad runs into hermetic replayable cases, blocks the pull request</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/jwuthri-cloud/tracely-ai" target="_blank" rel="noopener">jwuthri-cloud/tracely-ai</a></td><td class="stars">948</td><td>Trace-native CI/CD for AI agents: grade production traces, cluster failures, freeze them into replayable regression test...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/autohomecorp/frostmourne" target="_blank" rel="noopener">autohomecorp/frostmourne</a></td><td class="stars">1,496</td><td>Frostmourne（霜之哀伤监控平台）是基于Elasticsearch, Prometheus, SkyWalking, InfluxDB，Mysql/TiDB，ClickHouse, SqlServer, IoTDB数据的分布式监控报... · 7 个月未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/synmetrix/synmetrix" target="_blank" rel="noopener">synmetrix/synmetrix</a></td><td class="stars">627</td><td>Synmetrix – production-ready open source semantic layer on Cube · 1 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/justwatchcom/sql_exporter" target="_blank" rel="noopener">justwatchcom/sql_exporter</a></td><td class="stars">502</td><td>Flexible SQL Exporter for Prometheus. · 1 年未更</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

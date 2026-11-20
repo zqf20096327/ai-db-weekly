@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>drizzle-team/drizzle-orm：面向 TypeScript/JavaScript 的无头（headless）OR… · GitHub 36280★</title>
+<meta name="description" content="面向 TypeScript/JavaScript 的无头（headless）ORM（GitHub 36280★，TypeScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "drizzle-orm", "url": "https://github.com/drizzle-team/drizzle-orm", "codeRepository": "https://github.com/drizzle-team/drizzle-orm", "description": "面向 TypeScript/JavaScript 的无头（headless）ORM", "applicationCategory": "DeveloperApplication", "programmingLanguage": "TypeScript", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "drizzle-team"}, "dateModified": "2026-11-14"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/drizzle-team/drizzle-orm" target="_blank" rel="noopener">drizzle-orm</a>
+<div class="c-meta"><span>语言 TypeScript</span><span>协议 Apache-2.0</span><span>创建于 2021</span><span>版本 1.0.0-rc.5</span><span>贡献者 124 人</span><span>最近提交 2026-11-14</span><span>90 天 10 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="orm · 置信 high">ORM</span><span class="capchip" title="schema-migration · 置信 high">结构迁移</span></div>
+</div>
+<div class="c-right"><div class="c-star">36,280<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="drizzle-orm star trend 36032 to 36280"><title>drizzle-orm star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 36032 增长至 36280</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,55.8 L22.8,53.0 L30.2,51.5 L37.6,49.3 L45.0,46.7 L52.4,45.6 L59.8,44.0 L67.2,42.1 L74.5,41.0 L81.9,39.7 L89.3,38.4 L96.7,36.6 L104.1,34.0 L111.5,31.6 L118.9,30.7 L126.3,30.5 L133.7,29.2 L148.5,26.6 L155.9,25.5 L163.3,25.0 L170.7,24.0 L178.1,22.9 L185.5,22.4 L192.8,21.6 L207.6,18.3 L222.4,10.0 L229.8,13.3 L237.2,13.0 L244.6,12.2 L252.0,12.2 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,55.8 22.8,53.0 30.2,51.5 37.6,49.3 45.0,46.7 52.4,45.6 59.8,44.0 67.2,42.1 74.5,41.0 81.9,39.7 89.3,38.4 96.7,36.6 104.1,34.0 111.5,31.6 118.9,30.7 126.3,30.5 133.7,29.2 148.5,26.6 155.9,25.5 163.3,25.0 170.7,24.0 178.1,22.9 185.5,22.4 192.8,21.6 207.6,18.3 222.4,10.0 229.8,13.3 237.2,13.0 244.6,12.2 252.0,12.2" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="12.2" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>面向 TypeScript/JavaScript 的无头（headless）ORM</p><p class="pts-label">综述（解读层）</p><p class="pain">Drizzle ORM 是运行于 NodeJS、TypeScript 与 JavaScript 环境的 headless ORM，支持 PostgreSQL、MySQL 和 SQLite 数据库，包括 Turso、Neon、PlanetScale、Cloudflare D1 等服务端型数据库。用户可声明 SQL schema 并构建关系型或 SQL 风格查询。配套 Drizzle Kit CLI 生成或执行迁移，Drizzle Studio 浏览数据。体积约 7.4kb（minified+gzipped），零依赖，支持 tree shaking。</p><ul class="pts"><li>支持 PostgreSQL、MySQL、SQLite 及 Turso、Neon、PlanetScale、Cloudflare D1 等多种数据库</li><li>可声明 SQL schema，构建 relational 与 SQL-like 查询，保持类型安全</li><li>体积约 7.4kb（minified+gzipped），零依赖且可 tree shake，可在 NodeJS、Bun、Deno、Cloudflare Workers、Edge 运行时及浏览器中运行</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在 NodeJS/Bun/Deno/Edge 等多种 JavaScript 运行时中访问关系型数据库</li><li>需要在 serverless 数据库（如 Turso、Neon、PlanetScale）上运行且不引入数据代理的场景</li><li>需要生成 SQL 迁移文件或将 schema 变更直接应用于数据库的项目</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Drizzle is a modern TypeScript ORM developers wanna use in their next project. It is lightweight at only ~7.4kb minified+gzipped, and it's tree shakeable with exactly 0 dependencies.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MySQL、PostgreSQL、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/drizzle-team/drizzle-orm" target="_blank" rel="noopener">drizzle-team/drizzle-orm</a></td><td class="stars">36,280</td><td>ORM</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tencent/wcdb" target="_blank" rel="noopener">tencent/wcdb</a></td><td class="stars">11,652</td><td>WCDB is a cross-platform database framework developed by WeChat.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/groue/grdb.swift" target="_blank" rel="noopener">groue/grdb.swift</a></td><td class="stars">8,747</td><td>A toolkit for SQLite databases, with a focus on application development</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/guolindev/litepal" target="_blank" rel="noopener">guolindev/litepal</a></td><td class="stars">8,042</td><td>An Android library that makes developers use SQLite database extremely easy. · 4 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/pardom-zz/activeandroid" target="_blank" rel="noopener">pardom-zz/activeandroid</a></td><td class="stars">4,645</td><td>Active record style SQLite persistence for Android · 5 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/w3tecch/express-typescript-boilerplate" target="_blank" rel="noopener">w3tecch/express-typescript-boilerplate</a></td><td class="stars">3,409</td><td>A delightful way to building a RESTful API with NodeJs &amp; TypeScript by @w3tecch · 3 年未更</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>1.0.0-rc.5</b>（10-21）——[BREAKING] Fixed postgres-js transparent parsers set by drizzle() constructors breaking driver's own serializers for timestamptz, timestamp, date, time, json, jsonb types (fixes #3171, #4426, #5789) paramsInErrors - [BREAKING] Updated postgres codecs: now generic codecs contain only in-json codecs (</p><p class="t-sub" style="margin-top:4px;">90 天 4 发 · 安全通告 1</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🏭 生产采用</span><span class="t-sub">README 提及数</span></div>
+<div class="users"><div class="user">被池内 5 个其他项目的 README 以 owner/repo 引用（35625 篇全量扫描，截至 2026-11-16）</div></div>
+</div>
+
+
+
+</div>
+</body>
+</html>

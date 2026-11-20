@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>lemed99/nightowl-agent：自托管 Laravel 监控 agent，接 Nightwatch 遥测并写入自… · GitHub 126★</title>
+<meta name="description" content="自托管 Laravel 监控 agent，接 Nightwatch 遥测并写入自有 PostgreSQL（GitHub 126★，PHP 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "nightowl-agent", "url": "https://github.com/lemed99/nightowl-agent", "codeRepository": "https://github.com/lemed99/nightowl-agent", "description": "自托管 Laravel 监控 agent，接 Nightwatch 遥测并写入自有 PostgreSQL", "applicationCategory": "DeveloperApplication", "programmingLanguage": "PHP", "license": "MIT", "author": {"@type": "Organization", "name": "lemed99"}, "dateModified": "2026-10-26"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">监控</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/lemed99/nightowl-agent" target="_blank" rel="noopener">nightowl-agent</a>
+<div class="c-meta"><span>语言 PHP</span><span>协议 MIT</span><span>创建于 2026</span><span>贡献者 1 人</span><span>最近提交 2026-10-26</span><span>90 天 32 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="alerting · 置信 high">告警</span><span class="capchip" title="observability · 置信 high">可观测</span><span class="capchip mid" title="slow-query · 置信 mid">慢查询分析</span></div>
+</div>
+<div class="c-right"><div class="c-star">126<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="nightowl-agent star trend 121 to 126"><title>nightowl-agent star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 121 增长至 126</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,48.4 L22.8,48.4 L30.2,48.4 L37.6,48.4 L45.0,48.4 L52.4,48.4 L59.8,48.4 L67.2,48.4 L74.5,48.4 L81.9,48.4 L89.3,48.4 L96.7,48.4 L104.1,48.4 L111.5,48.4 L118.9,48.4 L126.3,48.4 L133.7,48.4 L148.5,48.4 L155.9,38.8 L163.3,38.8 L170.7,38.8 L178.1,38.8 L185.5,38.8 L192.8,38.8 L207.6,29.2 L222.4,19.6 L229.8,19.6 L237.2,10.0 L244.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,48.4 22.8,48.4 30.2,48.4 37.6,48.4 45.0,48.4 52.4,48.4 59.8,48.4 67.2,48.4 74.5,48.4 81.9,48.4 89.3,48.4 96.7,48.4 104.1,48.4 111.5,48.4 118.9,48.4 126.3,48.4 133.7,48.4 148.5,48.4 155.9,38.8 163.3,38.8 170.7,38.8 178.1,38.8 185.5,38.8 192.8,38.8 207.6,29.2 222.4,19.6 229.8,19.6 237.2,10.0 244.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>自托管 Laravel 监控 agent，接 Nightwatch 遥测并写入自有 PostgreSQL</p><p class="pts-label">综述（解读层）</p><p class="pain">NightOwl Agent 是一个 MIT 许可的 Laravel 包（PHP 8.2+，支持 Laravel 11-13），接收 laravel/nightwatch 产生的 12 类遥测数据，经 ReactPHP TCP 摄入和 SQLite WAL 缓冲后用 COPY 协议写入自备的 PostgreSQL。适合想把 Laravel 可观测数据留在自己基础设施内、用 SQL 或 BI 工具直接查询的团队。需 PostgreSQL 14+；表带 nightowl_ 前缀，按 environment 分区。</p><ul class="pts"><li>接收 Nightwatch 全部 12 类记录（请求、查询、任务、异常、日志等），经本地 TCP 摄入与 SQLite WAL 缓冲后以 COPY 协议写入自备 PostgreSQL</li><li>提供异常指纹聚合、新 issue 告警（Email/Webhook/Slack/Discord）、阈值性能问题、agent 与主机健康诊断</li><li>基准测试显示单实例摄入约 13,400 payloads/s，单个 drain worker 写入约 2,500 payloads/s</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在自有基础设施内自托管 Laravel APM，遥测数据不出内网</li><li>用 psql、Metabase 或自建 UI 直接查询 nightowl_ 表中的原始遥测数据</li><li>多环境（local/staging/production）共用一个 PostgreSQL 数据库并按 environment 过滤分析</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">NightOwl Agent is an MIT-licensed Laravel package that:</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>PostgreSQL、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/lemed99/nightowl-agent" target="_blank" rel="noopener">lemed99/nightowl-agent</a></td><td class="stars">126</td><td>Self-hosted Laravel monitoring agent. Drop-in Nightwatch alternative, open-source.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/rustrak/rustrak" target="_blank" rel="noopener">rustrak/rustrak</a></td><td class="stars">888</td><td>Self-hosted, open-source Sentry alternative in Rust. Error tracking, performance, logs and AI agent traces in one small ...</td><td class="stars">0.75</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install nightowl-agent（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

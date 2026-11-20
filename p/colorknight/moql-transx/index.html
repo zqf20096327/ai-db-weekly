@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>colorknight/moql-transx：将SQL（MOQL语法子集）转换为多种数据库DSL的Java语法转换工具包 · GitHub 24★</title>
+<meta name="description" content="将SQL（MOQL语法子集）转换为多种数据库DSL的Java语法转换工具包（GitHub 24★，Java 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "moql-transx", "url": "https://github.com/colorknight/moql-transx", "codeRepository": "https://github.com/colorknight/moql-transx", "description": "将SQL（MOQL语法子集）转换为多种数据库DSL的Java语法转换工具包", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Java", "author": {"@type": "Organization", "name": "colorknight"}, "dateModified": "2025-12-03"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span><span class="chip sub">11 个月未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/colorknight/moql-transx" target="_blank" rel="noopener">moql-transx</a>
+<div class="c-meta"><span>语言 Java</span><span>创建于 2021</span><span>贡献者 2 人</span><span>最近提交 2025-12-03</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="dialect-rewrite · 置信 high">方言改写</span></div>
+</div>
+<div class="c-right"><div class="c-star">24<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="moql-transx star trend 24 to 24"><title>moql-transx star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 24 增长至 24</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L15.4,34.0 L22.8,34.0 L30.2,34.0 L37.6,34.0 L45.0,34.0 L52.4,34.0 L59.8,34.0 L67.2,34.0 L74.5,34.0 L81.9,34.0 L89.3,34.0 L96.7,34.0 L104.1,34.0 L111.5,34.0 L118.9,34.0 L126.3,34.0 L133.7,34.0 L148.5,34.0 L155.9,34.0 L163.3,34.0 L170.7,34.0 L178.1,34.0 L185.5,34.0 L192.8,34.0 L207.6,34.0 L222.4,34.0 L229.8,34.0 L237.2,34.0 L244.6,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 15.4,34.0 22.8,34.0 30.2,34.0 37.6,34.0 45.0,34.0 52.4,34.0 59.8,34.0 67.2,34.0 74.5,34.0 81.9,34.0 89.3,34.0 96.7,34.0 104.1,34.0 111.5,34.0 118.9,34.0 126.3,34.0 133.7,34.0 148.5,34.0 155.9,34.0 163.3,34.0 170.7,34.0 178.1,34.0 185.5,34.0 192.8,34.0 207.6,34.0 222.4,34.0 229.8,34.0 237.2,34.0 244.6,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>将SQL（MOQL语法子集）转换为多种数据库DSL的Java语法转换工具包</p><p class="pts-label">综述（解读层）</p><p class="pain">MOQL-Transx是MOQL工程的姊妹工程，包含moql-translator和moql-querier两个模块，用于将MOQL语法（SQL92子集）转换为MySQL、Oracle、DB2、SQLServer、Postgresql等关系数据库语法，以及ElasticSearch DSL、MongoDB DSL和DynamoDB DSL。它还为ElasticSearch和MongoDB提供查询器，接受SQL语句并返回二维表结构对象，面向习惯使用SQL的数据开发与分析人员。</p><ul class="pts"><li>实现MOQL语法到ElasticSearch DSL、MongoDB DSL及DynamoDB DSL的转换，并支持match、fuzzy、knn等ES特性的扩展函数（UDF）机制</li><li>提供ElasticSearch查询器和MongoDB查询器（MongoDBQuerier），接受SQL语句并返回二维表结构的RecordSet对象</li><li>升级后的SqlTranslator接口支持通过translationContext参数传入上下文，以实现依赖search_after的深度分页转换；SupplementReader可读取结果中的total、max_score、sort等字段</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>用SQL语句查询ElasticSearch或MongoDB，替代学习各自DSL</li><li>将SQL语句批量翻译为不同关系数据库（MySQL、Oracle、DB2等）方言</li><li>ElasticSearch深度分页场景下生成带search_after参数的查询DSL</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">​	MOQL-Transx是MOQL工程的姊妹工程，其早期与MOQL工程在一起，后独立出来。其核心思想是想让数据库使用者只掌握一种语言，即SQL语言，就可以去查询访问各类不同的数据库，以此减小开发者，使用者的学习成本。由于各类数据库语法差异比较大，MOQL-Transx并不追求从SQL语义到各类数据库DSL语义的完整映射，更多是将最常用到的语法功能进行了映射。目前MOQL-Transx已经完成了从</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MySQL、Oracle、PostgreSQL、SQL Server</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/colorknight/moql-transx" target="_blank" rel="noopener">colorknight/moql-transx</a></td><td class="stars">24</td><td>Translate moql syntax to syntax of X database</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/jooq/jooq" target="_blank" rel="noopener">jooq/jooq</a></td><td class="stars">6,806</td><td>jOOQ is the best way to write SQL in Java</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/doug-martin/goqu" target="_blank" rel="noopener">doug-martin/goqu</a></td><td class="stars">2,677</td><td>SQL builder and query library for golang</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/mysql2sqlite/mysql2sqlite" target="_blank" rel="noopener">mysql2sqlite/mysql2sqlite</a></td><td class="stars">1,985</td><td>Converts MySQL dump to SQLite3 compatible dump · 3 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/kaspermarstal/plprql" target="_blank" rel="noopener">kaspermarstal/plprql</a></td><td class="stars">476</td><td>Use PRQL in PostgreSQL</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/nilportugues/php-sql-query-builder" target="_blank" rel="noopener">nilportugues/php-sql-query-builder</a></td><td class="stars">424</td><td>An elegant lightweight and efficient SQL Query Builder with fluid interface SQL syntax supporting bindings and complicat... · 1 年未更</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库开源生态周刊 · 第 1 期</title>
+<meta name="description" content="数据库客户端是最卷的工具类别——DBeaver 五万星盘踞多年。这个免费开源、强调「快与原生」的新客户端靠什么杀出来？">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://dbhub.example.com/weekly/1/">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.iss-no-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.iss-nav { margin-left: auto; display: inline-flex; gap: 14px; font-size: 12px; }
+.iss-nav a { color: var(--muted); }
+.iss-nav a:hover { color: var(--accent); }
+.iss-nav .off { color: var(--line); }
+details.article-card { cursor: pointer; }
+details.article-card[open] { cursor: default; }
+details.article-card > summary { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+details.article-card > summary::-webkit-details-marker { display: none; }
+details.article-card .dr-article { border-top: 1px dashed var(--line); margin-top: 8px; padding-top: 6px; }
+.issue-panel { grid-template-columns: repeat(2,1fr); }
+.dr-actions { margin-top: 10px; }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk on" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<section class="hero issue-hero">
+    <div class="iss-no-row">
+      <div class="issue-no">第 1 期 <span class="muted">· 2026-09-29 · 每周一刊</span></div>
+      <span class="iss-nav"><span class="off">‹ 上一期</span><a href="/ai-db-weekly/weekly/2/">下一期 ›</a><a href="/ai-db-weekly/">回到最新</a><a href="/ai-db-weekly/archive.html">往期 →</a></span>
+    </div>
+    <div class="h1-row">
+      <h1>数据库开源生态周刊</h1>
+      <a class="btn primary cta-top" href="/ai-db-weekly/projects/">浏览 13,943 个项目档案 →</a>
+    </div>
+    <div class="issue-slogan">国际 7 库 · 国产 10 库 · 每周更新</div>
+    <div class="numline"><a href="/ai-db-weekly/projects/"><b>34,295</b>收录项目</a><i>·</i><a href="/ai-db-weekly/projects/"><b>9</b>新披露通告(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>633</b>发版项目(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>1058</b>停维预警</a><i>·</i><a href="/ai-db-weekly/projects/"><b>3490</b>AI 工具</a><i>·</i><a href="/ai-db-weekly/projects/"><b>439</b>新项目(45天)</a></div>
+    <div class="lede-label">本期导读</div>
+    <div class="lede">
+<div class="lede-row"><span class="lede-k">亮点</span><div class="lede-t">本周增速冠军 <a class="jump" href="/ai-db-weekly/p/t8y2/dbx/">dbx</a>（周 +3212★），次席 <a class="jump" href="/ai-db-weekly/p/tencentcloud/octop/">Octop</a>（+1498★）领跑全站</div></div>
+<div class="lede-row"><span class="lede-k">风险</span><div class="lede-t">近 7 天<b>新披露</b>高危通告 9 起，payload 影响最大；1058 个千星级工具停维或归档</div></div>
+<div class="lede-row"><span class="lede-k">规模</span><div class="lede-t">全站收录 34,295 个项目，17 库生态，每周更新一次</div></div>
+    </div>
+  </section>
+  <main>
+    <section>
+      <div class="sec-title"><h3>💬 一句话情报</h3><span class="line"></span><span class="muted">知道就好 · 数据自动生成</span></div>
+      <div class="card oneline-card"><ul>
+<li><a href="/ai-db-weekly/p/t8y2/dbx/"><code>t8y2/dbx</code></a> 本周 <b class="g7">+3212</b> 星，全站第一（现 ★24k）</li>
+<li>内核发版：<a href="/ai-db-weekly/p/clickhouse/clickhouse/"><code>ClickHouse/ClickHouse</code></a> 发布 <b>v26.9.3.38-stable</b>（2026-09-26）</li>
+<li><code>maybe-finance/maybe</code>（★54k）已标记归档，选型避开</li>
+<li>近 7 天新披露安全通告 <b>9</b> 起、发版 <b>633</b> 个项目</li>
+<li>AI 渗透：在册 AI 相关工具 3490 个，其中 MCP 类 631 个</li>
+<li>45 天窗口内新入库且已归属的工具 <b>439</b> 个</li>
+      </ul></div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>📖 本期深读</h3><span class="line"></span><span class="muted">国际开源 · 国产开源 · AI×数据库 · 点卡片读全文</span></div>
+      <div class="grid3 issue-grid">
+<details class="article-card">
+<summary>
+<div class="sector">国际开源</div>
+<h3>原生 GUI 的反击：TablePro 一周 129 星撞开最卷的赛道</h3>
+<div class="fn mono">TableProApp/TablePro</div>
+<p>数据库客户端是最卷的工具类别——DBeaver 五万星盘踞多年。这个免费开源、强调「快与原生」的新客户端靠什么杀出来？</p>
+<div class="nums"><span><b>6.2k</b> Star</span><span><b>+247</b> 本周</span><span><b>135</b> c/7天</span><span><b>52</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>TablePro 给自己的定位只有一句话：A fast, native database client for developers。在 Electron 壳满天飞的数据库 GUI 市场里，「原生」本身就是差异化——启动快、内存占用低、没有 WebView 开销。</p><p>为什么本期选它：★6,051 且本周 +129，7 天 135 次提交，活跃度指数满分。一个 v0.75 的早期项目拿到 Trendshift 趋势徽章并提供中/越/韩多语言 README，说明团队有明确的国际化意图，社区运营是认真做的。</p><p>适合谁：嫌现有客户端卡顿、只需要「连库、看表、写 SQL」基本功能做好的开发者。风险观察点：AGPL v3 许可证对公司内分发场景有传染性约束；v0.75 意味着功能与 API 都在快速变动，生产环境重度使用前建议观察两个版本周期。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">6.2k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+247</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">135</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">1121</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">52</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v0.75.0</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">AGPL-3.0</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/tableproapp/tablepro/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 1 期（快照 20261002）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">国产开源</div>
+<h3>25MB 塞进 100+ 数据库：dbx 单周暴涨 1100 星，全池第一</h3>
+<div class="fn mono">t8y2/dbx</div>
+<p>桌面 / Docker / CLI 三形态，自带 AI 助手与 MCP Server——国产轻量数据库工作台本周增速碾压全站 3.4 万项目。</p>
+<div class="nums"><span><b>24k</b> Star</span><span><b>+3212</b> 本周</span><span><b>463</b> c/7天</span><span><b>295</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>dbx 的 README 第一行就是卖点：100+ databases in 25 MB。桌面端、Docker、CLI 三种形态同源，内置 AI 助手和 MCP Server——MCP 意味着你可以让任意 AI 客户端直接安全地操作数据库，这在 MCP 生态爆发的当下踩准了节拍。</p><p>为什么本期选它：本周 +1,103 星，全站 34,202 个项目中的增速冠军，当前 ★21,505；7 天 463 次提交，工程节奏凶猛。站内跨库标记显示它同时覆盖 PostgreSQL、MySQL、SQLite、ClickHouse 等多个生态——这也是它出现在多张库卡片增星冠军位的原因。中文社区（QQ 群）运营活跃，是典型的国产生态打法。</p><p>适合谁：每天在多种数据库之间切换的一线开发和运维——一个 25MB 的工具替掉一排客户端。风险观察点：热度仍在爬坡期，贡献者规模与商业化路径尚不明朗，深度生产使用前先在非核心环境试跑。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">24k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+3212</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">463</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">4726</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">295</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v0.6.24</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">Apache-2.0</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/t8y2/dbx/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 1 期（快照 20261002）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">AI×数据库</div>
+<h3>腾讯官方开源 Octop：自托管多 Agent 助手，首周千星</h3>
+<div class="fn mono">TencentCloud/Octop</div>
+<p>多用户、多 Agent、可私有化部署的 AI 助手，MIT 许可，本周 +1044 星位居全站第二——大厂开源的诚意之作？</p>
+<div class="nums"><span><b>6.3k</b> Star</span><span><b>+1498</b> 本周</span><span><b>103</b> c/7天</span><span><b>42</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>Octop 是腾讯云开源的自托管 AI 助手平台：multi-user, multi-agent，Python 3.12+，MIT 许可，当前 v1.0.2b4。在企业都想私有化部署 AI 助手又怕数据出境的当下，「自托管 + 多用户」正好命中需求。</p><p>为什么本期选它：本周 +1,044 星，全站增速第二；出自 TencentCloud 官方组织（站内归入 TDSQL 生态），与腾讯云数据库场景的结合是它区别于通用助手的想象空间。对照老牌 AI 数据库客户端 Chat2DB（★28,282），Octop 走的是平台路线而非工具路线。</p><p>适合谁：需要给团队部署一套私有 AI 助手、且希望后续与数据库工作流打通的技术负责人。风险观察点：版本仍是 beta（1.0.2b4），接口与功能可能调整；「AI×数据库」的深度结合目前更多是生态预期而非成品能力，建议以关注跟踪为主。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">6.3k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+1498</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">103</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">633</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">42</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v1.0.2b3</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">MIT</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/tencentcloud/octop/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 1 期（快照 20261002）。</div>
+</div>
+</details>
+      </div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>⚡ 本周速览</h3><span class="line"></span><span class="muted">只报变化（事件）· 发刊时冻结 · 状态请查工具页</span></div>
+      <div class="grid2">
+<section class="card digest risk">
+<div class="card-head"><h2>🔴 风险预警<span class="hint">本周新披露 9 起 · 停维/归档 1058</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<div class="d-item"><span class="sev">严重</span> <span class="repo">payloadcms/payload</span><span class="d-meta">2026-09-25 新披露 · ★45k</span></div>
+<a class="d-item" href="/ai-db-weekly/p/parse-community/parse-server/"><span class="sev">严重</span> <span class="repo">parse-community/parse-server</span><span class="d-meta">2026-09-25 新披露 · ★21k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/vitessio/vitess/"><span class="sev">严重</span> <span class="repo">vitessio/vitess</span><span class="d-meta">2026-09-25 新披露 · ★21k</span></a>
+<div class="d-item"><span class="bdg stale">停维</span> <span class="repo">LeCoupa/awesome-cheatsheets</span><span class="d-meta">7 天零提交 · ★47k</span></div>
+<a class="d-item" href="/ai-db-weekly/p/the-vibe-company/quivr/"><span class="bdg stale">停维</span> <span class="repo">The-Vibe-Company/quivr</span><span class="d-meta">7 天零提交 · ★40k</span></a>
+<div class="d-item"><span class="bdg arc">归档</span> <span class="repo">vanna-ai/vanna</span><span class="d-meta">已标记归档 · ★24k</span></div>
+</div>
+</section>
+<section class="card digest ver">
+<div class="card-head"><h2>📦 版本动态<span class="hint">近 7 天发版 · 官方优先</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/clickhouse/clickhouse/"> <span class="repo">ClickHouse/ClickHouse</span><span class="d-meta"><span class="tag off">官方</span> v26.9.3.38-stable <span class="muted">· 2026-09-26</span> · ★50k</span></a>
+<div class="d-item"> <span class="repo">get-convex/convex-backend</span><span class="d-meta"><span class="tag off">官方</span> precompiled-2026-0 <span class="muted">· 2026-09-26</span> · ★13k</span></div>
+<a class="d-item" href="/ai-db-weekly/p/tencentcloud/octop/"> <span class="repo">TencentCloud/Octop</span><span class="d-meta"><span class="tag off">官方</span> v1.0.2b3 <span class="muted">· 2026-09-27</span> · ★6.3k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/supabase/supabase-js/"> <span class="repo">supabase/supabase-js</span><span class="d-meta"><span class="tag off">官方</span> v2.117.2 <span class="muted">· 2026-09-25</span> · ★4.6k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/oracle/graalvm-reachability-metadata/"> <span class="repo">oracle/graalvm-reachability-metadata</span><span class="d-meta"><span class="tag off">官方</span> SNAPSHOT <span class="muted">· 2026-09-27</span> · ★482</span></a>
+</div>
+</section>
+<section class="card digest gain">
+<div class="card-head"><h2>📈 增星榜<span class="hint">本周 · 全站总榜 · 基线 0924→1002</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/t8y2/dbx/"> <span class="repo">t8y2/dbx</span><span class="d-meta"><span class="g7">+3212</span> · ★24k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/tencentcloud/octop/"> <span class="repo">TencentCloud/Octop</span><span class="d-meta"><span class="g7">+1498</span> · ★6.3k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/mikehasa/golive-skill/"> <span class="repo">mikehasa/golive-skill</span><span class="d-meta"><span class="g7">+1143</span> · ★1.2k</span></a>
+</div>
+</section>
+<section class="card digest newb">
+<div class="card-head"><h2>🌱 新项目<span class="hint">创建 ≤45 天 · 已归属</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/tigerless-labs/agent-memory/"> <span class="repo">tigerless-labs/agent-memory</span><span class="d-meta">★2.2k · <span class="tag gray">开发库</span> · 2026-09-01</span></a>
+<a class="d-item" href="/ai-db-weekly/p/mikehasa/golive-skill/"> <span class="repo">mikehasa/golive-skill</span><span class="d-meta">★1.2k · <span class="tag gray">平台</span> · 2026-09-23</span></a>
+<div class="d-item"> <span class="repo">MaxHu-xuan/chat-archive-guard</span><span class="d-meta">★623 · <span class="tag gray">安全/审计</span> · 2026-08-23</span></div>
+</div>
+</section>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

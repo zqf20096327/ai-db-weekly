@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dbxstudio/dbx-studio：开源 AI SQL 客户端，用自然语言生成并管理数据库查询 · GitHub 124★</title>
+<meta name="description" content="开源 AI SQL 客户端，用自然语言生成并管理数据库查询（GitHub 124★，TypeScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dbx-studio", "url": "https://github.com/dbxstudio/dbx-studio", "codeRepository": "https://github.com/dbxstudio/dbx-studio", "description": "开源 AI SQL 客户端，用自然语言生成并管理数据库查询", "applicationCategory": "DeveloperApplication", "programmingLanguage": "TypeScript", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "dbxstudio"}, "dateModified": "2026-08-03"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">管理</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/dbxstudio/dbx-studio" target="_blank" rel="noopener">dbx-studio</a>
+<div class="c-meta"><span>语言 TypeScript</span><span>协议 Apache-2.0</span><span>创建于 2026</span><span>贡献者 4 人</span><span>最近提交 2026-08-03</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="gui-client · 置信 high">GUI 客户端</span><span class="capchip" title="sql-editor · 置信 high">SQL 编辑器</span></div>
+</div>
+<div class="c-right"><div class="c-star">124<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="dbx-studio star trend 103 to 124"><title>dbx-studio star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 103 增长至 124</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,55.8 L15.4,58.0 L22.8,58.0 L30.2,58.0 L37.6,58.0 L45.0,58.0 L52.4,58.0 L59.8,55.8 L67.2,58.0 L74.5,51.5 L81.9,53.6 L89.3,53.6 L96.7,55.8 L104.1,51.5 L111.5,49.3 L118.9,47.1 L126.3,47.1 L133.7,44.9 L148.5,40.5 L155.9,40.5 L163.3,38.4 L170.7,38.4 L178.1,36.2 L185.5,29.6 L192.8,27.5 L207.6,25.3 L222.4,14.4 L229.8,14.4 L237.2,12.2 L244.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,55.8 15.4,58.0 22.8,58.0 30.2,58.0 37.6,58.0 45.0,58.0 52.4,58.0 59.8,55.8 67.2,58.0 74.5,51.5 81.9,53.6 89.3,53.6 96.7,55.8 104.1,51.5 111.5,49.3 118.9,47.1 126.3,47.1 133.7,44.9 148.5,40.5 155.9,40.5 163.3,38.4 170.7,38.4 178.1,36.2 185.5,29.6 192.8,27.5 207.6,25.3 222.4,14.4 229.8,14.4 237.2,12.2 244.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>开源 AI SQL 客户端，用自然语言生成并管理数据库查询</p><p class="pts-label">综述（解读层）</p><p class="pain">DBx Studio 是一款基于 Electron 的桌面数据库管理工具，也可通过 Web/桌面双端运行。用户以自然语言描述需求，由 AI 生成 SQL，并提供带语法高亮、自动补全和查询历史的编辑器。支持 PostgreSQL、Snowflake、SQLite 等数据库，内置 PGLite 存储连接与历史记录，无需外部数据库。开发者需自行配置 AI 提供商（OpenAI/Anthropic/AWS Bedrock）的 API 凭证。采用 Apache 2.0 许可证。</p><ul class="pts"><li>支持自然语言生成 SQL 查询，并感知表结构与列关系</li><li>内置 SQL 编辑器，包含语法高亮、自动补全、查询历史与多标签工作区</li><li>支持 PostgreSQL、Snowflake、SQLite、Supabase、Amazon Redshift 多种数据库连接</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>开发者通过自然语言描述查询数据库数据</li><li>浏览表结构、预览行数据并可视化检查表关系</li><li>团队部署为 Web 服务或桌面客户端管理多个数据库连接</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Free AI-powered open-source database management tool that simplifies database interactions with secure connection storage and AI-assisted SQL query writing.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>PostgreSQL、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/dbxstudio/dbx-studio" target="_blank" rel="noopener">dbxstudio/dbx-studio</a></td><td class="stars">124</td><td>Free Open-source AI SQL client that helps developers and data teams explore databases using natural language.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/little-brother/sqlite-gui" target="_blank" rel="noopener">little-brother/sqlite-gui</a></td><td class="stars">1,248</td><td>Lightweight SQLite editor for Windows · 1 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/joaoh82/rust_sqlite" target="_blank" rel="noopener">joaoh82/rust_sqlite</a></td><td class="stars">1,092</td><td>SQLRite - Simple embedded database modeled off SQLite in Rust</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/infinum/android_dbinspector" target="_blank" rel="noopener">infinum/android_dbinspector</a></td><td class="stars">956</td><td>Android library for viewing, editing and sharing in app databases.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/pgplex/pgtui" target="_blank" rel="noopener">pgplex/pgtui</a></td><td class="stars">322</td><td>A simple terminal UI for PostgreSQL, written in Go with Bubble Tea</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/outerbase/studio" target="_blank" rel="noopener">outerbase/studio</a></td><td class="stars">6,016</td><td>A lightweight Database GUI in your browser. It supports connecting to Postgres, MySQL, and SQLite. · 7 个月未更</td><td class="stars">0.90</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pyranthus-hq/mora：本地优先的记忆 CLI，将消息、邮件、日历与文件汇编为带引用的本地知识库供 MC… · GitHub 12★</title>
+<meta name="description" content="本地优先的记忆 CLI，将消息、邮件、日历与文件汇编为带引用的本地知识库供 MCP 智能体读取。（GitHub 12★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "mora", "url": "https://github.com/pyranthus-hq/mora", "codeRepository": "https://github.com/pyranthus-hq/mora", "description": "本地优先的记忆 CLI，将消息、邮件、日历与文件汇编为带引用的本地知识库供 MCP 智能体读取。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "pyranthus-hq"}, "dateModified": "2026-11-15"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">管理</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/pyranthus-hq/mora" target="_blank" rel="noopener">mora</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 Apache-2.0</span><span>创建于 2026</span><span>版本 0.15.2</span><span>贡献者 2 人</span><span>最近提交 2026-11-15</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="agent-memory · 置信 high">智能体记忆</span></div>
+</div>
+<div class="c-right"><div class="c-star">12<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="mora star trend 10 to 12"><title>mora star 趋势（2026-10-26 至 2026-11-16）</title><desc>由 10 增长至 12</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L19.6,58.0 L31.2,58.0 L42.9,58.0 L54.5,58.0 L66.1,58.0 L89.3,58.0 L101.0,34.0 L112.6,34.0 L124.2,34.0 L135.8,34.0 L147.4,34.0 L159.0,34.0 L182.3,34.0 L205.5,34.0 L217.1,10.0 L228.8,10.0 L240.4,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 19.6,58.0 31.2,58.0 42.9,58.0 54.5,58.0 66.1,58.0 89.3,58.0 101.0,34.0 112.6,34.0 124.2,34.0 135.8,34.0 147.4,34.0 159.0,34.0 182.3,34.0 205.5,34.0 217.1,10.0 228.8,10.0 240.4,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-26</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>本地优先的记忆 CLI，将消息、邮件、日历与文件汇编为带引用的本地知识库供 MCP 智能体读取。</p><p class="pts-label">综述（解读层）</p><p class="pain">Mora 是一款运行于 macOS 的 Go 语言 CLI 工具（现处 beta 阶段），以只读方式接入 iMessage、Gmail、日历和本地文件，将内容存入 Markdown 仓库与 SQLite 索引，通过 MCP 协议向 Claude Code、Codex 等客户端提供检索、摘要与会话交接功能。写入需经 `mora review` 由所有者确认，全部数据存储于本地。</p><ul class="pts"><li>提供只读 iMessage、Gmail、日历与文件连接器，数据存入本地 Markdown 仓库与 SQLite 索引</li><li>实现 MCP 服务器，暴露 brief、search_memory、meeting_prep 等 13 个工具，并通过会话钩子注入项目简报与范围检索</li><li>所有者写入需在真实终端确认（--mine），智能体写入的笔记进入待审队列，支持 mora given 查看每次交付记录</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>为编码智能体跨会话保存项目决策、修正与会话交接（handoff）</li><li>无云端邮箱环境下本地检索 iMessage 与 Gmail，结合日历生成会前简报</li><li>通过人员图谱检索与某人相关的消息和会议证据</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Your messages, meetings, and project knowledge. One memory for you and your AI agents.</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/pyranthus-hq/mora" target="_blank" rel="noopener">pyranthus-hq/mora</a></td><td class="stars">12</td><td>Experimental local-first memory CLI for MCP agents: read-only Gmail, calendars, iMessage, and files → cited local contex...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">thedotmack/claude-mem</a></td><td class="stars">117,346</td><td>Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tigerless-labs/agent-memory" target="_blank" rel="noopener">tigerless-labs/agent-memory</a></td><td class="stars">4,320</td><td>Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independe...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tursodatabase/agentfs" target="_blank" rel="noopener">tursodatabase/agentfs</a></td><td class="stars">3,522</td><td>The filesystem for agents.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/kitfunso/hippo-memory" target="_blank" rel="noopener">kitfunso/hippo-memory</a></td><td class="stars">792</td><td>Stop re-teaching your agent. Make your agent's memory work like a brain. Hippo is long-term memory for coding agents. It...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/agentic-box/memora" target="_blank" rel="noopener">agentic-box/memora</a></td><td class="stars">748</td><td>Give your AI agents persistent, collective memory — with deduplicating absorb, supersession lineage, semantic search, an...</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.15.2</b>（10-19）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 12 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

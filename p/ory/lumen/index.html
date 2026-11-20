@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ory/lumen：本地语义代码搜索 MCP 服务器，为 AI 编码代理提供向量化代码检索 · GitHub 318★</title>
+<meta name="description" content="本地语义代码搜索 MCP 服务器，为 AI 编码代理提供向量化代码检索（GitHub 318★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "lumen", "url": "https://github.com/ory/lumen", "codeRepository": "https://github.com/ory/lumen", "description": "本地语义代码搜索 MCP 服务器，为 AI 编码代理提供向量化代码检索", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "NOASSERTION", "author": {"@type": "Organization", "name": "ory"}, "dateModified": "2026-10-11"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/ory/lumen" target="_blank" rel="noopener">lumen</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 NOASSERTION</span><span>创建于 2026</span><span>版本 0.0.42</span><span>贡献者 7 人</span><span>最近提交 2026-10-11</span><span>90 天 8 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="semantic-search · 置信 high">语义检索</span><span class="capchip mid" title="vector-search · 置信 mid">向量检索</span></div>
+</div>
+<div class="c-right"><div class="c-star">318<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="lumen star trend 308 to 318"><title>lumen star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 308 增长至 318</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,58.0 L22.8,58.0 L30.2,58.0 L37.6,48.4 L45.0,48.4 L52.4,48.4 L59.8,43.6 L67.2,38.8 L74.5,38.8 L81.9,38.8 L89.3,38.8 L96.7,38.8 L104.1,34.0 L111.5,34.0 L118.9,34.0 L126.3,38.8 L133.7,34.0 L148.5,29.2 L155.9,29.2 L163.3,24.4 L170.7,24.4 L178.1,14.8 L185.5,14.8 L192.8,14.8 L207.6,10.0 L222.4,10.0 L229.8,10.0 L237.2,10.0 L244.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,58.0 22.8,58.0 30.2,58.0 37.6,48.4 45.0,48.4 52.4,48.4 59.8,43.6 67.2,38.8 74.5,38.8 81.9,38.8 89.3,38.8 96.7,38.8 104.1,34.0 111.5,34.0 118.9,34.0 126.3,38.8 133.7,34.0 148.5,29.2 155.9,29.2 163.3,24.4 170.7,24.4 178.1,14.8 185.5,14.8 192.8,14.8 207.6,10.0 222.4,10.0 229.8,10.0 237.2,10.0 244.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>本地语义代码搜索 MCP 服务器，为 AI 编码代理提供向量化代码检索</p><p class="pts-label">综述（解读层）</p><p class="pain">Lumen 是一个完全本地运行的语义代码搜索引擎，以 MCP 服务器形式接入 Claude Code、Cursor、Codex、OpenCode 等代理。它用 Ollama 或 LM Studio 生成嵌入，按函数/类型等语义分块（Go 原生 AST、其他语言用 tree-sitter），存入 SQLite+sqlite-vec 并以余弦距离 KNN 检索；通过 Merkle 树做增量索引，索引存于仓库外。支持 12 种语言家族和 Git worktree 共享索引，配置经环境变量完成。</p><ul class="pts"><li>支持 12 种语言家族的语义分块索引，Go 使用原生 AST 解析，其余语言使用 tree-sitter 语法</li><li>通过 Merkle 树变更检测实现增量索引，Git worktree 之间自动共享索引数据</li><li>嵌入与检索完全本地运行（Ollama 或 LM Studio 后端 + SQLite/sqlite-vec），支持 Linux、macOS 和 Windows</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在 AI 编码代理中用 semantic_search 按含义查找函数、类型和模块，替代整文件读取</li><li>需要代码与嵌入数据不出本机的本地化开发环境</li><li>大型代码库或 monorepo 的增量索引与多 worktree 并行开发场景</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Claude reads entire files to find what it needs. Lumen gives it a map.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/ory/lumen" target="_blank" rel="noopener">ory/lumen</a></td><td class="stars">318</td><td>Save 30% token costs when using Claude Code, Codex, OpenCode for free - with open source, local semantic search. Works f...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">thedotmack/claude-mem</a></td><td class="stars">117,346</td><td>Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it...</td><td class="stars">0.65</td></tr>
+<tr><td><a href="https://github.com/agentic-box/memora" target="_blank" rel="noopener">agentic-box/memora</a></td><td class="stars">748</td><td>Give your AI agents persistent, collective memory — with deduplicating absorb, supersession lineage, semantic search, an...</td><td class="stars">0.65</td></tr>
+<tr><td><a href="https://github.com/0xk3vin/megamemory" target="_blank" rel="noopener">0xk3vin/megamemory</a></td><td class="stars">736</td><td>Persistent project knowledge graph for coding agents. MCP server with semantic search, in-process embeddings, and web ex... · 6 个月未更</td><td class="stars">0.65</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.0.42</b>（08-11）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 1 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

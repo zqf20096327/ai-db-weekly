@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>edgararuiz-zz/pivotable：R 包，用管道函数以代码方式生成透视表并复用维度/度量定义 · GitHub 10★</title>
+<meta name="description" content="R 包，用管道函数以代码方式生成透视表并复用维度/度量定义（GitHub 10★，R 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "pivotable", "url": "https://github.com/edgararuiz-zz/pivotable", "codeRepository": "https://github.com/edgararuiz-zz/pivotable", "description": "R 包，用管道函数以代码方式生成透视表并复用维度/度量定义", "applicationCategory": "DeveloperApplication", "programmingLanguage": "R", "author": {"@type": "Organization", "name": "edgararuiz-zz"}, "dateModified": "2019-11-18"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span><span class="chip sub">7 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/edgararuiz-zz/pivotable" target="_blank" rel="noopener">pivotable</a>
+<div class="c-meta"><span>语言 R</span><span>创建于 2019</span><span>贡献者 2 人</span><span>最近提交 2019-11-18</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip mid" title="analytics · 置信 mid">分析查询</span></div>
+</div>
+<div class="c-right"><div class="c-star">10<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="pivotable star trend 10 to 10"><title>pivotable star 趋势（2026-11-02 至 2026-11-16）</title><desc>由 10 增长至 10</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L25.4,34.0 L42.9,34.0 L60.3,34.0 L77.7,34.0 L95.1,34.0 L112.6,34.0 L147.4,34.0 L182.3,34.0 L199.7,34.0 L217.1,34.0 L234.6,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 25.4,34.0 42.9,34.0 60.3,34.0 77.7,34.0 95.1,34.0 112.6,34.0 147.4,34.0 182.3,34.0 199.7,34.0 217.1,34.0 234.6,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-02</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>R 包，用管道函数以代码方式生成透视表并复用维度/度量定义</p><p class="pts-label">综述（解读层）</p><p class="pain">pivotable 是一个 R 包，通过 pivot_rows()、pivot_columns()、pivot_values() 等函数以代码而非拖拽方式构建透视表，支持 pivot_flip() 行列互换、pivot_drill() 层级下钻、焦点筛选与总计控制。基于 dplyr 实现，可运行于数据库、Spark 和 data.table 后端。项目标注为 experimental 生命周期，安装需通过 remotes 从 GitHub 获取。适合需要在 R 中以可复现代码生成报表分析的用户。</p><ul class="pts"><li>通过管道串联 pivot_rows()/pivot_columns()/pivot_values() 以代码构建透视表，支持 flip、focus、drill 操作</li><li>可用 prep_dimensions()/prep_measures() 预定义维度与度量，实现集中化数据定义与复用</li><li>基于 dplyr 聚合命令，支持数据库、Spark 与 data.table 后端；可经 to_pivottabler() 转出 pivottabler 对象</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在 R 中以代码方式创建行列分组、聚合的透视表并下钻日期层级</li><li>将维度/度量定义集中管理，供多个报表复用保持口径一致</li><li>直接对数据库、Spark 或 data.table 连接的数据执行聚合分析</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/edgararuiz-zz/pivotable" target="_blank" rel="noopener">edgararuiz-zz/pivotable</a></td><td class="stars">10</td><td>analytics</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/taosdata/tdengine" target="_blank" rel="noopener">taosdata/tdengine</a></td><td class="stars">25,194</td><td>High-performance, scalable time-series database designed for Industrial IoT (IIoT) scenarios</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/duckdb/duckdb-wasm" target="_blank" rel="noopener">duckdb/duckdb-wasm</a></td><td class="stars">2,170</td><td>WebAssembly version of DuckDB</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/mariostoev/finviz" target="_blank" rel="noopener">mariostoev/finviz</a></td><td class="stars">1,370</td><td>Unofficial API for finviz.com</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/julien040/anyquery" target="_blank" rel="noopener">julien040/anyquery</a></td><td class="stars">1,792</td><td>One SQL interface for 60+ tools (e.g., GitHub, Notion, Airtable). Plug into any LLM through MCP.</td><td class="stars">0.85</td></tr>
+<tr><td><a href="https://github.com/alitrack/duckdb_fdw" target="_blank" rel="noopener">alitrack/duckdb_fdw</a></td><td class="stars">415</td><td>DuckDB Foreign Data Wrapper for PostgreSQL</td><td class="stars">0.85</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

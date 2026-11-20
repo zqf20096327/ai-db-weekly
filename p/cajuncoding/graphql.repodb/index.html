@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cajuncoding/graphql.repodb：HotChocolate GraphQL 与 RepoDb/Dapper 微 O… · GitHub 41★</title>
+<meta name="description" content="HotChocolate GraphQL 与 RepoDb/Dapper 微 ORM 的解析器处理扩展包（GitHub 41★，C# 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "graphql.repodb", "url": "https://github.com/cajuncoding/graphql.repodb", "codeRepository": "https://github.com/cajuncoding/graphql.repodb", "description": "HotChocolate GraphQL 与 RepoDb/Dapper 微 ORM 的解析器处理扩展包", "applicationCategory": "DeveloperApplication", "programmingLanguage": "C#", "license": "MIT", "author": {"@type": "Organization", "name": "cajuncoding"}, "dateModified": "2026-08-23"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/cajuncoding/graphql.repodb" target="_blank" rel="noopener">graphql.repodb</a>
+<div class="c-meta"><span>语言 C#</span><span>协议 MIT</span><span>创建于 2020</span><span>贡献者 2 人</span><span>最近提交 2026-08-23</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip mid" title="mapper · 置信 mid">SQL 映射</span><span class="capchip mid" title="query-builder · 置信 mid">查询构建器</span></div>
+</div>
+<div class="c-right"><div class="c-star">41<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="graphql.repodb star trend 41 to 41"><title>graphql.repodb star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 41 增长至 41</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L15.4,34.0 L22.8,34.0 L30.2,34.0 L37.6,34.0 L45.0,34.0 L52.4,34.0 L59.8,34.0 L67.2,34.0 L74.5,34.0 L81.9,34.0 L89.3,34.0 L96.7,34.0 L104.1,34.0 L111.5,34.0 L118.9,34.0 L126.3,34.0 L133.7,34.0 L148.5,34.0 L155.9,34.0 L163.3,34.0 L170.7,34.0 L178.1,34.0 L185.5,34.0 L192.8,34.0 L207.6,34.0 L222.4,34.0 L229.8,34.0 L237.2,34.0 L244.6,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 15.4,34.0 22.8,34.0 30.2,34.0 37.6,34.0 45.0,34.0 52.4,34.0 59.8,34.0 67.2,34.0 74.5,34.0 81.9,34.0 89.3,34.0 96.7,34.0 104.1,34.0 111.5,34.0 118.9,34.0 126.3,34.0 133.7,34.0 148.5,34.0 155.9,34.0 163.3,34.0 170.7,34.0 178.1,34.0 185.5,34.0 192.8,34.0 207.6,34.0 222.4,34.0 229.8,34.0 237.2,34.0 244.6,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>HotChocolate GraphQL 与 RepoDb/Dapper 微 ORM 的解析器处理扩展包</p><p class="pts-label">综述（解读层）</p><p class="pain">该库为 HotChocolate GraphQL（v11/v12，非官方）提供扩展，把字段选择/投影、排序与分页参数以简化门面暴露给解析器及下层服务/仓储，使数据在返回前完成过滤、排序、分页，不依赖 IQueryable 延迟执行；针对 RepoDb（SQL Server）提供完整实现与 Relay 规范游标分页。面向使用微 ORM 或已有仓储层且需自行控制 SQL 的 .NET 开发者，需 netstandard2.1 以上。</p><ul class="pts"><li>提供 Selections/Projections、Sort、Paging 参数的简化门面，可在解析器与服务/仓储层使用，不依赖 IQueryable 延迟执行</li><li>针对 RepoDb（SQL Server）提供完整实现，含符合 Relay 规范的游标分页扩展方法，并支持 Offset 分页</li><li>支持 GraphQL Schema 到模型属性再到数据库列名的映射，含查询片段（C# 接口）与投影依赖的配置化控制</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>使用 RepoDb 或 Dapper 等微 ORM 且需在仓储层封装全部 SQL 的 HotChocolate GraphQL 项目</li><li>已有业务层/仓储代码需复用、或不适合引入 EntityFramework/IQueryable 的技术栈</li><li>需要自行控制 SQL 查询执行（字段投影下推、游标/偏移分页、排序下推）的场景</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">﻿## Overview *(Unofficial) HotChocolate v11/v12 Extension Pack for working with Micro-ORM(s) and encapsulated data access (instead of IQueryable).*</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>SQL Server</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/cajuncoding/graphql.repodb" target="_blank" rel="noopener">cajuncoding/graphql.repodb</a></td><td class="stars">41</td><td>A set of extensions for working with HotChocolate GraphQL and Database access with micro-orms such as RepoDb (or Dapper)...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/dzoukr/dapper.fsharp" target="_blank" rel="noopener">dzoukr/dapper.fsharp</a></td><td class="stars">407</td><td>Lightweight F# extension for StackOverflow Dapper with support for MSSQL, MySQL, PostgreSQL, and SQLite · 7 个月未更</td><td class="stars">0.78</td></tr>
+<tr><td><a href="https://github.com/go-jet/jet" target="_blank" rel="noopener">go-jet/jet</a></td><td class="stars">3,834</td><td>Type safe SQL builder with code generation and automatic query result data mapping</td><td class="stars">0.76</td></tr>
+<tr><td><a href="https://github.com/samonzeweb/godb" target="_blank" rel="noopener">samonzeweb/godb</a></td><td class="stars">730</td><td>A Go SQL query builder and struct mapper. · 2 年未更</td><td class="stars">0.76</td></tr>
+<tr><td><a href="https://github.com/go-ozzo/ozzo-dbx" target="_blank" rel="noopener">go-ozzo/ozzo-dbx</a></td><td class="stars">675</td><td>A Go (golang) package that enhances the standard database/sql package by providing powerful data retrieval methods as we...</td><td class="stars">0.76</td></tr>
+<tr><td><a href="https://github.com/dotnetcore/smartsql" target="_blank" rel="noopener">dotnetcore/smartsql</a></td><td class="stars">1,135</td><td>SmartSql = MyBatis in C# + .NET Core+ Cache(Memory | Redis) + R/W Splitting + PropertyChangedTrack  +Dynamic Repository ...</td><td class="stars">0.73</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

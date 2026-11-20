@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kruschdev/krusch-stack：面向 AI 编码代理的一体化工具包，经 npx 安装提供记忆、代码搜索、安全执行… · GitHub 3★</title>
+<meta name="description" content="面向 AI 编码代理的一体化工具包，经 npx 安装提供记忆、代码搜索、安全执行与评测等 39 个 MCP 工具。（GitHub 3★，JavaScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "krusch-stack", "url": "https://github.com/kruschdev/krusch-stack", "codeRepository": "https://github.com/kruschdev/krusch-stack", "description": "面向 AI 编码代理的一体化工具包，经 npx 安装提供记忆、代码搜索、安全执行与评测等 39 个 MCP 工具。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "JavaScript", "license": "MIT", "author": {"@type": "Organization", "name": "kruschdev"}, "dateModified": "2026-11-11"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/kruschdev/krusch-stack" target="_blank" rel="noopener">krusch-stack</a>
+<div class="c-meta"><span>语言 JavaScript</span><span>协议 MIT</span><span>创建于 2026</span><span>贡献者 1 人</span><span>最近提交 2026-11-11</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="agent-memory · 置信 high">智能体记忆</span></div>
+</div>
+<div class="c-right"><div class="c-star">3<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="krusch-stack star trend 3 to 3"><title>krusch-stack star 趋势（2026-11-05 至 2026-11-16）</title><desc>由 3 增长至 3</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L30.2,34.0 L52.4,34.0 L74.5,34.0 L118.9,34.0 L163.3,34.0 L185.5,34.0 L207.6,34.0 L229.8,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 30.2,34.0 52.4,34.0 74.5,34.0 118.9,34.0 163.3,34.0 185.5,34.0 207.6,34.0 229.8,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-05</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>面向 AI 编码代理的一体化工具包，经 npx 安装提供记忆、代码搜索、安全执行与评测等 39 个 MCP 工具。</p><p class="pts-label">综述（解读层）</p><p class="pain">KruschStack 将其生态中的七个组件（工作记忆、Git/AST 图、文件页记忆、编码 harness、前端设计、工作区枢纽、任务路由）合并为单一安装单元，默认存储用 Node 22 原生 node:sqlite，另有 PostgreSQL 16 + pgvector 的 Docker Compose 部署方式。安装时自动写入 .mcp.json 以对接 Claude Code、Cursor、Windsurf、Antigravity 等客户端。README 含大量基准测试与队列状态提交数据，其中多项结果标注为自评或待接受，阅读时需注意区分验证层级；项目要求 Node.js &gt;= 22，MIT 许可。</p><ul class="pts"><li>通过 npx krusch-stack init 一条命令完成安装并自动配置 Claude Code、Cursor、Windsurf 与 Antigravity，提供 doctor 子命令验证组件</li><li>提供 39 个标注的 MCP 工具，覆盖上下文记忆、Git/AST 符号搜索与依赖图、文件检索、2PC 暂存执行 harness、前端设计与任务路由</li><li>支持两种部署：零 Docker 的 node:sqlite 本地安装，或 docker compose 启动 PostgreSQL 16 + pgvector + Gateway 的完整栈</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>为 Claude Code、Cursor 等 MCP 兼容客户端集中接入记忆、代码搜索与受控执行工具</li><li>需要本地零 Docker 或 PostgreSQL/pgvector 两种部署方式的 AI 代理开发环境</li><li>对编码代理执行过程进行分阶段（staged）diff 审查、应用与中止管控</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">The Unified Sovereign AI & Coding Agent Stack.</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/kruschdev/krusch-stack" target="_blank" rel="noopener">kruschdev/krusch-stack</a></td><td class="stars">3</td><td>All-in-one open-source toolkit for reliable AI agents: memory, code search, safe execution, and evaluation in one npx in...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">thedotmack/claude-mem</a></td><td class="stars">117,346</td><td>Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tigerless-labs/agent-memory" target="_blank" rel="noopener">tigerless-labs/agent-memory</a></td><td class="stars">4,320</td><td>Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independe...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tursodatabase/agentfs" target="_blank" rel="noopener">tursodatabase/agentfs</a></td><td class="stars">3,522</td><td>The filesystem for agents.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/kitfunso/hippo-memory" target="_blank" rel="noopener">kitfunso/hippo-memory</a></td><td class="stars">792</td><td>Stop re-teaching your agent. Make your agent's memory work like a brain. Hippo is long-term memory for coding agents. It...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/agentic-box/memora" target="_blank" rel="noopener">agentic-box/memora</a></td><td class="stars">748</td><td>Give your AI agents persistent, collective memory — with deduplicating absorb, supersession lineage, semantic search, an...</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

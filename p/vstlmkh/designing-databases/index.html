@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vstlmkh/designing-databases：面向 PostgreSQL 与 MySQL/InnoDB 的数据库设计、审计与调… · GitHub 4★</title>
+<meta name="description" content="面向 PostgreSQL 与 MySQL/InnoDB 的数据库设计、审计与调优 Agent Skill。（GitHub 4★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "designing-databases", "url": "https://github.com/vstlmkh/designing-databases", "codeRepository": "https://github.com/vstlmkh/designing-databases", "description": "面向 PostgreSQL 与 MySQL/InnoDB 的数据库设计、审计与调优 Agent Skill。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "MIT", "author": {"@type": "Organization", "name": "vstlmkh"}, "dateModified": "2026-10-21"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">建模/设计</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/vstlmkh/designing-databases" target="_blank" rel="noopener">designing-databases</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 MIT</span><span>创建于 2026</span><span>贡献者 1 人</span><span>最近提交 2026-10-21</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="schema-migration · 置信 high">结构迁移</span><span class="capchip mid" title="data-modeling · 置信 mid">数据建模</span></div>
+</div>
+<div class="c-right"><div class="c-star">4<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="designing-databases star trend 3 to 4"><title>designing-databases star 趋势（2026-10-21 至 2026-11-16）</title><desc>由 3 增长至 4</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L17.4,58.0 L26.8,10.0 L36.2,10.0 L45.5,10.0 L54.9,10.0 L64.3,10.0 L73.7,10.0 L83.1,10.0 L92.5,10.0 L101.8,10.0 L120.6,10.0 L130.0,10.0 L139.4,10.0 L148.8,10.0 L158.2,10.0 L167.5,10.0 L176.9,10.0 L195.7,10.0 L214.5,10.0 L223.8,10.0 L233.2,10.0 L242.6,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 17.4,58.0 26.8,10.0 36.2,10.0 45.5,10.0 54.9,10.0 64.3,10.0 73.7,10.0 83.1,10.0 92.5,10.0 101.8,10.0 120.6,10.0 130.0,10.0 139.4,10.0 148.8,10.0 158.2,10.0 167.5,10.0 176.9,10.0 195.7,10.0 214.5,10.0 223.8,10.0 233.2,10.0 242.6,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-21</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>面向 PostgreSQL 与 MySQL/InnoDB 的数据库设计、审计与调优 Agent Skill。</p><p class="pts-label">综述（解读层）</p><p class="pain">这是一个供 Claude 等 AI 代理使用的技能包，覆盖关系数据库的模式设计、索引策略、EXPLAIN 计划诊断、事务与锁、零停机迁移等五类工作流。它强调基于真实 schema、执行计划和统计信息给出建议，并附带仅用标准库 Python 的审计脚本，可作为 CI 门禁运行。适用于需要在 AI 会话中获得 PostgreSQL 13+ 或 MySQL 8.0+ 数据库工程支持的开发者与 DBA。范围不含 NoSQL，且未经明确批准不会执行 DDL。</p><ul class="pts"><li>覆盖模式设计、索引策略、EXPLAIN 计划诊断、事务并发与零停机迁移五个主题，按 PostgreSQL 与 MySQL/InnoDB 分别说明机制</li><li>附带标准库 Python 审计脚本（无安装、无网络），退出码 0/1/2 可用作 CI 门禁</li><li>通过 npx 安装到用户级或项目级 skills 目录，会话涉及 schema、慢查询或迁移时自动激活</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>审查与优化 PostgreSQL 或 MySQL 的 schema、索引与慢查询</li><li>诊断 EXPLAIN 计划、锁等待、死锁与并发异常</li><li>规划零停机 DDL 迁移，覆盖 Alembic、Prisma、Flyway 等十余种迁移工具的引擎差异</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">An Agent Skill for designing, auditing and tuning relational databases on PostgreSQL and MySQL/InnoDB.</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/vstlmkh/designing-databases" target="_blank" rel="noopener">vstlmkh/designing-databases</a></td><td class="stars">4</td><td>Agent Skill for designing, auditing and tuning relational databases on PostgreSQL and MySQL/InnoDB — schema and key desi...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/dotnetcore/freesql" target="_blank" rel="noopener">dotnetcore/freesql</a></td><td class="stars">4,409</td><td>.NET aot orm, VB.NET/C# orm, Mysql/PostgreSQL/SqlServer/Oracle orm, Sqlite/Firebird/Clickhouse/DuckDB orm, 达梦/金仓/虚谷/翰高/高...</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/sashabaranov/pike" target="_blank" rel="noopener">sashabaranov/pike</a></td><td class="stars">314</td><td>Generate CRUD gRPC backends from single YAML description. · 4 年未更</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/sujeet-agrahari/awesome-database-design" target="_blank" rel="noopener">sujeet-agrahari/awesome-database-design</a></td><td class="stars">843</td><td>:zap: A collection of resources and tutorials to design a better database schema.</td><td class="stars">0.68</td></tr>
+<tr><td><a href="https://github.com/qxorm/qxorm" target="_blank" rel="noopener">qxorm/qxorm</a></td><td class="stars">568</td><td>QxOrm library - C++ Qt ORM (Object Relational Mapping) and ODM (Object Document Mapper) library - Official repository · 6 个月未更</td><td class="stars">0.68</td></tr>
+<tr><td><a href="https://github.com/actiontech/sqle" target="_blank" rel="noopener">actiontech/sqle</a></td><td class="stars">1,505</td><td>一个支持多种不同类型数据库，覆盖事前控制、事后监督、标准发布场景，帮助您建立质量规范的SQL全生命周期质量管理平台</td><td class="stars">0.66</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

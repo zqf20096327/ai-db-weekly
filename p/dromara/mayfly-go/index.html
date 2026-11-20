@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dromara/mayfly-go：Web 版统一资源管理操作平台，以资源树集中管理机器、数据库、缓存等资源 · GitHub 2372★</title>
+<meta name="description" content="Web 版统一资源管理操作平台，以资源树集中管理机器、数据库、缓存等资源（GitHub 2372★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "mayfly-go", "url": "https://github.com/dromara/mayfly-go", "codeRepository": "https://github.com/dromara/mayfly-go", "description": "Web 版统一资源管理操作平台，以资源树集中管理机器、数据库、缓存等资源", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "dromara"}, "dateModified": "2026-11-15"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">平台</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/dromara/mayfly-go" target="_blank" rel="noopener">mayfly-go</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 Apache-2.0</span><span>创建于 2021</span><span>版本 1.12.4</span><span>贡献者 11 人</span><span>最近提交 2026-11-15</span><span>90 天 19 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="data-sync · 置信 high">数据同步</span><span class="capchip" title="sql-editor · 置信 high">SQL 编辑器</span><span class="capchip" title="web-console · 置信 high">Web 控制台</span></div>
+</div>
+<div class="c-right"><div class="c-star">2,372<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="mayfly-go star trend 2364 to 2372"><title>mayfly-go star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 2364 增长至 2372</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.4,53.2 L22.8,43.6 L30.2,43.6 L37.6,43.6 L45.0,43.6 L52.4,43.6 L59.8,43.6 L67.2,38.8 L74.5,38.8 L81.9,38.8 L89.3,34.0 L96.7,34.0 L104.1,38.8 L111.5,34.0 L118.9,29.2 L126.3,29.2 L133.7,29.2 L148.5,29.2 L155.9,19.6 L163.3,19.6 L170.7,10.0 L178.1,10.0 L185.5,14.8 L192.8,14.8 L207.6,14.8 L222.4,19.6 L229.8,19.6 L237.2,19.6 L244.6,19.6 L252.0,19.6 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.4,53.2 22.8,43.6 30.2,43.6 37.6,43.6 45.0,43.6 52.4,43.6 59.8,43.6 67.2,38.8 74.5,38.8 81.9,38.8 89.3,34.0 96.7,34.0 104.1,38.8 111.5,34.0 118.9,29.2 126.3,29.2 133.7,29.2 148.5,29.2 155.9,19.6 163.3,19.6 170.7,10.0 178.1,10.0 185.5,14.8 192.8,14.8 207.6,14.8 222.4,19.6 229.8,19.6 237.2,19.6 244.6,19.6 252.0,19.6" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="19.6" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>Web 版统一资源管理操作平台，以资源树集中管理机器、数据库、缓存等资源</p><p class="pts-label">综述（解读层）</p><p class="pain">mayfly-go 是基于 Go（Gin/GORM）与 Vue 3 的 Web 平台，将机器运维（终端、文件、脚本、进程）、多类数据库（MySQL、PostgreSQL、Oracle、SQL Server、达梦、高斯、SQLite、ClickHouse）、Redis、MongoDB、Elasticsearch、Kafka、Docker 等资源挂载于统一资源树下操作。内置工单审批、命令拦截、告警与消息通知，适合运维工程师、DBA 与后端开发者使用，提供 Docker 单容器部署，默认端口 18888。</p><ul class="pts"><li>提供 Web 终端（含终端录像回放）、文件管理、脚本执行、计划任务、进程监控与多机批量命令执行等机器运维能力</li><li>支持多种关系型数据库及 Redis（单机/哨兵/集群）、MongoDB、Elasticsearch、Milvus、Kafka、Docker 的在线管理，含 SQL 编辑器、Schema Diff、数据同步与迁移、数据脱敏</li><li>实现命令黑名单拦截（禁止/审批/提醒三级处置）、工单流程审批、告警规则与多渠道通知（企业微信/钉钉/飞书/邮件），并提供 AI 助手与 AgentOps 运维编排</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>通过浏览器统一管理多台 Linux 主机的终端、文件与批量命令执行</li><li>在单一平台内操作多种数据库实例，进行 SQL 编写、结构比对与数据同步迁移</li><li>需要操作审批留痕、危险命令拦截与告警通知的团队运维场景</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">一个高度集成的 Web 版「统一资源管理操作平台」—— 让机器、数据库、缓存、搜索、容器、消息队列与 AI 智能运维，都在同一个入口完成。</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>ClickHouse、Dameng、MySQL、Oracle、PostgreSQL、SQL Server、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/dromara/mayfly-go" target="_blank" rel="noopener">dromara/mayfly-go</a></td><td class="stars">2,372</td><td>Browser-based management platform of machine, database (mysql pgsql oracle sqlserver Gauss sqlite), redis(standalone sen...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/aspen-cloud/triplit" target="_blank" rel="noopener">aspen-cloud/triplit</a></td><td class="stars">3,121</td><td>A full-stack, syncing database that runs on both server and client. Pluggable storage (indexeddb, sqlite, durable object... · 10 个月未更</td><td class="stars">0.67</td></tr>
+<tr><td><a href="https://github.com/coleifer/sqlite-web" target="_blank" rel="noopener">coleifer/sqlite-web</a></td><td class="stars">4,183</td><td>Web-based SQLite database browser written in Python</td><td class="stars">0.65</td></tr>
+<tr><td><a href="https://github.com/tabixio/tabix" target="_blank" rel="noopener">tabixio/tabix</a></td><td class="stars">2,296</td><td>Tabix.io UI · 3 年未更</td><td class="stars">0.65</td></tr>
+<tr><td><a href="https://github.com/jly8866/archer" target="_blank" rel="noopener">jly8866/archer</a></td><td class="stars">1,561</td><td>基于inception的自动化SQL操作平台，支持SQL执行、LDAP认证、发邮件、OSC、SQL查询、SQL优化建议、权限管理等功能，支持docker镜像 · 3 年未更</td><td class="stars">0.65</td></tr>
+<tr><td><a href="https://github.com/wuranxu/pity" target="_blank" rel="noopener">wuranxu/pity</a></td><td class="stars">686</td><td>🎉一个不再迭代的开源接口测试平台，欢迎大家多提issue多给反馈。 求star⭐，我会尽量更新下去的！ · 2 年未更</td><td class="stars">0.65</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>1.12.4</b>（11-15）——sql 执行数据表无法横向滚动问题修复 新增 sql 助手</p><p class="t-sub" style="margin-top:4px;">90 天 5 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

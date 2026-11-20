@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TDSQL 连接/代理工具大全 · 3 个开源项目</title>
+<meta name="description" content="TDSQL 连接/代理开源项目清单 3 个：Star 降序，含开发、管理与运维工具。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://dbhub.example.com/db/tdsql/connector/">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.card-head { align-items: center; }
+.fzone { background: var(--bg); border-radius: 10px; padding: 8px 12px 10px;
+         display: grid; gap: 8px; margin-top: 10px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+.grp-sep { align-self: stretch; border-left: 1px solid var(--line); margin: 0 2px; }
+.fzone .grp-mark { display: inline-flex; align-items: center; font-size: 12px;
+  font-weight: 400; color: var(--accent); padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  cursor: default; margin: 0 2px 0 4px; letter-spacing: 0; }
+.chip.plain { background: var(--card); }
+.statline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+.statline .big { font-size: 16px; font-weight: 700; color: var(--ink); cursor: help; }
+.statline .sub { font-size: 12px; color: var(--muted); cursor: help; }
+.mx-cap { font-size: 12px; font-weight: 400; color: var(--ink); margin: 14px 0 4px; }
+.mx-cap:first-child { margin-top: 0; }
+table.mx { width: 100%; }
+table.mx th, table.mx .cat-name { font-weight: 400; color: var(--muted); }
+table.mx th a:hover, .mx .cat-name a:hover { color: var(--accent); text-decoration: underline; }
+a.chip { color: var(--muted); } a.chip:hover { border-color: var(--accent); color: var(--accent); }
+a.chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk on" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<main>
+    <section class="card">
+      <div class="card-head" style="margin-bottom:2px"><h2>TDSQL · 连接/代理<span class="hint">共 3 项 · Star 降序 · 静态分页</span></h2></div>
+      <div class="fzone">
+        <div class="tagrow"><span class="glabel">数据库</span><span class="grp-mark" title="国外数据库">国外</span><a class="chip plain" href="/ai-db-weekly/db/postgresql/connector/">PostgreSQL<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/mysql/connector/">MySQL<span class="n">3k</span></a><a class="chip plain" href="/ai-db-weekly/db/sqlite/connector/">SQLite<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/mariadb/connector/">MariaDB<span class="n">960</span></a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/connector/">ClickHouse<span class="n">594</span></a><a class="chip plain" href="/ai-db-weekly/db/oracle/connector/">Oracle<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/sql-server/connector/">SQL Server<span class="n">1k</span></a><span class="grp-mark" title="国产数据库">国产</span><a class="chip plain" href="/ai-db-weekly/db/tidb/connector/">TiDB<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/oceanbase/connector/">OceanBase<span class="n">271</span></a><a class="chip plain" href="/ai-db-weekly/db/opengauss/connector/">openGauss<span class="n">172</span></a><a class="chip plain" href="/ai-db-weekly/db/polardb/connector/">PolarDB<span class="n">95</span></a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/connector/">GaussDB<span class="n">119</span></a><a class="chip plain" href="/ai-db-weekly/db/goldendb/">GoldenDB<span class="n">9</span></a><a class="chip plain" href="/ai-db-weekly/db/dameng/connector/">Dameng<span class="n">316</span></a><a class="chip plain" href="/ai-db-weekly/db/gbase/connector/">GBase<span class="n">27</span></a><a class="chip plain on" href="/ai-db-weekly/db/tdsql/connector/">TDSQL<span class="n">21</span></a><a class="chip plain" href="/ai-db-weekly/db/yashandb/connector/">YashanDB<span class="n">31</span></a></div>
+        <div class="tagrow"><span class="glabel">类别</span><a class="chip plain" href="/ai-db-weekly/projects/" title="全部类别">全部</a><span class="grp-mark" title="运维与治理 · 备份/监控/高可用/安全/迁移/管理/平台">管库</span><a class="chip plain" href="/ai-db-weekly/cat/backup/">备份</a><a class="chip plain" href="/ai-db-weekly/db/tdsql/monitoring/">监控</a><a class="chip plain" href="/ai-db-weekly/cat/ha/">高可用</a><a class="chip plain" href="/ai-db-weekly/db/tdsql/security/">安全/审计</a><a class="chip plain" href="/ai-db-weekly/db/tdsql/migration/">迁移</a><a class="chip plain" href="/ai-db-weekly/db/tdsql/management/">管理</a><a class="chip plain" href="/ai-db-weekly/cat/platform/">平台</a><span class="grp-mark" title="开发与应用 · 驱动/ORM/建模/代理">用库</span><a class="chip plain" href="/ai-db-weekly/db/tdsql/library/">开发库</a><a class="chip plain" href="/ai-db-weekly/db/tdsql/modeling/">建模/设计</a><a class="chip plain on" href="/ai-db-weekly/db/tdsql/connector/">连接/代理</a><span class="grp-mark" title="内核与质量 · 引擎/内核 与 测试/基准">造库</span><a class="chip plain" href="/ai-db-weekly/db/tdsql/engine/">内核/引擎</a><a class="chip plain" href="/ai-db-weekly/db/tdsql/testing/">测试/质量</a></div>
+      </div>
+      <div class="statline"><span class="big" title="TDSQL连接/代理组合清单">匹配 3</span>
+        <span class="sub">第 1 / 1 页 · 本页 3 项</span></div>
+      <hr class="divider">
+      <div class="tblwrap"><table class="rows">
+        <thead><tr><th style="min-width:250px">项目</th><th>库</th><th>类别</th><th>语言</th><th class="r">Star</th></tr></thead>
+        <tbody>
+<tr><td><a class="repo" href="/ai-db-weekly/p/ksturgeon-td/tdsql-mcp/">ksturgeon-td/tdsql-mcp</a><div class="sub">面向 Teradata Vantage 的 MCP 服务器，提供 SQL 执行与内置函数语法参考库。</div></td><td><span class="tag">TDSQL</span></td><td class="small">连接/代理</td><td class="small mono">Python</td><td class="r mono">11</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/yangfeng20/dmc-mcp-server/">yangfeng20/dmc-mcp-server</a><div class="sub">基于腾讯云 DMC 控制台登录态执行 SQL 的 MCP Server</div></td><td><span class="tag">MySQL</span><span class="tag">TDSQL</span></td><td class="small">连接/代理</td><td class="small mono">Python</td><td class="r mono">4</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/thingspanel/thingspanel-tdsql-pg/">thingspanel/thingspanel-tdsql-pg</a><div class="sub">ThingsPanel 相关的 Go 服务，经 gRPC 端口 50052 提供数据库访问</div></td><td><span class="tag">PostgreSQL</span><span class="tag">TDSQL</span></td><td class="small">连接/代理</td><td class="small mono">Go</td><td class="r mono">1</td></tr>
+        </tbody></table></div>
+      
+    </section>
+  </main>
+  <footer>TDSQL 连接/代理工具清单 · 一卡可跨多库（计入多库组合）· 数据每日更新。</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kennethreitz/records：基于 SQLAlchemy 的 Python 原生 SQL 查询库 · GitHub 7214★</title>
+<meta name="description" content="基于 SQLAlchemy 的 Python 原生 SQL 查询库（GitHub 7214★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "records", "url": "https://github.com/kennethreitz/records", "codeRepository": "https://github.com/kennethreitz/records", "description": "基于 SQLAlchemy 的 Python 原生 SQL 查询库", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "ISC", "author": {"@type": "Organization", "name": "kennethreitz"}, "dateModified": "2026-02-09"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span><span class="chip sub">9 个月未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/kennethreitz/records" target="_blank" rel="noopener">records</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 ISC</span><span>创建于 2014</span><span>版本 0.6.0</span><span>贡献者 45 人</span><span>最近提交 2026-02-09</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="data-export · 置信 high">数据导出</span><span class="capchip mid" title="driver · 置信 mid">数据库驱动</span><span class="capchip mid" title="mapper · 置信 mid">SQL 映射</span></div>
+</div>
+<div class="c-right"><div class="c-star">7,214<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="records star trend 7219 to 7214"><title>records star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 7219 增长至 7214</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L15.4,29.2 L22.8,29.2 L30.2,29.2 L37.6,38.8 L45.0,38.8 L52.4,29.2 L59.8,29.2 L67.2,48.4 L74.5,48.4 L81.9,48.4 L89.3,38.8 L96.7,38.8 L104.1,48.4 L111.5,48.4 L118.9,48.4 L126.3,48.4 L133.7,48.4 L148.5,48.4 L155.9,48.4 L163.3,48.4 L170.7,48.4 L178.1,48.4 L185.5,48.4 L192.8,48.4 L207.6,48.4 L222.4,48.4 L229.8,58.0 L237.2,58.0 L244.6,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 15.4,29.2 22.8,29.2 30.2,29.2 37.6,38.8 45.0,38.8 52.4,29.2 59.8,29.2 67.2,48.4 74.5,48.4 81.9,48.4 89.3,38.8 96.7,38.8 104.1,48.4 111.5,48.4 118.9,48.4 126.3,48.4 133.7,48.4 148.5,48.4 155.9,48.4 163.3,48.4 170.7,48.4 178.1,48.4 185.5,48.4 192.8,48.4 207.6,48.4 222.4,48.4 229.8,58.0 237.2,58.0 244.6,58.0 252.0,58.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 SQLAlchemy 的 Python 原生 SQL 查询库</p><p class="pts-label">综述（解读层）</p><p class="pain">Records 是一个用于向多种关系数据库发送原生 SQL 查询的 Python 库，面向需要直接写 SQL 的开发者。它基于 SQLAlchemy 构建，查询结果以 Record 对象返回，支持属性、键、索引三种取值方式，并提供参数化查询、事务、批量查询及 $DATABASE_URL 环境变量支持；数据库驱动需另行安装。</p><ul class="pts"><li>支持 Postgres、MySQL、SQLite、Oracle、MS-SQL、RedShift 等数据库（驱动不含在内）</li><li>集成 Tablib，可将查询结果导出为 CSV、XLS、JSON、HTML、YAML 或 Pandas DataFrame</li><li>支持安全参数化查询、事务以及 bulk_query 批量操作</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在 Python 中直接执行原生 SQL 并以对象方式读取结果</li><li>将查询结果导出为 CSV/Excel/JSON 等格式用于生成报告或数据分享</li><li>通过命令行 records 工具导出查询结果</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Records is a very simple, but powerful, library for making raw SQL queries to most relational databases.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MySQL、Oracle、PostgreSQL、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/kennethreitz/records" target="_blank" rel="noopener">kennethreitz/records</a></td><td class="stars">7,214</td><td>SQL for Humans™</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/sequoiadb/sequoiadb_old" target="_blank" rel="noopener">sequoiadb/sequoiadb_old</a></td><td class="stars">332</td><td>SequoiaDB 巨杉数据库是一款分布式文档型数据库，自研的原生分布式存储引擎支持完整ACID，具备弹性扩展、高并发和高可用特性，并以文档型 JSON 的半结构化数据格式为基础，兼容S3对象数据引擎接口，进一步形成Multi-Model多... · 1 年未更</td><td class="stars">0.78</td></tr>
+<tr><td><a href="https://github.com/xormplus/xorm" target="_blank" rel="noopener">xormplus/xorm</a></td><td class="stars">1,550</td><td>xorm是一个简单而强大的Go语言ORM库，通过它可以使数据库操作非常简便。本库是基于原版xorm的定制增强版本，为xorm提供类似ibatis的配置文件及动态SQL支持，支持AcitveRecord操作 · 4 年未更</td><td class="stars">0.73</td></tr>
+<tr><td><a href="https://github.com/zaid-ajaj/npgsql.fsharp" target="_blank" rel="noopener">zaid-ajaj/npgsql.fsharp</a></td><td class="stars">339</td><td>Thin F# wrapper around Npgsql, the PostgreSQL database driver for .NET · 8 个月未更</td><td class="stars">0.66</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.6.0</b>（03-29）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 0 发 · 安全通告 0</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🏭 生产采用</span><span class="t-sub">README 提及数</span></div>
+<div class="users"><div class="user">被池内 2 个其他项目的 README 以 owner/repo 引用（35625 篇全量扫描，截至 2026-11-16）</div></div>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install records（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

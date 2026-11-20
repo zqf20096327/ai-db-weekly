@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wk544863858/dsh-plugin-magic-context：DSH 插件：SQLite 项目记忆加可回滚上下文回收与摘要压实 · GitHub 9★</title>
+<meta name="description" content="DSH 插件：SQLite 项目记忆加可回滚上下文回收与摘要压实（GitHub 9★，TypeScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugin-magic-context", "url": "https://github.com/wk544863858/dsh-plugin-magic-context", "codeRepository": "https://github.com/wk544863858/dsh-plugin-magic-context", "description": "DSH 插件：SQLite 项目记忆加可回滚上下文回收与摘要压实", "applicationCategory": "DeveloperApplication", "programmingLanguage": "TypeScript", "license": "MIT", "author": {"@type": "Organization", "name": "wk544863858"}, "dateModified": "2026-11-11"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/wk544863858/dsh-plugin-magic-context" target="_blank" rel="noopener">dsh-plugin-magic-context</a>
+<div class="c-meta"><span>语言 TypeScript</span><span>协议 MIT</span><span>创建于 2026</span><span>版本 0.9.0</span><span>贡献者 2 人</span><span>最近提交 2026-11-11</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="agent-memory · 置信 high">智能体记忆</span></div>
+</div>
+<div class="c-right"><div class="c-star">9<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="dsh-plugin-magic-context star trend 5 to 9"><title>dsh-plugin-magic-context star 趋势（2026-11-08 至 2026-11-16）</title><desc>由 5 增长至 9</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L69.0,46.0 L130.0,22.0 L160.5,10.0 L191.0,10.0 L221.5,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 69.0,46.0 130.0,22.0 160.5,10.0 191.0,10.0 221.5,10.0 252.0,10.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">11-08</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>DSH 插件：SQLite 项目记忆加可回滚上下文回收与摘要压实</p><p class="pts-label">综述（解读层）</p><p class="pain">这是 DeepSeek Harness（DSH 0.2.x 桌面版）的一个插件，为会话提供持久化项目记忆和上下文窗口管理。记忆侧用自带 SQLite 库（memories.db）存语料，经 MiniLM WASM 本地向量加全文 0.7/0.3 混合检索并注入 m[0] 基线；上下文侧提供 ctx_reduce/ctx_expand 工具，删除以占位符落地且可恢复。依赖 Node ≥ 22.19，经 dsh plugin add 安装后热加载。压实接管 registerCompactionEngine 默认关闭。</p><ul class="pts"><li>项目记忆存于插件自有 SQLite 库，支持全文 0.7 + 向量 0.3 混合检索，向量嵌入由 onnxruntime-web WASM 本地运行，无需 API 密钥</li><li>ctx_reduce 仅排队删除、以 [dropped §N§] 占位符落地，ctx_expand 可原地恢复原文；historian 以 p1–p4 四级摘要作区间替换发布</li><li>全局域共享中 staging 可自动化，发布需人工审批（审批卡 / ctx-global approve）；维护 tick 每 30 分钟执行归档、验证与向量回填</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>长会话中需跨重启保留项目知识、并以混合检索回注给模型的 DSH 桌面用户</li><li>工具输出占用上下文窗口、需要按 §N§ 标签排队回收且可恢复原文的场景</li><li>机器/组织级记忆共享流程需保留人工发布审批环节的团队</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">- Memory that outlives the session — a project corpus in the plugin's own SQLite store; historian facts auto-promote into it, ctx_memory reads/writes/maintains it, and project</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/wk544863858/dsh-plugin-magic-context" target="_blank" rel="noopener">wk544863858/dsh-plugin-magic-context</a></td><td class="stars">9</td><td>Magic Context for DeepSeek Harness: reversible context reclaim, an out-of-band historian, an m[0]/m[1] memory baseline, ...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener">thedotmack/claude-mem</a></td><td class="stars">117,346</td><td>Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/liliang-cn/cortexdb" target="_blank" rel="noopener">liliang-cn/cortexdb</a></td><td class="stars">514</td><td>Local-first AI agent memory with a knowledge graph, ontology constraints, and traceable reasoning—all in one SQLite file...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/lyellr88/marm-memory" target="_blank" rel="noopener">lyellr88/marm-memory</a></td><td class="stars">438</td><td>Local-first 3-in-1 AI memory layer &amp; MCP server for Claude Code, Codex, Grok, Gemini, VS Code and Cursor. Fuses session ...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/asg017/sqlite-vec" target="_blank" rel="noopener">asg017/sqlite-vec</a></td><td class="stars">8,264</td><td>A vector search SQLite extension that runs anywhere! · 6 个月未更</td><td class="stars">0.84</td></tr>
+<tr><td><a href="https://github.com/superlinear-ai/raglite" target="_blank" rel="noopener">superlinear-ai/raglite</a></td><td class="stars">1,212</td><td>🥤 RAGLite is a Python toolkit for Retrieval-Augmented Generation (RAG) with DuckDB or PostgreSQL</td><td class="stars">0.84</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.9.0</b>（10-20）——插件自有项目记忆库（memories.db，内建 node:sqlite）：ctx_memory 检索与读写维护。 - Node.js >= 22.19（依赖内建 node:sqlite，不引入原生模块）</p><p class="t-sub" style="margin-top:4px;">90 天 1 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

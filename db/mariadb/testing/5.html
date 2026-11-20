@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MariaDB 测试/质量工具大全 · 50 个开源项目（第 5 页）</title>
+<meta name="description" content="MariaDB 测试/质量开源项目清单 50 个：Star 降序，含开发、管理与运维工具。">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.card-head { align-items: center; }
+.fzone { background: var(--bg); border-radius: 10px; padding: 8px 12px 10px;
+         display: grid; gap: 8px; margin-top: 10px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+.grp-sep { align-self: stretch; border-left: 1px solid var(--line); margin: 0 2px; }
+.fzone .grp-mark { display: inline-flex; align-items: center; font-size: 12px;
+  font-weight: 400; color: var(--accent); padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  cursor: default; margin: 0 2px 0 4px; letter-spacing: 0; }
+.chip.plain { background: var(--card); }
+.statline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+.statline .big { font-size: 16px; font-weight: 700; color: var(--ink); cursor: help; }
+.statline .sub { font-size: 12px; color: var(--muted); cursor: help; }
+.mx-cap { font-size: 12px; font-weight: 400; color: var(--ink); margin: 14px 0 4px; }
+.mx-cap:first-child { margin-top: 0; }
+table.mx { width: 100%; }
+table.mx th, table.mx .cat-name { font-weight: 400; color: var(--muted); }
+table.mx th a:hover, .mx .cat-name a:hover { color: var(--accent); text-decoration: underline; }
+a.chip { color: var(--muted); } a.chip:hover { border-color: var(--accent); color: var(--accent); }
+a.chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk on" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<main>
+    <section class="card">
+      <div class="card-head" style="margin-bottom:2px"><h2>MariaDB · 测试/质量<span class="hint">共 50 项 · Star 降序 · 静态分页</span></h2></div>
+      <div class="fzone">
+        <div class="tagrow"><span class="glabel">数据库</span><span class="grp-mark" title="国外数据库">国外</span><a class="chip plain" href="/ai-db-weekly/db/postgresql/testing/">PostgreSQL<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/mysql/testing/">MySQL<span class="n">3k</span></a><a class="chip plain" href="/ai-db-weekly/db/sqlite/testing/">SQLite<span class="n">4k</span></a><a class="chip plain on" href="/ai-db-weekly/db/mariadb/testing/">MariaDB<span class="n">960</span></a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/testing/">ClickHouse<span class="n">594</span></a><a class="chip plain" href="/ai-db-weekly/db/oracle/testing/">Oracle<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/sql-server/testing/">SQL Server<span class="n">1k</span></a><span class="grp-mark" title="国产数据库">国产</span><a class="chip plain" href="/ai-db-weekly/db/tidb/testing/">TiDB<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/oceanbase/testing/">OceanBase<span class="n">271</span></a><a class="chip plain" href="/ai-db-weekly/db/opengauss/testing/">openGauss<span class="n">172</span></a><a class="chip plain" href="/ai-db-weekly/db/polardb/testing/">PolarDB<span class="n">95</span></a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/testing/">GaussDB<span class="n">119</span></a><a class="chip plain" href="/ai-db-weekly/db/goldendb/">GoldenDB<span class="n">9</span></a><a class="chip plain" href="/ai-db-weekly/db/dameng/testing/">Dameng<span class="n">316</span></a><a class="chip plain" href="/ai-db-weekly/db/gbase/">GBase<span class="n">27</span></a><a class="chip plain" href="/ai-db-weekly/db/tdsql/testing/">TDSQL<span class="n">21</span></a><a class="chip plain" href="/ai-db-weekly/db/yashandb/testing/">YashanDB<span class="n">31</span></a></div>
+        <div class="tagrow"><span class="glabel">类别</span><a class="chip plain" href="/ai-db-weekly/projects/" title="全部类别">全部</a><span class="grp-mark" title="运维与治理 · 备份/监控/高可用/安全/迁移/管理/平台">管库</span><a class="chip plain" href="/ai-db-weekly/db/mariadb/backup/">备份</a><a class="chip plain" href="/ai-db-weekly/db/mariadb/monitoring/">监控</a><a class="chip plain" href="/ai-db-weekly/db/mariadb/ha/">高可用</a><a class="chip plain" href="/ai-db-weekly/db/mariadb/security/">安全/审计</a><a class="chip plain" href="/ai-db-weekly/db/mariadb/migration/">迁移</a><a class="chip plain" href="/ai-db-weekly/db/mariadb/management/">管理</a><a class="chip plain" href="/ai-db-weekly/db/mariadb/platform/">平台</a><span class="grp-mark" title="开发与应用 · 驱动/ORM/建模/代理">用库</span><a class="chip plain" href="/ai-db-weekly/db/mariadb/library/">开发库</a><a class="chip plain" href="/ai-db-weekly/db/mariadb/modeling/">建模/设计</a><a class="chip plain" href="/ai-db-weekly/db/mariadb/connector/">连接/代理</a><span class="grp-mark" title="内核与质量 · 引擎/内核 与 测试/基准">造库</span><a class="chip plain" href="/ai-db-weekly/db/mariadb/engine/">内核/引擎</a><a class="chip plain on" href="/ai-db-weekly/db/mariadb/testing/">测试/质量</a></div>
+      </div>
+      <div class="statline"><span class="big" title="MariaDB测试/质量组合清单">匹配 50</span>
+        <span class="sub">第 5 / 5 页 · 本页 10 项</span></div>
+      <hr class="divider">
+      <div class="tblwrap"><table class="rows">
+        <thead><tr><th style="min-width:250px">项目</th><th>库</th><th>类别</th><th>语言</th><th class="r">Star</th></tr></thead>
+        <tbody>
+<tr><td><a class="repo" href="/ai-db-weekly/p/synthdb/synthdb/">synthdb/synthdb</a><div class="sub">读取 PostgreSQL 表结构并生成保持引用完整性的语义化合成数据的 Rust 填充工具</div></td><td><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag gray">+1</span></td><td class="small">测试/质量</td><td class="small mono">Rust</td><td class="r mono">10</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/tako8ki/testfixtures/">tako8ki/testfixtures</a><div class="sub">基于 YAML 文件准备测试数据的 Rust 测试夹具库，依赖 sqlx 连接数据库</div></td><td><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag gray">+1</span></td><td class="small">测试/质量</td><td class="small mono">Rust</td><td class="r mono">10</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/tikv/copr-test/">tikv/copr-test</a><div class="sub">TiKV Coprocessor 模块的集成测试集合</div></td><td><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">TiDB</span></td><td class="small">测试/质量</td><td class="small mono">Go</td><td class="r mono">9</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/alastori/tidb-sandbox/">alastori/tidb-sandbox</a><div class="sub">TiDB 生态实验集：按 DM/Dumpling/Lightning 等组件组织可复现实验</div></td><td><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag gray">+1</span></td><td class="small">测试/质量</td><td class="small mono">Shell</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/billyyccc/vertx-mysql-client-compatibility-testkit/">billyyccc/vertx-mysql-client-compatibility-testkit</a><div class="sub">验证 Reactive MySQL 客户端对多种 MySQL 协议兼容数据库的测试套件</div></td><td><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">TiDB</span></td><td class="small">测试/质量</td><td class="small mono">Java</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/dannyhiggins/obhammerdb/">dannyhiggins/obhammerdb</a><div class="sub">面向 OceanBase 的 HammerDB 数据库基准测试工具修改版</div></td><td><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">OceanBase</span><span class="tag gray">+3</span></td><td class="small">测试/质量</td><td class="small mono">Tcl</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/karatayberkay/boiler-test-rd-databases/">karatayberkay/boiler-test-rd-databases</a><div class="sub">用 Docker Compose 起多种 SQL 引擎并用 Python 测试框架统一度量的数据库实验环境</div></td><td><span class="tag">ClickHouse</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag gray">+4</span></td><td class="small">测试/质量</td><td class="small mono">Python</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/mjonss/go-simple-sql-bench/">mjonss/go-simple-sql-bench</a><div class="sub">用于 SQL 数据库基准测试的 Go 程序</div></td><td><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">TiDB</span></td><td class="small">测试/质量</td><td class="small mono">Go</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/oceanbase/sqlancer/">oceanbase/sqlancer</a><div class="sub">自动化测试 DBMS 以发现逻辑 bug 的 Java 工具</div></td><td><span class="tag">ClickHouse</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag gray">+5</span></td><td class="small">测试/质量</td><td class="small mono">—</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/oscar-zyh/tidb-sysbench/">oscar-zyh/tidb-sysbench</a><div class="sub">基于 LuaJIT 的可脚本化多线程基准测试工具，附 TiDB 使用场景</div></td><td><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag gray">+1</span></td><td class="small">测试/质量</td><td class="small mono">C</td><td class="r mono">0</td></tr>
+        </tbody></table></div>
+      <div class="pager"><a href="/ai-db-weekly/db/mariadb/testing/4.html">‹ 上一页</a><a href="/ai-db-weekly/db/mariadb/testing/">1</a><a href="/ai-db-weekly/db/mariadb/testing/2.html">2</a><a href="/ai-db-weekly/db/mariadb/testing/3.html">3</a><a href="/ai-db-weekly/db/mariadb/testing/4.html">4</a><span class="cur">5</span><span class="gap">下一页 ›</span></div>
+    </section>
+  </main>
+  <footer>MariaDB 测试/质量工具清单 · 一卡可跨多库（计入多库组合）· 数据每日更新。</footer>
+</div>
+</body>
+</html>

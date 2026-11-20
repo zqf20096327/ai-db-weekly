@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>litehelpers/cordova-sqlite-evplus-ext-legacy-build-free：Cordova/PhoneGap SQLite 存储插件，提供类 Web SQL… · GitHub 11★</title>
+<meta name="description" content="Cordova/PhoneGap SQLite 存储插件，提供类 Web SQL 的原生接口（GitHub 11★，C 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "cordova-sqlite-evplus-ext-legacy-build-free", "url": "https://github.com/litehelpers/cordova-sqlite-evplus-ext-legacy-build-free", "codeRepository": "https://github.com/litehelpers/cordova-sqlite-evplus-ext-legacy-build-free", "description": "Cordova/PhoneGap SQLite 存储插件，提供类 Web SQL 的原生接口", "applicationCategory": "DeveloperApplication", "programmingLanguage": "C", "license": "NOASSERTION", "author": {"@type": "Organization", "name": "litehelpers"}, "dateModified": "2018-03-11"}</script>
+<style>
+  :root{
+    --brand:#0F766E; --brand-soft:rgba(15,118,110,.09);
+    --ink:#1F2937; --sub:#6B7280; --line:#E5E7EB;
+    --hi:#FEF9E3; --code-bg:#1E293B; --code-ink:#E2E8F0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#F8FAFC; color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
+    font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; display:flex; flex-direction:column;
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12.5px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12.5px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:28px; font-weight:600; letter-spacing:-0.3px; line-height:1.15; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12.5px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12.5px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12.5px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:#D1D5DB; }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12.5px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:28px; font-weight:600; line-height:1; font-variant-numeric:tabular-nums; }
+  .c-star .u{ font-size:16px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:600; }
+  .t-sub{ font-size:12.5px; color:var(--sub); }
+  p{ margin-top:10px; font-size:15px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; }
+  .v-item .t{ font-size:12.5px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:15px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span><span class="chip sub">8 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/litehelpers/cordova-sqlite-evplus-ext-legacy-build-free" target="_blank" rel="noopener">cordova-sqlite-evplus-ext-legacy-build-free</a>
+<div class="c-meta"><span>语言 C</span><span>协议 NOASSERTION</span><span>创建于 2015</span><span>贡献者 33 人</span><span>最近提交 2018-03-11</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="driver · 置信 high">数据库驱动</span></div>
+</div>
+<div class="c-right"><div class="c-star">11<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="cordova-sqlite-evplus-ext-legacy-build-free star trend 11 to 11"><title>cordova-sqlite-evplus-ext-legacy-build-free star 趋势（2026-10-14 至 2026-11-16）</title><desc>由 11 增长至 11</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#E5E7EB" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L15.4,34.0 L22.8,34.0 L30.2,34.0 L37.6,34.0 L45.0,34.0 L52.4,34.0 L59.8,34.0 L67.2,34.0 L74.5,34.0 L81.9,34.0 L89.3,34.0 L96.7,34.0 L104.1,34.0 L111.5,34.0 L118.9,34.0 L126.3,34.0 L133.7,34.0 L148.5,34.0 L155.9,34.0 L163.3,34.0 L170.7,34.0 L178.1,34.0 L185.5,34.0 L192.8,34.0 L207.6,34.0 L222.4,34.0 L229.8,34.0 L237.2,34.0 L244.6,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 15.4,34.0 22.8,34.0 30.2,34.0 37.6,34.0 45.0,34.0 52.4,34.0 59.8,34.0 67.2,34.0 74.5,34.0 81.9,34.0 89.3,34.0 96.7,34.0 104.1,34.0 111.5,34.0 118.9,34.0 126.3,34.0 133.7,34.0 148.5,34.0 155.9,34.0 163.3,34.0 170.7,34.0 178.1,34.0 185.5,34.0 192.8,34.0 207.6,34.0 222.4,34.0 229.8,34.0 237.2,34.0 244.6,34.0 252.0,34.0" fill="none" stroke="#0F766E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#0F766E"/><text x="8" y="64" font-size="11" fill="#6B7280">10-14</text><text x="252" y="64" font-size="11" fill="#6B7280" text-anchor="end">11-16</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>Cordova/PhoneGap SQLite 存储插件，提供类 Web SQL 的原生接口</p><p class="pts-label">综述（解读层）</p><p class="pain">这是一个为 Cordova/PhoneGap 应用提供 SQLite 原生访问的插件，覆盖 Android、iOS、macOS 与 Windows 平台，API 与 HTML5/Web SQL 类似，可作为其替代调用方式。采用 GPL v3 或商业许可证，当前处于维护状态，仅处理安全及极关键缺陷修复。使用时必须指定 location 或 iosDatabaseLocation 参数；不支持多页应用、cordova-android@7、内存数据库，Windows 平台部分功能处于 alpha 状态。</p><ul class="pts"><li>提供与 HTML5/Web SQL API 类似的接口，替换 window.openDatabase 为 window.sqlitePlugin.openDatabase 即可使用</li><li>支持 FTS3/FTS4、R-Tree，Android 平台通过 PCRE 支持 REGEXP；预填充数据库支持 Android、iOS、macOS</li><li>iOS/macOS 平台全部操作使用后台处理，并提供多段事务 API 与错误结果中的 sqliteCode 信息</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>需要将现有 Web SQL 代码迁移到原生 SQLite 的 Cordova/PhoneGap 应用</li><li>需要使用 FTS3/FTS4、R-Tree 等特性的混合移动应用开发</li><li>遵守 GPL v3 或持有有效商业许可证的项目</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Native interface to sqlite in a Cordova/PhoneGap plugin for Android, iOS, macOS, and Windows 8.1(+)/Windows Phone 8.1(+) with API similar to HTML5/Web SQL API.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/litehelpers/cordova-sqlite-evplus-ext-legacy-build-free" target="_blank" rel="noopener">litehelpers/cordova-sqlite-evplus-ext-legacy-build-free</a></td><td class="stars">11</td><td>TODO INCORRECT PACKAGE NAME: Cordova sqlite storage plugin, premium enterprise legacy support (GPL or commercial license...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/ccgus/fmdb" target="_blank" rel="noopener">ccgus/fmdb</a></td><td class="stars">13,817</td><td>A Cocoa / Objective-C wrapper around SQLite</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/sql-js/sql.js" target="_blank" rel="noopener">sql-js/sql.js</a></td><td class="stars">13,686</td><td>A javascript library to run SQLite on the web.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/stephencelis/sqlite.swift" target="_blank" rel="noopener">stephencelis/sqlite.swift</a></td><td class="stars">10,186</td><td>A type-safe, Swift-language layer over SQLite3.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/mattn/go-sqlite3" target="_blank" rel="noopener">mattn/go-sqlite3</a></td><td class="stars">9,276</td><td>sqlite3 driver for go using database/sql</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/praeclarum/sqlite-net" target="_blank" rel="noopener">praeclarum/sqlite-net</a></td><td class="stars">4,454</td><td>Simple, powerful, cross-platform SQLite client and ORM for .NET</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

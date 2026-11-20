@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClickHouse 平台工具大全 · 37 个开源项目</title>
+<meta name="description" content="ClickHouse 平台开源项目清单 37 个：Star 降序，含开发、管理与运维工具。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://dbhub.example.com/db/clickhouse/platform/">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.card-head { align-items: center; }
+.fzone { background: var(--bg); border-radius: 10px; padding: 8px 12px 10px;
+         display: grid; gap: 8px; margin-top: 10px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+.grp-sep { align-self: stretch; border-left: 1px solid var(--line); margin: 0 2px; }
+.fzone .grp-mark { display: inline-flex; align-items: center; font-size: 12px;
+  font-weight: 400; color: var(--accent); padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  cursor: default; margin: 0 2px 0 4px; letter-spacing: 0; }
+.chip.plain { background: var(--card); }
+.statline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+.statline .big { font-size: 16px; font-weight: 700; color: var(--ink); cursor: help; }
+.statline .sub { font-size: 12px; color: var(--muted); cursor: help; }
+.mx-cap { font-size: 12px; font-weight: 400; color: var(--ink); margin: 14px 0 4px; }
+.mx-cap:first-child { margin-top: 0; }
+table.mx { width: 100%; }
+table.mx th, table.mx .cat-name { font-weight: 400; color: var(--muted); }
+table.mx th a:hover, .mx .cat-name a:hover { color: var(--accent); text-decoration: underline; }
+a.chip { color: var(--muted); } a.chip:hover { border-color: var(--accent); color: var(--accent); }
+a.chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk on" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<main>
+    <section class="card">
+      <div class="card-head" style="margin-bottom:2px"><h2>ClickHouse · 平台<span class="hint">共 37 项 · Star 降序 · 静态分页</span></h2></div>
+      <div class="fzone">
+        <div class="tagrow"><span class="glabel">数据库</span><span class="grp-mark" title="国外数据库">国外</span><a class="chip plain" href="/ai-db-weekly/db/postgresql/platform/">PostgreSQL<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/mysql/platform/">MySQL<span class="n">3k</span></a><a class="chip plain" href="/ai-db-weekly/db/sqlite/platform/">SQLite<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/mariadb/platform/">MariaDB<span class="n">960</span></a><a class="chip plain on" href="/ai-db-weekly/db/clickhouse/platform/">ClickHouse<span class="n">594</span></a><a class="chip plain" href="/ai-db-weekly/db/oracle/platform/">Oracle<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/sql-server/platform/">SQL Server<span class="n">1k</span></a><span class="grp-mark" title="国产数据库">国产</span><a class="chip plain" href="/ai-db-weekly/db/tidb/platform/">TiDB<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/oceanbase/platform/">OceanBase<span class="n">271</span></a><a class="chip plain" href="/ai-db-weekly/db/opengauss/platform/">openGauss<span class="n">172</span></a><a class="chip plain" href="/ai-db-weekly/db/polardb/platform/">PolarDB<span class="n">95</span></a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/platform/">GaussDB<span class="n">119</span></a><a class="chip plain" href="/ai-db-weekly/db/goldendb/">GoldenDB<span class="n">9</span></a><a class="chip plain" href="/ai-db-weekly/db/dameng/platform/">Dameng<span class="n">316</span></a><a class="chip plain" href="/ai-db-weekly/db/gbase/platform/">GBase<span class="n">27</span></a><a class="chip plain" href="/ai-db-weekly/db/tdsql/">TDSQL<span class="n">21</span></a><a class="chip plain" href="/ai-db-weekly/db/yashandb/platform/">YashanDB<span class="n">31</span></a></div>
+        <div class="tagrow"><span class="glabel">类别</span><a class="chip plain" href="/ai-db-weekly/projects/" title="全部类别">全部</a><span class="grp-mark" title="运维与治理 · 备份/监控/高可用/安全/迁移/管理/平台">管库</span><a class="chip plain" href="/ai-db-weekly/db/clickhouse/backup/">备份</a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/monitoring/">监控</a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/ha/">高可用</a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/security/">安全/审计</a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/migration/">迁移</a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/management/">管理</a><a class="chip plain on" href="/ai-db-weekly/db/clickhouse/platform/">平台</a><span class="grp-mark" title="开发与应用 · 驱动/ORM/建模/代理">用库</span><a class="chip plain" href="/ai-db-weekly/db/clickhouse/library/">开发库</a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/modeling/">建模/设计</a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/connector/">连接/代理</a><span class="grp-mark" title="内核与质量 · 引擎/内核 与 测试/基准">造库</span><a class="chip plain" href="/ai-db-weekly/db/clickhouse/engine/">内核/引擎</a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/testing/">测试/质量</a></div>
+      </div>
+      <div class="statline"><span class="big" title="ClickHouse平台组合清单">匹配 37</span>
+        <span class="sub">第 1 / 4 页 · 本页 10 项</span></div>
+      <hr class="divider">
+      <div class="tblwrap"><table class="rows">
+        <thead><tr><th style="min-width:250px">项目</th><th>库</th><th>类别</th><th>语言</th><th class="r">Star</th></tr></thead>
+        <tbody>
+<tr><td><a class="repo" href="/ai-db-weekly/p/bytebase/bytebase/">bytebase/bytebase</a><div class="sub">开源数据库治理平台，统一管控变更、访问与合规</div></td><td><span class="tag">ClickHouse</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag gray">+5</span></td><td class="small">平台</td><td class="small mono">TypeScript</td><td class="r mono">14,717</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/dhamaniasad/awesome-postgres/">dhamaniasad/awesome-postgres</a><div class="sub">PostgreSQL 软件、库、工具与资源的策展清单</div></td><td><span class="tag">ClickHouse</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag gray">+3</span></td><td class="small">平台</td><td class="small mono">—</td><td class="r mono">12,187</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/deeplethe/utopia/">deeplethe/utopia</a><div class="sub">基于双时态知识图谱的企业知识库系统，Rust 单二进制加 Postgres 部署。</div></td><td><span class="tag">ClickHouse</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag gray">+1</span></td><td class="small">平台</td><td class="small mono">Rust</td><td class="r mono">8,716</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/flexprice/flexprice/">flexprice/flexprice</a><div class="sub">面向开发者的用量计费与计量系统，支持云端或自托管部署</div></td><td><span class="tag">ClickHouse</span><span class="tag">PostgreSQL</span></td><td class="small">平台</td><td class="small mono">Go</td><td class="r mono">6,875</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/jitsucom/jitsu/">jitsucom/jitsu</a><div class="sub">开源实时事件数据采集平台，将事件流批量写入数仓</div></td><td><span class="tag">ClickHouse</span><span class="tag">PostgreSQL</span></td><td class="small">平台</td><td class="small mono">TypeScript</td><td class="r mono">5,135</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/xpf0000/flyenv/">xpf0000/flyenv</a><div class="sub">跨平台原生本地开发环境桌面应用，集中管理多语言运行时、服务与AI工具</div></td><td><span class="tag">ClickHouse</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag gray">+1</span></td><td class="small">平台</td><td class="small mono">TypeScript</td><td class="r mono">3,365</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/apecloud/kubeblocks/">apecloud/kubeblocks</a><div class="sub">基于 Kubernetes Operator 的多引擎数据库控制平面，用统一 CRD 管理各类数据库</div></td><td><span class="tag">ClickHouse</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span></td><td class="small">平台</td><td class="small mono">Go</td><td class="r mono">3,167</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/oneinstack/oneinstack/">oneinstack/oneinstack</a><div class="sub">OneinStack 是基于 Shell 的 LNMP/LAMP 等环境一键部署工具</div></td><td><span class="tag">ClickHouse</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag gray">+1</span></td><td class="small">平台</td><td class="small mono">Shell</td><td class="r mono">2,462</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/openmeterio/openmeter/">openmeterio/openmeter</a><div class="sub">开源用量计量与计费基础设施，将事件实时聚合并生成订阅发票</div></td><td><span class="tag">ClickHouse</span><span class="tag">PostgreSQL</span></td><td class="small">平台</td><td class="small mono">Go</td><td class="r mono">2,451</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/dromara/mayfly-go/">dromara/mayfly-go</a><div class="sub">Web 版统一资源管理操作平台，以资源树集中管理机器、数据库、缓存等资源</div></td><td><span class="tag">ClickHouse</span><span class="tag">Dameng</span><span class="tag">MySQL</span><span class="tag gray">+4</span></td><td class="small">平台</td><td class="small mono">Go</td><td class="r mono">2,372</td></tr>
+        </tbody></table></div>
+      <div class="pager"><span class="gap">‹ 上一页</span><span class="cur">1</span><a href="/ai-db-weekly/db/clickhouse/platform/2.html">2</a><a href="/ai-db-weekly/db/clickhouse/platform/3.html">3</a><a href="/ai-db-weekly/db/clickhouse/platform/4.html">4</a><a href="/ai-db-weekly/db/clickhouse/platform/2.html">下一页 ›</a></div>
+    </section>
+  </main>
+  <footer>ClickHouse 平台工具清单 · 一卡可跨多库（计入多库组合）· 数据每日更新。</footer>
+</div>
+</body>
+</html>
