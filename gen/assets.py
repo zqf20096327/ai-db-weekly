@@ -2,12 +2,13 @@
 """assets.py -- 设计资产进站（P7.13 返工：周刊族页面恢复旧版排版，引用仓内 assets/）
 
 只搬样式资产：app.css（设计令牌与组件）+ fonts/（Inter 变量字体）+ 二维码图。
-app.js 绝不进站（旧交互抽屉/搜索/主题切换是 JS 增强，静态页不需要，也避免误依赖 pool.js）。
+app.js 绝不进站（旧交互抽屉/主题切换是 JS 增强，静态页不需要，也避免误依赖 pool.js）；
+P9.3 唯一例外=browse.js（/projects/ 浏览页渐进增强，静态骨架完整后才加载，性质详见 list_pages._browse_body）。
 """
 import os, shutil
 import common as C
 
-COPY = ["app.css", "fonts", "qr-wechat.jpg", "qr-site.png"]
+COPY = ["app.css", "browse.js", "fonts", "qr-wechat.jpg", "qr-site.png"]   # browse.js=P9.3 浏览页增强（唯一例外，app.js 仍排除）
 
 def copy_assets(cfg, out_dir):
     here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # dbhub_page 根

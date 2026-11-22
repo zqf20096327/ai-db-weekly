@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # -I 隔离模�
 import common as C
 import list_pages, db_pages, cards, platform, vs_pages, weekly_pages, home, compare_pages, assets
 
-VER = "gen/1.0"
+VER = "gen/1.1"   # 1.1：P9 浏览页改版（五行筛选+卡片/清单双视图+browse.js 增强+browse-{指纹}.json 索引；矩阵下线）
 
 # ---------- 交叉校验（P3.3/P3.4/P3.5 的验收全在这） ----------
 
@@ -36,7 +36,7 @@ def verify(cfg, ct, out_dir):
     if shard["items"][0]["url"] != ct["card"].format(fn=shard["items"][0]["fn"]):
         errs.append("分片 url 与契约不一致")
     only_disk = disk_cards - fns_expect; only_data = fns_expect - disk_cards
-    if only_disk: errs.append(f"盘上多出 {len(only_disk)} 张（归档/出池卡混入?）样例 {list(only_disk)[:3]}")
+    if only_disk: errs.append(f"盘上多出 {len(only_disk)} 张（归档/出池/口径外卡混入?）样例 {list(only_disk)[:3]}")
     if only_data: errs.append(f"缺卡 {len(only_data)} 张，样例 {list(only_data)[:3]}")
     # 2) 内链 404：全站页（列表/库/组合/vs + P7 内容页首页/周刊/对比/archive）里每个站内绝对链接必须有对应物理页
     page_files = (glob.glob(os.path.join(out_dir, "projects", "*.html"))
@@ -52,9 +52,19 @@ def verify(cfg, ct, out_dir):
     n_script = 0
     for pf in page_files:
         t = io.open(pf, encoding="utf-8").read()
-        if "<script" in t:
-            n_script += 1                                       # P8.6：全站零 JS 纪律（含 2011 组合页）
+        is_browse = os.sep + "projects" + os.sep in pf          # P9.5：浏览页=唯一带 script 的族（3 处固定）
+        if "<script" in t and not is_browse:
+            n_script += 1                                       # P8.6 零 JS 纪律对组合/类目/库/vs 等仍然成立
             if n_script <= 3: errs.append(f"页面含 <script>: {os.path.relpath(pf, out_dir)}")
+        if is_browse:
+            if t.count("<script") != 3:
+                errs.append(f"浏览页 script 数 {t.count('<script')} != 3: {os.path.relpath(pf, out_dir)}")
+            if "browse.js?v=" not in t or "window.BR=" not in t:
+                errs.append(f"浏览页缺增强注入: {os.path.relpath(pf, out_dir)}")
+            if 'id="cards"' not in t or 'id="listwrap"' not in t or 'id="bv-card"' not in t:
+                errs.append(f"浏览页缺双视图骨架: {os.path.relpath(pf, out_dir)}")
+            if "mx-wrap" in t:
+                errs.append(f"冠军矩阵残留: {os.path.relpath(pf, out_dir)}")
         for href in set(re.findall(r'href="(/[^"#]+)"', t)):
             h = href[len(bp):] if bp and href.startswith(bp) else href   # 镜像前缀剥掉再对账
             path = os.path.join(out_dir, *h.strip("/").split("/"))
@@ -83,6 +93,16 @@ def verify(cfg, ct, out_dir):
     # 5) JS 数据文件绝迹（P7.6：旧页全静态化后，站内不再携带任何 JS 数据文件；P8 组合页同为零 JS，见 #2 的 script 断言）
     for bad_js in ("pool.js", "weekly.js", "comparisons.js"):
         if glob.glob(os.path.join(out_dir, "**", bad_js), recursive=True): errs.append(f"{bad_js} 在 dist 内")
+    # 5d) P9 浏览索引对账：恰好一份 browse-{指纹}.json、行数 == all 分片全集、属性行字段齐
+    bj = glob.glob(os.path.join(out_dir, "assets", "browse-*.json"))
+    if len(bj) != 1:
+        errs.append(f"browse-*.json 份数 {len(bj)} != 1（指纹清理失效?）")
+    else:
+        rows = json.load(io.open(bj[0], encoding="utf-8"))
+        if len(rows) != len(fns_expect):
+            errs.append(f"browse 行数 {len(rows)} != all 分片 {len(fns_expect)}")
+        miss = [r["fn"] for r in rows[:200] if not all(k in r for k in ("mnt", "off", "sec", "ai"))]
+        if miss: errs.append(f"browse 缺属性行字段，样例 {miss[:3]}")
     # 5b) P8 组合对账：盘上组合首页/总页数 == 分箱重算（同源同序；数据漂移在此拦）
     list_pages._boot_maps(cfg)
     bins = list_pages.combo_bins(list_pages.load_all_items(cfg),
@@ -118,7 +138,9 @@ def verify(cfg, ct, out_dir):
         n_vs_link = len({m for m in re.findall(r'href="[^"]*/vs/([^"/]+)/"', t)})
         if n_vs_link != n_vs_disk: errs.append(f"compare 索引覆盖 {n_vs_link} != vs 页 {n_vs_disk}")
     print(f"VERIFY {'FAIL' if errs else 'OK'}: 卡 {len(disk_cards)}（对账 {len(fns_expect)}）· "
-          f"页面 {len(page_files)}（含周刊 {len(wk)}/长文 {n_deep_disk}/组合 {n_combo_disk}）· 内链坏 {bad} · 含script {n_script}")
+          f"页面 {len(page_files)}（含周刊 {len(wk)}/长文 {n_deep_disk}/组合 {n_combo_disk}/浏览索引 "
+          f"{len(json.load(io.open(glob.glob(os.path.join(out_dir, 'assets', 'browse-*.json'))[0], encoding='utf-8'))) if bj else 0}）· "
+          f"内链坏 {bad} · 含script {n_script}（浏览页族已白名单）")
     for e in errs[:20]: print("  -", e)
     return errs
 
@@ -232,7 +254,24 @@ def _selftest():
     n, tot = merge_sitemap(tmp)
     assert n == tot - 2 and tot >= 5, f"并入计数异常 n={n} tot={tot}"
     assert "https://x.example/weekly/1/" in io.open(os.path.join(tmp, "sitemap.xml"), encoding="utf-8").read()
-    print(f"OK {VER} selftest: 20 asserts passed")
+    # P9：浏览索引 write_browse（指纹幂等 + 旧指纹清理）
+    bcfg = {}
+    items_b = [{"fn": "a/b", "stars": 5, "lang": "Go", "cat": "备份", "dbs": ["PostgreSQL"], "ol": "x",
+                "mnt": "ok", "off": 0, "sec": 0, "ai": 1, "created": "2020-01-01", "pushed": "2026-11-01", "relpub": None}]
+    bdir = tempfile.mkdtemp()
+    n1 = list_pages.write_browse(bcfg, items_b, bdir)
+    assert n1.startswith("browse-") and bcfg["browse_json"] == n1
+    io.open(os.path.join(bdir, "browse-deadbeef00.json"), "w", encoding="utf-8").write("[]")   # 伪造旧指纹
+    assert list_pages.write_browse(bcfg, items_b, bdir) == n1                                  # 同内容同指纹
+    assert len(glob.glob(os.path.join(bdir, "browse-*.json"))) == 1                            # 旧指纹被清
+    # P9：浏览页注入标签（cfg 四键就位时 script/数据行才进页）
+    cfg["browse_json"] = "browse-abc123.json"; cfg["browse_js_v"] = "ab12cd34"
+    cfg["browse_langs"] = [("Go", 9)]; cfg["browse_attr"] = {"ok": 9, "stale": 3, "off": 2, "sec": 1, "ai": 4}
+    tb = io.open(list_pages.list_body(cfg, ct, {**d, "page": 1}, out), encoding="utf-8").read()
+    assert 'window.BR=' in tb and "browse-abc123.json" in tb and "browse.js?v=ab12cd34" in tb
+    assert 'data-lang="Go"' in tb and 'data-mnt="ok"' in tb and 'data-sort="relpub"' in tb
+    assert 'id="bv-card"' in tb and 'id="spager"' in tb and "mx-wrap" not in tb
+    print(f"OK {VER} selftest: 27 asserts passed")
     return 0
 
 def main():
