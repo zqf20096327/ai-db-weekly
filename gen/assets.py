@@ -8,7 +8,7 @@ P9.3 唯一例外=browse.js（/projects/ 浏览页渐进增强，静态骨架完
 import os, shutil
 import common as C
 
-COPY = ["app.css", "browse.js", "fonts", "qr-wechat.jpg", "qr-site.png"]   # browse.js=P9.3 浏览页增强（唯一例外，app.js 仍排除）
+COPY = ["app.css", "browse.js", "compare.js", "fonts", "qr-wechat.jpg", "qr-site.png"]   # browse.js=P9.3 浏览页增强；compare.js=P10.1 自选对比（app.js 仍排除）
 
 def copy_assets(cfg, out_dir):
     here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # dbhub_page 根

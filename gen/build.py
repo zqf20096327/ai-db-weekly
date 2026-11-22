@@ -15,7 +15,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # -I 隔离模�
 import common as C
 import list_pages, db_pages, cards, platform, vs_pages, weekly_pages, home, compare_pages, assets
 
-VER = "gen/1.1"   # 1.1：P9 浏览页改版（五行筛选+卡片/清单双视图+browse.js 增强+browse-{指纹}.json 索引；矩阵下线）
+VER = "gen/1.2"   # 1.2：P10.1 compare 索引页加自选对比（compare.js 渐进增强，script 白名单第二族）；
+                  # 1.1：P9 浏览页改版（五行筛选+卡片/清单双视图+browse.js 增强+browse-{指纹}.json 索引；矩阵下线）
 
 # ---------- 交叉校验（P3.3/P3.4/P3.5 的验收全在这） ----------
 
@@ -52,8 +53,9 @@ def verify(cfg, ct, out_dir):
     n_script = 0
     for pf in page_files:
         t = io.open(pf, encoding="utf-8").read()
-        is_browse = os.sep + "projects" + os.sep in pf          # P9.5：浏览页=唯一带 script 的族（3 处固定）
-        if "<script" in t and not is_browse:
+        is_browse = os.sep + "projects" + os.sep in pf          # P9.5：浏览页=script 白名单族（3 处固定）
+        is_cmp = pf == os.path.join(out_dir, "compare", "index.html")   # P10.1：自选对比索引页（3 处；deep 长文仍零 JS）
+        if "<script" in t and not (is_browse or is_cmp):
             n_script += 1                                       # P8.6 零 JS 纪律对组合/类目/库/vs 等仍然成立
             if n_script <= 3: errs.append(f"页面含 <script>: {os.path.relpath(pf, out_dir)}")
         if is_browse:
@@ -65,6 +67,13 @@ def verify(cfg, ct, out_dir):
                 errs.append(f"浏览页缺双视图骨架: {os.path.relpath(pf, out_dir)}")
             if "mx-wrap" in t:
                 errs.append(f"冠军矩阵残留: {os.path.relpath(pf, out_dir)}")
+        if is_cmp:
+            if t.count("<script") != 3:
+                errs.append(f"对比索引 script 数 {t.count('<script')} != 3: {os.path.relpath(pf, out_dir)}")
+            if "compare.js?v=" not in t or "window.CMP=" not in t:
+                errs.append(f"对比索引缺自选对比注入: {os.path.relpath(pf, out_dir)}")
+            if 'id="selfcmp"' not in t or 'id="cmp-go"' not in t or 'id="cmp-a"' not in t:
+                errs.append(f"对比索引缺自选骨架: {os.path.relpath(pf, out_dir)}")
         for href in set(re.findall(r'href="(/[^"#]+)"', t)):
             h = href[len(bp):] if bp and href.startswith(bp) else href   # 镜像前缀剥掉再对账
             path = os.path.join(out_dir, *h.strip("/").split("/"))
@@ -136,11 +145,13 @@ def verify(cfg, ct, out_dir):
         t = io.open(os.path.join(out_dir, "compare", "index.html"), encoding="utf-8").read()
         n_vs_disk = len(glob.glob(os.path.join(out_dir, "vs", "*", "index.html")))
         n_vs_link = len({m for m in re.findall(r'href="[^"]*/vs/([^"/]+)/"', t)})
-        if n_vs_link != n_vs_disk: errs.append(f"compare 索引覆盖 {n_vs_link} != vs 页 {n_vs_disk}")
+        # P10.1 用户令删「全部对比」表：索引只挂热门 chips（≤盘上 vs 页数即合法，坏链由内链对账兜）
+        if n_vs_link > n_vs_disk: errs.append(f"compare 挂的 vs 链接 {n_vs_link} > vs 页 {n_vs_disk}")
+        if "table" in t.lower() and "全部对比" in t: errs.append("「全部对比」表残留")
     print(f"VERIFY {'FAIL' if errs else 'OK'}: 卡 {len(disk_cards)}（对账 {len(fns_expect)}）· "
           f"页面 {len(page_files)}（含周刊 {len(wk)}/长文 {n_deep_disk}/组合 {n_combo_disk}/浏览索引 "
           f"{len(json.load(io.open(glob.glob(os.path.join(out_dir, 'assets', 'browse-*.json'))[0], encoding='utf-8'))) if bj else 0}）· "
-          f"内链坏 {bad} · 含script {n_script}（浏览页族已白名单）")
+          f"内链坏 {bad} · 含script {n_script}（浏览/对比索引已白名单）")
     for e in errs[:20]: print("  -", e)
     return errs
 
@@ -271,7 +282,13 @@ def _selftest():
     assert 'window.BR=' in tb and "browse-abc123.json" in tb and "browse.js?v=ab12cd34" in tb
     assert 'data-lang="Go"' in tb and 'data-mnt="ok"' in tb and 'data-sort="relpub"' in tb
     assert 'id="bv-card"' in tb and 'id="spager"' in tb and "mx-wrap" not in tb
-    print(f"OK {VER} selftest: 27 asserts passed")
+    # P10.1：自选对比注入块（键齐才注入；compare.js 版本号拼接）
+    blk = compare_pages.selfcmp_block(cfg, "ef567890")
+    assert 'window.CMP=' in blk and "browse-abc123.json" in blk and "compare.js?v=ef567890" in blk
+    assert 'id="selfcmp"' in blk and 'id="cmp-a"' in blk and 'id="cmp-go"' in blk and "classList.add" in blk
+    cfg_no = {k: v for k, v in cfg.items() if k != "browse_json"}
+    assert compare_pages.selfcmp_block(cfg_no, "ef567890") == ""   # 瘦索引键缺失=整段不注入
+    print(f"OK {VER} selftest: 30 asserts passed")
     return 0
 
 def main():

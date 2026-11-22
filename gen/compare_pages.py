@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """compare_pages.py -- /compare/ 对比索引 + AI 长文页（P7.14：恢复旧版项目对比排版）
 
-版面=旧 compare.html 原版静态直出：hero + 「热门对比」chips 行（旧版 curated 位，现为
-热度 Top12 → /vs/）+「🤖 AI 对比解读」卡（ai-title/ai-verdict/ai-sec/ai-picks 原样式）
-+ 全部对比清单（table.rows，545 组按热度降序）。旧版对比篮/信号并排是 pool.js 交互能力，
-静态版由 /vs/{slug}/ 对比页承接；长文页源 = gen/compare_deep.json（原 JS 不进 dist）。
+版面=旧 compare.html 原版静态直出：hero + P10.1「自选对比」模块（渐进增强，compare.js）
++「热门对比」chips 行（旧版 curated 位，现为热度 Top12 → /vs/）+「🤖 AI 对比解读」卡
+（ai-title/ai-verdict/ai-sec/ai-picks 原样式）+ 全部对比清单（table.rows 按热度降序）。
+自选对比=旧对比篮的静态骨架版复活：数据与 /projects/ 同一份瘦索引（cfg 四键齐才注入，
+缺失时本模块整段不出现、页面照常完整）；预生成 /vs/{slug}/ 页继续承接 SEO。
+长文页源 = gen/compare_deep.json（原 JS 不进 dist）。
 """
-import glob, io, json, os, re, shutil, sys
+import glob, hashlib, io, json, os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common as C
 import list_pages as L
@@ -16,6 +18,40 @@ URL_INDEX = "/compare/"
 URL_DEEP = "/compare/deep-{n}.html"
 MIN_DEEP_CHARS = 800        # 长文正文门槛：实测 898/1104 字，原估 3000 系高估（见清单 7.4 验证结果）
 N_HOT = 12                  # 热门对比 chips 数（旧版 curated 4 位，静态版放宽到 12）
+
+CMP_CSS = """  /* P10.1 自选对比（仅 compare 索引页携带） */
+.cmp-form{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.cmp-cell{flex:1;min-width:220px;position:relative}
+.cmp-in{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font:inherit;
+        color:var(--ink);background:#fff}
+.cmp-in:focus{outline:none;border-color:var(--accent)}
+.cmp-menu{position:absolute;top:40px;left:0;right:0;background:#fff;border:1px solid var(--line);
+          border-radius:8px;box-shadow:var(--shadow);z-index:6;max-height:264px;overflow:auto}
+.cmp-menu a{display:flex;justify-content:space-between;gap:8px;padding:7px 10px;font-size:13px;color:var(--ink)}
+.cmp-menu a:hover,.cmp-menu a.sel{background:var(--accent-soft)}
+"""
+
+def selfcmp_block(cfg, js_v):
+    """P10.1 自选对比注入块：classList 置 .js + 模块骨架 + window.CMP 配置 + compare.js。
+    browse 瘦索引指纹（cfg["browse_json"]，gen_lists 产）与 compare.js 都就位才注入——
+    单跑本模块（无 lists 步）时键缺失=静态照旧，verify 白名单在 build 侧对账。"""
+    bj = cfg.get("browse_json") or ""
+    if not (bj and js_v): return ""
+    return (f'\n<script>document.documentElement.classList.add("js")</script>\n'
+            f'<section class="card jsonly" id="selfcmp">\n'
+            f'      <div class="card-head"><h2>⚖️ 自选对比<span class="hint">任选两个项目并排 · 结果写入网址可分享</span></h2></div>\n'
+            f'      <div class="cmp-form">\n'
+            f'        <div class="cmp-cell"><input id="cmp-a" class="cmp-in" placeholder="项目 A：输入 owner/repo 或仓名" autocomplete="off">'
+            f'<div class="cmp-menu" id="cmp-am" hidden></div></div>\n'
+            f'        <button type="button" class="icon-btn" id="cmp-swap" title="交换双方">⇄</button>\n'
+            f'        <div class="cmp-cell"><input id="cmp-b" class="cmp-in" placeholder="项目 B" autocomplete="off">'
+            f'<div class="cmp-menu" id="cmp-bm" hidden></div></div>\n'
+            f'        <button type="button" class="btn" id="cmp-go">对比</button>\n'
+            f'      </div>\n'
+            f'      <div id="cmp-out"></div>\n'
+            f'    </section>\n'
+            f'<script>window.CMP={{base:{json.dumps(cfg.get("base_path", ""))},idx:{json.dumps(bj)}}};</script>\n'
+            f'<script src="{C.esc(C.url("/assets/compare.js", cfg))}?v={js_v}" defer></script>')
 
 def fn_item_map(cfg):
     """fn(小写) -> 分片 item（stars/lang/ol/dbs），全分片扫一遍 ~1s。"""
@@ -66,20 +102,12 @@ def deep_body(d, cfg, ct, items):
 
 # ---------- 索引页 ----------
 
-def index_body(cfg, ct, deeps):
+def index_body(cfg, ct, deeps, js_v=""):
     ents = vs_entries(cfg)
     hot = "".join(
         f'<a class="chip" href="{C.esc(C.url(ct["vs_first"].format(slug=slug), cfg))}">'
         f'{C.esc(a["name"])} vs {C.esc(b["name"])}<span class="n">{L.fmt_k(a.get("stars") or 0)}★</span></a>'
         for slug, a, b in ents[:N_HOT])
-    rows = "".join(
-        f'<tr><td><a class="repo" href="{C.esc(C.url(ct["vs_first"].format(slug=slug), cfg))}">'
-        f'{C.esc(a["name"])} vs {C.esc(b["name"])}（{C.esc(a["fn"])} / {C.esc(b["fn"])}）</a>'
-        f'<div class="sub">{C.esc((a.get("ol") or "")[:80])}</div></td>'
-        f'<td>{L.db_tags(a)}</td>'
-        f'<td class="small">{C.esc(a.get("cat") or "—")}</td>'
-        f'<td class="r mono">{a["stars"]:,}★ vs {b["stars"]:,}★</td></tr>'
-        for slug, a, b in ents)
     deep_cards = ""
     items = fn_item_map(cfg)
     for i, d in enumerate(deeps, 1):
@@ -87,23 +115,17 @@ def index_body(cfg, ct, deeps):
                        f'{C.esc(" vs ".join(d["key"].split("|")[:2]))}</h3><span class="line"></span>'
                        f'<a class="small" href="{C.esc(C.url(URL_DEEP.format(n=i), cfg))}" '
                        f'style="color:var(--accent)">单独页 →</a></div>\n' + deep_body(d, cfg, ct, items))
+    selfcmp = selfcmp_block(cfg, js_v)
     return len(ents), f"""<main>
     <section class="hero" style="padding:24px 0 8px">
       <h1>项目对比</h1>
-      <p>同类项目并排比较，帮你选型。热门对比与全部清单为擂台算法自动圈选（{len(ents)} 组）；
-        「AI 对比解读」为构建期生成的深度长文。旧版对比篮是交互能力（已随 pool.js 退役），
-        静态版点任意组合进对比页。</p>
-    </section>
+      <p>同类项目并排比较，帮你选型。「自选对比」任选两个项目并排（需浏览器 JS，
+        无 JS 时本页其余部分照常可用）；下方热门对比为擂台算法圈选的代表组合；
+        「AI 对比解读」为构建期生成的深度长文。</p>
+    </section>{selfcmp}
     <section class="card">
       <div class="card-head"><h2>热门对比<span class="hint">按双方热度 · 点按进入</span></h2></div>
       <div class="tagrow" style="margin-top:8px">{hot}</div>
-      <div class="sec-title" style="margin:14px 0 0"><h3>☰ 全部对比（{len(ents)} 组）</h3><span class="line"></span>
-        <span class="muted small">按热度降序 · 每组含画像并排与擂台解读</span></div>
-      <div class="tblwrap"><table class="rows">
-        <thead><tr><th style="min-width:250px">组合</th><th>库</th><th>类别</th><th class="r">热度</th></tr></thead>
-        <tbody>
-{rows}
-        </tbody></table></div>
     </section>
     <section class="card">
       <div class="card-head"><h2>🤖 AI 对比解读<span class="hint">构建期由 AI 基于双方 README 与信号生成 · 非运行时调用</span></h2></div>
@@ -134,11 +156,13 @@ def gen_compare(cfg, ct, out_dir):
     L._boot_maps(cfg)
     deeps = json.load(io.open(DEEP_SRC, encoding="utf-8"))
     items = fn_item_map(cfg)
-    n_vs, idx = index_body(cfg, ct, deeps)
+    _js = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "compare.js"))
+    js_v = hashlib.md5(io.open(_js, "rb").read()).hexdigest()[:8] if os.path.exists(_js) else ""
+    n_vs, idx = index_body(cfg, ct, deeps, js_v)
     p = os.path.join(out_dir, "compare", "index.html")
-    C.dump(p, C.page_legacy(cfg, f"项目对比 · {n_vs} 组数据库开源项目怎么选",
-                            f"{n_vs} 组同类开源项目对比：画像并排、热度与擂台解读，另有 AI 深度对比长文。",
-                            ct["base"] + URL_INDEX, idx, "/compare/", L.FZONE_CSS))
+    C.dump(p, C.page_legacy(cfg, "项目对比 · 任选两个数据库开源项目并排比较",
+                            f"任选两个开源项目并排对比（{n_vs} 组热门擂台对比可选），另有 AI 深度对比长文。",
+                            ct["base"] + URL_INDEX, idx, "/compare/", L.FZONE_CSS + CMP_CSS))
     for i, d in enumerate(deeps, 1):
         body = deep_page_body(d, cfg, ct, items)
         t = C.page_legacy(cfg, f'{d["title"]} · AI 对比解读', (d.get("verdict") or "")[:150],
