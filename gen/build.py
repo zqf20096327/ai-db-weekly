@@ -15,7 +15,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # -I 隔离模�
 import common as C
 import list_pages, db_pages, cards, platform, vs_pages, weekly_pages, home, compare_pages, assets
 
-VER = "gen/1.2"   # 1.2：P10.1 compare 索引页加自选对比（compare.js 渐进增强，script 白名单第二族）；
+VER = "gen/1.3"   # 1.3：P10.3 /vs/ 孤儿页收编进 sitemap（删全部对比表后无站内入口，用户令收编保 SEO）；
+                  # 1.2：P10.1 compare 索引页加自选对比（compare.js 渐进增强，script 白名单第二族）；
                   # 1.1：P9 浏览页改版（五行筛选+卡片/清单双视图+browse.js 增强+browse-{指纹}.json 索引；矩阵下线）
 
 # ---------- 交叉校验（P3.3/P3.4/P3.5 的验收全在这） ----------
@@ -148,6 +149,10 @@ def verify(cfg, ct, out_dir):
         # P10.1 用户令删「全部对比」表：索引只挂热门 chips（≤盘上 vs 页数即合法，坏链由内链对账兜）
         if n_vs_link > n_vs_disk: errs.append(f"compare 挂的 vs 链接 {n_vs_link} > vs 页 {n_vs_disk}")
         if "table" in t.lower() and "全部对比" in t: errs.append("「全部对比」表残留")
+        # P10.3：sitemap 收编 vs 页对账（/vs/{slug}/ 段内无斜杠，不会撞 /p/{o}/{vs}/ 类 URL）
+        n_vs_sm = len(re.findall(r"/vs/[^/<]+/",
+                                 io.open(os.path.join(out_dir, "sitemap.xml"), encoding="utf-8").read()))
+        if n_vs_sm != n_vs_disk: errs.append(f"sitemap vs 条目 {n_vs_sm} != 盘上 vs 页 {n_vs_disk}")
     print(f"VERIFY {'FAIL' if errs else 'OK'}: 卡 {len(disk_cards)}（对账 {len(fns_expect)}）· "
           f"页面 {len(page_files)}（含周刊 {len(wk)}/长文 {n_deep_disk}/组合 {n_combo_disk}/浏览索引 "
           f"{len(json.load(io.open(glob.glob(os.path.join(out_dir, 'assets', 'browse-*.json'))[0], encoding='utf-8'))) if bj else 0}）· "
@@ -161,7 +166,9 @@ def merge_sitemap(out_dir, combo_adds=None):
     """内容页 URL 并入 build_site 产的 sitemap：职责边界=数据 URL（卡/库/类目）归 build_site，
     内容 URL（首页/往期/周刊/对比/组合首页）归 gen——周刊期数取决于仓内 weekly.js，collect 侧看不到。
     以 dist 盘上实际页面为准，追加去重，落盘后真解析自证。combo_adds=组合首页 URL 清单（P8.5，
-    由调用方用 list_pages.combo_sitemap_urls 算好传入；selftest 传 None 保持原口径）。"""
+    由调用方用 list_pages.combo_sitemap_urls 算好传入；selftest 传 None 保持原口径）。
+    P10.3：/vs/ 对比页同 weekly 一样按盘上 glob 全量收编（用户令：删全部对比表后 vs 页成
+    站内孤儿，收进 sitemap 保 SEO 入口）。"""
     import datetime
     import xml.etree.ElementTree as ET
     p = os.path.join(out_dir, "sitemap.xml")
@@ -173,14 +180,15 @@ def merge_sitemap(out_dir, combo_adds=None):
     for e in urls:
         loc = next(c for c in e if tag(c) == "loc")
         have.add(loc.text)
-    base = sorted(have)[0].rstrip("/")          # 首个 loc = base + "/"（build_site urls[0]）
-    base = base[:base.rfind("/")] if base.count("/") > 2 else base
-    assert base.startswith("http"), f"sitemap base 异常: {base}"
+    base = sorted(have)[0].rstrip("/")          # 首个 loc = 站根（build_site urls[0]）。P10.3 修：保留子路径
+    assert base.startswith("http"), f"sitemap base 异常: {base}"   # （旧 rfind 剥段会把 /ai-db-weekly 削掉，并入 URL 全 404）
     n_deep = len(json.load(io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                                "compare_deep.json"), encoding="utf-8")))
     adds = ["/", "/archive.html", "/compare/"] + [f"/compare/deep-{i}.html" for i in range(1, n_deep + 1)]
     adds += ["/weekly/" + os.path.basename(os.path.dirname(d)) + "/"
              for d in sorted(glob.glob(os.path.join(out_dir, "weekly", "*", "index.html")))]
+    adds += ["/vs/" + os.path.basename(os.path.dirname(d)) + "/"
+             for d in sorted(glob.glob(os.path.join(out_dir, "vs", "*", "index.html")))]
     adds += combo_adds or []
     lm = datetime.date.today().isoformat(); n = 0
     for u in adds:
@@ -253,18 +261,23 @@ def _selftest():
     assert 'href="/db/postgresql/backup/"' in dbrow and 'href="/db/sqlite/"' in dbrow   # 钻取 + 空组合回落库页
     catrow = list_pages.cat_chips(cfg, via_db="postgresql", combos=b)
     assert 'href="/db/postgresql/backup/"' in catrow and 'href="/cat/monitoring/"' in catrow  # 钻取 + 回落类目页
-    # sitemap 内容页并入：临时 sitemap + 盘上 1 期周刊 -> 追加去重、可解析、首页不重复
+    # sitemap 内容页并入：临时 sitemap（子路径站夹具）+ 盘上 1 期周刊 + 1 张 vs -> 追加去重、可解析、带子路径
     import xml.etree.ElementTree as ET
     tmp = tempfile.mkdtemp()
     io.open(os.path.join(tmp, "sitemap.xml"), "w", encoding="utf-8", newline="\n").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-        '<url><loc>https://x.example/</loc></url>'
-        '<url><loc>https://x.example/projects/</loc></url></urlset>\n')
+        '<url><loc>https://x.example/mysite/</loc></url>'
+        '<url><loc>https://x.example/mysite/projects/</loc></url></urlset>\n')
     os.makedirs(os.path.join(tmp, "weekly", "1"))
     io.open(os.path.join(tmp, "weekly", "1", "index.html"), "w", encoding="utf-8").write("x")
+    os.makedirs(os.path.join(tmp, "vs", "a__x--b__y"))                       # P10.3：vs 孤儿页收编
+    io.open(os.path.join(tmp, "vs", "a__x--b__y", "index.html"), "w", encoding="utf-8").write("x")
     n, tot = merge_sitemap(tmp)
     assert n == tot - 2 and tot >= 5, f"并入计数异常 n={n} tot={tot}"
-    assert "https://x.example/weekly/1/" in io.open(os.path.join(tmp, "sitemap.xml"), encoding="utf-8").read()
+    smt = io.open(os.path.join(tmp, "sitemap.xml"), encoding="utf-8").read()
+    assert "https://x.example/mysite/weekly/1/" in smt
+    assert "https://x.example/mysite/vs/a__x--b__y/" in smt and len(re.findall(r"/vs/[^/<]+/", smt)) == 1
+    assert "https://x.example/weekly/" not in smt and "https://x.example/vs/" not in smt   # 子路径被剥=404 URL 回归哨兵
     # P9：浏览索引 write_browse（指纹幂等 + 旧指纹清理）
     bcfg = {}
     items_b = [{"fn": "a/b", "stars": 5, "lang": "Go", "cat": "备份", "dbs": ["PostgreSQL"], "ol": "x",
@@ -288,7 +301,7 @@ def _selftest():
     assert 'id="selfcmp"' in blk and 'id="cmp-a"' in blk and 'id="cmp-go"' in blk and "classList.add" in blk
     cfg_no = {k: v for k, v in cfg.items() if k != "browse_json"}
     assert compare_pages.selfcmp_block(cfg_no, "ef567890") == ""   # 瘦索引键缺失=整段不注入
-    print(f"OK {VER} selftest: 30 asserts passed")
+    print(f"OK {VER} selftest: 32 asserts passed")
     return 0
 
 def main():
