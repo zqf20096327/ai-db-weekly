@@ -12,14 +12,18 @@ build_site.py ──> site/ 契约 ──> build.py 编排 ──> dist/ ──>
   urls.json（URL 模式唯一权威）     ├ vs_pages.py（/vs/×545）
                                   ├ weekly_pages.py（/weekly/{n}/ + archive.html，源=仓内 data/weekly.js）
 [内容源·不进数据契约]              ├ home.py（门面首页 /）
-  weekly.js / compare_deep.json ──┤ compare_pages.py（/compare/ 索引+AI 长文）
+  weekly.js ─────────────────────┤ compare_pages.py（/compare/ 自选对比：索引 + 富字段分桶 assets/cmp/{指纹}/）
                                   ├ cards.py（卡→p/owner/repo/index.html 物理布局）
                                   └ platform.py（cf/gh 差异仅此一处）
 ```
 
 > legacy.py 已于 P7（2026-11-17）退役：四旧页全静态化后无旧资产可搬。
-> 内容源边界：weekly.js / compare_deep.json 是「内容」不是「数据」——期数篇数由本仓内容决定，
+> 内容源边界：weekly.js 是「内容」不是「数据」——期数由本仓内容决定，
 > 不进 collect 的 site/ 契约；sitemap 里这些 URL 由 build.py merge_sitemap() 在 gen 侧并入。
+> compare_deep.json（AI 对比长文源）自 P11（2026-11-24）起不再使用：用户令删「AI 对比解读」板块，
+> deep 长文页下线；文件保留未删。
+> /compare/ 的对比数据 = 浏览瘦索引（画像 15 键）+ site/data/cmp/ 富字段分桶（build_site 产，256 桶，
+> 浏览器按 fn 的 FNV-1a 低字节取桶；分桶式三处同式：build_site.py / compare_pages.py / compare.js）。
 
 ## 七条纪律
 

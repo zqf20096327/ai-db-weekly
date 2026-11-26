@@ -10,12 +10,17 @@
 解耦架构见 README.md。数据契约：dbhub_collect 的 build_site.py 产 site/（分片+sitemap+robots+urls.json），
 本侧零数据逻辑——列表页数、类目、库页、URL 模式全部以契约文件为准。
 """
-import argparse, glob, io, json, os, re, shutil, sys
+import argparse, ast, glob, io, json, os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # -I 隔离模式不自动加脚本目录
 import common as C
 import list_pages, db_pages, cards, platform, vs_pages, weekly_pages, home, compare_pages, assets
 
-VER = "gen/1.3"   # 1.3：P10.3 /vs/ 孤儿页收编进 sitemap（删全部对比表后无站内入口，用户令收编保 SEO）；
+VER = "gen/1.5"   # 1.5：P12 对比页方块分区——删速览头/差异速览（信息全部进表格），结果=吸顶身份条+六块方块卡
+                  #     （定位与解读/能力与适配/规模与趋势/活跃与健康/同类对手/README 首段），块内三列并排表、
+                  #     集合字段各栏全列（蓝芯片=仅此一方）；「只看不同」无差异整块收起+差异行整行高亮；本页 .wrap 收口 1240；
+                  # 1.4：P11 对比页改版——/compare/ 删「热门对比」「AI 对比解读」（deep 长文页下线、不再并入 sitemap）、
+                  #     自选对比升全字段（速览头+差异速览+分组并排表；富字段分桶 assets/cmp/{指纹}/，verify 增分桶对账）；
+                  # 1.3：P10.3 /vs/ 孤儿页收编进 sitemap（删全部对比表后无站内入口，用户令收编保 SEO）；
                   # 1.2：P10.1 compare 索引页加自选对比（compare.js 渐进增强，script 白名单第二族）；
                   # 1.1：P9 浏览页改版（五行筛选+卡片/清单双视图+browse.js 增强+browse-{指纹}.json 索引；矩阵下线）
 
@@ -75,6 +80,8 @@ def verify(cfg, ct, out_dir):
                 errs.append(f"对比索引缺自选对比注入: {os.path.relpath(pf, out_dir)}")
             if 'id="selfcmp"' not in t or 'id="cmp-go"' not in t or 'id="cmp-a"' not in t:
                 errs.append(f"对比索引缺自选骨架: {os.path.relpath(pf, out_dir)}")
+            for gone in ("热门对比", "AI 对比解读", "/compare/deep-"):   # P11 用户令删除的两块不得回潮
+                if gone in t: errs.append(f"对比索引残留已删板块「{gone}」")
         for href in set(re.findall(r'href="(/[^"#]+)"', t)):
             h = href[len(bp):] if bp and href.startswith(bp) else href   # 镜像前缀剥掉再对账
             path = os.path.join(out_dir, *h.strip("/").split("/"))
@@ -131,32 +138,60 @@ def verify(cfg, ct, out_dir):
         body = re.sub(r"<script[\s\S]*?</script>", "", io.open(pf, encoding="utf-8").read())
         if len(" ".join(re.sub(r"<[^>]+>", " ", body).split())) < 800:
             errs.append(f"组合页正文过短: db/{ds}/{cs}/")
-    # 6) P7 内容页四查：周刊每期正文≥3000 / archive 期链全通 / compare 索引覆盖全部 vs 页 / 长文篇数对账
+    # 6) P7 内容页四查：周刊每期正文≥3000 / archive 期链全通 / compare 索引与 vs 盘上对账 / 长文页已下线
     wk = sorted(glob.glob(os.path.join(out_dir, "weekly", "*", "index.html")))
     if not wk: errs.append("周刊页缺失（weekly/ 空）")
     for pf in wk:
         body = re.sub(r"<script[\s\S]*?</script>", "", io.open(pf, encoding="utf-8").read())
         if len(" ".join(re.sub(r"<[^>]+>", " ", body).split())) < 3000:
             errs.append(f"周刊正文过短: {os.path.relpath(pf, out_dir)}")
-    n_deep_src = len(json.load(io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                                   "compare_deep.json"), encoding="utf-8")))
     n_deep_disk = len(glob.glob(os.path.join(out_dir, "compare", "deep-*.html")))
-    if n_deep_disk != n_deep_src: errs.append(f"长文页数 {n_deep_disk} != 源 {n_deep_src}")
+    if n_deep_disk: errs.append(f"长文页残留 {n_deep_disk} 张（P11 已下线，gen_compare 清场失效?）")
     if os.path.exists(os.path.join(out_dir, "compare", "index.html")):
         t = io.open(os.path.join(out_dir, "compare", "index.html"), encoding="utf-8").read()
         n_vs_disk = len(glob.glob(os.path.join(out_dir, "vs", "*", "index.html")))
         n_vs_link = len({m for m in re.findall(r'href="[^"]*/vs/([^"/]+)/"', t)})
-        # P10.1 用户令删「全部对比」表：索引只挂热门 chips（≤盘上 vs 页数即合法，坏链由内链对账兜）
+        # P10.1 用户令删「全部对比」表、P11 删热门 chips：索引不再挂 vs 链接，只保留上界断言（坏链由内链对账兜）
         if n_vs_link > n_vs_disk: errs.append(f"compare 挂的 vs 链接 {n_vs_link} > vs 页 {n_vs_disk}")
         if "table" in t.lower() and "全部对比" in t: errs.append("「全部对比」表残留")
         # P10.3：sitemap 收编 vs 页对账（/vs/{slug}/ 段内无斜杠，不会撞 /p/{o}/{vs}/ 类 URL）
         n_vs_sm = len(re.findall(r"/vs/[^/<]+/",
                                  io.open(os.path.join(out_dir, "sitemap.xml"), encoding="utf-8").read()))
         if n_vs_sm != n_vs_disk: errs.append(f"sitemap vs 条目 {n_vs_sm} != 盘上 vs 页 {n_vs_disk}")
+    # 7) P11 对比富字段分桶对账：恰一个指纹目录、桶数 256、条目 == all 分片部署集、fn 落在算出的桶里、
+    #    页面注入指纹 == 盘上目录名（分桶式三处同式：build_site.py / compare_pages.py / compare.js，JS 侧经 Node 全量交叉验证）
+    cmp_dirs = [d for d in glob.glob(os.path.join(out_dir, "assets", "cmp", "*")) if os.path.isdir(d)]
+    n_cmp = 0; cmp_fp = "-"; n_cmp_files = 0
+    if len(cmp_dirs) != 1:
+        errs.append(f"assets/cmp 指纹目录 {len(cmp_dirs)} 个 != 1（compare 步未跑 / 旧指纹未清?）")
+    else:
+        cmp_fp = os.path.basename(cmp_dirs[0])
+        cfiles = glob.glob(os.path.join(cmp_dirs[0], "*.json")); n_cmp_files = len(cfiles)
+        if n_cmp_files != compare_pages.CMP_BUCKETS:
+            errs.append(f"cmp 桶数 {n_cmp_files} != {compare_pages.CMP_BUCKETS}")
+        seen, misplaced, asofs = set(), [], set()
+        for f in cfiles:
+            try: d = json.load(io.open(f, encoding="utf-8"))
+            except Exception as e: errs.append(f"cmp 桶不可解析: {os.path.basename(f)} {e}"); continue
+            asofs.add(d.get("asof"))
+            for fn in (d.get("items") or {}):
+                seen.add(fn)
+                if os.path.basename(f) != compare_pages.cmp_bucket(fn) + ".json" and len(misplaced) < 3: misplaced.append(fn)
+        if misplaced: errs.append(f"cmp 条目不在算出的桶里，样例 {misplaced}（分桶函数不同式?）")
+        n_cmp = len(seen)
+        if seen != fns_expect:
+            errs.append(f"cmp 条目与 all 分片不一致：多 {len(seen - fns_expect)} 缺 {len(fns_expect - seen)}，"
+                        f"样例 多{sorted(seen - fns_expect)[:2]} 缺{sorted(fns_expect - seen)[:2]}")
+        if os.path.exists(os.path.join(out_dir, "compare", "index.html")):
+            m = re.search(r'cmp:"([0-9a-f]{8})"',
+                          io.open(os.path.join(out_dir, "compare", "index.html"), encoding="utf-8").read())
+            if not m or m.group(1) != cmp_fp:
+                errs.append(f"compare 索引注入的 cmp 指针 {m.group(1) if m else None} != 盘上目录 {cmp_fp}")
+        print(f"  cmp 富字段：{n_cmp} 条 / {n_cmp_files} 桶 / 指纹 {cmp_fp} / asof {sorted(asofs)}")
     print(f"VERIFY {'FAIL' if errs else 'OK'}: 卡 {len(disk_cards)}（对账 {len(fns_expect)}）· "
-          f"页面 {len(page_files)}（含周刊 {len(wk)}/长文 {n_deep_disk}/组合 {n_combo_disk}/浏览索引 "
+          f"页面 {len(page_files)}（含周刊 {len(wk)}/组合 {n_combo_disk}/浏览索引 "
           f"{len(json.load(io.open(glob.glob(os.path.join(out_dir, 'assets', 'browse-*.json'))[0], encoding='utf-8'))) if bj else 0}）· "
-          f"内链坏 {bad} · 含script {n_script}（浏览/对比索引已白名单）")
+          f"内链坏 {bad} · 含script {n_script}（浏览/对比索引已白名单）· cmp {n_cmp} 条/{n_cmp_files} 桶")
     for e in errs[:20]: print("  -", e)
     return errs
 
@@ -168,7 +203,7 @@ def merge_sitemap(out_dir, combo_adds=None):
     以 dist 盘上实际页面为准，追加去重，落盘后真解析自证。combo_adds=组合首页 URL 清单（P8.5，
     由调用方用 list_pages.combo_sitemap_urls 算好传入；selftest 传 None 保持原口径）。
     P10.3：/vs/ 对比页同 weekly 一样按盘上 glob 全量收编（用户令：删全部对比表后 vs 页成
-    站内孤儿，收进 sitemap 保 SEO 入口）。"""
+    站内孤儿，收进 sitemap 保 SEO 入口）。P11：/compare/deep-N AI 长文页随板块删除一并下线，不再并入。"""
     import datetime
     import xml.etree.ElementTree as ET
     p = os.path.join(out_dir, "sitemap.xml")
@@ -182,9 +217,7 @@ def merge_sitemap(out_dir, combo_adds=None):
         have.add(loc.text)
     base = sorted(have)[0].rstrip("/")          # 首个 loc = 站根（build_site urls[0]）。P10.3 修：保留子路径
     assert base.startswith("http"), f"sitemap base 异常: {base}"   # （旧 rfind 剥段会把 /ai-db-weekly 削掉，并入 URL 全 404）
-    n_deep = len(json.load(io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                               "compare_deep.json"), encoding="utf-8")))
-    adds = ["/", "/archive.html", "/compare/"] + [f"/compare/deep-{i}.html" for i in range(1, n_deep + 1)]
+    adds = ["/", "/archive.html", "/compare/"]
     adds += ["/weekly/" + os.path.basename(os.path.dirname(d)) + "/"
              for d in sorted(glob.glob(os.path.join(out_dir, "weekly", "*", "index.html")))]
     adds += ["/vs/" + os.path.basename(os.path.dirname(d)) + "/"
@@ -295,13 +328,43 @@ def _selftest():
     assert 'window.BR=' in tb and "browse-abc123.json" in tb and "browse.js?v=ab12cd34" in tb
     assert 'data-lang="Go"' in tb and 'data-mnt="ok"' in tb and 'data-sort="relpub"' in tb
     assert 'id="bv-card"' in tb and 'id="spager"' in tb and "mx-wrap" not in tb
-    # P10.1：自选对比注入块（键齐才注入；compare.js 版本号拼接）
+    # P10.1/P11：自选对比注入块（瘦索引指纹 + 富字段指纹 + compare.js 三样齐才注入；版本号拼接）
+    cfg["cmp_fp"] = "1a2b3c4d"
     blk = compare_pages.selfcmp_block(cfg, "ef567890")
-    assert 'window.CMP=' in blk and "browse-abc123.json" in blk and "compare.js?v=ef567890" in blk
+    assert 'window.CMP=' in blk and "browse-abc123.json" in blk and 'cmp:"1a2b3c4d"' in blk and "compare.js?v=ef567890" in blk
     assert 'id="selfcmp"' in blk and 'id="cmp-a"' in blk and 'id="cmp-go"' in blk and "classList.add" in blk
     cfg_no = {k: v for k, v in cfg.items() if k != "browse_json"}
     assert compare_pages.selfcmp_block(cfg_no, "ef567890") == ""   # 瘦索引键缺失=整段不注入
-    print(f"OK {VER} selftest: 32 asserts passed")
+    cfg_no2 = {k: v for k, v in cfg.items() if k != "cmp_fp"}
+    assert compare_pages.selfcmp_block(cfg_no2, "ef567890") == ""  # P11：富字段指纹缺失=整段不注入
+    # P11：分桶函数与 build_site.cmp_bucket 同式（FNV-1a 32 标准向量取低字节；JS 版另经 Node 全量交叉验证）
+    cb = compare_pages.cmp_bucket
+    assert cb("") == "c5" and cb("a") == "2c" and cb("foobar") == "68" and cb("中文/仓") == "2f"
+    assert len({cb(f"o/r{i}") for i in range(400)}) > 200 and len({cb(f"o/r{i}") for i in range(400)} | {cb("foobar")}) <= compare_pages.CMP_BUCKETS
+    # P11：富字段分桶落站（同内容同指纹 / 内容变=换目录且旧目录清 / 无源=返回 0 并撤掉注入键）
+    croot = tempfile.mkdtemp(); csrc = os.path.join(croot, "data", "cmp"); os.makedirs(csrc)
+    io.open(os.path.join(csrc, "00.json"), "w", encoding="utf-8", newline="\n").write('{"asof":"2026-11-24","items":{"a/b":{}}}')
+    io.open(os.path.join(csrc, "ff.json"), "w", encoding="utf-8", newline="\n").write('{"asof":"2026-11-24","items":{"c/d":{}}}')
+    ccfg, cout = {"data_root": croot}, tempfile.mkdtemp()
+    assert compare_pages.write_cmp(ccfg, cout) == 2 and len(ccfg["cmp_fp"]) == 8
+    fp1 = ccfg["cmp_fp"]
+    assert compare_pages.write_cmp(ccfg, cout) == 2 and ccfg["cmp_fp"] == fp1                 # 同内容同指纹
+    assert os.path.exists(os.path.join(cout, "assets", "cmp", fp1, "00.json"))
+    io.open(os.path.join(csrc, "00.json"), "w", encoding="utf-8", newline="\n").write('{"asof":"2026-11-25","items":{"a/b":{"x":1}}}')
+    compare_pages.write_cmp(ccfg, cout)
+    assert ccfg["cmp_fp"] != fp1 and glob.glob(os.path.join(cout, "assets", "cmp", "*")) == [os.path.join(cout, "assets", "cmp", ccfg["cmp_fp"])]
+    ccfg2 = {"data_root": tempfile.mkdtemp(), "cmp_fp": "deadbeef"}
+    assert compare_pages.write_cmp(ccfg2, tempfile.mkdtemp()) == 0 and "cmp_fp" not in ccfg2
+    # P11：索引页只剩自选对比（「热门对比」「AI 对比解读」按用户令删除，不加比对示例）
+    tb = compare_pages.index_body(cfg, "ef567890")
+    assert 'id="selfcmp"' in tb and "<noscript>" in tb and "热门对比" not in tb and "AI 对比解读" not in tb and "/vs/" not in tb
+    assert "比对示例" not in tb and 'id="selfcmp"' not in compare_pages.index_body(cfg_no2, "ef567890")
+    # P11：sitemap 并入不再带 /compare/deep-N（长文页已下线）
+    smt2 = io.open(os.path.join(tmp, "sitemap.xml"), encoding="utf-8").read()
+    assert "/compare/" in smt2 and "deep-" not in smt2
+    n_as = sum(isinstance(n, ast.Assert) for n in ast.walk(
+        ast.parse(io.open(os.path.abspath(__file__), encoding="utf-8").read())))
+    print(f"OK {VER} selftest: {n_as} asserts passed")
     return 0
 
 def main():
