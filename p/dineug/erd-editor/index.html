@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dineug/erd-editor：基于 .erd.json 文件的 ERD 可视化编辑器，可在浏览器与 IDE 中… · GitHub 1754★</title>
+<meta name="description" content="基于 .erd.json 文件的 ERD 可视化编辑器，可在浏览器与 IDE 中运行（GitHub 1754★，TypeScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "erd-editor", "url": "https://github.com/dineug/erd-editor", "codeRepository": "https://github.com/dineug/erd-editor", "description": "基于 .erd.json 文件的 ERD 可视化编辑器，可在浏览器与 IDE 中运行", "applicationCategory": "DeveloperApplication", "programmingLanguage": "TypeScript", "license": "MIT", "author": {"@type": "Organization", "name": "dineug"}, "dateModified": "2026-11-03"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">建模/设计</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/dineug/erd-editor" target="_blank" rel="noopener">erd-editor</a>
+<div class="c-meta"><span>语言 TypeScript</span><span>协议 MIT</span><span>创建于 2019</span><span>版本 5.1.0</span><span>贡献者 6 人</span><span>最近提交 2026-11-03</span><span>90 天 699 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="data-modeling · 置信 high">数据建模</span><span class="capchip" title="erd · 置信 high">ER 图</span><span class="capchip mid" title="schema-design · 置信 mid">结构设计</span></div>
+</div>
+<div class="c-right"><div class="c-star">1,754<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="erd-editor star trend 1727 to 1754"><title>erd-editor star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 1727 增长至 1754</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.0,58.0 L21.9,58.0 L28.9,56.3 L35.9,56.3 L42.9,56.3 L49.8,54.6 L56.8,52.9 L63.8,51.1 L70.7,51.1 L77.7,46.0 L84.7,40.9 L91.7,37.4 L98.6,37.4 L112.6,35.7 L119.5,34.0 L126.5,34.0 L133.5,34.0 L140.5,34.0 L147.4,34.0 L154.4,28.9 L168.3,20.3 L182.3,20.3 L189.3,16.9 L196.2,18.6 L203.2,18.6 L217.1,15.1 L231.1,10.0 L245.0,11.7 L252.0,11.7 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.0,58.0 21.9,58.0 28.9,56.3 35.9,56.3 42.9,56.3 49.8,54.6 56.8,52.9 63.8,51.1 70.7,51.1 77.7,46.0 84.7,40.9 91.7,37.4 98.6,37.4 112.6,35.7 119.5,34.0 126.5,34.0 133.5,34.0 140.5,34.0 147.4,34.0 154.4,28.9 168.3,20.3 182.3,20.3 189.3,16.9 196.2,18.6 203.2,18.6 217.1,15.1 231.1,10.0 245.0,11.7 252.0,11.7" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="11.7" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 .erd.json 文件的 ERD 可视化编辑器，可在浏览器与 IDE 中运行</p><p class="pts-label">综述（解读层）</p><p class="pain">ERD Editor 是一个实体关系图编辑器，用于可视化设计数据库模式，数据以单个 .erd.json 文件保存。它以 Web 应用（erd-editor.io）、VS Code/JetBrains/Obsidian 插件、Google Drive 应用和 npm 包（custom element）多种形式提供。支持导入 SQL DDL、GraphQL SDL、DBML，导出八种数据库的 DDL 与 22 种语言/ORM 代码，并通过 MCP 服务器让编码代理实时编辑图表。</p><ul class="pts"><li>导入 SQL DDL、GraphQL SDL、DBML 和 AML，导出八种数据库（PostgreSQL、MySQL、Oracle、SQLite 等）的 DDL、22 种语言与 ORM 代码及 PNG/SVG 图片</li><li>通过 @dineug/erd-editor-mcp MCP 服务器供 Claude Code、Codex 等编码代理编辑图表，代理在协作会话中的撤销只回退其自身编辑</li><li>提供 <erd-editor> 编辑器与只读 <erd-viewer> 两个 custom element，可不依赖框架嵌入任意页面；Web 端支持基于 WebRTC 与 AES-GCM 加密的实时协作</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在浏览器或 IDE 中可视化设计数据库表结构与关系，并以 .erd.json 文件在多端之间共享同一份图表</li><li>从现有 SQL DDL、DBML 或 GraphQL SDL 导入模式，再生成目标数据库的 DDL 或 TypeScript、Java、Go 等语言的 ORM 代码</li><li>让编码代理通过 MCP 直接修改模式文件，同时开发者在画布上实时查看变更</li></ul>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MariaDB、MySQL、Oracle、PostgreSQL、SQL Server、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/dineug/erd-editor" target="_blank" rel="noopener">dineug/erd-editor</a></td><td class="stars">1,754</td><td>Design database schemas as ERDs in your browser, VS Code, JetBrains IDEs or Obsidian. Import SQL, DBML and GraphQL, expo...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/eralchemy/eralchemy" target="_blank" rel="noopener">eralchemy/eralchemy</a></td><td class="stars">1,433</td><td>Entity Relation Diagrams generation tool · 6 个月未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/sujeet-agrahari/awesome-database-design" target="_blank" rel="noopener">sujeet-agrahari/awesome-database-design</a></td><td class="stars">844</td><td>:zap: A collection of resources and tutorials to design a better database schema.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/yoosuf/messenger" target="_blank" rel="noopener">yoosuf/messenger</a></td><td class="stars">608</td><td>Relational messaging database schema for one-to-one and group chat apps with attachments and MySQL Workbench model.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/stackrender/stackrender" target="_blank" rel="noopener">stackrender/stackrender</a></td><td class="stars">558</td><td>StackRender is the next-gen database schema design and generation tool.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/didin1453fatih/dbdesigner.id" target="_blank" rel="noopener">didin1453fatih/dbdesigner.id</a></td><td class="stars">303</td><td>Demo project moved to · 1 年未更</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>5.1.0</b>（11-03）——What's Changed * feat(erd-editor-yjs): Add the Yjs binding package and make the engine converge on any transport by @dineug in https://github.com/dineug/erd-editor/pull/532 Full Changelog: https://github.com/dineug/erd-editor/compare/v5.0.1...v5.1.0</p><p class="t-sub" style="margin-top:4px;">90 天 15 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wcoreing/wworkbench：基于 Wails 的本地多主机运维桌面工作台，集成终端、数据库、Docker 与… · GitHub 29★</title>
+<meta name="description" content="基于 Wails 的本地多主机运维桌面工作台，集成终端、数据库、Docker 与上下文感知助手。（GitHub 29★，TypeScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "wworkbench", "url": "https://github.com/wcoreing/wworkbench", "codeRepository": "https://github.com/wcoreing/wworkbench", "description": "基于 Wails 的本地多主机运维桌面工作台，集成终端、数据库、Docker 与上下文感知助手。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "TypeScript", "license": "MIT", "author": {"@type": "Organization", "name": "wcoreing"}, "dateModified": "2026-11-21"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">管理</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/wcoreing/wworkbench" target="_blank" rel="noopener">wworkbench</a>
+<div class="c-meta"><span>语言 TypeScript</span><span>协议 MIT</span><span>创建于 2026</span><span>版本 0.54.202</span><span>贡献者 3 人</span><span>最近提交 2026-11-21</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="gui-client · 置信 high">GUI 客户端</span></div>
+</div>
+<div class="c-right"><div class="c-star">29<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="wworkbench star trend 30 to 29"><title>wworkbench star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 30 增长至 29</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L15.0,58.0 L21.9,58.0 L28.9,58.0 L35.9,58.0 L42.9,58.0 L49.8,58.0 L56.8,58.0 L63.8,58.0 L70.7,58.0 L77.7,58.0 L84.7,58.0 L91.7,58.0 L98.6,58.0 L112.6,58.0 L119.5,58.0 L126.5,58.0 L133.5,58.0 L140.5,58.0 L147.4,58.0 L154.4,58.0 L168.3,58.0 L182.3,58.0 L189.3,58.0 L196.2,58.0 L203.2,58.0 L217.1,58.0 L231.1,58.0 L245.0,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 15.0,58.0 21.9,58.0 28.9,58.0 35.9,58.0 42.9,58.0 49.8,58.0 56.8,58.0 63.8,58.0 70.7,58.0 77.7,58.0 84.7,58.0 91.7,58.0 98.6,58.0 112.6,58.0 119.5,58.0 126.5,58.0 133.5,58.0 140.5,58.0 147.4,58.0 154.4,58.0 168.3,58.0 182.3,58.0 189.3,58.0 196.2,58.0 203.2,58.0 217.1,58.0 231.1,58.0 245.0,58.0 252.0,58.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 Wails 的本地多主机运维桌面工作台，集成终端、数据库、Docker 与上下文感知助手。</p><p class="pts-label">综述（解读层）</p><p class="pain">WWorkbench 是一个用 Go 与 Wails 构建的桌面应用，将 SSH 终端、数据库控制台、Docker 管理、SFTP 文件传输、日志查看和 Markdown 笔记整合在同一工作台，面向需要同时操作多台主机的运维与全栈开发者。连接信息与偏好存储在本地 ~/.wworkbench 的 SQLite 中，无需强制云账号；侧栏助手可通过 @ 绑定主机/数据库/容器，并经 MCP HTTP 端口向 Cursor 等外部编辑器提供当前 shell 上下文，写入类操作需在应用内确认对话框中批准。</p><ul class="pts"><li>支持 MySQL、PostgreSQL、SQLite、Redis 的 SQL 控制台与表/键浏览，MySQL 含 DDL 设计</li><li>提供本地 shell 与交互式 SSH 终端、SFTP 文件管理、本地/远程 Docker 管理、Node/Go/PHP/Java 本地环境版本切换</li><li>侧栏助手支持 Ask/Plan/Agent 模式，@ 绑定资产；MCP HTTP 本地端口配合 Bearer 认证可被 Cursor 读取当前上下文，危险写入需应用内确认</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>多主机故障排查：在同一界面内查看 SSH 终端、容器日志与数据库</li><li>自托管/全栈开发：将本地与远程资产保存在可恢复的工作区中</li><li>配合 Cursor 使用 MCP，使编辑器 AI 读取当前正在查看的约 100 行 shell 内容</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">WWorkbench — a local multi-host ops & development workbench.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MySQL、PostgreSQL、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/wcoreing/wworkbench" target="_blank" rel="noopener">wcoreing/wworkbench</a></td><td class="stars">29</td><td>本地多主机运维工作台：数据库·终端·Docker·文件·日志·笔记本。侧栏助手看得见你正在看的机器——引导你做完，而不是替你点完。</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/nanoninja/docker-nginx-php-mysql" target="_blank" rel="noopener">nanoninja/docker-nginx-php-mysql</a></td><td class="stars">1,765</td><td>Docker running Nginx, PHP-FPM, MySQL &amp; PHPMyAdmin · 1 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/gridex/gridex" target="_blank" rel="noopener">gridex/gridex</a></td><td class="stars">2,004</td><td>A native macOS / windows / Linux database IDE built with Swift and AppKit. Connect to PostgreSQL, MySQL, SQLite, and Red...</td><td class="stars">0.88</td></tr>
+<tr><td><a href="https://github.com/jaywcjlove/mysql-tutorial" target="_blank" rel="noopener">jaywcjlove/mysql-tutorial</a></td><td class="stars">4,809</td><td>MySQL入门教程（MySQL tutorial book） · 7 个月未更</td><td class="stars">0.85</td></tr>
+<tr><td><a href="https://github.com/cweijan/vscode-database-client" target="_blank" rel="noopener">cweijan/vscode-database-client</a></td><td class="stars">2,929</td><td>Database Client For Visual Studio Code</td><td class="stars">0.83</td></tr>
+<tr><td><a href="https://github.com/beekeeper-studio/beekeeper-studio" target="_blank" rel="noopener">beekeeper-studio/beekeeper-studio</a></td><td class="stars">23,916</td><td>Modern and easy to use database GUI &amp; SQL client for MySQL, Postgres, SQLite, SQL Server, ClickHouse, and more. Linux, M...</td><td class="stars">0.81</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.54.202</b>（09-17）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 12 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

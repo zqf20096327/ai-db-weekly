@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>masa-finance/masa-oracle：去中心化数据协议，通过 Oracle 节点和 Worker 节点的 P2P 网络… · GitHub 35★</title>
+<meta name="description" content="去中心化数据协议，通过 Oracle 节点和 Worker 节点的 P2P 网络提供 AI 训练数据与计算资源交易。（GitHub 35★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "masa-oracle", "url": "https://github.com/masa-finance/masa-oracle", "codeRepository": "https://github.com/masa-finance/masa-oracle", "description": "去中心化数据协议，通过 Oracle 节点和 Worker 节点的 P2P 网络提供 AI 训练数据与计算资源交易。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "MIT", "author": {"@type": "Organization", "name": "masa-finance"}, "dateModified": "2025-03-13"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">平台</span><span class="chip sub">1 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/masa-finance/masa-oracle" target="_blank" rel="noopener">masa-oracle</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 MIT</span><span>创建于 2023</span><span>版本 0.8.9</span><span>贡献者 21 人</span><span>最近提交 2025-03-13</span></div>
+</div>
+<div class="c-right"><div class="c-star">35<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="masa-oracle star trend 35 to 35"><title>masa-oracle star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 35 增长至 35</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L15.0,34.0 L21.9,34.0 L28.9,34.0 L35.9,34.0 L42.9,34.0 L49.8,34.0 L56.8,34.0 L63.8,34.0 L70.7,34.0 L77.7,34.0 L84.7,34.0 L91.7,34.0 L98.6,34.0 L112.6,34.0 L119.5,34.0 L126.5,34.0 L133.5,34.0 L140.5,34.0 L147.4,34.0 L154.4,34.0 L168.3,34.0 L182.3,34.0 L189.3,34.0 L196.2,34.0 L203.2,34.0 L217.1,34.0 L231.1,34.0 L245.0,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 15.0,34.0 21.9,34.0 28.9,34.0 35.9,34.0 42.9,34.0 49.8,34.0 56.8,34.0 63.8,34.0 70.7,34.0 77.7,34.0 84.7,34.0 91.7,34.0 98.6,34.0 112.6,34.0 119.5,34.0 126.5,34.0 133.5,34.0 140.5,34.0 147.4,34.0 154.4,34.0 168.3,34.0 182.3,34.0 189.3,34.0 196.2,34.0 203.2,34.0 217.1,34.0 231.1,34.0 245.0,34.0 252.0,34.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>去中心化数据协议，通过 Oracle 节点和 Worker 节点的 P2P 网络提供 AI 训练数据与计算资源交易。</p><p class="pts-label">综述（解读层）</p><p class="pain">Masa Oracle 是一个用 Go 编写的去中心化数据协议实现，网络由 Oracle Node 和 Worker Node 组成。Worker 节点通过质押代币接收并处理来自 Oracle 节点的数据与 LLM 请求，可获得网络排放和费用；Oracle 节点面向开发者，用于向 Worker 节点提交数据或 LLM 请求。项目另含 Masa Bittensor 子网，聚焦 Twitter 数据。README 未提供具体安装运行步骤，需查阅文档。</p><ul class="pts"><li>支持两类节点角色：Worker 节点处理数据和 LLM 请求，Oracle 节点提交请求</li><li>包含 Twitter Scraper、Web Scraper、Discord Profile Scraper 等数据源组件</li><li>参与节点需质押代币，按可用性与在线时长获得网络排放和费用</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>需要获取 Twitter、网页、Discord 等数据源用于 AI 训练的场景</li><li>开发者通过 Oracle 节点访问开源 LLM 服务</li><li>数据或计算资源贡献者运行 Worker 节点以获取收益</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Welcome to Masa, the network powering Fair AI. We are on a mission to revolutionize the AI landscape by providing an open, permissionless marketplace for specialized AI training data and compute resou</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>Oracle</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.8.9</b>（01-27）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 0 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

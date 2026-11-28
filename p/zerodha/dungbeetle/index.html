@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>zerodha/dungbeetle：单二进制分布式任务服务器，用于异步排队执行 SQL 读作业 · GitHub 1290★</title>
+<meta name="description" content="单二进制分布式任务服务器，用于异步排队执行 SQL 读作业（GitHub 1290★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dungbeetle", "url": "https://github.com/zerodha/dungbeetle", "codeRepository": "https://github.com/zerodha/dungbeetle", "description": "单二进制分布式任务服务器，用于异步排队执行 SQL 读作业", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "MIT", "author": {"@type": "Organization", "name": "zerodha"}, "dateModified": "2026-11-03"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">连接/代理</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/zerodha/dungbeetle" target="_blank" rel="noopener">dungbeetle</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 MIT</span><span>创建于 2018</span><span>版本 2.1.0</span><span>贡献者 11 人</span><span>最近提交 2026-11-03</span><span>90 天 17 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="exporter · 置信 high">指标导出器</span><span class="capchip mid" title="analytics · 置信 mid">分析查询</span></div>
+</div>
+<div class="c-right"><div class="c-star">1,290<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="dungbeetle star trend 1280 to 1290"><title>dungbeetle star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 1280 增长至 1290</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.0,58.0 L21.9,58.0 L28.9,53.2 L35.9,48.4 L42.9,48.4 L49.8,48.4 L56.8,48.4 L63.8,48.4 L70.7,43.6 L77.7,43.6 L84.7,43.6 L91.7,38.8 L98.6,34.0 L112.6,34.0 L119.5,34.0 L126.5,34.0 L133.5,34.0 L140.5,29.2 L147.4,29.2 L154.4,29.2 L168.3,29.2 L182.3,24.4 L189.3,24.4 L196.2,24.4 L203.2,19.6 L217.1,19.6 L231.1,19.6 L245.0,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.0,58.0 21.9,58.0 28.9,53.2 35.9,48.4 42.9,48.4 49.8,48.4 56.8,48.4 63.8,48.4 70.7,43.6 77.7,43.6 84.7,43.6 91.7,38.8 98.6,34.0 112.6,34.0 119.5,34.0 126.5,34.0 133.5,34.0 140.5,29.2 147.4,29.2 154.4,29.2 168.3,29.2 182.3,24.4 189.3,24.4 196.2,24.4 203.2,19.6 217.1,19.6 231.1,19.6 245.0,10.0 252.0,10.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>单二进制分布式任务服务器，用于异步排队执行 SQL 读作业</p><p class="pts-label">综述（解读层）</p><p class="pain">DungBeetle 是一个单二进制分布式作业服务器，用于排队并异步执行大量 SQL 读作业（如报表）。它从 .sql 文件加载命名任务，通过 Redis、AMQP 等共享 broker 实现多进程多线程队列，作业结果写入独立的 MySQL/Postgres 结果库中每个作业专属的临时表，供前端轮询读取。适合需要将报表层与主应用分离、避免大量并发查询压垮源库的团队；支持 MySQL、Postgres、ClickHouse 作为源库。</p><ul class="pts"><li>支持 MySQL、PostgreSQL、ClickHouse 作为源数据库，MySQL、PostgreSQL 作为结果库</li><li>以 goyesql 格式的 .sql 文件定义任务，启动时自动注册并预编译 SQL 语句，支持位置参数</li><li>通过 Redis、AMQP 等 broker 后端实现多进程、多线程的分布式作业队列</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>应用中用户报表生成的异步排队，避免大量并发查询压垮源数据库</li><li>将报表查询层从应用中分离，后续的筛选、排序查询可发往临时的结果缓存库</li><li>需要定时（eta）、重试或多作业并发分组执行的一批 SQL 查询场景</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">DungBeetle is a lightweight, single binary distributed job server designed for queuing and asynchronously executing large numbers of SQL read jobs (eg: reports) against SQL databases. When the read jo</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>ClickHouse、MySQL、PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/zerodha/dungbeetle" target="_blank" rel="noopener">zerodha/dungbeetle</a></td><td class="stars">1,290</td><td>A distributed job server built specifically for queuing and executing heavy SQL read jobs asynchronously. Separate out r...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/apache/kvrocks" target="_blank" rel="noopener">apache/kvrocks</a></td><td class="stars">4,508</td><td>Apache Kvrocks is a distributed key value NoSQL database that uses RocksDB as storage engine and is compatible with Redi...</td><td class="stars">0.69</td></tr>
+<tr><td><a href="https://github.com/altinity/clickhouse-operator" target="_blank" rel="noopener">altinity/clickhouse-operator</a></td><td class="stars">2,586</td><td>Altinity Kubernetes Operator for ClickHouse creates, configures and manages ClickHouse® clusters running on Kubernetes</td><td class="stars">0.69</td></tr>
+<tr><td><a href="https://github.com/justwatchcom/sql_exporter" target="_blank" rel="noopener">justwatchcom/sql_exporter</a></td><td class="stars">502</td><td>Flexible SQL Exporter for Prometheus. · 1 年未更</td><td class="stars">0.69</td></tr>
+<tr><td><a href="https://github.com/ihippik/wal-listener" target="_blank" rel="noopener">ihippik/wal-listener</a></td><td class="stars">472</td><td>PostgreSQL WAL listener · 6 个月未更</td><td class="stars">0.69</td></tr>
+<tr><td><a href="https://github.com/free/sql_exporter" target="_blank" rel="noopener">free/sql_exporter</a></td><td class="stars">597</td><td>Database agnostic SQL exporter for Prometheus · 4 年未更</td><td class="stars">0.64</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>2.1.0</b>（10-27）——77e800e3d445b261b749395d663ea801dbba34ab Add Prometheus metrics for jobs and queues (#84) * c5a4089ad362f9228a99368ec919fdfd0a34bedd Add warning for ClickHouse DSN urlencoding behaviour (#83) * 75ea8e0942af23cd60c1cbdba42e88692c4702ba fix: separate conn_max_lifetime from connect_timeout in dbpool co</p><p class="t-sub" style="margin-top:4px;">90 天 1 发 · 安全通告 0</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🏭 生产采用</span><span class="t-sub">README 提及数</span></div>
+<div class="users"><div class="user">被池内 1 个其他项目的 README 以 owner/repo 引用（36054 篇全量扫描，截至 2026-11-22）</div></div>
+</div>
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库开源生态周刊 · 第 5 期</title>
+<meta name="description" content="监控类别的看板项目：★77.8k、7 天 390 次提交、90 天 3,566 次，10-27 如期发布 v13.3.0——开源可观测生态的图形入口十三年不倒。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://zqf20096327.github.io/ai-db-weekly/weekly/5/">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.iss-no-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.iss-nav { margin-left: auto; display: inline-flex; gap: 14px; font-size: 12px; }
+.iss-nav a { color: var(--muted); }
+.iss-nav a:hover { color: var(--accent); }
+.iss-nav .off { color: var(--line); }
+details.article-card { cursor: pointer; }
+details.article-card[open] { cursor: default; }
+details.article-card > summary { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+details.article-card > summary::-webkit-details-marker { display: none; }
+details.article-card .dr-article { border-top: 1px dashed var(--line); margin-top: 8px; padding-top: 6px; }
+.issue-panel { grid-template-columns: repeat(2,1fr); }
+.dr-actions { margin-top: 10px; }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk on" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<section class="hero issue-hero">
+    <div class="iss-no-row">
+      <div class="issue-no">第 5 期 <span class="muted">· 2026-11-03 · 每周一刊</span></div>
+      <span class="iss-nav"><a href="/ai-db-weekly/weekly/4/">‹ 上一期</a><a href="/ai-db-weekly/weekly/6/">下一期 ›</a><a href="/ai-db-weekly/">回到最新</a><a href="/ai-db-weekly/archive.html">往期 →</a></span>
+    </div>
+    <div class="h1-row">
+      <h1>数据库开源生态周刊</h1>
+      <a class="btn primary cta-top" href="/ai-db-weekly/projects/">浏览 11,993 个项目档案 →</a>
+    </div>
+    <div class="issue-slogan">国际 7 库 · 国产 10 库 · 每周更新</div>
+    <div class="numline"><a href="/ai-db-weekly/projects/"><b>11,993</b>收录项目</a><i>·</i><a href="/ai-db-weekly/projects/"><b>2</b>新披露通告(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>168</b>发版项目(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>233</b>停维预警</a><i>·</i><a href="/ai-db-weekly/projects/"><b>884</b>AI 工具</a><i>·</i><a href="/ai-db-weekly/projects/"><b>70</b>新项目(45天)</a></div>
+    <div class="lede-label">本期导读</div>
+    <div class="lede">
+<div class="lede-row"><span class="lede-k">亮点</span><div class="lede-t">官方发版与轮值撞车：<a class="jump" href="/ai-db-weekly/p/grafana/grafana/">grafana</a> v13.3.0 于 10-27 落地，详见类别席；AI 代码记忆赛道再添一员——<a class="jump" href="/ai-db-weekly/p/deusdata/codebase-memory-mcp/">codebase-memory-mcp</a> 8 个月做到 ★48k、本周 +509，详见板块席。增星榜由 <a class="jump" href="/ai-db-weekly/p/thedotmack/claude-mem/">claude-mem</a>（+8,410）连续第四周领跑，冷却期不发深读</div></div>
+<div class="lede-row"><span class="lede-k">风险</span><div class="lede-t">近 7 天<b>新披露</b>高危通告 2 起：<a class="jump" href="/ai-db-weekly/p/nocodb/nocodb/">nocodb</a>（★65k）与 <a class="jump" href="/ai-db-weekly/p/teableio/teable/">teable</a> 同日上榜，自部署表格/低代码平台是近期高危重灾区；停维榜本周添了重量级新面孔——<a class="jump" href="/ai-db-weekly/p/chartdb/chartdb/">chartdb</a>（★23k）半年零提交，详见事件席</div></div>
+<div class="lede-row"><span class="lede-k">规模</span><div class="lede-t">站内收录 11,993 个项目档案，17 库生态，每周更新一次</div></div>
+    </div>
+  </section>
+  <main>
+    <section>
+      <div class="sec-title"><h3>💬 一句话情报</h3><span class="line"></span><span class="muted">知道就好 · 数据自动生成</span></div>
+      <div class="card oneline-card"><ul>
+<li><a href="/ai-db-weekly/p/thedotmack/claude-mem/"><code>thedotmack/claude-mem</code></a> 本周 <b class="g7">+8410</b> 星，全站第一（现 ★112k）</li>
+<li><a href="/ai-db-weekly/p/neondatabase/neonctl/"><code>neondatabase/neonctl</code></a>（★118）已标记归档，选型避开</li>
+<li>近 7 天新披露安全通告 <b>2</b> 起、发版 <b>168</b> 个项目</li>
+<li>AI 渗透：在册 AI 相关工具 884 个，其中 MCP 类 526 个</li>
+<li>45 天窗口内新入库且已归属的工具 <b>70</b> 个</li>
+      </ul></div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>📖 本期深读</h3><span class="line"></span><span class="muted">国际开源 · 国产开源 · AI×数据库 · 点卡片读全文</span></div>
+      <div class="grid3 issue-grid">
+<details class="article-card">
+<summary>
+<div class="sector">类别轮值 · 监控</div>
+<h3>可观测平台的门面担当：grafana v13.3.0 恰逢轮值周</h3>
+<div class="fn mono">grafana/grafana</div>
+<p>监控类别的看板项目：★77.8k、7 天 390 次提交、90 天 3,566 次，10-27 如期发布 v13.3.0——开源可观测生态的图形入口十三年不倒。</p>
+<div class="nums"><span><b>78k</b> Star</span><span><b>+141</b> 本周</span><span><b>390</b> c/7天</span><span><b>373</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>Grafana 是开源可视化与分析平台，把指标、日志、追踪统一查询、出图、告警，是绝大多数自托管监控栈的「图形门面」：下接 Prometheus、ClickHouse、各类数据源插件，上承仪表盘与告警规则，2014 年开源至今。站内按支持口径归属 PostgreSQL、MySQL、Oracle、SQL Server、ClickHouse 等 5 库，是监控类别的第一名。</p><p>为什么本期选它：类别轮盘 4/13 转到监控，恰好官方发版信号同时触发——v13.3.0 于 10-27 发布，落在本期快照窗口内。工程数字撑得起门面：★77,764、7 天 390 次、90 天 3,566 次提交、373 位贡献者，AGPL-3.0 许可证，全类别唯一「万星级」项目（第二名 netdata ★81.6k 与它构成双寡头）。对选型者而言，这个提交节奏意味着插件生态与数据源适配的持续到货。</p><p>适合谁：任何要自建监控/可观测体系的团队——无论后端是 Prometheus 还是 ClickHouse 栈，Grafana 都是最稳的展示层起点。风险观察点：AGPL-3.0 对把它嵌进商业 SNS 类产品的公司有合规成本；在册安全通告 28 条（最近一条 critical 已是 2023 年），作为常被暴露在公网的入口，版本与访问控制不能松；本刊第 6 期预告：ClickHouse 官方的 ClickStack 正在把「可观测全家桶」连皮带入口打包，竞争线正在从图表层移向整栈。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">78k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+141</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">390</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">3566</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">373</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v13.3.0</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">AGPL-3.0</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/grafana/grafana/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 5 期（快照 20261103）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">板块主打 · 国际</div>
+<h3>8 个月 ★48k：纯 C 写的 codebase-memory-mcp 把代码库变成 AI 的持久记忆</h3>
+<div class="fn mono">DeusData/codebase-memory-mcp</div>
+<p>本地运行的 MCP 服务器，把代码、文档与基础设施索引成持久知识图；17 个 MCP 工具、164 种语言、纯 C 实现零运行时，本周 +509 星稳步登高。</p>
+<div class="nums"><span><b>48k</b> Star</span><span><b>+509</b> 本周</span><span><b>299</b> c/7天</span><span><b>161</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>codebase-memory-mcp 是一个本地 MCP 服务器：把代码、文档、基础设施配置索引为持久知识图，供 Claude、Cursor 等 46 种 agent 界面随时检索——AI 编程助手不再每次从零读库，而是带一份长期记忆干活。工程选型相当有性格：纯 C 实现，无任何语言运行时；17 个 MCP 工具；宣称支持 164 种语言的符号索引，靠混合 LSP 做类型消解；macOS/Linux/Windows 全平台。MIT 许可证，2026 年 2 月创建，161 位贡献者，站内按存储口径归属 SQLite。</p><p>为什么本期选它：板块主打国际席位，而它是本周国际阵营里最硬的增量故事——★48,067、本周 +509，8 个月从零做到 4.8 万星，节奏没有放缓迹象（7 天 299 次提交、90 天 3,048 次）。更值得说的是它踩中的结构性位置：agent 记忆层正在从「聊天记忆」走向「代码库记忆」，claude-mem（★112k，本刊第 3 期）做会话侧，它做资产侧——企业最值钱的私有知识，恰好是云端大模型摸不到的部分。</p><p>适合谁：在大型私有代码库上重度使用 AI 编程代理的团队，尤其在意数据不出本机的场景。风险观察点：版本号还在 v0.12.x，接口与索引格式都在快速变动；知识图的「保鲜」依赖重建时机，代码大改后检索质量会衰减；赛道极度拥挤——记忆层每周都有新入局者，8 个月的领先优势并不牢固。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">48k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+509</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">299</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">3048</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">161</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v0.12.1</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">MIT</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/deusdata/codebase-memory-mcp/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 5 期（快照 20261103）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">事件 · 千星停维</div>
+<h3>★23k 停在 v1.20.1：chartdb 半年零提交登顶本周停维榜</h3>
+<div class="fn mono">chartdb/chartdb</div>
+<p>免安装、免密码的浏览器端数据库关系图编辑器，2024-08 创建一年冲到两万星；最后一次发版停在 2026-04-07，90 天零提交——本周停维榜的头号新闻。</p>
+<div class="nums"><span><b>23k</b> Star</span><span><b>+36</b> 本周</span><span><b>0</b> c/7天</span><span><b>66</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>ChartDB 是开源数据库关系图编辑器：不装软件、不填数据库密码，复制一条查询语句进浏览器就能把库表结构画成可编辑的关系图，支持导出 SQL 与图片，AGPL-3.0 许可证。它 2024 年 8 月创建，一年多的时间冲到 ★23,063、66 位贡献者，是「数据库建模/设计」类别里仅次于 drawdb（★40k）的第二名，站内归属 PostgreSQL、MySQL、Oracle 等 8 库。</p><p>为什么登上事件席：千星停维是本站事件信号的最高级别，而 chartdb 是本周停维名单里唯一的新面孔——最后一次发版 v1.20.1 停在 2026-04-07，整整半年；90 天提交数为 0，7 天提交数为 0，star 却仍在每周 +36 地缓慢流入，说明还有新用户在不知情地涌入。同赛道的对照：drawdb 本周照常发版（见第 6 期），erd-editor 也在低频维护，唯有它静默。</p><p>适合谁：已在用它画图的团队可以继续用——停维不是删除，存量功能与文档仍在线；但新项目选型建议转向 drawdb 或 azimutt 等活跃替代。风险观察点：AGPL 项目停维后社区分叉的合规路径要自己走；浏览器工具的「免密码」体验依赖只读查询，若上游永不再更新，连接协议跟进（新版本数据库方言）也就此止步。停维榜是滚动口径，若后续恢复提交会自动出榜——本刊会持续跟踪。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">23k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+36</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">0</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">0</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">66</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v1.20.1</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">AGPL-3.0</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">3/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/chartdb/chartdb/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 5 期（快照 20261103）。</div>
+</div>
+</details>
+      </div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>⚡ 本周速览</h3><span class="line"></span><span class="muted">只报变化（事件）· 发刊时冻结 · 状态请查工具页</span></div>
+      <div class="grid2">
+<section class="card digest risk">
+<div class="card-head"><h2>🔴 风险预警<span class="hint">本周新披露 2 起 · 停维/归档 233</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/nocodb/nocodb/"><span class="sev">高危</span> <span class="repo">nocodb/nocodb</span><span class="d-meta">2026-10-27 新披露 · ★65k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/teableio/teable/"><span class="sev">高危</span> <span class="repo">teableio/teable</span><span class="d-meta">2026-10-27 新披露 · ★22k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/sinaptik-ai/pandas-ai/"><span class="bdg stale">停维</span> <span class="repo">sinaptik-ai/pandas-ai</span><span class="d-meta">90 天零提交 · ★24k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/chartdb/chartdb/"><span class="bdg stale">停维</span> <span class="repo">chartdb/chartdb</span><span class="d-meta">90 天零提交 · ★23k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/typicode/lowdb/"><span class="bdg stale">停维</span> <span class="repo">typicode/lowdb</span><span class="d-meta">90 天零提交 · ★23k</span></a>
+</div>
+</section>
+<section class="card digest ver">
+<div class="card-head"><h2>📦 版本动态<span class="hint">近 7 天发版 · 官方优先</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/pingcap/tidb-operator/"> <span class="repo">pingcap/tidb-operator</span><span class="d-meta"><span class="tag off">官方</span> v2.2.0-alpha.13 <span class="muted">· 2026-10-29</span> · ★1.3k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/oracle/graalvm-reachability-metadata/"> <span class="repo">oracle/graalvm-reachability-metadata</span><span class="d-meta"><span class="tag off">官方</span> SNAPSHOT <span class="muted">· 2026-10-27</span> · ★485</span></a>
+<a class="d-item" href="/ai-db-weekly/p/oracle/python-oracledb/"> <span class="repo">oracle/python-oracledb</span><span class="d-meta"><span class="tag off">官方</span> v26.1.0 <span class="muted">· 2026-10-27</span> · ★457</span></a>
+<a class="d-item" href="/ai-db-weekly/p/huaweicloud/terraform-provider-huaweicloud/"> <span class="repo">huaweicloud/terraform-provider-huaweicloud</span><span class="d-meta"><span class="tag off">官方</span> v1.100.0 <span class="muted">· 2026-10-27</span> · ★275</span></a>
+<a class="d-item" href="/ai-db-weekly/p/yashan-technologies/debezium-connector-yashandb/"> <span class="repo">yashan-technologies/debezium-connector-yashandb</span><span class="d-meta"><span class="tag off">官方</span> v3.8.0.1 <span class="muted">· 2026-10-30</span> · ★1</span></a>
+</div>
+</section>
+<section class="card digest gain">
+<div class="card-head"><h2>📈 增星榜<span class="hint">本周 · 全站总榜 · 基线 1026→1103</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/thedotmack/claude-mem/"> <span class="repo">thedotmack/claude-mem</span><span class="d-meta"><span class="g7">+8410</span> · ★112k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/t8y2/dbx/"> <span class="repo">t8y2/dbx</span><span class="d-meta"><span class="g7">+1111</span> · ★29k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/elliothux/open-compute/"> <span class="repo">elliothux/open-compute</span><span class="d-meta"><span class="g7">+695</span> · ★2.9k</span></a>
+</div>
+</section>
+<section class="card digest newb">
+<div class="card-head"><h2>🌱 新项目<span class="hint">创建 ≤45 天 · 已归属</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/mikehasa/golive-skill/"> <span class="repo">mikehasa/golive-skill</span><span class="d-meta">★1.4k · <span class="tag gray">平台</span> · 2026-09-23</span></a>
+<a class="d-item" href="/ai-db-weekly/p/tencentcloud/octop-harness/"> <span class="repo">TencentCloud/octop-harness</span><span class="d-meta">★131 · <span class="tag gray">开发库</span> · 2026-09-24</span></a>
+<a class="d-item" href="/ai-db-weekly/p/tencentcloud/octop-memory/"> <span class="repo">TencentCloud/octop-memory</span><span class="d-meta">★86 · <span class="tag gray">开发库</span> · 2026-09-24</span></a>
+</div>
+</section>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

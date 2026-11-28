@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库开源生态周刊 · 第 4 期</title>
+<meta name="description" content="列式实时分析的事实标准之一走完第十年：★50k 里程碑、7 天 1,663 次提交、311 位贡献者，v26.7.34.3-stable 如期落地。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://zqf20096327.github.io/ai-db-weekly/weekly/4/">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.iss-no-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.iss-nav { margin-left: auto; display: inline-flex; gap: 14px; font-size: 12px; }
+.iss-nav a { color: var(--muted); }
+.iss-nav a:hover { color: var(--accent); }
+.iss-nav .off { color: var(--line); }
+details.article-card { cursor: pointer; }
+details.article-card[open] { cursor: default; }
+details.article-card > summary { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+details.article-card > summary::-webkit-details-marker { display: none; }
+details.article-card .dr-article { border-top: 1px dashed var(--line); margin-top: 8px; padding-top: 6px; }
+.issue-panel { grid-template-columns: repeat(2,1fr); }
+.dr-actions { margin-top: 10px; }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk on" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<section class="hero issue-hero">
+    <div class="iss-no-row">
+      <div class="issue-no">第 4 期 <span class="muted">· 2026-10-27 · 每周一刊</span></div>
+      <span class="iss-nav"><a href="/ai-db-weekly/weekly/3/">‹ 上一期</a><a href="/ai-db-weekly/weekly/5/">下一期 ›</a><a href="/ai-db-weekly/">回到最新</a><a href="/ai-db-weekly/archive.html">往期 →</a></span>
+    </div>
+    <div class="h1-row">
+      <h1>数据库开源生态周刊</h1>
+      <a class="btn primary cta-top" href="/ai-db-weekly/projects/">浏览 11,993 个项目档案 →</a>
+    </div>
+    <div class="issue-slogan">国际 7 库 · 国产 10 库 · 每周更新</div>
+    <div class="numline"><a href="/ai-db-weekly/projects/"><b>31,698</b>收录项目</a><i>·</i><a href="/ai-db-weekly/projects/"><b>2</b>新披露通告(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>237</b>发版项目(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>1021</b>停维预警</a><i>·</i><a href="/ai-db-weekly/projects/"><b>3993</b>AI 工具</a><i>·</i><a href="/ai-db-weekly/projects/"><b>378</b>新项目(45天)</a></div>
+    <div class="lede-label">本期导读</div>
+    <div class="lede">
+<div class="lede-row"><span class="lede-k">亮点</span><div class="lede-t">双期国产主打：创建仅 9 个月的桌面 SQL 工作台 <a class="jump" href="/ai-db-weekly/p/tabularisdb/tabularis/">tabularis</a> 站上 ★5.3k、7 天 122 次提交，详见板块席；全站增速榜本周易主：supabase（+2,202）重回第一，连续两周登顶的 claude-mem（+1,397）退居第四（冷却期，本周不发深读）</div></div>
+<div class="lede-row"><span class="lede-k">风险</span><div class="lede-t">近 7 天<b>新披露</b>高危通告 2 起，均来自 ★&lt;10 的微型个人项目，主流库无恙；但停维名单本周添了重量级——<a class="jump" href="/ai-db-weekly/p/sinaptik-ai/pandas-ai/">pandas-ai</a>（★23.9k）一年无发版、90 天零提交登顶停维榜，与已归档的 vanna（★23.8k）仅差 88 星，详见事件席</div></div>
+<div class="lede-row"><span class="lede-k">规模</span><div class="lede-t">全站收录 31,698 个项目，17 库生态，每周更新一次</div></div>
+    </div>
+  </section>
+  <main>
+    <section>
+      <div class="sec-title"><h3>💬 一句话情报</h3><span class="line"></span><span class="muted">知道就好 · 数据自动生成</span></div>
+      <div class="card oneline-card"><ul>
+<li><a href="/ai-db-weekly/p/supabase/supabase/"><code>supabase/supabase</code></a> 本周 <b class="g7">+2202</b> 星，全站第一（现 ★114k）</li>
+<li>内核发版：<a href="/ai-db-weekly/p/clickhouse/clickhouse/"><code>ClickHouse/ClickHouse</code></a> 发布 <b>v26.7.34.3-stable</b>（2026-10-18）</li>
+<li><code>maybe-finance/maybe</code>（★54k）已标记归档，选型避开</li>
+<li>近 7 天新披露安全通告 <b>2</b> 起、发版 <b>237</b> 个项目</li>
+<li>AI 渗透：在册 AI 相关工具 3993 个，其中 MCP 类 1205 个</li>
+<li>45 天窗口内新入库且已归属的工具 <b>378</b> 个</li>
+      </ul></div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>📖 本期深读</h3><span class="line"></span><span class="muted">国际开源 · 国产开源 · AI×数据库 · 点卡片读全文</span></div>
+      <div class="grid3 issue-grid">
+<details class="article-card">
+<summary>
+<div class="sector">类别轮值 · 内核/引擎</div>
+<h3>五万星与不停转的月度发版机器：ClickHouse 新稳定版又至</h3>
+<div class="fn mono">ClickHouse/ClickHouse</div>
+<p>列式实时分析的事实标准之一走完第十年：★50k 里程碑、7 天 1,663 次提交、311 位贡献者，v26.7.34.3-stable 如期落地。</p>
+<div class="nums"><span><b>51k</b> Star</span><span><b>+120</b> 本周</span><span><b>1663</b> c/7天</span><span><b>311</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>ClickHouse 是开源列式数据库管理系统，面向实时生成分析报告的 OLAP 场景，2016 年开源、仓库即数据库本体，Apache 2.0 许可证。在站内口径里它是内核/引擎类的看板项目：唯一归属、官方仓库标记齐备，star 体量在全站 17 库生态里名列前茅。</p><p>为什么本期选它：类别轮盘 3/13 转到内核/引擎，恰好官方发版信号同时触发——v26.7.34.3-stable 于 10-18 发布（LTS 线补丁），月度发版节奏雷打不动。工程数字更能说明这台机器的成色：7 天 1,663 次提交、90 天 46,041 次、311 位贡献者、9,160 次 fork，本周 ★50,578 稳在五万星关口之上。对选型者而言，这种持续吞吐意味着缺陷修复和性能优化的到货速度都有保障。</p><p>适合谁：实时报表、用户行为分析、日志与监控这类写多读少的分析负载。风险观察点：分析型引擎不擅长事务与点查，别拿它当 OLTP 用；默认配置吃内存，资源规划要留余量；站内在册安全通告 7 条，作为常被暴露在公网的查询入口，升级与访问控制不能松。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">51k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+120</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">1663</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">46041</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">311</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v26.7.34.3-stable</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">Apache-2.0</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/clickhouse/clickhouse/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 4 期（快照 20261024）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">板块主打 · 国产</div>
+<h3>9 个月 5,300 星：tabularis 把 MCP 服务器装进桌面 SQL 工作台</h3>
+<div class="fn mono">TabularisDB/tabularis</div>
+<p>跨平台桌面客户端，3 个内置驱动加 24 个插件覆盖达梦等 24 种数据源，内置 MCP 服务器让 AI 代理直接读 schema 执行查询，7 天 122 次提交。</p>
+<div class="nums"><span><b>5.3k</b> Star</span><span><b>+46</b> 本周</span><span><b>122</b> c/7天</span><span><b>83</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>tabularis 是一个跨平台桌面 SQL 工作台：连接管理、SQL 编辑器之外，提供 SQL 笔记本（SQL 与 Markdown 混排单元、跨单元变量、图表）、交互式 ER 图、可视化 EXPLAIN 和 SSH 隧道。驱动架构分两层——PostgreSQL、MySQL/MariaDB、SQLite 三个内置，DuckDB、ClickHouse、Redis、SQL Server、Oracle、达梦等其余 24 种数据源走 JSON-RPC 插件接入，站内按支持口径归属 8 库。</p><p>为什么本期选它：双期国产主打，而它是国产工具里少见的「节奏型选手」——2026 年 1 月创建，9 个月站上 ★5,276、394 次 fork，7 天 122 次、90 天 1,090 次提交，nightly 构建发到 10-18。更值得说的是 AI 原生设计：内置 MCP 服务器，Claude、Cursor、Devin 可直接读取 schema 并执行查询，另支持基于 Ollama 本地模型的 text-to-SQL——数据不出本机。插件清单里带达梦，对国产库的适配态度也算个信号。</p><p>适合谁：想在桌面端统一管理多种数据库、又想让 AI 安全地摸库的开发者与 DBA。风险观察点：目前只有 nightly 发版、没有稳定版契约，生产依赖要谨慎；star 体量与 DBeaver（★52k）差一个量级，桌面客户端赛道竞争惨烈（本刊第 1 期写过 TablePro 与 dbx）；长期胜负手在插件生态能否滚起来。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">5.3k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+46</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">122</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">1090</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">83</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">nightly-20261018-27a2489</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">Apache-2.0</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/tabularisdb/tabularis/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 4 期（快照 20261024）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">事件 · 千星停维</div>
+<h3>2.4 万星停在 v3.0：pandas-ai 停维，自然语言数据分析赛道退潮</h3>
+<div class="fn mono">sinaptik-ai/pandas-ai</div>
+<p>让非技术用户用自然语言问数据的明星库，一年无发版、90 天零提交登顶停维榜；与已归档的 vanna 只差 88 星，同赛道双子星同年熄火。</p>
+<div class="nums"><span><b>24k</b> Star</span><span><b>+15</b> 本周</span><span><b>0</b> c/7天</span><span><b>109</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>PandasAI 是 2023 年 AI 浪潮捧起的明星项目之一：一个 Python 库，让用户以自然语言向 DataFrame、SQL、CSV、parquet 提问，由 LLM 生成代码并在 Docker 沙箱中执行，返回答案与图表——非技术用户拿它做对话式分析，技术用户拿它省掉写分析代码的时间。★23,901、2,341 次 fork、109 位贡献者，站内按支持口径归属 PostgreSQL、MySQL、Oracle、SQL Server 4 库。</p><p>为什么登上事件席：这是本站事件信号的最高级别——千星停维。v3.0.0 发布于 2025-10-07，整整一年再无发版；最后一次推送停在 2025-10-28，90 天零提交、7 天零提交。更扎眼的是停维榜的构图：第一名 pandas-ai（★23,901）与第二名、已标记归档的 vanna（★23,813）只差 88 星——自然语言数据分析赛道的双子星在同一年双双熄火。仓库里 ee 目录与云/企业版采用单独许可，开源版与商业版的关系是值得留意的一条线索。</p><p>适合谁：已在生产使用的话，建议尽快评估迁移——上游能力并未消失，DB-GPT 等数据助手、本期板块席 tabularis 内置的 text-to-SQL、各家 BI 的 AI 功能都在吸收同一波需求；新人不建议再入坑。停维不是删除，存量代码与文档仍可用，但它不会再跟进 pandas 与模型 API 的破坏性变更，越晚迁成本越高。全站本周共 1,021 个千星级工具停维或归档，本条为其中星数最高者。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">24k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+15</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">0</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">0</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">109</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v3.0.0</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">NOASSERTION</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">5/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/sinaptik-ai/pandas-ai/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 4 期（快照 20261024）。</div>
+</div>
+</details>
+      </div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>⚡ 本周速览</h3><span class="line"></span><span class="muted">只报变化（事件）· 发刊时冻结 · 状态请查工具页</span></div>
+      <div class="grid2">
+<section class="card digest risk">
+<div class="card-head"><h2>🔴 风险预警<span class="hint">本周新披露 2 起 · 停维/归档 1021</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<div class="d-item"><span class="sev">高危</span> <span class="repo">Nelcota/Nelcota</span><span class="d-meta">2026-10-19 新披露 · ★5</span></div>
+<div class="d-item"><span class="sev">高危</span> <span class="repo">rowstile/rowstile</span><span class="d-meta">2026-10-19 新披露 · ★3</span></div>
+<a class="d-item" href="/ai-db-weekly/p/sinaptik-ai/pandas-ai/"><span class="bdg stale">停维</span> <span class="repo">sinaptik-ai/pandas-ai</span><span class="d-meta">90 天零提交 · ★24k</span></a>
+<div class="d-item"><span class="bdg arc">归档</span> <span class="repo">vanna-ai/vanna</span><span class="d-meta">已标记归档 · ★24k</span></div>
+<a class="d-item" href="/ai-db-weekly/p/chartdb/chartdb/"><span class="bdg stale">停维</span> <span class="repo">chartdb/chartdb</span><span class="d-meta">90 天零提交 · ★23k</span></a>
+</div>
+</section>
+<section class="card digest ver">
+<div class="card-head"><h2>📦 版本动态<span class="hint">近 7 天发版 · 内核优先</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/clickhouse/clickhouse/"> <span class="repo">ClickHouse/ClickHouse</span><span class="d-meta"><span class="tag off">官方</span> v26.7.34.3-stable <span class="muted">· 2026-10-18</span> · ★51k</span></a>
+<div class="d-item"> <span class="repo">convex/convex-backend</span><span class="d-meta"><span class="tag off">官方</span> precompiled-2026-1 <span class="muted">· 2026-10-23</span> · ★13k</span></div>
+<a class="d-item" href="/ai-db-weekly/p/oceanbase/oceanbase/"> <span class="repo">oceanbase/oceanbase</span><span class="d-meta"><span class="tag off">官方</span> v4.2.5_CE_BP8 <span class="muted">· 2026-10-21</span> · ★10k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/dolthub/dolt/"> <span class="repo">dolthub/dolt</span><span class="d-meta">v2.5.0 <span class="muted">· 2026-10-17</span> · ★25k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/rqlite/rqlite/"> <span class="repo">rqlite/rqlite</span><span class="d-meta">v10.6.2 <span class="muted">· 2026-10-18</span> · ★18k</span></a>
+</div>
+</section>
+<section class="card digest gain">
+<div class="card-head"><h2>📈 增星榜<span class="hint">本周 · 国产榜 · 基线 1017→1024</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<div class="d-item"> <span class="repo">TencentCloud/Octop</span><span class="d-meta"><span class="g7">+1160</span> · ★11k</span></div>
+<a class="d-item" href="/ai-db-weekly/p/t8y2/dbx/"> <span class="repo">t8y2/dbx</span><span class="d-meta"><span class="g7">+626</span> · ★28k</span></a>
+<div class="d-item"> <span class="repo">TencentCloud/TencentDB-Agent-Memory</span><span class="d-meta"><span class="g7">+525</span> · ★30k</span></div>
+</div>
+</section>
+<section class="card digest newb">
+<div class="card-head"><h2>🌱 新项目<span class="hint">创建 ≤45 天 · 已归属</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<div class="d-item"> <span class="repo">elstongun/leviathan</span><span class="d-meta">★855 · <span class="tag gray">开发库</span> · 2026-10-05</span></div>
+<div class="d-item"> <span class="repo">gunkonchi/xscrape</span><span class="d-meta">★642 · <span class="tag gray">开发库</span> · 2026-09-26</span></div>
+<div class="d-item"> <span class="repo">arjaythedev/twelve-dollar-server-challenge</span><span class="d-meta">★461 · <span class="tag gray">测试/质量</span> · 2026-10-03</span></div>
+</div>
+</section>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

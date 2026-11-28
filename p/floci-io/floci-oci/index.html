@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>floci-io/floci-oci：本地运行的 Oracle Cloud 基础设施模拟器，通过 Docker 容器提… · GitHub 145★</title>
+<meta name="description" content="本地运行的 Oracle Cloud 基础设施模拟器，通过 Docker 容器提供 OCI 协议服务（GitHub 145★，Java 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "floci-oci", "url": "https://github.com/floci-io/floci-oci", "codeRepository": "https://github.com/floci-io/floci-oci", "description": "本地运行的 Oracle Cloud 基础设施模拟器，通过 Docker 容器提供 OCI 协议服务", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Java", "license": "MIT", "author": {"@type": "Organization", "name": "floci-io"}, "dateModified": "2026-11-20"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">测试/质量</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/floci-io/floci-oci" target="_blank" rel="noopener">floci-oci</a>
+<div class="c-meta"><span>语言 Java</span><span>协议 MIT</span><span>创建于 2026</span><span>版本 0.6.0</span><span>贡献者 7 人</span><span>最近提交 2026-11-20</span><span>90 天 119 commits</span></div>
+</div>
+<div class="c-right"><div class="c-star">145<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="floci-oci star trend 105 to 145"><title>floci-oci star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 105 增长至 145</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.0,58.0 L21.9,56.8 L28.9,55.6 L35.9,55.6 L42.9,53.2 L49.8,53.2 L56.8,53.2 L63.8,53.2 L70.7,53.2 L77.7,53.2 L84.7,53.2 L91.7,50.8 L98.6,50.8 L112.6,48.4 L119.5,37.6 L126.5,34.0 L133.5,31.6 L140.5,29.2 L147.4,28.0 L154.4,28.0 L168.3,26.8 L182.3,18.4 L189.3,17.2 L196.2,14.8 L203.2,13.6 L217.1,13.6 L231.1,11.2 L245.0,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.0,58.0 21.9,56.8 28.9,55.6 35.9,55.6 42.9,53.2 49.8,53.2 56.8,53.2 63.8,53.2 70.7,53.2 77.7,53.2 84.7,53.2 91.7,50.8 98.6,50.8 112.6,48.4 119.5,37.6 126.5,34.0 133.5,31.6 140.5,29.2 147.4,28.0 154.4,28.0 168.3,26.8 182.3,18.4 189.3,17.2 196.2,14.8 203.2,13.6 217.1,13.6 231.1,11.2 245.0,10.0 252.0,10.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>本地运行的 Oracle Cloud 基础设施模拟器，通过 Docker 容器提供 OCI 协议服务</p><p class="pts-label">综述（解读层）</p><p class="pain">floci-oci 是一个开源的本地 Oracle Cloud Infrastructure 模拟器，面向开发、测试和 CI 场景。它以 Docker 容器（端口 4599）实现 OCI 请求签名、分页、etag 等线上协议细节，官方 SDK、OCI CLI、Terraform 提供方可直接指向 localhost 使用；API 密钥仅解析签名上下文、不校验。基于 Quarkus 构建，需 JDK 25 从源码运行。</p><ul class="pts"><li>支持 Identity、Object Storage、Queue、Streaming、Vault+KMS、Functions、OKE、PostgreSQL 数据库、Organizations 等多类 OCI 服务的本地模拟，部分服务（Functions/OKE/OCIR/PostgreSQL）通过 Docker sidecar 运行真实组件</li><li>实现 OCI 线上协议细节：opc-request-id、opc-next-page 分页、etag/if-match 条件请求、OCID、异步 work requests 及 OCI 错误体格式</li><li>提供 in-memory、持久化、混合、write-ahead log 四种存储模式，支持 GraalVM native-image；提供 bin/ocilocal 封装脚本自动注入本地端点</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>无 Oracle Cloud 账户或凭据时在本地开发与调试 OCI 集成代码</li><li>在 CI 流水线中运行依赖 OCI API 的集成测试</li><li>测试 Terraform/OpenTofu 配置及对象存储、KMS、队列等服务的 IaC 工作流</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Light, fluffy, and always free, now for Oracle Cloud No account. No API key ceremony. No feature gates. Just docker compose up.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>Oracle</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.6.0</b>（10-31）——psql: add OCI Database with PostgreSQL backed by a real PostgreSQL container (#74) (9010b09) * identity: refuse to delete non-empty compartments and enforce compartment limits (#72) (8debadb) * organizations: approve c</p><p class="t-sub" style="margin-top:4px;">90 天 5 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

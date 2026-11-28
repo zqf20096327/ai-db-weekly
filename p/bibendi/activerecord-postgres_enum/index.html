@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bibendi/activerecord-postgres_enum：为 ActiveRecord 提供 PostgreSQL enum 类型迁移与… · GitHub 364★</title>
+<meta name="description" content="为 ActiveRecord 提供 PostgreSQL enum 类型迁移与 schema.rb 支持的 Ruby Gem（GitHub 364★，Ruby 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "activerecord-postgres_enum", "url": "https://github.com/bibendi/activerecord-postgres_enum", "codeRepository": "https://github.com/bibendi/activerecord-postgres_enum", "description": "为 ActiveRecord 提供 PostgreSQL enum 类型迁移与 schema.rb 支持的 Ruby Gem", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Ruby", "license": "MIT", "author": {"@type": "Organization", "name": "bibendi"}, "dateModified": "2024-06-13"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">迁移</span><span class="chip sub">2 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/bibendi/activerecord-postgres_enum" target="_blank" rel="noopener">activerecord-postgres_enum</a>
+<div class="c-meta"><span>语言 Ruby</span><span>协议 MIT</span><span>创建于 2018</span><span>版本 2.1.0</span><span>贡献者 15 人</span><span>最近提交 2024-06-13</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="schema-migration · 置信 high">结构迁移</span></div>
+</div>
+<div class="c-right"><div class="c-star">364<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="activerecord-postgres_enum star trend 365 to 364"><title>activerecord-postgres_enum star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 365 增长至 364</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L15.0,10.0 L21.9,10.0 L28.9,10.0 L35.9,10.0 L42.9,10.0 L49.8,10.0 L56.8,10.0 L63.8,10.0 L70.7,10.0 L77.7,10.0 L84.7,10.0 L91.7,10.0 L98.6,10.0 L112.6,10.0 L119.5,10.0 L126.5,10.0 L133.5,10.0 L140.5,10.0 L147.4,10.0 L154.4,10.0 L168.3,10.0 L182.3,10.0 L189.3,10.0 L196.2,10.0 L203.2,10.0 L217.1,58.0 L231.1,58.0 L245.0,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 15.0,10.0 21.9,10.0 28.9,10.0 35.9,10.0 42.9,10.0 49.8,10.0 56.8,10.0 63.8,10.0 70.7,10.0 77.7,10.0 84.7,10.0 91.7,10.0 98.6,10.0 112.6,10.0 119.5,10.0 126.5,10.0 133.5,10.0 140.5,10.0 147.4,10.0 154.4,10.0 168.3,10.0 182.3,10.0 189.3,10.0 196.2,10.0 203.2,10.0 217.1,58.0 231.1,58.0 245.0,58.0 252.0,58.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>为 ActiveRecord 提供 PostgreSQL enum 类型迁移与 schema.rb 支持的 Ruby Gem</p><p class="pts-label">综述（解读层）</p><p class="pain">这是一个 Ruby Gem，将 PostgreSQL 的枚举数据类型接入 Rails 的迁移和 schema.rb 流程。它提供 create_enum、drop_enum、rename_enum、add_enum_value 等迁移方法，并把枚举定义写入 schema.rb 以支持 db:schema:load。使用时需注意：删除枚举值前须确认该值未被使用；在事务内添加枚举值时需用 disable_ddl_transaction! 关闭事务。适用于在 Rails 项目中使用 PostgreSQL 枚举列的开发者。</p><ul class="pts"><li>提供 create_enum、drop_enum、rename_enum、add_enum_value、remove_enum_value、rename_enum_value 等迁移方法</li><li>将枚举类型写入 schema.rb，使 rake db:schema:load 可正常工作</li><li>支持通过 t.enum 或 add_column 在表中创建枚举类型列</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>Rails + PostgreSQL 项目中需要使用枚举类型字段的场景</li><li>需要对已有枚举进行增删改值管理的数据库迁移流程</li><li>依赖 schema.rb 维护数据库结构、使用 db:schema:load 初始化的团队</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Adds migration and schema.rb support to PostgreSQL enum data types.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/bibendi/activerecord-postgres_enum" target="_blank" rel="noopener">bibendi/activerecord-postgres_enum</a></td><td class="stars">364</td><td>Integrate PostgreSQL's enum data type into ActiveRecord's schema and migrations.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/geldata/gel" target="_blank" rel="noopener">geldata/gel</a></td><td class="stars">14,190</td><td>Gel supercharges Postgres with a modern data model, graph queries, Auth &amp; AI solutions, and much more. · 11 个月未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/doctrine/dbal" target="_blank" rel="noopener">doctrine/dbal</a></td><td class="stars">9,703</td><td>Doctrine Database Abstraction Layer</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/xataio/pgroll" target="_blank" rel="noopener">xataio/pgroll</a></td><td class="stars">6,632</td><td>PostgreSQL zero-downtime migrations made easy</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/digitallyinduced/ihp" target="_blank" rel="noopener">digitallyinduced/ihp</a></td><td class="stars">5,384</td><td>🔥 The fastest way to build type safe web apps. IHP is a new batteries-included web framework optimized for longterm prod...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/kriasoft/graphql-starter-kit" target="_blank" rel="noopener">kriasoft/graphql-starter-kit</a></td><td class="stars">3,968</td><td>💥  Monorepo template (seed project) pre-configured with GraphQL API, PostgreSQL, React, and Joy UI. · 2 年未更</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>2.1.0</b>（06-13）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 0 发 · 安全通告 0</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🏭 生产采用</span><span class="t-sub">README 提及数</span></div>
+<div class="users"><div class="user">被池内 1 个其他项目的 README 以 owner/repo 引用（36054 篇全量扫描，截至 2026-11-22）</div></div>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install activerecord-postgres_enum（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GaussDB 测试/质量工具大全 · 11 个开源项目（第 2 页）</title>
+<meta name="description" content="GaussDB 测试/质量开源项目清单 11 个：Star 降序，含开发、管理与运维工具。">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.card-head { align-items: center; }
+.fzone { background: var(--bg); border-radius: 10px; padding: 8px 12px 10px;
+         display: grid; gap: 8px; margin-top: 10px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+.grp-sep { align-self: stretch; border-left: 1px solid var(--line); margin: 0 2px; }
+.fzone .grp-mark { display: inline-flex; align-items: center; font-size: 12px;
+  font-weight: 400; color: var(--accent); padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  cursor: default; margin: 0 2px 0 4px; letter-spacing: 0; }
+.chip.plain { background: var(--card); }
+.statline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+.statline .big { font-size: 16px; font-weight: 700; color: var(--ink); cursor: help; }
+.statline .sub { font-size: 12px; color: var(--muted); cursor: help; }
+a.chip { color: var(--muted); } a.chip:hover { border-color: var(--accent); color: var(--accent); }
+a.chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk on" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<main>
+    <section class="card">
+      <div class="card-head" style="margin-bottom:2px"><h2>GaussDB · 测试/质量<span class="hint">共 11 项 · Star 降序 · 静态分页</span></h2></div>
+      <div class="fzone">
+        <div class="tagrow"><span class="glabel">数据库</span><span class="grp-mark" title="国外数据库">国外</span><a class="chip plain" href="/ai-db-weekly/db/postgresql/testing/">PostgreSQL<span class="n">5k</span></a><a class="chip plain" href="/ai-db-weekly/db/mysql/testing/">MySQL<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/sqlite/testing/">SQLite<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/mariadb/testing/">MariaDB<span class="n">990</span></a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/testing/">ClickHouse<span class="n">618</span></a><a class="chip plain" href="/ai-db-weekly/db/oracle/testing/">Oracle<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/sql-server/testing/">SQL Server<span class="n">1k</span></a><span class="grp-mark" title="国产数据库">国产</span><a class="chip plain" href="/ai-db-weekly/db/tidb/testing/">TiDB<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/oceanbase/testing/">OceanBase<span class="n">307</span></a><a class="chip plain" href="/ai-db-weekly/db/opengauss/testing/">openGauss<span class="n">182</span></a><a class="chip plain" href="/ai-db-weekly/db/polardb/testing/">PolarDB<span class="n">99</span></a><a class="chip plain on" href="/ai-db-weekly/db/gaussdb/testing/">GaussDB<span class="n">139</span></a><a class="chip plain" href="/ai-db-weekly/db/goldendb/">GoldenDB<span class="n">10</span></a><a class="chip plain" href="/ai-db-weekly/db/dameng/testing/">Dameng<span class="n">317</span></a><a class="chip plain" href="/ai-db-weekly/db/gbase/">GBase<span class="n">29</span></a><a class="chip plain" href="/ai-db-weekly/db/tdsql/testing/">TDSQL<span class="n">44</span></a><a class="chip plain" href="/ai-db-weekly/db/yashandb/testing/">YashanDB<span class="n">42</span></a></div>
+        <div class="tagrow"><span class="glabel">类别</span><a class="chip plain" data-cat="" href="/ai-db-weekly/projects/" title="全部类别">全部</a><span class="grp-mark" title="运维与治理 · 备份/监控/高可用/安全/迁移/管理/平台">管库</span><a class="chip plain" href="/ai-db-weekly/db/gaussdb/backup/">备份</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/monitoring/">监控</a><a class="chip plain" href="/ai-db-weekly/cat/ha/">高可用</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/security/">安全/审计</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/migration/">迁移</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/management/">管理</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/platform/">平台</a><span class="grp-mark" title="开发与应用 · 驱动/ORM/建模/代理">用库</span><a class="chip plain" href="/ai-db-weekly/db/gaussdb/library/">开发库</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/modeling/">建模/设计</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/connector/">连接/代理</a><span class="grp-mark" title="内核与质量 · 引擎/内核 与 测试/基准">造库</span><a class="chip plain" href="/ai-db-weekly/db/gaussdb/engine/">内核/引擎</a><a class="chip plain on" href="/ai-db-weekly/db/gaussdb/testing/">测试/质量</a></div>
+      </div>
+      <div class="statline"><span class="big" title="GaussDB测试/质量组合清单">匹配 11</span>
+        <span class="sub">第 2 / 2 页 · 本页 1 项</span></div>
+      <hr class="divider">
+      <div class="tblwrap"><table class="rows">
+        <thead><tr><th style="min-width:250px">项目</th><th>库</th><th>类别</th><th>语言</th><th class="r">Star</th></tr></thead>
+        <tbody>
+<tr><td><a class="repo" href="/ai-db-weekly/p/sqlrush/gsbench/">sqlrush/gsbench</a><div class="sub">面向 openGauss/GaussDB 的轻量故障与压力场景模拟工具</div></td><td><span class="tag">GaussDB</span><span class="tag">openGauss</span></td><td class="small">测试/质量</td><td class="small mono">Go</td><td class="r mono">0</td></tr>
+        </tbody></table></div>
+      <div class="pager"><a href="/ai-db-weekly/db/gaussdb/testing/">‹ 上一页</a><a href="/ai-db-weekly/db/gaussdb/testing/">1</a><span class="cur">2</span><span class="gap">下一页 ›</span></div>
+    </section>
+  </main>
+  <footer>GaussDB 测试/质量工具清单 · 一卡可跨多库（计入多库组合）· 数据每日更新。</footer>
+</div>
+</body>
+</html>

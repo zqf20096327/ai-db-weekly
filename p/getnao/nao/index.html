@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>getnao/nao：开源 agentic BI 平台，通过数据团队控制的上下文层让全员对话式分析数据 · GitHub 2034★</title>
+<meta name="description" content="开源 agentic BI 平台，通过数据团队控制的上下文层让全员对话式分析数据（GitHub 2034★，TypeScript 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "nao", "url": "https://github.com/getnao/nao", "codeRepository": "https://github.com/getnao/nao", "description": "开源 agentic BI 平台，通过数据团队控制的上下文层让全员对话式分析数据", "applicationCategory": "DeveloperApplication", "programmingLanguage": "TypeScript", "license": "NOASSERTION", "author": {"@type": "Organization", "name": "getnao"}, "dateModified": "2026-11-21"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">管理</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/getnao/nao" target="_blank" rel="noopener">nao</a>
+<div class="c-meta"><span>语言 TypeScript</span><span>协议 NOASSERTION</span><span>创建于 2025</span><span>版本 0.4.6</span><span>贡献者 63 人</span><span>最近提交 2026-11-21</span><span>90 天 514 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="analytics · 置信 high">分析查询</span><span class="capchip mid" title="semantic-layer · 置信 mid">语义层</span></div>
+</div>
+<div class="c-right"><div class="c-star">2,034<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="nao star trend 1941 to 2034"><title>nao star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 1941 增长至 2034</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.0,55.9 L21.9,54.9 L28.9,53.9 L35.9,53.9 L42.9,53.9 L49.8,52.3 L56.8,52.3 L63.8,50.8 L70.7,47.2 L77.7,43.5 L84.7,42.5 L91.7,39.9 L98.6,39.4 L112.6,37.9 L119.5,36.8 L126.5,32.7 L133.5,31.7 L140.5,30.1 L147.4,30.1 L154.4,29.6 L168.3,27.5 L182.3,25.0 L189.3,22.9 L196.2,22.9 L203.2,21.9 L217.1,17.7 L231.1,13.6 L245.0,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.0,55.9 21.9,54.9 28.9,53.9 35.9,53.9 42.9,53.9 49.8,52.3 56.8,52.3 63.8,50.8 70.7,47.2 77.7,43.5 84.7,42.5 91.7,39.9 98.6,39.4 112.6,37.9 119.5,36.8 126.5,32.7 133.5,31.7 140.5,30.1 147.4,30.1 154.4,29.6 168.3,27.5 182.3,25.0 189.3,22.9 196.2,22.9 203.2,21.9 217.1,17.7 231.1,13.6 245.0,10.0 252.0,10.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>开源 agentic BI 平台，通过数据团队控制的上下文层让全员对话式分析数据</p><p class="pts-label">综述（解读层）</p><p class="pain">nao 是一个开源 agentic BI 平台（Apache 2.0，企业版功能另收费），面向数据团队与业务用户：前者用 nao-core CLI 将数据仓库、dbt、文档同步为文件形式的上下文层，后者通过 Web 应用、Slack、Teams 等渠道以自然语言提问并生成 story 仪表板。提供 nao test 离线评估、对话回放、Docker 部署及 nao Cloud 托管。</p><ul class="pts"><li>nao-core CLI 将数据仓库、dbt、文档与规则同步为 agent 读取的文件化上下文</li><li>nao test 基于 YAML 中的问题与期望 SQL 对上下文变更进行离线打分评估</li><li>通过 Web 应用、Slack、Teams 或 MCP 客户端提问，生成可分享的交互式 story</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>数据团队为全公司搭建可测试、可观测的对话式数据分析代理</li><li>业务人员在 Slack/Teams/Web 中以自然语言查询数据并自制仪表板</li><li>需要行级安全、SSO、LLM 预算管控的企业级自助分析部署</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">The #1 open source agentic BI builder</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/getnao/nao" target="_blank" rel="noopener">getnao/nao</a></td><td class="stars">2,034</td><td>👾 nao is the #1 open source agentic BI. (1) Create context with nao-core cli, (2) deploy nao chat interface for everyone</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/cube-js/cube" target="_blank" rel="noopener">cube-js/cube</a></td><td class="stars">21,272</td><td>📊 Cube Core is open-source semantic layer for AI, BI and embedded analytics</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/mprove-io/mprove" target="_blank" rel="noopener">mprove-io/mprove</a></td><td class="stars">339</td><td>Open Source Agentic Business Intelligence with Malloy Semantic Layer :tada:</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/malloydata/malloy" target="_blank" rel="noopener">malloydata/malloy</a></td><td class="stars">2,624</td><td>Malloy is a modern open source language for describing data relationships and transformations.</td><td class="stars">0.85</td></tr>
+<tr><td><a href="https://github.com/synmetrix/synmetrix" target="_blank" rel="noopener">synmetrix/synmetrix</a></td><td class="stars">626</td><td>Synmetrix – production-ready open source semantic layer on Cube · 1 年未更</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/canner/wrenai" target="_blank" rel="noopener">canner/wrenai</a></td><td class="stars">18,358</td><td>GenBI (Generative BI) for AI agents, an open-source, governed text-to-SQL through an open context layer that turns natur...</td><td class="stars">0.70</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.4.6</b>（11-20）——fix(agent): reject backslashes in app database queries by @Bl3f in https://github.com/getnao/nao/pull/2538 * feat(warehouse): run Snowflake queries as the signed-in Okta user by @Bl3f in https://github.com/getnao/nao/pull/2539 * feat(bigquery): show descriptions of nested STRUCT fields in columns.md</p><p class="t-sub" style="margin-top:4px;">90 天 30 发 · 安全通告 0</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install nao（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

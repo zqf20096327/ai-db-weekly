@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库开源生态周刊 · 第 8 期</title>
+<meta name="description" content="基于分布式配置存储的 PG 集群自动故障切换模板：etcd/Consul/ZooKeeper 做仲裁，流复制做数据面；★8.9k、217 位贡献者，MIT 许可。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://zqf20096327.github.io/ai-db-weekly/">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.iss-no-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.iss-nav { margin-left: auto; display: inline-flex; gap: 14px; font-size: 12px; }
+.iss-nav a { color: var(--muted); }
+.iss-nav a:hover { color: var(--accent); }
+.iss-nav .off { color: var(--line); }
+details.article-card { cursor: pointer; }
+details.article-card[open] { cursor: default; }
+details.article-card > summary { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+details.article-card > summary::-webkit-details-marker { display: none; }
+details.article-card .dr-article { border-top: 1px dashed var(--line); margin-top: 8px; padding-top: 6px; }
+.issue-panel { grid-template-columns: repeat(2,1fr); }
+.dr-actions { margin-top: 10px; }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk on" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<section class="hero issue-hero">
+    <div class="iss-no-row">
+      <div class="issue-no">第 8 期 <span class="muted">· 2026-11-24 · 每周一刊</span></div>
+      <span class="iss-nav"><a href="/ai-db-weekly/weekly/7/">‹ 上一期</a><a href="/ai-db-weekly/archive.html">往期 →</a></span>
+    </div>
+    <div class="h1-row">
+      <h1>数据库开源生态周刊</h1>
+      <a class="btn primary cta-top" href="/ai-db-weekly/projects/">浏览 11,993 个项目档案 →</a>
+    </div>
+    <div class="issue-slogan">国际 7 库 · 国产 10 库 · 每周更新</div>
+    <div class="numline"><a href="/ai-db-weekly/projects/"><b>11,993</b>收录项目</a><i>·</i><a href="/ai-db-weekly/projects/"><b>11</b>新披露通告(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>302</b>发版项目(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>241</b>停维预警</a><i>·</i><a href="/ai-db-weekly/projects/"><b>885</b>AI 工具</a><i>·</i><a href="/ai-db-weekly/projects/"><b>24</b>新项目(45天)</a></div>
+    <div class="lede-label">本期导读</div>
+    <div class="lede">
+<div class="lede-row"><span class="lede-k">看点</span><div class="lede-t">国产原生工作区 <a class="jump" href="/ai-db-weekly/p/feigecode/navop/">navop</a> v0.24.0 于 11-22 落地：四个半月 ★2.2k、7 天 113 次提交，数据库、服务器与 AI 装进同一个桌面端，详见板块席；类别席轮值到高可用，看板项目 <a class="jump" href="/ai-db-weekly/p/patroni/patroni/">patroni</a> 首次深读；claude-mem（+1,645）连续八周登顶增星榜，冷却</div></div>
+<div class="lede-row"><span class="lede-k">风险</span><div class="lede-t">近 7 天<b>新披露</b>critical 通告 11 起，重量级在列——<a class="jump" href="/ai-db-weekly/p/metabase/metabase/">metabase</a>（★50k，11-19 critical）与 nocodb 相继上榜：BI/表格这类常被暴露在公网的自部署平台是本周升级优先级最高的两处，详见事件席</div></div>
+<div class="lede-row"><span class="lede-k">规模</span><div class="lede-t">站内收录 11,993 个项目档案，17 库生态，每周更新一次</div></div>
+    </div>
+  </section>
+  <main>
+    <section>
+      <div class="sec-title"><h3>💬 一句话情报</h3><span class="line"></span><span class="muted">知道就好 · 数据自动生成</span></div>
+      <div class="card oneline-card"><ul>
+<li><a href="/ai-db-weekly/p/thedotmack/claude-mem/"><code>thedotmack/claude-mem</code></a> 本周 <b class="g7">+1645</b> 星，全站第一（现 ★119k）</li>
+<li>内核发版：<a href="/ai-db-weekly/p/clickhouse/clickhouse/"><code>ClickHouse/ClickHouse</code></a> 发布 <b>v26.10.11.12-stable</b>（2026-11-23）</li>
+<li><a href="/ai-db-weekly/p/babelouest/hoel/"><code>babelouest/hoel</code></a>（★45）已标记归档，选型避开</li>
+<li>近 7 天新披露安全通告 <b>11</b> 起、发版 <b>302</b> 个项目</li>
+<li>AI 渗透：在册 AI 相关工具 885 个，其中 MCP 类 527 个</li>
+<li>45 天窗口内新入库且已归属的工具 <b>24</b> 个</li>
+      </ul></div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>📖 本期深读</h3><span class="line"></span><span class="muted">国际开源 · 国产开源 · AI×数据库 · 点卡片读全文</span></div>
+      <div class="grid3 issue-grid">
+<details class="article-card">
+<summary>
+<div class="sector">类别轮值 · 高可用</div>
+<h3>九千星的 PostgreSQL 高可用模板：patroni 的保守与可靠</h3>
+<div class="fn mono">patroni/patroni</div>
+<p>基于分布式配置存储的 PG 集群自动故障切换模板：etcd/Consul/ZooKeeper 做仲裁，流复制做数据面；★8.9k、217 位贡献者，MIT 许可。</p>
+<div class="nums"><span><b>8.9k</b> Star</span><span><b>+14</b> 本周</span><span><b>21</b> c/7天</span><span><b>217</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>Patroni 是 PostgreSQL 高可用集群的模板级方案：上面拿 etcd、Consul 或 ZooKeeper 这类分布式配置存储做仲裁与状态机，下面管流复制与故障切换，把「主库挂了自动选主、客户端无感重连」做成开箱配置。2015 年创建，MIT 许可证，217 位贡献者，★8,853——高可用类别的第一名，站内单归属 PostgreSQL，是大量云厂商与发行版底层用的同一套引擎。</p><p>为什么本期选它：类别轮盘 7/13 转到高可用，而 patroni 是这个类别的看板项目——速览的停维榜常客（stolon、repmgr 一类）衬托之下，它 90 天 61 次提交的「慢而稳」反而是类别里最健康的一条曲线；最新版 v4.1.5 发于 2026-08-12，三个月未发新版属于成熟项目的稳态节奏，不是危险信号。</p><p>适合谁：自建 PostgreSQL 生产集群、需要自动故障切换的团队；把 PG 包装成内部「数据库即服务」的平台组。风险观察点：DCS（etcd 等）是额外引入的运维组件，小集群会嫌重——极简场景可以看 pg_auto_failover 这类轻量方案；故障切换演练不可省，「模板」的意思是切换正确性取决于你的配置纪律；90 天 61 次提交的保守节奏意味着新需求响应慢，深度定制要自持补丁。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">8.9k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+14</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">21</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">61</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">217</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v4.1.5</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">MIT</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">52/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/patroni/patroni/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 8 期（快照 20261124）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">板块主打 · 国产</div>
+<h3>数据库、服务器与 AI 装进一个桌面端：国产工作区 navop 发到 v0.24.0</h3>
+<div class="fn mono">feigeCode/navop</div>
+<p>Rust+GPUI 原生渲染、无 WebView 无 Electron 的国产桌面工作区：10 库适配覆盖达梦/GBase/OceanBase/openGauss，四个半月 ★2.2k，7 天 113 次提交。</p>
+<div class="nums"><span><b>2.2k</b> Star</span><span><b>+52</b> 本周</span><span><b>113</b> c/7天</span><span><b>81</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>Navop 是用 Rust 与 GPUI 编写的原生桌面工作区：GPU 加速渲染、无 WebView、无 Electron，把数据库管理、服务器运维与 AI 工具三件事装进同一个客户端。适配面相当「国产」：站内口径覆盖 PostgreSQL、MySQL、Oracle、SQL Server、SQLite、ClickHouse 与达梦、GBase、OceanBase、openGauss 共 10 库；Apache-2.0 加补充条款的许可证，QQ/微信群做社区，2026-07-10 创建，81 位贡献者，★2,228。</p><p>为什么本期选它：双期国产主打，板块席要看国产阵营里增速与产出最实的那批——navop 本周 +52、7 天 113 次提交（90 天 2,492 次，是国产面板里节奏最猛的），v0.24.0 于 11-22 发布，正好落在快照窗口内。它也与上期板块席 dbdelve 同走 GPUI 技术路线——「原生客户端回潮」这个连续五期出现的信号，正从国际蔓延到国产阵营，而它把差异位压在了国产库适配深度上：达梦、GBase、OceanBase、openGauss 一起进了官方支持列表，这是 dbeaver 之外少见的姿态。</p><p>适合谁：需要在一个客户端里同时管国产库与主流库的 DBA 与运维、想把服务器运维与数据库操作合并成一套工作流的中小团队。风险观察点：v0.24.0 的版本号意味着离生产级成熟还有距离，重负载场景先当「第二客户端」用；「Apache-2.0 + 补充条款」的附加条款要读仔细再商用；all-in-one 工作区的复杂度天花板远高于单一客户端，功能铺开后稳定性是主要考验。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">2.2k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+52</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">113</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">2492</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">81</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v0.24.0</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">NOASSERTION</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/feigecode/navop/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 8 期（快照 20261124）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">事件 · critical 新披露</div>
+<h3>★50k 的 BI 标杆中招：Metabase critical 通告与 v0.65.6</h3>
+<div class="fn mono">metabase/metabase</div>
+<p>开源 BI 平台 11-19 披露 critical 级通告（CVE-2026-59827），一天前刚发 v0.65.6——自部署 BI 直面公网，本周升级优先级最高的公告。</p>
+<div class="nums"><span><b>50k</b> Star</span><span><b>+120</b> 本周</span><span><b>209</b> c/7天</span><span><b>390</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>Metabase 是最流行的开源 BI/分析平台之一：连数据源、做图表、建看板、给业务自助分析，2015 年创建、390 位贡献者、★50,489，站内按支持口径覆盖 PostgreSQL、MySQL 等多库。它也是「自部署 BI」这一品类的事实标准——这恰好是它这次上榜的背景。</p><p>为什么登上事件席：critical 新披露信号——11-19 披露一则 critical 级安全通告（CVE-2026-59827 / GHSA-w95f-x9v9-wv36），历史在册通告累计 30 条。时间线上有个值得玩味的细节：官方 11-18 发布 v0.65.6，次日通告落地——对自行部署的用户，本周最实际的动作就是把实例升到最新补丁线并核对暴露面。BI 平台常年是攻击链上的常客：它自带数据源凭据、常被挂在公网给业务方访问、多租户共享场景多，critical 通告在这个品类几乎是周期性事件（本周同窗还有 nocodb 的 critical）。</p><p>适合谁：已自部署 Metabase 的团队——本周内完成升级与访问审计；选型期团队则要把「安全响应纪律」纳入评估：官方对通告的响应速度（发版紧贴通告）是加分项。风险观察点：在册 30 条通告说明攻击面持续存在，网络隔离与最小权限比版本号更重要；多租户/公网暴露场景建议加前置网关层；BI 的查询入口天然带着数据库凭据，凭据轮换要跟随本次升级一起做。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">50k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+120</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">209</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">2426</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">390</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v0.65.6</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">NOASSERTION</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/metabase/metabase/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 8 期（快照 20261124）。</div>
+</div>
+</details>
+      </div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>⚡ 本周速览</h3><span class="line"></span><span class="muted">只报变化（事件）· 发刊时冻结 · 状态请查工具页</span></div>
+      <div class="grid2">
+<section class="card digest risk">
+<div class="card-head"><h2>🔴 风险预警<span class="hint">本周新披露 11 起 · 停维/归档 241</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/nocodb/nocodb/"><span class="sev">严重</span> <span class="repo">nocodb/nocodb</span><span class="d-meta">2026-11-18 新披露 · ★66k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/metabase/metabase/"><span class="sev">严重</span> <span class="repo">metabase/metabase</span><span class="d-meta">2026-11-19 新披露 · ★50k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/parse-community/parse-server/"><span class="sev">严重</span> <span class="repo">parse-community/parse-server</span><span class="d-meta">2026-11-19 新披露 · ★21k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/sinaptik-ai/pandas-ai/"><span class="bdg stale">停维</span> <span class="repo">sinaptik-ai/pandas-ai</span><span class="d-meta">90 天零提交 · ★24k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/typicode/lowdb/"><span class="bdg stale">停维</span> <span class="repo">typicode/lowdb</span><span class="d-meta">90 天零提交 · ★23k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/knex/knex/"><span class="bdg stale">停维</span> <span class="repo">knex/knex</span><span class="d-meta">90 天零提交 · ★20k</span></a>
+</div>
+</section>
+<section class="card digest ver">
+<div class="card-head"><h2>📦 版本动态<span class="hint">近 7 天发版 · 内核优先</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/clickhouse/clickhouse/"> <span class="repo">ClickHouse/ClickHouse</span><span class="d-meta"><span class="tag off">官方</span> v26.10.11.12-stabl <span class="muted">· 2026-11-23</span> · ★51k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/mariadb/server/"> <span class="repo">MariaDB/server</span><span class="d-meta"><span class="tag off">官方</span> mariadb-13.1.2 <span class="muted">· 2026-11-21</span> · ★8.6k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/meilisearch/meilisearch/"> <span class="repo">meilisearch/meilisearch</span><span class="d-meta">v1.58.0 <span class="muted">· 2026-11-23</span> · ★60k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/clockworklabs/spacetimedb/"> <span class="repo">clockworklabs/SpacetimeDB</span><span class="d-meta">v2.16.1 <span class="muted">· 2026-11-20</span> · ★26k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/tursodatabase/turso/"> <span class="repo">tursodatabase/turso</span><span class="d-meta">v0.9.0-pre.6 <span class="muted">· 2026-11-20</span> · ★25k</span></a>
+</div>
+</section>
+<section class="card digest gain">
+<div class="card-head"><h2>📈 增星榜<span class="hint">本周 · 国产榜 · 基线 1117→1124</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/t8y2/dbx/"> <span class="repo">t8y2/dbx</span><span class="d-meta"><span class="g7">+721</span> · ★31k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/dbeaver/dbeaver/"> <span class="repo">dbeaver/dbeaver</span><span class="d-meta"><span class="g7">+67</span> · ★53k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/pressly/goose/"> <span class="repo">pressly/goose</span><span class="d-meta"><span class="g7">+55</span> · ★12k</span></a>
+</div>
+</section>
+<section class="card digest newb">
+<div class="card-head"><h2>🌱 新项目<span class="hint">创建 ≤45 天 · 已归属</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/victoriametrics/logs-benchmark/"> <span class="repo">VictoriaMetrics/logs-benchmark</span><span class="d-meta">★14 · <span class="tag gray">测试/质量</span> · 2026-10-26</span></a>
+<a class="d-item" href="/ai-db-weekly/p/deepdigger69/sqlite-clone/"> <span class="repo">deepdigger69/sqlite-clone</span><span class="d-meta">★5 · <span class="tag gray">内核/引擎</span> · 2026-10-25</span></a>
+<a class="d-item" href="/ai-db-weekly/p/nishchalpr4/alembic-head-fixer/"> <span class="repo">Nishchalpr4/alembic-head-fixer</span><span class="d-meta">★4 · <span class="tag gray">迁移</span> · 2026-10-19</span></a>
+</div>
+</section>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>olemeyer/rocketplaneio：自托管 Kubernetes 观测与 AI 运维平台，基于 eBPF 零插桩采集… · GitHub 108★</title>
+<meta name="description" content="自托管 Kubernetes 观测与 AI 运维平台，基于 eBPF 零插桩采集与事务化 MCP 操作接口（GitHub 108★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "rocketplaneio", "url": "https://github.com/olemeyer/rocketplaneio", "codeRepository": "https://github.com/olemeyer/rocketplaneio", "description": "自托管 Kubernetes 观测与 AI 运维平台，基于 eBPF 零插桩采集与事务化 MCP 操作接口", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "olemeyer"}, "dateModified": "2026-07-29"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">监控</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/olemeyer/rocketplaneio" target="_blank" rel="noopener">rocketplaneio</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 Apache-2.0</span><span>创建于 2026</span><span>版本 0.7.13</span><span>贡献者 2 人</span><span>最近提交 2026-07-29</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="observability · 置信 high">可观测</span></div>
+</div>
+<div class="c-right"><div class="c-star">108<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="rocketplaneio star trend 127 to 108"><title>rocketplaneio star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 127 增长至 108</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L15.0,10.0 L21.9,12.5 L28.9,12.5 L35.9,25.2 L42.9,25.2 L49.8,27.7 L56.8,27.7 L63.8,27.7 L70.7,27.7 L77.7,27.7 L84.7,27.7 L91.7,27.7 L98.6,27.7 L112.6,27.7 L119.5,25.2 L126.5,25.2 L133.5,40.3 L140.5,42.8 L147.4,42.8 L154.4,42.8 L168.3,45.4 L182.3,45.4 L189.3,45.4 L196.2,45.4 L203.2,45.4 L217.1,45.4 L231.1,45.4 L245.0,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 15.0,10.0 21.9,12.5 28.9,12.5 35.9,25.2 42.9,25.2 49.8,27.7 56.8,27.7 63.8,27.7 70.7,27.7 77.7,27.7 84.7,27.7 91.7,27.7 98.6,27.7 112.6,27.7 119.5,25.2 126.5,25.2 133.5,40.3 140.5,42.8 147.4,42.8 154.4,42.8 168.3,45.4 182.3,45.4 189.3,45.4 196.2,45.4 203.2,45.4 217.1,45.4 231.1,45.4 245.0,58.0 252.0,58.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>自托管 Kubernetes 观测与 AI 运维平台，基于 eBPF 零插桩采集与事务化 MCP 操作接口</p><p class="pts-label">综述（解读层）</p><p class="pain">rocketplaneIO 是自托管的 Kubernetes 可观测平台：通过 Beyla eBPF DaemonSet 在不修改代码的情况下采集 HTTP/gRPC 跨服务链路、SQL/Redis/Kafka 客户端 span 及日志、指标，在 ClickHouse 上提供 PromQL 查询与服务拓扑图。它同时实现 MCP 接口，供外部 AI 代理经 kubectl 形状的原语操作集群，所有变更纳入事务：变更前快照、按风险分级、破坏性操作需人工 UI 审批，支持 LIFO 回滚与审计。需 Docker 与 Kubernetes 集群，compose 一键安装，README 标注处于 Alpha 阶段，API 与 schema 仍会变动，不建议用于生产。</p><ul class="pts"><li>eBPF 零插桩采集：无需 SDK、sidecar 或代码变更即可获得含跨服务上下文传播的 HTTP/gRPC 链路（含编译型 Go 二进制）及 SQL/Redis/Kafka 客户端 span</li><li>以事务机制保障变更安全：每次变更前持久化快照，按参数感知的风险四级分类，破坏性操作需人工审批，API token 不能审批自己提交的提案，支持 LIFO 回滚与完整审计</li><li>提供 MCP 接口供既有 AI 代理（Claude Code、Cursor 等）接入，操作原语为 k8s_get/patch/apply/delete/exec 及 Starlark 工作流，可作用于任意资源含 CRD</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>对未插桩的服务进行链路追踪、日志关联与基于真实流量的服务拓扑观测</li><li>将外部 AI 代理接入集群执行诊断与修复，同时保留人工审批与回滚通道</li><li>自托管或气隙环境下集中存储与查询日志、指标、链路与 Kubernetes 资源清单</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">Quick start · Is it safe? · Under the hood</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>ClickHouse、PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/olemeyer/rocketplaneio" target="_blank" rel="noopener">olemeyer/rocketplaneio</a></td><td class="stars">108</td><td>Self-hosted AI SRE for Kubernetes — zero-instrumentation eBPF observability plus a copilot that fixes issues through gua...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/netdata/netdata" target="_blank" rel="noopener">netdata/netdata</a></td><td class="stars">81,575</td><td>Full-stack observability · Metrics · Logs · Traces · Flows · Topology · Infrastructure · APM · NPM · DBM · RUM · Synthet...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/metrico/gigapipe" target="_blank" rel="noopener">metrico/gigapipe</a></td><td class="stars">1,725</td><td>⭐️ The Open-Source Polyglot Observability Warehouse: Light, Fast, Cloud Native, Drop-in Grafana LGTMP alternative :rocke...</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tonbo-io/tonbo" target="_blank" rel="noopener">tonbo-io/tonbo</a></td><td class="stars">1,639</td><td>Tonbo is an embedded database for serverless and edge runtimes.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/pgrundev/pgbot" target="_blank" rel="noopener">pgrundev/pgbot</a></td><td class="stars">1,516</td><td>Postgres intelligence for ai agents</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/rapidloop/pgmetrics" target="_blank" rel="noopener">rapidloop/pgmetrics</a></td><td class="stars">1,114</td><td>Collect and display information and stats from a running PostgreSQL server</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.7.13</b>（07-15）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 12 发 · 安全通告 0</p>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

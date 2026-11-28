@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sdrapkin/securitydriven.tinyorm：面向 SQL Server 的 .NET 微型 ORM 库 · GitHub 308★</title>
+<meta name="description" content="面向 SQL Server 的 .NET 微型 ORM 库（GitHub 308★，C# 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "securitydriven.tinyorm", "url": "https://github.com/sdrapkin/securitydriven.tinyorm", "codeRepository": "https://github.com/sdrapkin/securitydriven.tinyorm", "description": "面向 SQL Server 的 .NET 微型 ORM 库", "applicationCategory": "DeveloperApplication", "programmingLanguage": "C#", "license": "MS-PL", "author": {"@type": "Organization", "name": "sdrapkin"}, "dateModified": "2025-02-12"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span><span class="chip sub">1 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/sdrapkin/securitydriven.tinyorm" target="_blank" rel="noopener">securitydriven.tinyorm</a>
+<div class="c-meta"><span>语言 C#</span><span>协议 MS-PL</span><span>创建于 2017</span><span>贡献者 1 人</span><span>最近提交 2025-02-12</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="orm · 置信 high">ORM</span></div>
+</div>
+<div class="c-right"><div class="c-star">308<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="securitydriven.tinyorm star trend 308 to 308"><title>securitydriven.tinyorm star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 308 增长至 308</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.0,58.0 L21.9,58.0 L28.9,58.0 L35.9,58.0 L42.9,58.0 L49.8,58.0 L56.8,58.0 L63.8,58.0 L70.7,58.0 L77.7,58.0 L84.7,58.0 L91.7,58.0 L98.6,58.0 L112.6,58.0 L119.5,58.0 L126.5,58.0 L133.5,58.0 L140.5,58.0 L147.4,58.0 L154.4,58.0 L168.3,58.0 L182.3,58.0 L189.3,58.0 L196.2,58.0 L203.2,10.0 L217.1,10.0 L231.1,10.0 L245.0,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.0,58.0 21.9,58.0 28.9,58.0 35.9,58.0 42.9,58.0 49.8,58.0 56.8,58.0 63.8,58.0 70.7,58.0 77.7,58.0 84.7,58.0 91.7,58.0 98.6,58.0 112.6,58.0 119.5,58.0 126.5,58.0 133.5,58.0 140.5,58.0 147.4,58.0 154.4,58.0 168.3,58.0 182.3,58.0 189.3,58.0 196.2,58.0 203.2,10.0 217.1,10.0 231.1,10.0 245.0,58.0 252.0,58.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>面向 SQL Server 的 .NET 微型 ORM 库</p><p class="pts-label">综述（解读层）</p><p class="pain">TinyORM 是一个针对 SQL Server（含 Azure SQL）的 .NET 微型 ORM，通过 SqlClient 连接数据库。它提供事务默认开启（XACT_ABORT=ON）、透明连接管理、全参数化查询、dynamic 实体与静态类型投影等能力，支持 POCO 或匿名对象，编译后 DLL 约 45k。适用于直接编写 T-SQL 的 .NET 开发者，支持 .NET 4.5.2+ 与 NetStandard 2.0，采用 MS-PL 许可证，可经 NuGet 安装。</p><ul class="pts"><li>默认开启事务并设置 XACT_ABORT=ON，实现运行时 T-SQL 错误自动回滚</li><li>完整参数化查询，支持 IN 参数列表展开及 CHAR/VARCHAR/NCHAR/NVARCHAR 字符串参数类型</li><li>提供快照变更跟踪、CREATE/UPDATE/DELETE/UPSERT 的 T-SQL 生成辅助，以及流式数据输出（如 BLOB）</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>面向 SQL Server 或 Azure SQL 的 .NET 数据访问层开发</li><li>需要默认事务保护与调用方审计（用户身份、调用位置跟踪）的应用</li><li>需要流式读取 BLOB/文件或批量执行命令序列的场景</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">TinyORM by Stan Drapkin [sdrapkin at sdprime dot com]</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>SQL Server</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/sdrapkin/securitydriven.tinyorm" target="_blank" rel="noopener">sdrapkin/securitydriven.tinyorm</a></td><td class="stars">308</td><td>.NET micro ORM done right.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/linq2db/linq2db" target="_blank" rel="noopener">linq2db/linq2db</a></td><td class="stars">3,332</td><td>Linq to database provider.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/erikej/efcorepowertools" target="_blank" rel="noopener">erikej/efcorepowertools</a></td><td class="stars">2,516</td><td>Entity Framework Core Power Tools - reverse engineering, migrations and model visualization in Visual Studio &amp; CLI</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/jonpsmith/efcoreinaction-secondedition" target="_blank" rel="noopener">jonpsmith/efcoreinaction-secondedition</a></td><td class="stars">439</td><td>Supporting repo to go with book "Entity Framework Core in Action", second edition · 3 年未更</td><td class="stars">0.85</td></tr>
+<tr><td><a href="https://github.com/seaql/sea-orm" target="_blank" rel="noopener">seaql/sea-orm</a></td><td class="stars">9,980</td><td>🐚 A powerful relational ORM for Rust</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/aarondl/sqlboiler" target="_blank" rel="noopener">aarondl/sqlboiler</a></td><td class="stars">6,978</td><td>Generate a Go ORM tailored to your database schema.</td><td class="stars">0.80</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install securitydriven.tinyorm（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

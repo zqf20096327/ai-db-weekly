@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aricsu/tichange_for_lightning：TiChange 是将 CSV 文件适配 tidb-lightning 格式要求… · GitHub 3★</title>
+<meta name="description" content="TiChange 是将 CSV 文件适配 tidb-lightning 格式要求的 Shell 脚本工具（GitHub 3★，Shell 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "tichange_for_lightning", "url": "https://github.com/aricsu/tichange_for_lightning", "codeRepository": "https://github.com/aricsu/tichange_for_lightning", "description": "TiChange 是将 CSV 文件适配 tidb-lightning 格式要求的 Shell 脚本工具", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Shell", "author": {"@type": "Organization", "name": "aricsu"}, "dateModified": "2022-08-30"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">迁移</span><span class="chip sub">4 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/aricsu/tichange_for_lightning" target="_blank" rel="noopener">tichange_for_lightning</a>
+<div class="c-meta"><span>语言 Shell</span><span>创建于 2021</span><span>贡献者 2 人</span><span>最近提交 2022-08-30</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="csv-tool · 置信 high">CSV 工具</span></div>
+</div>
+<div class="c-right"><div class="c-star">3<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="tichange_for_lightning star trend 3 to 3"><title>tichange_for_lightning star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 3 增长至 3</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L15.0,34.0 L21.9,34.0 L28.9,34.0 L35.9,34.0 L42.9,34.0 L49.8,34.0 L56.8,34.0 L63.8,34.0 L70.7,34.0 L77.7,34.0 L84.7,34.0 L91.7,34.0 L98.6,34.0 L112.6,34.0 L119.5,34.0 L126.5,34.0 L133.5,34.0 L140.5,34.0 L147.4,34.0 L154.4,34.0 L168.3,34.0 L182.3,34.0 L189.3,34.0 L196.2,34.0 L203.2,34.0 L217.1,34.0 L231.1,34.0 L245.0,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 15.0,34.0 21.9,34.0 28.9,34.0 35.9,34.0 42.9,34.0 49.8,34.0 56.8,34.0 63.8,34.0 70.7,34.0 77.7,34.0 84.7,34.0 91.7,34.0 98.6,34.0 112.6,34.0 119.5,34.0 126.5,34.0 133.5,34.0 140.5,34.0 147.4,34.0 154.4,34.0 168.3,34.0 182.3,34.0 189.3,34.0 196.2,34.0 203.2,34.0 217.1,34.0 231.1,34.0 245.0,34.0 252.0,34.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>TiChange 是将 CSV 文件适配 tidb-lightning 格式要求的 Shell 脚本工具</p><p class="pts-label">综述（解读层）</p><p class="pain">TiChange_for_lightning 是一个 Shell 脚本工具，用于将 CSV 文件适配为 tidb-lightning 可导入的格式，面向需要向 TiDB 导入数据的运维与数据库管理员。脚本按 TiDB 官网对 CSV 的格式支持要求，提供切分文件、重命名文件、替换字段分隔符、引用定界符和 NULL 值字符等功能；包含标准 CSV、非标准 CSV、NULL 值处理等示例。</p><ul class="pts"><li>将 CSV 文件切分为与 CPU vCore 数相同的文件数</li><li>批量替换字段分隔符、引用定界符和 NULL 值字符为 lightning 默认值</li><li>适配 lightning 可识别的文件名，支持命令行参数指定输入输出路径</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>使用 tidb-lightning 导入 CSV 数据前进行格式预处理</li><li>处理非标准分隔符或引用定界符的 CSV 文件</li><li>处理包含 NULL 值字符的 CSV 文件导入场景</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">TiChange_for_lightning 是一个能让你快速将csv文件适配 tidb-lightning csv 文件格式要求的工具。遵照 TiDB 官网给出对 CSV 文件的格式支持,本脚本主要功能如下： 1. 切分 csv 文件数与 CPU vCore 数相同; 2. 适配 lightning 可识别的文件名; 3. 批量替换当前字段分隔符（separator）为 lightning 默认</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MySQL、TiDB</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/aricsu/tichange_for_lightning" target="_blank" rel="noopener">aricsu/tichange_for_lightning</a></td><td class="stars">3</td><td>TiChange 是一个能让你快速将csv文件适配 tidb-lightning csv 文件格式要求的工具，遵照 TiDB 官网给出对 CSV 文件的格式支持。</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/gitrows/gitrows" target="_blank" rel="noopener">gitrows/gitrows</a></td><td class="stars">377</td><td>A lightweight module for using git as a database</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/alexanderconnelly/braintree_sql_coding_challenge_data_analyst" target="_blank" rel="noopener">alexanderconnelly/braintree_sql_coding_challenge_data_analyst</a></td><td class="stars">431</td><td>A Challenge To Test My SQL Skills For A Braintree Data Analyst Interview Process · 8 年未更</td><td class="stars">0.85</td></tr>
+<tr><td><a href="https://github.com/simonw/sqlite-utils" target="_blank" rel="noopener">simonw/sqlite-utils</a></td><td class="stars">2,210</td><td>Python CLI utility and library for manipulating SQLite databases</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/noborus/trdsql" target="_blank" rel="noopener">noborus/trdsql</a></td><td class="stars">2,175</td><td>CLI tool that can execute SQL queries on CSV, LTSV, JSON, YAML and TBLN. Can output to various formats.</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/rin-nas/postgresql-patterns-library" target="_blank" rel="noopener">rin-nas/postgresql-patterns-library</a></td><td class="stars">784</td><td>Коллекция готовых SQL запросов для PostgreSQL по часто возникающим задачам (получение и модификация данных, ускорение за...</td><td class="stars">0.80</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

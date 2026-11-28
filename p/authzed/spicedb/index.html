@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>authzed/spicedb：受 Google Zanzibar 论文启发的开源细粒度授权数据库，用 Go 实… · GitHub 7235★</title>
+<meta name="description" content="受 Google Zanzibar 论文启发的开源细粒度授权数据库，用 Go 实现（GitHub 7235★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "spicedb", "url": "https://github.com/authzed/spicedb", "codeRepository": "https://github.com/authzed/spicedb", "description": "受 Google Zanzibar 论文启发的开源细粒度授权数据库，用 Go 实现", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "authzed"}, "dateModified": "2026-11-20"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">安全/审计</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/authzed/spicedb" target="_blank" rel="noopener">spicedb</a>
+<div class="c-meta"><span>语言 Go</span><span>协议 Apache-2.0</span><span>创建于 2021</span><span>版本 1.57.1</span><span>贡献者 78 人</span><span>最近提交 2026-11-20</span><span>90 天 146 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="access-control · 置信 high">访问控制</span></div>
+</div>
+<div class="c-right"><div class="c-star">7,235<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="spicedb star trend 7154 to 7235"><title>spicedb star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 7154 增长至 7235</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,58.0 L15.0,56.2 L21.9,55.0 L28.9,53.9 L35.9,50.3 L42.9,48.5 L49.8,49.1 L56.8,48.5 L63.8,46.7 L70.7,45.0 L77.7,45.0 L84.7,43.8 L91.7,42.6 L98.6,40.8 L112.6,40.2 L119.5,35.5 L126.5,33.7 L133.5,33.1 L140.5,29.6 L147.4,29.0 L154.4,27.2 L168.3,25.4 L182.3,21.9 L189.3,21.3 L196.2,20.1 L203.2,20.1 L217.1,17.7 L231.1,14.1 L245.0,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,58.0 15.0,56.2 21.9,55.0 28.9,53.9 35.9,50.3 42.9,48.5 49.8,49.1 56.8,48.5 63.8,46.7 70.7,45.0 77.7,45.0 84.7,43.8 91.7,42.6 98.6,40.8 112.6,40.2 119.5,35.5 126.5,33.7 133.5,33.1 140.5,29.6 147.4,29.0 154.4,27.2 168.3,25.4 182.3,21.9 189.3,21.3 196.2,20.1 203.2,20.1 217.1,17.7 231.1,14.1 245.0,10.0 252.0,10.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>受 Google Zanzibar 论文启发的开源细粒度授权数据库，用 Go 实现</p><p class="pts-label">综述（解读层）</p><p class="pain">SpiceDB 是一个用于存储和查询细粒度授权数据的开源数据库，设计灵感来自 Google 的 Zanzibar 论文。开发者通过定义 schema、写入 relationships 数据，再经 gRPC 或 HTTP API 执行权限检查，回答“主体 X 能否对资源 Z 执行动作 Y”。它只负责授权，与身份认证方案无关，支持 PostgreSQL、MySQL、CockroachDB、Cloud Spanner 等数据存储，适合平台与产品团队集中部署使用。</p><ul class="pts"><li>开发者定义 schema 并以 relationships 形式写入数据，通过 gRPC/HTTP API 发起权限检查及反向查询（如“某主体能做什么”“谁能访问某资源”）</li><li>支持多种数据存储后端，包括 Google Cloud Spanner、CockroachDB、MySQL 和 PostgreSQL</li><li>提供 Homebrew、APT、YUM 安装包及 AMD64/ARM64 容器镜像，附带 zed CLI、Playground 和多语言客户端库</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>在微服务或多产品套件架构中运行集中式授权服务，统一执行权限检查</li><li>为应用实现基于关系（ReBAC）与属性（ABAC，经 caveated relationships）的细粒度访问控制</li><li>自托管部署于 Kubernetes（提供 Operator 与示例配置），或使用托管服务 AuthZed Cloud</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">SpiceDB sets the standard for authorization that scales.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MySQL、PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/authzed/spicedb" target="_blank" rel="noopener">authzed/spicedb</a></td><td class="stars">7,235</td><td>Open Source, Google Zanzibar-inspired database for scalably storing and querying fine-grained authorization data</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/cockroachdb/cockroach" target="_blank" rel="noopener">cockroachdb/cockroach</a></td><td class="stars">32,638</td><td>CockroachDB — the cloud native, distributed SQL database designed for high availability, effortless scale, and control o...</td><td class="stars">0.81</td></tr>
+<tr><td><a href="https://github.com/vitessio/vitess" target="_blank" rel="noopener">vitessio/vitess</a></td><td class="stars">21,427</td><td>Vitess is a database clustering system for horizontal scaling of MySQL.</td><td class="stars">0.81</td></tr>
+<tr><td><a href="https://github.com/citusdata/citus" target="_blank" rel="noopener">citusdata/citus</a></td><td class="stars">12,868</td><td>Distributed PostgreSQL as an extension</td><td class="stars">0.81</td></tr>
+<tr><td><a href="https://github.com/yugabyte/yugabyte-db" target="_blank" rel="noopener">yugabyte/yugabyte-db</a></td><td class="stars">10,672</td><td>YugabyteDB - the cloud native distributed SQL database for mission-critical applications.</td><td class="stars">0.81</td></tr>
+<tr><td><a href="https://github.com/ydb-platform/ydb" target="_blank" rel="noopener">ydb-platform/ydb</a></td><td class="stars">4,792</td><td>YDB is an open source Distributed SQL Database that combines high availability and scalability with strong consistency a...</td><td class="stars">0.81</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>1.57.1</b>（11-10）——Expiration: Non-terminal sibling relations can no longer result in incorrect Check responses for a relationship whose expiration time was in the past.</p><p class="t-sub" style="margin-top:4px;">90 天 4 发 · 安全通告 19</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🏭 生产采用</span><span class="t-sub">README 提及数</span></div>
+<div class="users"><div class="user">被池内 1 个其他项目的 README 以 owner/repo 引用（36054 篇全量扫描，截至 2026-11-22）</div></div>
+</div>
+
+
+
+</div>
+</body>
+</html>

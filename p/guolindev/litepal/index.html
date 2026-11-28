@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>guolindev/litepal：基于 ORM 模式的 Android SQLite 数据库操作库，免写 SQL… · GitHub 8040★</title>
+<meta name="description" content="基于 ORM 模式的 Android SQLite 数据库操作库，免写 SQL 完成建表与增删改查。（GitHub 8040★，Java 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "litepal", "url": "https://github.com/guolindev/litepal", "codeRepository": "https://github.com/guolindev/litepal", "description": "基于 ORM 模式的 Android SQLite 数据库操作库，免写 SQL 完成建表与增删改查。", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Java", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "guolindev"}, "dateModified": "2022-08-19"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span><span class="chip sub">4 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/guolindev/litepal" target="_blank" rel="noopener">litepal</a>
+<div class="c-meta"><span>语言 Java</span><span>协议 Apache-2.0</span><span>创建于 2013</span><span>贡献者 5 人</span><span>最近提交 2022-08-19</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="orm · 置信 high">ORM</span><span class="capchip" title="schema-migration · 置信 high">结构迁移</span><span class="capchip mid" title="query-builder · 置信 mid">查询构建器</span></div>
+</div>
+<div class="c-right"><div class="c-star">8,040<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="litepal star trend 8049 to 8040"><title>litepal star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 8049 增长至 8040</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L15.0,15.3 L21.9,26.0 L28.9,26.0 L35.9,26.0 L42.9,26.0 L49.8,26.0 L56.8,26.0 L63.8,26.0 L70.7,26.0 L77.7,26.0 L84.7,26.0 L91.7,26.0 L98.6,31.3 L112.6,31.3 L119.5,36.7 L126.5,36.7 L133.5,36.7 L140.5,42.0 L147.4,42.0 L154.4,42.0 L168.3,47.3 L182.3,47.3 L189.3,47.3 L196.2,47.3 L203.2,47.3 L217.1,47.3 L231.1,52.7 L245.0,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 15.0,15.3 21.9,26.0 28.9,26.0 35.9,26.0 42.9,26.0 49.8,26.0 56.8,26.0 63.8,26.0 70.7,26.0 77.7,26.0 84.7,26.0 91.7,26.0 98.6,31.3 112.6,31.3 119.5,36.7 126.5,36.7 133.5,36.7 140.5,42.0 147.4,42.0 154.4,42.0 168.3,47.3 182.3,47.3 189.3,47.3 196.2,47.3 203.2,47.3 217.1,47.3 231.1,52.7 245.0,58.0 252.0,58.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 ORM 模式的 Android SQLite 数据库操作库，免写 SQL 完成建表与增删改查。</p><p class="pts-label">综述（解读层）</p><p class="pain">LitePal 是一个开源 Android 库，采用对象关系映射（ORM）模式封装 SQLite 操作，开发者通过继承 LitePalSupport 并在 litepal.xml 中注册模型类，即可自动创建和升级表，用链式 API 完成增删改查、聚合函数和多数据库切换。升级时若新增 unique 约束等特定变更会导致表数据被清除。适用于需要在 Android 应用中管理本地 SQLite 数据的开发者。</p><ul class="pts"><li>采用 ORM 模式，模型类继承 LitePalSupport 后自动维护表的创建、变更和删除</li><li>提供封装的 CRUD API 与链式查询 API，支持事务操作和多数据库运行时创建与切换</li><li>仅需要一个 litepal.xml 配置文件，通过 gradle 依赖 org.litepal.guolindev:core:3.2.3 集成</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>Android 应用需要在本地 SQLite 中存储和查询结构化对象数据</li><li>应用需要通过修改模型类加版本号的方式升级数据库表结构</li><li>应用需要运行时创建、切换或删除多个数据库</li></ul>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/guolindev/litepal" target="_blank" rel="noopener">guolindev/litepal</a></td><td class="stars">8,040</td><td>An Android library that makes developers use SQLite database extremely easy.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/tencent/wcdb" target="_blank" rel="noopener">tencent/wcdb</a></td><td class="stars">11,655</td><td>WCDB is a cross-platform database framework developed by WeChat.</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/groue/grdb.swift" target="_blank" rel="noopener">groue/grdb.swift</a></td><td class="stars">8,758</td><td>A toolkit for SQLite databases, with a focus on application development</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/getdutchie/brick" target="_blank" rel="noopener">getdutchie/brick</a></td><td class="stars">522</td><td>An intuitive way to work with persistent data in Dart · 8 个月未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/maskarade/android-orma" target="_blank" rel="noopener">maskarade/android-orma</a></td><td class="stars">446</td><td>An ORM for Android with type-safety and declarative schema migrations · 6 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/stephencelis/sqlite.swift" target="_blank" rel="noopener">stephencelis/sqlite.swift</a></td><td class="stars">10,186</td><td>A type-safe, Swift-language layer over SQLite3.</td><td class="stars">0.91</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

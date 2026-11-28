@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GaussDB 迁移工具大全 · 10 个开源项目</title>
+<meta name="description" content="GaussDB 迁移开源项目清单 10 个：Star 降序，含开发、管理与运维工具。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://zqf20096327.github.io/ai-db-weekly/db/gaussdb/migration/">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.card-head { align-items: center; }
+.fzone { background: var(--bg); border-radius: 10px; padding: 8px 12px 10px;
+         display: grid; gap: 8px; margin-top: 10px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+.grp-sep { align-self: stretch; border-left: 1px solid var(--line); margin: 0 2px; }
+.fzone .grp-mark { display: inline-flex; align-items: center; font-size: 12px;
+  font-weight: 400; color: var(--accent); padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  cursor: default; margin: 0 2px 0 4px; letter-spacing: 0; }
+.chip.plain { background: var(--card); }
+.statline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; }
+.statline .big { font-size: 16px; font-weight: 700; color: var(--ink); cursor: help; }
+.statline .sub { font-size: 12px; color: var(--muted); cursor: help; }
+a.chip { color: var(--muted); } a.chip:hover { border-color: var(--accent); color: var(--accent); }
+a.chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk on" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<main>
+    <section class="card">
+      <div class="card-head" style="margin-bottom:2px"><h2>GaussDB · 迁移<span class="hint">共 10 项 · Star 降序 · 静态分页</span></h2></div>
+      <div class="fzone">
+        <div class="tagrow"><span class="glabel">数据库</span><span class="grp-mark" title="国外数据库">国外</span><a class="chip plain" href="/ai-db-weekly/db/postgresql/migration/">PostgreSQL<span class="n">5k</span></a><a class="chip plain" href="/ai-db-weekly/db/mysql/migration/">MySQL<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/sqlite/migration/">SQLite<span class="n">4k</span></a><a class="chip plain" href="/ai-db-weekly/db/mariadb/migration/">MariaDB<span class="n">990</span></a><a class="chip plain" href="/ai-db-weekly/db/clickhouse/migration/">ClickHouse<span class="n">618</span></a><a class="chip plain" href="/ai-db-weekly/db/oracle/migration/">Oracle<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/sql-server/migration/">SQL Server<span class="n">1k</span></a><span class="grp-mark" title="国产数据库">国产</span><a class="chip plain" href="/ai-db-weekly/db/tidb/migration/">TiDB<span class="n">1k</span></a><a class="chip plain" href="/ai-db-weekly/db/oceanbase/migration/">OceanBase<span class="n">307</span></a><a class="chip plain" href="/ai-db-weekly/db/opengauss/migration/">openGauss<span class="n">182</span></a><a class="chip plain" href="/ai-db-weekly/db/polardb/migration/">PolarDB<span class="n">99</span></a><a class="chip plain on" href="/ai-db-weekly/db/gaussdb/migration/">GaussDB<span class="n">139</span></a><a class="chip plain" href="/ai-db-weekly/db/goldendb/migration/">GoldenDB<span class="n">10</span></a><a class="chip plain" href="/ai-db-weekly/db/dameng/migration/">Dameng<span class="n">317</span></a><a class="chip plain" href="/ai-db-weekly/db/gbase/migration/">GBase<span class="n">29</span></a><a class="chip plain" href="/ai-db-weekly/db/tdsql/migration/">TDSQL<span class="n">44</span></a><a class="chip plain" href="/ai-db-weekly/db/yashandb/migration/">YashanDB<span class="n">42</span></a></div>
+        <div class="tagrow"><span class="glabel">类别</span><a class="chip plain" data-cat="" href="/ai-db-weekly/projects/" title="全部类别">全部</a><span class="grp-mark" title="运维与治理 · 备份/监控/高可用/安全/迁移/管理/平台">管库</span><a class="chip plain" href="/ai-db-weekly/db/gaussdb/backup/">备份</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/monitoring/">监控</a><a class="chip plain" href="/ai-db-weekly/cat/ha/">高可用</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/security/">安全/审计</a><a class="chip plain on" href="/ai-db-weekly/db/gaussdb/migration/">迁移</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/management/">管理</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/platform/">平台</a><span class="grp-mark" title="开发与应用 · 驱动/ORM/建模/代理">用库</span><a class="chip plain" href="/ai-db-weekly/db/gaussdb/library/">开发库</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/modeling/">建模/设计</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/connector/">连接/代理</a><span class="grp-mark" title="内核与质量 · 引擎/内核 与 测试/基准">造库</span><a class="chip plain" href="/ai-db-weekly/db/gaussdb/engine/">内核/引擎</a><a class="chip plain" href="/ai-db-weekly/db/gaussdb/testing/">测试/质量</a></div>
+      </div>
+      <div class="statline"><span class="big" title="GaussDB迁移组合清单">匹配 10</span>
+        <span class="sub">第 1 / 1 页 · 本页 10 项</span></div>
+      <hr class="divider">
+      <div class="tblwrap"><table class="rows">
+        <thead><tr><th style="min-width:250px">项目</th><th>库</th><th>类别</th><th>语言</th><th class="r">Star</th></tr></thead>
+        <tbody>
+<tr><td><a class="repo" href="/ai-db-weekly/p/iverycd/oraclesync2mysql/">iverycd/oraclesync2mysql</a><div class="sub">Oracle 到 MySQL 系数据库的在线迁移命令行工具</div></td><td><span class="tag">GaussDB</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag gray">+4</span></td><td class="small">迁移</td><td class="small mono">Go</td><td class="r mono">87</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/iverycd/mysqldatasynctool/">iverycd/mysqldatasynctool</a><div class="sub">基于 yml 配置的 MySQL 库迁移与校验命令行工具</div></td><td><span class="tag">GaussDB</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag gray">+3</span></td><td class="small">迁移</td><td class="small mono">Go</td><td class="r mono">2</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/dark-athena/plsqlrewrite4gaussdb-web/">dark-athena/plsqlrewrite4gaussdb-web</a><div class="sub">基于ANTLR4的PL/SQL到GaussDB语法转换工具，支持自定义规则</div></td><td><span class="tag">GaussDB</span><span class="tag">Oracle</span><span class="tag">PostgreSQL</span><span class="tag gray">+1</span></td><td class="small">迁移</td><td class="small mono">ANTLR</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/huaweicloud-samples/database-superagi-gaussdb/">huaweicloud-samples/database-superagi-gaussdb</a><div class="sub">将 SuperAGI 元数据与向量存储迁移到 GaussDB 的适配示例</div></td><td><span class="tag">GaussDB</span></td><td class="small">迁移</td><td class="small mono">—</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/sineycoder/csql/">sineycoder/csql</a><div class="sub">将 MySQL DDL 转换为 PostgreSQL、GaussDB、Oracle 等数据库 DDL 的 Go 工具</div></td><td><span class="tag">GaussDB</span><span class="tag">MySQL</span><span class="tag">Oracle</span><span class="tag gray">+1</span></td><td class="small">迁移</td><td class="small mono">Go</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/yubolun/dbmigration/">yubolun/dbmigration</a><div class="sub">基于Java 21虚拟线程的异构数据库全量/增量同步Web平台</div></td><td><span class="tag">Dameng</span><span class="tag">GaussDB</span><span class="tag">MySQL</span><span class="tag gray">+3</span></td><td class="small">迁移</td><td class="small mono">Java</td><td class="r mono">1</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/dark-athena/dbe/">dark-athena/dbe</a><div class="sub">模拟GaussDB高级包接口的兼容层，使dbe包项目迁移到openGauss</div></td><td><span class="tag">GaussDB</span></td><td class="small">迁移</td><td class="small mono">PLpgSQL</td><td class="r mono">0</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/luojbin/flyway-gaussdb/">luojbin/flyway-gaussdb</a><div class="sub">为 Flyway 数据库迁移工具提供华为 GaussDB 支持的适配插件</div></td><td><span class="tag">GaussDB</span></td><td class="small">迁移</td><td class="small mono">Java</td><td class="r mono">0</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/pangpang20/jaffle-shop-gaussdb/">pangpang20/jaffle-shop-gaussdb</a><div class="sub">基于 dbt-core 与 dbt-gaussdbdws 插件在华为 GaussDB 上运行的示例数据仓库项目</div></td><td><span class="tag">GaussDB</span></td><td class="small">迁移</td><td class="small mono">Python</td><td class="r mono">0</td></tr><tr><td><a class="repo" href="/ai-db-weekly/p/tuchief/flyway-gaussdb/">tuchief/flyway-gaussdb</a><div class="sub">基于 Flyway 的数据库迁移工具发行包，面向 GaussDB 用户。</div></td><td><span class="tag">GaussDB</span></td><td class="small">迁移</td><td class="small mono">Java</td><td class="r mono">0</td></tr>
+        </tbody></table></div>
+      
+    </section>
+  </main>
+  <footer>GaussDB 迁移工具清单 · 一卡可跨多库（计入多库组合）· 数据每日更新。</footer>
+</div>
+</body>
+</html>

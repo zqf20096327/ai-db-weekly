@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>asgeirrr/pgantomizer：基于 YAML 规则对 PostgreSQL 数据进行匿名化处理的 Python… · GitHub 100★</title>
+<meta name="description" content="基于 YAML 规则对 PostgreSQL 数据进行匿名化处理的 Python 工具（GitHub 100★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "pgantomizer", "url": "https://github.com/asgeirrr/pgantomizer", "codeRepository": "https://github.com/asgeirrr/pgantomizer", "description": "基于 YAML 规则对 PostgreSQL 数据进行匿名化处理的 Python 工具", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "BSD-3-Clause", "author": {"@type": "Organization", "name": "asgeirrr"}, "dateModified": "2023-11-24"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">安全/审计</span><span class="chip sub">2 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/asgeirrr/pgantomizer" target="_blank" rel="noopener">pgantomizer</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 BSD-3-Clause</span><span>创建于 2017</span><span>版本 0.1.1</span><span>贡献者 4 人</span><span>最近提交 2023-11-24</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="data-masking · 置信 high">数据脱敏</span><span class="capchip" title="dump · 置信 high">逻辑导出</span><span class="capchip mid" title="restore · 置信 mid">恢复</span></div>
+</div>
+<div class="c-right"><div class="c-star">100<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="pgantomizer star trend 100 to 100"><title>pgantomizer star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 100 增长至 100</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,34.0 L15.0,34.0 L21.9,34.0 L28.9,34.0 L35.9,34.0 L42.9,34.0 L49.8,34.0 L56.8,34.0 L63.8,34.0 L70.7,34.0 L77.7,34.0 L84.7,34.0 L91.7,34.0 L98.6,34.0 L112.6,34.0 L119.5,34.0 L126.5,34.0 L133.5,34.0 L140.5,34.0 L147.4,34.0 L154.4,34.0 L168.3,34.0 L182.3,34.0 L189.3,34.0 L196.2,34.0 L203.2,34.0 L217.1,34.0 L231.1,34.0 L245.0,34.0 L252.0,34.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,34.0 15.0,34.0 21.9,34.0 28.9,34.0 35.9,34.0 42.9,34.0 49.8,34.0 56.8,34.0 63.8,34.0 70.7,34.0 77.7,34.0 84.7,34.0 91.7,34.0 98.6,34.0 112.6,34.0 119.5,34.0 126.5,34.0 133.5,34.0 140.5,34.0 147.4,34.0 154.4,34.0 168.3,34.0 182.3,34.0 189.3,34.0 196.2,34.0 203.2,34.0 217.1,34.0 231.1,34.0 245.0,34.0 252.0,34.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="34.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>基于 YAML 规则对 PostgreSQL 数据进行匿名化处理的 Python 工具</p><p class="pts-label">综述（解读层）</p><p class="pain">pgantomizer 是一个 Python 命令行工具和库，用于匿名化 PostgreSQL 数据库中的数据，适用于需要向无权访问个人信息的第三方提供数据的场景。规则写在单一 YAML 文件中，采用白名单机制——仅显式标记 raw 的列保留原样，其余列按数据类型自动匿名化；支持 custom_rules 指定匿名化函数、truncate 截断表和 where 限定范围。处理流程为 pg_dump 导出、加载到目标实例、匿名化后默认删除 dump 文件。</p><ul class="pts"><li>通过单一 YAML 文件定义匿名化规则，未在 raw 中显式标记的列默认匿名化</li><li>提供 aggregate_length、clear、example_email、md5、x_out 等匿名化函数，并支持通过 value 键直接指定替换值</li><li>提供 pgantomizer_dump 和 pgantomizer 命令行工具及 dump_db、load_anonymize_remove、anonymize_db Python 函数，连接参数可经命令行或环境变量传入</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>向不应访问用户个人信息的第三方提供脱敏数据副本</li><li>将数据导入无法保证数据处理方式的第三方工具前进行匿名化</li><li>需要保留部分原始列（通过 raw 标记）或截断特定表（truncate）的数据交付流程</li></ul>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/asgeirrr/pgantomizer" target="_blank" rel="noopener">asgeirrr/pgantomizer</a></td><td class="stars">100</td><td>Anonymize data in your PostgreSQL dabatase with ease</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/qovery/replibyte" target="_blank" rel="noopener">qovery/replibyte</a></td><td class="stars">4,419</td><td>Seed your development database with real data ⚡️ · 1 年未更</td><td class="stars">0.85</td></tr>
+<tr><td><a href="https://github.com/evilmartians/evil-seed" target="_blank" rel="noopener">evilmartians/evil-seed</a></td><td class="stars">569</td><td>A Gem for creating partial anonymized dumps of your database using your app model relations.</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/prodrigestivill/docker-postgres-backup-local" target="_blank" rel="noopener">prodrigestivill/docker-postgres-backup-local</a></td><td class="stars">1,214</td><td>Backup PostgresSQL to local filesystem with periodic backups and rotate backups. · 10 个月未更</td><td class="stars">0.68</td></tr>
+<tr><td><a href="https://github.com/archmonger/django-dbbackup" target="_blank" rel="noopener">archmonger/django-dbbackup</a></td><td class="stars">1,114</td><td>Backup and restore your Django database and media</td><td class="stars">0.68</td></tr>
+<tr><td><a href="https://github.com/datanymizer/datanymizer" target="_blank" rel="noopener">datanymizer/datanymizer</a></td><td class="stars">571</td><td>Powerful database anonymizer with flexible rules. Written in Rust. · 8 个月未更</td><td class="stars">0.64</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>0.1.1</b>（08-15）——最新版本（说明见仓库 releases）</p><p class="t-sub" style="margin-top:4px;">90 天 0 发 · 安全通告 0</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🏭 生产采用</span><span class="t-sub">README 提及数</span></div>
+<div class="users"><div class="user">被池内 1 个其他项目的 README 以 owner/repo 引用（36054 篇全量扫描，截至 2026-11-22）</div></div>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install pgantomizer（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>

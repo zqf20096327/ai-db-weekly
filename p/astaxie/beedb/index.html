@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>astaxie/beedb：Go 轻量级 ORM，基于 database/sql 接口映射结构体与数据库表 · GitHub 704★</title>
+<meta name="description" content="Go 轻量级 ORM，基于 database/sql 接口映射结构体与数据库表（GitHub 704★，Go 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "beedb", "url": "https://github.com/astaxie/beedb", "codeRepository": "https://github.com/astaxie/beedb", "description": "Go 轻量级 ORM，基于 database/sql 接口映射结构体与数据库表", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Go", "author": {"@type": "Organization", "name": "astaxie"}, "dateModified": "2014-12-21"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span><span class="chip sub">11 年未更</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/astaxie/beedb" target="_blank" rel="noopener">beedb</a>
+<div class="c-meta"><span>语言 Go</span><span>创建于 2012</span><span>贡献者 14 人</span><span>最近提交 2014-12-21</span><span>90 天 0 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="orm · 置信 high">ORM</span><span class="capchip mid" title="driver · 置信 mid">数据库驱动</span></div>
+</div>
+<div class="c-right"><div class="c-star">704<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="beedb star trend 705 to 704"><title>beedb star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 705 增长至 704</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,10.0 L15.0,10.0 L21.9,10.0 L28.9,10.0 L35.9,10.0 L42.9,10.0 L49.8,10.0 L56.8,10.0 L63.8,58.0 L70.7,58.0 L77.7,58.0 L84.7,58.0 L91.7,58.0 L98.6,58.0 L112.6,58.0 L119.5,58.0 L126.5,58.0 L133.5,58.0 L140.5,58.0 L147.4,58.0 L154.4,58.0 L168.3,58.0 L182.3,58.0 L189.3,58.0 L196.2,58.0 L203.2,58.0 L217.1,58.0 L231.1,58.0 L245.0,58.0 L252.0,58.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,10.0 15.0,10.0 21.9,10.0 28.9,10.0 35.9,10.0 42.9,10.0 49.8,10.0 56.8,10.0 63.8,58.0 70.7,58.0 77.7,58.0 84.7,58.0 91.7,58.0 98.6,58.0 112.6,58.0 119.5,58.0 126.5,58.0 133.5,58.0 140.5,58.0 147.4,58.0 154.4,58.0 168.3,58.0 182.3,58.0 189.3,58.0 196.2,58.0 203.2,58.0 217.1,58.0 231.1,58.0 245.0,58.0 252.0,58.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="58.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>Go 轻量级 ORM，基于 database/sql 接口映射结构体与数据库表</p><p class="pts-label">综述（解读层）</p><p class="pain">Beedb 是一个 Go 语言 ORM，通过结构体标签将 Go struct 映射到数据库表，查询时将 where 子句直接委托给底层数据库执行。它基于 database/sql 接口，支持 MySQL/SQLite/PostgreSQL/DB2/ODBC/Oracle 等驱动，提供 struct 与 map 两种方式的增删改查、Join、Group By 等操作， BSD 协议开源。注意：该项目已停止维护，作者建议转向 Beego.orm，且未实现关系型关联支持，未标记 [*] 的驱动未经测试。</p><ul class="pts"><li>基于 database/sql 接口，通过 beedb:"PK"、sql、tname 等结构体标签完成表名、列名与主键映射</li><li>提供 Where/Limit/Join/GroupBy/Having 链式查询，支持 struct 与 map 两种方式的增删改查及批量操作</li><li>兼容 MySQL、SQLite、PostgreSQL、DB2、MS ADODB、ODBC、Oracle 等数据库驱动，可通过 beedb.OnDebug 开启调试日志</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>需要轻量 ORM 将 Go 结构体映射到关系数据库表的项目</li><li>需要直接书写 SQL where 子句、保留底层查询灵活性的场景</li><li>基于 map 的动态字段插入、更新与联表查询操作</li></ul>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>MySQL、Oracle、PostgreSQL、SQLite</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/astaxie/beedb" target="_blank" rel="noopener">astaxie/beedb</a></td><td class="stars">704</td><td>beedb is a go ORM,support database/sql interface，pq/mysql/sqlite</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/bookshelf/bookshelf" target="_blank" rel="noopener">bookshelf/bookshelf</a></td><td class="stars">6,344</td><td>A simple Node.js ORM for PostgreSQL, MySQL and SQLite3 built on top of Knex.js · 2 年未更</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/praeclarum/sqlite-net" target="_blank" rel="noopener">praeclarum/sqlite-net</a></td><td class="stars">4,453</td><td>Simple, powerful, cross-platform SQLite client and ORM for .NET</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/npgsql/efcore.pg" target="_blank" rel="noopener">npgsql/efcore.pg</a></td><td class="stars">1,861</td><td>Entity Framework Core provider for PostgreSQL</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/aio-libs/aiopg" target="_blank" rel="noopener">aio-libs/aiopg</a></td><td class="stars">1,434</td><td>aiopg is a library for accessing a PostgreSQL database from the asyncio</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/event-driven-io/pongo" target="_blank" rel="noopener">event-driven-io/pongo</a></td><td class="stars">1,375</td><td>Pongo - Mongo but on Postgres or SQLite, with strong consistency benefits</td><td class="stars">1.00</td></tr>
+</tbody></table>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

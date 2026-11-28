@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数据库开源生态周刊 · 第 7 期</title>
+<meta name="description" content="分析型数据库的公共基准测试套件——上百引擎同场竞技的结果页，本周 7 天 618 次提交、90 天 5,143 次，维护强度罕见地高。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://zqf20096327.github.io/ai-db-weekly/weekly/7/">
+<link rel="stylesheet" href="/ai-db-weekly/assets/app.css">
+<style>
+.iss-no-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.iss-nav { margin-left: auto; display: inline-flex; gap: 14px; font-size: 12px; }
+.iss-nav a { color: var(--muted); }
+.iss-nav a:hover { color: var(--accent); }
+.iss-nav .off { color: var(--line); }
+details.article-card { cursor: pointer; }
+details.article-card[open] { cursor: default; }
+details.article-card > summary { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+details.article-card > summary::-webkit-details-marker { display: none; }
+details.article-card .dr-article { border-top: 1px dashed var(--line); margin-top: 8px; padding-top: 6px; }
+.issue-panel { grid-template-columns: repeat(2,1fr); }
+.dr-actions { margin-top: 10px; }
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/ai-db-weekly/">开源生态<b>观测</b></a>
+<a class="lk on" href="/ai-db-weekly/">周刊</a><a class="lk" href="/ai-db-weekly/archive.html">往期周刊</a><a class="lk" href="/ai-db-weekly/projects/">项目浏览</a><a class="lk" href="/ai-db-weekly/compare/">项目对比</a>
+<span class="spacer"></span>
+<a class="icon-btn" href="/ai-db-weekly/assets/qr-wechat.jpg" target="_blank" rel="noopener" title="联系作者 · 公众号">💬 联系我们</a>
+</div></header>
+<div class="wrap">
+<section class="hero issue-hero">
+    <div class="iss-no-row">
+      <div class="issue-no">第 7 期 <span class="muted">· 2026-11-17 · 每周一刊</span></div>
+      <span class="iss-nav"><a href="/ai-db-weekly/weekly/6/">‹ 上一期</a><a href="/ai-db-weekly/weekly/8/">下一期 ›</a><a href="/ai-db-weekly/">回到最新</a><a href="/ai-db-weekly/archive.html">往期 →</a></span>
+    </div>
+    <div class="h1-row">
+      <h1>数据库开源生态周刊</h1>
+      <a class="btn primary cta-top" href="/ai-db-weekly/projects/">浏览 11,993 个项目档案 →</a>
+    </div>
+    <div class="issue-slogan">国际 7 库 · 国产 10 库 · 每周更新</div>
+    <div class="numline"><a href="/ai-db-weekly/projects/"><b>11,993</b>收录项目</a><i>·</i><a href="/ai-db-weekly/projects/"><b>6</b>新披露通告(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>181</b>发版项目(7天)</a><i>·</i><a href="/ai-db-weekly/projects/"><b>244</b>停维预警</a><i>·</i><a href="/ai-db-weekly/projects/"><b>887</b>AI 工具</a><i>·</i><a href="/ai-db-weekly/projects/"><b>27</b>新项目(45天)</a></div>
+    <div class="lede-label">本期导读</div>
+    <div class="lede">
+<div class="lede-row"><span class="lede-k">看点</span><div class="lede-t">原生客户端回潮再添一员：<a class="jump" href="/ai-db-weekly/p/shayanabbas1/dbdelve/">dbdelve</a> 用 Rust+GPUI 重做数据库客户端，3 个月 ★1.5k、本周 <b>+641</b>，详见板块席；MariaDB 官方 11-16 发 <a class="jump" href="/ai-db-weekly/p/mariadb/server/">mariadb-12.3.4</a>，详见事件席；增星王仍是 claude-mem（+2,305，冷却不发深读）</div></div>
+<div class="lede-row"><span class="lede-k">风险</span><div class="lede-t">近 7 天<b>新披露</b>critical 通告 6 起——<a class="jump" href="/ai-db-weekly/p/dokploy/dokploy/">dokploy</a>、parse-server、frappe、mikro-orm 之外，<b>MariaDB 内核同周上榜</b>（11-13 critical）：12.3.4 发版恰在通告三天后，升级别当选择题做</div></div>
+<div class="lede-row"><span class="lede-k">规模</span><div class="lede-t">站内收录 11,993 个项目档案，17 库生态，每周更新一次</div></div>
+    </div>
+  </section>
+  <main>
+    <section>
+      <div class="sec-title"><h3>💬 一句话情报</h3><span class="line"></span><span class="muted">知道就好 · 数据自动生成</span></div>
+      <div class="card oneline-card"><ul>
+<li><a href="/ai-db-weekly/p/thedotmack/claude-mem/"><code>thedotmack/claude-mem</code></a> 本周 <b class="g7">+2305</b> 星，全站第一（现 ★118k）</li>
+<li>内核发版：<a href="/ai-db-weekly/p/clickhouse/clickhouse/"><code>ClickHouse/ClickHouse</code></a> 发布 <b>v26.9.30.7-stable</b>（2026-11-16）</li>
+<li>近 7 天新披露安全通告 <b>6</b> 起、发版 <b>181</b> 个项目</li>
+<li>AI 渗透：在册 AI 相关工具 887 个，其中 MCP 类 528 个</li>
+<li>45 天窗口内新入库且已归属的工具 <b>27</b> 个</li>
+      </ul></div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>📖 本期深读</h3><span class="line"></span><span class="muted">国际开源 · 国产开源 · AI×数据库 · 点卡片读全文</span></div>
+      <div class="grid3 issue-grid">
+<details class="article-card">
+<summary>
+<div class="sector">类别轮值 · 测试/质量</div>
+<h3>性能标尺的更新周：ClickBench 一周 618 次提交</h3>
+<div class="fn mono">ClickHouse/ClickBench</div>
+<p>分析型数据库的公共基准测试套件——上百引擎同场竞技的结果页，本周 7 天 618 次提交、90 天 5,143 次，维护强度罕见地高。</p>
+<div class="nums"><span><b>1.2k</b> Star</span><span><b>+6</b> 本周</span><span><b>618</b> c/7天</span><span><b>144</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>ClickBench 是面向分析型数据库的可复现基准测试套件：同一套查询、统一口径、上百种引擎的结果大表，是 OLAP 选型圈被引用最多的「公共标尺」之一。仓库由 ClickHouse 官方维护（2022 年创建、144 位贡献者、★1,170），站内按支持口径归属 ClickHouse、MariaDB、MySQL、PostgreSQL、SQL Server 5 库，类别落在测试/质量。</p><p>为什么本期选它：类别轮盘 6/13 转到测试/质量，而它正处在一个罕见的强度期——7 天 618 次提交、90 天 5,143 次，是本周全站测试类项目里维护节奏最猛的一个。基准仓库的提交高峰通常意味着两件事：新引擎/新版本的结果回灌，以及测试脚本对上游变化的适配（这也是基准测试的日常真相——引擎周周变，标尺得跟着量）。对选型者而言，一个「还在被认真维护」的基准，比基准本身更值钱。</p><p>适合谁：做 OLAP/分析引擎选型、需要在多个引擎间做性能对比论证的团队；给内部数据库做对外性能叙事的厂商。风险观察点：基准是跑分不是生产——单表分析型负载不代表真实业务混载，别把排名当选型唯一依据；结果页存在版本滞后，引用前先核对引擎版本；许可证未明确标注，商用引用其数据/脚本前要自行确认边界。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">1.2k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+6</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">618</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">5143</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">144</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">—</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">NOASSERTION</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">100/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/clickhouse/clickbench/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 7 期（快照 20261117）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">板块主打 · 国际</div>
+<h3>3 个月 ★1.5k：dbdelve 用 Rust+GPUI 重做数据库客户端</h3>
+<div class="fn mono">ShayanAbbas1/dbdelve</div>
+<p>原生、跨平台、多引擎的数据库客户端：不装 Electron 不背 JVM，百万行表格滚动不卡；本周 +641 星，是国际阵营里除冷却名单外最猛的增量。</p>
+<div class="nums"><span><b>1.5k</b> Star</span><span><b>+641</b> 本周</span><span><b>37</b> c/7天</span><span><b>5</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>DBDelve 是一个用 Rust 与 GPUI 编写的原生跨平台数据库客户端：无 Electron、无 JVM，启动瞬时、内存友好，README 直接放了「滚动百万行不卡」的演示视频，主打对Electron 客户端臃肿化的反动。支持 MySQL、PostgreSQL、SQL Server、SQLite 四引擎，站内归类管理；GPL-3.0 许可证，2026-08-17 创建，目前 5 位贡献者，最新版 v0.7.4-nightly.2（11-16）。</p><p>为什么本期选它：板块主打国际席位，而它是本周国际增星榜上最鲜活的增量——+641，仅次于两位冷却常客（claude-mem +2,305、dbx +791）与两周前刚写过深读的 codebase-memory-mcp（+317）。3 个月从零到 ★1,495 的斜率，与本刊第 1 期写过的 TablePro、dbx 是同一条曲线——「桌面客户端的原生化回潮」已经是连续四期反复出现的结构性信号，dbdelve 把这个叙事推进到了 GPUI（Zed 编辑器的开源 UI 框架）这一代技术栈上。</p><p>适合谁：嫌主流客户端重、日常只做「连库、查表、写 SQL」的工程师与 DBA；在意内存占用与启动速度的笔记本党。风险观察点：版本还在 v0.7.x nightly 阶段，无稳定契约，生产重度依赖要谨慎；引擎支持面窄（4 个），云仓库数仓类接入缺失；单人主导、5 位贡献者，巴士因子低；GPL-3.0 对二次分发有传染约束。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">1.5k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+641</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">37</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">437</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">5</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">v0.7.4-nightly.20261116.42</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">GPL-3.0</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">89/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/shayanabbas1/dbdelve/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 7 期（快照 20261117）。</div>
+</div>
+</details>
+<details class="article-card">
+<summary>
+<div class="sector">事件 · 官方发版</div>
+<h3>12.3.4 与一则 critical 通告：MariaDB 的一周</h3>
+<div class="fn mono">MariaDB/server</div>
+<p>MySQL 社区分支 11-16 落地 mariadb-12.3.4 维护版；三天前（11-13）刚披露一则 critical——发版与安全修复撞在同一周，升级是本周最实际的动作。</p>
+<div class="nums"><span><b>8.6k</b> Star</span><span><b>+41</b> 本周</span><span><b>13</b> c/7天</span><span><b>83</b> 贡献者</span></div>
+<div class="read">阅读全文 ↓</div>
+</summary>
+<div class="dr-article">
+<p>MariaDB Server 是最著名的 MySQL 社区分支：可插拔存储引擎、窗口函数、向量搜索能力一应俱全，GPL-2.0 许可证，GitHub 仓库 2014 年建立、83 位贡献者、★8,599，站内按兼容口径归属 MariaDB、MySQL、Oracle、SQL Server 4 库，是内核/引擎类别的官方标记项目。</p><p>为什么登上事件席：官方发版信号——mariadb-12.3.4 于 11-16 发布，落在本期窗口内；且同一周（11-13）披露了一则 critical 级安全通告，历史在册 28 条。发版落在通告三天之后，两件事大概率有关联，但无论修复是否包含在 12.3.4 内，动作建议都一样：本周内升级。12.3 线的维护节奏本身也是信号——在 12.x 系列迭代期，小版本补丁以月为单位稳定到货，这对「MySQL 兼容生态」的用户是最大的安全感来源。</p><p>适合谁：MySQL 生态里想要更强社区主导权的团队、需要 Oracle 兼容层但不想绑死商业许可的技术路线、以及关注向量搜索能力的 OLTP 选型。风险观察点：MariaDB 与 MySQL 的兼容性在边缘处持续漂移，应用迁移要跑兼容测试而不能只看版本号；内核安全通告常态化，把升级纳入例行动作而不是事件驱动；周边生态（驱动/编排）对 MariaDB 的跟进速度普遍慢于 MySQL 官方线。</p>
+<div class="issue-panel"><div class="ip"><div class="k">Star</div><div class="v mono">8.6k</div></div><div class="ip"><div class="k">本周增星</div><div class="v mono">+41</div></div><div class="ip"><div class="k">7天提交</div><div class="v mono">13</div></div><div class="ip"><div class="k">90天提交</div><div class="v mono">662</div></div><div class="ip"><div class="k">贡献者</div><div class="v mono">83</div></div><div class="ip"><div class="k">最新发版</div><div class="v mono">mariadb-12.3.4</div></div><div class="ip"><div class="k">许可证</div><div class="v mono">GPL-2.0</div></div><div class="ip"><div class="k">活跃度</div><div class="v mono">45/100</div></div></div>
+<div class="dr-actions"><a class="btn" href="/ai-db-weekly/p/mariadb/server/">项目档案 →</a></div>
+<div class="small muted" style="margin-top:12px">选稿依据与信号面板冻结于第 7 期（快照 20261117）。</div>
+</div>
+</details>
+      </div>
+    </section>
+    <section>
+      <div class="sec-title"><h3>⚡ 本周速览</h3><span class="line"></span><span class="muted">只报变化（事件）· 发刊时冻结 · 状态请查工具页</span></div>
+      <div class="grid2">
+<section class="card digest risk">
+<div class="card-head"><h2>🔴 风险预警<span class="hint">本周新披露 6 起 · 停维/归档 244</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/dokploy/dokploy/"><span class="sev">严重</span> <span class="repo">Dokploy/dokploy</span><span class="d-meta">2026-11-12 新披露 · ★39k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/parse-community/parse-server/"><span class="sev">严重</span> <span class="repo">parse-community/parse-server</span><span class="d-meta">2026-11-14 新披露 · ★21k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/frappe/frappe/"><span class="sev">严重</span> <span class="repo">frappe/frappe</span><span class="d-meta">2026-11-12 新披露 · ★11k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/sinaptik-ai/pandas-ai/"><span class="bdg stale">停维</span> <span class="repo">sinaptik-ai/pandas-ai</span><span class="d-meta">90 天零提交 · ★24k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/typicode/lowdb/"><span class="bdg stale">停维</span> <span class="repo">typicode/lowdb</span><span class="d-meta">90 天零提交 · ★23k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/knex/knex/"><span class="bdg stale">停维</span> <span class="repo">knex/knex</span><span class="d-meta">90 天零提交 · ★20k</span></a>
+</div>
+</section>
+<section class="card digest ver">
+<div class="card-head"><h2>📦 版本动态<span class="hint">近 7 天发版 · 官方优先</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/clickhouse/clickhouse/"> <span class="repo">ClickHouse/ClickHouse</span><span class="d-meta"><span class="tag off">官方</span> v26.9.30.7-stable <span class="muted">· 2026-11-16</span> · ★51k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/clickhouse/clickstack/"> <span class="repo">ClickHouse/ClickStack</span><span class="d-meta"><span class="tag off">官方</span> @hyperdx/otel-coll <span class="muted">· 2026-11-14</span> · ★10k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/mariadb/server/"> <span class="repo">MariaDB/server</span><span class="d-meta"><span class="tag off">官方</span> mariadb-12.3.4 <span class="muted">· 2026-11-16</span> · ★8.6k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/clickhouse/clickhouse-java/"> <span class="repo">ClickHouse/clickhouse-java</span><span class="d-meta"><span class="tag off">官方</span> v0.11.2 <span class="muted">· 2026-11-14</span> · ★1.6k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/clickhouse/pg_stat_ch/"> <span class="repo">ClickHouse/pg_stat_ch</span><span class="d-meta"><span class="tag off">官方</span> v0.4.1 <span class="muted">· 2026-11-10</span> · ★129</span></a>
+</div>
+</section>
+<section class="card digest gain">
+<div class="card-head"><h2>📈 增星榜<span class="hint">本周 · 全站总榜 · 基线 1110→1117</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/thedotmack/claude-mem/"> <span class="repo">thedotmack/claude-mem</span><span class="d-meta"><span class="g7">+2305</span> · ★118k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/t8y2/dbx/"> <span class="repo">t8y2/dbx</span><span class="d-meta"><span class="g7">+791</span> · ★31k</span></a>
+<a class="d-item" href="/ai-db-weekly/p/shayanabbas1/dbdelve/"> <span class="repo">ShayanAbbas1/dbdelve</span><span class="d-meta"><span class="g7">+641</span> · ★1.5k</span></a>
+</div>
+</section>
+<section class="card digest newb">
+<div class="card-head"><h2>🌱 新项目<span class="hint">创建 ≤45 天 · 已归属</span></h2>
+<a class="small" href="/ai-db-weekly/projects/" style="color:var(--accent)">全部 →</a></div>
+<div class="d-list">
+<a class="d-item" href="/ai-db-weekly/p/victoriametrics/logs-benchmark/"> <span class="repo">VictoriaMetrics/logs-benchmark</span><span class="d-meta">★14 · <span class="tag gray">测试/质量</span> · 2026-10-26</span></a>
+<a class="d-item" href="/ai-db-weekly/p/deepdigger69/sqlite-clone/"> <span class="repo">deepdigger69/sqlite-clone</span><span class="d-meta">★4 · <span class="tag gray">内核/引擎</span> · 2026-10-25</span></a>
+<a class="d-item" href="/ai-db-weekly/p/dayztm/telegram-serverless-limits/"> <span class="repo">DaYzTm/telegram-serverless-limits</span><span class="d-meta">★4 · <span class="tag gray">测试/质量</span> · 2026-10-09</span></a>
+</div>
+</section>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>awslabs/graphrag-toolkit：用于构建图增强生成式 AI 应用的 Python 工具集 · GitHub 467★</title>
+<meta name="description" content="用于构建图增强生成式 AI 应用的 Python 工具集（GitHub 467★，Python 开源）">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "graphrag-toolkit", "url": "https://github.com/awslabs/graphrag-toolkit", "codeRepository": "https://github.com/awslabs/graphrag-toolkit", "description": "用于构建图增强生成式 AI 应用的 Python 工具集", "applicationCategory": "DeveloperApplication", "programmingLanguage": "Python", "license": "Apache-2.0", "author": {"@type": "Organization", "name": "awslabs"}, "dateModified": "2026-11-17"}</script>
+<style>
+  /* P10.2 换装：色板/字体与站内 assets/app.css 同源（--accent/-soft/--ink/--muted/--line/--warn-bg）。
+     Inter 走站内同款变量字体：卡在 /p/{owner}/{repo}/ 下，恒三级回到根 assets/（dist 与镜像变体同深度），
+     加载失败自然回落系统栈。 */
+  @font-face { font-family: "Inter"; src: url("../../../assets/fonts/InterVariable.woff2") format("woff2-variations");
+               font-weight: 100 900; font-style: normal; font-display: swap; }
+  :root{
+    --brand:#3352cc; --brand-soft:#eef1fb;
+    --ink:#171a21; --sub:#666c78; --line:#dde2e9;
+    --hi:#fdf3e3; --code-bg:#161b22; --code-ink:#e6edf3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#e9edf3; color:var(--ink);
+    font-family:"Inter","Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    font-variant-numeric:tabular-nums;
+    padding:24px 16px 48px;
+  }
+  b, strong{ font-weight:600; }
+  .card{ max-width:680px; margin:0 auto; background:#fafbfd; border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; display:flex; flex-direction:column;
+    box-shadow:0 1px 2px rgba(23,26,33,.04), 0 4px 14px rgba(23,26,33,.05);
+    overflow-wrap:anywhere; }   /* 继承属性：亮点里 a/b/c 无空格长串强制可断行，不撑破卡片 */
+  .c-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .chip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:3px 8px; border-radius:4px; }
+  .chip.sub{ color:var(--sub); background:transparent; border:1px solid var(--line); font-weight:400; }
+  .c-no{ margin-left:auto; font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; }
+  .c-body{ display:flex; gap:22px; margin-top:16px; align-items:center; }
+  .c-left{ flex:1.5; min-width:0; }
+  .c-title{ font-size:21px; font-weight:700; letter-spacing:-0.5px; line-height:1.2; }
+  a.c-title{ color:var(--ink); text-decoration:none; }
+  a.c-title:hover{ color:var(--brand); }
+  .pts-label{ margin-top:8px; font-size:12px; font-weight:600; color:var(--ink); }
+  .c-anchor{ font-size:12px; color:var(--sub); margin-top:6px; }
+  .c-anchor b{ color:var(--ink); }
+  .c-meta{ margin-top:6px; font-size:12px; color:var(--sub);
+    display:flex; flex-wrap:wrap; row-gap:2px; line-height:1.5; }
+  .c-meta span{ white-space:nowrap; }
+  .c-meta span:not(:last-child)::after{ content:"\00b7"; margin:0 6px; color:var(--line); }
+  .cap{ margin-top:10px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  .cap-label{ font-size:12px; color:var(--sub); }
+  .capchip{ font-size:12px; font-weight:600; color:var(--brand); background:var(--brand-soft);
+    padding:2px 9px; border-radius:10px; }
+  .capchip.mid{ background:transparent; border:1px solid var(--line); color:var(--sub); font-weight:400; }
+  .c-right{ flex:1; display:flex; flex-direction:column; align-items:flex-end; min-width:0; }
+  .c-star{ font-size:21px; font-weight:700; line-height:1; }
+  .c-star .u{ font-size:14px; color:var(--brand); margin-left:2px; }
+  .spk{ width:100%; height:auto; display:block; margin-top:10px; }
+  .sec{ margin-top:24px; }
+  .t-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;
+    padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .t-title{ font-size:16px; font-weight:700; }
+  .t-sub{ font-size:12px; color:var(--sub); }
+  p{ margin-top:10px; font-size:14px; }
+  p.pain{ color:var(--sub); }
+  p.pain b{ color:var(--ink); }
+  table.t{ width:100%; border-collapse:collapse; font-size:13px; }
+  table.t th{ background:var(--brand); color:#fff; text-align:left; padding:8px 10px; font-weight:600; }
+  table.t th.stars{ text-align:right; }
+  table.t td{ padding:8px 10px; border-bottom:1px solid var(--line); }
+  table.t tr:last-child td{ border-bottom:none; }
+  table.t tr.me td{ background:var(--hi); font-weight:600; }
+  table.t tr.me td:first-child{ border-left:3px solid var(--brand); }
+  table.t td.stars{ text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  table.t td a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brand); }
+  table.t td a:hover{ color:var(--brand); }
+  .verdict{ margin-top:4px; display:grid; gap:10px; }
+  .v-item{ border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:14px; }
+  .v-item .t{ font-size:12px; font-weight:600; margin-bottom:3px; }
+  pre{ background:var(--code-bg); color:var(--code-ink); border-radius:8px;
+    padding:13px 15px; margin-top:4px; overflow-x:auto; font-size:13px; line-height:1.6; }
+  code{ font-family:ui-monospace,Consolas,"Courier New",monospace; }
+  .users{ margin-top:4px; display:grid; gap:8px; }
+  .user{ font-size:14px; padding-left:12px; border-left:3px solid var(--brand-soft); }
+  ul.pts{ margin-top:8px; padding-left:18px; font-size:14px; color:var(--sub); }
+  ul.pts li{ margin-top:4px; }
+  @media (max-width:600px){
+    .card{ padding:16px; }
+    .c-body{ flex-direction:column; align-items:stretch; }
+    .c-right{ align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="c-top"><span class="chip">dbhub · 项目档案</span><span class="chip sub">开发库</span></div>
+<div class="c-body">
+<div class="c-left">
+<a class="c-title" href="https://github.com/awslabs/graphrag-toolkit" target="_blank" rel="noopener">graphrag-toolkit</a>
+<div class="c-meta"><span>语言 Python</span><span>协议 Apache-2.0</span><span>创建于 2024</span><span>版本 3.20.0</span><span>贡献者 31 人</span><span>最近提交 2026-11-17</span><span>90 天 240 commits</span></div>
+<div class="cap"><span class="cap-label">能力</span><span class="capchip" title="knowledge-graph · 置信 high">知识图谱</span></div>
+</div>
+<div class="c-right"><div class="c-star">467<span class="u">★</span></div><svg class="spk" viewBox="0 0 260 66" role="img" aria-label="graphrag-toolkit star trend 450 to 467"><title>graphrag-toolkit star 趋势（2026-10-18 至 2026-11-22）</title><desc>由 450 增长至 467</desc><line x1="8" y1="58" x2="252" y2="58" stroke="#dde2e9" stroke-width="1"/><path d="M8.0,58 L8.0,55.3 L15.0,55.3 L21.9,55.3 L28.9,55.3 L35.9,55.3 L42.9,55.3 L49.8,58.0 L56.8,58.0 L63.8,58.0 L70.7,55.3 L77.7,55.3 L84.7,52.7 L91.7,52.7 L98.6,52.7 L112.6,52.7 L119.5,50.0 L126.5,50.0 L133.5,47.3 L140.5,47.3 L147.4,47.3 L154.4,44.7 L168.3,42.0 L182.3,34.0 L189.3,28.7 L196.2,23.3 L203.2,20.7 L217.1,18.0 L231.1,18.0 L245.0,10.0 L252.0,10.0 L252.0,58 Z" fill="rgba(15,118,110,.12)"/><polyline points="8.0,55.3 15.0,55.3 21.9,55.3 28.9,55.3 35.9,55.3 42.9,55.3 49.8,58.0 56.8,58.0 63.8,58.0 70.7,55.3 77.7,55.3 84.7,52.7 91.7,52.7 98.6,52.7 112.6,52.7 119.5,50.0 126.5,50.0 133.5,47.3 140.5,47.3 147.4,47.3 154.4,44.7 168.3,42.0 182.3,34.0 189.3,28.7 196.2,23.3 203.2,20.7 217.1,18.0 231.1,18.0 245.0,10.0 252.0,10.0" fill="none" stroke="#3352cc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="252.0" cy="10.0" r="3" fill="#3352cc"/><text x="8" y="64" font-size="11" fill="#666c78">10-18</text><text x="252" y="64" font-size="11" fill="#666c78" text-anchor="end">11-22</text></svg></div>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🧭 简介</span><span class="t-sub">解读层（AI·证据行可回查）</span></div>
+<p>用于构建图增强生成式 AI 应用的 Python 工具集</p><p class="pts-label">综述（解读层）</p><p class="pain">graphrag-toolkit 是 AWS 开源的 Python 工具集合，包含两个子项目：lexical-graph 提供从非结构化数据自动构建层次化词汇图的框架，并支持组合问答策略；BYOKG-RAG 允许用户接入自有知识图谱并基于 LLM 执行图谱问答。采用 Apache-2.0 许可，可通过 PyPI 安装 lexical-graph 与 graphrag-byokg 两个包。</p><ul class="pts"><li>lexical-graph 支持从非结构化数据自动构建层次化词汇图，并可组合问答策略查询该图</li><li>BYOKG-RAG 支持用户接入自有知识图谱，在其上执行复杂问答</li><li>提供基于 Jupyter notebook 的自导式工作坊及 UI 交互应用等示例资源</li></ul><p class="pts-label">适用场景（解读层）</p><ul class="pts"><li>从非结构化文档构建词汇图并实现问答检索</li><li>在已有知识图谱上进行基于 LLM 的复杂问题回答</li><li>配合 Amazon Neptune 等图数据库构建图增强生成式 AI 应用</li></ul>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📖 README 首段</span><span class="t-sub">存档原文 · 程序抽取</span></div>
+<p class="pain">The graphrag-toolkit is a collection of Python tools for building graph-enhanced Generative AI applications.</p>
+</div>
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🔌 适配哪些库</span><span class="t-sub">db_scan 程序判定</span></div>
+<p>PostgreSQL</p>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">🎯 同类擂台</span><span class="t-sub">算法圈选 arena_v2.6 · 相似度 ≥0.60 起展</span></div>
+<table class="t"><thead><tr><th scope="col">同类项目</th><th scope="col" class="stars">⭐</th><th scope="col">简介</th><th scope="col" class="stars">相似度</th></tr></thead>
+<tbody>
+<tr class="me"><td><a href="https://github.com/awslabs/graphrag-toolkit" target="_blank" rel="noopener">awslabs/graphrag-toolkit</a></td><td class="stars">467</td><td>Python toolkit for building graph-enhanced GenAI applications</td><td class="stars">1.00</td></tr>
+<tr><td><a href="https://github.com/deeplethe/utopia" target="_blank" rel="noopener">deeplethe/utopia</a></td><td class="stars">8,745</td><td>World's first open-source enterprise world model.</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/apache/age" target="_blank" rel="noopener">apache/age</a></td><td class="stars">4,955</td><td>Graph database optimized for fast analysis and real-time data processing. It is provided as an extension to PostgreSQL.</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/skaiworldwide-oss/agensgraph" target="_blank" rel="noopener">skaiworldwide-oss/agensgraph</a></td><td class="stars">1,519</td><td>AgensGraph, a high performance transactional graph database based on PostgreSQL</td><td class="stars">0.80</td></tr>
+<tr><td><a href="https://github.com/windmill-labs/windmill" target="_blank" rel="noopener">windmill-labs/windmill</a></td><td class="stars">18,669</td><td>Code-first platform for workflows, apps and AI agents, on the fastest self-hostable orchestrator (benchmarked against Ai...</td><td class="stars">0.66</td></tr>
+<tr><td><a href="https://github.com/mara/mara-pipelines" target="_blank" rel="noopener">mara/mara-pipelines</a></td><td class="stars">2,088</td><td>A lightweight opinionated ETL framework, halfway between plain scripts and Apache Airflow · 2 年未更</td><td class="stars">0.66</td></tr>
+</tbody></table>
+</div>
+
+<div class="sec">
+<div class="t-head"><span class="t-title">📰 近期动态</span><span class="t-sub">enrich · 近 90 天</span></div>
+<p><b>3.20.0</b>（10-29）——chore(deps): update neo4j requirement from >=5.0.0 to >=6.3.0 in /integration-tests by @dependabot[bot] in https://github.com/awslabs/graphrag-toolkit/pull/555 * chore(deps): update neo4j requirement from >=6.3.0 to >=6.3.1 in /integration-tests by @dependabot[bot] in https://github.com/awslabs/grap</p><p class="t-sub" style="margin-top:4px;">90 天 12 发 · 安全通告 0</p>
+</div>
+
+
+
+<div class="sec">
+<div class="t-head"><span class="t-title">⚡ 上手一行</span><span class="t-sub">安装线索（未实跑）</span></div>
+<pre><code># pip install graphrag-toolkit（解读层线索，命令未实跑）</code></pre>
+</div>
+
+</div>
+</body>
+</html>
