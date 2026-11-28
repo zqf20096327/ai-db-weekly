@@ -121,3 +121,8 @@ git remote add origin https://github.com/<you>/dbhub_page.git && git push -u ori
 
 GitHub Actions 每晚自动重建（collect 仓库本来就每晚采集：数据日更 + 编辑周更）、
 RSS/公众号推送、`overrides.json` 认领、深读 AI 初稿管线。
+
+## 许可
+
+代码与构建脚本以 [MIT](LICENSE) 许可发布；站点数据（项目指标、归属与解读）
+采集自 GitHub 公开仓库，权利归原项目作者，引用请注明来源。
